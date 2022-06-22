@@ -1,0 +1,10 @@
+{
+  "values": [
+    "thermal:gunpowder_block",
+    "thermal:sawdust_block",
+    "thermal:tar_block",
+    "thermal:rosin_block",
+    "minecraft:air",
+    "minecraft:air"
+  ]
+}

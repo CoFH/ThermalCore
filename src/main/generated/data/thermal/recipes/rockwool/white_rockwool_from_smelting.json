@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smelting",
+  "conditions": [
+    {
+      "type": "thermal:flag",
+      "flag": "rockwool"
+    }
+  ],
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "thermal:slag"
+  },
+  "result": "thermal:white_rockwool"
+}

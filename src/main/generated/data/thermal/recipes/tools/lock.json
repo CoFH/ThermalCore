@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "conditions": [
+    {
+      "type": "thermal:flag",
+      "flag": "lock"
+    }
+  ],
+  "key": {
+    "S": {
+      "tag": "forge:ingots/signalum"
+    },
+    "i": {
+      "tag": "forge:nuggets/iron"
+    }
+  },
+  "pattern": [
+    " i ",
+    "iSi",
+    "iii"
+  ],
+  "result": {
+    "item": "thermal:lock"
+  }
+}

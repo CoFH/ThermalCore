@@ -1,0 +1,14 @@
+{
+  "values": [
+    "#forge:ores/apatite",
+    "#forge:ores/cinnabar",
+    "#forge:ores/niter",
+    "#forge:ores/sulfur",
+    "#forge:ores/lead",
+    "#forge:ores/nickel",
+    "#forge:ores/silver",
+    "#forge:ores/tin",
+    "#forge:ores/ruby",
+    "#forge:ores/sapphire"
+  ]
+}

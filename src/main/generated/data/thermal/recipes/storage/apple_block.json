@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "conditions": [
+    {
+      "type": "thermal:flag",
+      "flag": "vanilla_blocks"
+    }
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:apple"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "thermal:apple_block"
+  }
+}

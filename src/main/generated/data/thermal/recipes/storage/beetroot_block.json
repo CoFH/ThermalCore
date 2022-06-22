@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "conditions": [
+    {
+      "type": "thermal:flag",
+      "flag": "vanilla_blocks"
+    }
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:beetroot"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "thermal:beetroot_block"
+  }
+}
