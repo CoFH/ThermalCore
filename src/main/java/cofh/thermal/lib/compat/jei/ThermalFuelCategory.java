@@ -9,9 +9,9 @@ import mezz.jei.api.gui.drawable.IDrawableAnimated;
 import mezz.jei.api.gui.drawable.IDrawableStatic;
 import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
 import mezz.jei.api.helpers.IGuiHelper;
+import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
 import java.util.ArrayList;
@@ -27,7 +27,7 @@ public abstract class ThermalFuelCategory<T extends ThermalFuel> implements IRec
     protected final int ENERGY_X = 106;
     protected final int ENERGY_Y = 10;
 
-    protected final ResourceLocation uid;
+    protected final RecipeType<T> type;
     protected IDrawable background;
     protected IDrawable icon;
     protected Component name;
@@ -38,14 +38,14 @@ public abstract class ThermalFuelCategory<T extends ThermalFuel> implements IRec
     protected IDrawableAnimated energy;
     protected IDrawableAnimated duration;
 
-    public ThermalFuelCategory(IGuiHelper guiHelper, ItemStack icon, ResourceLocation uid) {
+    public ThermalFuelCategory(IGuiHelper guiHelper, ItemStack icon, RecipeType<T> type) {
 
-        this(guiHelper, icon, uid, true);
+        this(guiHelper, icon, type, true);
     }
 
-    public ThermalFuelCategory(IGuiHelper guiHelper, ItemStack icon, ResourceLocation uid, boolean drawEnergy) {
+    public ThermalFuelCategory(IGuiHelper guiHelper, ItemStack icon, RecipeType<T> type, boolean drawEnergy) {
 
-        this.uid = uid;
+        this.type = type;
         this.icon = guiHelper.createDrawableIngredient(VanillaTypes.ITEM_STACK, icon);
 
         if (drawEnergy) {

@@ -1,12 +1,12 @@
 package cofh.thermal.core.content.block.entity.device;
 
-import cofh.core.content.block.SoilBlock;
 import cofh.core.util.helpers.AugmentDataHelper;
 import cofh.lib.api.block.entity.IAreaEffectTile;
 import cofh.lib.api.block.entity.ITickableTile;
 import cofh.lib.content.energy.EnergyStorageCoFH;
 import cofh.lib.content.inventory.ItemStorageCoFH;
 import cofh.thermal.core.config.ThermalCoreConfig;
+import cofh.thermal.core.content.block.ChargedSoilBlock;
 import cofh.thermal.core.content.inventory.container.device.DeviceSoilInfuserContainer;
 import cofh.thermal.lib.tileentity.ThermalTileAugmentable;
 import cofh.thermal.lib.util.ThermalEnergyHelper;
@@ -163,8 +163,8 @@ public class DeviceSoilInfuserTile extends ThermalTileAugmentable implements ITi
     protected void chargeSoil(BlockPos blockPos) {
 
         BlockState state = level.getBlockState(blockPos);
-        if (state.getBlock() instanceof SoilBlock) {
-            SoilBlock.charge(state, level, blockPos);
+        if (state.getBlock() instanceof ChargedSoilBlock) {
+            ChargedSoilBlock.charge(state, level, blockPos);
         }
     }
 

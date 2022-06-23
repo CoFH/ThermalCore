@@ -48,25 +48,25 @@ public class TCoreJeiPlugin implements IModPlugin {
             return;
         }
         if (getFlag(ID_DEVICE_TREE_EXTRACTOR).getAsBoolean()) {
-            registration.addRecipes(TREE_EXTRACTOR, recipeManager.getAllRecipesFor(TREE_EXTRACTOR_MAPPING.get()));
+            registration.addRecipes(TREE_EXTRACTOR_TYPE, recipeManager.getAllRecipesFor(TREE_EXTRACTOR_MAPPING.get()));
         }
         if (getFlag(ID_DEVICE_ROCK_GEN).getAsBoolean()) {
-            registration.addRecipes(ROCK_GEN, recipeManager.getAllRecipesFor(ROCK_GEN_MAPPING.get()));
+            registration.addRecipes(ROCK_GEN_TYPE, recipeManager.getAllRecipesFor(ROCK_GEN_MAPPING.get()));
         }
     }
 
     @Override
     public void registerCategories(IRecipeCategoryRegistration registration) {
 
-        registration.addRecipeCategories(new TreeExtractorCategory(registration.getJeiHelpers().getGuiHelper(), new ItemStack(BLOCKS.get(ID_DEVICE_TREE_EXTRACTOR)), TREE_EXTRACTOR));
-        registration.addRecipeCategories(new RockGenCategory(registration.getJeiHelpers().getGuiHelper(), new ItemStack(BLOCKS.get(ID_DEVICE_ROCK_GEN)), ROCK_GEN));
+        registration.addRecipeCategories(new TreeExtractorCategory(registration.getJeiHelpers().getGuiHelper(), new ItemStack(BLOCKS.get(ID_DEVICE_TREE_EXTRACTOR)), TREE_EXTRACTOR_TYPE));
+        registration.addRecipeCategories(new RockGenCategory(registration.getJeiHelpers().getGuiHelper(), new ItemStack(BLOCKS.get(ID_DEVICE_ROCK_GEN)), ROCK_GEN_TYPE));
     }
 
     @Override
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
 
-        registration.addRecipeCatalyst(new ItemStack(BLOCKS.get(ID_DEVICE_TREE_EXTRACTOR)), TREE_EXTRACTOR);
-        registration.addRecipeCatalyst(new ItemStack(BLOCKS.get(ID_DEVICE_ROCK_GEN)), ROCK_GEN);
+        registration.addRecipeCatalyst(new ItemStack(BLOCKS.get(ID_DEVICE_TREE_EXTRACTOR)), TREE_EXTRACTOR_TYPE);
+        registration.addRecipeCatalyst(new ItemStack(BLOCKS.get(ID_DEVICE_ROCK_GEN)), ROCK_GEN_TYPE);
     }
 
     @Override
@@ -76,8 +76,8 @@ public class TCoreJeiPlugin implements IModPlugin {
         int progressW = 24;
         int progressH = 16;
 
-        registration.addRecipeClickArea(DeviceTreeExtractorScreen.class, 80, 35, 16, progressH, TREE_EXTRACTOR);
-        registration.addRecipeClickArea(DeviceRockGenScreen.class, 84, progressY, progressW, progressH, ROCK_GEN);
+        registration.addRecipeClickArea(DeviceTreeExtractorScreen.class, 80, 35, 16, progressH, TREE_EXTRACTOR_TYPE);
+        registration.addRecipeClickArea(DeviceRockGenScreen.class, 84, progressY, progressW, progressH, ROCK_GEN_TYPE);
     }
 
     @Override
@@ -161,7 +161,7 @@ public class TCoreJeiPlugin implements IModPlugin {
     // endregion
 
     // region RECIPE TYPES
-    public static final RecipeType<TreeExtractorMapping> TREE_EXTRACTOR = new RecipeType<>(TREE_EXTRACTOR_MAPPING.getId(), TreeExtractorMapping.class);
-    public static final RecipeType<RockGenMapping> ROCK_GEN = new RecipeType<>(ROCK_GEN_MAPPING.getId(), RockGenMapping.class);
+    public static final RecipeType<TreeExtractorMapping> TREE_EXTRACTOR_TYPE = new RecipeType<>(TREE_EXTRACTOR_MAPPING.getId(), TreeExtractorMapping.class);
+    public static final RecipeType<RockGenMapping> ROCK_GEN_TYPE = new RecipeType<>(ROCK_GEN_MAPPING.getId(), RockGenMapping.class);
     // endregion
 }

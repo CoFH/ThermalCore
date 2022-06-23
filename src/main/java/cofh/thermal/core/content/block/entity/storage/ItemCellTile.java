@@ -3,7 +3,7 @@
 //import cofh.core.network.packet.client.TileRenderPacket;
 //import cofh.core.network.packet.client.TileStatePacket;
 //import cofh.lib.inventory.ItemHandlerRestrictionWrapper;
-//import cofh.lib.inventory.ItemStorageCoFH;
+//import cofh.lib.content.inventory.ItemStorageCoFH;
 //import cofh.lib.util.StorageGroup;
 //import cofh.lib.util.Utils;
 //import cofh.lib.util.helpers.AugmentDataHelper;
@@ -29,7 +29,7 @@
 //import java.util.function.Predicate;
 //
 //import static cofh.core.client.renderer.model.ModelUtils.*;
-//import static cofh.lib.util.helpers.ItemHelper.cloneStack;
+//import static cofh.core.util.helpers.ItemHelper.cloneStack;
 //import static cofh.lib.util.helpers.ItemHelper.itemsEqualWithTags;
 //import static cofh.thermal.core.init.TCoreReferences.ITEM_CELL_TILE;
 //import static cofh.thermal.lib.common.ThermalAugmentRules.ITEM_STORAGE_VALIDATOR;

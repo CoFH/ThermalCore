@@ -10,10 +10,10 @@ import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
+import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
 import static cofh.lib.util.helpers.StringHelper.DF0;
@@ -21,16 +21,16 @@ import static cofh.lib.util.helpers.StringHelper.localize;
 
 public abstract class ThermalCatalystCategory<T extends ThermalCatalyst> implements IRecipeCategory<T> {
 
-    protected final ResourceLocation uid;
+    protected final RecipeType<T> type;
     protected IDrawable background;
     protected IDrawable icon;
     protected Component name;
 
     protected IDrawableStatic slot;
 
-    public ThermalCatalystCategory(IGuiHelper guiHelper, ItemStack icon, ResourceLocation uid) {
+    public ThermalCatalystCategory(IGuiHelper guiHelper, ItemStack icon, RecipeType<T> type) {
 
-        this.uid = uid;
+        this.type = type;
         this.icon = guiHelper.createDrawableIngredient(VanillaTypes.ITEM_STACK, icon);
 
         background = guiHelper.drawableBuilder(Drawables.JEI_TEXTURE, 26, 11, 140, 62)

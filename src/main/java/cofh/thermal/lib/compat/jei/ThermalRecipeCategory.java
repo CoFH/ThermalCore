@@ -9,9 +9,9 @@ import mezz.jei.api.gui.drawable.IDrawableAnimated;
 import mezz.jei.api.gui.drawable.IDrawableStatic;
 import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
 import mezz.jei.api.helpers.IGuiHelper;
+import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
 import java.util.ArrayList;
@@ -27,7 +27,7 @@ public abstract class ThermalRecipeCategory<T extends ThermalRecipe> implements 
     protected final int EXP_X = 20;
     protected final int EXP_Y = 10;
 
-    protected final ResourceLocation uid;
+    protected final RecipeType<T> type;
     protected IDrawable background;
     protected IDrawable icon;
     protected Component name;
@@ -42,9 +42,9 @@ public abstract class ThermalRecipeCategory<T extends ThermalRecipe> implements 
     protected IDrawableAnimated progressFluid;
     protected IDrawableAnimated speed;
 
-    public ThermalRecipeCategory(IGuiHelper guiHelper, ItemStack icon, ResourceLocation uid) {
+    public ThermalRecipeCategory(IGuiHelper guiHelper, ItemStack icon, RecipeType<T> type) {
 
-        this.uid = uid;
+        this.type = type;
         this.icon = guiHelper.createDrawableIngredient(VanillaTypes.ITEM_STACK, icon);
 
         energyBackground = Drawables.getDrawables(guiHelper).getEnergyEmpty();
