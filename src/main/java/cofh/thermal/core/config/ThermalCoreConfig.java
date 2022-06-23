@@ -2,7 +2,7 @@ package cofh.thermal.core.config;
 
 import cofh.core.config.IBaseConfig;
 import cofh.thermal.core.ThermalCore;
-import cofh.thermal.core.content.item.SatchelItem;
+import cofh.thermal.core.item.SatchelItem;
 import cofh.thermal.lib.util.ThermalEnergyHelper;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.common.ForgeConfigSpec;

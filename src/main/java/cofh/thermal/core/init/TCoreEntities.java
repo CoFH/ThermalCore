@@ -1,11 +1,11 @@
 package cofh.thermal.core.init;
 
-import cofh.thermal.core.content.entity.monster.Basalz;
-import cofh.thermal.core.content.entity.monster.Blitz;
-import cofh.thermal.core.content.entity.monster.Blizz;
-import cofh.thermal.core.content.entity.projectile.BasalzProjectile;
-import cofh.thermal.core.content.entity.projectile.BlitzProjectile;
-import cofh.thermal.core.content.entity.projectile.BlizzProjectile;
+import cofh.thermal.core.entity.monster.Basalz;
+import cofh.thermal.core.entity.monster.Blitz;
+import cofh.thermal.core.entity.monster.Blizz;
+import cofh.thermal.core.entity.projectile.BasalzProjectile;
+import cofh.thermal.core.entity.projectile.BlitzProjectile;
+import cofh.thermal.core.entity.projectile.BlizzProjectile;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.SpawnPlacements;

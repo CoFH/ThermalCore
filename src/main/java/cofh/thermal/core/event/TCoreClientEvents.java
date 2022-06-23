@@ -4,7 +4,7 @@ import cofh.core.util.ProxyClient;
 import cofh.core.util.helpers.AugmentDataHelper;
 import cofh.core.util.helpers.vfx.RenderTypes;
 import cofh.lib.api.block.entity.IAreaEffectTile;
-import cofh.thermal.core.content.item.WrenchItem;
+import cofh.thermal.core.item.WrenchItem;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;

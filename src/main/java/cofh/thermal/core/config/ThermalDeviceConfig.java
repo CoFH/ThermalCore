@@ -1,9 +1,9 @@
 package cofh.thermal.core.config;
 
 import cofh.core.config.IBaseConfig;
-import cofh.thermal.core.content.block.entity.device.DeviceComposterTile;
-import cofh.thermal.core.content.block.entity.device.DeviceFisherTile;
-import cofh.thermal.core.content.block.entity.device.DeviceTreeExtractorTile;
+import cofh.thermal.core.block.entity.device.DeviceComposterTile;
+import cofh.thermal.core.block.entity.device.DeviceFisherTile;
+import cofh.thermal.core.block.entity.device.DeviceTreeExtractorTile;
 import net.minecraftforge.common.ForgeConfigSpec;
 
 import java.util.function.Supplier;

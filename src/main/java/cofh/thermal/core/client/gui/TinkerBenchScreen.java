@@ -4,7 +4,7 @@ import cofh.core.client.gui.element.ElementAugmentSlots;
 import cofh.core.client.gui.element.ElementButton;
 import cofh.core.client.gui.element.SimpleTooltip;
 import cofh.lib.util.helpers.StringHelper;
-import cofh.thermal.core.content.inventory.container.TinkerBenchContainer;
+import cofh.thermal.core.inventory.container.TinkerBenchContainer;
 import cofh.thermal.lib.client.gui.ThermalTileScreenBase;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;

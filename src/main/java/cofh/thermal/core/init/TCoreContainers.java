@@ -1,11 +1,11 @@
 package cofh.thermal.core.init;
 
-import cofh.thermal.core.content.inventory.container.ChargeBenchContainer;
-import cofh.thermal.core.content.inventory.container.TinkerBenchContainer;
-import cofh.thermal.core.content.inventory.container.device.*;
-import cofh.thermal.core.content.inventory.container.storage.EnergyCellContainer;
-import cofh.thermal.core.content.inventory.container.storage.FluidCellContainer;
-import cofh.thermal.core.content.inventory.container.storage.SatchelContainer;
+import cofh.thermal.core.inventory.container.ChargeBenchContainer;
+import cofh.thermal.core.inventory.container.TinkerBenchContainer;
+import cofh.thermal.core.inventory.container.device.*;
+import cofh.thermal.core.inventory.container.storage.EnergyCellContainer;
+import cofh.thermal.core.inventory.container.storage.FluidCellContainer;
+import cofh.thermal.core.inventory.container.storage.SatchelContainer;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraftforge.common.extensions.IForgeMenuType;
 import net.minecraftforge.registries.RegistryObject;

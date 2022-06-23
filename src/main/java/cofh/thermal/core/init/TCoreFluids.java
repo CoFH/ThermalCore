@@ -1,6 +1,7 @@
 package cofh.thermal.core.init;
 
-import cofh.thermal.core.content.fluid.*;
+import cofh.thermal.core.fluid.*;
+import cofh.thermal.core.fluid.*;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.ForgeFlowingFluid;

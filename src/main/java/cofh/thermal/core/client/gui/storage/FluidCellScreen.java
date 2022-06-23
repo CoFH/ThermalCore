@@ -2,8 +2,8 @@ package cofh.thermal.core.client.gui.storage;
 
 import cofh.core.client.gui.element.ElementTexture;
 import cofh.lib.util.helpers.StringHelper;
-import cofh.thermal.core.content.block.entity.storage.FluidCellTile;
-import cofh.thermal.core.content.inventory.container.storage.FluidCellContainer;
+import cofh.thermal.core.block.entity.storage.FluidCellTile;
+import cofh.thermal.core.inventory.container.storage.FluidCellContainer;
 import cofh.thermal.lib.client.gui.CellScreenReconfigurable;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.network.chat.Component;

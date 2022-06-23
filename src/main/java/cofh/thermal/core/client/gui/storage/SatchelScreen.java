@@ -4,7 +4,7 @@ import cofh.core.client.gui.ContainerScreenCoFH;
 import cofh.core.client.gui.element.panel.SecurityPanel;
 import cofh.core.util.helpers.RenderHelper;
 import cofh.lib.util.helpers.SecurityHelper;
-import cofh.thermal.core.content.inventory.container.storage.SatchelContainer;
+import cofh.thermal.core.inventory.container.storage.SatchelContainer;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.network.chat.Component;
