@@ -6,7 +6,7 @@ import cofh.core.content.item.SpawnEggItemCoFH;
 import cofh.core.util.filter.FilterRegistry;
 import cofh.core.util.helpers.AugmentDataHelper;
 import cofh.lib.content.item.ArmorMaterialCoFH;
-import cofh.thermal.core.item.*;
+import cofh.thermal.core.content.item.*;
 import cofh.thermal.lib.item.AugmentItem;
 import cofh.thermal.lib.util.ThermalEnergyHelper;
 import net.minecraft.sounds.SoundEvents;

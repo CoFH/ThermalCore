@@ -2,9 +2,9 @@ package cofh.thermal.core.event;
 
 import cofh.core.compat.curios.CuriosProxy;
 import cofh.core.util.filter.IFilterOptions;
-import cofh.thermal.core.inventory.container.storage.SatchelContainer;
-import cofh.thermal.core.item.DivingArmorItem;
-import cofh.thermal.core.item.SatchelItem;
+import cofh.thermal.core.content.inventory.container.storage.SatchelContainer;
+import cofh.thermal.core.content.item.DivingArmorItem;
+import cofh.thermal.core.content.item.SatchelItem;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Inventory;

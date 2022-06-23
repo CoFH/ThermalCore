@@ -1,10 +1,10 @@
 package cofh.thermal.core.init;
 
-import cofh.thermal.core.block.entity.ChargeBenchTile;
-import cofh.thermal.core.block.entity.TinkerBenchTile;
-import cofh.thermal.core.block.entity.device.*;
-import cofh.thermal.core.block.entity.storage.EnergyCellTile;
-import cofh.thermal.core.block.entity.storage.FluidCellTile;
+import cofh.thermal.core.content.block.entity.ChargeBenchTile;
+import cofh.thermal.core.content.block.entity.TinkerBenchTile;
+import cofh.thermal.core.content.block.entity.device.*;
+import cofh.thermal.core.content.block.entity.storage.EnergyCellTile;
+import cofh.thermal.core.content.block.entity.storage.FluidCellTile;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.registries.RegistryObject;
 

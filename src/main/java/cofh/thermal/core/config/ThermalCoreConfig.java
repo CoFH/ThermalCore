@@ -2,7 +2,7 @@ package cofh.thermal.core.config;
 
 import cofh.core.config.IBaseConfig;
 import cofh.thermal.core.ThermalCore;
-import cofh.thermal.core.item.SatchelItem;
+import cofh.thermal.core.content.item.SatchelItem;
 import cofh.thermal.lib.util.ThermalEnergyHelper;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.common.ForgeConfigSpec;
@@ -10,6 +10,7 @@ import net.minecraftforge.common.ForgeConfigSpec;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Supplier;
 
 import static cofh.lib.util.Utils.getRegistryName;
 import static cofh.lib.util.constants.ModIds.ID_THERMAL;
@@ -239,42 +240,42 @@ public class ThermalCoreConfig implements IBaseConfig {
     // endregion
 
     // region CONFIG VARIABLES
-    private ForgeConfigSpec.BooleanValue boolStandaloneRedstoneFlux;
+    private Supplier<Boolean> boolStandaloneRedstoneFlux;
 
-    private ForgeConfigSpec.BooleanValue boolKeepEnergy;
-    private ForgeConfigSpec.BooleanValue boolKeepItems;
-    private ForgeConfigSpec.BooleanValue boolKeepFluids;
-    private ForgeConfigSpec.BooleanValue boolKeepAugments;
-    private ForgeConfigSpec.BooleanValue boolKeepRSControl;
-    private ForgeConfigSpec.BooleanValue boolKeepSideConfig;
-    private ForgeConfigSpec.BooleanValue boolKeepTransferControl;
+    private Supplier<Boolean> boolKeepEnergy;
+    private Supplier<Boolean> boolKeepItems;
+    private Supplier<Boolean> boolKeepFluids;
+    private Supplier<Boolean> boolKeepAugments;
+    private Supplier<Boolean> boolKeepRSControl;
+    private Supplier<Boolean> boolKeepSideConfig;
+    private Supplier<Boolean> boolKeepTransferControl;
 
-    private ForgeConfigSpec.BooleanValue boolReconfigSides;
-    private ForgeConfigSpec.BooleanValue boolRSControl;
-    private ForgeConfigSpec.BooleanValue boolXPStorage;
+    private Supplier<Boolean> boolReconfigSides;
+    private Supplier<Boolean> boolRSControl;
+    private Supplier<Boolean> boolXPStorage;
 
-    private ForgeConfigSpec.BooleanValue boolPermanentLava;
-    private ForgeConfigSpec.BooleanValue boolPermanentWater;
+    private Supplier<Boolean> boolPermanentLava;
+    private Supplier<Boolean> boolPermanentWater;
 
-    private ForgeConfigSpec.BooleanValue boolVillagerTrades;
-    private ForgeConfigSpec.BooleanValue boolWandererTrades;
+    private Supplier<Boolean> boolVillagerTrades;
+    private Supplier<Boolean> boolWandererTrades;
 
-    private ForgeConfigSpec.BooleanValue boolVanillaBlocks;
-    private ForgeConfigSpec.BooleanValue boolRockwool;
-    private ForgeConfigSpec.BooleanValue boolWrench;
-    private ForgeConfigSpec.BooleanValue boolRedprint;
-    private ForgeConfigSpec.BooleanValue boolRFPotato;
-    private ForgeConfigSpec.BooleanValue boolXPCrystal;
-    private ForgeConfigSpec.BooleanValue boolLock;
-    private ForgeConfigSpec.BooleanValue boolSatchel;
-    private ForgeConfigSpec.BooleanValue boolDetonator;
+    private Supplier<Boolean> boolVanillaBlocks;
+    private Supplier<Boolean> boolRockwool;
+    private Supplier<Boolean> boolWrench;
+    private Supplier<Boolean> boolRedprint;
+    private Supplier<Boolean> boolRFPotato;
+    private Supplier<Boolean> boolXPCrystal;
+    private Supplier<Boolean> boolLock;
+    private Supplier<Boolean> boolSatchel;
+    private Supplier<Boolean> boolDetonator;
 
-    private ForgeConfigSpec.BooleanValue boolMobBasalz;
-    private ForgeConfigSpec.BooleanValue boolMobBlitz;
-    private ForgeConfigSpec.BooleanValue boolMobBlizz;
+    private Supplier<Boolean> boolMobBasalz;
+    private Supplier<Boolean> boolMobBlitz;
+    private Supplier<Boolean> boolMobBlizz;
 
-    private ForgeConfigSpec.BooleanValue boolMobBlitzLightning;
+    private Supplier<Boolean> boolMobBlitzLightning;
 
-    private ForgeConfigSpec.ConfigValue<List<String>> listSatchelBans;
+    private Supplier<List<String>> listSatchelBans;
     // endregion
 }

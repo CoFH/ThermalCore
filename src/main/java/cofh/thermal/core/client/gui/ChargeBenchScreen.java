@@ -1,7 +1,7 @@
 package cofh.thermal.core.client.gui;
 
 import cofh.lib.util.helpers.StringHelper;
-import cofh.thermal.core.inventory.container.ChargeBenchContainer;
+import cofh.thermal.core.content.inventory.container.ChargeBenchContainer;
 import cofh.thermal.lib.client.gui.ThermalTileScreenBase;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;

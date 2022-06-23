@@ -2,7 +2,7 @@ package cofh.thermal.core.client.renderer.entity;
 
 import cofh.lib.util.helpers.MathHelper;
 import cofh.thermal.core.client.renderer.entity.model.ElementalProjectileModel;
-import cofh.thermal.core.entity.projectile.ElementalProjectile;
+import cofh.thermal.core.content.entity.projectile.ElementalProjectile;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Vector3f;

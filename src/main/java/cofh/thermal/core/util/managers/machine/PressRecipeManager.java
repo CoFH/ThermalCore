@@ -3,7 +3,7 @@ package cofh.thermal.core.util.managers.machine;
 import cofh.lib.api.fluid.IFluidStackHolder;
 import cofh.lib.api.inventory.IItemStackHolder;
 import cofh.lib.util.crafting.ComparableItemStack;
-import cofh.thermal.core.item.SlotSealItem;
+import cofh.thermal.core.content.item.SlotSealItem;
 import cofh.thermal.lib.util.managers.AbstractManager;
 import cofh.thermal.lib.util.managers.IRecipeManager;
 import cofh.thermal.lib.util.recipes.IThermalInventory;

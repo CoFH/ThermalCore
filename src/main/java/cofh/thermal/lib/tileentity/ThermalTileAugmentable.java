@@ -517,7 +517,7 @@ public abstract class ThermalTileAugmentable extends TileCoFH implements ISecura
         isActive = buffer.readBoolean();
         renderFluid = buffer.readFluidStack();
 
-        if (ThermalClientConfig.blockAmbientSounds && isActive && !prevActive) {
+        if (ThermalClientConfig.blockAmbientSounds.get() && isActive && !prevActive) {
             SoundHelper.playSound(getSound());
         }
     }

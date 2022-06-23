@@ -3,7 +3,7 @@ package cofh.thermal.core.client.gui.device;
 import cofh.core.client.gui.element.ElementButton;
 import cofh.core.client.gui.element.SimpleTooltip;
 import cofh.lib.util.helpers.StringHelper;
-import cofh.thermal.core.inventory.container.device.DeviceNullifierContainer;
+import cofh.thermal.core.content.inventory.container.device.DeviceNullifierContainer;
 import cofh.thermal.lib.client.gui.ThermalTileScreenBase;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
