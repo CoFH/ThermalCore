@@ -69,6 +69,7 @@ public class TCoreRecipeTypes {
     public static final String ID_PYROLYZER_RECIPE = "pyrolyzer";
     public static final String ID_BOTTLER_RECIPE = "bottler";
     public static final String ID_BREWER_RECIPE = "brewer";
+    public static final String ID_CRYSTALLIZER_RECIPE = "crystallizer";
 
     public static final String ID_PULVERIZER_CATALYST = "pulverizer_catalyst";
     public static final String ID_SMELTER_CATALYST = "smelter_catalyst";
@@ -89,6 +90,7 @@ public class TCoreRecipeTypes {
     public static final RegistryObject<SerializableRecipeType<PyrolyzerRecipe>> PYROLYZER_RECIPE = RECIPE_TYPES.register(ID_PYROLYZER_RECIPE, () -> new SerializableRecipeType<>(ID_THERMAL, ID_PYROLYZER_RECIPE));
     public static final RegistryObject<SerializableRecipeType<BottlerRecipe>> BOTTLER_RECIPE = RECIPE_TYPES.register(ID_BOTTLER_RECIPE, () -> new SerializableRecipeType<>(ID_THERMAL, ID_BOTTLER_RECIPE));
     public static final RegistryObject<SerializableRecipeType<BrewerRecipe>> BREWER_RECIPE = RECIPE_TYPES.register(ID_BREWER_RECIPE, () -> new SerializableRecipeType<>(ID_THERMAL, ID_BREWER_RECIPE));
+    public static final RegistryObject<SerializableRecipeType<CrystallizerRecipe>> CRYSTALLIZER_RECIPE = RECIPE_TYPES.register(ID_CRYSTALLIZER_RECIPE, () -> new SerializableRecipeType<>(ID_THERMAL, ID_CRYSTALLIZER_RECIPE));
 
     public static final RegistryObject<SerializableRecipeType<PulverizerCatalyst>> PULVERIZER_CATALYST = RECIPE_TYPES.register(ID_PULVERIZER_CATALYST, () -> new SerializableRecipeType<>(ID_THERMAL, ID_PULVERIZER_CATALYST));
     public static final RegistryObject<SerializableRecipeType<SmelterCatalyst>> SMELTER_CATALYST = RECIPE_TYPES.register(ID_SMELTER_CATALYST, () -> new SerializableRecipeType<>(ID_THERMAL, ID_SMELTER_CATALYST));
