@@ -6,14 +6,6 @@
     "#forge:plates/netherite",
     "#forge:plates/enderium",
     "#forge:plates/lumium",
-    "#forge:plates/signalum",
-    "#forge:plates/lead",
-    "#forge:plates/nickel",
-    "#forge:plates/silver",
-    "#forge:plates/tin",
-    "#forge:plates/bronze",
-    "#forge:plates/constantan",
-    "#forge:plates/electrum",
-    "#forge:plates/invar"
+    "#forge:plates/signalum"
   ]
 }

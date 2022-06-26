@@ -1,17 +1,6 @@
 {
   "values": [
     "thermal:signalum_block",
-    "thermal:lumium_block",
-    "thermal:apatite_ore",
-    "thermal:cinnabar_ore",
-    "minecraft:air",
-    "thermal:deepslate_apatite_ore",
-    "thermal:deepslate_cinnabar_ore",
-    "minecraft:air",
-    "thermal:apatite_block",
-    "thermal:cinnabar_block",
-    "minecraft:air",
-    "minecraft:air",
-    "minecraft:air"
+    "thermal:lumium_block"
   ]
 }

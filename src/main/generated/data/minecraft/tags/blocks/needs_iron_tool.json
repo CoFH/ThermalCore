@@ -1,26 +1,5 @@
 {
   "values": [
-    "thermal:enderium_block",
-    "minecraft:air",
-    "minecraft:air",
-    "minecraft:air",
-    "minecraft:air",
-    "minecraft:air",
-    "minecraft:air",
-    "minecraft:air",
-    "minecraft:air",
-    "minecraft:air",
-    "minecraft:air",
-    "minecraft:air",
-    "minecraft:air",
-    "minecraft:air",
-    "minecraft:air",
-    "minecraft:air",
-    "minecraft:air",
-    "minecraft:air",
-    "minecraft:air",
-    "minecraft:air",
-    "minecraft:air",
-    "minecraft:air"
+    "thermal:enderium_block"
   ]
 }

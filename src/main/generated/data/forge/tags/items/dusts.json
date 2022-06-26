@@ -10,20 +10,6 @@
     "#forge:dusts/quartz",
     "#forge:dusts/enderium",
     "#forge:dusts/lumium",
-    "#forge:dusts/signalum",
-    "#forge:dusts/apatite",
-    "#forge:dusts/cinnabar",
-    "#forge:dusts/niter",
-    "#forge:dusts/sulfur",
-    "#forge:dusts/lead",
-    "#forge:dusts/nickel",
-    "#forge:dusts/silver",
-    "#forge:dusts/tin",
-    "#forge:dusts/bronze",
-    "#forge:dusts/constantan",
-    "#forge:dusts/electrum",
-    "#forge:dusts/invar",
-    "#forge:dusts/ruby",
-    "#forge:dusts/sapphire"
+    "#forge:dusts/signalum"
   ]
 }

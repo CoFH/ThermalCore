@@ -172,7 +172,7 @@ public class TCoreTagsProvider {
             tag(BlockTags.MINEABLE_WITH_PICKAXE).add(BLOCKS.get(ID_FLUID_CELL));
             // endregion
 
-            addTFndTags();
+            // addTFndTags();
         }
 
         @SuppressWarnings ("unchecked")
@@ -573,7 +573,7 @@ public class TCoreTagsProvider {
             tag(ItemTagsCoFH.LOCKS).add(ITEMS.get(ID_LOCK));
             tag(ItemTagsCoFH.SECURABLE).add(ITEMS.get(ID_SATCHEL));
 
-            addTFndTags();
+            // addTFndTags();
         }
 
         protected void addTFndTags() {

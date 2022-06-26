@@ -10,16 +10,6 @@
     "#forge:gears/quartz",
     "#forge:gears/enderium",
     "#forge:gears/lumium",
-    "#forge:gears/signalum",
-    "#forge:gears/lead",
-    "#forge:gears/nickel",
-    "#forge:gears/silver",
-    "#forge:gears/tin",
-    "#forge:gears/bronze",
-    "#forge:gears/constantan",
-    "#forge:gears/electrum",
-    "#forge:gears/invar",
-    "#forge:gears/ruby",
-    "#forge:gears/sapphire"
+    "#forge:gears/signalum"
   ]
 }
