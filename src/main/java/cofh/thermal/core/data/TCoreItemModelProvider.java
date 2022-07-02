@@ -215,6 +215,7 @@ public class TCoreItemModelProvider extends ItemModelProviderCoFH {
         registerVanillaBlocks(reg);
         registerStorageBlocks(reg);
         registerBuildingBlocks(reg);
+        registerMiscBlocks(reg);
     }
 
     // region BLOCK HELPERS
@@ -286,6 +287,23 @@ public class TCoreItemModelProvider extends ItemModelProviderCoFH {
         blockItem(reg.getSup(ID_CHISELED_RICH_SLAG));
         blockItem(reg.getSup(ID_RICH_SLAG_BRICKS));
         blockItem(reg.getSup(ID_CRACKED_RICH_SLAG_BRICKS));
+    }
+
+    private void registerMiscBlocks(DeferredRegisterCoFH<Block> reg) {
+
+        blockItem(reg.getSup(ID_SLIME_TNT));
+        blockItem(reg.getSup(ID_REDSTONE_TNT));
+        blockItem(reg.getSup(ID_GLOWSTONE_TNT));
+        blockItem(reg.getSup(ID_ENDER_TNT));
+
+        blockItem(reg.getSup(ID_PHYTO_TNT));
+
+        blockItem(reg.getSup(ID_FIRE_TNT));
+        blockItem(reg.getSup(ID_EARTH_TNT));
+        blockItem(reg.getSup(ID_ICE_TNT));
+        blockItem(reg.getSup(ID_LIGHTNING_TNT));
+
+        blockItem(reg.getSup(ID_NUKE_TNT));
     }
     // endregion
 }

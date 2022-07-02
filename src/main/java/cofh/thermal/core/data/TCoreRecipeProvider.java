@@ -1045,6 +1045,187 @@ public class TCoreRecipeProvider extends RecipeProviderCoFH {
     private void generateExplosiveRecipes(Consumer<FinishedRecipe> consumer) {
 
         var reg = ITEMS;
+
+        ShapedRecipeBuilder.shaped(reg.get(ID_EXPLOSIVE_GRENADE), 4)
+                .define('G', Tags.Items.GUNPOWDER)
+                .define('I', Tags.Items.INGOTS_IRON)
+                .define('P', Tags.Items.SAND)
+                .pattern("GPG")
+                .pattern("PIP")
+                .pattern("GPG")
+                .unlockedBy("has_gunpowder", has(Tags.Items.GUNPOWDER))
+                .save(consumer, ID_THERMAL + ":explosive_grenade_4");
+
+        ShapedRecipeBuilder.shaped(reg.get(ID_SLIME_GRENADE), 4)
+                .define('G', Tags.Items.GUNPOWDER)
+                .define('I', Tags.Items.INGOTS_IRON)
+                .define('P', Tags.Items.SLIMEBALLS)
+                .pattern("GPG")
+                .pattern("PIP")
+                .pattern("GPG")
+                .unlockedBy("has_slimeball", has(Tags.Items.SLIMEBALLS))
+                .save(withConditions(consumer).flag(FLAG_BASIC_EXPLOSIVES), ID_THERMAL + ":slime_grenade_4");
+
+        ShapedRecipeBuilder.shaped(reg.get(ID_REDSTONE_GRENADE), 4)
+                .define('G', Tags.Items.GUNPOWDER)
+                .define('I', Tags.Items.INGOTS_IRON)
+                .define('P', Tags.Items.DUSTS_REDSTONE)
+                .pattern("GPG")
+                .pattern("PIP")
+                .pattern("GPG")
+                .unlockedBy("has_redstone", has(Tags.Items.DUSTS_REDSTONE))
+                .save(withConditions(consumer).flag(FLAG_BASIC_EXPLOSIVES), ID_THERMAL + ":redstone_grenade_4");
+
+        ShapedRecipeBuilder.shaped(reg.get(ID_GLOWSTONE_GRENADE), 4)
+                .define('G', Tags.Items.GUNPOWDER)
+                .define('I', Tags.Items.INGOTS_IRON)
+                .define('P', Tags.Items.DUSTS_GLOWSTONE)
+                .pattern("GPG")
+                .pattern("PIP")
+                .pattern("GPG")
+                .unlockedBy("has_glowstone", has(Tags.Items.DUSTS_GLOWSTONE))
+                .save(withConditions(consumer).flag(FLAG_BASIC_EXPLOSIVES), ID_THERMAL + ":glowstone_grenade_4");
+
+        ShapedRecipeBuilder.shaped(reg.get(ID_ENDER_GRENADE), 4)
+                .define('G', Tags.Items.GUNPOWDER)
+                .define('I', Tags.Items.INGOTS_IRON)
+                .define('P', Tags.Items.ENDER_PEARLS)
+                .pattern("GPG")
+                .pattern("PIP")
+                .pattern("GPG")
+                .unlockedBy("has_ender_pearl", has(Tags.Items.ENDER_PEARLS))
+                .save(withConditions(consumer).flag(FLAG_BASIC_EXPLOSIVES), ID_THERMAL + ":ender_grenade_4");
+
+        ShapedRecipeBuilder.shaped(reg.get(ID_PHYTO_GRENADE), 4)
+                .define('G', Tags.Items.GUNPOWDER)
+                .define('I', Tags.Items.INGOTS_IRON)
+                .define('P', reg.get("phytogro"))
+                .pattern("GPG")
+                .pattern("PIP")
+                .pattern("GPG")
+                .unlockedBy("has_phytogro", has(reg.get("phytogro")))
+                .save(withConditions(consumer).flag(FLAG_PHYTOGRO_EXPLOSIVES), ID_THERMAL + ":phyto_grenade_4");
+
+        ShapedRecipeBuilder.shaped(reg.get(ID_EARTH_GRENADE), 4)
+                .define('G', Tags.Items.GUNPOWDER)
+                .define('I', Tags.Items.INGOTS_IRON)
+                .define('P', reg.get("basalz_powder"))
+                .pattern("GPG")
+                .pattern("PIP")
+                .pattern("GPG")
+                .unlockedBy("has_basalz_powder", has(reg.get("basalz_powder")))
+                .save(withConditions(consumer).flag(FLAG_ELEMENTAL_EXPLOSIVES), ID_THERMAL + ":earth_grenade_4");
+
+        ShapedRecipeBuilder.shaped(reg.get(ID_FIRE_GRENADE), 4)
+                .define('G', Tags.Items.GUNPOWDER)
+                .define('I', Tags.Items.INGOTS_IRON)
+                .define('P', Items.BLAZE_POWDER)
+                .pattern("GPG")
+                .pattern("PIP")
+                .pattern("GPG")
+                .unlockedBy("has_blaze_powder", has(Items.BLAZE_POWDER))
+                .save(withConditions(consumer).flag(FLAG_ELEMENTAL_EXPLOSIVES), ID_THERMAL + ":fire_grenade_4");
+
+        ShapedRecipeBuilder.shaped(reg.get(ID_ICE_GRENADE), 4)
+                .define('G', Tags.Items.GUNPOWDER)
+                .define('I', Tags.Items.INGOTS_IRON)
+                .define('P', reg.get("blizz_powder"))
+                .pattern("GPG")
+                .pattern("PIP")
+                .pattern("GPG")
+                .unlockedBy("has_blizz_powder", has(reg.get("blizz_powder")))
+                .save(withConditions(consumer).flag(FLAG_ELEMENTAL_EXPLOSIVES), ID_THERMAL + ":ice_grenade_4");
+
+        ShapedRecipeBuilder.shaped(reg.get(ID_LIGHTNING_GRENADE), 4)
+                .define('G', Tags.Items.GUNPOWDER)
+                .define('I', Tags.Items.INGOTS_IRON)
+                .define('P', reg.get("blitz_powder"))
+                .pattern("GPG")
+                .pattern("PIP")
+                .pattern("GPG")
+                .unlockedBy("has_blitz_powder", has(reg.get("blitz_powder")))
+                .save(withConditions(consumer).flag(FLAG_ELEMENTAL_EXPLOSIVES), ID_THERMAL + ":lightning_grenade_4");
+
+        ShapedRecipeBuilder.shaped(reg.get(ID_SLIME_TNT))
+                .define('G', Tags.Items.GUNPOWDER)
+                .define('P', Tags.Items.SLIMEBALLS)
+                .pattern("GPG")
+                .pattern("PGP")
+                .pattern("GPG")
+                .unlockedBy("has_slimeball", has(Tags.Items.SLIMEBALLS))
+                .save(withConditions(consumer).flag(FLAG_BASIC_EXPLOSIVES));
+
+        ShapedRecipeBuilder.shaped(reg.get(ID_REDSTONE_TNT))
+                .define('G', Tags.Items.GUNPOWDER)
+                .define('P', Tags.Items.DUSTS_REDSTONE)
+                .pattern("GPG")
+                .pattern("PGP")
+                .pattern("GPG")
+                .unlockedBy("has_redstone", has(Tags.Items.DUSTS_REDSTONE))
+                .save(withConditions(consumer).flag(FLAG_BASIC_EXPLOSIVES));
+
+        ShapedRecipeBuilder.shaped(reg.get(ID_GLOWSTONE_TNT))
+                .define('G', Tags.Items.GUNPOWDER)
+                .define('P', Tags.Items.DUSTS_GLOWSTONE)
+                .pattern("GPG")
+                .pattern("PGP")
+                .pattern("GPG")
+                .unlockedBy("has_glowstone", has(Tags.Items.DUSTS_GLOWSTONE))
+                .save(withConditions(consumer).flag(FLAG_BASIC_EXPLOSIVES));
+
+        ShapedRecipeBuilder.shaped(reg.get(ID_ENDER_TNT))
+                .define('G', Tags.Items.GUNPOWDER)
+                .define('P', Tags.Items.ENDER_PEARLS)
+                .pattern("GPG")
+                .pattern("PGP")
+                .pattern("GPG")
+                .unlockedBy("has_ender_pearl", has(Tags.Items.ENDER_PEARLS))
+                .save(withConditions(consumer).flag(FLAG_BASIC_EXPLOSIVES));
+
+        ShapedRecipeBuilder.shaped(reg.get(ID_PHYTO_TNT))
+                .define('G', Tags.Items.GUNPOWDER)
+                .define('P', reg.get("phytogro"))
+                .pattern("GPG")
+                .pattern("PGP")
+                .pattern("GPG")
+                .unlockedBy("has_phytogro", has(reg.get("phytogro")))
+                .save(withConditions(consumer).flag(FLAG_PHYTOGRO_EXPLOSIVES));
+
+        ShapedRecipeBuilder.shaped(reg.get(ID_EARTH_TNT))
+                .define('G', Tags.Items.GUNPOWDER)
+                .define('P', reg.get("basalz_powder"))
+                .pattern("GPG")
+                .pattern("PGP")
+                .pattern("GPG")
+                .unlockedBy("has_basalz_powder", has(reg.get("basalz_powder")))
+                .save(withConditions(consumer).flag(FLAG_ELEMENTAL_EXPLOSIVES));
+
+        ShapedRecipeBuilder.shaped(reg.get(ID_FIRE_TNT))
+                .define('G', Tags.Items.GUNPOWDER)
+                .define('P', Items.BLAZE_POWDER)
+                .pattern("GPG")
+                .pattern("PGP")
+                .pattern("GPG")
+                .unlockedBy("has_blaze_powder", has(Items.BLAZE_POWDER))
+                .save(withConditions(consumer).flag(FLAG_ELEMENTAL_EXPLOSIVES));
+
+        ShapedRecipeBuilder.shaped(reg.get(ID_ICE_TNT))
+                .define('G', Tags.Items.GUNPOWDER)
+                .define('P', reg.get("blizz_powder"))
+                .pattern("GPG")
+                .pattern("PGP")
+                .pattern("GPG")
+                .unlockedBy("has_blizz_powder", has(reg.get("blizz_powder")))
+                .save(withConditions(consumer).flag(FLAG_ELEMENTAL_EXPLOSIVES));
+
+        ShapedRecipeBuilder.shaped(reg.get(ID_LIGHTNING_TNT))
+                .define('G', Tags.Items.GUNPOWDER)
+                .define('P', reg.get("blitz_powder"))
+                .pattern("GPG")
+                .pattern("PGP")
+                .pattern("GPG")
+                .unlockedBy("has_blitz_powder", has(reg.get("blitz_powder")))
+                .save(withConditions(consumer).flag(FLAG_ELEMENTAL_EXPLOSIVES));
     }
 
     private void generateRockwoolRecipes(Consumer<FinishedRecipe> consumer) {

@@ -1,4 +1,4 @@
-// 1.19	2022-06-22T16:06:53.8326657	Thermal Core: Item Models
+// 1.19	2022-07-01T22:17:04.6820075	Thermal Core: Item Models
 3b8ca51c9e23723b85924709562e955e7ca8fa97 assets/thermal/models/item/apatite.json
 ed24caa4b88648538fcb78ec1708be67f122650a assets/thermal/models/item/apatite_block.json
 1cdc20af2ead0a4022365ab8995844ddc4a58bee assets/thermal/models/item/apatite_dust.json
@@ -56,6 +56,7 @@ e67366c992f8c6327b88d8335c4e0ca487a11ea6 assets/thermal/models/item/dynamo_fuel_
 14f075df40ec16d97c9b5fdc98ccefcb544a51ae assets/thermal/models/item/dynamo_output_augment.json
 e7aec0a6259f9d97624b3890365d48e6a8e0cc91 assets/thermal/models/item/dynamo_throttle_augment.json
 6a1d9ce09a2c4feeb28105355f5636679e6dee10 assets/thermal/models/item/earth_charge.json
+1eba0c2c0d73ac9554da439ae2272247014cf1a8 assets/thermal/models/item/earth_tnt.json
 8451e98f210969b7acf56f72688aa6ec5960c4c8 assets/thermal/models/item/emerald_dust.json
 356327ddc61297893c45f352437bb70a514b38ab assets/thermal/models/item/emerald_gear.json
 2976b8ef7dd2125c9c290287c3e1836a7c99fd35 assets/thermal/models/item/enderium_block.json
@@ -66,9 +67,12 @@ dda22997148e7d20457502954cf5cc5c4e4c2882 assets/thermal/models/item/enderium_gea
 acaf993c9d6f17cdf6278acacc6edbc3f0a9f449 assets/thermal/models/item/enderium_nugget.json
 61c8f3a4adb655431a0abaaecc7c01c9b5b19b7a assets/thermal/models/item/ender_bucket.json
 1c6785fb3d484367549082772c8a11e623babbe7 assets/thermal/models/item/ender_pearl_dust.json
+b717797e8260644f09e10a92b2f1761fad2f1ec1 assets/thermal/models/item/ender_tnt.json
+455a21504de9e4a8900d883af10e26b058e7220e assets/thermal/models/item/fire_tnt.json
 dd85f4148fd2a1a566738453c59fcc5e51c1b4b9 assets/thermal/models/item/fluid_tank_augment.json
 bde7a7aba02275fb3b845a22ff8db94a663aee7d assets/thermal/models/item/fluid_tank_creative_augment.json
 c85da6e76b07948a824704e1e5dfac52f426435b assets/thermal/models/item/glowstone_bucket.json
+e2d3c10f5e1d55b5d79686d842e8ddec0fe6fc47 assets/thermal/models/item/glowstone_tnt.json
 3fc39ea059250b5ad78fb3f758e91df374a1938d assets/thermal/models/item/gold_dust.json
 4b876ba0c678c0b5a0a21296df87e65648e48c46 assets/thermal/models/item/gold_gear.json
 15c07cd524958e3625efbb5e31df4cd9a53509ef assets/thermal/models/item/gray_rockwool.json
@@ -81,6 +85,7 @@ fab4d24b0b64758364490e56ce82947708021d14 assets/thermal/models/item/hazmat_fabri
 d2849684b2f3e5a6fa95a05069cd50849277aa4c assets/thermal/models/item/hazmat_leggings.json
 24e33f42af9533ecaf8d03955eb775e8457b4f9c assets/thermal/models/item/heavy_oil_bucket.json
 2c3bd981b41d03bad96d4ef05a96f3f21ebacda4 assets/thermal/models/item/ice_charge.json
+e781c4240b938e3fd9d0cca95c7da05c37835612 assets/thermal/models/item/ice_tnt.json
 81db1ae2999f4fa83c5c88bb1c27f0e617fa4380 assets/thermal/models/item/iron_dust.json
 8070df8ee9f6ec07cd4eff25d481a1c60bf2e504 assets/thermal/models/item/iron_gear.json
 e405279beba5f3e0a18272cb0aa0c783835f81c6 assets/thermal/models/item/item_filter_augment.json
@@ -90,6 +95,7 @@ fc275b024cfa528f0dc833a029e2f65f0d521941 assets/thermal/models/item/junk_net.jso
 b8a7bc4fa0355664bed9081021bb000dbdbe7aab assets/thermal/models/item/laser_diode.json
 3a95081ad502b59062d04ae743cd03c2936827c5 assets/thermal/models/item/latex_bucket.json
 111bf83f305f265a70a1de244d35eb144faf4c7f assets/thermal/models/item/lightning_charge.json
+2504f2fcf4418487bea5c512b0d20b165ebb6824 assets/thermal/models/item/lightning_tnt.json
 395dae0d11c9e5d6e3db206bfac2b72d1ba56f26 assets/thermal/models/item/light_blue_rockwool.json
 b874c8730526fb4ec9435254a5c28911b485feec assets/thermal/models/item/light_gray_rockwool.json
 a7440783ac1a757dd8a3db66abd1fd3ae5eab639 assets/thermal/models/item/light_oil_bucket.json
@@ -116,9 +122,11 @@ db030b283589432e16f0f9b45e9a44909789047c assets/thermal/models/item/netherite_nu
 915805c398359c21685d0f30b5b9c5520fce4f1c assets/thermal/models/item/niter.json
 a2c65dc481a83f4d281d93ec4e13235f92665879 assets/thermal/models/item/niter_block.json
 bd4b1986d99c12d6789e7ddeef2cc91b5f599e4c assets/thermal/models/item/niter_dust.json
+52e7c3b3325b27c5081df210df2be370628e6544 assets/thermal/models/item/nuke_tnt.json
 bc40826cc401f56ca8c6d187f20543995189b368 assets/thermal/models/item/obsidian_glass.json
 475ee6ad961648b53f5c1b1a115bde63d1305da0 assets/thermal/models/item/orange_rockwool.json
 69032d21868a8388b5508b5760922b05ddf618d9 assets/thermal/models/item/phytogro.json
+0d28dcdda28116c2549f98ba57eb85cec2bfe314 assets/thermal/models/item/phyto_tnt.json
 238df16cdbd39b41aacc1bd5c9fde06e5be5b6ed assets/thermal/models/item/pink_rockwool.json
 60e89e590d8eb03e6641379433c93b949ee4d453 assets/thermal/models/item/polished_rich_slag.json
 abb347b45d81c0d93d6422834edd60f6a82e838a assets/thermal/models/item/polished_slag.json
@@ -130,6 +138,7 @@ b6d646b5d99e294718fe99783c52f1946ead29ca assets/thermal/models/item/quartz_dust.
 2d04d46218b80e2e2a1ac8cf405451392593f7cf assets/thermal/models/item/quartz_gear.json
 97365e2a7d0b9cf28ac4fd524a9631c62551d120 assets/thermal/models/item/redstone_bucket.json
 975f9c76ec393adfec9daedfc9d60d1f4ab2ac95 assets/thermal/models/item/redstone_servo.json
+983533348013bd2e80d4309fff16fbbd302a04a7 assets/thermal/models/item/redstone_tnt.json
 d0ff0e1cd264e08c19f289714221bb74c7f797e4 assets/thermal/models/item/red_rockwool.json
 71fa1b485a53582af5fd0470171571f893ce5475 assets/thermal/models/item/refined_fuel_bucket.json
 9f84698303664d1196319b9b5c4a616f08490b20 assets/thermal/models/item/resin_bucket.json
@@ -161,6 +170,7 @@ b3b3c59c9497f0c7b1073c57643f0b2cab34ce4a assets/thermal/models/item/signalum_nug
 a180bbfd81efcc450ff7958ddf20ae6f8bb1a27c assets/thermal/models/item/slag.json
 467e92e4bda54cc6610ac4d940bf5a325d191667 assets/thermal/models/item/slag_block.json
 93113c210318db4ac323d21ce683329ce602b678 assets/thermal/models/item/slag_bricks.json
+c1fd1fa763049cb8b091483e00d18d333e635a25 assets/thermal/models/item/slime_tnt.json
 f1bc33694071402fbbde5731dc55368e03d2f924 assets/thermal/models/item/sugar_cane_block.json
 7a98f6c7874c8769dfe4a9b333213a4a73cc7616 assets/thermal/models/item/sulfur.json
 aeaae59e591a33d3d5d5fe3d7e9e5fdf700b5e69 assets/thermal/models/item/sulfur_block.json
