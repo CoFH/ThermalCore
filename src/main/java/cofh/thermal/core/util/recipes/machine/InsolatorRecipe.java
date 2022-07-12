@@ -1,6 +1,8 @@
 package cofh.thermal.core.util.recipes.machine;
 
 import cofh.lib.fluid.FluidIngredient;
+import cofh.thermal.core.ThermalCore;
+import cofh.thermal.core.util.managers.machine.InsolatorRecipeManager;
 import cofh.thermal.lib.util.recipes.MachineRecipeSerializer;
 import cofh.thermal.lib.util.recipes.ThermalRecipe;
 import com.google.gson.JsonObject;
@@ -26,6 +28,12 @@ public class InsolatorRecipe extends ThermalRecipe {
     public InsolatorRecipe(ResourceLocation recipeId, int energy, float experience, List<Ingredient> inputItems, List<FluidIngredient> inputFluids, List<ItemStack> outputItems, List<Float> outputItemChances, List<FluidStack> outputFluids) {
 
         super(recipeId, energy, experience, inputItems, inputFluids, outputItems, outputItemChances, outputFluids);
+
+        if (this.energy <= 0) {
+            int defaultEnergy = InsolatorRecipeManager.instance().getDefaultEnergy();
+            ThermalCore.LOG.warn("Energy value for " + recipeId + " was out of allowable range and has been set to a default value of " + defaultEnergy + ".");
+            this.energy = defaultEnergy;
+        }
     }
 
     @Nonnull
