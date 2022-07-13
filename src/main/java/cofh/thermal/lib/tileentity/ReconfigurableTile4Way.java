@@ -21,9 +21,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.client.model.ModelDataManager;
-import net.minecraftforge.client.model.data.IModelData;
-import net.minecraftforge.client.model.data.ModelDataMap;
+import net.minecraftforge.client.model.data.ModelData;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.items.IItemHandler;
@@ -88,11 +86,11 @@ public abstract class ReconfigurableTile4Way extends ThermalTileAugmentable impl
 
     @Nonnull
     @Override
-    public IModelData getModelData() {
+    public ModelData getModelData() {
 
-        return new ModelDataMap.Builder()
-                .withInitial(SIDES, reconfigControl().getRawSideConfig())
-                .withInitial(FLUID, renderFluid)
+        return ModelData.builder()
+                .with(SIDES, reconfigControl().getRawSideConfig())
+                .with(FLUID, renderFluid)
                 .build();
     }
 
@@ -239,7 +237,9 @@ public abstract class ReconfigurableTile4Way extends ThermalTileAugmentable impl
 
         super.onDataPacket(net, pkt);
 
-        ModelDataManager.requestModelDataRefresh(this);
+        if (level != null) {
+            level.getModelDataManager().requestRefresh(this);
+        }
     }
 
     // CONTROL
@@ -262,7 +262,9 @@ public abstract class ReconfigurableTile4Way extends ThermalTileAugmentable impl
         reconfigControl.readFromBuffer(buffer);
         transferControl.readFromBuffer(buffer);
 
-        ModelDataManager.requestModelDataRefresh(this);
+        if (level != null) {
+            level.getModelDataManager().requestRefresh(this);
+        }
     }
 
     // STATE
@@ -271,7 +273,9 @@ public abstract class ReconfigurableTile4Way extends ThermalTileAugmentable impl
 
         super.handleStatePacket(buffer);
 
-        ModelDataManager.requestModelDataRefresh(this);
+        if (level != null) {
+            level.getModelDataManager().requestRefresh(this);
+        }
     }
     // endregion
 

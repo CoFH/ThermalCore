@@ -19,8 +19,7 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.client.model.data.IModelData;
-import net.minecraftforge.client.model.data.ModelDataMap;
+import net.minecraftforge.client.model.data.ModelData;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
@@ -175,13 +174,13 @@ public class FluidCellTile extends CellTileBase implements ITickableTile.IServer
 
     @Nonnull
     @Override
-    public IModelData getModelData() {
+    public ModelData getModelData() {
 
-        return new ModelDataMap.Builder()
-                .withInitial(SIDES, reconfigControl().getRawSideConfig())
-                .withInitial(FACING, reconfigControl.getFacing())
-                .withInitial(FLUID, renderFluid)
-                .withInitial(LEVEL, levelTracker)
+        return ModelData.builder()
+                .with(SIDES, reconfigControl().getRawSideConfig())
+                .with(FACING, reconfigControl.getFacing())
+                .with(FLUID, renderFluid)
+                .with(LEVEL, levelTracker)
                 .build();
     }
 

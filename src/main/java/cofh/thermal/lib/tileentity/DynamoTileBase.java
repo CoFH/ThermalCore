@@ -19,7 +19,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.client.model.ModelDataManager;
 import net.minecraftforge.common.util.LazyOptional;
 
 import javax.annotation.Nullable;
@@ -215,7 +214,9 @@ public abstract class DynamoTileBase extends ThermalTileAugmentable implements I
 
         super.onDataPacket(net, pkt);
 
-        ModelDataManager.requestModelDataRefresh(this);
+        if (level != null) {
+            level.getModelDataManager().requestRefresh(this);
+        }
     }
 
     // CONTROL
@@ -224,7 +225,9 @@ public abstract class DynamoTileBase extends ThermalTileAugmentable implements I
 
         super.handleControlPacket(buffer);
 
-        ModelDataManager.requestModelDataRefresh(this);
+        if (level != null) {
+            level.getModelDataManager().requestRefresh(this);
+        }
     }
 
     // GUI
@@ -254,7 +257,9 @@ public abstract class DynamoTileBase extends ThermalTileAugmentable implements I
 
         super.handleStatePacket(buffer);
 
-        ModelDataManager.requestModelDataRefresh(this);
+        if (level != null) {
+            level.getModelDataManager().requestRefresh(this);
+        }
     }
     // endregion
 

@@ -107,7 +107,7 @@ public class SatchelItem extends InventoryContainerItemAugmentable implements IC
     public static boolean onItemPickup(EntityItemPickupEvent event, ItemStack container) {
 
         SatchelItem satchelItem = (SatchelItem) container.getItem();
-        if (satchelItem.getMode(container) <= 0 || !satchelItem.canPlayerAccess(container, event.getPlayer())) {
+        if (satchelItem.getMode(container) <= 0 || !satchelItem.canPlayerAccess(container, event.getEntity())) {
             return false;
         }
         ItemEntity eventItem = event.getItem();
@@ -119,7 +119,7 @@ public class SatchelItem extends InventoryContainerItemAugmentable implements IC
 
             if (eventItem.getItem().getCount() != count) {
                 container.setPopTime(5);
-                Player player = event.getPlayer();
+                Player player = event.getEntity();
                 player.level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.ITEM_PICKUP, SoundSource.PLAYERS, 0.2F, ((MathHelper.RANDOM.nextFloat() - MathHelper.RANDOM.nextFloat()) * 0.7F + 1.0F) * 2.0F);
                 containerInv.write(satchelItem.getOrCreateInvTag(container));
                 satchelItem.onContainerInventoryChanged(container);
@@ -143,12 +143,12 @@ public class SatchelItem extends InventoryContainerItemAugmentable implements IC
             }
             if (player.isSecondaryUseActive()) {
                 if (FilterHelper.hasFilter(stack)) {
-                    NetworkHooks.openGui((ServerPlayer) player, getFilter(stack));
+                    NetworkHooks.openScreen((ServerPlayer) player, getFilter(stack));
                     return true;
                 }
                 return false;
             }
-            NetworkHooks.openGui((ServerPlayer) player, this);
+            NetworkHooks.openScreen((ServerPlayer) player, this);
         }
         return true;
     }

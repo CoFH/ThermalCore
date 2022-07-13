@@ -49,9 +49,9 @@ public class FluidContainerItemAugmentable extends FluidContainerItem implements
     }
 
     @Override
-    public int getItemEnchantability(ItemStack stack) {
+    public int getEnchantmentValue(ItemStack stack) {
 
-        return Math.round(super.getItemEnchantability(stack) * getBaseMod(stack));
+        return Math.round(super.getEnchantmentValue(stack) * getBaseMod(stack));
     }
 
     protected float getBaseMod(ItemStack stack) {

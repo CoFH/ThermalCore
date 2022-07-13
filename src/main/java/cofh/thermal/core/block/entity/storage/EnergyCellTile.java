@@ -18,8 +18,7 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.client.model.data.IModelData;
-import net.minecraftforge.client.model.data.ModelDataMap;
+import net.minecraftforge.client.model.data.ModelData;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.energy.IEnergyStorage;
 
@@ -176,12 +175,12 @@ public class EnergyCellTile extends CellTileBase implements ITickableTile.IServe
 
     @Nonnull
     @Override
-    public IModelData getModelData() {
+    public ModelData getModelData() {
 
-        return new ModelDataMap.Builder()
-                .withInitial(SIDES, reconfigControl().getRawSideConfig())
-                .withInitial(FACING, reconfigControl.getFacing())
-                .withInitial(LEVEL, levelTracker)
+        return ModelData.builder()
+                .with(SIDES, reconfigControl().getRawSideConfig())
+                .with(FACING, reconfigControl.getFacing())
+                .with(LEVEL, levelTracker)
                 .build();
     }
 

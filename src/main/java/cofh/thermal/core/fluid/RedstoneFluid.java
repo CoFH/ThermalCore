@@ -8,7 +8,7 @@ import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Rarity;
-import net.minecraftforge.client.IFluidTypeRenderProperties;
+import net.minecraftforge.client.extensions.common.IClientFluidTypeExtensions;
 import net.minecraftforge.common.SoundActions;
 import net.minecraftforge.fluids.FluidType;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
@@ -60,9 +60,9 @@ public class RedstoneFluid extends FluidCoFH {
             .sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_EMPTY)) {
 
         @Override
-        public void initializeClient(Consumer<IFluidTypeRenderProperties> consumer) {
+        public void initializeClient(Consumer<IClientFluidTypeExtensions> consumer) {
 
-            consumer.accept(new IFluidTypeRenderProperties() {
+            consumer.accept(new IClientFluidTypeExtensions() {
 
                 private static final ResourceLocation
                         STILL = new ResourceLocation("thermal:block/fluids/redstone_still"),

@@ -819,7 +819,7 @@ public abstract class ThermalTileAugmentable extends TileCoFH implements ISecura
     public boolean openGui(ServerPlayer player, int guiId) {
 
         if (canOpenGui()) {
-            NetworkHooks.openGui(player, this, worldPosition);
+            NetworkHooks.openScreen(player, this, worldPosition);
             return true;
         }
         return false;
@@ -829,7 +829,7 @@ public abstract class ThermalTileAugmentable extends TileCoFH implements ISecura
     public boolean openFilterGui(ServerPlayer player, int filterId) {
 
         if (FilterHelper.hasFilter(this, 0)) {
-            NetworkHooks.openGui(player, getFilter(filterId), worldPosition);
+            NetworkHooks.openScreen(player, getFilter(filterId), worldPosition);
             return true;
         }
         return false;

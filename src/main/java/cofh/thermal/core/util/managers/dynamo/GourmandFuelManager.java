@@ -68,7 +68,7 @@ public class GourmandFuelManager extends SingleItemFuelManager {
         if (stack.isEmpty()) {
             return 0;
         }
-        if (stack.getItem().hasContainerItem(stack)) {
+        if (stack.getItem().hasCraftingRemainingItem(stack)) {
             return 0;
         }
         FoodProperties food = stack.getItem().getFoodProperties();

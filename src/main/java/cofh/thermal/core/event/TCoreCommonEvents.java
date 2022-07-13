@@ -32,7 +32,7 @@ public class TCoreCommonEvents {
         if (event.isCanceled()) {
             return;
         }
-        Player player = event.getPlayer();
+        Player player = event.getEntity();
         if (player.isEyeInFluid(FluidTags.WATER)) {
             boolean diveChest = player.getItemBySlot(EquipmentSlot.CHEST).getItem() instanceof DivingArmorItem;
             if (!EnchantmentHelper.hasAquaAffinity(player) && diveChest) {
@@ -56,7 +56,7 @@ public class TCoreCommonEvents {
         if (event.isCanceled()) {
             return;
         }
-        Player player = event.getPlayer();
+        Player player = event.getEntity();
         if (player.containerMenu instanceof SatchelContainer || player.containerMenu instanceof IFilterOptions) {
             return;
         }

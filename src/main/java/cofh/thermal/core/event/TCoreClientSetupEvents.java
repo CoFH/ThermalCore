@@ -2,11 +2,9 @@ package cofh.thermal.core.event;
 
 import cofh.core.client.model.SimpleModel;
 import cofh.thermal.core.client.renderer.model.*;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.event.ColorHandlerEvent;
-import net.minecraftforge.client.event.ModelRegistryEvent;
-import net.minecraftforge.client.model.ModelLoaderRegistry;
+import net.minecraftforge.client.event.ModelEvent.RegisterGeometryLoaders;
+import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -20,7 +18,7 @@ public class TCoreClientSetupEvents {
     }
 
     @SubscribeEvent
-    public static void colorSetupBlock(final ColorHandlerEvent.Block event) {
+    public static void colorSetupBlock(final RegisterColorHandlersEvent.Block event) {
 
         // BlockColors colors = event.getBlockColors();
 
@@ -28,14 +26,14 @@ public class TCoreClientSetupEvents {
     }
 
     @SubscribeEvent
-    public static void registerModels(final ModelRegistryEvent event) {
+    public static void registerModels(final RegisterGeometryLoaders event) {
 
-        ModelLoaderRegistry.registerLoader(new ResourceLocation(ID_THERMAL, "underlay"), new SimpleModel.Loader(UnderlayBakedModel::new));
-        ModelLoaderRegistry.registerLoader(new ResourceLocation(ID_THERMAL, "dynamo"), new SimpleModel.Loader(DynamoBakedModel::new));
-        ModelLoaderRegistry.registerLoader(new ResourceLocation(ID_THERMAL, "reconfigurable"), new SimpleModel.Loader(ReconfigurableBakedModel::new));
-        ModelLoaderRegistry.registerLoader(new ResourceLocation(ID_THERMAL, "energy_cell"), new SimpleModel.Loader(EnergyCellBakedModel::new));
-        ModelLoaderRegistry.registerLoader(new ResourceLocation(ID_THERMAL, "fluid_cell"), new SimpleModel.Loader(FluidCellBakedModel::new));
-        ModelLoaderRegistry.registerLoader(new ResourceLocation(ID_THERMAL, "item_cell"), new SimpleModel.Loader(ItemCellBakedModel::new));
+        event.register("underlay", new SimpleModel.Loader(UnderlayBakedModel::new));
+        event.register("dynamo", new SimpleModel.Loader(DynamoBakedModel::new));
+        event.register("reconfigurable", new SimpleModel.Loader(ReconfigurableBakedModel::new));
+        event.register("energy_cell", new SimpleModel.Loader(EnergyCellBakedModel::new));
+        event.register("fluid_cell", new SimpleModel.Loader(FluidCellBakedModel::new));
+        event.register("item_cell", new SimpleModel.Loader(ItemCellBakedModel::new));
     }
 
 }

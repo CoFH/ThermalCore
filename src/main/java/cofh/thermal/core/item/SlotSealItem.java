@@ -17,13 +17,13 @@ public class SlotSealItem extends ItemCoFH {
     }
 
     @Override
-    public ItemStack getContainerItem(ItemStack stack) {
+    public ItemStack getCraftingRemainingItem(ItemStack stack) {
 
         return new ItemStack(this);
     }
 
     @Override
-    public boolean hasContainerItem(ItemStack stack) {
+    public boolean hasCraftingRemainingItem(ItemStack stack) {
 
         return true;
     }

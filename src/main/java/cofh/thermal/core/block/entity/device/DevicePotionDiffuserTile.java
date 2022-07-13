@@ -30,9 +30,7 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.phys.AABB;
-import net.minecraftforge.client.model.ModelDataManager;
-import net.minecraftforge.client.model.data.IModelData;
-import net.minecraftforge.client.model.data.ModelDataMap;
+import net.minecraftforge.client.model.data.ModelData;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -136,10 +134,10 @@ public class DevicePotionDiffuserTile extends DeviceTileBase implements ITickabl
 
     @Nonnull
     @Override
-    public IModelData getModelData() {
+    public ModelData getModelData() {
 
-        return new ModelDataMap.Builder()
-                .withInitial(FLUID, renderFluid)
+        return ModelData.builder()
+                .with(FLUID, renderFluid)
                 .build();
     }
 
@@ -164,7 +162,9 @@ public class DevicePotionDiffuserTile extends DeviceTileBase implements ITickabl
 
         super.onDataPacket(net, pkt);
 
-        ModelDataManager.requestModelDataRefresh(this);
+        if (level != null) {
+            level.getModelDataManager().requestRefresh(this);
+        }
     }
 
     // CONTROL
@@ -173,7 +173,9 @@ public class DevicePotionDiffuserTile extends DeviceTileBase implements ITickabl
 
         super.handleControlPacket(buffer);
 
-        ModelDataManager.requestModelDataRefresh(this);
+        if (level != null) {
+            level.getModelDataManager().requestRefresh(this);
+        }
     }
 
     // GUI
@@ -221,7 +223,9 @@ public class DevicePotionDiffuserTile extends DeviceTileBase implements ITickabl
         process = buffer.readInt();
         instant = buffer.readBoolean();
 
-        ModelDataManager.requestModelDataRefresh(this);
+        if (level != null) {
+            level.getModelDataManager().requestRefresh(this);
+        }
     }
     // endregion
 

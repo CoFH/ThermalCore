@@ -24,9 +24,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.Material;
-import net.minecraftforge.client.model.ModelDataManager;
-import net.minecraftforge.client.model.data.IModelData;
-import net.minecraftforge.client.model.data.ModelDataMap;
+import net.minecraftforge.client.model.data.ModelData;
 import net.minecraftforge.fluids.FluidStack;
 
 import javax.annotation.Nonnull;
@@ -233,10 +231,10 @@ public class DeviceTreeExtractorTile extends DeviceTileBase implements ITickable
 
     @Nonnull
     @Override
-    public IModelData getModelData() {
+    public ModelData getModelData() {
 
-        return new ModelDataMap.Builder()
-                .withInitial(FLUID, renderFluid)
+        return ModelData.builder()
+                .with(FLUID, renderFluid)
                 .build();
     }
 
@@ -261,7 +259,9 @@ public class DeviceTreeExtractorTile extends DeviceTileBase implements ITickable
 
         super.onDataPacket(net, pkt);
 
-        ModelDataManager.requestModelDataRefresh(this);
+        if (level != null) {
+            level.getModelDataManager().requestRefresh(this);
+        }
     }
 
     // CONTROL
@@ -270,7 +270,9 @@ public class DeviceTreeExtractorTile extends DeviceTileBase implements ITickable
 
         super.handleControlPacket(buffer);
 
-        ModelDataManager.requestModelDataRefresh(this);
+        if (level != null) {
+            level.getModelDataManager().requestRefresh(this);
+        }
     }
 
     // GUI
@@ -314,7 +316,9 @@ public class DeviceTreeExtractorTile extends DeviceTileBase implements ITickable
 
         process = buffer.readInt();
 
-        ModelDataManager.requestModelDataRefresh(this);
+        if (level != null) {
+            level.getModelDataManager().requestRefresh(this);
+        }
     }
     // endregion
 
