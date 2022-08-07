@@ -6,7 +6,7 @@ license = "CoFH - Don't Be A Jerk (Learn, Don't Steal)"
 [[mods]]
 modId = "thermal"
 version = "${file.jarVersion}"
-displayName = "Thermal Series"
+displayName = "Thermal Core"
 updateJSONURL = "https://raw.github.com/cofh/version/master/thermal/update.json"
 displayURL = "https://teamcofh.com/"
 logoFile = "thermal_series.png"
@@ -28,7 +28,7 @@ side = "BOTH"
 [[dependencies.thermal]]
 modId = "forge"
 mandatory = true
-versionRange = "[41.0.43,)"
+versionRange = "[41.1.0,)"
 ordering = "AFTER"
 side = "BOTH"
 
