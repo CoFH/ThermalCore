@@ -5,6 +5,7 @@ import cofh.core.item.ItemCoFH;
 import cofh.core.item.SpawnEggItemCoFH;
 import cofh.core.util.filter.FilterRegistry;
 import cofh.core.util.helpers.AugmentDataHelper;
+import cofh.lib.block.TntBlockCoFH;
 import cofh.lib.item.ArmorMaterialCoFH;
 import cofh.thermal.core.item.*;
 import cofh.thermal.lib.item.AugmentItem;
@@ -24,6 +25,7 @@ import net.minecraftforge.energy.IEnergyStorage;
 
 import static cofh.lib.util.Constants.FALSE;
 import static cofh.lib.util.constants.NBTTags.*;
+import static cofh.thermal.core.ThermalCore.BLOCKS;
 import static cofh.thermal.core.ThermalCore.ITEMS;
 import static cofh.thermal.core.init.TCoreEntities.*;
 import static cofh.thermal.core.util.RegistrationHelper.*;
@@ -55,6 +57,19 @@ public class TCoreItems {
 
         DetonatorItem.registerTNT(Blocks.TNT, PrimedTnt::new);
 
+        DetonatorItem.registerTNT(BLOCKS.get(ID_SLIME_TNT), ((TntBlockCoFH) (BLOCKS.get(ID_SLIME_TNT))).getFactory());
+        DetonatorItem.registerTNT(BLOCKS.get(ID_REDSTONE_TNT), ((TntBlockCoFH) (BLOCKS.get(ID_REDSTONE_TNT))).getFactory());
+        DetonatorItem.registerTNT(BLOCKS.get(ID_GLOWSTONE_TNT), ((TntBlockCoFH) (BLOCKS.get(ID_GLOWSTONE_TNT))).getFactory());
+        DetonatorItem.registerTNT(BLOCKS.get(ID_ENDER_TNT), ((TntBlockCoFH) (BLOCKS.get(ID_ENDER_TNT))).getFactory());
+
+        DetonatorItem.registerTNT(BLOCKS.get(ID_FIRE_TNT), ((TntBlockCoFH) (BLOCKS.get(ID_FIRE_TNT))).getFactory());
+        DetonatorItem.registerTNT(BLOCKS.get(ID_EARTH_TNT), ((TntBlockCoFH) (BLOCKS.get(ID_EARTH_TNT))).getFactory());
+        DetonatorItem.registerTNT(BLOCKS.get(ID_ICE_TNT), ((TntBlockCoFH) (BLOCKS.get(ID_ICE_TNT))).getFactory());
+        DetonatorItem.registerTNT(BLOCKS.get(ID_LIGHTNING_TNT), ((TntBlockCoFH) (BLOCKS.get(ID_LIGHTNING_TNT))).getFactory());
+
+        DetonatorItem.registerTNT(BLOCKS.get(ID_PHYTO_TNT), ((TntBlockCoFH) (BLOCKS.get(ID_PHYTO_TNT))).getFactory());
+        DetonatorItem.registerTNT(BLOCKS.get(ID_NUKE_TNT), ((TntBlockCoFH) (BLOCKS.get(ID_NUKE_TNT))).getFactory());
+
         ((DivingArmorItem) ITEMS.get(ID_DIVING_HELMET)).setup();
         ((DivingArmorItem) ITEMS.get(ID_DIVING_CHESTPLATE)).setup();
         ((DivingArmorItem) ITEMS.get(ID_DIVING_LEGGINGS)).setup();
@@ -76,6 +91,7 @@ public class TCoreItems {
         flagUniqueAugment(ITEMS.get("fluid_tank_augment"));
         flagUniqueAugment(ITEMS.get("fluid_tank_creative_augment"));
 
+        flagUniqueAugment(ITEMS.get("fluid_filter_augment"));
         flagUniqueAugment(ITEMS.get("item_filter_augment"));
 
         flagUniqueAugment(ITEMS.get("machine_efficiency_creative_augment"));
