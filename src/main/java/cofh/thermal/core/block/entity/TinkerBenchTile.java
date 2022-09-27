@@ -1,5 +1,6 @@
 package cofh.thermal.core.block.entity;
 
+import cofh.core.fluid.PotionFluid;
 import cofh.core.util.filter.EmptyFilter;
 import cofh.core.util.filter.IFilter;
 import cofh.core.util.helpers.AugmentDataHelper;
@@ -32,8 +33,7 @@ import java.util.function.Predicate;
 
 import static cofh.lib.api.StorageGroup.INPUT;
 import static cofh.lib.api.StorageGroup.INTERNAL;
-import static cofh.lib.util.Constants.BUCKET_VOLUME;
-import static cofh.lib.util.Constants.TANK_MEDIUM;
+import static cofh.lib.util.Constants.*;
 import static cofh.lib.util.constants.NBTTags.*;
 import static cofh.thermal.core.config.ThermalCoreConfig.storageAugments;
 import static cofh.thermal.core.init.TCoreTileEntities.TINKER_BENCH_TILE;
@@ -124,12 +124,11 @@ public class TinkerBenchTile extends ThermalTileAugmentable implements ITickable
         if (!tankSlot.isEmpty()) {
             ItemStack tankStack = tankSlot.getItemStack();
             if (tankStack.getItem() == Items.POTION) {
-                // TODO: FIXME
-                //                FluidStack potion = PotionFluid.getPotionFluidFromItem(BOTTLE_VOLUME, tankStack);
-                //                if (tank.fill(potion, SIMULATE) == BOTTLE_VOLUME) {
-                //                    tank.fill(potion, EXECUTE);
-                //                    tankSlot.setItemStack(new ItemStack(Items.GLASS_BOTTLE));
-                //                }
+                FluidStack potion = PotionFluid.getPotionFluidFromItem(BOTTLE_VOLUME, tankStack);
+                if (tank.fill(potion, SIMULATE) == BOTTLE_VOLUME) {
+                    tank.fill(potion, EXECUTE);
+                    tankSlot.setItemStack(new ItemStack(Items.GLASS_BOTTLE));
+                }
             } else {
                 tankStack.getCapability(CapabilityFluidHandler.FLUID_HANDLER_ITEM_CAPABILITY, null).ifPresent(c -> {
                     int toFill = tank.fill(new FluidStack(c.getFluidInTank(0), BUCKET_VOLUME), SIMULATE);

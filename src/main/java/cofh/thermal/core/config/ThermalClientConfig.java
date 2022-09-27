@@ -5,8 +5,6 @@ import net.minecraftforge.common.ForgeConfigSpec;
 
 import java.util.function.Supplier;
 
-import static cofh.lib.util.Constants.TRUE_SUP;
-
 public class ThermalClientConfig implements IBaseConfig {
 
     @Override
@@ -26,9 +24,9 @@ public class ThermalClientConfig implements IBaseConfig {
     }
 
     // region VARIABLES
-    public static Supplier<Boolean> jeiBucketTanks = TRUE_SUP;
+    public static Supplier<Boolean> jeiBucketTanks = () -> true;
 
-    public static Supplier<Boolean> blockAmbientSounds = TRUE_SUP;
-    public static Supplier<Boolean> mobAmbientSounds = TRUE_SUP;
+    public static Supplier<Boolean> blockAmbientSounds = () -> true;
+    public static Supplier<Boolean> mobAmbientSounds = () -> true;
     // endregion
 }
