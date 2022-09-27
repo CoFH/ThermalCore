@@ -699,7 +699,7 @@ public abstract class ThermalTileAugmentable extends TileCoFH implements ISecura
         }
 
         CompoundTag filterNBT = filter.write(new CompoundTag());
-        filter = FilterRegistry.getTileFilter(getAttributeModString(augmentNBT, TAG_FILTER_TYPE), this, filterNBT);
+        filter = FilterRegistry.getTileFilter(getAttributeModString(augmentNBT, TAG_FILTER_TYPE), filterNBT, this, (byte) 0);
     }
 
     protected boolean defaultReconfigState() {
@@ -828,8 +828,8 @@ public abstract class ThermalTileAugmentable extends TileCoFH implements ISecura
     @Override
     public boolean openFilterGui(ServerPlayer player, int filterId) {
 
-        if (FilterHelper.hasFilter(this, 0)) {
-            NetworkHooks.openScreen(player, getFilter(filterId), worldPosition);
+        if (FilterHelper.hasFilter(this, filterId)) {
+            FilterHelper.openTileScreen(player, getFilter(filterId), worldPosition, filterId);
             return true;
         }
         return false;

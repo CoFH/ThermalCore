@@ -7,7 +7,7 @@
   "advancements.thermal.root.description": "O início de um mundo termicamente expandido!",
   "advancements.thermal.wrench.title": "Parece uma chave inglesa",
   "advancements.thermal.wrench.description": "Crie um Martelo Crescente.",
-  
+
   "block.thermal.apatite_ore": "Minério de Apatita",
   "block.thermal.cinnabar_ore": "Minério de Cinabre",
   "block.thermal.niter_ore": "Minério de Nitrato de Sódio",
@@ -72,7 +72,7 @@
   "block.thermal.green_rockwool": "Lã de Rocha Verde",
   "block.thermal.red_rockwool": "Lã de Rocha Vermelha",
   "block.thermal.black_rockwool": "Lã de Rocha Preta",
-  
+
   "block.thermal.chiseled_rich_slag": "Escória Rica Cinzelado",
   "block.thermal.chiseled_slag": "Escória Cinzelado",
   "block.thermal.cracked_rich_slag_bricks": "Tijolos de escória rica rachado",
@@ -136,7 +136,7 @@
 
   "info.thermal.lock.use": "Use em um bloco compatível para protegê-lo.",
   "info.thermal.lock.use.sneak": "Use a mão secundaria enquanto se esgueirando para proteger um item compatível.",
-  
+
   "info.thermal.redprint.contents": "Conteúdo:",
   "info.thermal.redprint.unknown": "Dado Desconhecido",
   "info.thermal.redprint.data.RSControl": "Controle de Redstone",
@@ -145,7 +145,7 @@
   "info.thermal.redprint.use": "Use em um bloco para copiar suas configurações.",
   "info.thermal.redprint.use.contents": "Use em um bloco para aplicar as configurações.",
   "info.thermal.redprint.use.sneak": "Use enquanto esgueira para limpar.",
-  
+
   "info.thermal.satchel.0": "Armazena e coleta itens. Pode ser protegido.",
   "info.thermal.satchel.1": "Se um filtro estiver instalado, use enquanto se esgueirando para configurar.",
   "info.thermal.satchel.2": "As configurações de filtro se aplicam apenas ao armazenamento automático.",
@@ -161,7 +161,7 @@
   "info.thermal.xp_crystal.mode.1": "Auto-Coletar Ativado",
   "info.thermal.xp_crystal.use": "Use para transferir experiência para o cristal.",
   "info.thermal.xp_crystal.use.sneak": "Use para estornar a experiência guardada.",
-  
+
   "itemGroup.thermal.blocks": "Thermal Series: Blocos",
   "itemGroup.thermal.devices": "Thermal Series: Maquinário",
   "itemGroup.thermal.foods": "Thermal Series: Colheitas e Alimentos",
@@ -423,7 +423,7 @@
   "item.thermal.fluid_filter_augment.desc": "Permite restrição de fluidos.",
   "item.thermal.item_filter_augment": "Filtro de Item",
   "item.thermal.item_filter_augment.desc": "Permite a restrição de itens.",
-  
+
   "item.thermal.machine_catalyst_augment": "Camara de Cultivo Catalistico",
   "item.thermal.machine_catalyst_creative_augment": "Câmara de Recuperação Criativa",
   "item.thermal.machine_catalyst_creative_augment.desc": "Nenhum catalisador usado.",
@@ -523,11 +523,11 @@
   "info.thermal.device_fisher.0": "Captura diversos tipos de vida aquática. Use isca para aumentar a produção e ajustar o que é capturado.",
   "info.thermal.device_fisher.1": "Deve ser colocado em um corpo de água.",
   "info.thermal.device_fisher.2": "Pendure sua vara de pescar.",
-  
+
   "info.thermal.device_hive_extractor.0": "Cuidadosamente extrai produtos das Coméias.",
   "info.thermal.device_hive_extractor.1": "Igualmente bom para abelhas e apicultores!",
   "info.thermal.device_hive_extractor.2": "ZZZZZZ...",
-  
+
   "info.thermal.device_nullifier.0": "Destrói qualquer coisa colocada nele.",
   "info.thermal.device_nullifier.1": "Itens e fluidos inseridos com automação são destruídos instantaneamente.",
   "info.thermal.device_nullifier.2": "Os itens inseridos manualmente devem ser destruídos com o botão.",
@@ -800,7 +800,7 @@
   "item.thermal.redstone_mushroom_spores": "Esporos de Fluxtooth",
   "item.thermal.slime_mushroom": "Cogumelo Slitake",
   "item.thermal.slime_mushroom_spores": "Esporos de Slitake",
-  
+
   "item.thermal.watering_can": "Regador",
   "item.thermal.watering_can.desc": "Melhora o crescimento da planta com água.",
 
@@ -944,7 +944,7 @@
   "item.thermal.chiller_ball_cast": "Molde de Bola",
   "item.thermal.chiller_ingot_cast": "Molde de Barra",
   "item.thermal.chiller_rod_cast": "Molde de Vara",
-  
+
   "item.thermal.press_coin_die": "Molde Numismático",
   "item.thermal.press_gear_die": "Molde Engenhoso",
   "item.thermal.press_packing_2x2_die": "Molde Empacotador (2x2)",
