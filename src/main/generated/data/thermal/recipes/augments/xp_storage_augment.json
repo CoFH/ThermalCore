@@ -1,11 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "conditions": [
-    {
-      "type": "thermal:flag",
-      "flag": "xp_storage_augment"
-    }
-  ],
   "key": {
     "C": {
       "item": "thermal:xp_crystal"

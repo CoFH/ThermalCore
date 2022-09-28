@@ -1,11 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "conditions": [
-    {
-      "type": "thermal:flag",
-      "flag": "side_config_augment"
-    }
-  ],
   "key": {
     "G": {
       "tag": "forge:ingots/gold"

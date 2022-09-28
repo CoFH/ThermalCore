@@ -217,7 +217,7 @@ public abstract class ThermalTileAugmentable extends TileCoFH implements ISecura
                 Containers.dropItemStack(worldIn, pos.getX(), pos.getY(), pos.getZ(), inventory.getStackInSlot(i));
             }
         }
-        if (!ThermalCoreConfig.keepAugments) {
+        if (!ThermalCoreConfig.keepAugments.get()) {
             for (int i = invSize() - augSize(); i < invSize(); ++i) {
                 Utils.dropItemStackIntoWorldWithRandomness(inventory.getStackInSlot(i), worldIn, pos);
             }
@@ -237,7 +237,7 @@ public abstract class ThermalTileAugmentable extends TileCoFH implements ISecura
         if (keepItems()) {
             getItemInv().writeSlotsToNBT(nbt, 0, invSize() - augSize());
         }
-        if (ThermalCoreConfig.keepAugments && augSize() > 0) {
+        if (ThermalCoreConfig.keepAugments.get() && augSize() > 0) {
             getItemInv().writeSlotsToNBTUnordered(nbt, TAG_AUGMENTS, invSize() - augSize());
             if (stack.getItem() instanceof IAugmentableItem) {
                 List<ItemStack> items = getAugmentsAsList();
@@ -249,13 +249,13 @@ public abstract class ThermalTileAugmentable extends TileCoFH implements ISecura
         }
         // TODO: Keep XP?
 
-        if (ThermalCoreConfig.keepRSControl && redstoneControlFeature) {
+        if (ThermalCoreConfig.keepRSControl.get() && redstoneControlFeature) {
             redstoneControl().writeSettings(nbt);
         }
-        if (ThermalCoreConfig.keepSideConfig && this instanceof IReconfigurableTile) {
+        if (ThermalCoreConfig.keepSideConfig.get() && this instanceof IReconfigurableTile) {
             ((IReconfigurableTile) this).reconfigControl().writeSettings(nbt);
         }
-        if (ThermalCoreConfig.keepTransferControl && this instanceof ITransferControllableTile) {
+        if (ThermalCoreConfig.keepTransferControl.get() && this instanceof ITransferControllableTile) {
             ((ITransferControllableTile) this).transferControl().writeSettings(nbt);
         }
         if (hasSecurity()) {
@@ -302,17 +302,17 @@ public abstract class ThermalTileAugmentable extends TileCoFH implements ISecura
 
     protected boolean keepEnergy() {
 
-        return ThermalCoreConfig.keepEnergy;
+        return ThermalCoreConfig.keepEnergy.get();
     }
 
     protected boolean keepFluids() {
 
-        return ThermalCoreConfig.keepFluids;
+        return ThermalCoreConfig.keepFluids.get();
     }
 
     protected boolean keepItems() {
 
-        return ThermalCoreConfig.keepItems;
+        return ThermalCoreConfig.keepItems.get();
     }
     // endregion
 
@@ -576,8 +576,8 @@ public abstract class ThermalTileAugmentable extends TileCoFH implements ISecura
     // endregion
 
     // region AUGMENTS
-    protected boolean redstoneControlFeature = ThermalCoreConfig.defaultRSControl;
-    protected boolean xpStorageFeature = ThermalCoreConfig.defaultXPStorage;
+    protected boolean redstoneControlFeature = defaultRedstoneControlState();
+    protected boolean xpStorageFeature = defaultXpStorageState();
 
     protected boolean creativeEnergy = false;
     protected boolean creativeTanks = false;
@@ -704,17 +704,17 @@ public abstract class ThermalTileAugmentable extends TileCoFH implements ISecura
 
     protected boolean defaultReconfigState() {
 
-        return ThermalCoreConfig.defaultReconfigSides;
+        return ThermalCoreConfig.defaultReconfigSides.get();
     }
 
     protected boolean defaultRedstoneControlState() {
 
-        return ThermalCoreConfig.defaultRSControl;
+        return ThermalCoreConfig.defaultRSControl.get();
     }
 
     protected boolean defaultXpStorageState() {
 
-        return ThermalCoreConfig.defaultXPStorage;
+        return ThermalCoreConfig.defaultXPStorage.get();
     }
 
     protected float getHoldingMod(Map<Enchantment, Integer> enchantmentMap) {

@@ -1,11 +1,5 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "conditions": [
-    {
-      "type": "thermal:flag",
-      "flag": "vanilla_blocks"
-    }
-  ],
   "ingredients": [
     {
       "item": "thermal:potato_block"

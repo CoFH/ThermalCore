@@ -1,11 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "conditions": [
-    {
-      "type": "thermal:flag",
-      "flag": "detonator"
-    }
-  ],
   "key": {
     "G": {
       "tag": "forge:gears/signalum"

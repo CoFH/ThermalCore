@@ -1,11 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "conditions": [
-    {
-      "type": "thermal:flag",
-      "flag": "rf_potato"
-    }
-  ],
   "key": {
     "D": {
       "tag": "forge:dusts/redstone"

@@ -9,6 +9,7 @@ import cofh.lib.block.CropBlockPerennial;
 import cofh.lib.block.CropBlockTall;
 import cofh.lib.block.TntBlockCoFH;
 import cofh.lib.entity.PrimedTntCoFH;
+import cofh.lib.util.constants.ModIds;
 import cofh.thermal.core.entity.explosive.DetonateUtils;
 import cofh.thermal.core.entity.explosive.Grenade;
 import cofh.thermal.core.entity.explosive.ThermalTNTEntity;
@@ -56,6 +57,11 @@ public class RegistrationHelper {
     public static void registerBlock(String name, Supplier<Block> sup, BooleanSupplier showInGroups) {
 
         registerBlock(name, sup, showInGroups, ID_THERMAL);
+    }
+
+    public static void registerBlock(String name, Supplier<Block> sup, CreativeModeTab group) {
+
+        registerBlock(name, sup, group, TRUE, ModIds.ID_THERMAL);
     }
 
     public static void registerBlock(String name, Supplier<Block> sup, CreativeModeTab group, BooleanSupplier showInGroups) {

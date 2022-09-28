@@ -1,11 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "conditions": [
-    {
-      "type": "thermal:flag",
-      "flag": "rs_control_augment"
-    }
-  ],
   "key": {
     "i": {
       "tag": "forge:nuggets/iron"

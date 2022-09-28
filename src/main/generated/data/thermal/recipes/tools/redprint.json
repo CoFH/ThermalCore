@@ -1,11 +1,5 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "conditions": [
-    {
-      "type": "thermal:flag",
-      "flag": "redprint"
-    }
-  ],
   "ingredients": [
     {
       "item": "minecraft:paper"

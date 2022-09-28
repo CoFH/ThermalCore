@@ -1,11 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "conditions": [
-    {
-      "type": "thermal:flag",
-      "flag": "lock"
-    }
-  ],
   "key": {
     "S": {
       "tag": "forge:ingots/signalum"

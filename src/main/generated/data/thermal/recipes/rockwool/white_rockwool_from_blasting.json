@@ -1,11 +1,5 @@
 {
   "type": "minecraft:blasting",
-  "conditions": [
-    {
-      "type": "thermal:flag",
-      "flag": "rockwool"
-    }
-  ],
   "cookingtime": 100,
   "experience": 0.1,
   "ingredient": {

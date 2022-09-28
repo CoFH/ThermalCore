@@ -1,11 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "conditions": [
-    {
-      "type": "thermal:flag",
-      "flag": "wrench"
-    }
-  ],
   "key": {
     "G": {
       "tag": "forge:gears/iron"

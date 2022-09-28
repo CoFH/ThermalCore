@@ -1,11 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "conditions": [
-    {
-      "type": "thermal:flag",
-      "flag": "xp_crystal"
-    }
-  ],
   "key": {
     "B": {
       "item": "minecraft:experience_bottle"

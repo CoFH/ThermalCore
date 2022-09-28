@@ -1,11 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "conditions": [
-    {
-      "type": "thermal:flag",
-      "flag": "satchel"
-    }
-  ],
   "key": {
     "I": {
       "tag": "forge:ingots/tin"
