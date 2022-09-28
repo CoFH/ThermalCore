@@ -22,6 +22,7 @@ public class TCoreDataGen {
         gen.addProvider(event.includeServer(), blockTags);
         gen.addProvider(event.includeServer(), new TCoreTagsProvider.Item(gen, blockTags, exFileHelper));
         gen.addProvider(event.includeServer(), new TCoreTagsProvider.Fluid(gen, exFileHelper));
+        gen.addProvider(event.includeServer(), new TCoreTagsProvider.Entity(gen, exFileHelper));
 
         // gen.addProvider(event.includeServer(), new TCoreAdvancementProvider(gen));
         gen.addProvider(event.includeServer(), new TCoreLootTableProvider(gen));
