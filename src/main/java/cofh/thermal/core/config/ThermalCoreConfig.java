@@ -13,6 +13,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.function.Supplier;
 
+import static cofh.lib.util.Constants.FALSE;
+import static cofh.lib.util.Constants.TRUE;
 import static cofh.lib.util.Utils.getRegistryName;
 import static cofh.lib.util.constants.ModIds.ID_THERMAL;
 import static cofh.thermal.lib.common.ThermalFlags.*;
@@ -158,29 +160,29 @@ public class ThermalCoreConfig implements IBaseConfig {
     // endregion
 
     // region CONFIG VARIABLES
-    public static Supplier<Boolean> keepEnergy = () -> true;
-    public static Supplier<Boolean> keepItems = () -> false;
-    public static Supplier<Boolean> keepFluids = () -> false;
-    public static Supplier<Boolean> keepAugments = () -> true;
-    public static Supplier<Boolean> keepRSControl = () -> true;
-    public static Supplier<Boolean> keepSideConfig = () -> true;
-    public static Supplier<Boolean> keepTransferControl = () -> true;
+    public static Supplier<Boolean> keepEnergy = TRUE;
+    public static Supplier<Boolean> keepItems = FALSE;
+    public static Supplier<Boolean> keepFluids = FALSE;
+    public static Supplier<Boolean> keepAugments = TRUE;
+    public static Supplier<Boolean> keepRSControl = TRUE;
+    public static Supplier<Boolean> keepSideConfig = TRUE;
+    public static Supplier<Boolean> keepTransferControl = TRUE;
 
-    public static Supplier<Boolean> defaultReconfigSides = () -> true;
-    public static Supplier<Boolean> defaultRSControl = () -> true;
-    public static Supplier<Boolean> defaultXPStorage = () -> false;
+    public static Supplier<Boolean> defaultReconfigSides = TRUE;
+    public static Supplier<Boolean> defaultRSControl = TRUE;
+    public static Supplier<Boolean> defaultXPStorage = FALSE;
 
-    public static Supplier<Boolean> permanentLava = () -> false;
-    public static Supplier<Boolean> permanentWater = () -> false;
+    public static Supplier<Boolean> permanentLava = FALSE;
+    public static Supplier<Boolean> permanentWater = FALSE;
 
-    public static Supplier<Boolean> enableVillagerTrades = () -> true;
-    public static Supplier<Boolean> enableWandererTrades = () -> true;
+    public static Supplier<Boolean> enableVillagerTrades = TRUE;
+    public static Supplier<Boolean> enableWandererTrades = TRUE;
 
-    public static Supplier<Boolean> mobBlitzLightning = () -> true;
+    public static Supplier<Boolean> mobBlitzLightning = TRUE;
 
-    private Supplier<Boolean> boolMobBasalz = () -> true;
-    private Supplier<Boolean> boolMobBlitz = () -> true;
-    private Supplier<Boolean> boolMobBlizz = () -> true;
+    private Supplier<Boolean> boolMobBasalz = TRUE;
+    private Supplier<Boolean> boolMobBlitz = TRUE;
+    private Supplier<Boolean> boolMobBlizz = TRUE;
 
     private Supplier<Boolean> boolStandaloneRedstoneFlux;
 

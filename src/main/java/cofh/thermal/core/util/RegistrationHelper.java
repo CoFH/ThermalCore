@@ -31,7 +31,6 @@ import net.minecraftforge.registries.RegistryObject;
 
 import java.util.List;
 import java.util.function.BiPredicate;
-import java.util.function.BooleanSupplier;
 import java.util.function.IntSupplier;
 import java.util.function.Supplier;
 
@@ -54,7 +53,7 @@ public class RegistrationHelper {
         registerBlock(name, sup, ID_THERMAL);
     }
 
-    public static void registerBlock(String name, Supplier<Block> sup, BooleanSupplier showInGroups) {
+    public static void registerBlock(String name, Supplier<Block> sup, Supplier<Boolean> showInGroups) {
 
         registerBlock(name, sup, showInGroups, ID_THERMAL);
     }
@@ -64,7 +63,7 @@ public class RegistrationHelper {
         registerBlock(name, sup, group, TRUE, ModIds.ID_THERMAL);
     }
 
-    public static void registerBlock(String name, Supplier<Block> sup, CreativeModeTab group, BooleanSupplier showInGroups) {
+    public static void registerBlock(String name, Supplier<Block> sup, CreativeModeTab group, Supplier<Boolean> showInGroups) {
 
         registerBlock(name, sup, group, showInGroups, ID_THERMAL);
     }
@@ -74,12 +73,12 @@ public class RegistrationHelper {
         registerBlock(name, sup, rarity, ID_THERMAL);
     }
 
-    public static void registerBlock(String name, Supplier<Block> sup, Rarity rarity, BooleanSupplier showInGroups) {
+    public static void registerBlock(String name, Supplier<Block> sup, Rarity rarity, Supplier<Boolean> showInGroups) {
 
         registerBlock(name, sup, rarity, showInGroups, ID_THERMAL);
     }
 
-    public static void registerBlock(String name, Supplier<Block> sup, CreativeModeTab group, Rarity rarity, BooleanSupplier showInGroups) {
+    public static void registerBlock(String name, Supplier<Block> sup, CreativeModeTab group, Rarity rarity, Supplier<Boolean> showInGroups) {
 
         registerBlock(name, sup, group, rarity, showInGroups, ID_THERMAL);
     }
@@ -95,12 +94,12 @@ public class RegistrationHelper {
         registerBlock(name, sup, group, Rarity.COMMON, TRUE, modId);
     }
 
-    public static void registerBlock(String name, Supplier<Block> sup, BooleanSupplier showInGroups, String modId) {
+    public static void registerBlock(String name, Supplier<Block> sup, Supplier<Boolean> showInGroups, String modId) {
 
         registerBlock(name, sup, THERMAL_BLOCKS, Rarity.COMMON, showInGroups, modId);
     }
 
-    public static void registerBlock(String name, Supplier<Block> sup, CreativeModeTab group, BooleanSupplier showInGroups, String modId) {
+    public static void registerBlock(String name, Supplier<Block> sup, CreativeModeTab group, Supplier<Boolean> showInGroups, String modId) {
 
         registerBlock(name, sup, group, Rarity.COMMON, showInGroups, modId);
     }
@@ -115,12 +114,12 @@ public class RegistrationHelper {
         registerBlock(name, sup, group, rarity, TRUE, modId);
     }
 
-    public static void registerBlock(String name, Supplier<Block> sup, Rarity rarity, BooleanSupplier showInGroups, String modId) {
+    public static void registerBlock(String name, Supplier<Block> sup, Rarity rarity, Supplier<Boolean> showInGroups, String modId) {
 
         registerBlock(name, sup, THERMAL_BLOCKS, rarity, showInGroups, modId);
     }
 
-    public static void registerBlock(String name, Supplier<Block> sup, CreativeModeTab group, Rarity rarity, BooleanSupplier showInGroups, String modId) {
+    public static void registerBlock(String name, Supplier<Block> sup, CreativeModeTab group, Rarity rarity, Supplier<Boolean> showInGroups, String modId) {
 
         registerBlockAndItem(name, sup, () -> new BlockItemCoFH(BLOCKS.get(name), new Item.Properties().tab(group).rarity(rarity)).setShowInGroups(showInGroups).setModId(modId));
     }
@@ -138,7 +137,7 @@ public class RegistrationHelper {
     // endregion
 
     // region AUGMENTABLE BLOCKS
-    public static void registerAugmentableBlock(String name, Supplier<Block> sup, IntSupplier numSlots, BiPredicate<ItemStack, List<ItemStack>> validAugment, BooleanSupplier showInGroups) {
+    public static void registerAugmentableBlock(String name, Supplier<Block> sup, IntSupplier numSlots, BiPredicate<ItemStack, List<ItemStack>> validAugment, Supplier<Boolean> showInGroups) {
 
         registerAugmentableBlock(name, sup, numSlots, validAugment, showInGroups, ID_THERMAL);
     }
@@ -148,12 +147,12 @@ public class RegistrationHelper {
         registerAugmentableBlock(name, sup, numSlots, validAugment, THERMAL_DEVICES, Rarity.COMMON, TRUE, modId);
     }
 
-    public static void registerAugmentableBlock(String name, Supplier<Block> sup, IntSupplier numSlots, BiPredicate<ItemStack, List<ItemStack>> validAugment, BooleanSupplier showInGroups, String modId) {
+    public static void registerAugmentableBlock(String name, Supplier<Block> sup, IntSupplier numSlots, BiPredicate<ItemStack, List<ItemStack>> validAugment, Supplier<Boolean> showInGroups, String modId) {
 
         registerAugmentableBlock(name, sup, numSlots, validAugment, THERMAL_DEVICES, Rarity.COMMON, showInGroups, modId);
     }
 
-    public static void registerAugmentableBlock(String name, Supplier<Block> sup, IntSupplier numSlots, BiPredicate<ItemStack, List<ItemStack>> validAugment, CreativeModeTab group, Rarity rarity, BooleanSupplier showInGroups, String modId) {
+    public static void registerAugmentableBlock(String name, Supplier<Block> sup, IntSupplier numSlots, BiPredicate<ItemStack, List<ItemStack>> validAugment, CreativeModeTab group, Rarity rarity, Supplier<Boolean> showInGroups, String modId) {
 
         BLOCKS.register(name, sup);
         ITEMS.register(name, (Supplier<Item>) () -> new BlockItemAugmentable(BLOCKS.get(name), new Item.Properties().tab(group).rarity(rarity)).setNumSlots(numSlots).setAugValidator(validAugment).setShowInGroups(showInGroups).setModId(modId));
@@ -198,12 +197,12 @@ public class RegistrationHelper {
         registerMetalSet(prefix, group, rarity, TRUE, false, false, ID_THERMAL);
     }
 
-    public static void registerMetalSet(String prefix, CreativeModeTab group, Rarity rarity, BooleanSupplier showInGroups) {
+    public static void registerMetalSet(String prefix, CreativeModeTab group, Rarity rarity, Supplier<Boolean> showInGroups) {
 
         registerMetalSet(prefix, group, rarity, showInGroups, false, false, ID_THERMAL);
     }
 
-    public static void registerMetalSet(String prefix, CreativeModeTab group, BooleanSupplier showInGroups) {
+    public static void registerMetalSet(String prefix, CreativeModeTab group, Supplier<Boolean> showInGroups) {
 
         registerMetalSet(prefix, group, Rarity.COMMON, showInGroups, false, false, ID_THERMAL);
     }
@@ -213,7 +212,7 @@ public class RegistrationHelper {
         registerMetalSet(prefix, group, rarity, TRUE, false, true, ID_THERMAL);
     }
 
-    public static void registerAlloySet(String prefix, CreativeModeTab group, BooleanSupplier showInGroups) {
+    public static void registerAlloySet(String prefix, CreativeModeTab group, Supplier<Boolean> showInGroups) {
 
         registerMetalSet(prefix, group, Rarity.COMMON, showInGroups, false, true, ID_THERMAL);
     }
@@ -223,7 +222,7 @@ public class RegistrationHelper {
         registerMetalSet(prefix, group, Rarity.COMMON, TRUE, true, false, ID_THERMAL);
     }
 
-    public static void registerMetalSet(String prefix, CreativeModeTab group, Rarity rarity, BooleanSupplier showInGroups, boolean vanilla, boolean alloy, String modId) {
+    public static void registerMetalSet(String prefix, CreativeModeTab group, Rarity rarity, Supplier<Boolean> showInGroups, boolean vanilla, boolean alloy, String modId) {
 
         // Hacky but whatever.
         if (prefix.equals("copper") || prefix.equals("netherite")) {
@@ -238,18 +237,18 @@ public class RegistrationHelper {
         }
         ITEMS.register(prefix + "_dust", () -> new ItemCoFH(new Item.Properties().tab(group).rarity(rarity)).setShowInGroups(showInGroups).setModId(modId));
         ITEMS.register(prefix + "_gear", () -> new ItemCoFH(new Item.Properties().tab(group).rarity(rarity)).setShowInGroups(showInGroups).setModId(modId));
-        ITEMS.register(prefix + "_plate", () -> new CountedItem(new Item.Properties().tab(group).rarity(rarity)).setShowInGroups(() -> getFlag(FLAG_PLATES).getAsBoolean() && showInGroups.getAsBoolean()).setModId(modId));
-        ITEMS.register(prefix + "_coin", () -> new CoinItem(new Item.Properties().tab(group).rarity(rarity)).setShowInGroups(() -> getFlag(FLAG_COINS).getAsBoolean() && showInGroups.getAsBoolean()).setModId(modId));
+        ITEMS.register(prefix + "_plate", () -> new CountedItem(new Item.Properties().tab(group).rarity(rarity)).setShowInGroups(() -> getFlag(FLAG_PLATES).get() && showInGroups.get()).setModId(modId));
+        ITEMS.register(prefix + "_coin", () -> new CoinItem(new Item.Properties().tab(group).rarity(rarity)).setShowInGroups(() -> getFlag(FLAG_COINS).get() && showInGroups.get()).setModId(modId));
     }
     // endregion
 
     // region GEM SETS
-    public static void registerGemSet(String prefix, CreativeModeTab group, Rarity rarity, BooleanSupplier showInGroups) {
+    public static void registerGemSet(String prefix, CreativeModeTab group, Rarity rarity, Supplier<Boolean> showInGroups) {
 
         registerGemSet(prefix, group, rarity, showInGroups, false);
     }
 
-    public static void registerGemSet(String prefix, CreativeModeTab group, BooleanSupplier showInGroups) {
+    public static void registerGemSet(String prefix, CreativeModeTab group, Supplier<Boolean> showInGroups) {
 
         registerGemSet(prefix, group, Rarity.COMMON, showInGroups, false);
     }
@@ -259,7 +258,7 @@ public class RegistrationHelper {
         registerGemSet(prefix, group, Rarity.COMMON, TRUE, true);
     }
 
-    public static void registerGemSet(String prefix, CreativeModeTab group, Rarity rarity, BooleanSupplier showInGroups, boolean vanilla) {
+    public static void registerGemSet(String prefix, CreativeModeTab group, Rarity rarity, Supplier<Boolean> showInGroups, boolean vanilla) {
 
         if (!vanilla) {
             ITEMS.register(prefix, () -> new ItemCoFH(new Item.Properties().tab(group).rarity(rarity)).setShowInGroups(showInGroups));
@@ -360,7 +359,7 @@ public class RegistrationHelper {
     // endregion
 
     // region EXPLOSIVES
-    public static void registerGrenade(String id, IDetonatable.IDetonateAction action, BooleanSupplier flag) {
+    public static void registerGrenade(String id, IDetonatable.IDetonateAction action, Supplier<Boolean> flag) {
 
         RegistryObject<EntityType<? extends AbstractGrenade>> entity = ENTITIES.register(id, () -> EntityType.Builder.<Grenade>of((type, world) -> new Grenade(type, world, action), MobCategory.MISC).sized(0.25F, 0.25F).build(id));
         registerItem(id, () -> new GrenadeItem(new GrenadeItem.IGrenadeFactory<>() {
@@ -381,14 +380,14 @@ public class RegistrationHelper {
         DetonateUtils.GRENADES.add(entity);
     }
 
-    public static void registerTNT(String id, IDetonatable.IDetonateAction action, BooleanSupplier flag) {
+    public static void registerTNT(String id, IDetonatable.IDetonateAction action, Supplier<Boolean> flag) {
 
         RegistryObject<EntityType<? extends PrimedTntCoFH>> tntEntity = ENTITIES.register(id, () -> EntityType.Builder.<ThermalTNTEntity>of((type, world) -> new ThermalTNTEntity(type, world, action), MobCategory.MISC).fireImmune().sized(0.98F, 0.98F).build(id));
         registerBlock(id, () -> new TntBlockCoFH((world, x, y, z, igniter) -> new ThermalTNTEntity(tntEntity.get(), world, action, x, y, z, igniter), of(Material.EXPLOSIVE, MaterialColor.COLOR_YELLOW).strength(0.0F).sound(SoundType.GRASS)), THERMAL_TOOLS, flag);
         DetonateUtils.TNT.add(tntEntity);
     }
 
-    public static void registerTNTMinecart(String id, String tntId, IDetonatable.IDetonateAction action, BooleanSupplier flag) {
+    public static void registerTNTMinecart(String id, String tntId, IDetonatable.IDetonateAction action, Supplier<Boolean> flag) {
 
         RegistryObject<EntityType<? extends AbstractTNTMinecart>> entity = ENTITIES.register(id, () -> EntityType.Builder.<ThermalTNTMinecart>of((type, world) -> new ThermalTNTMinecart(type, world, action, BLOCKS.get(tntId)), MobCategory.MISC).sized(0.98F, 0.7F).build(id));
         ITEMS.register(id, () -> new MinecartItemCoFH((world, x, y, z) -> new ThermalTNTMinecart(entity.get(), world, action, BLOCKS.get(tntId), x, y, z), new Item.Properties().tab(THERMAL_TOOLS)).setShowInGroups(flag).setModId(ID_THERMAL_LOCOMOTION));
