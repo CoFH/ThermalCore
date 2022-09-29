@@ -173,6 +173,16 @@ public class EnergyCellTile extends CellTileBase implements ITickableTile.IServe
         return new EnergyCellContainer(i, level, worldPosition, inventory, player);
     }
 
+    // TODO: Does this need to exist?
+    @Override
+    public void setRemoved() {
+
+        super.setRemoved();
+
+        inputEnergyCap.invalidate();
+        outputEnergyCap.invalidate();
+    }
+
     @Nonnull
     @Override
     public ModelData getModelData() {
