@@ -51,6 +51,11 @@ public class TCoreRecipeProvider extends RecipeProviderCoFH {
         generateStorageRecipes(consumer, reg.get(ID_CARROT_BLOCK), Items.CARROT);
         generateStorageRecipes(consumer, reg.get(ID_POTATO_BLOCK), Items.POTATO);
 
+        generateStorageRecipes(consumer, reg.get(ID_APATITE_BLOCK), reg.get("apatite"));
+        generateStorageRecipes(consumer, reg.get(ID_CINNABAR_BLOCK), reg.get("cinnabar"));
+        generateStorageRecipes(consumer, reg.get(ID_NITER_BLOCK), reg.get("niter"));
+        generateStorageRecipes(consumer, reg.get(ID_SULFUR_BLOCK), reg.get("sulfur"));
+
         generateGearRecipe(consumer, reg.get("copper_gear"), Items.COPPER_INGOT, forgeTag("ingots/copper"));
         generateGearRecipe(consumer, reg.get("iron_gear"), Items.IRON_INGOT, forgeTag("ingots/iron"));
         generateGearRecipe(consumer, reg.get("gold_gear"), Items.GOLD_INGOT, forgeTag("ingots/gold"));
@@ -930,6 +935,30 @@ public class TCoreRecipeProvider extends RecipeProviderCoFH {
                 .requires(earthCharge)
                 .unlockedBy("has_quartz", has(Tags.Items.GEMS_QUARTZ))
                 .save(consumer, ID_THERMAL + ":earth_charge/quartz_dust_from_quartz");
+
+        ShapelessRecipeBuilder.shapeless(reg.get("apatite_dust"))
+                .requires(ItemTagsCoFH.GEMS_APATITE)
+                .requires(earthCharge)
+                .unlockedBy("has_apatite", has(ItemTagsCoFH.GEMS_APATITE))
+                .save(consumer, ID_THERMAL + ":earth_charge/apatite_dust_from_apatite");
+
+        ShapelessRecipeBuilder.shapeless(reg.get("cinnabar_dust"))
+                .requires(ItemTagsCoFH.GEMS_CINNABAR)
+                .requires(earthCharge)
+                .unlockedBy("has_cinnabar", has(ItemTagsCoFH.GEMS_CINNABAR))
+                .save(consumer, ID_THERMAL + ":earth_charge/cinnabar_dust_from_cinnabar");
+
+        ShapelessRecipeBuilder.shapeless(reg.get("niter_dust"))
+                .requires(ItemTagsCoFH.GEMS_NITER)
+                .requires(earthCharge)
+                .unlockedBy("has_niter", has(ItemTagsCoFH.GEMS_NITER))
+                .save(consumer, ID_THERMAL + ":earth_charge/niter_dust_from_niter");
+
+        ShapelessRecipeBuilder.shapeless(reg.get("sulfur_dust"))
+                .requires(ItemTagsCoFH.GEMS_SULFUR)
+                .requires(earthCharge)
+                .unlockedBy("has_sulfur", has(ItemTagsCoFH.GEMS_SULFUR))
+                .save(consumer, ID_THERMAL + ":earth_charge/sulfur_dust_from_sulfur");
         // endregion
 
         // region ICE CHARGE CONVERSIONS
