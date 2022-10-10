@@ -29,7 +29,7 @@ public class ThermalCoreConfig implements IBaseConfig {
 
         boolStandaloneRedstoneFlux = builder
                 .comment("If TRUE, Redstone Flux will act as its own energy system and will NOT be interoperable with 'Forge Energy' - only enable this if you absolutely know what you are doing and want the Thermal Series to use a unique energy system.")
-                .define("Standalone Redstone Flux", false);
+                .define("Standalone Redstone Flux", boolStandaloneRedstoneFlux);
 
         keepEnergy = builder
                 .comment("If TRUE, most Thermal Blocks will retain Energy when dropped.\nThis setting does not control ALL blocks.")
@@ -184,7 +184,7 @@ public class ThermalCoreConfig implements IBaseConfig {
     private Supplier<Boolean> boolMobBlitz = TRUE;
     private Supplier<Boolean> boolMobBlizz = TRUE;
 
-    private Supplier<Boolean> boolStandaloneRedstoneFlux;
+    private Supplier<Boolean> boolStandaloneRedstoneFlux = FALSE;
 
     private Supplier<List<String>> listSatchelBans = Collections::emptyList;
     // endregion
