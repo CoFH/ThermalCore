@@ -1,0 +1,11 @@
+{
+  "values": [
+    "#forge:plates/copper",
+    "#forge:plates/gold",
+    "#forge:plates/iron",
+    "#forge:plates/netherite",
+    "#forge:plates/enderium",
+    "#forge:plates/lumium",
+    "#forge:plates/signalum"
+  ]
+}

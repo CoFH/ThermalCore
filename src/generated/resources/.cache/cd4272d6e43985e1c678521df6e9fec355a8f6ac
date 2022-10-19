@@ -1,0 +1,23 @@
+// 1.19.2	2022-10-19T00:56:49.9440024	Thermal Core: Block Tags
+e587e9b0a5d9272f4234bdbafb33fc4cb78faf33 data/forge/tags/blocks/storage_blocks.json
+a60b12e83d58cabd467e5270db16f7349b98e375 data/forge/tags/blocks/storage_blocks/bamboo.json
+292995d08e4532d7b714c24afd4279bce59c0fb8 data/forge/tags/blocks/storage_blocks/bitumen.json
+977ee3e243c334bccd0f220dd459f96c5fe649ab data/forge/tags/blocks/storage_blocks/charcoal.json
+231324d92ea272526bcb92b5cfd95e088e851e45 data/forge/tags/blocks/storage_blocks/coal_coke.json
+2ac199f62e89e61c49550f4a6264fd7c94935e01 data/forge/tags/blocks/storage_blocks/enderium.json
+fe300874a692e80b1c0899a30d3412e0e5f5d15f data/forge/tags/blocks/storage_blocks/gunpowder.json
+c20dc0e0c15861707d4f401cf72b108a8812c72b data/forge/tags/blocks/storage_blocks/lumium.json
+2c643fb953d974d29d7d23061e1e1ae2b1ae974e data/forge/tags/blocks/storage_blocks/signalum.json
+1a4c10c390bcc12c94dad73f4eb6f79ae5309109 data/forge/tags/blocks/storage_blocks/slag.json
+1ae40627ad109aa0d80aa9eaa128a1574598d465 data/forge/tags/blocks/storage_blocks/sugar_cane.json
+43e02ff5b6421f593f0d57f0b7ccd5ad90b545db data/forge/tags/blocks/storage_blocks/tar.json
+ff322c2a9be14986ab48ccd938b4389c390c6045 data/minecraft/tags/blocks/beacon_base_blocks.json
+ef1a00269dee42ea83e78ee9d1d8a28b080b27f5 data/minecraft/tags/blocks/impermeable.json
+21d2c81473944075adc85c7053b0caf96fba7eb2 data/minecraft/tags/blocks/mineable/axe.json
+1ae40627ad109aa0d80aa9eaa128a1574598d465 data/minecraft/tags/blocks/mineable/hoe.json
+b42718c4c19d760253be1ab7c739bd5455f02bc1 data/minecraft/tags/blocks/mineable/pickaxe.json
+a1c7b87d16c15a9a0690c4ea39dac60ddc196495 data/minecraft/tags/blocks/mineable/shovel.json
+2ac199f62e89e61c49550f4a6264fd7c94935e01 data/minecraft/tags/blocks/needs_iron_tool.json
+5a29211feb66199840a7b0e9b045e08a98151d2d data/minecraft/tags/blocks/needs_stone_tool.json
+ef1a00269dee42ea83e78ee9d1d8a28b080b27f5 data/thermal/tags/blocks/glass/hardened.json
+1bcb1f6cbc64ba7941a1e247009ae4560c17ef55 data/thermal/tags/blocks/rockwool.json

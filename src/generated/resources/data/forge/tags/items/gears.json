@@ -1,0 +1,15 @@
+{
+  "values": [
+    "#forge:gears/copper",
+    "#forge:gears/gold",
+    "#forge:gears/iron",
+    "#forge:gears/netherite",
+    "#forge:gears/diamond",
+    "#forge:gears/emerald",
+    "#forge:gears/lapis",
+    "#forge:gears/quartz",
+    "#forge:gears/enderium",
+    "#forge:gears/lumium",
+    "#forge:gears/signalum"
+  ]
+}
