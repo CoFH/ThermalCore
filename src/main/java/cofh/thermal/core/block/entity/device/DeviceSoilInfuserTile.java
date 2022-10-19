@@ -53,7 +53,7 @@ public class DeviceSoilInfuserTile extends ThermalTileAugmentable implements ITi
     public DeviceSoilInfuserTile(BlockPos pos, BlockState state) {
 
         super(DEVICE_SOIL_INFUSER_TILE.get(), pos, state);
-        energyStorage = new EnergyStorageCoFH(getBaseEnergyStorage(), getBaseEnergyXfer());
+        energyStorage = new EnergyStorageCoFH(BASE_ENERGY, getBaseProcessTick() * 10);
 
         inventory.addSlot(chargeSlot, INTERNAL);
 

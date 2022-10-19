@@ -51,7 +51,7 @@ public abstract class DynamoTileBase extends ThermalTileAugmentable implements I
     public DynamoTileBase(BlockEntityType<?> tileEntityTypeIn, BlockPos pos, BlockState state) {
 
         super(tileEntityTypeIn, pos, state);
-        energyStorage = new EnergyStorageCoFH(getBaseEnergyStorage(), 0, getBaseEnergyXfer()) {
+        energyStorage = new EnergyStorageCoFH(BASE_ENERGY, 0, getBaseProcessTick() * 10) {
 
             @Override
             public boolean canExtract() {

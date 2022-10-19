@@ -61,7 +61,7 @@ public abstract class MachineTileBase extends ReconfigurableTile4Way implements 
     public MachineTileBase(BlockEntityType<?> tileEntityTypeIn, BlockPos pos, BlockState state) {
 
         super(tileEntityTypeIn, pos, state);
-        energyStorage = new EnergyStorageCoFH(getBaseEnergyStorage(), getBaseEnergyXfer());
+        energyStorage = new EnergyStorageCoFH(BASE_ENERGY, getBaseProcessTick() * 10);
         xpStorage = new XpStorage(getBaseXpStorage());
     }
 
