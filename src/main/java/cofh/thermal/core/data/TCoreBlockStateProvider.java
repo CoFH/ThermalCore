@@ -46,10 +46,10 @@ public class TCoreBlockStateProvider extends BlockStateProviderCoFH {
 
     private void registerStorage(DeferredRegisterCoFH<Block> reg) {
 
-        simpleBlock(reg.getSup(ID_APATITE_BLOCK));
-        simpleBlock(reg.getSup(ID_CINNABAR_BLOCK));
-        simpleBlock(reg.getSup(ID_NITER_BLOCK));
-        simpleBlock(reg.getSup(ID_SULFUR_BLOCK));
+        // FIXME textures missing simpleBlock(reg.getSup(ID_APATITE_BLOCK));
+        // FIXME textures missing simpleBlock(reg.getSup(ID_CINNABAR_BLOCK));
+        // FIXME textures missing simpleBlock(reg.getSup(ID_NITER_BLOCK));
+        // FIXME textures missing simpleBlock(reg.getSup(ID_SULFUR_BLOCK));
 
         simpleBlock(reg.getSup(ID_SAWDUST_BLOCK));
         simpleBlock(reg.getSup(ID_COAL_COKE_BLOCK));

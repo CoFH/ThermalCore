@@ -234,10 +234,10 @@ public class TCoreItemModelProvider extends ItemModelProviderCoFH {
 
     private void registerStorageBlocks(DeferredRegisterCoFH<Block> reg) {
 
-        blockItem(reg.getSup(ID_APATITE_BLOCK));
-        blockItem(reg.getSup(ID_CINNABAR_BLOCK));
-        blockItem(reg.getSup(ID_NITER_BLOCK));
-        blockItem(reg.getSup(ID_SULFUR_BLOCK));
+        // FIXME textures missing blockItem(reg.getSup(ID_APATITE_BLOCK));
+        // FIXME textures missing blockItem(reg.getSup(ID_CINNABAR_BLOCK));
+        // FIXME textures missing blockItem(reg.getSup(ID_NITER_BLOCK));
+        // FIXME textures missing blockItem(reg.getSup(ID_SULFUR_BLOCK));
 
         blockItem(reg.getSup(ID_SAWDUST_BLOCK));
         blockItem(reg.getSup(ID_COAL_COKE_BLOCK));

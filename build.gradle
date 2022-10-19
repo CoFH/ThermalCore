@@ -71,15 +71,17 @@ minecraft {
     runs {
         data {
             workingDirectory project.file('run')
-            ideaModule "${rootProject.name}.${project.name}.main"
 
-            args '--all', '--output', file('src/main/generated/'),
-                    '--mod', archivesBaseName,
-                    '--existing', sourceSets.main.resources.srcDirs[0]
+            property 'forge.logging.markers', 'REGISTRIES'
+
+            property 'forge.logging.console.level', 'debug'
+
+            // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
+            args '--mod', 'thermal', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
 
             mods {
-                Thermal {
-                    sourceSets.main
+                thermal {
+                    source sourceSets.main
                 }
             }
         }
