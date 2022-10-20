@@ -25,6 +25,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.registries.RegistryObject;
@@ -133,6 +134,23 @@ public class RegistrationHelper {
 
         BLOCKS.register(name, blockSup);
         ITEMS.register(name, itemSup);
+    }
+
+    // SHORTCUTS
+    public static Block storageBlock() {
+
+        return new Block(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.METAL)
+                .strength(5.0F, 6.0F)
+                .sound(SoundType.METAL)
+                .requiresCorrectToolForDrops());
+    }
+
+    public static Block storageBlock(MaterialColor color) {
+
+        return new Block(BlockBehaviour.Properties.of(Material.METAL, color)
+                .strength(5.0F, 6.0F)
+                .sound(SoundType.METAL)
+                .requiresCorrectToolForDrops());
     }
     // endregion
 

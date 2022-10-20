@@ -3,7 +3,6 @@ package cofh.thermal.core;
 import cofh.core.capability.CapabilityRedstoneFlux;
 import cofh.core.client.renderer.entity.TNTMinecartRendererCoFH;
 import cofh.core.config.ConfigManager;
-import cofh.core.config.world.OreConfig;
 import cofh.core.entity.AbstractGrenade;
 import cofh.core.entity.AbstractTNTMinecart;
 import cofh.lib.client.renderer.entity.TntRendererCoFH;
@@ -37,14 +36,12 @@ import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.material.Fluid;
@@ -65,9 +62,6 @@ import net.minecraftforge.registries.RegisterEvent;
 import net.minecraftforge.registries.RegistryObject;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import java.util.Collections;
-import java.util.List;
 
 import static cofh.lib.util.constants.ModIds.ID_THERMAL;
 import static cofh.thermal.core.init.TCoreContainers.*;
@@ -114,7 +108,6 @@ public class ThermalCore {
     public ThermalCore() {
 
         setFeatureFlags();
-        addWorldConfigs();
 
         final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
@@ -161,23 +154,23 @@ public class ThermalCore {
         // setFlag(ID_CHUNK_LOADER, true);
     }
 
-    private void addWorldConfigs() {
-
-        List<ResourceKey<Level>> defaultDimensions = Collections.singletonList(Level.OVERWORLD);
-
-        ThermalWorldConfig.addOreConfig("niter_ore", new OreConfig("Niter", 2, -16, 64, 7, defaultDimensions, getFlag(FLAG_RESOURCE_NITER)));
-        ThermalWorldConfig.addOreConfig("sulfur_ore", new OreConfig("Sulfur", 2, -16, 32, 7, defaultDimensions, getFlag(FLAG_RESOURCE_NITER)));
-
-        ThermalWorldConfig.addOreConfig("tin_ore", new OreConfig("Tin", 6, -20, 60, 9, defaultDimensions, getFlag(FLAG_RESOURCE_TIN)));
-        ThermalWorldConfig.addOreConfig("lead_ore", new OreConfig("Lead", 6, -60, 40, 8, defaultDimensions, getFlag(FLAG_RESOURCE_LEAD)));
-        ThermalWorldConfig.addOreConfig("silver_ore", new OreConfig("Silver", 4, -60, 40, 8, defaultDimensions, getFlag(FLAG_RESOURCE_SILVER)));
-        ThermalWorldConfig.addOreConfig("nickel_ore", new OreConfig("Nickel", 4, -40, 120, 8, defaultDimensions, getFlag(FLAG_RESOURCE_NICKEL)));
-
-        ThermalWorldConfig.addOreConfig("apatite_ore", new OreConfig("Apatite", 4, -16, 96, 9, defaultDimensions, getFlag(FLAG_RESOURCE_APATITE)));
-
-        ThermalWorldConfig.addOreConfig("cinnabar_ore", new OreConfig("Cinnabar", 1, -16, 48, 5, defaultDimensions, getFlag(FLAG_RESOURCE_CINNABAR)));
-        ThermalWorldConfig.addOreConfig("oil_sand", new OreConfig("Oil Sand", 2, 40, 80, 24, defaultDimensions, getFlag(FLAG_RESOURCE_OIL)));
-    }
+    //    private void addWorldConfigs() {
+    //
+    //        List<ResourceKey<Level>> defaultDimensions = Collections.singletonList(Level.OVERWORLD);
+    //
+    //        ThermalWorldConfig.addOreConfig("niter_ore", new OreConfig("Niter", 2, -16, 64, 7, defaultDimensions, getFlag(FLAG_RESOURCE_NITER)));
+    //        ThermalWorldConfig.addOreConfig("sulfur_ore", new OreConfig("Sulfur", 2, -16, 32, 7, defaultDimensions, getFlag(FLAG_RESOURCE_NITER)));
+    //
+    //        ThermalWorldConfig.addOreConfig("tin_ore", new OreConfig("Tin", 6, -20, 60, 9, defaultDimensions, getFlag(FLAG_RESOURCE_TIN)));
+    //        ThermalWorldConfig.addOreConfig("lead_ore", new OreConfig("Lead", 6, -60, 40, 8, defaultDimensions, getFlag(FLAG_RESOURCE_LEAD)));
+    //        ThermalWorldConfig.addOreConfig("silver_ore", new OreConfig("Silver", 4, -60, 40, 8, defaultDimensions, getFlag(FLAG_RESOURCE_SILVER)));
+    //        ThermalWorldConfig.addOreConfig("nickel_ore", new OreConfig("Nickel", 4, -40, 120, 8, defaultDimensions, getFlag(FLAG_RESOURCE_NICKEL)));
+    //
+    //        ThermalWorldConfig.addOreConfig("apatite_ore", new OreConfig("Apatite", 4, -16, 96, 9, defaultDimensions, getFlag(FLAG_RESOURCE_APATITE)));
+    //
+    //        ThermalWorldConfig.addOreConfig("cinnabar_ore", new OreConfig("Cinnabar", 1, -16, 48, 5, defaultDimensions, getFlag(FLAG_RESOURCE_CINNABAR)));
+    //        ThermalWorldConfig.addOreConfig("oil_sand", new OreConfig("Oil Sand", 2, 40, 80, 24, defaultDimensions, getFlag(FLAG_RESOURCE_OIL)));
+    //    }
 
     // region INITIALIZATION
     private void registerLootData(final RegisterEvent event) {

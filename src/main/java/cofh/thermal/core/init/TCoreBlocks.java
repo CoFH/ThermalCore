@@ -27,7 +27,6 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
@@ -236,22 +235,6 @@ public class TCoreBlocks {
 
         //        BLOCKS.register(ID_ITEM_CELL, () -> new TileBlockCell(of(Material.METAL).sound(SoundType.LANTERN).strength(2.0F).harvestTool(ToolType.PICKAXE).noOcclusion(), ItemCellTile::new));
         //        ITEMS.register(ID_ITEM_CELL, (Supplier<Item>) () -> new ItemCellBlockItem(BLOCKS.get(ID_ITEM_CELL), new Item.Properties().tab(THERMAL_BLOCKS)).setNumSlots(storageAugs).setAugValidator(ITEM_STORAGE_VALIDATOR).setShowInGroups(getFlag(ID_ITEM_CELL)));
-    }
-
-    public static Block storageBlock() {
-
-        return new Block(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.METAL)
-                .strength(5.0F, 6.0F)
-                .sound(SoundType.METAL)
-                .requiresCorrectToolForDrops());
-    }
-
-    public static Block storageBlock(MaterialColor color) {
-
-        return new Block(BlockBehaviour.Properties.of(Material.METAL, color)
-                .strength(5.0F, 6.0F)
-                .sound(SoundType.METAL)
-                .requiresCorrectToolForDrops());
     }
     // endregion
 }
