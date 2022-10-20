@@ -23,7 +23,7 @@ public class LightOilFluid extends FluidCoFH {
 
     private static LightOilFluid INSTANCE;
 
-    public static LightOilFluid create() {
+    public static LightOilFluid instance() {
 
         if (INSTANCE == null) {
             INSTANCE = new LightOilFluid();

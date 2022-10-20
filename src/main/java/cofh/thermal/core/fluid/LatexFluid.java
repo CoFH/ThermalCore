@@ -23,7 +23,7 @@ public class LatexFluid extends FluidCoFH {
 
     private static LatexFluid INSTANCE;
 
-    public static LatexFluid create() {
+    public static LatexFluid instance() {
 
         if (INSTANCE == null) {
             INSTANCE = new LatexFluid();

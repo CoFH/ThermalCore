@@ -2,12 +2,19 @@ package cofh.thermal.core.fluid;
 
 import cofh.lib.fluid.FluidCoFH;
 import cofh.thermal.lib.common.ThermalItemGroups;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Rarity;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.block.LiquidBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.FlowingFluid;
+import net.minecraft.world.level.material.Material;
 import net.minecraftforge.client.extensions.common.IClientFluidTypeExtensions;
 import net.minecraftforge.common.SoundActions;
 import net.minecraftforge.fluids.FluidType;
@@ -17,14 +24,16 @@ import net.minecraftforge.registries.RegistryObject;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
+import static cofh.lib.util.helpers.BlockHelper.lightValue;
 import static cofh.thermal.core.ThermalCore.*;
 import static cofh.thermal.lib.common.ThermalIDs.ID_FLUID_REDSTONE;
+import static net.minecraft.world.level.block.state.BlockBehaviour.Properties.of;
 
 public class RedstoneFluid extends FluidCoFH {
 
     private static RedstoneFluid INSTANCE;
 
-    public static RedstoneFluid create() {
+    public static RedstoneFluid instance() {
 
         if (INSTANCE == null) {
             INSTANCE = new RedstoneFluid();
@@ -36,13 +45,14 @@ public class RedstoneFluid extends FluidCoFH {
 
         super(FLUIDS, ID_FLUID_REDSTONE);
 
+        block = BLOCKS.register(fluid(ID_FLUID_REDSTONE), () -> new FluidBlock(stillFluid, of(Material.WATER).lightLevel(lightValue(7)).noCollission().strength(100.0F).noLootTable()));
         bucket = ITEMS.register(bucket(ID_FLUID_REDSTONE), () -> new BucketItem(stillFluid, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1).tab(ThermalItemGroups.THERMAL_ITEMS)));
     }
 
     @Override
     protected ForgeFlowingFluid.Properties fluidProperties() {
 
-        return new ForgeFlowingFluid.Properties(type(), stillFluid, flowingFluid).bucket(bucket);
+        return new ForgeFlowingFluid.Properties(type(), stillFluid, flowingFluid).block(block).bucket(bucket);
     }
 
     @Override
@@ -84,4 +94,28 @@ public class RedstoneFluid extends FluidCoFH {
         }
     });
 
+    // region BLOCK CLASS
+    public static class FluidBlock extends LiquidBlock {
+
+        public FluidBlock(Supplier<? extends FlowingFluid> fluidSup, Properties properties) {
+
+            super(fluidSup, properties);
+        }
+
+        @Override
+        public boolean isSignalSource(BlockState state) {
+
+            return true;
+            // return redstoneMushroomSignal.get();
+        }
+
+        @Override
+        public int getSignal(BlockState blockState, BlockGetter blockAccess, BlockPos pos, Direction side) {
+
+            return Math.max(15 - 2 * blockState.getValue(LEVEL), 1);
+            // return redstoneMushroomSignal.get() && blockState.getValue(AGE_0_4) == 4 ? 7 : 0;
+        }
+
+    }
+    // endregion
 }

@@ -24,7 +24,7 @@ public class GlowstoneFluid extends FluidCoFH {
 
     private static GlowstoneFluid INSTANCE;
 
-    public static GlowstoneFluid create() {
+    public static GlowstoneFluid instance() {
 
         if (INSTANCE == null) {
             INSTANCE = new GlowstoneFluid();

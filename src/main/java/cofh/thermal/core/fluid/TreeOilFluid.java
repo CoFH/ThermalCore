@@ -23,7 +23,7 @@ public class TreeOilFluid extends FluidCoFH {
 
     private static TreeOilFluid INSTANCE;
 
-    public static TreeOilFluid create() {
+    public static TreeOilFluid instance() {
 
         if (INSTANCE == null) {
             INSTANCE = new TreeOilFluid();

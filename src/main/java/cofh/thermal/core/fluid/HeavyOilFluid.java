@@ -23,7 +23,7 @@ public class HeavyOilFluid extends FluidCoFH {
 
     private static HeavyOilFluid INSTANCE;
 
-    public static HeavyOilFluid create() {
+    public static HeavyOilFluid instance() {
 
         if (INSTANCE == null) {
             INSTANCE = new HeavyOilFluid();

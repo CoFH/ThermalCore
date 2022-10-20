@@ -23,7 +23,7 @@ public class SyrupFluid extends FluidCoFH {
 
     private static SyrupFluid INSTANCE;
 
-    public static SyrupFluid create() {
+    public static SyrupFluid instance() {
 
         if (INSTANCE == null) {
             INSTANCE = new SyrupFluid();

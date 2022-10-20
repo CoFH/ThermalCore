@@ -23,7 +23,7 @@ public class CreosoteFluid extends FluidCoFH {
 
     private static CreosoteFluid INSTANCE;
 
-    public static CreosoteFluid create() {
+    public static CreosoteFluid instance() {
 
         if (INSTANCE == null) {
             INSTANCE = new CreosoteFluid();

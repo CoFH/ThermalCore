@@ -23,7 +23,7 @@ public class RefinedFuelFluid extends FluidCoFH {
 
     private static RefinedFuelFluid INSTANCE;
 
-    public static RefinedFuelFluid create() {
+    public static RefinedFuelFluid instance() {
 
         if (INSTANCE == null) {
             INSTANCE = new RefinedFuelFluid();

@@ -23,7 +23,7 @@ public class ResinFluid extends FluidCoFH {
 
     private static ResinFluid INSTANCE;
 
-    public static ResinFluid create() {
+    public static ResinFluid instance() {
 
         if (INSTANCE == null) {
             INSTANCE = new ResinFluid();

@@ -23,7 +23,7 @@ public class SapFluid extends FluidCoFH {
 
     private static SapFluid INSTANCE;
 
-    public static SapFluid create() {
+    public static SapFluid instance() {
 
         if (INSTANCE == null) {
             INSTANCE = new SapFluid();

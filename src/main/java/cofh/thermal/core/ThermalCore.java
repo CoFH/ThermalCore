@@ -27,6 +27,7 @@ import cofh.thermal.core.entity.explosive.DetonateUtils;
 import cofh.thermal.core.entity.monster.Basalz;
 import cofh.thermal.core.entity.monster.Blitz;
 import cofh.thermal.core.entity.monster.Blizz;
+import cofh.thermal.core.fluid.RedstoneFluid;
 import cofh.thermal.core.init.*;
 import cofh.thermal.lib.common.ThermalFlags;
 import cofh.thermal.lib.common.ThermalProxy;
@@ -292,6 +293,9 @@ public class ThermalCore {
         ItemBlockRenderTypes.setRenderLayer(BLOCKS.get(ID_DEVICE_COLLECTOR), cutout);
         ItemBlockRenderTypes.setRenderLayer(BLOCKS.get(ID_DEVICE_POTION_DIFFUSER), cutout);
         ItemBlockRenderTypes.setRenderLayer(BLOCKS.get(ID_DEVICE_NULLIFIER), cutout);
+
+        ItemBlockRenderTypes.setRenderLayer(RedstoneFluid.instance().still().get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(RedstoneFluid.instance().flowing().get(), RenderType.translucent());
     }
     // endregion
 }

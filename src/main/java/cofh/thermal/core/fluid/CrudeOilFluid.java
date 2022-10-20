@@ -23,7 +23,7 @@ public class CrudeOilFluid extends FluidCoFH {
 
     private static CrudeOilFluid INSTANCE;
 
-    public static CrudeOilFluid create() {
+    public static CrudeOilFluid instance() {
 
         if (INSTANCE == null) {
             INSTANCE = new CrudeOilFluid();

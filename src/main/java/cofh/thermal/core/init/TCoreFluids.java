@@ -20,21 +20,21 @@ public class TCoreFluids {
 
     public static void register() {
 
-        REDSTONE_FLUID = RedstoneFluid.create().still();
-        GLOWSTONE_FLUID = GlowstoneFluid.create().still();
-        ENDER_FLUID = EnderFluid.create().still();
+        REDSTONE_FLUID = RedstoneFluid.instance().still();
+        GLOWSTONE_FLUID = GlowstoneFluid.instance().still();
+        ENDER_FLUID = EnderFluid.instance().still();
 
-        SAP_FLUID = SapFluid.create().still();
-        SYRUP_FLUID = SyrupFluid.create().still();
-        RESIN_FLUID = ResinFluid.create().still();
-        TREE_OIL_FLUID = TreeOilFluid.create().still();
-        LATEX_FLUID = LatexFluid.create().still();
+        SAP_FLUID = SapFluid.instance().still();
+        SYRUP_FLUID = SyrupFluid.instance().still();
+        RESIN_FLUID = ResinFluid.instance().still();
+        TREE_OIL_FLUID = TreeOilFluid.instance().still();
+        LATEX_FLUID = LatexFluid.instance().still();
 
-        CREOSOTE_FLUID = CreosoteFluid.create().still();
-        CRUDE_OIL_FLUID = CrudeOilFluid.create().still();
-        HEAVY_OIL_FLUID = HeavyOilFluid.create().still();
-        LIGHT_OIL_FLUID = LightOilFluid.create().still();
-        REFINED_FUEL_FLUID = RefinedFuelFluid.create().still();
+        CREOSOTE_FLUID = CreosoteFluid.instance().still();
+        CRUDE_OIL_FLUID = CrudeOilFluid.instance().still();
+        HEAVY_OIL_FLUID = HeavyOilFluid.instance().still();
+        LIGHT_OIL_FLUID = LightOilFluid.instance().still();
+        REFINED_FUEL_FLUID = RefinedFuelFluid.instance().still();
     }
 
     public static void setup() {
