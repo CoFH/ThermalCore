@@ -42,9 +42,9 @@ import static cofh.thermal.lib.common.ThermalFlags.*;
 import static cofh.thermal.lib.common.ThermalItemGroups.*;
 import static net.minecraft.world.level.block.state.BlockBehaviour.Properties.of;
 
-public class RegistrationHelper {
+public final class RegistrationHelper {
 
-    public RegistrationHelper() {
+    private RegistrationHelper() {
 
     }
 
