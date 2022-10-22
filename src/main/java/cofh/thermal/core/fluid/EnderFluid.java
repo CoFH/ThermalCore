@@ -19,6 +19,7 @@ import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.client.extensions.common.IClientFluidTypeExtensions;
 import net.minecraftforge.common.SoundActions;
 import net.minecraftforge.fluids.FluidType;
@@ -35,6 +36,8 @@ import static net.minecraft.world.level.block.state.BlockBehaviour.Properties.of
 
 public class EnderFluid extends FluidCoFH {
 
+    private static final Material ENDER_FLUID = (new Material.Builder(MaterialColor.COLOR_CYAN)).noCollider().notSolidBlocking().nonSolid().destroyOnPush().replaceable().liquid().build();
+
     private static EnderFluid INSTANCE;
 
     public static EnderFluid instance() {
@@ -49,7 +52,7 @@ public class EnderFluid extends FluidCoFH {
 
         super(FLUIDS, ID_FLUID_ENDER);
 
-        block = BLOCKS.register(fluid(ID_FLUID_ENDER), () -> new FluidBlock(stillFluid, of(Material.WATER).lightLevel(lightValue(3)).noCollission().strength(1200.0F).noLootTable()));
+        block = BLOCKS.register(fluid(ID_FLUID_ENDER), () -> new FluidBlock(stillFluid, of(ENDER_FLUID).lightLevel(lightValue(3)).noCollission().strength(1200.0F).noLootTable()));
         bucket = ITEMS.register(bucket(ID_FLUID_ENDER), () -> new BucketItem(stillFluid, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1).tab(ThermalItemGroups.THERMAL_ITEMS)));
     }
 

@@ -42,6 +42,10 @@ public class TCoreFluids {
         BOTTLE_DRAIN_MAP.put(ITEMS.get("syrup_bottle"), (stack -> new FluidStack(SYRUP_FLUID.get(), BOTTLE_VOLUME)));
 
         BOTTLE_FILL_MAP.put(fluid -> fluid.getFluid().equals(SYRUP_FLUID.get()), fluid -> new ItemStack(ITEMS.get("syrup_bottle")));
+
+        // TODO: Flammability
+        //        FireBlock fire = (FireBlock) Blocks.FIRE;
+        //        fire.setFlammable(CrudeOilFluid.instance().block().get(), 5, 10);
     }
 
     public static Supplier<ForgeFlowingFluid> REDSTONE_FLUID;
