@@ -155,24 +155,6 @@ public class ThermalCore {
         // setFlag(ID_CHUNK_LOADER, true);
     }
 
-    //    private void addWorldConfigs() {
-    //
-    //        List<ResourceKey<Level>> defaultDimensions = Collections.singletonList(Level.OVERWORLD);
-    //
-    //        ThermalWorldConfig.addOreConfig("niter_ore", new OreConfig("Niter", 2, -16, 64, 7, defaultDimensions, getFlag(FLAG_RESOURCE_NITER)));
-    //        ThermalWorldConfig.addOreConfig("sulfur_ore", new OreConfig("Sulfur", 2, -16, 32, 7, defaultDimensions, getFlag(FLAG_RESOURCE_NITER)));
-    //
-    //        ThermalWorldConfig.addOreConfig("tin_ore", new OreConfig("Tin", 6, -20, 60, 9, defaultDimensions, getFlag(FLAG_RESOURCE_TIN)));
-    //        ThermalWorldConfig.addOreConfig("lead_ore", new OreConfig("Lead", 6, -60, 40, 8, defaultDimensions, getFlag(FLAG_RESOURCE_LEAD)));
-    //        ThermalWorldConfig.addOreConfig("silver_ore", new OreConfig("Silver", 4, -60, 40, 8, defaultDimensions, getFlag(FLAG_RESOURCE_SILVER)));
-    //        ThermalWorldConfig.addOreConfig("nickel_ore", new OreConfig("Nickel", 4, -40, 120, 8, defaultDimensions, getFlag(FLAG_RESOURCE_NICKEL)));
-    //
-    //        ThermalWorldConfig.addOreConfig("apatite_ore", new OreConfig("Apatite", 4, -16, 96, 9, defaultDimensions, getFlag(FLAG_RESOURCE_APATITE)));
-    //
-    //        ThermalWorldConfig.addOreConfig("cinnabar_ore", new OreConfig("Cinnabar", 1, -16, 48, 5, defaultDimensions, getFlag(FLAG_RESOURCE_CINNABAR)));
-    //        ThermalWorldConfig.addOreConfig("oil_sand", new OreConfig("Oil Sand", 2, 40, 80, 24, defaultDimensions, getFlag(FLAG_RESOURCE_OIL)));
-    //    }
-
     // region INITIALIZATION
     private void registerLootData(final RegisterEvent event) {
 
@@ -274,25 +256,6 @@ public class ThermalCore {
         ItemBlockRenderTypes.setRenderLayer(BLOCKS.get(ID_SIGNALUM_GLASS), cutout);
         ItemBlockRenderTypes.setRenderLayer(BLOCKS.get(ID_LUMIUM_GLASS), cutout);
         ItemBlockRenderTypes.setRenderLayer(BLOCKS.get(ID_ENDERIUM_GLASS), cutout);
-
-        ItemBlockRenderTypes.setRenderLayer(BLOCKS.get(ID_MACHINE_FRAME), cutout);
-
-        ItemBlockRenderTypes.setRenderLayer(BLOCKS.get(ID_ENERGY_CELL_FRAME), cutout);
-        ItemBlockRenderTypes.setRenderLayer(BLOCKS.get(ID_ENERGY_CELL), cutout);
-
-        ItemBlockRenderTypes.setRenderLayer(BLOCKS.get(ID_FLUID_CELL_FRAME), cutout);
-        ItemBlockRenderTypes.setRenderLayer(BLOCKS.get(ID_FLUID_CELL), cutout);
-
-        //        ItemBlockRenderTypes.setRenderLayer(BLOCKS.get(ID_ITEM_CELL_FRAME), cutout);
-        //        ItemBlockRenderTypes.setRenderLayer(BLOCKS.get(ID_ITEM_CELL), cutout);
-
-        ItemBlockRenderTypes.setRenderLayer(BLOCKS.get(ID_DEVICE_TREE_EXTRACTOR), cutout);
-        ItemBlockRenderTypes.setRenderLayer(BLOCKS.get(ID_DEVICE_COMPOSTER), cutout);
-        ItemBlockRenderTypes.setRenderLayer(BLOCKS.get(ID_DEVICE_WATER_GEN), cutout);
-        ItemBlockRenderTypes.setRenderLayer(BLOCKS.get(ID_DEVICE_ROCK_GEN), cutout);
-        ItemBlockRenderTypes.setRenderLayer(BLOCKS.get(ID_DEVICE_COLLECTOR), cutout);
-        ItemBlockRenderTypes.setRenderLayer(BLOCKS.get(ID_DEVICE_POTION_DIFFUSER), cutout);
-        ItemBlockRenderTypes.setRenderLayer(BLOCKS.get(ID_DEVICE_NULLIFIER), cutout);
 
         ItemBlockRenderTypes.setRenderLayer(RedstoneFluid.instance().still().get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(RedstoneFluid.instance().flowing().get(), RenderType.translucent());

@@ -1,6 +1,7 @@
 {
   "loader": "thermal:item_cell",
   "parent": "minecraft:block/block",
+  "render_type": "cutout",
   "elements": [
     {
       "from": [0, 0, 0],

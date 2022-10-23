@@ -5,7 +5,6 @@ import cofh.core.client.gui.element.ElementButton;
 import cofh.core.client.gui.element.ElementTexture;
 import cofh.core.network.packet.server.TileConfigPacket;
 import cofh.lib.util.helpers.StringHelper;
-import cofh.thermal.core.block.entity.storage.FluidCellTile;
 import cofh.thermal.core.inventory.container.storage.FluidCellContainer;
 import cofh.thermal.lib.client.gui.CellScreenReconfigurable;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -30,12 +29,9 @@ public class FluidCellScreen extends CellScreenReconfigurable<FluidCellContainer
     public static final String TEX_INCREMENT = ID_COFH_CORE + ":textures/gui/elements/button_increment.png";
     public static final String TEX_DECREMENT = ID_COFH_CORE + ":textures/gui/elements/button_decrement.png";
 
-    protected FluidCellTile tile;
-
     public FluidCellScreen(FluidCellContainer container, Inventory inv, Component titleIn) {
 
         super(container, inv, container.tile, StringHelper.getTextComponent("block.thermal.fluid_cell"));
-        tile = container.tile;
         texture = TEXTURE;
         info = generatePanelInfo("info.thermal.fluid_cell");
         name = "fluid_cell";

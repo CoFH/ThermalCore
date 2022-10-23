@@ -1,6 +1,7 @@
 {
   "loader": "thermal:underlay",
   "parent": "minecraft:block/block",
+  "render_type": "cutout",
   "elements": [
     {
       "from": [0, 0, 0],

@@ -275,7 +275,7 @@ public abstract class ThermalTileAugmentable extends TileCoFH implements ISecura
     public boolean onActivatedDelegate(Level world, BlockPos pos, BlockState state, Player player, InteractionHand hand, BlockHitResult result) {
 
         if (player.isSecondaryUseActive()) {
-            return openFilterGui((ServerPlayer) player, 0);
+            return openFilterGui((ServerPlayer) player);
         }
         ItemStack stack = player.getItemInHand(hand);
         if (augValidator().test(stack)) {
@@ -700,7 +700,7 @@ public abstract class ThermalTileAugmentable extends TileCoFH implements ISecura
         }
 
         CompoundTag filterNBT = filter.write(new CompoundTag());
-        filter = FilterRegistry.getTileFilter(getAttributeModString(augmentNBT, TAG_FILTER_TYPE), filterNBT, this, (byte) 0);
+        filter = FilterRegistry.getTileFilter(getAttributeModString(augmentNBT, TAG_FILTER_TYPE), filterNBT, this);
     }
 
     protected boolean defaultReconfigState() {
@@ -806,18 +806,18 @@ public abstract class ThermalTileAugmentable extends TileCoFH implements ISecura
 
     // region IFilterableTile
     @Override
-    public IFilter getFilter(int filterId) {
+    public IFilter getFilter() {
 
         return filter;
     }
 
     @Override
-    public void onFilterChanged(int filterId) {
+    public void onFilterChanged() {
 
     }
 
     @Override
-    public boolean openGui(ServerPlayer player, int guiId) {
+    public boolean openGui(ServerPlayer player) {
 
         if (canOpenGui()) {
             NetworkHooks.openScreen(player, this, worldPosition);
@@ -827,10 +827,10 @@ public abstract class ThermalTileAugmentable extends TileCoFH implements ISecura
     }
 
     @Override
-    public boolean openFilterGui(ServerPlayer player, int filterId) {
+    public boolean openFilterGui(ServerPlayer player) {
 
-        if (FilterHelper.hasFilter(this, filterId)) {
-            FilterHelper.openTileScreen(player, getFilter(filterId), worldPosition, filterId);
+        if (filter instanceof MenuProvider provider) {
+            FilterHelper.openTileScreen(player, provider, worldPosition);
             return true;
         }
         return false;

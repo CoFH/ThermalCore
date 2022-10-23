@@ -1,5 +1,6 @@
 {
   "parent": "block/block",
+  "render_type": "cutout",
   "textures": {
     "particle": "thermal:block/devices/device_composter_side",
     "top": "thermal:block/devices/device_composter_top",
