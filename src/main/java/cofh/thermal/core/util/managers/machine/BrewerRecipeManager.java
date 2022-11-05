@@ -71,7 +71,7 @@ public class BrewerRecipeManager extends AbstractManager implements IRecipeManag
 
     public boolean validItem(ItemStack item) {
 
-        return validItems.contains(convert(item));
+        return validItems.contains(makeNBTComparable(item));
     }
 
     public boolean validFluid(FluidStack fluid) {
@@ -95,7 +95,7 @@ public class BrewerRecipeManager extends AbstractManager implements IRecipeManag
         }
         ItemStack inputItem = inputSlots.get(0).getItemStack();
         FluidStack inputFluid = inputTanks.get(0).getFluidStack();
-        return recipeMap.get(asList(convert(inputItem).hashCode(), FluidHelper.fluidHashcode(inputFluid)));
+        return recipeMap.get(asList(makeNBTComparable(inputItem).hashCode(), FluidHelper.fluidHashcode(inputFluid)));
     }
 
     protected IMachineRecipe addRecipe(int energy, float experience, List<ItemStack> inputItems, List<FluidStack> inputFluids, List<ItemStack> outputItems, List<Float> chance, List<FluidStack> outputFluids) {
@@ -119,8 +119,8 @@ public class BrewerRecipeManager extends AbstractManager implements IRecipeManag
         energy = (int) (energy * getDefaultScale());
 
         SimpleMachineRecipe recipe = new SimpleMachineRecipe(energy, experience, inputItems, inputFluids, outputItems, chance, outputFluids);
-        recipeMap.put(asList(convert(inputItem).hashCode(), FluidHelper.fluidHashcode(inputFluid)), recipe);
-        validItems.add(convert(inputItem));
+        recipeMap.put(asList(makeNBTComparable(inputItem).hashCode(), FluidHelper.fluidHashcode(inputFluid)), recipe);
+        validItems.add(makeNBTComparable(inputItem));
         validFluids.add(inputFluid.getFluid());
         return recipe;
     }

@@ -7,7 +7,6 @@ import net.minecraftforge.event.AddReloadListenerEvent;
 import net.minecraftforge.event.TagsUpdatedEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.registries.IdMappingEvent;
 
 import static cofh.lib.util.constants.ModIds.ID_THERMAL;
 
