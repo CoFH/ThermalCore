@@ -2,10 +2,13 @@ package cofh.thermal.core.fluid;
 
 import cofh.lib.fluid.FluidCoFH;
 import cofh.thermal.lib.common.ThermalItemGroups;
+import com.mojang.blaze3d.shaders.FogShape;
+import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.math.Vector3f;
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
+import net.minecraft.client.renderer.FogRenderer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.BucketItem;
@@ -70,6 +73,8 @@ public class CrudeOilFluid extends FluidCoFH {
             .fallDistanceModifier(0F)
             .density(850)
             .viscosity(1400)
+            .canDrown(true)
+            .canSwim(false)
             .sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL)
             .sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_EMPTY)) {
 
@@ -111,6 +116,22 @@ public class CrudeOilFluid extends FluidCoFH {
                 public @NotNull Vector3f modifyFogColor(Camera camera, float partialTick, ClientLevel level, int renderDistance, float darkenWorldAmount, Vector3f fluidFogColor) {
 
                     return instance().particleColor;
+                }
+
+                @Override
+                public void modifyFogRender(Camera camera, FogRenderer.FogMode mode, float renderDistance, float partialTick, float nearDistance, float farDistance, FogShape shape) {
+
+                    nearDistance = -8F;
+                    farDistance = 4F;
+
+                    if (farDistance > renderDistance) {
+                        farDistance = renderDistance;
+                        shape = FogShape.CYLINDER;
+                    }
+
+                    RenderSystem.setShaderFogStart(nearDistance);
+                    RenderSystem.setShaderFogEnd(farDistance);
+                    RenderSystem.setShaderFogShape(shape);
                 }
             });
         }

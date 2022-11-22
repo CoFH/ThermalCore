@@ -48,7 +48,7 @@ public class DeviceSoilInfuserScreen extends ThermalTileScreenBase<DeviceSoilInf
 
         String radius = format(1 + 2L * menu.tile.getRadius());
 
-        getFontRenderer().draw(matrixStack, localize("info.cofh.area") + ": " + radius + " x " + radius, 70, 39, 0x404040);
+        fontRenderer().draw(matrixStack, localize("info.cofh.area") + ": " + radius + " x " + radius, 70, 39, 0x404040);
 
         super.renderLabels(matrixStack, mouseX, mouseY);
     }

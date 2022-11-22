@@ -59,7 +59,7 @@ public class RedstoneFluid extends FluidCoFH {
 
         particleColor = new Vector3f(0.4F, 0.0F, 0.0F);
 
-        block = BLOCKS.register(fluid(ID_FLUID_REDSTONE), () -> new FluidBlock(stillFluid, of(Material.WATER).lightLevel(lightValue(7)).noCollission().strength(100.0F).noLootTable()));
+        block = BLOCKS.register(fluid(ID_FLUID_REDSTONE), () -> new FluidBlock(stillFluid, of(REDSTONE_FLUID).lightLevel(lightValue(7)).noCollission().strength(100.0F).noLootTable()));
         bucket = ITEMS.register(bucket(ID_FLUID_REDSTONE), () -> new BucketItem(stillFluid, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1).tab(ThermalItemGroups.THERMAL_ITEMS)));
     }
 
@@ -81,6 +81,8 @@ public class RedstoneFluid extends FluidCoFH {
             .density(1200)
             .viscosity(1500)
             .rarity(Rarity.UNCOMMON)
+            .canDrown(true)
+            .canSwim(false)
             .sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL)
             .sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_EMPTY)) {
 
@@ -128,7 +130,7 @@ public class RedstoneFluid extends FluidCoFH {
                 public void modifyFogRender(Camera camera, FogRenderer.FogMode mode, float renderDistance, float partialTick, float nearDistance, float farDistance, FogShape shape) {
 
                     nearDistance = -8F;
-                    farDistance = 24F;
+                    farDistance = 8F;
 
                     if (farDistance > renderDistance) {
                         farDistance = renderDistance;

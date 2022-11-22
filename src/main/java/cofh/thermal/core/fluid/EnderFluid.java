@@ -3,6 +3,13 @@ package cofh.thermal.core.fluid;
 import cofh.lib.fluid.FluidCoFH;
 import cofh.lib.util.Utils;
 import cofh.thermal.lib.common.ThermalItemGroups;
+import com.mojang.blaze3d.shaders.FogShape;
+import com.mojang.blaze3d.systems.RenderSystem;
+import com.mojang.math.Vector3f;
+import net.minecraft.client.Camera;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.multiplayer.ClientLevel;
+import net.minecraft.client.renderer.FogRenderer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
@@ -25,6 +32,8 @@ import net.minecraftforge.common.SoundActions;
 import net.minecraftforge.fluids.FluidType;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
 import net.minecraftforge.registries.RegistryObject;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Consumer;
 import java.util.function.Supplier;
@@ -52,6 +61,8 @@ public class EnderFluid extends FluidCoFH {
 
         super(FLUIDS, ID_FLUID_ENDER);
 
+        particleColor = new Vector3f(0.035F, 0.215F, 0.333F);
+
         block = BLOCKS.register(fluid(ID_FLUID_ENDER), () -> new FluidBlock(stillFluid, of(ENDER_FLUID).lightLevel(lightValue(3)).noCollission().strength(1200.0F).noLootTable()));
         bucket = ITEMS.register(bucket(ID_FLUID_ENDER), () -> new BucketItem(stillFluid, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1).tab(ThermalItemGroups.THERMAL_ITEMS)));
     }
@@ -73,6 +84,8 @@ public class EnderFluid extends FluidCoFH {
             .density(4000)
             .viscosity(2500)
             .rarity(Rarity.UNCOMMON)
+            .canDrown(true)
+            .canSwim(false)
             .sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL)
             .sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_EMPTY)) {
 
@@ -95,6 +108,41 @@ public class EnderFluid extends FluidCoFH {
                 public ResourceLocation getFlowingTexture() {
 
                     return FLOW;
+                }
+
+                @Nullable
+                @Override
+                public ResourceLocation getOverlayTexture() {
+
+                    return WATER_OVERLAY;
+                }
+
+                @Override
+                public ResourceLocation getRenderOverlayTexture(Minecraft mc) {
+
+                    return UNDERWATER_LOCATION;
+                }
+
+                @Override
+                public @NotNull Vector3f modifyFogColor(Camera camera, float partialTick, ClientLevel level, int renderDistance, float darkenWorldAmount, Vector3f fluidFogColor) {
+
+                    return instance().particleColor;
+                }
+
+                @Override
+                public void modifyFogRender(Camera camera, FogRenderer.FogMode mode, float renderDistance, float partialTick, float nearDistance, float farDistance, FogShape shape) {
+
+                    nearDistance = -8F;
+                    farDistance = 4F;
+
+                    if (farDistance > renderDistance) {
+                        farDistance = renderDistance;
+                        shape = FogShape.CYLINDER;
+                    }
+
+                    RenderSystem.setShaderFogStart(nearDistance);
+                    RenderSystem.setShaderFogEnd(farDistance);
+                    RenderSystem.setShaderFogShape(shape);
                 }
 
             });
