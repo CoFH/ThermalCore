@@ -2,7 +2,7 @@ package cofh.thermal.core.item;
 
 import cofh.core.item.IMultiModeItem;
 import cofh.core.item.ItemCoFH;
-import cofh.core.util.helpers.ChatHelper;
+import cofh.core.util.ProxyUtils;
 import cofh.lib.api.block.IDismantleable;
 import cofh.lib.api.block.IWrenchable;
 import cofh.lib.util.Utils;
@@ -142,7 +142,7 @@ public class WrenchItem extends ItemCoFH implements IMultiModeItem {
     public void onModeChange(Player player, ItemStack stack) {
 
         player.level.playSound(null, player.blockPosition(), SoundEvents.ENDER_EYE_DEATH, SoundSource.PLAYERS, 0.4F, (isActive(stack) ? 0.7F : 0.5F) + 0.1F * getMode(stack));
-        ChatHelper.sendIndexedChatMessageToPlayer(player, Component.translatable("info.thermal.wrench.mode." + getMode(stack)));
+        ProxyUtils.setOverlayMessage(player, Component.translatable("info.thermal.wrench.mode." + getMode(stack)));
     }
     // endregion
 }

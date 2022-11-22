@@ -3,7 +3,6 @@ package cofh.thermal.core.item;
 import cofh.core.item.IMultiModeItem;
 import cofh.core.item.ItemCoFH;
 import cofh.core.util.ProxyUtils;
-import cofh.core.util.helpers.ChatHelper;
 import cofh.lib.api.ITNTFactory;
 import cofh.lib.util.Utils;
 import net.minecraft.ChatFormatting;
@@ -183,7 +182,7 @@ public class DetonatorItem extends ItemCoFH implements IMultiModeItem {
     public void onModeChange(Player player, ItemStack stack) {
 
         player.level.playSound(null, player.blockPosition(), SoundEvents.LEVER_CLICK, SoundSource.PLAYERS, 0.4F, 1.0F - 0.3F * getMode(stack));
-        ChatHelper.sendIndexedChatMessageToPlayer(player, Component.translatable("info.thermal.detonator.mode." + getMode(stack)));
+        ProxyUtils.setOverlayMessage(player, Component.translatable("info.thermal.detonator.mode." + getMode(stack)));
     }
     // endregion
 }

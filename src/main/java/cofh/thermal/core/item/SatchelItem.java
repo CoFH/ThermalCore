@@ -6,7 +6,6 @@ import cofh.core.util.filter.EmptyFilter;
 import cofh.core.util.filter.FilterRegistry;
 import cofh.core.util.filter.IFilter;
 import cofh.core.util.filter.IFilterableItem;
-import cofh.core.util.helpers.ChatHelper;
 import cofh.core.util.helpers.FilterHelper;
 import cofh.core.util.helpers.InventoryHelper;
 import cofh.lib.api.item.IColorableItem;
@@ -135,10 +134,10 @@ public class SatchelItem extends InventoryContainerItemAugmentable implements IC
         }
         if (player instanceof ServerPlayer) {
             if (!canPlayerAccess(stack, player)) {
-                ChatHelper.sendIndexedChatMessageToPlayer(player, Component.translatable("info.cofh.secure_warning", SecurityHelper.getOwnerName(stack)));
+                ProxyUtils.setOverlayMessage(player, Component.translatable("info.cofh.secure_warning", SecurityHelper.getOwnerName(stack)));
                 return false;
             } else if (SecurityHelper.attemptClaimItem(stack, player)) {
-                ChatHelper.sendIndexedChatMessageToPlayer(player, Component.translatable("info.cofh.secure_item"));
+                ProxyUtils.setOverlayMessage(player, Component.translatable("info.cofh.secure_item"));
                 return false;
             }
             if (player.isSecondaryUseActive()) {
@@ -236,7 +235,7 @@ public class SatchelItem extends InventoryContainerItemAugmentable implements IC
     public void onModeChange(Player player, ItemStack stack) {
 
         player.level.playSound(null, player.blockPosition(), SoundEvents.ITEM_PICKUP, SoundSource.PLAYERS, 0.4F, 0.8F + 0.4F * getMode(stack));
-        ChatHelper.sendIndexedChatMessageToPlayer(player, Component.translatable("info.thermal.satchel.mode." + getMode(stack)));
+        ProxyUtils.setOverlayMessage(player, Component.translatable("info.thermal.satchel.mode." + getMode(stack)));
     }
     // endregion
 }
