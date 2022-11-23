@@ -75,6 +75,7 @@ public class CrudeOilFluid extends FluidCoFH {
             .viscosity(1400)
             .canDrown(true)
             .canSwim(false)
+            .supportsBoating(true)
             .sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL)
             .sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_EMPTY)) {
 

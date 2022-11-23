@@ -100,13 +100,6 @@ public class DeviceFisherTile extends DeviceTileBase implements ITickableTile.IS
         internalHandler = new SimpleItemHandler(this, inventory.getOutputSlots());
     }
 
-    //    @Override
-    //    public void setLevel(Level level) {
-    //
-    //        super.setLevel(level);
-    //        updateValidity();
-    //    }
-
     @Override
     protected void updateValidity() {
 

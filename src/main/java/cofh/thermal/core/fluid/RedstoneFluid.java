@@ -83,6 +83,7 @@ public class RedstoneFluid extends FluidCoFH {
             .rarity(Rarity.UNCOMMON)
             .canDrown(true)
             .canSwim(false)
+            .supportsBoating(true)
             .sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL)
             .sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_EMPTY)) {
 
