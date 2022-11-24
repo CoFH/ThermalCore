@@ -115,8 +115,7 @@ public class ThermalCore {
         CONFIG_MANAGER.register(modEventBus)
                 .addClientConfig(new ThermalClientConfig())
                 .addServerConfig(new ThermalCoreConfig())
-                .addServerConfig(new ThermalDeviceConfig())
-                .addCommonConfig(new ThermalWorldConfig());
+                .addServerConfig(new ThermalDeviceConfig());
 
         modEventBus.addListener(this::entityAttributeSetup);
         modEventBus.addListener(this::entityLayerSetup);
@@ -222,7 +221,6 @@ public class ThermalCore {
 
         CONFIG_MANAGER.setupClient();
         CONFIG_MANAGER.setupServer();
-        CONFIG_MANAGER.setupCommon();
     }
     // endregion
 
