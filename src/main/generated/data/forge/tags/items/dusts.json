@@ -10,6 +10,10 @@
     "#forge:dusts/quartz",
     "#forge:dusts/enderium",
     "#forge:dusts/lumium",
-    "#forge:dusts/signalum"
+    "#forge:dusts/signalum",
+    "#forge:dusts/apatite",
+    "#forge:dusts/cinnabar",
+    "#forge:dusts/niter",
+    "#forge:dusts/sulfur"
   ]
 }
