@@ -22,7 +22,6 @@ import cofh.thermal.core.client.renderer.entity.model.ElementalProjectileModel;
 import cofh.thermal.core.config.ThermalClientConfig;
 import cofh.thermal.core.config.ThermalCoreConfig;
 import cofh.thermal.core.config.ThermalDeviceConfig;
-import cofh.thermal.core.config.ThermalWorldConfig;
 import cofh.thermal.core.entity.explosive.DetonateUtils;
 import cofh.thermal.core.entity.monster.Basalz;
 import cofh.thermal.core.entity.monster.Blitz;
