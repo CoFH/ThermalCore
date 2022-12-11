@@ -37,7 +37,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.LivingEntity;
@@ -214,7 +213,7 @@ public abstract class ThermalTileAugmentable extends TileCoFH implements ISecura
 
         if (!keepItems()) {
             for (int i = 0; i < invSize() - augSize(); ++i) {
-                Containers.dropItemStack(worldIn, pos.getX(), pos.getY(), pos.getZ(), inventory.getStackInSlot(i));
+                Utils.dropItemStackIntoWorldWithRandomness(inventory.getStackInSlot(i), worldIn, pos);
             }
         }
         if (!ThermalCoreConfig.keepAugments.get()) {
