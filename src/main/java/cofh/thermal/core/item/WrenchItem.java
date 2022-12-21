@@ -9,9 +9,11 @@ import cofh.lib.util.Utils;
 import cofh.lib.util.helpers.BlockHelper;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
+import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
@@ -29,9 +31,12 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraftforge.registries.ForgeRegistries;
 
 import javax.annotation.Nullable;
+import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 import static cofh.core.init.CoreMobEffects.WRENCHED;
 import static cofh.lib.util.helpers.StringHelper.getTextComponent;
@@ -39,6 +44,8 @@ import static cofh.lib.util.helpers.StringHelper.getTextComponent;
 public class WrenchItem extends ItemCoFH implements IMultiModeItem {
 
     private final Multimap<Attribute, AttributeModifier> toolAttributes;
+
+    protected static final Set<Block> BANNED_BLOCKS = new ObjectOpenHashSet<>();
 
     public WrenchItem(Properties builder) {
 
@@ -48,6 +55,20 @@ public class WrenchItem extends ItemCoFH implements IMultiModeItem {
         multimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Tool modifier", 0.0D, AttributeModifier.Operation.ADDITION));
 
         this.toolAttributes = multimap.build();
+    }
+
+    public static void setBannedBlocks(Collection<String> blockLocs) {
+
+        synchronized (BANNED_BLOCKS) {
+            BANNED_BLOCKS.clear();
+
+            for (String loc : blockLocs) {
+                Block block = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(loc));
+                if (block != null) {
+                    BANNED_BLOCKS.add(block);
+                }
+            }
+        }
     }
 
     @Override
@@ -68,8 +89,13 @@ public class WrenchItem extends ItemCoFH implements IMultiModeItem {
         if (player == null || world.isEmptyBlock(pos)) {
             return false;
         }
+
         BlockState state = world.getBlockState(pos);
         Block block = state.getBlock();
+
+        if (BANNED_BLOCKS.contains(block)){
+            return false;
+        }
 
         if (player.isSecondaryUseActive() && block instanceof IDismantleable && ((IDismantleable) block).canDismantle(world, pos, state, player)) {
             if (Utils.isServerWorld(world)) {

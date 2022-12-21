@@ -3,6 +3,7 @@ package cofh.thermal.core.config;
 import cofh.core.config.IBaseConfig;
 import cofh.thermal.core.ThermalCore;
 import cofh.thermal.core.item.SatchelItem;
+import cofh.thermal.core.item.WrenchItem;
 import cofh.thermal.lib.util.ThermalEnergyHelper;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.common.ForgeConfigSpec;
@@ -88,6 +89,18 @@ public class ThermalCoreConfig implements IBaseConfig {
                 .comment("A list of Items by Resource Location which are NOT allowed in Satchels.")
                 .define("Denylist", new ArrayList<>(Arrays.asList(shulkerBoxes)));
 
+        builder.pop();
+
+        builder.push("CrescentHammer");
+
+        String[] wrenchBanList = new String[]{
+                "create:belt",
+        };
+
+        listWrenchBans = builder
+                .comment("A list of Blocks by Resource Location which are NOT allowed to be wrenched by the Crescent Hammer")
+                .define("Denylist", new ArrayList<>(Arrays.asList(wrenchBanList)));
+
         builder.pop(2);
 
         builder.push("Mobs");
@@ -149,6 +162,7 @@ public class ThermalCoreConfig implements IBaseConfig {
         setFlag(FLAG_XP_STORAGE_AUGMENT, !defaultXPStorage.get());
 
         SatchelItem.setBannedItems(listSatchelBans.get());
+        WrenchItem.setBannedBlocks(listWrenchBans.get());
     }
 
     // region VARIABLES
@@ -187,5 +201,8 @@ public class ThermalCoreConfig implements IBaseConfig {
     private Supplier<Boolean> boolStandaloneRedstoneFlux = FALSE;
 
     private Supplier<List<String>> listSatchelBans = Collections::emptyList;
+
+    private Supplier<List<String>> listWrenchBans = Collections::emptyList;
+
     // endregion
 }
