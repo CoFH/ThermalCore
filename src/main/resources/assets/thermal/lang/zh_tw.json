@@ -118,22 +118,22 @@
   "entity.thermal.blitz_projectile": "鳴雷彈珠",
   "entity.thermal.blizz_projectile": "瀑冰刺錐",
 
-  "fluid.thermal.biocrude": "生物原油",
-  "fluid.thermal.creosote": "雜酚油",
-  "fluid.thermal.crude_oil": "石油",
-  "fluid.thermal.ender": "諧振終界",
-  "fluid.thermal.glowstone": "充能螢石",
-  "fluid.thermal.heavy_oil": "重油",
-  "fluid.thermal.latex": "植物膠乳",
-  "fluid.thermal.light_oil": "輕油",
-  "fluid.thermal.redstone": "不穩定紅石",
-  "fluid.thermal.refined_biofuel": "纖維素燃料",
-  "fluid.thermal.refined_fuel": "精煉油",
-  "fluid.thermal.resin": "樹脂",
-  "fluid.thermal.sap": "樹汁",
-  "fluid.thermal.seed_oil": "種子油",
-  "fluid.thermal.syrup": "糖漿",
-  "fluid.thermal.tree_oil": "樹油",
+  "fluid_type.thermal.biocrude": "生物原油",
+  "fluid_type.thermal.creosote": "雜酚油",
+  "fluid_type.thermal.crude_oil": "石油",
+  "fluid_type.thermal.ender": "諧振終界",
+  "fluid_type.thermal.glowstone": "充能螢石",
+  "fluid_type.thermal.heavy_oil": "重油",
+  "fluid_type.thermal.latex": "植物膠乳",
+  "fluid_type.thermal.light_oil": "輕油",
+  "fluid_type.thermal.redstone": "不穩定紅石",
+  "fluid_type.thermal.refined_biofuel": "纖維素燃料",
+  "fluid_type.thermal.refined_fuel": "精煉油",
+  "fluid_type.thermal.resin": "樹脂",
+  "fluid_type.thermal.sap": "樹汁",
+  "fluid_type.thermal.seed_oil": "種子油",
+  "fluid_type.thermal.syrup": "糖漿",
+  "fluid_type.thermal.tree_oil": "樹油",
 
   "info.thermal.catalysts": "催化劑",
   "info.thermal.energy_mod": "能耗倍數",
@@ -667,7 +667,7 @@
   "item.thermal.lightning_grenade.desc": "發生碰撞時造成範圍性震擊並有機率伴隨雷電。",
   "item.thermal.nuke_grenade": "核能手榴彈",
   "item.thermal.nuke_grenade.desc": "記得扔遠點。",
-  "item.thermal.phyto_grenade": "植育催熟爆彈",
+  "item.thermal.phyto_grenade": "植育催熟彈",
   "item.thermal.phyto_grenade.desc": "可投擲的植育一號，作用範圍更廣。",
   "item.thermal.redstone_grenade": "紅石訊號彈",
   "item.thermal.redstone_grenade.desc": "發生碰撞時在一定範圍內發出紅石訊號。",
@@ -988,7 +988,7 @@
 
   "block.thermal.energy_duct": "能量導管",
   "block.thermal.fluid_duct": "流體導管",
-  "block.thermal.fluid_duct_glass": "流體導管（窺視窗）",
+  "block.thermal.fluid_duct_glass": "流體導管（窗口）",
 
   "block.thermal.energy_distributor": "RF 分配介面",
   "block.thermal.fluid_distributor": "流體分配介面",
@@ -1291,7 +1291,7 @@
   "entity.thermal.ice_tnt_minecart": "冰川結凍炸藥礦車",
   "entity.thermal.lightning_tnt_minecart": "震天雷擊炸藥礦車",
   "entity.thermal.nuke_tnt_minecart": "核彈礦車",
-  "entity.thermal.phyto_tnt_minecart": "植育催熟礦車",
+  "entity.thermal.phyto_tnt_minecart": "植育催熟炸藥礦車",
   "entity.thermal.redstone_tnt_minecart": "紅石訊號炸藥礦車",
   "entity.thermal.slime_tnt_minecart": "彈力黏著炸藥礦車",
 
@@ -1306,7 +1306,7 @@
   "item.thermal.ice_tnt_minecart": "冰川結凍炸藥礦車",
   "item.thermal.lightning_tnt_minecart": "震天雷擊炸藥礦車",
   "item.thermal.nuke_tnt_minecart": "核彈礦車",
-  "item.thermal.phyto_tnt_minecart": "植育催熟礦車",
+  "item.thermal.phyto_tnt_minecart": "植育催熟炸藥礦車",
   "item.thermal.redstone_tnt_minecart": "紅石訊號炸藥礦車",
   "item.thermal.slime_tnt_minecart": "彈力黏著炸藥礦車",
 
@@ -1341,5 +1341,5 @@
 
   "thermal.book.name": "熱力百科",
   "thermal.book.landing_text": "歡迎使用熱力系列指導手冊！全體製作人員祝你玩得愉快。",
-  "thermal.book.subtitle": "MC 1.19.3"
+  "thermal.book.subtitle": "MC 1.19.2"
 }
