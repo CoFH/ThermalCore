@@ -999,7 +999,7 @@
   "info.thermal.energy_limiter_attachment.1": "可為每個方向設置不同上限。",
   "info.thermal.energy_limiter_attachment.2": "按住§e§oShift§r鍵和/或§e§oCtrl§r鍵來精確調整數值。",
 
-  "info.thermal.fluid_filter_attachment.0": "將存有流體的物品放入欄位，以此把對應的流體新增到篩選器列表中。",
+  "info.thermal.fluid_filter_attachment.0": "將存有流體的物品放入欄位，以此把對應的流體新增到篩選器清單中。",
   "info.thermal.fluid_filter_attachment.1": "可用額外選項以精確調整行為。",
   "info.thermal.fluid_filter_attachment.2": "紅石控制可用於暫時關閉篩選...",
 
