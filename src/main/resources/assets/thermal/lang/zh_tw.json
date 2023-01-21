@@ -417,8 +417,8 @@
   "info.thermal.augment.attr.PotionAmp": "效果等級",
   "info.thermal.augment.attr.PotionDur": "效果時長",
 
-  "info.thermal.augment.attr.RFMax": "RF 容量",
-  "info.thermal.augment.attr.RFXfer": "RF 傳輸",
+  "info.thermal.augment.attr.RFMax": "紅石通量容量",
+  "info.thermal.augment.attr.RFXfer": "紅石通量傳輸",
 
   "info.thermal.augment.type.Area": "範圍效果",
   "info.thermal.augment.type.Dynamo": "能源爐",
@@ -443,7 +443,7 @@
   "item.thermal.dynamo_output_augment": "輔助反應室",
   "item.thermal.dynamo_output_augment.desc": "以效率降低為代價提升發電功率。",
   "item.thermal.dynamo_throttle_augment": "激發場限制器",
-  "item.thermal.dynamo_throttle_augment.desc": "防止線圈飽和後的 RF 損失。",
+  "item.thermal.dynamo_throttle_augment.desc": "防止線圈飽和後的紅石通量損失。",
 
   "item.thermal.fluid_tank_augment": "擴容儲罐構造",
 
@@ -457,21 +457,21 @@
   "item.thermal.item_filter_augment": "物品篩選器",
   "item.thermal.item_filter_augment.desc": "允許對物品進行篩選限制。",
 
-  "item.thermal.machine_catalyst_augment": "觸媒回收室",
+  "item.thermal.machine_catalyst_augment": "催化回收室",
   "item.thermal.machine_catalyst_creative_augment": "創造回收室",
   "item.thermal.machine_catalyst_creative_augment.desc": "不消耗催化劑。",
   "item.thermal.machine_cycle_augment": "循環處理升級",
   "item.thermal.machine_cycle_augment.desc": "裝配產物可循環至輸入槽以進行下一步合成。",
   "item.thermal.machine_efficiency_augment": "通量效率升級",
-  "item.thermal.machine_efficiency_augment.desc": "以處理速度降低為代價提升 RF 效率。",
+  "item.thermal.machine_efficiency_augment.desc": "以處理速度降低為代價提升紅石通量效率。",
   "item.thermal.machine_efficiency_creative_augment": "創造通量提效",
   "item.thermal.machine_efficiency_creative_augment.desc": "不消耗能量，處理速度極快。",
   "item.thermal.machine_null_augment": "輔助仙人掌",
   "item.thermal.machine_null_augment.desc": "銷毀多餘的副產物。",
   "item.thermal.machine_output_augment": "輔助處理篩",
   "item.thermal.machine_output_augment.desc": "增加副產物的產生",
-  "item.thermal.machine_speed_augment": "通量連接放大器",
-  "item.thermal.machine_speed_augment.desc": "以 RF 效率降低為代價提升處理速度。",
+  "item.thermal.machine_speed_augment": "通量鏈結放大器",
+  "item.thermal.machine_speed_augment.desc": "以紅石通量效率降低為代價提升處理速度。",
 
   "item.thermal.potion_amplifier_augment": "煉金放大器",
   "item.thermal.potion_amplifier_augment.desc": "增強藥水的效果等級。",
@@ -481,7 +481,7 @@
   "item.thermal.rf_coil_augment": "擴展通量線圈",
 
   "item.thermal.rf_coil_creative_augment": "創造通量線圈",
-  "item.thermal.rf_coil_creative_augment.desc": "功能性無限的 RF 能量",
+  "item.thermal.rf_coil_creative_augment.desc": "功能性無限的紅石通量",
 
   "item.thermal.rf_coil_storage_augment": "穩態通量線圈",
   "item.thermal.rf_coil_xfer_augment": "強導通量線圈",
@@ -535,7 +535,7 @@
   "block.thermal.chunk_loader": "連續錨",
 
   "block.thermal.earth_tnt": "地岩碎裂炸藥",
-  "block.thermal.earth_tnt.desc": "破壞方塊並保留掉落物，非常有效的採礦途徑。",
+  "block.thermal.earth_tnt.desc": "破壞方塊並保留掉落物，非常有效的挖礦途徑。",
   "block.thermal.ender_tnt": "終界侵擾炸藥",
   "block.thermal.ender_tnt.desc": "在大範圍內造成侵擾效果，使其中的物體被傳送開。",
   "block.thermal.fire_tnt": "獄火燒夷炸藥",
@@ -611,7 +611,7 @@
   "info.thermal.charge_bench.1": "可自動化物品輸入與輸出。",
   "info.thermal.charge_bench.2": "感受轟鳴。",
 
-  "info.thermal.tinker_bench.0": "集工具增強、設備充能及流體灌裝於一體的多功能工作站。",
+  "info.thermal.tinker_bench.0": "集工具增強、裝置充能及流體灌裝於一體的多功能工作站。",
   "info.thermal.tinker_bench.1": "物品槽中僅可放入適用於工匠工作台的物品。",
   "info.thermal.tinker_bench.2": "修補模式啟動！",
 
@@ -654,7 +654,7 @@
   "item.thermal.explosive_grenade": "手榴彈",
   "item.thermal.explosive_grenade.desc": "可投擲的小型 TNT。",
   "item.thermal.earth_grenade": "地岩碎裂彈",
-  "item.thermal.earth_grenade.desc": "破壞方塊並保留掉落物，非常有效的採礦途徑。",
+  "item.thermal.earth_grenade.desc": "破壞方塊並保留掉落物，非常有效的挖礦途徑。",
   "item.thermal.ender_grenade": "終界侵擾彈",
   "item.thermal.ender_grenade.desc": "在一定範圍內造成侵擾效果，使其中的物體被傳送開。",
   "item.thermal.fire_grenade": "獄火燒夷彈",
@@ -984,13 +984,13 @@
   "_comment": "Thermal Dynamics",
   "_comment": "========================================================================================================",
 
-"attachment.thermal.energy_limiter": "紅石通量限流器",
+  "attachment.thermal.energy_limiter": "紅石通量限流器",
 
   "block.thermal.energy_duct": "能量導管",
   "block.thermal.fluid_duct": "流體導管",
   "block.thermal.fluid_duct_glass": "流體導管（窺視窗）",
 
-  "block.thermal.energy_distributor": "RF 分配介面",
+  "block.thermal.energy_distributor": "通量分配介面",
   "block.thermal.fluid_distributor": "流體分配介面",
 
   "block.thermal.item_buffer": "邏輯物品緩衝器",
@@ -1238,7 +1238,7 @@
   "item.thermal.flux_capacitor.desc": "儲存紅石通量並為其它物品充能。",
 
   "item.thermal.flux_drill": "通量電鑽",
-  "item.thermal.flux_drill.desc": "紅石通量驅動的採掘工具。",
+  "item.thermal.flux_drill.desc": "紅石通量驅動的挖掘工具。",
 
   "item.thermal.flux_magnet": "通量磁鐵",
   "item.thermal.flux_magnet.desc": "紅石通量驅動的物品磁吸工具。",
