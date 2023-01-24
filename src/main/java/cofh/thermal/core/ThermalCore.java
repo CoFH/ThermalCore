@@ -5,6 +5,7 @@ import cofh.core.client.renderer.entity.TNTMinecartRendererCoFH;
 import cofh.core.config.ConfigManager;
 import cofh.core.entity.AbstractGrenade;
 import cofh.core.entity.AbstractTNTMinecart;
+import cofh.core.event.CoreClientEvents;
 import cofh.lib.client.renderer.entity.TntRendererCoFH;
 import cofh.lib.entity.PrimedTntCoFH;
 import cofh.lib.util.DeferredRegisterCoFH;
@@ -214,6 +215,8 @@ public class ThermalCore {
 
         event.enqueueWork(this::registerGuiFactories);
         event.enqueueWork(this::registerRenderLayers);
+
+        event.enqueueWork(() -> CoreClientEvents.addNamespace(ID_THERMAL));
     }
 
     private void registrySetup(final NewRegistryEvent event) {
