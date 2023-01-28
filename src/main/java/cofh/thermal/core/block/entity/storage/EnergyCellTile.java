@@ -8,7 +8,7 @@ import cofh.lib.energy.EnergyStorageRestrictable;
 import cofh.lib.util.Utils;
 import cofh.lib.util.helpers.BlockHelper;
 import cofh.thermal.core.inventory.container.storage.EnergyCellContainer;
-import cofh.thermal.lib.tileentity.CellTileBase;
+import cofh.thermal.lib.block.entity.StorageCellBlockEntity;
 import cofh.thermal.lib.util.ThermalEnergyHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -31,7 +31,7 @@ import static cofh.thermal.core.config.ThermalCoreConfig.storageAugments;
 import static cofh.thermal.core.init.TCoreTileEntities.ENERGY_CELL_TILE;
 import static cofh.thermal.lib.common.ThermalAugmentRules.ENERGY_STORAGE_VALIDATOR;
 
-public class EnergyCellTile extends CellTileBase implements ITickableTile.IServerTickable {
+public class EnergyCellTile extends StorageCellBlockEntity implements ITickableTile.IServerTickable {
 
     public static final int BASE_CAPACITY = 1000000;
     public static final int BASE_RECV = 1000;

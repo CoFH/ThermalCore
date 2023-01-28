@@ -17,7 +17,7 @@
   "block.thermal.nickel_ore": "Нікелева руда",
   "block.thermal.silver_ore": "Срібна руда",
   "block.thermal.tin_ore": "Олов'яна руда",
-  
+
   "block.thermal.ruby_ore": "Рубінова руда",
   "block.thermal.sapphire_ore": "Сапфірова руда",
 
@@ -113,7 +113,7 @@
   "entity.thermal.basalz": "Базальц",
   "entity.thermal.blitz": "Блітц",
   "entity.thermal.blizz": "Блізз",
-  
+
   "entity.thermal.basalz_projectile": "Тектонічний уламок",
   "entity.thermal.blitz_projectile": "Шарова блискавка",
   "entity.thermal.blizz_projectile": "Морозний снаряд",
@@ -284,7 +284,7 @@
   "item.thermal.silver_ingot": "Срібний злиток",
   "item.thermal.silver_nugget": "Срібний шматочок",
   "item.thermal.silver_plate": "Срібна пластина",
-  
+
   "item.thermal.tin_coin": "Олов'яна монета",
   "item.thermal.tin_dust": "Олов'яний пил",
   "item.thermal.tin_gear": "Олов'яна шестерня",
