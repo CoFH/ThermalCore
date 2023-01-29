@@ -19,7 +19,7 @@
 //import net.minecraft.network.PacketBuffer;
 //import net.minecraft.tileentity.ITickableTileEntity;
 //import net.minecraft.util.Direction;
-//import net.minecraftforge.client.model.data.IModelData;
+//import net.minecraftforge.client.model.data.ModelData;
 //import net.minecraftforge.client.model.data.ModelDataMap;
 //import net.minecraftforge.common.util.LazyOptional;
 //import net.minecraftforge.items.IItemHandler;
@@ -204,7 +204,7 @@
 //
 //    @Nonnull
 //    @Override
-//    public IModelData getModelData() {
+//    public ModelData getModelData() {
 //
 //        return new ModelDataMap.Builder()
 //                .withInitial(SIDES, reconfigControl().getRawSideConfig())
