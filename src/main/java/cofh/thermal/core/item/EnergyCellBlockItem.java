@@ -3,7 +3,7 @@ package cofh.thermal.core.item;
 import cofh.core.util.helpers.AugmentDataHelper;
 import cofh.lib.api.item.IEnergyContainerItem;
 import cofh.lib.energy.EnergyStorageCoFH;
-import cofh.thermal.core.block.entity.storage.EnergyCellTile;
+import cofh.thermal.core.block.entity.storage.EnergyCellBlockEntity;
 import cofh.thermal.lib.item.BlockItemAugmentable;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -75,7 +75,7 @@ public class EnergyCellBlockItem extends BlockItemAugmentable implements IEnergy
 
         CompoundTag blockTag = container.getOrCreateTagElement(TAG_BLOCK_ENTITY);
         if (!blockTag.contains(TAG_ENERGY_MAX)) {
-            new EnergyStorageCoFH(EnergyCellTile.BASE_CAPACITY, EnergyCellTile.BASE_RECV, EnergyCellTile.BASE_SEND).writeWithParams(container.getOrCreateTagElement(TAG_BLOCK_ENTITY));
+            new EnergyStorageCoFH(EnergyCellBlockEntity.BASE_CAPACITY, EnergyCellBlockEntity.BASE_RECV, EnergyCellBlockEntity.BASE_SEND).writeWithParams(container.getOrCreateTagElement(TAG_BLOCK_ENTITY));
         }
         return container.getOrCreateTagElement(TAG_BLOCK_ENTITY);
     }

@@ -31,13 +31,13 @@ import static cofh.thermal.core.config.ThermalCoreConfig.storageAugments;
 import static cofh.thermal.core.init.TCoreTileEntities.ENERGY_CELL_TILE;
 import static cofh.thermal.lib.common.ThermalAugmentRules.ENERGY_STORAGE_VALIDATOR;
 
-public class EnergyCellTile extends StorageCellBlockEntity implements ITickableTile.IServerTickable {
+public class EnergyCellBlockEntity extends StorageCellBlockEntity implements ITickableTile.IServerTickable {
 
     public static final int BASE_CAPACITY = 1000000;
     public static final int BASE_RECV = 1000;
     public static final int BASE_SEND = 1000;
 
-    public EnergyCellTile(BlockPos pos, BlockState state) {
+    public EnergyCellBlockEntity(BlockPos pos, BlockState state) {
 
         super(ENERGY_CELL_TILE.get(), pos, state);
 
