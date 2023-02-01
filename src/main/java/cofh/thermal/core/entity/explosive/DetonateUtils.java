@@ -13,7 +13,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -77,7 +76,7 @@ public class DetonateUtils {
 
         AreaUtils.ICE_TRANSFORM.transformSphere(level, pos, radius, owner);
         AreaUtils.CHILL_ENTITIES.applyEffectNearby(level, pos, radius, duration, amplifier);
-        makeAreaOfEffectCloud(level, (SimpleParticleType) FROST.get(), pos, radius);
+        makeAreaOfEffectCloud(level, FROST.get(), pos, radius);
     }
 
     public static void earth(Level level, Entity explosive, @Nullable Entity owner, Vec3 pos, float radius, int duration, int amplifier) {

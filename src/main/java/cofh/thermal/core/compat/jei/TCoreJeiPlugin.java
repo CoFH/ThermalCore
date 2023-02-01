@@ -4,13 +4,13 @@ import cofh.core.util.helpers.FluidHelper;
 import cofh.thermal.core.client.gui.device.DeviceComposterScreen;
 import cofh.thermal.core.client.gui.device.DeviceRockGenScreen;
 import cofh.thermal.core.client.gui.device.DeviceTreeExtractorScreen;
-import cofh.thermal.core.compat.jei.device.ComposterCategory;
 import cofh.thermal.core.compat.jei.device.RockGenCategory;
 import cofh.thermal.core.compat.jei.device.TreeExtractorCategory;
 import cofh.thermal.core.util.recipes.device.RockGenMapping;
 import cofh.thermal.core.util.recipes.device.TreeExtractorMapping;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
+import mezz.jei.api.constants.RecipeTypes;
 import mezz.jei.api.forge.ForgeTypes;
 import mezz.jei.api.gui.drawable.IDrawable;
 import mezz.jei.api.gui.ingredient.IRecipeSlotTooltipCallback;
@@ -32,7 +32,6 @@ import static cofh.lib.util.Constants.BUCKET_VOLUME;
 import static cofh.lib.util.constants.ModIds.ID_THERMAL;
 import static cofh.lib.util.helpers.StringHelper.getTextComponent;
 import static cofh.thermal.core.ThermalCore.BLOCKS;
-import static cofh.thermal.core.compat.jei.device.ComposterCategory.ID_MAPPING_COMPOSTER;
 import static cofh.thermal.core.config.ThermalClientConfig.jeiBucketTanks;
 import static cofh.thermal.core.init.TCoreRecipeTypes.ROCK_GEN_MAPPING;
 import static cofh.thermal.core.init.TCoreRecipeTypes.TREE_EXTRACTOR_MAPPING;
@@ -53,9 +52,6 @@ public class TCoreJeiPlugin implements IModPlugin {
         if (getFlag(ID_DEVICE_TREE_EXTRACTOR).get()) {
             registration.addRecipes(TREE_EXTRACTOR_TYPE, recipeManager.getAllRecipesFor(TREE_EXTRACTOR_MAPPING.get()));
         }
-        if (getFlag(ID_DEVICE_COMPOSTER).get()) {
-            registration.addRecipes(COMPOSTER_TYPE, ComposterCategory.getMappings());
-        }
         if (getFlag(ID_DEVICE_ROCK_GEN).get()) {
             registration.addRecipes(ROCK_GEN_TYPE, recipeManager.getAllRecipesFor(ROCK_GEN_MAPPING.get()));
         }
@@ -65,7 +61,6 @@ public class TCoreJeiPlugin implements IModPlugin {
     public void registerCategories(IRecipeCategoryRegistration registration) {
 
         registration.addRecipeCategories(new TreeExtractorCategory(registration.getJeiHelpers().getGuiHelper(), new ItemStack(BLOCKS.get(ID_DEVICE_TREE_EXTRACTOR)), TREE_EXTRACTOR_TYPE));
-        registration.addRecipeCategories(new ComposterCategory(registration.getJeiHelpers().getGuiHelper(), new ItemStack(BLOCKS.get(ID_DEVICE_COMPOSTER)), COMPOSTER_TYPE));
         registration.addRecipeCategories(new RockGenCategory(registration.getJeiHelpers().getGuiHelper(), new ItemStack(BLOCKS.get(ID_DEVICE_ROCK_GEN)), ROCK_GEN_TYPE));
     }
 
@@ -73,7 +68,7 @@ public class TCoreJeiPlugin implements IModPlugin {
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
 
         registration.addRecipeCatalyst(new ItemStack(BLOCKS.get(ID_DEVICE_TREE_EXTRACTOR)), TREE_EXTRACTOR_TYPE);
-        registration.addRecipeCatalyst(new ItemStack(BLOCKS.get(ID_DEVICE_COMPOSTER)), COMPOSTER_TYPE);
+        registration.addRecipeCatalyst(new ItemStack(BLOCKS.get(ID_DEVICE_COMPOSTER)), RecipeTypes.COMPOSTING);
         registration.addRecipeCatalyst(new ItemStack(BLOCKS.get(ID_DEVICE_ROCK_GEN)), ROCK_GEN_TYPE);
     }
 
@@ -85,7 +80,7 @@ public class TCoreJeiPlugin implements IModPlugin {
         int progressH = 16;
 
         registration.addRecipeClickArea(DeviceTreeExtractorScreen.class, 80, progressY, 16, progressH, TREE_EXTRACTOR_TYPE);
-        registration.addRecipeClickArea(DeviceComposterScreen.class, 87, progressY, progressW, progressH, COMPOSTER_TYPE);
+        registration.addRecipeClickArea(DeviceComposterScreen.class, 87, progressY, progressW, progressH, RecipeTypes.COMPOSTING);
         registration.addRecipeClickArea(DeviceRockGenScreen.class, 84, progressY, progressW, progressH, ROCK_GEN_TYPE);
     }
 
@@ -182,7 +177,6 @@ public class TCoreJeiPlugin implements IModPlugin {
 
     // region RECIPE TYPES
     public static final RecipeType<TreeExtractorMapping> TREE_EXTRACTOR_TYPE = new RecipeType<>(TREE_EXTRACTOR_MAPPING.getId(), TreeExtractorMapping.class);
-    public static final RecipeType<ComposterCategory.ComposterMapping> COMPOSTER_TYPE = new RecipeType<>(ID_MAPPING_COMPOSTER, ComposterCategory.ComposterMapping.class);
     public static final RecipeType<RockGenMapping> ROCK_GEN_TYPE = new RecipeType<>(ROCK_GEN_MAPPING.getId(), RockGenMapping.class);
     // endregion
 }
