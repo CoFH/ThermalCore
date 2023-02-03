@@ -149,6 +149,8 @@ public abstract class StorageCellBlockEntity extends AugmentableBlockEntity impl
 
         amountInput = MathHelper.clamp(buffer.readInt(), 0, getMaxInput());
         amountOutput = MathHelper.clamp(buffer.readInt(), 0, getMaxOutput());
+
+        markChunkUnsaved();
     }
 
     // CONTROL

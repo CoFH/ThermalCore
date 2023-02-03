@@ -35,6 +35,6 @@ side = "BOTH"
 [[dependencies.thermal]]
 modId = "cofh_core"
 mandatory = true
-versionRange = "[10.0, 10.1]"
+versionRange = "[10.2, 10.3]"
 ordering = "AFTER"
 side = "BOTH"
