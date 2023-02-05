@@ -249,8 +249,8 @@ public class ThermalGuiHelper {
 
         return new ResourcePanel(gui)
                 .setResource(CoreTextures.ICON_ENERGY, "info.cofh.energy", false)
-                .setCurrent(tile::getCurSpeed, "info.cofh.energy_use", "RF/t")
-                .setMax(tile::getMaxSpeed, "info.cofh.energy_max_use", "RF/t")
+                .setCurrent(tile::getCurSpeed, "info.cofh.energy_use", "info.cofh.unit_rf_t")
+                .setMax(tile::getMaxSpeed, "info.cofh.energy_max_use", "info.cofh.unit_rf_t")
                 .setEfficiency(tile::getEfficiency);
     }
 
@@ -258,8 +258,8 @@ public class ThermalGuiHelper {
 
         return new ResourcePanel(gui)
                 .setResource(CoreTextures.ICON_ENERGY, "info.cofh.energy", true)
-                .setCurrent(tile::getCurSpeed, "info.cofh.energy_prod", "RF/t")
-                .setMax(tile::getMaxSpeed, "info.cofh.energy_max_prod", "RF/t")
+                .setCurrent(tile::getCurSpeed, "info.cofh.energy_prod", "info.cofh.unit_rf_t")
+                .setMax(tile::getMaxSpeed, "info.cofh.energy_max_prod", "info.cofh.unit_rf_t")
                 .setEfficiency(tile::getEfficiency);
     }
     // endregion

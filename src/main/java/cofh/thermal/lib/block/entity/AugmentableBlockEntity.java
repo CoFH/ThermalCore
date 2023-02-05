@@ -868,6 +868,7 @@ public abstract class AugmentableBlockEntity extends TileCoFH implements ISecura
         updateHandlers();
         callNeighborStateChange();
         TileControlPacket.sendToClient(this);
+        markChunkUnsaved();
     }
     // endregion
 
