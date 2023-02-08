@@ -7,6 +7,7 @@ import cofh.thermal.core.entity.monster.Blizz;
 import cofh.thermal.core.entity.projectile.BasalzProjectile;
 import cofh.thermal.core.entity.projectile.BlitzProjectile;
 import cofh.thermal.core.entity.projectile.BlizzProjectile;
+import cofh.thermal.lib.entity.AugmentableMinecart;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.SpawnPlacements;
@@ -61,6 +62,8 @@ public class TCoreEntities {
         SpawnPlacements.register(BASALZ.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Basalz::canSpawn);
         SpawnPlacements.register(BLITZ.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Blitz::canSpawn);
         SpawnPlacements.register(BLIZZ.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Blizz::canSpawn);
+
+        AugmentableMinecart.setup();
     }
 
     public static final RegistryObject<EntityType<Basalz>> BASALZ = ENTITIES.register(ID_BASALZ, () -> EntityType.Builder.of(Basalz::new, MobCategory.MONSTER).sized(0.6F, 1.8F).fireImmune().build(ID_BASALZ));

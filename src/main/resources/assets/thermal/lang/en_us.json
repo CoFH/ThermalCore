@@ -1319,9 +1319,16 @@
   "entity.thermal.redstone_tnt_minecart": "Minecart with Redstone Explosive",
   "entity.thermal.slime_tnt_minecart": "Minecart with Slime Explosive",
 
-  "entity.thermal.energy_minecart": "Flux Storage Minecart",
+  "entity.thermal.energy_minecart": "Redstone Flux Minecart",
   "entity.thermal.fluid_minecart": "Fluid Tank Minecart",
   "entity.thermal.underwater_minecart": "Underwater Minecart",
+
+  "info.thermal.energy_minecart.0": "Stores Redstone Flux.",
+  "info.thermal.energy_minecart.1": "Use the slots to charge the cart or discharge the cart into an item.",
+
+  "info.thermal.fluid_minecart.0": "Stores Fluids.",
+  "info.thermal.fluid_minecart.1": "Use the slots to fill the cart or empty the cart into an item.",
+  "info.thermal.fluid_minecart.2": "Alternatively, interact with the cart directly with fluid-containing items.",
 
   "item.thermal.earth_tnt_minecart": "Minecart with Tectonic Explosive",
   "item.thermal.ender_tnt_minecart": "Minecart with Ender Explosive",
@@ -1334,7 +1341,7 @@
   "item.thermal.redstone_tnt_minecart": "Minecart with Redstone Explosive",
   "item.thermal.slime_tnt_minecart": "Minecart with Slime Explosive",
 
-  "item.thermal.energy_minecart": "Flux Storage Minecart",
+  "item.thermal.energy_minecart": "Redstone Flux Minecart",
   "item.thermal.fluid_minecart": "Fluid Tank Minecart",
   "item.thermal.underwater_minecart": "Underwater Minecart",
 
