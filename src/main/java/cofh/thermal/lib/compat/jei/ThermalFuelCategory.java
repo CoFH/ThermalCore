@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static cofh.lib.util.helpers.StringHelper.getTextComponent;
+import static cofh.lib.util.helpers.StringHelper.localize;
 
 public abstract class ThermalFuelCategory<T extends ThermalFuel> implements IRecipeCategory<T> {
 
@@ -97,7 +98,7 @@ public abstract class ThermalFuelCategory<T extends ThermalFuel> implements IRec
         List<Component> tooltip = new ArrayList<>();
 
         if (energy != null && mouseX > ENERGY_X && mouseX < ENERGY_X + energy.getWidth() - 1 && mouseY > ENERGY_Y && mouseY < ENERGY_Y + energy.getHeight() - 1) {
-            tooltip.add(getTextComponent("info.cofh.energy").append(": " + StringHelper.format(recipe.getEnergy()) + " RF"));
+            tooltip.add(getTextComponent("info.cofh.energy").append(": " + StringHelper.format(recipe.getEnergy()) + " " + localize("info.cofh.unit_rf")));
         }
         return tooltip;
     }

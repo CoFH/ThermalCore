@@ -1328,7 +1328,7 @@
 
   "info.thermal.fluid_minecart.0": "Stores Fluids.",
   "info.thermal.fluid_minecart.1": "Use the slots to fill the cart or empty the cart into an item.",
-  "info.thermal.fluid_minecart.2": "Alternatively, interact with the cart directly with fluid-containing items.",
+  "info.thermal.fluid_minecart.2": "Or, interact with the cart directly using buckets or similar items.",
 
   "item.thermal.earth_tnt_minecart": "Minecart with Tectonic Explosive",
   "item.thermal.ender_tnt_minecart": "Minecart with Ender Explosive",

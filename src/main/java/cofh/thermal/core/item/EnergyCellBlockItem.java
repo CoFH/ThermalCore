@@ -5,6 +5,7 @@ import cofh.lib.api.item.IEnergyContainerItem;
 import cofh.lib.energy.EnergyStorageCoFH;
 import cofh.thermal.core.block.entity.storage.EnergyCellBlockEntity;
 import cofh.thermal.lib.item.BlockItemAugmentable;
+import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
@@ -39,8 +40,8 @@ public class EnergyCellBlockItem extends BlockItemAugmentable implements IEnergy
         boolean creative = isCreative(stack, ENERGY);
         if (getMaxEnergyStored(stack) > 0) {
             tooltip.add(creative
-                    ? getTextComponent("info.cofh.infinite_source")
-                    : getTextComponent(localize("info.cofh.energy") + ": " + getScaledNumber(getEnergyStored(stack)) + " / " + getScaledNumber(getMaxEnergyStored(stack)) + " RF"));
+                    ? getTextComponent(localize("info.cofh.energy") + ": ").append(getTextComponent("info.cofh.infinite").withStyle(ChatFormatting.LIGHT_PURPLE).withStyle(ChatFormatting.ITALIC))
+                    : getTextComponent(localize("info.cofh.energy") + ": " + getScaledNumber(getEnergyStored(stack)) + " / " + getScaledNumber(getMaxEnergyStored(stack)) + " " + localize("info.cofh.unit_rf")));
         }
         addEnergyTooltip(stack, worldIn, tooltip, flagIn, getExtract(stack), getReceive(stack), creative);
     }
@@ -75,7 +76,7 @@ public class EnergyCellBlockItem extends BlockItemAugmentable implements IEnergy
 
         CompoundTag blockTag = container.getOrCreateTagElement(TAG_BLOCK_ENTITY);
         if (!blockTag.contains(TAG_ENERGY_MAX)) {
-            new EnergyStorageCoFH(EnergyCellBlockEntity.BASE_CAPACITY, EnergyCellBlockEntity.BASE_RECV, EnergyCellBlockEntity.BASE_SEND).writeWithParams(container.getOrCreateTagElement(TAG_BLOCK_ENTITY));
+            new EnergyStorageCoFH(EnergyCellBlockEntity.BASE_CAPACITY, EnergyCellBlockEntity.BASE_RECV, EnergyCellBlockEntity.BASE_SEND).writeWithParams(blockTag);
         }
         return container.getOrCreateTagElement(TAG_BLOCK_ENTITY);
     }
