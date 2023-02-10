@@ -46,14 +46,14 @@ public class TCoreBlockStateProvider extends BlockStateProviderCoFH {
 
     private void registerStorage(DeferredRegisterCoFH<Block> reg) {
 
-        simpleBlock(reg.getSup(ID_APATITE_BLOCK));
-        simpleBlock(reg.getSup(ID_CINNABAR_BLOCK));
-        simpleBlock(reg.getSup(ID_NITER_BLOCK));
-        simpleBlock(reg.getSup(ID_SULFUR_BLOCK));
+        simpleBlock(reg.get(ID_APATITE_BLOCK));
+        simpleBlock(reg.get(ID_CINNABAR_BLOCK));
+        simpleBlock(reg.get(ID_NITER_BLOCK));
+        simpleBlock(reg.get(ID_SULFUR_BLOCK));
 
-        simpleBlock(reg.getSup(ID_SAWDUST_BLOCK));
-        simpleBlock(reg.getSup(ID_COAL_COKE_BLOCK));
-        simpleBlock(reg.getSup(ID_BITUMEN_BLOCK));
+        simpleBlock(reg.get(ID_SAWDUST_BLOCK));
+        simpleBlock(reg.get(ID_COAL_COKE_BLOCK));
+        simpleBlock(reg.get(ID_BITUMEN_BLOCK));
         // TODO: Add a top/bottom method to handle this easily.
         // storageBlock(reg.getSup(ID_TAR_BLOCK));
         // storageBlock(reg.getSup(ID_ROSIN_BLOCK));

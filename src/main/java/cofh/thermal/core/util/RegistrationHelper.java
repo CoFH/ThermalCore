@@ -225,6 +225,11 @@ public final class RegistrationHelper {
         registerMetalSet(prefix, group, Rarity.COMMON, showInGroups, false, false, ID_THERMAL);
     }
 
+    public static void registerMetalSet(String prefix, CreativeModeTab group, Supplier<Boolean> showInGroups, String modId) {
+
+        registerMetalSet(prefix, group, Rarity.COMMON, showInGroups, false, false, modId);
+    }
+
     public static void registerAlloySet(String prefix, CreativeModeTab group, Rarity rarity) {
 
         registerMetalSet(prefix, group, rarity, TRUE, false, true, ID_THERMAL);
@@ -233,6 +238,11 @@ public final class RegistrationHelper {
     public static void registerAlloySet(String prefix, CreativeModeTab group, Supplier<Boolean> showInGroups) {
 
         registerMetalSet(prefix, group, Rarity.COMMON, showInGroups, false, true, ID_THERMAL);
+    }
+
+    public static void registerAlloySet(String prefix, CreativeModeTab group, Supplier<Boolean> showInGroups, String modId) {
+
+        registerMetalSet(prefix, group, Rarity.COMMON, showInGroups, false, true, modId);
     }
 
     public static void registerVanillaMetalSet(String prefix, CreativeModeTab group) {
@@ -263,29 +273,34 @@ public final class RegistrationHelper {
     // region GEM SETS
     public static void registerGemSet(String prefix, CreativeModeTab group, Rarity rarity, Supplier<Boolean> showInGroups) {
 
-        registerGemSet(prefix, group, rarity, showInGroups, false);
+        registerGemSet(prefix, group, rarity, showInGroups, false, ID_THERMAL);
     }
 
     public static void registerGemSet(String prefix, CreativeModeTab group, Supplier<Boolean> showInGroups) {
 
-        registerGemSet(prefix, group, Rarity.COMMON, showInGroups, false);
+        registerGemSet(prefix, group, Rarity.COMMON, showInGroups, false, ID_THERMAL);
+    }
+
+    public static void registerGemSet(String prefix, CreativeModeTab group, Supplier<Boolean> showInGroups, String modId) {
+
+        registerGemSet(prefix, group, Rarity.COMMON, showInGroups, false, modId);
     }
 
     public static void registerVanillaGemSet(String prefix, CreativeModeTab group) {
 
-        registerGemSet(prefix, group, Rarity.COMMON, TRUE, true);
+        registerGemSet(prefix, group, Rarity.COMMON, TRUE, true, ID_THERMAL);
     }
 
-    public static void registerGemSet(String prefix, CreativeModeTab group, Rarity rarity, Supplier<Boolean> showInGroups, boolean vanilla) {
+    public static void registerGemSet(String prefix, CreativeModeTab group, Rarity rarity, Supplier<Boolean> showInGroups, boolean vanilla, String modId) {
 
         if (!vanilla) {
-            ITEMS.register(prefix, () -> new ItemCoFH(new Item.Properties().tab(group).rarity(rarity)).setShowInGroups(showInGroups));
+            ITEMS.register(prefix, () -> new ItemCoFH(new Item.Properties().tab(group).rarity(rarity)).setShowInGroups(showInGroups).setModId(modId));
         }
-        // ITEMS.register(prefix + "_nugget", () -> new ItemCoFH(new Item.Properties().group(group).rarity(rarity)));
-        ITEMS.register(prefix + "_dust", () -> new ItemCoFH(new Item.Properties().tab(group).rarity(rarity)).setShowInGroups(showInGroups));
-        ITEMS.register(prefix + "_gear", () -> new ItemCoFH(new Item.Properties().tab(group).rarity(rarity)).setShowInGroups(showInGroups));
-        // ITEMS.register(prefix + "_plate", () -> new CountedItem(new Item.Properties().group(group).rarity(rarity)));
-        // ITEMS.register(prefix + "_coin", () -> new CoinItem(new Item.Properties().group(group).rarity(rarity)));
+        // ITEMS.register(prefix + "_nugget", () -> new ItemCoFH(new Item.Properties().group(group).rarity(rarity)).setShowInGroups(showInGroups).setModId(modId));
+        ITEMS.register(prefix + "_dust", () -> new ItemCoFH(new Item.Properties().tab(group).rarity(rarity)).setShowInGroups(showInGroups).setModId(modId));
+        ITEMS.register(prefix + "_gear", () -> new ItemCoFH(new Item.Properties().tab(group).rarity(rarity)).setShowInGroups(showInGroups).setModId(modId));
+        // ITEMS.register(prefix + "_plate", () -> new CountedItem(new Item.Properties().group(group).rarity(rarity)).setShowInGroups(showInGroups).setModId(modId));
+        // ITEMS.register(prefix + "_coin", () -> new CoinItem(new Item.Properties().group(group).rarity(rarity)).setShowInGroups(showInGroups).setModId(modId));
     }
     // endregion
 
