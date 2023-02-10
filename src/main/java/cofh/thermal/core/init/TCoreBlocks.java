@@ -57,25 +57,15 @@ public class TCoreBlocks {
     public static void register() {
 
         registerVanilla();
-        registerStorage();
+        registerResources();
         registerBuildingBlocks();
-
         registerTileBlocks();
     }
 
     public static void setup() {
 
-        FireBlock fire = (FireBlock) Blocks.FIRE;
-        fire.setFlammable(BLOCKS.get(ID_CHARCOAL_BLOCK), 5, 5);
-        fire.setFlammable(BLOCKS.get(ID_GUNPOWDER_BLOCK), 15, 100);
-        fire.setFlammable(BLOCKS.get(ID_SUGAR_CANE_BLOCK), 60, 20);
-        fire.setFlammable(BLOCKS.get(ID_BAMBOO_BLOCK), 60, 20);
-
-        fire.setFlammable(BLOCKS.get(ID_SAWDUST_BLOCK), 10, 10);
-        fire.setFlammable(BLOCKS.get(ID_COAL_COKE_BLOCK), 5, 5);
-        fire.setFlammable(BLOCKS.get(ID_BITUMEN_BLOCK), 5, 5);
-        fire.setFlammable(BLOCKS.get(ID_TAR_BLOCK), 5, 5);
-        fire.setFlammable(BLOCKS.get(ID_ROSIN_BLOCK), 5, 5);
+        setupVanilla();
+        setupResources();
     }
 
     // region HELPERS
@@ -107,7 +97,7 @@ public class TCoreBlocks {
         registerBlock(ID_BEETROOT_BLOCK, () -> new Block(of(Material.WOOD, MaterialColor.TERRACOTTA_RED).strength(1.5F).sound(SoundType.SCAFFOLDING)), THERMAL_FOODS);
     }
 
-    private static void registerStorage() {
+    private static void registerResources() {
 
         registerBlock(ID_APATITE_BLOCK, () -> new Block(of(Material.STONE, MaterialColor.TERRACOTTA_LIGHT_BLUE).strength(3.0F, 3.0F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
         registerBlock(ID_CINNABAR_BLOCK, () -> new Block(of(Material.STONE, MaterialColor.TERRACOTTA_RED).strength(3.0F, 3.0F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
@@ -234,6 +224,27 @@ public class TCoreBlocks {
 
         //        BLOCKS.register(ID_ITEM_CELL, () -> new TileBlockCell(of(Material.METAL).sound(SoundType.LANTERN).strength(2.0F).harvestTool(ToolType.PICKAXE).noOcclusion(), ItemCellTile::new));
         //        ITEMS.register(ID_ITEM_CELL, (Supplier<Item>) () -> new ItemCellBlockItem(BLOCKS.get(ID_ITEM_CELL), new Item.Properties().tab(THERMAL_BLOCKS)).setNumSlots(storageAugs).setAugValidator(ITEM_STORAGE_VALIDATOR).setShowInGroups(getFlag(ID_ITEM_CELL)));
+    }
+
+    private static void setupVanilla() {
+
+        FireBlock fire = (FireBlock) Blocks.FIRE;
+
+        fire.setFlammable(BLOCKS.get(ID_CHARCOAL_BLOCK), 5, 5);
+        fire.setFlammable(BLOCKS.get(ID_GUNPOWDER_BLOCK), 15, 100);
+        fire.setFlammable(BLOCKS.get(ID_SUGAR_CANE_BLOCK), 60, 20);
+        fire.setFlammable(BLOCKS.get(ID_BAMBOO_BLOCK), 60, 20);
+    }
+
+    private static void setupResources() {
+
+        FireBlock fire = (FireBlock) Blocks.FIRE;
+
+        fire.setFlammable(BLOCKS.get(ID_SAWDUST_BLOCK), 10, 10);
+        fire.setFlammable(BLOCKS.get(ID_COAL_COKE_BLOCK), 5, 5);
+        fire.setFlammable(BLOCKS.get(ID_BITUMEN_BLOCK), 5, 5);
+        fire.setFlammable(BLOCKS.get(ID_TAR_BLOCK), 5, 5);
+        fire.setFlammable(BLOCKS.get(ID_ROSIN_BLOCK), 5, 5);
     }
     // endregion
 }
