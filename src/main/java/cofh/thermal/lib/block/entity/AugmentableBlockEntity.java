@@ -238,9 +238,9 @@ public abstract class AugmentableBlockEntity extends TileCoFH implements ISecura
         }
         if (ThermalCoreConfig.keepAugments.get() && augSize() > 0) {
             getItemInv().writeSlotsToNBTUnordered(nbt, TAG_AUGMENTS, invSize() - augSize());
-            if (stack.getItem() instanceof IAugmentableItem) {
+            if (stack.getItem() instanceof IAugmentableItem augmentableItem) {
                 List<ItemStack> items = getAugmentsAsList();
-                ((IAugmentableItem) stack.getItem()).updateAugmentState(stack, items);
+                augmentableItem.updateAugmentState(stack, items);
             }
             filter.write(nbt);
         }
@@ -531,7 +531,7 @@ public abstract class AugmentableBlockEntity extends TileCoFH implements ISecura
 
         isActive = nbt.getBoolean(TAG_ACTIVE);
 
-        enchantments = nbt.getList(TAG_ENCHANTMENTS, 10);
+        enchantments = nbt.getList(TAG_ENCHANTMENTS, TAG_COMPOUND);
 
         inventory.read(nbt);
 

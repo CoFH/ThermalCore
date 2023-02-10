@@ -7,6 +7,7 @@ import cofh.lib.fluid.FluidStorageCoFH;
 import cofh.lib.util.helpers.StringHelper;
 import cofh.thermal.core.block.entity.storage.FluidCellBlockEntity;
 import cofh.thermal.lib.item.BlockItemAugmentable;
+import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.network.chat.Component;
@@ -46,8 +47,8 @@ public class FluidCellBlockItem extends BlockItemAugmentable implements IFluidCo
             tooltip.add(StringHelper.getFluidName(fluid));
         }
         tooltip.add(isCreative(stack, FLUID)
-                ? getTextComponent("info.cofh.infinite_source")
-                : getTextComponent(localize("info.cofh.amount") + ": " + format(fluid.getAmount()) + " / " + format(getCapacity(stack)) + " mB"));
+                ? getTextComponent("info.cofh.infinite").withStyle(ChatFormatting.LIGHT_PURPLE).withStyle(ChatFormatting.ITALIC)
+                : getTextComponent(localize("info.cofh.amount") + ": " + format(fluid.getAmount()) + " / " + format(getCapacity(stack)) + " " + localize("info.cofh.unit_mb")));
 
         if (FluidHelper.hasPotionTag(fluid)) {
             tooltip.add(getEmptyLine());
