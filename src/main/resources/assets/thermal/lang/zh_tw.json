@@ -1320,9 +1320,16 @@
   "entity.thermal.redstone_tnt_minecart": "紅石訊號炸藥礦車",
   "entity.thermal.slime_tnt_minecart": "彈力黏著炸藥礦車",
 
-  "entity.thermal.energy_minecart": "通量儲存礦車",
+  "entity.thermal.energy_minecart": "紅石通量礦車",
   "entity.thermal.fluid_minecart": "流體儲罐礦車",
   "entity.thermal.underwater_minecart": "水下礦車",
+  
+  "info.thermal.energy_minecart.0": "儲存紅石通量。",
+  "info.thermal.energy_minecart.1": "Use the slots to charge the cart or discharge the cart into an item.",
+
+  "info.thermal.fluid_minecart.0": "儲存流體。",
+  "info.thermal.fluid_minecart.1": "Use the slots to fill the cart or empty the cart into an item.",
+  "info.thermal.fluid_minecart.2": "Or, interact with the cart directly using buckets or similar items.",
 
   "item.thermal.earth_tnt_minecart": "地岩碎裂炸藥礦車",
   "item.thermal.ender_tnt_minecart": "終界侵擾炸藥礦車",
