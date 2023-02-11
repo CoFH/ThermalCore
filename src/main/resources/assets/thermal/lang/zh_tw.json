@@ -141,17 +141,17 @@
   "info.thermal.secondary_mod": "副產物倍率",
   "info.thermal.use_chance": "消耗機率",
 
-  "info.thermal.detonator.mode.0": "模式：綁定",
+  "info.thermal.detonator.mode.0": "模式：啟動",
   "info.thermal.detonator.mode.1": "模式：引爆",
-  "info.thermal.detonator.primed": "綁定至：",
-  "info.thermal.detonator.use.0": "使用以將其綁定至 TNT，以準備引爆。",
-  "info.thermal.detonator.use.1": "使用以引爆綁定的炸藥。",
-  "info.thermal.detonator.use.sneak": "潛行並使用以清空綁定。",
+  "info.thermal.detonator.primed": "已啟動：",
+  "info.thermal.detonator.use.0": "對著 TNT 方塊使用以啟動並準備引爆。",
+  "info.thermal.detonator.use.1": "使用以引爆已啟動的炸藥。",
+  "info.thermal.detonator.use.sneak": "潛行並使用以清空。",
 
   "info.thermal.lock.use": "對相容方塊使用為其上鎖。",
   "info.thermal.lock.use.sneak": "潛行並使用為副手上的物品上鎖。",
 
-  "info.thermal.redprint.contents": "複製內容：",
+  "info.thermal.redprint.contents": "內容：",
   "info.thermal.redprint.unknown": "未知資訊",
   "info.thermal.redprint.data.RSControl": "紅石控制",
   "info.thermal.redprint.data.Sides": "側面設置",
