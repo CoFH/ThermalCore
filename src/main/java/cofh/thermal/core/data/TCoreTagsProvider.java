@@ -69,6 +69,9 @@ public class TCoreTagsProvider {
             tag(BlockTags.MINEABLE_WITH_PICKAXE).add(BLOCKS.get(ID_NITER_BLOCK));
             tag(BlockTags.MINEABLE_WITH_PICKAXE).add(BLOCKS.get(ID_SULFUR_BLOCK));
 
+            tag(BlockTags.NEEDS_STONE_TOOL).add(BLOCKS.get(ID_APATITE_BLOCK));
+            tag(BlockTags.NEEDS_STONE_TOOL).add(BLOCKS.get(ID_CINNABAR_BLOCK));
+
             tag(BlockTags.MINEABLE_WITH_SHOVEL).add(BLOCKS.get(ID_SAWDUST_BLOCK));
             tag(BlockTags.MINEABLE_WITH_PICKAXE).add(BLOCKS.get(ID_COAL_COKE_BLOCK));
             tag(BlockTags.MINEABLE_WITH_PICKAXE).add(BLOCKS.get(ID_BITUMEN_BLOCK));
