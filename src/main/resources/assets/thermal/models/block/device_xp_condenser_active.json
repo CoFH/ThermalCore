@@ -1,0 +1,9 @@
+{
+  "parent": "thermal:block/device_xp_condenser",
+  "textures": {
+    "east": "thermal:block/devices/device_xp_condenser_side_active",
+    "west": "thermal:block/devices/device_xp_condenser_side_active",
+    "north": "thermal:block/devices/device_xp_condenser_active",
+    "south": "thermal:block/devices/device_xp_condenser_side_active"
+  }
+}

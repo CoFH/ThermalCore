@@ -55,9 +55,6 @@
   "block.thermal.electrum_block": "Електрумний блок",
   "block.thermal.invar_block": "Інваровий блок",
 
-  "block.thermal.steel_block": "Стальний блок",
-  "block.thermal.rose_gold_block": "Блок рожевого золота",
-
   "block.thermal.enderium_block": "Ендеріумний блок",
   "block.thermal.lumium_block": "Люміумний блок",
   "block.thermal.signalum_block": "Сигналіумний блок",
@@ -331,20 +328,6 @@
   "item.thermal.invar_ingot": "Інваровий злиток",
   "item.thermal.invar_nugget": "Інваровий шматочок",
   "item.thermal.invar_plate": "Інварова пластина",
-
-  "item.thermal.rose_gold_coin": "Монета з рожевого золота",
-  "item.thermal.rose_gold_dust": "Суміш рожевого золота",
-  "item.thermal.rose_gold_gear": "Шестерня з рожевого золота",
-  "item.thermal.rose_gold_ingot": "Злиток рожевого золота",
-  "item.thermal.rose_gold_nugget": "Шматочок рожевого золота",
-  "item.thermal.rose_gold_plate": "Пластина з рожевого золота",
-
-  "item.thermal.steel_coin": "Стальна монета",
-  "item.thermal.steel_dust": "Стальна суміш",
-  "item.thermal.steel_gear": "Стальна шестерня",
-  "item.thermal.steel_ingot": "Стальний злиток",
-  "item.thermal.steel_nugget": "Стальний шматочок",
-  "item.thermal.steel_plate": "Стальна пластина",
 
   "item.thermal.enderium_coin": "Ендеріумна монета",
   "item.thermal.enderium_dust": "Ендеріумна суміш",

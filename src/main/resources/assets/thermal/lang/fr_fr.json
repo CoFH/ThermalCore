@@ -55,9 +55,6 @@
   "block.thermal.electrum_block": "Bloc d'Electrum",
   "block.thermal.invar_block": "Bloc d'Invar",
 
-  "block.thermal.steel_block": "Block of Steel",
-  "block.thermal.rose_gold_block": "Block of Rose Gold",
-
   "block.thermal.enderium_block": "Bloc d'Enderium",
   "block.thermal.lumium_block": "Bloc de Lumium",
   "block.thermal.signalum_block": "Bloc de Signalum",
@@ -330,20 +327,6 @@
   "item.thermal.invar_ingot": "Lingot d'Invar",
   "item.thermal.invar_nugget": "Pépite d'Invar",
   "item.thermal.invar_plate": "Plaque d'Invar",
-
-  "item.thermal.rose_gold_coin": "Pièce en or rose",
-  "item.thermal.rose_gold_dust": "Mélange d'or rose",
-  "item.thermal.rose_gold_gear": "Engrenage en or rose",
-  "item.thermal.rose_gold_ingot": "Lingot d'or rose",
-  "item.thermal.rose_gold_nugget": "Pépite d'or rose",
-  "item.thermal.rose_gold_plate": "Plaque d'or rose",
-
-  "item.thermal.steel_coin": "Pièce en acier",
-  "item.thermal.steel_dust": "Mélange d'acier",
-  "item.thermal.steel_gear": "Engrenage en acier",
-  "item.thermal.steel_ingot": "Lingot d'acier",
-  "item.thermal.steel_nugget": "SPépite d'acier",
-  "item.thermal.steel_plate": "Plaque d'acier",
 
   "item.thermal.enderium_coin": "Pièce d'Enderium",
   "item.thermal.enderium_dust": "Mélange d'Enderium",

@@ -55,9 +55,6 @@
   "block.thermal.electrum_block": "琥珀金方塊",
   "block.thermal.invar_block": "不變鋼方塊",
 
-  "block.thermal.steel_block": "鋼方塊",
-  "block.thermal.rose_gold_block": "玫瑰金方塊",
-
   "block.thermal.enderium_block": "終界合金方塊",
   "block.thermal.lumium_block": "流明方塊",
   "block.thermal.signalum_block": "信素方塊",
@@ -330,20 +327,6 @@
   "item.thermal.invar_ingot": "不變鋼錠",
   "item.thermal.invar_nugget": "不變鋼粒",
   "item.thermal.invar_plate": "不變鋼板",
-
-  "item.thermal.rose_gold_coin": "玫瑰金幣",
-  "item.thermal.rose_gold_dust": "玫瑰金粉",
-  "item.thermal.rose_gold_gear": "玫瑰金齒輪",
-  "item.thermal.rose_gold_ingot": "玫瑰金錠",
-  "item.thermal.rose_gold_nugget": "玫瑰金粒",
-  "item.thermal.rose_gold_plate": "玫瑰金板",
-
-  "item.thermal.steel_coin": "鋼幣",
-  "item.thermal.steel_dust": "鋼粉",
-  "item.thermal.steel_gear": "鋼齒輪",
-  "item.thermal.steel_ingot": "鋼錠",
-  "item.thermal.steel_nugget": "鋼粒",
-  "item.thermal.steel_plate": "鋼板",
 
   "item.thermal.enderium_coin": "終界合金幣",
   "item.thermal.enderium_dust": "終界合金粉",

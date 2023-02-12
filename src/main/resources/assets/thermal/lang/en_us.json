@@ -13,9 +13,6 @@
   "block.thermal.niter_block": "Block of Niter",
   "block.thermal.sulfur_block": "Block of Sulfur",
 
-  "block.thermal.steel_block": "Block of Steel",
-  "block.thermal.rose_gold_block": "Block of Rose Gold",
-
   "block.thermal.enderium_block": "Block of Enderium",
   "block.thermal.lumium_block": "Block of Lumium",
   "block.thermal.signalum_block": "Block of Signalum",
@@ -218,20 +215,6 @@
   "item.thermal.junk_net": "Junk Net",
   "item.thermal.junk_net.desc": "Use in the §e§oAquatic Entangler§r§6 to catch junk. Not consumable.",
 
-  "item.thermal.rose_gold_coin": "Rose Gold Coin",
-  "item.thermal.rose_gold_dust": "Rose Gold Blend",
-  "item.thermal.rose_gold_gear": "Rose Gold Gear",
-  "item.thermal.rose_gold_ingot": "Rose Gold Ingot",
-  "item.thermal.rose_gold_nugget": "Rose Gold Nugget",
-  "item.thermal.rose_gold_plate": "Rose Gold Plate",
-
-  "item.thermal.steel_coin": "Steel Coin",
-  "item.thermal.steel_dust": "Steel Blend",
-  "item.thermal.steel_gear": "Steel Gear",
-  "item.thermal.steel_ingot": "Steel Ingot",
-  "item.thermal.steel_nugget": "Steel Nugget",
-  "item.thermal.steel_plate": "Steel Plate",
-
   "item.thermal.enderium_coin": "Enderium Coin",
   "item.thermal.enderium_dust": "Enderium Blend",
   "item.thermal.enderium_gear": "Enderium Gear",
@@ -407,6 +390,7 @@
   "block.thermal.device_soil_infuser": "Phyto-Soil Infuser",
   "block.thermal.device_tree_extractor": "Arboreal Extractor",
   "block.thermal.device_water_gen": "Aqueous Accumulator",
+  "block.thermal.device_xp_condenser": "Insightful Condenser",
 
   "block.thermal.energy_cell": "Redstone Flux Cell",
   "block.thermal.energy_cell_frame": "Redstone Flux Cell Frame",
@@ -485,6 +469,10 @@
   "info.thermal.device_water_gen.0": "Provides copious amounts of water.",
   "info.thermal.device_water_gen.1": "Requires adjacent water sources to function.",
   "info.thermal.device_water_gen.2": "Don't drown.",
+
+  "info.thermal.device_xp_condenser.0": "Collects experience from nearby blocks which have produced it.",
+  "info.thermal.device_xp_condenser.1": "Stored experience may be extracted as a fluid.",
+  "info.thermal.device_xp_condenser.2": "How's that for machine learning?",
 
   "info.thermal.energy_cell.0": "Stores and transfers Redstone Flux.",
   "info.thermal.energy_cell.1": "Hold §e§oShift§r and/or §e§oCtrl§r to fine tune amounts.",

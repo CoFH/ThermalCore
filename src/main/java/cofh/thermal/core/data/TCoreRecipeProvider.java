@@ -1529,6 +1529,18 @@ public class TCoreRecipeProvider extends RecipeProviderCoFH {
                 .unlockedBy("has_redstone_servo", has(redstoneServo))
                 .save(withConditions(consumer).flag(ID_DEVICE_COLLECTOR));
 
+        ShapedRecipeBuilder.shaped(reg.get(ID_DEVICE_XP_CONDENSER))
+                .define('C', reg.get("xp_crystal"))
+                .define('G', Tags.Items.GLASS)
+                .define('I', ItemTagsCoFH.INGOTS_SILVER)
+                .define('P', redstoneServo)
+                .define('X', ItemTagsCoFH.GEARS_LAPIS)
+                .pattern("IXI")
+                .pattern("GCG")
+                .pattern("IPI")
+                .unlockedBy("has_redstone_servo", has(redstoneServo))
+                .save(withConditions(consumer).flag(ID_DEVICE_XP_CONDENSER));
+
         ShapedRecipeBuilder.shaped(reg.get(ID_DEVICE_NULLIFIER))
                 .define('C', Items.LAVA_BUCKET)
                 .define('G', Tags.Items.GLASS)
