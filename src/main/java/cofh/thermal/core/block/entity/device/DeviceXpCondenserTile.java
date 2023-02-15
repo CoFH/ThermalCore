@@ -1,8 +1,10 @@
 package cofh.thermal.core.block.entity.device;
 
+import cofh.core.block.entity.ITileXpHandler;
 import cofh.core.util.helpers.AugmentDataHelper;
 import cofh.lib.api.block.entity.IAreaEffectTile;
 import cofh.lib.api.block.entity.ITickableTile;
+import cofh.lib.fluid.FluidStorageCoFH;
 import cofh.thermal.core.config.ThermalCoreConfig;
 import cofh.thermal.core.inventory.container.device.DeviceXpCondenserContainer;
 import cofh.thermal.lib.block.entity.DeviceBlockEntity;
@@ -13,16 +15,23 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
+import net.minecraftforge.fluids.FluidStack;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 import java.util.Map;
 import java.util.function.BiPredicate;
 import java.util.function.Predicate;
+import java.util.function.Supplier;
 
+import static cofh.core.init.CoreFluids.EXPERIENCE_FLUID;
 import static cofh.core.util.helpers.AugmentableHelper.getAttributeMod;
+import static cofh.lib.api.StorageGroup.OUTPUT;
+import static cofh.lib.util.Constants.MB_PER_XP;
+import static cofh.lib.util.Constants.TANK_MEDIUM;
 import static cofh.lib.util.constants.NBTTags.*;
 import static cofh.thermal.core.init.TCoreTileEntities.DEVICE_XP_CONDENSER_TILE;
 import static cofh.thermal.lib.common.ThermalAugmentRules.createAllowValidator;
@@ -31,11 +40,14 @@ public class DeviceXpCondenserTile extends DeviceBlockEntity implements ITickabl
 
     public static final BiPredicate<ItemStack, List<ItemStack>> AUG_VALIDATOR = createAllowValidator(TAG_AUGMENT_TYPE_UPGRADE, TAG_AUGMENT_TYPE_FLUID, TAG_AUGMENT_TYPE_AREA_EFFECT);
 
-    protected static final int TIME_CONSTANT = 600;
+    protected static final int TIME_CONSTANT = 400;
+    protected static final Supplier<FluidStack> XP = () -> new FluidStack(EXPERIENCE_FLUID.get(), 0);
 
     protected static final int RADIUS = 2;
     public int radius = RADIUS;
     protected AABB area;
+
+    protected FluidStorageCoFH tank = new FluidStorageCoFH(TANK_MEDIUM * 4, e -> false).setEmptyFluid(XP).setEnabled(() -> isActive);
 
     protected int process = 1;
 
@@ -43,7 +55,7 @@ public class DeviceXpCondenserTile extends DeviceBlockEntity implements ITickabl
 
         super(DEVICE_XP_CONDENSER_TILE.get(), pos, state);
 
-        // tankInv.addTank(inputTank, ACCESSIBLE);
+        tankInv.addTank(tank, OUTPUT);
 
         addAugmentSlots(ThermalCoreConfig.deviceAugments);
         initHandlers();
@@ -71,7 +83,11 @@ public class DeviceXpCondenserTile extends DeviceBlockEntity implements ITickabl
             return;
         }
         process = getTimeConstant();
-        condenseXp();
+        if (tank.isFull()) {
+            return;
+        }
+        BlockPos.betweenClosedStream(worldPosition.offset(-radius, -1, -radius), worldPosition.offset(radius, 1, radius))
+                .forEach(this::condenseXp);
     }
 
     @Nullable
@@ -92,8 +108,19 @@ public class DeviceXpCondenserTile extends DeviceBlockEntity implements ITickabl
         return TIME_CONSTANT;
     }
 
-    protected void condenseXp() {
+    protected void condenseXp(BlockPos pos) {
 
+        if (tank.isFull()) {
+            return;
+        }
+        BlockEntity tile = level.getBlockEntity(pos);
+        if (tile instanceof ITileXpHandler xpHandler) {
+            int storedXp = xpHandler.getXpStorage().getXpStored();
+            if (storedXp > 0) {
+                int toExtract = Math.min(storedXp, tank.getSpace() / MB_PER_XP);
+                tank.modify(xpHandler.getXpStorage().extractXp(toExtract, false) * MB_PER_XP);
+            }
+        }
     }
     // endregion
 

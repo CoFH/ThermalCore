@@ -68,7 +68,7 @@ import static cofh.lib.util.constants.ModIds.ID_THERMAL;
 import static cofh.thermal.core.init.TCoreContainers.*;
 import static cofh.thermal.core.init.TCoreEntities.*;
 import static cofh.thermal.lib.common.ThermalFlags.*;
-import static cofh.thermal.lib.common.ThermalIDs.*;
+import static cofh.thermal.lib.common.ThermalIDs.ID_TINKER_BENCH;
 
 @Mod (ID_THERMAL)
 public class ThermalCore {
@@ -250,13 +250,6 @@ public class ThermalCore {
     }
 
     private void registerRenderLayers() {
-
-        RenderType cutout = RenderType.cutout();
-
-        ItemBlockRenderTypes.setRenderLayer(BLOCKS.get(ID_OBSIDIAN_GLASS), cutout);
-        ItemBlockRenderTypes.setRenderLayer(BLOCKS.get(ID_SIGNALUM_GLASS), cutout);
-        ItemBlockRenderTypes.setRenderLayer(BLOCKS.get(ID_LUMIUM_GLASS), cutout);
-        ItemBlockRenderTypes.setRenderLayer(BLOCKS.get(ID_ENDERIUM_GLASS), cutout);
 
         ItemBlockRenderTypes.setRenderLayer(RedstoneFluid.instance().still().get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(RedstoneFluid.instance().flowing().get(), RenderType.translucent());

@@ -257,11 +257,6 @@ public class TCoreItemModelProvider extends ItemModelProviderCoFH {
 
     private void registerBuildingBlocks(DeferredRegisterCoFH<Block> reg) {
 
-        blockItem(reg.getSup(ID_OBSIDIAN_GLASS));
-        blockItem(reg.getSup(ID_SIGNALUM_GLASS));
-        blockItem(reg.getSup(ID_LUMIUM_GLASS));
-        blockItem(reg.getSup(ID_ENDERIUM_GLASS));
-
         blockItem(reg.getSup(ID_WHITE_ROCKWOOL));
         blockItem(reg.getSup(ID_ORANGE_ROCKWOOL));
         blockItem(reg.getSup(ID_MAGENTA_ROCKWOOL));

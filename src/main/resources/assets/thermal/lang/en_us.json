@@ -206,7 +206,7 @@
   "item.thermal.satchel": "Satchel",
   "item.thermal.satchel.desc": "Stores items. Can be configured with a filter.",
   "item.thermal.wrench": "Crescent Hammer",
-  "item.thermal.wrench.desc": "Rotates many blocks. Also known as a Wrench.",
+  "item.thermal.wrench.desc": "It's a wrench. It rotates and dismantles many things.",
   "item.thermal.xp_crystal": "Insightful Crystal",
   "item.thermal.xp_crystal.desc": "Stores experience.",
 
@@ -718,7 +718,6 @@
   "item.thermal.rf_potato.keyword": "battery",
   "item.thermal.redprint.keyword": "copy settings",
   "item.thermal.satchel.keyword": "backpack pouch storage",
-  "item.thermal.wrench.keyword": "wrench",
   "item.thermal.xp_crystal.keyword": "experience storage xp",
 
   "_comment": "========================================================================================================",
