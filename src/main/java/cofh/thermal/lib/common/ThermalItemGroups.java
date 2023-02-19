@@ -3,8 +3,6 @@ package cofh.thermal.lib.common;
 import net.minecraft.core.NonNullList;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 
 import java.util.Comparator;
 
@@ -35,7 +33,6 @@ public class ThermalItemGroups {
         }
 
         @Override
-        @OnlyIn (Dist.CLIENT)
         public ItemStack makeIcon() {
 
             return new ItemStack(ITEMS.get(ID_ENDERIUM_BLOCK));
@@ -52,7 +49,6 @@ public class ThermalItemGroups {
         }
 
         @Override
-        @OnlyIn (Dist.CLIENT)
         public ItemStack makeIcon() {
 
             return new ItemStack(ITEMS.get(ID_TINKER_BENCH));
@@ -69,7 +65,6 @@ public class ThermalItemGroups {
         }
 
         @Override
-        @OnlyIn (Dist.CLIENT)
         public ItemStack makeIcon() {
 
             return new ItemStack(ITEMS.get("signalum_gear"));
@@ -86,7 +81,6 @@ public class ThermalItemGroups {
         }
 
         @Override
-        @OnlyIn (Dist.CLIENT)
         public ItemStack makeIcon() {
 
             return new ItemStack(ITEMS.get(ID_APPLE_BLOCK));
@@ -103,7 +97,6 @@ public class ThermalItemGroups {
         }
 
         @Override
-        @OnlyIn (Dist.CLIENT)
         public ItemStack makeIcon() {
 
             return new ItemStack(ITEMS.get(ID_WRENCH));
