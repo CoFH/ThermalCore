@@ -44,7 +44,8 @@ public final class TCoreBiomeModifiers {
     private static void generateBiomeMobSpawns(Registry<Biome> biomeRegistry, Map<ResourceLocation, BiomeModifier> map) {
 
         HolderSet<Biome> basalzBasaltDelta = HolderSet.direct(Holder.Reference.createStandAlone(biomeRegistry, Biomes.BASALT_DELTAS));
-        HolderSet<Biome> basalzUnderground = biomeRegistry.getOrCreateTag(Tags.Biomes.IS_UNDERGROUND);
+        HolderSet<Biome> basalzCaves = HolderSet.direct(Holder.Reference.createStandAlone(biomeRegistry, Biomes.LUSH_CAVES), Holder.Reference.createStandAlone(biomeRegistry, Biomes.DRIPSTONE_CAVES));
+        HolderSet<Biome> basalzPeaks = HolderSet.direct(Holder.Reference.createStandAlone(biomeRegistry, Biomes.STONY_PEAKS));
 
         HolderSet<Biome> blitzBadlands = biomeRegistry.getOrCreateTag(BiomeTags.IS_BADLANDS);
         HolderSet<Biome> blitzSandy = biomeRegistry.getOrCreateTag(Tags.Biomes.IS_SANDY);
@@ -53,7 +54,8 @@ public final class TCoreBiomeModifiers {
         HolderSet<Biome> blizzSnowy = biomeRegistry.getOrCreateTag(Tags.Biomes.IS_SNOWY);
 
         map.put(new ResourceLocation(ID_THERMAL, "basalz_spawn_basalt_deltas"), addMobToBiomes(basalzBasaltDelta, TCoreEntities.BASALZ.get(), 50, 2, 4));
-        map.put(new ResourceLocation(ID_THERMAL, "basalz_spawn_underground"), addMobToBiomes(basalzUnderground, TCoreEntities.BASALZ.get(), 25, 1, 3));
+        map.put(new ResourceLocation(ID_THERMAL, "basalz_spawn_caves"), addMobToBiomes(basalzCaves, TCoreEntities.BASALZ.get(), 25, 1, 3));
+        map.put(new ResourceLocation(ID_THERMAL, "basalz_spawn_peaks"), addMobToBiomes(basalzPeaks, TCoreEntities.BASALZ.get(), 35, 1, 3));
 
         map.put(new ResourceLocation(ID_THERMAL, "blitz_spawn_badlands"), addMobToBiomes(blitzBadlands, TCoreEntities.BLITZ.get(), 35, 1, 3));
         map.put(new ResourceLocation(ID_THERMAL, "blitz_spawn_sandy"), addMobToBiomes(blitzSandy, TCoreEntities.BLITZ.get(), 25, 1, 3));
