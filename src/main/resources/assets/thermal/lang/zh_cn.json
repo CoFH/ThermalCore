@@ -55,9 +55,6 @@
   "block.thermal.electrum_block": "琥珀金块",
   "block.thermal.invar_block": "殷钢块",
 
-  "block.thermal.steel_block": "钢块",
-  "block.thermal.rose_gold_block": "玫瑰金块",
-
   "block.thermal.enderium_block": "末影块",
   "block.thermal.lumium_block": "流明块",
   "block.thermal.signalum_block": "信素块",
@@ -332,20 +329,6 @@
   "item.thermal.invar_ingot": "殷钢锭",
   "item.thermal.invar_nugget": "殷钢粒",
   "item.thermal.invar_plate": "殷钢板",
-
-  "item.thermal.rose_gold_coin": "玫瑰金币",
-  "item.thermal.rose_gold_dust": "玫瑰金粉",
-  "item.thermal.rose_gold_gear": "玫瑰金齿轮",
-  "item.thermal.rose_gold_ingot": "玫瑰金锭",
-  "item.thermal.rose_gold_nugget": "玫瑰金粒",
-  "item.thermal.rose_gold_plate": "玫瑰金板",
-
-  "item.thermal.steel_coin": "钢币",
-  "item.thermal.steel_dust": "钢粉",
-  "item.thermal.steel_gear": "钢齿轮",
-  "item.thermal.steel_ingot": "钢锭",
-  "item.thermal.steel_nugget": "钢粒",
-  "item.thermal.steel_plate": "钢板",
 
   "item.thermal.enderium_coin": "末影币",
   "item.thermal.enderium_dust": "末影粉",

@@ -30,8 +30,6 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 
 import java.util.function.IntSupplier;
 import java.util.function.Supplier;
@@ -95,6 +93,9 @@ public class TCoreBlocks {
         registerBlock(ID_CARROT_BLOCK, () -> new Block(of(Material.WOOD, MaterialColor.TERRACOTTA_ORANGE).strength(1.5F).sound(SoundType.SCAFFOLDING)), THERMAL_FOODS);
         registerBlock(ID_POTATO_BLOCK, () -> new Block(of(Material.WOOD, MaterialColor.TERRACOTTA_BROWN).strength(1.5F).sound(SoundType.SCAFFOLDING)), THERMAL_FOODS);
         registerBlock(ID_BEETROOT_BLOCK, () -> new Block(of(Material.WOOD, MaterialColor.TERRACOTTA_RED).strength(1.5F).sound(SoundType.SCAFFOLDING)), THERMAL_FOODS);
+
+        //        registerBlockOnly("quicksand", () -> new QuicksandBlock(of(Material.SAND, MaterialColor.SAND).strength(100.0F).noLootTable().sound(SoundType.SAND).dynamicShape()).bucket(() -> ITEMS.get("quicksand_bucket")));
+        //        registerItem("quicksand_bucket", () -> new SolidBucketItemCoFH(BLOCKS.get("quicksand"), SoundEvents.SAND_HIT, new Item.Properties().stacksTo(1).tab(THERMAL_BLOCKS)));
     }
 
     private static void registerResources() {
@@ -113,7 +114,6 @@ public class TCoreBlocks {
 
         registerBlockAndItem(ID_SAWDUST_BLOCK, () -> new FallingBlock(of(Material.WOOD).strength(1.0F, 1.0F).sound(SoundType.SAND)) {
 
-            @OnlyIn (Dist.CLIENT)
             @Override
             public int getDustColor(BlockState state, BlockGetter reader, BlockPos pos) {
 
@@ -206,6 +206,7 @@ public class TCoreBlocks {
         registerAugmentableBlock(ID_DEVICE_WATER_GEN, () -> new TileBlockActive4Way(of(Material.METAL).sound(SoundType.LANTERN).strength(2.0F), DeviceWaterGenTile.class, DEVICE_WATER_GEN_TILE), deviceAugs, DeviceWaterGenTile.AUG_VALIDATOR, getFlag(ID_DEVICE_WATER_GEN));
         registerAugmentableBlock(ID_DEVICE_ROCK_GEN, () -> new TileBlockActive4Way(of(Material.METAL).sound(SoundType.LANTERN).strength(2.0F).lightLevel(lightValue(ACTIVE, 14)), DeviceRockGenTile.class, DEVICE_ROCK_GEN_TILE), deviceAugs, DeviceRockGenTile.AUG_VALIDATOR, getFlag(ID_DEVICE_ROCK_GEN));
         registerAugmentableBlock(ID_DEVICE_COLLECTOR, () -> new TileBlockActive4Way(of(Material.METAL).sound(SoundType.LANTERN).strength(2.0F), DeviceCollectorTile.class, DEVICE_COLLECTOR_TILE), deviceAugs, DeviceCollectorTile.AUG_VALIDATOR, getFlag(ID_DEVICE_COLLECTOR));
+        registerAugmentableBlock(ID_DEVICE_XP_CONDENSER, () -> new TileBlockActive4Way(of(Material.METAL).sound(SoundType.LANTERN).strength(2.0F).lightLevel(lightValue(ACTIVE, 12)), DeviceXpCondenserTile.class, DEVICE_XP_CONDENSER_TILE), deviceAugs, DeviceXpCondenserTile.AUG_VALIDATOR, getFlag(ID_DEVICE_XP_CONDENSER));
         registerAugmentableBlock(ID_DEVICE_NULLIFIER, () -> new TileBlockActive4Way(of(Material.METAL).sound(SoundType.LANTERN).strength(2.0F).lightLevel(lightValue(ACTIVE, 7)), DeviceNullifierTile.class, DEVICE_NULLIFIER_TILE), deviceAugs, DeviceNullifierTile.AUG_VALIDATOR, getFlag(ID_DEVICE_NULLIFIER));
         registerAugmentableBlock(ID_DEVICE_POTION_DIFFUSER, () -> new TileBlockActive4Way(of(Material.METAL).sound(SoundType.LANTERN).strength(2.0F), DevicePotionDiffuserTile.class, DEVICE_POTION_DIFFUSER_TILE), deviceAugs, DevicePotionDiffuserTile.AUG_VALIDATOR, getFlag(ID_DEVICE_POTION_DIFFUSER));
 

@@ -1,5 +1,5 @@
 {
-  "parent": "thermal:block/device_base",
+  "parent": "minecraft:block/cube",
   "textures": {
     "particle": "thermal:block/devices/device_nullifier_side",
     "down": "thermal:block/devices/device_nullifier_bottom",

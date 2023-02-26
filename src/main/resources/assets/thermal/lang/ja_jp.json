@@ -13,9 +13,6 @@
   "block.thermal.niter_block": "硝石ブロック",
   "block.thermal.sulfur_block": "硫黄ブロック",
 
-  "block.thermal.steel_block": "鋼鉄ブロック",
-  "block.thermal.rose_gold_block": "ローズゴールドブロック",
-
   "block.thermal.enderium_block": "エンダリウムブロック",
   "block.thermal.lumium_block": "ルミウムブロック",
   "block.thermal.signalum_block": "シグナルムブロック",
@@ -217,20 +214,6 @@
   "item.thermal.deep_aquachow.desc": "§e§o水資源投網機§r§6で深海のものを捕らえるために使用します。海洋バイオームにおいて効果的です。",
   "item.thermal.junk_net": "ガラクタ収集網",
   "item.thermal.junk_net.desc": "§e§o水資源投網機§r§6でガラクタを集めるために使用します。耐久値はありませn。",
-
-  "item.thermal.rose_gold_coin": "ローズゴールドのコイン",
-  "item.thermal.rose_gold_dust": "ローズゴールドの粉",
-  "item.thermal.rose_gold_gear": "ローズゴールドの歯車",
-  "item.thermal.rose_gold_ingot": "ローズゴールドインゴット",
-  "item.thermal.rose_gold_nugget": "ローズゴールド塊",
-  "item.thermal.rose_gold_plate": "ローズゴールドのプレート",
-
-  "item.thermal.steel_coin": "鋼鉄のコイン",
-  "item.thermal.steel_dust": "鋼鉄の粉",
-  "item.thermal.steel_gear": "鋼鉄の歯車",
-  "item.thermal.steel_ingot": "鋼鉄インゴット",
-  "item.thermal.steel_nugget": "鋼鉄塊",
-  "item.thermal.steel_plate": "鋼鉄のプレート",
 
   "item.thermal.enderium_coin": "エンダリウムのコイン",
   "item.thermal.enderium_dust": "エンダリウムの粉",

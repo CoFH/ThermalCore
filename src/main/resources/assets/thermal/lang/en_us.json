@@ -13,9 +13,6 @@
   "block.thermal.niter_block": "Block of Niter",
   "block.thermal.sulfur_block": "Block of Sulfur",
 
-  "block.thermal.steel_block": "Block of Steel",
-  "block.thermal.rose_gold_block": "Block of Rose Gold",
-
   "block.thermal.enderium_block": "Block of Enderium",
   "block.thermal.lumium_block": "Block of Lumium",
   "block.thermal.signalum_block": "Block of Signalum",
@@ -111,6 +108,8 @@
 
   "info.thermal.redprint.contents": "Contents:",
   "info.thermal.redprint.unknown": "Unknown Data",
+  "info.thermal.redprint.data.Filter": "Filter Parameters",
+  "info.thermal.redprint.data.FilterAttachmentMode": "Filter Attachment Mode",
   "info.thermal.redprint.data.RSControl": "Redstone Control",
   "info.thermal.redprint.data.Sides": "Side Configuration",
   "info.thermal.redprint.data.Xfer": "Transfer Control",
@@ -207,7 +206,7 @@
   "item.thermal.satchel": "Satchel",
   "item.thermal.satchel.desc": "Stores items. Can be configured with a filter.",
   "item.thermal.wrench": "Crescent Hammer",
-  "item.thermal.wrench.desc": "Rotates many blocks. Also known as a Wrench.",
+  "item.thermal.wrench.desc": "It's a wrench. It rotates and dismantles many things.",
   "item.thermal.xp_crystal": "Insightful Crystal",
   "item.thermal.xp_crystal.desc": "Stores experience.",
 
@@ -217,20 +216,6 @@
   "item.thermal.deep_aquachow.desc": "Use in the §e§oAquatic Entangler§r§6 to catch things from the deep. Best used in Ocean biomes.",
   "item.thermal.junk_net": "Junk Net",
   "item.thermal.junk_net.desc": "Use in the §e§oAquatic Entangler§r§6 to catch junk. Not consumable.",
-
-  "item.thermal.rose_gold_coin": "Rose Gold Coin",
-  "item.thermal.rose_gold_dust": "Rose Gold Blend",
-  "item.thermal.rose_gold_gear": "Rose Gold Gear",
-  "item.thermal.rose_gold_ingot": "Rose Gold Ingot",
-  "item.thermal.rose_gold_nugget": "Rose Gold Nugget",
-  "item.thermal.rose_gold_plate": "Rose Gold Plate",
-
-  "item.thermal.steel_coin": "Steel Coin",
-  "item.thermal.steel_dust": "Steel Blend",
-  "item.thermal.steel_gear": "Steel Gear",
-  "item.thermal.steel_ingot": "Steel Ingot",
-  "item.thermal.steel_nugget": "Steel Nugget",
-  "item.thermal.steel_plate": "Steel Plate",
 
   "item.thermal.enderium_coin": "Enderium Coin",
   "item.thermal.enderium_dust": "Enderium Blend",
@@ -407,6 +392,7 @@
   "block.thermal.device_soil_infuser": "Phyto-Soil Infuser",
   "block.thermal.device_tree_extractor": "Arboreal Extractor",
   "block.thermal.device_water_gen": "Aqueous Accumulator",
+  "block.thermal.device_xp_condenser": "Insightful Condenser",
 
   "block.thermal.energy_cell": "Redstone Flux Cell",
   "block.thermal.energy_cell_frame": "Redstone Flux Cell Frame",
@@ -485,6 +471,10 @@
   "info.thermal.device_water_gen.0": "Provides copious amounts of water.",
   "info.thermal.device_water_gen.1": "Requires adjacent water sources to function.",
   "info.thermal.device_water_gen.2": "Don't drown.",
+
+  "info.thermal.device_xp_condenser.0": "Collects experience from nearby blocks which have produced it.",
+  "info.thermal.device_xp_condenser.1": "Stored experience may be extracted as a fluid.",
+  "info.thermal.device_xp_condenser.2": "How's that for machine learning?",
 
   "info.thermal.energy_cell.0": "Stores and transfers Redstone Flux.",
   "info.thermal.energy_cell.1": "Hold §e§oShift§r and/or §e§oCtrl§r to fine tune amounts.",
@@ -724,7 +714,11 @@
   "item.thermal.junk_net.keyword": "bait",
 
   "item.thermal.detonator.keyword": "tnt",
+  "item.thermal.lock.keyword": "lock secure security",
   "item.thermal.rf_potato.keyword": "battery",
+  "item.thermal.redprint.keyword": "copy settings",
+  "item.thermal.satchel.keyword": "backpack pouch storage",
+  "item.thermal.xp_crystal.keyword": "experience storage xp",
 
   "_comment": "========================================================================================================",
   "_comment": "Thermal Cultivation",

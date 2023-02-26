@@ -70,11 +70,6 @@ public class TCoreBlockStateProvider extends BlockStateProviderCoFH {
 
     private void registerBuildingBlocks(DeferredRegisterCoFH<Block> reg) {
 
-        simpleBlock(reg.getSup(ID_OBSIDIAN_GLASS));
-        simpleBlock(reg.getSup(ID_SIGNALUM_GLASS));
-        simpleBlock(reg.getSup(ID_LUMIUM_GLASS));
-        simpleBlock(reg.getSup(ID_ENDERIUM_GLASS));
-
         simpleBlock(reg.getSup(ID_POLISHED_SLAG));
         simpleBlock(reg.getSup(ID_CHISELED_SLAG));
         simpleBlock(reg.getSup(ID_SLAG_BRICKS));

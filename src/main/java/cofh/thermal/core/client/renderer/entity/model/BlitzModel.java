@@ -11,12 +11,9 @@ import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 
 import java.util.Arrays;
 
-@OnlyIn (Dist.CLIENT)
 public class BlitzModel<T extends LivingEntity> extends HierarchicalModel<T> {
 
     public static final ModelLayerLocation BLITZ_LAYER = new ModelLayerLocation(new ResourceLocation("thermal:blitz"), "main");

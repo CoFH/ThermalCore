@@ -68,7 +68,7 @@ import static cofh.lib.util.constants.ModIds.ID_THERMAL;
 import static cofh.thermal.core.init.TCoreContainers.*;
 import static cofh.thermal.core.init.TCoreEntities.*;
 import static cofh.thermal.lib.common.ThermalFlags.*;
-import static cofh.thermal.lib.common.ThermalIDs.*;
+import static cofh.thermal.lib.common.ThermalIDs.ID_TINKER_BENCH;
 
 @Mod (ID_THERMAL)
 public class ThermalCore {
@@ -237,6 +237,7 @@ public class ThermalCore {
         MenuScreens.register(DEVICE_WATER_GEN_CONTAINER.get(), DeviceWaterGenScreen::new);
         MenuScreens.register(DEVICE_ROCK_GEN_CONTAINER.get(), DeviceRockGenScreen::new);
         MenuScreens.register(DEVICE_COLLECTOR_CONTAINER.get(), DeviceCollectorScreen::new);
+        MenuScreens.register(DEVICE_XP_CONDENSER_CONTAINER.get(), DeviceXpCondenserScreen::new);
         MenuScreens.register(DEVICE_POTION_DIFFUSER_CONTAINER.get(), DevicePotionDiffuserScreen::new);
         MenuScreens.register(DEVICE_NULLIFIER_CONTAINER.get(), DeviceNullifierScreen::new);
         MenuScreens.register(TINKER_BENCH_CONTAINER.get(), TinkerBenchScreen::new);
@@ -249,13 +250,6 @@ public class ThermalCore {
     }
 
     private void registerRenderLayers() {
-
-        RenderType cutout = RenderType.cutout();
-
-        ItemBlockRenderTypes.setRenderLayer(BLOCKS.get(ID_OBSIDIAN_GLASS), cutout);
-        ItemBlockRenderTypes.setRenderLayer(BLOCKS.get(ID_SIGNALUM_GLASS), cutout);
-        ItemBlockRenderTypes.setRenderLayer(BLOCKS.get(ID_LUMIUM_GLASS), cutout);
-        ItemBlockRenderTypes.setRenderLayer(BLOCKS.get(ID_ENDERIUM_GLASS), cutout);
 
         ItemBlockRenderTypes.setRenderLayer(RedstoneFluid.instance().still().get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(RedstoneFluid.instance().flowing().get(), RenderType.translucent());
