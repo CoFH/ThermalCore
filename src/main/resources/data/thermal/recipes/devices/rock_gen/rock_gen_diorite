@@ -1,0 +1,8 @@
+{
+  "type": "thermal:rock_gen",
+  "adjacent": "minecraft:water",
+  "below": "minecraft:quartz_block",
+  "result": {
+    "item": "minecraft:diorite"
+  }
+}
