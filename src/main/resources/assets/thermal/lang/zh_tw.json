@@ -1322,7 +1322,7 @@
   "entity.thermal.energy_minecart": "紅石通量礦車",
   "entity.thermal.fluid_minecart": "流體儲罐礦車",
   "entity.thermal.underwater_minecart": "水下礦車",
-  
+
   "info.thermal.energy_minecart.0": "儲存紅石通量。",
   "info.thermal.energy_minecart.1": "使用欄位為礦車充能或將礦車中的能量釋放到物品中。",
 
