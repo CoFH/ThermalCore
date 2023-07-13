@@ -8,55 +8,10 @@
   "advancements.thermal.wrench.title": "看起來像個扳手",
   "advancements.thermal.wrench.description": "製作一把新月錘。",
 
-  "block.thermal.apatite_ore": "磷灰石礦",
-  "block.thermal.cinnabar_ore": "硃砂礦",
-  "block.thermal.niter_ore": "硝石礦",
-  "block.thermal.sulfur_ore": "硫磺礦",
-
-  "block.thermal.steel_block": "鋼方塊",
-  "block.thermal.rose_gold_block": "玫瑰金方塊",
-
-  "block.thermal.lead_ore": "鉛礦",
-  "block.thermal.nickel_ore": "鎳礦",
-  "block.thermal.silver_ore": "銀礦",
-  "block.thermal.tin_ore": "錫礦",
-
-  "block.thermal.ruby_ore": "紅寶石礦",
-  "block.thermal.sapphire_ore": "藍寶石礦",
-
-  "block.thermal.deepslate_apatite_ore": "深板岩磷灰石礦",
-  "block.thermal.deepslate_cinnabar_ore": "深板岩硃砂礦",
-  "block.thermal.deepslate_niter_ore": "深板岩硝石礦",
-  "block.thermal.deepslate_sulfur_ore": "深板岩硫磺礦",
-
-  "block.thermal.deepslate_lead_ore": "深板岩鉛礦",
-  "block.thermal.deepslate_nickel_ore": "深板岩鎳礦",
-  "block.thermal.deepslate_silver_ore": "深板岩銀礦",
-  "block.thermal.deepslate_tin_ore": "深板岩錫礦",
-
-  "block.thermal.deepslate_ruby_ore": "深板岩紅寶石礦",
-  "block.thermal.deepslate_sapphire_ore": "深板岩藍寶石礦",
-
-  "block.thermal.oil_sand": "瀝青沙",
-  "block.thermal.oil_red_sand": "瀝青紅沙",
-
   "block.thermal.apatite_block": "磷灰石方塊",
   "block.thermal.cinnabar_block": "硃砂方塊",
   "block.thermal.niter_block": "硝石方塊",
   "block.thermal.sulfur_block": "硫磺方塊",
-
-  "block.thermal.lead_block": "鉛方塊",
-  "block.thermal.nickel_block": "鎳方塊",
-  "block.thermal.silver_block": "銀方塊",
-  "block.thermal.tin_block": "錫方塊",
-
-  "block.thermal.ruby_block": "紅寶石方塊",
-  "block.thermal.sapphire_block": "藍寶石方塊",
-
-  "block.thermal.bronze_block": "青銅方塊",
-  "block.thermal.constantan_block": "康銅方塊",
-  "block.thermal.electrum_block": "琥珀金方塊",
-  "block.thermal.invar_block": "不變鋼方塊",
 
   "block.thermal.enderium_block": "終界合金方塊",
   "block.thermal.lumium_block": "流明方塊",
@@ -136,7 +91,7 @@
   "fluid_type.thermal.tree_oil": "樹油",
 
   "info.thermal.catalysts": "催化劑",
-  "info.thermal.energy_mod": "能量倍率",
+  "info.thermal.energy_mod": "耗能倍率",
   "info.thermal.primary_mod": "主產物倍率",
   "info.thermal.secondary_mod": "副產物倍率",
   "info.thermal.use_chance": "消耗機率",
@@ -153,6 +108,8 @@
 
   "info.thermal.redprint.contents": "內容：",
   "info.thermal.redprint.unknown": "不明的資料",
+  "info.thermal.redprint.data.Filter": "篩選器參數",
+  "info.thermal.redprint.data.FilterAttachmentMode": "篩選器附件模式",
   "info.thermal.redprint.data.RSControl": "紅石控制",
   "info.thermal.redprint.data.Sides": "側面設置",
   "info.thermal.redprint.data.Xfer": "傳輸控制",
@@ -249,7 +206,7 @@
   "item.thermal.satchel": "背包",
   "item.thermal.satchel.desc": "儲存物品，可以安裝物品篩選器",
   "item.thermal.wrench": "新月錘",
-  "item.thermal.wrench.desc": "設定、旋轉或拆除特定方塊。其實就是個扳手。",
+  "item.thermal.wrench.desc": "這是一個扳手。它旋轉和拆除許多東西。",
   "item.thermal.xp_crystal": "洞察水晶",
   "item.thermal.xp_crystal.desc": "儲存經驗值。",
 
@@ -259,93 +216,6 @@
   "item.thermal.deep_aquachow.desc": "使§e§o水產捕撈器§r§6能夠收獲的海底產物。最適合在海洋生物群系中使用。",
   "item.thermal.junk_net": "垃圾打撈網",
   "item.thermal.junk_net.desc": "用於在§e§o水產捕撈器§r§6中打撈垃圾。不會被消耗。",
-
-  "item.thermal.rose_gold_coin": "玫瑰金幣",
-  "item.thermal.rose_gold_dust": "玫瑰金粉",
-  "item.thermal.rose_gold_gear": "玫瑰金齒輪",
-  "item.thermal.rose_gold_ingot": "玫瑰金錠",
-  "item.thermal.rose_gold_nugget": "玫瑰金粒",
-  "item.thermal.rose_gold_plate": "玫瑰金板",
-
-  "item.thermal.steel_coin": "鋼幣",
-  "item.thermal.steel_dust": "鋼粉",
-  "item.thermal.steel_gear": "鋼齒輪",
-  "item.thermal.steel_ingot": "鋼錠",
-  "item.thermal.steel_nugget": "鋼粒",
-  "item.thermal.steel_plate": "鋼板",
-
-  "item.thermal.raw_lead": "鉛原礦",
-  "item.thermal.raw_nickel": "鎳原礦",
-  "item.thermal.raw_silver": "銀原礦",
-  "item.thermal.raw_tin": "錫原礦",
-
-  "item.thermal.lead_coin": "鉛幣",
-  "item.thermal.lead_dust": "鉛粉",
-  "item.thermal.lead_gear": "鉛齒輪",
-  "item.thermal.lead_ingot": "鉛錠",
-  "item.thermal.lead_nugget": "鉛粒",
-  "item.thermal.lead_plate": "鉛板",
-
-  "item.thermal.nickel_coin": "鎳幣",
-  "item.thermal.nickel_dust": "鎳粉",
-  "item.thermal.nickel_gear": "鎳齒輪",
-  "item.thermal.nickel_ingot": "鎳錠",
-  "item.thermal.nickel_nugget": "鎳粒",
-  "item.thermal.nickel_plate": "鎳板",
-
-  "item.thermal.silver_coin": "銀幣",
-  "item.thermal.silver_dust": "銀粉",
-  "item.thermal.silver_gear": "銀齒輪",
-  "item.thermal.silver_ingot": "銀錠",
-  "item.thermal.silver_nugget": "銀粒",
-  "item.thermal.silver_plate": "銀板",
-
-  "item.thermal.tin_coin": "錫幣",
-  "item.thermal.tin_dust": "錫粉",
-  "item.thermal.tin_gear": "錫齒輪",
-  "item.thermal.tin_ingot": "錫錠",
-  "item.thermal.tin_nugget": "錫粒",
-  "item.thermal.tin_plate": "錫板",
-
-  "item.thermal.ruby": "紅寶石",
-  "item.thermal.ruby_dust": "紅寶石粉",
-  "item.thermal.ruby_gear": "紅寶石齒輪",
-  "item.thermal.ruby_nugget": "紅寶石粒",
-  "item.thermal.ruby_plate": "紅寶石板",
-
-  "item.thermal.sapphire": "藍寶石",
-  "item.thermal.sapphire_dust": "藍寶石粉",
-  "item.thermal.sapphire_gear": "藍寶石齒輪",
-  "item.thermal.sapphire_nugget": "藍寶石粒",
-  "item.thermal.sapphire_plate": "藍寶石板",
-
-  "item.thermal.bronze_coin": "青銅幣",
-  "item.thermal.bronze_dust": "青銅粉",
-  "item.thermal.bronze_gear": "青銅齒輪",
-  "item.thermal.bronze_ingot": "青銅錠",
-  "item.thermal.bronze_nugget": "青銅粒",
-  "item.thermal.bronze_plate": "青銅板",
-
-  "item.thermal.constantan_coin": "康銅幣",
-  "item.thermal.constantan_dust": "康銅粉",
-  "item.thermal.constantan_gear": "康銅齒輪",
-  "item.thermal.constantan_ingot": "康銅錠",
-  "item.thermal.constantan_nugget": "康銅粒",
-  "item.thermal.constantan_plate": "康銅板",
-
-  "item.thermal.electrum_coin": "琥珀金幣",
-  "item.thermal.electrum_dust": "琥珀金粉",
-  "item.thermal.electrum_gear": "琥珀金齒輪",
-  "item.thermal.electrum_ingot": "琥珀金錠",
-  "item.thermal.electrum_nugget": "琥珀金粒",
-  "item.thermal.electrum_plate": "琥珀金板",
-
-  "item.thermal.invar_coin": "不變鋼幣",
-  "item.thermal.invar_dust": "不變鋼粉",
-  "item.thermal.invar_gear": "不變鋼齒輪",
-  "item.thermal.invar_ingot": "不變鋼錠",
-  "item.thermal.invar_nugget": "不變鋼粒",
-  "item.thermal.invar_plate": "不變鋼板",
 
   "item.thermal.enderium_coin": "終界合金幣",
   "item.thermal.enderium_dust": "終界合金粉",
@@ -522,6 +392,7 @@
   "block.thermal.device_soil_infuser": "植育土注能機",
   "block.thermal.device_tree_extractor": "樹汁提取器",
   "block.thermal.device_water_gen": "蓄水器",
+  "block.thermal.device_xp_condenser": "洞見凝聚器",
 
   "block.thermal.energy_cell": "紅石通量單元",
   "block.thermal.energy_cell_frame": "紅石通量單元框架",
@@ -600,6 +471,10 @@
   "info.thermal.device_water_gen.0": "提供大量的水資源。",
   "info.thermal.device_water_gen.1": "需要相鄰的水源以使其正常工作。",
   "info.thermal.device_water_gen.2": "可別淹死了。",
+
+  "info.thermal.device_xp_condenser.0": "從附近產生經驗值的方塊收集經驗值。",
+  "info.thermal.device_xp_condenser.1": "儲存的經驗值可以當作流體被提取。",
+  "info.thermal.device_xp_condenser.2": "機器學習得怎麼樣？",
 
   "info.thermal.energy_cell.0": "儲存與傳輸紅石通量。",
   "info.thermal.energy_cell.1": "按住 §e§oShift§r 鍵和/或 §e§oCtrl§r 鍵來精確調整數值。",
@@ -839,7 +714,11 @@
   "item.thermal.junk_net.keyword": "魚餌",
 
   "item.thermal.detonator.keyword": "tnt",
+  "item.thermal.lock.keyword": "鎖 私有 安全性",
   "item.thermal.rf_potato.keyword": "電池",
+  "item.thermal.redprint.keyword": "複製 設定 設置",
+  "item.thermal.satchel.keyword": "背包 袋 儲存",
+  "item.thermal.xp_crystal.keyword": "經驗值 儲存 xp",
 
   "_comment": "========================================================================================================",
   "_comment": "Thermal Cultivation",
@@ -920,8 +799,8 @@
   "item.thermal.onion_seeds": "洋蔥種子",
   "item.thermal.peanut": "花生",
   "item.thermal.peanut_seeds": "花生種子",
-  "item.thermal.radish": "小蘿蔔",
-  "item.thermal.radish_seeds": "小蘿蔔種子",
+  "item.thermal.radish": "櫻桃蘿蔔",
+  "item.thermal.radish_seeds": "櫻桃蘿蔔種子",
   "item.thermal.rice": "白米",
   "item.thermal.rice_seeds": "水稻種子",
   "item.thermal.sadiroot": "薩蒂根莖",
@@ -953,7 +832,7 @@
   "item.thermal.onion_stew": "洋蔥燉菜",
   "item.thermal.pbj_sandwich": "花生醬果醬三明治",
   "item.thermal.spring_salad": "蔬菜沙拉",
-  "item.thermal.stuffed_pepper": "甜椒塞牛肉",
+  "item.thermal.stuffed_pepper": "甜椒盅",
   "item.thermal.sushi_maki": "壽司卷",
   "item.thermal.xp_stew": "博知燉菜",
 
