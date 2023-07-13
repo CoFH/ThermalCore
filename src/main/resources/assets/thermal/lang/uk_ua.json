@@ -212,7 +212,7 @@
 
   "item.thermal.aquachow": "Аква-чау",
   "item.thermal.aquachow.desc": "Помістіть у §e§oАкватичний ловець§r§6, щоб ловити більше риби.",
-  "item.thermal.deep_aquachow": "Глубинний Аква-чау",
+  "item.thermal.deep_aquachow": "Глибинний Аква-чау",
   "item.thermal.deep_aquachow.desc": "Помістіть у §e§oАкватичний ловець§r§6, щоб ловити предмети з глибин. Найкраще використовувавти в океанічних біомах.",
   "item.thermal.junk_net": "Сітка для сміття",
   "item.thermal.junk_net.desc": "Помістіть у §e§oАкватичний ловець§r§6, щоб виловлювати сміття. Не витрачається.",
@@ -242,17 +242,17 @@
 
   "subtitles.thermal.entity.basalz.ambient": "Базальц дихає",
   "subtitles.thermal.entity.basalz.death": "Базальц помирає",
-  "subtitles.thermal.entity.basalz.hurt": "Базальцу нанесли шкоду",
+  "subtitles.thermal.entity.basalz.hurt": "Базальцу заподіяли шкоду",
   "subtitles.thermal.entity.basalz.shoot": "Базальц стріляє",
 
   "subtitles.thermal.entity.blitz.ambient": "Бліц дихає",
   "subtitles.thermal.entity.blitz.death": "Бліц помирає",
-  "subtitles.thermal.entity.blitz.hurt": "Бліцу нанесли шкоду",
+  "subtitles.thermal.entity.blitz.hurt": "Бліцу заподіяли шкоду",
   "subtitles.thermal.entity.blitz.shoot": "Бліц стріляє",
 
   "subtitles.thermal.entity.blizz.ambient": "Блізз дихає",
   "subtitles.thermal.entity.blizz.death": "Блізз помирає",
-  "subtitles.thermal.entity.blizz.hurt": "Бліззу нанесли шкоду",
+  "subtitles.thermal.entity.blizz.hurt": "Бліззу заподіяли шкоду",
   "subtitles.thermal.entity.blizz.shoot": "Блізз стріляє",
 
   "subtitles.thermal.item.magnet": "Магніт притягує",
@@ -289,7 +289,7 @@
   "info.thermal.augment.attr.PotionAmp": "Рівень ефекту",
   "info.thermal.augment.attr.PotionDur": "Тривалість ефекту",
 
-  "info.thermal.augment.attr.RFMax": "Ємність RF",
+  "info.thermal.augment.attr.RFMax": "Місткість RF",
   "info.thermal.augment.attr.RFXfer": "Передача RF",
 
   "info.thermal.augment.type.Area": "Зона ефекту",
@@ -415,7 +415,7 @@
   "block.thermal.fire_tnt": "Пекельна вибухівка",
   "block.thermal.fire_tnt.desc": "Підпалює велику зону.",
   "block.thermal.glowstone_tnt": "Світловакам'яна вибухівка",
-  "block.thermal.glowstone_tnt.desc": "Освітлює велику зону. Наносить шкоду Нежиті.",
+  "block.thermal.glowstone_tnt.desc": "Освітлює велику зону. Шкодить нечисті.",
   "block.thermal.ice_tnt": "Морозна вибухівка",
   "block.thermal.ice_tnt.desc": "Заморожує велику зону.",
   "block.thermal.lightning_tnt": "Шокова вибухівка",
@@ -534,11 +534,11 @@
   "item.thermal.earth_grenade": "Тектонічна граната",
   "item.thermal.earth_grenade.desc": "Розбиває камні і землю. Дуже ефективно при розкопках.",
   "item.thermal.ender_grenade": "Дестабілізуюча граната",
-  "item.thermal.ender_grenade.desc": "Створює дестабілізуючу зону, що телепортує.",
+  "item.thermal.ender_grenade.desc": "Створює зону дестабілізації, що телепортує.",
   "item.thermal.fire_grenade": "Пекельна граната",
   "item.thermal.fire_grenade.desc": "Підпалює зону.",
   "item.thermal.glowstone_grenade": "Світловакам'яна граната",
-  "item.thermal.glowstone_grenade.desc": "Освітлює зону. Наносить шкоду Нежиті.",
+  "item.thermal.glowstone_grenade.desc": "Освітлює зону. Шкодить нечисті.",
   "item.thermal.ice_grenade": "Морозна граната",
   "item.thermal.ice_grenade.desc": "Заморожує зону.",
   "item.thermal.lightning_grenade": "Шокова граната",
@@ -651,7 +651,7 @@
   "block.thermal.device_potion_diffuser.keyword": "зілля potion",
   "block.thermal.device_rock_gen.keyword": "кругляк cobblegenerator cobblestone",
   "block.thermal.device_soil_infuser.keyword": "рослини ферма добриво добрива crops farm fertilizer",
-  "block.thermal.device_tree_extractor.keyword": "збір зборщик латекс гума дерево extractor latex tree",
+  "block.thermal.device_tree_extractor.keyword": "збір зборщик збиральник латекс гума дерево extractor latex tree",
   "block.thermal.device_water_gen.keyword": "насос вода pump source water",
 
   "item.thermal.area_depth_augment.keyword": "покращення модуль апгрейд глибина augment",
@@ -717,7 +717,7 @@
   "item.thermal.lock.keyword": "замок безпека lock secure security",
   "item.thermal.rf_potato.keyword": "батарея батарейка акумулятор battery",
   "item.thermal.redprint.keyword": "налаштування скопіювати copy settings",
-  "item.thermal.satchel.keyword": "рюкзак сумка схоище backpack pouch storage",
+  "item.thermal.satchel.keyword": "рюкзак сумка сховище backpack pouch storage",
   "item.thermal.xp_crystal.keyword": "досвід experience storage xp",
 
   "_comment": "========================================================================================================",
@@ -726,9 +726,9 @@
 
   "block.thermal.frost_melon": "Морозний кавун",
   "block.thermal.phytosoil": "Фіто-ґрунт",
-  "block.thermal.phytosoil_tilled": "Вспаханий фіто-ґрунт",
+  "block.thermal.phytosoil_tilled": "Зораний фіто-ґрунт",
 
-  "block.thermal.carrot_cake": "Моркв'яний торт",
+  "block.thermal.carrot_cake": "Морквяний торт",
   "block.thermal.cheese_wheel": "Головка сиру",
   "block.thermal.chocolate_cake": "Шоколадний торт",
   "block.thermal.potion_cake": "Відьмачий пиріг",
@@ -738,7 +738,7 @@
   "block.thermal.amaranth": "Амарант",
   "block.thermal.amaranth_block": "Тюк амаранту",
   "block.thermal.barley": "Ячмінь",
-  "block.thermal.barley_block": "Тюк ячміню",
+  "block.thermal.barley_block": "Тюк ячменю",
   "block.thermal.bell_pepper": "Болгарський перець",
   "block.thermal.bell_pepper_block": "Ящик болгарських перців",
   "block.thermal.coffee": "Кава",
@@ -746,7 +746,7 @@
   "block.thermal.corn": "Кукурудза",
   "block.thermal.corn_block": "Ящик кукурудзи",
   "block.thermal.eggplant": "Баклажан",
-  "block.thermal.eggplant_block": "Ящик бакалажанів",
+  "block.thermal.eggplant_block": "Ящик баклажанів",
   "block.thermal.flax": "Льон",
   "block.thermal.flax_block": "Тюк льону",
   "block.thermal.green_bean": "Квасоля",
@@ -778,7 +778,7 @@
   "item.thermal.amaranth": "Амарант",
   "item.thermal.amaranth_seeds": "Насіння амаранту",
   "item.thermal.barley": "Ячмінь",
-  "item.thermal.barley_seeds": "Насіння ячміню",
+  "item.thermal.barley_seeds": "Насіння ячменю",
   "item.thermal.bell_pepper": "Болгарський перець",
   "item.thermal.bell_pepper_seeds": "Насіння болгарського перцю",
   "item.thermal.coffee": "Кавовий плід",
@@ -786,7 +786,7 @@
   "item.thermal.corn": "Кукурудза",
   "item.thermal.corn_seeds": "Насіння кукурудзи",
   "item.thermal.eggplant": "Баклажан",
-  "item.thermal.eggplant_seeds": "Насіння баклажану",
+  "item.thermal.eggplant_seeds": "Насіння баклажанів",
   "item.thermal.flax": "Льон",
   "item.thermal.flax_seeds": "Насіння льону",
   "item.thermal.frost_melon_seeds": "Насіння морозного кавуна",
@@ -812,7 +812,7 @@
   "item.thermal.tea": "Листя чаю",
   "item.thermal.tea_seeds": "Насіння чаю",
   "item.thermal.tomato": "Помідор",
-  "item.thermal.tomato_seeds": "Насіння помідору",
+  "item.thermal.tomato_seeds": "Насіння помідора",
 
   "item.thermal.dough": "Тісто",
   "item.thermal.flour": "Борошно",
@@ -1173,16 +1173,16 @@
   "_comment": "Thermal Locomotion",
   "_comment": "========================================================================================================",
 
-  "block.thermal.crossover_rail": "Перехрестні рейки",
+  "block.thermal.crossover_rail": "Перехресні  рейки",
 
   "block.thermal.lumium_activator_rail": "Люміумні активуючі рейки",
-  "block.thermal.lumium_crossover_rail": "Люміумні перехрестні рейки",
+  "block.thermal.lumium_crossover_rail": "Люміумні перехресні  рейки",
   "block.thermal.lumium_detector_rail": "Люміумні детекторні рейки",
   "block.thermal.lumium_powered_rail": "Електризовані люміумні рейки",
   "block.thermal.lumium_rail": "Люміумні рейки",
 
   "block.thermal.prismarine_activator_rail": "Призмаринові активуючі рейки",
-  "block.thermal.prismarine_crossover_rail": "Призмаринові перехрестні Рейки",
+  "block.thermal.prismarine_crossover_rail": "Призмаринові перехресні  Рейки",
   "block.thermal.prismarine_detector_rail": "Призмаринові детекторні рейки",
   "block.thermal.prismarine_powered_rail": "Електризовані призмаринові рейки",
   "block.thermal.prismarine_rail": "Призмаринові рейки",
@@ -1199,7 +1199,7 @@
   "entity.thermal.slime_tnt_minecart": "Вагонетка з слизневою вибухівкою",
 
   "entity.thermal.energy_minecart": "Redstone Flux вагонетка",
-  "entity.thermal.fluid_minecart": "FВагонетка з цистерною",
+  "entity.thermal.fluid_minecart": "Вагонетка з цистерною",
   "entity.thermal.underwater_minecart": "Підводна вагонетка",
 
   "info.thermal.energy_minecart.0": "Зберігає Redstone Flux.",
@@ -1250,6 +1250,6 @@
   "_comment": "========================================================================================================",
 
   "thermal.book.name": "Thermal-педія",
-  "thermal.book.landing_text": "Ласкаво просимо до путіника по Thermal Series! Ми, команда авторів, дуже сподіваємось, що Вам сподобається.",
+  "thermal.book.landing_text": "Ласкаво просимо до путівника по Thermal Series! Ми, команда авторів, дуже сподіваємось, що Вам сподобається.",
   "thermal.book.subtitle": "MC 1.19.2"
 }
