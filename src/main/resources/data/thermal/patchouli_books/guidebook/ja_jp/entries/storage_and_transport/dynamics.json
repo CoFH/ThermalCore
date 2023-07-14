@@ -38,7 +38,7 @@
     {
       "type": "patchouli:text",
       "title": "パイプがあるMod",
-      "text": "以下のModは様々な輸送設備を保有していますが、それ以外にも多くの魅力的なコンテンツを追加します。あなたが気に入る物もあるかもしれません。アイテム・流体・エネルギーの輸送$(o)だけ$()を扱うModをお探しであれば、前のページをご参照ください。$(li)$(l:https://www.curseforge.com/minecraft/mc-mods/mekanism)Mekanism$()$(li)$(l:https://www.curseforge.com/minecraft/mc-mods/create)Create$()$(li)$(l:https://www.curseforge.com/minecraft/mc-mods/immersive-engineering)Immersive Engineering$()$(li)$(l:https://www.curseforge.com/minecraft/mc-mods/rats)funny rat mod$()"
+      "text": "以下のModは様々な輸送設備を保有していますが、それ以外にも多くの魅力的なコンテンツを追加します。あなたが気に入る物もあるかもしれません。アイテム・流体・エネルギーの輸送$(o)だけ$()を扱うModをお探しであれば、前のページをご参照ください。$(li)$(l:https://www.curseforge.com/minecraft/mc-mods/create)Create$()$(li)$(l:https://www.curseforge.com/minecraft/mc-mods/immersive-engineering)Immersive Engineering$()$(li)$(l:https://www.curseforge.com/minecraft/mc-mods/rats)funny rat mod$()"
     }
   ]
 }

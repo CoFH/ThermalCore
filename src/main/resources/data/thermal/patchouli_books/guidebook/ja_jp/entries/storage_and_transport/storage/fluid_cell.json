@@ -1,9 +1,10 @@
 {
   "name": "流体セル",
   "icon": "thermal:fluid_cell",
-  "category": "thermal:storage",
   "read_by_default": true,
   "flag": "mod:thermal_expansion",
+  "category": "thermal:storage",
+
   "pages": [
     {
       "type": "patchouli:text",
