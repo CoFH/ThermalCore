@@ -228,17 +228,5 @@ public class TinkerBenchBlockEntity extends AugmentableBlockEntity implements IT
 
         return EmptyFilter.INSTANCE;
     }
-
-    @Override
-    public boolean openGui(ServerPlayer player) {
-
-        return false;
-    }
-
-    @Override
-    public boolean openFilterGui(ServerPlayer player) {
-
-        return false;
-    }
     // endregion
 }

@@ -1,23 +1,19 @@
 package cofh.thermal.lib.client.gui;
 
 import cofh.core.client.gui.ContainerScreenCoFH;
-import cofh.core.client.gui.element.ElementTexture;
 import cofh.core.client.gui.element.ElementXpStorage;
 import cofh.core.client.gui.element.panel.AugmentPanel;
+import cofh.core.client.gui.element.panel.FilterPanel;
 import cofh.core.client.gui.element.panel.RSControlPanel;
 import cofh.core.client.gui.element.panel.SecurityPanel;
 import cofh.core.inventory.container.ContainerCoFH;
-import cofh.core.network.packet.server.TileFilterGuiOpenPacket;
-import cofh.core.util.helpers.FilterHelper;
 import cofh.lib.util.helpers.SecurityHelper;
 import cofh.thermal.lib.block.entity.AugmentableBlockEntity;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
 
-import java.util.Collections;
-
-import static cofh.core.util.helpers.GuiHelper.*;
+import static cofh.core.util.helpers.GuiHelper.createDefaultXpStorage;
+import static cofh.core.util.helpers.GuiHelper.setClaimable;
 
 public class AugmentableScreen<T extends ContainerCoFH> extends ContainerScreenCoFH<T> {
 
@@ -42,31 +38,32 @@ public class AugmentableScreen<T extends ContainerCoFH> extends ContainerScreenC
             addPanel(new AugmentPanel(this, menu::getNumAugmentSlots, menu.getAugmentSlots()));
         }
         addPanel(new RSControlPanel(this, tile));
+        addPanel(new FilterPanel(this, tile));
 
         if (tile.getXpStorage() != null) {
             addElement(setClaimable((ElementXpStorage) createDefaultXpStorage(this, 152, 65, tile.getXpStorage()).setVisible(() -> tile.getXpStorage().getMaxXpStored() > 0), tile));
         }
 
         // Filter Tab
-        addElement(new ElementTexture(this, 4, -21)
-                .setUV(24, 0)
-                .setSize(24, 21)
-                .setTexture(TAB_TOP, 48, 32)
-                .setVisible(() -> FilterHelper.hasFilter(tile)));
-
-        addElement(new ElementTexture(this, 8, -17) {
-
-            @Override
-            public boolean mouseClicked(double mouseX, double mouseY, int mouseButton) {
-
-                TileFilterGuiOpenPacket.openFilterGui(tile);
-                return true;
-            }
-        }
-                .setSize(16, 16)
-                .setTexture(NAV_FILTER, 16, 16)
-                .setTooltipFactory((element, mouseX, mouseY) -> tile.getFilter() instanceof MenuProvider menuProvider ? Collections.singletonList(menuProvider.getDisplayName()) : Collections.emptyList())
-                .setVisible(() -> FilterHelper.hasFilter(tile)));
+        //        addElement(new ElementTexture(this, 4, -21)
+        //                .setUV(24, 0)
+        //                .setSize(24, 21)
+        //                .setTexture(TAB_TOP, 48, 32)
+        //                .setVisible(() -> FilterHelper.hasFilter(tile)));
+        //
+        //        addElement(new ElementTexture(this, 8, -17) {
+        //
+        //            @Override
+        //            public boolean mouseClicked(double mouseX, double mouseY, int mouseButton) {
+        //
+        //                TileFilterGuiOpenPacket.openFilterGui(tile);
+        //                return true;
+        //            }
+        //        }
+        //                .setSize(16, 16)
+        //                .setTexture(NAV_FILTER, 16, 16)
+        //                .setTooltipFactory((element, mouseX, mouseY) -> tile.getFilter() instanceof MenuProvider menuProvider ? Collections.singletonList(menuProvider.getDisplayName()) : Collections.emptyList())
+        //                .setVisible(() -> FilterHelper.hasFilter(tile)));
 
         // TODO: Revisit ItemStack-based
         //        addElement(new ElementItemStack(this, 8, -17) {

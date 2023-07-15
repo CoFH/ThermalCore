@@ -243,7 +243,7 @@ public class SatchelItem extends InventoryContainerItemAugmentable implements IC
         if (FILTERS.size() > MAP_CAPACITY) {
             FILTERS.clear();
         }
-        FILTERS.put(stack, FilterRegistry.getHeldFilter(filterType, stack.getTag()));
+        FILTERS.put(stack, FilterRegistry.getFilter(filterType, stack.getTag()));
         return FILTERS.get(stack);
     }
 

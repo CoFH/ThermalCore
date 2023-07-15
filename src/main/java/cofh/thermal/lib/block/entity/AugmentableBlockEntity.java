@@ -9,9 +9,8 @@ import cofh.core.util.control.*;
 import cofh.core.util.filter.EmptyFilter;
 import cofh.core.util.filter.FilterRegistry;
 import cofh.core.util.filter.IFilter;
-import cofh.core.util.filter.IFilterableTile;
+import cofh.core.util.filter.IFilterable;
 import cofh.core.util.helpers.AugmentDataHelper;
-import cofh.core.util.helpers.FilterHelper;
 import cofh.lib.energy.EmptyEnergyStorage;
 import cofh.lib.energy.EnergyStorageCoFH;
 import cofh.lib.fluid.FluidStorageCoFH;
@@ -34,7 +33,6 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
@@ -57,7 +55,6 @@ import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
 import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
-import net.minecraftforge.network.NetworkHooks;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -80,7 +77,7 @@ import static cofh.lib.util.constants.NBTTags.*;
 import static cofh.thermal.core.init.TCoreSounds.SOUND_TINKER;
 import static net.minecraft.nbt.Tag.TAG_COMPOUND;
 
-public abstract class AugmentableBlockEntity extends TileCoFH implements ISecurableTile, IRedstoneControllableTile, MenuProvider, IFilterableTile {
+public abstract class AugmentableBlockEntity extends TileCoFH implements ISecurableTile, IRedstoneControllableTile, MenuProvider, IFilterable {
 
     protected static final int BASE_ENERGY = 50000;
     protected static final int BASE_PROCESS_TICK = 20;
@@ -273,9 +270,6 @@ public abstract class AugmentableBlockEntity extends TileCoFH implements ISecura
     @Override
     public boolean onActivatedDelegate(Level world, BlockPos pos, BlockState state, Player player, InteractionHand hand, BlockHitResult result) {
 
-        if (player.isSecondaryUseActive()) {
-            return openFilterGui((ServerPlayer) player);
-        }
         ItemStack stack = player.getItemInHand(hand);
         if (augValidator().test(stack)) {
             if (attemptAugmentInstall(stack)) {
@@ -699,7 +693,7 @@ public abstract class AugmentableBlockEntity extends TileCoFH implements ISecura
         }
 
         CompoundTag filterNBT = filter.write(new CompoundTag());
-        filter = FilterRegistry.getTileFilter(getAttributeModString(augmentNBT, TAG_FILTER_TYPE), filterNBT, this);
+        filter = FilterRegistry.getFilter(getAttributeModString(augmentNBT, TAG_FILTER_TYPE), filterNBT);
     }
 
     protected boolean defaultReconfigState() {
@@ -803,36 +797,11 @@ public abstract class AugmentableBlockEntity extends TileCoFH implements ISecura
     }
     // endregion
 
-    // region IFilterableTile
+    // region IFilterable
     @Override
     public IFilter getFilter() {
 
         return filter;
-    }
-
-    @Override
-    public void onFilterChanged() {
-
-    }
-
-    @Override
-    public boolean openGui(ServerPlayer player) {
-
-        if (canOpenGui()) {
-            NetworkHooks.openScreen(player, this, worldPosition);
-            return true;
-        }
-        return false;
-    }
-
-    @Override
-    public boolean openFilterGui(ServerPlayer player) {
-
-        if (filter instanceof MenuProvider provider) {
-            FilterHelper.openTileScreen(player, provider, worldPosition);
-            return true;
-        }
-        return false;
     }
     // endregion
 
