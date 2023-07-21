@@ -9,7 +9,7 @@ import cofh.core.util.control.*;
 import cofh.core.util.filter.EmptyFilter;
 import cofh.core.util.filter.FilterRegistry;
 import cofh.core.util.filter.IFilter;
-import cofh.core.util.filter.IFilterableTile;
+import cofh.core.util.filter.IFilterable;
 import cofh.core.util.helpers.AugmentDataHelper;
 import cofh.core.util.helpers.FilterHelper;
 import cofh.lib.energy.EmptyEnergyStorage;
@@ -80,7 +80,7 @@ import static cofh.lib.util.constants.NBTTags.*;
 import static cofh.thermal.core.init.TCoreSounds.SOUND_TINKER;
 import static net.minecraft.nbt.Tag.TAG_COMPOUND;
 
-public abstract class AugmentableBlockEntity extends TileCoFH implements ISecurableTile, IRedstoneControllableTile, MenuProvider, IFilterableTile {
+public abstract class AugmentableBlockEntity extends TileCoFH implements ISecurableTile, IRedstoneControllableTile, MenuProvider, IFilterable {
 
     protected static final int BASE_ENERGY = 50000;
     protected static final int BASE_PROCESS_TICK = 20;
@@ -108,16 +108,6 @@ public abstract class AugmentableBlockEntity extends TileCoFH implements ISecura
     }
 
     // region BASE PARAMETERS
-    protected int getBaseEnergyStorage() {
-
-        return BASE_ENERGY;
-    }
-
-    protected int getBaseEnergyXfer() {
-
-        return getBaseProcessTick() * 10;
-    }
-
     protected int getBaseProcessTick() {
 
         return BASE_PROCESS_TICK;
@@ -699,7 +689,7 @@ public abstract class AugmentableBlockEntity extends TileCoFH implements ISecura
         }
 
         CompoundTag filterNBT = filter.write(new CompoundTag());
-        filter = FilterRegistry.getTileFilter(getAttributeModString(augmentNBT, TAG_FILTER_TYPE), filterNBT, this);
+        filter = FilterRegistry.getFilter(getAttributeModString(augmentNBT, TAG_FILTER_TYPE), filterNBT, this);
     }
 
     protected boolean defaultReconfigState() {
@@ -803,7 +793,7 @@ public abstract class AugmentableBlockEntity extends TileCoFH implements ISecura
     }
     // endregion
 
-    // region IFilterableTile
+    // region IFilterable
     @Override
     public IFilter getFilter() {
 
@@ -813,6 +803,12 @@ public abstract class AugmentableBlockEntity extends TileCoFH implements ISecura
     @Override
     public void onFilterChanged() {
 
+    }
+
+    @Override
+    public boolean hasGui() {
+
+        return canOpenGui();
     }
 
     @Override

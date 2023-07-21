@@ -1,6 +1,6 @@
 package cofh.thermal.core.inventory.container;
 
-import cofh.core.inventory.container.TileContainer;
+import cofh.core.inventory.container.TileCoFHContainer;
 import cofh.core.network.packet.server.ContainerConfigPacket;
 import cofh.core.util.helpers.AugmentableHelper;
 import cofh.lib.inventory.container.slot.SlotCoFH;
@@ -22,7 +22,7 @@ import java.util.List;
 import static cofh.lib.util.Constants.MAX_AUGMENTS;
 import static cofh.thermal.core.init.TCoreContainers.TINKER_BENCH_CONTAINER;
 
-public class TinkerBenchContainer extends TileContainer {
+public class TinkerBenchContainer extends TileCoFHContainer {
 
     public final TinkerBenchBlockEntity tile;
 

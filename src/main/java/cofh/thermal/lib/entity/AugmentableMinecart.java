@@ -2,17 +2,24 @@ package cofh.thermal.lib.entity;
 
 import cofh.core.entity.AbstractMinecartCoFH;
 import cofh.core.item.IAugmentableItem;
+import cofh.core.util.filter.EmptyFilter;
+import cofh.core.util.filter.IFilter;
+import cofh.core.util.filter.IFilterable;
 import cofh.core.util.helpers.AugmentDataHelper;
+import cofh.core.util.helpers.FilterHelper;
 import cofh.core.util.helpers.FluidHelper;
 import cofh.lib.api.IStorageCallback;
 import cofh.lib.inventory.ItemStorageCoFH;
 import cofh.lib.inventory.SimpleItemInv;
+import cofh.lib.util.Utils;
 import cofh.thermal.core.config.ThermalCoreConfig;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -30,13 +37,12 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import static cofh.core.init.CoreEntityDataSerializers.FLUID_STACK_DATA_SERIALIZER;
-import static cofh.core.util.helpers.AugmentableHelper.getAttributeMod;
-import static cofh.core.util.helpers.AugmentableHelper.setAttributeFromAugmentMax;
+import static cofh.core.util.helpers.AugmentableHelper.*;
 import static cofh.core.util.helpers.ItemHelper.cloneStack;
 import static cofh.lib.util.constants.NBTTags.*;
 import static net.minecraft.nbt.Tag.TAG_COMPOUND;
 
-public abstract class AugmentableMinecart extends AbstractMinecartCoFH implements IStorageCallback {
+public abstract class AugmentableMinecart extends AbstractMinecartCoFH implements IStorageCallback, IFilterable {
 
     protected static final EntityDataAccessor<Integer> ENERGY_STORED = SynchedEntityData.defineId(AugmentableMinecart.class, EntityDataSerializers.INT);
     protected static final EntityDataAccessor<Integer> FLUID_STORED = SynchedEntityData.defineId(AugmentableMinecart.class, EntityDataSerializers.INT);
@@ -49,6 +55,7 @@ public abstract class AugmentableMinecart extends AbstractMinecartCoFH implement
 
     protected SimpleItemInv inventory = new SimpleItemInv(this);
     protected List<ItemStorageCoFH> augments = Collections.emptyList();
+    protected IFilter filter = EmptyFilter.INSTANCE;
 
     protected AugmentableMinecart(EntityType<?> type, Level worldIn) {
 
@@ -92,6 +99,7 @@ public abstract class AugmentableMinecart extends AbstractMinecartCoFH implement
                 List<ItemStack> items = getAugmentsAsList();
                 augmentableItem.updateAugmentState(stack, items);
             }
+            filter.write(nbt);
         }
         return super.createItemStackTag(stack);
     }
@@ -107,6 +115,7 @@ public abstract class AugmentableMinecart extends AbstractMinecartCoFH implement
             inventory.readSlotsUnordered(compound.getList(TAG_AUGMENTS, TAG_COMPOUND), invSize() - augSize());
         }
         updateAugmentState();
+        filter.read(compound);
     }
 
     @Override
@@ -117,6 +126,7 @@ public abstract class AugmentableMinecart extends AbstractMinecartCoFH implement
         compound.put(TAG_ENCHANTMENTS, enchantments);
 
         inventory.write(compound);
+        filter.write(compound);
     }
 
     // region HELPERS
@@ -214,6 +224,8 @@ public abstract class AugmentableMinecart extends AbstractMinecartCoFH implement
         setAttributeFromAugmentMax(augmentNBT, augmentData, TAG_AUGMENT_FLUID_STORAGE);
         setAttributeFromAugmentMax(augmentNBT, augmentData, TAG_AUGMENT_ITEM_STORAGE);
 
+        setAttributeFromAugmentString(augmentNBT, augmentData, TAG_FILTER_TYPE);
+
         creativeEnergy |= getAttributeMod(augmentData, TAG_AUGMENT_RF_CREATIVE) > 0;
         creativeTanks |= getAttributeMod(augmentData, TAG_AUGMENT_FLUID_CREATIVE) > 0;
         // creativeSlots |= getAttributeMod(augmentData, TAG_AUGMENT_ITEM_CREATIVE) > 0;
@@ -231,6 +243,45 @@ public abstract class AugmentableMinecart extends AbstractMinecartCoFH implement
         if (slot >= invSize() - augSize()) {
             updateAugmentState();
         }
+    }
+    // endregion
+
+    // region IFilterable
+    @Override
+    public IFilter getFilter() {
+
+        return filter;
+    }
+
+    @Override
+    public void onFilterChanged() {
+
+    }
+
+    @Override
+    public boolean hasGui() {
+
+        return this instanceof MenuProvider;
+    }
+
+    @Override
+    public boolean openGui(ServerPlayer player) {
+
+        if (this instanceof MenuProvider) {
+            Utils.openEntityScreen(player, (MenuProvider) this, this);
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean openFilterGui(ServerPlayer player) {
+
+        if (filter instanceof MenuProvider provider) {
+            FilterHelper.openEntityScreen(player, provider, this.getId());
+            return true;
+        }
+        return false;
     }
     // endregion
 }

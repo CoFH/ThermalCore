@@ -1,6 +1,6 @@
 package cofh.thermal.core.inventory.container.device;
 
-import cofh.core.inventory.container.TileContainer;
+import cofh.core.inventory.container.TileCoFHContainer;
 import cofh.core.network.packet.server.ContainerConfigPacket;
 import cofh.lib.inventory.container.slot.SlotCoFH;
 import cofh.lib.inventory.wrapper.InvWrapperCoFH;
@@ -13,7 +13,7 @@ import net.minecraft.world.level.Level;
 
 import static cofh.thermal.core.init.TCoreContainers.DEVICE_NULLIFIER_CONTAINER;
 
-public class DeviceNullifierContainer extends TileContainer {
+public class DeviceNullifierContainer extends TileCoFHContainer {
 
     public final DeviceNullifierTile tile;
 

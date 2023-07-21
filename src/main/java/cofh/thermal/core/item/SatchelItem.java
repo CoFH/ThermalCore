@@ -40,7 +40,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.event.entity.player.EntityItemPickupEvent;
-import net.minecraftforge.network.NetworkHooks;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import javax.annotation.Nonnull;
@@ -165,13 +164,9 @@ public class SatchelItem extends InventoryContainerItemAugmentable implements IC
             }
             dropExtraItems(stack, player);
             if (player.isSecondaryUseActive()) {
-                if (FilterHelper.hasFilter(stack) && getFilter(stack) instanceof MenuProvider filter) {
-                    FilterHelper.openHeldScreen((ServerPlayer) player, filter);
-                    return true;
-                }
-                return false;
+                return openFilterGui((ServerPlayer) player, stack);
             }
-            NetworkHooks.openScreen((ServerPlayer) player, this);
+            openGui((ServerPlayer) player, stack);
         }
         return true;
     }
@@ -243,7 +238,7 @@ public class SatchelItem extends InventoryContainerItemAugmentable implements IC
         if (FILTERS.size() > MAP_CAPACITY) {
             FILTERS.clear();
         }
-        FILTERS.put(stack, FilterRegistry.getHeldFilter(filterType, stack.getTag()));
+        FILTERS.put(stack, FilterRegistry.getFilter(filterType, stack.getTag()));
         return FILTERS.get(stack);
     }
 
