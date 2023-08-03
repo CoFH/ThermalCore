@@ -7,59 +7,67 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Thermal Cultivation adds a variety of crops, the seeds of which may be purchased from villagers. These crops can be harvested by right clicking with an empty hand. Mushroom crops may be planted on $(l:thermal:world/plants/phytogro)phyto-soil$(/l), mycelium, or podzol, but cannot be bonemealed or phyto-gro'ed. They are still affected by phyto-soil and $(l:thermal:equipment/tools/watering_can)watering can$(/l) growth bonuses."
+      "text": "Thermal Cultivation adds a variety of crops, the seeds of which may be purchased from villagers. These crops can be harvested by right clicking with an empty hand. Mushroom crops may be planted on $(l:thermal:world/plants/phytogro)Phyto-Soil$(/l), Mycelium, or Podzol, but are unaffected by fertilizers such as Bone Meal. They are still affected by Phyto-Soil and $(l:thermal:equipment/tools/watering_can)Watering Can$(/l) growth bonuses."
     },
     {
       "type": "2-2_item_page",
 
-      "A.title": "Barley",
-      "A.item1": "thermal:barley",
-      "A.item2": "thermal:barley_seeds",
-      "A.text": "A cereal grain which can be ground into flour or malted to make beer or whiskey.",
+      "A.title": "Amaranth",
+      "A.item1": "thermal:amaranth",
+      "A.item2": "thermal:amaranth_seeds",
+      "A.text": "A vibrant grain packed with nutrients and alchemical properties.",
 
-      "B.title": "Corn",
-      "B.item1": "thermal:corn",
-      "B.item2": "thermal:corn_seeds",
-      "B.text": "A staple grain prized for its versatility."
+      "B.title": "Barley",
+      "B.item1": "thermal:barley",
+      "B.item2": "thermal:barley_seeds",
+      "B.text": "A cereal grain which can be ground into flour or malted to make beer or whiskey."
     },
     {
       "type": "2-2_item_page",
 
-      "A.title": "Flax",
-      "A.item1": "thermal:flax",
-      "A.item2": "thermal:flax_seeds",
-      "A.text": "A fibrous plant that can easily be processed into string.",
+      "A.title": "Corn",
+      "A.item1": "thermal:corn",
+      "A.item2": "thermal:corn_seeds",
+      "A.text": "A staple grain prized for its versatility.",
 
-      "B.title": "Onion",
-      "B.item1": "thermal:onion",
-      "B.item2": "thermal:onion_seeds",
-      "B.text": "A bulbous vegetable that is often used to add flavor to a savory dish. Brings people to tears."
+      "B.title": "Flax",
+      "B.item1": "thermal:flax",
+      "B.item2": "thermal:flax_seeds",
+      "B.text": "A fibrous plant that can easily be processed into string."
     },
     {
       "type": "2-2_item_page",
 
-      "A.title": "Radish",
-      "A.item1": "thermal:radish",
-      "A.item2": "thermal:radish_seeds",
-      "A.text": "A root vegetable with a sharp flavor, typically eaten raw or steamed.",
+      "A.title": "Onion",
+      "A.item1": "thermal:onion",
+      "A.item2": "thermal:onion_seeds",
+      "A.text": "A bulbous vegetable that is often used to add flavor to a savory dish. Brings people to tears.",
 
-      "B.title": "Rice",
-      "B.item1": "thermal:rice",
-      "B.item2": "thermal:rice_seeds",
-      "B.text": "The most widely consumed staple grain in the world. Laborious to harvest."
+      "B.title": "Radish",
+      "B.item1": "thermal:radish",
+      "B.item2": "thermal:radish_seeds",
+      "B.text": "A root vegetable with a sharp flavor, typically eaten raw or steamed."
     },
     {
       "type": "2-2_item_page",
 
-      "A.title": "Sadiroot",
-      "A.item1": "thermal:sadiroot",
-      "A.item2": "thermal:sadiroot_seeds",
-      "A.text": "A medicinal spice known for its cleansing properties. Has a distinctive aroma.",
+      "A.title": "Rice",
+      "A.item1": "thermal:rice",
+      "A.item2": "thermal:rice_seeds",
+      "A.text": "The most widely consumed staple grain in the world. Laborious to harvest.",
 
-      "B.title": "Spinach",
-      "B.item1": "thermal:spinach",
-      "B.item2": "thermal:spinach_seeds",
-      "B.text": "The leaves of a spinach plant. Grants sailors an increase in muscle mass."
+      "B.title": "Sadiroot",
+      "B.item1": "thermal:sadiroot",
+      "B.item2": "thermal:sadiroot_seeds",
+      "B.text": "A medicinal spice known for its cleansing properties. Has a distinctive aroma."
+    },
+    {
+      "type": "2_item_page",
+
+      "title": "Spinach",
+      "item1": "thermal:spinach",
+      "item2": "thermal:spinach_seeds",
+      "text": "The leaves of a spinach plant. Grants sailors an increase in muscle mass."
     },
     {
       "type": "2-2_item_page",
@@ -106,12 +114,12 @@
       "A.title": "Coffee",
       "A.item1": "thermal:coffee",
       "A.item2": "thermal:coffee_seeds",
-      "A.text": "The fruit of a coffee tree, the pit of which can be roasted, ground, and brewed to make the lifeblood of mod devs.",
+      "A.text": "The fruit of a coffee tree, known as a cherry. The pit (bean) can be roasted, ground, and brewed a delicious beverage.",
 
       "B.title": "Tea",
       "B.item1": "thermal:tea",
       "B.item2": "thermal:tea_seeds",
-      "B.text": "The leaves of a tea plant. Often dumped into the ocean during tea parties."
+      "B.text": "The leaves of a tea plant. These can be dried, processed, and brewed to make a relaxing beverage."
     },
     {
       "type": "2-2_item_page",
@@ -124,7 +132,7 @@
       "B.title": "Frost Melon",
       "B.item1": "thermal:frost_melon_slice",
       "B.item2": "thermal:frost_melon_seeds",
-      "B.text": "A blue cultivar of melons. Those who consume it find that even the hottest of surfaces feel icy."
+      "B.text": "A blue cultivar of melon. Those who consume it find that even the hottest of surfaces feel icy."
     },
     {
       "type": "2-2_item_page",
@@ -151,14 +159,6 @@
       "B.item1": "minecraft:slime_ball",
       "B.item2": "thermal:slime_mushroom_spores",
       "B.text": "A gooey fungus that secretes protective slime, which can be congealed into balls."
-    },
-    {
-      "type": "2_item_page",
-
-      "title": "Amaranth",
-      "item1": "thermal:amaranth",
-      "item2": "thermal:amaranth_seeds",
-      "text": "A vibrant grain packed with nutrients and alchemical properties."
     }
   ]
 }

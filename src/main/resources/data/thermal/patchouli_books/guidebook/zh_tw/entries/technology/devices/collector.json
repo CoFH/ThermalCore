@@ -21,4 +21,4 @@
       "text": "$(li)$(l:thermal:technology/augments/integral_components)整合元件$(/l)$(li)$(l:thermal:technology/augments/item_filter)物品篩選器$(/l)$(li)$(l:thermal:technology/augments/xp_storage)知識濃縮器$(/l)$(li)$(l:thermal:technology/augments/area_radius)徑向範圍擴展$(/l)"
     }
   ]
-} 
+}

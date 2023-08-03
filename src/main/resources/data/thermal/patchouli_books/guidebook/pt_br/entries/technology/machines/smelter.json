@@ -8,7 +8,7 @@
     {
       "type": "patchouli:text",
       "title": "Fundidora de Indução",
-      "text": "A fundição por indução é uma máquina que funde vários itens juntos, produzindo ligas. Ele também pode fundir minérios em lingotes e gemas, que é afetado por $(l:thermal:world/materials/catalysts)catalisadores$(/l). A fundição de minérios tem a chance de produzir escória rica como uma saída secundária, que pode ser usada como um catalisador ou para fazer $(l:thermal:world/plants/phytogro)phyto-gro$(/l). A fundição de cascalho produz pederneira e escória."
+      "text": "A fundição por indução é uma máquina que funde vários itens juntos, produzindo ligas. Ele também pode fundir minérios em lingotes e gemas, que é afetado por $(l:thermal:world/materials/catalysts)catalisadores$(/l). A fundição de minérios tem a chance de produzir escória rica como uma saída secundária, que pode ser usada como um catalisador ou para fazer $(l:thermal:world/plants/phytogro)Phyto-Gro$(/l). A fundição de cascalho produz pederneira e escória."
     },
     {
       "type": "thermal:double_crafting_page",

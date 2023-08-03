@@ -23,7 +23,7 @@
     {
       "type": "thermal:double_crafting_page",
       "A.recipe": "thermal:spice_cake",
-      "text": "A satiating, scrumptious sweet synthesized from sadiroot spice. Cleanses negative status effects when eaten."
+      "text": "A satiating, scrumptious sweet synthesized from Sadiroot spices. Cleanses negative status effects when eaten."
     },
     {
       "type": "thermal:double_crafting_page",
@@ -63,12 +63,12 @@
     {
       "type": "thermal:double_crafting_page",
       "A.recipe": "thermal:hearty_stew",
-      "text": "A body-boosting broth brewed with bulbous produce. Buffs maximum health when consumed."
+      "text": "A body-boosting broth brewed with bulbous produce. Increases maximum health when consumed."
     },
     {
       "type": "thermal:double_crafting_page",
       "A.recipe": "thermal:xp_stew",
-      "text": "An exhilarating eggplant elixir effervescing with exorbitant experience enhancements. Boosts xp gain when consumed."
+      "text": "An exhilarating eggplant elixir effervescing with exorbitant experience enhancements. Boosts experience gain when consumed."
     }
   ]
 }

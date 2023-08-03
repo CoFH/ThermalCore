@@ -25,4 +25,4 @@
       "text": "$(li)$(l:thermal:technology/augments/integral_components)統合コンポーネント$(/l)$(li)$(l:thermal:technology/augments/fluid_tank)拡張タンク機構$(/l)$(li)$(l:thermal:technology/augments/area_radius)範囲拡張$(/l)$(li)$(l:thermal:technology/augments/potion_amplifier)錬金的増幅回路$(/l)$(li)$(l:thermal:technology/augments/potion_duration)錬金的増量剤$(/l)"
     }
   ]
-} 
+}
