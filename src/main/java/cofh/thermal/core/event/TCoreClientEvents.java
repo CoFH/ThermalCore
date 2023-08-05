@@ -221,8 +221,6 @@ public class TCoreClientEvents {
         }
         buffer.endBatch(RenderTypes.OVERLAY_BOX);
 
-        // System.out.println(projectedView);
-
         builder = buffer.getBuffer(RenderTypes.OVERLAY_LINES);
         for (IAreaEffectTile tile : ProxyClient.getAreaEffectTiles()) {
             if (!tile.canPlayerAccess(player) || !playerWithinDistance(tile.pos(), player, 32 * 32)) {
