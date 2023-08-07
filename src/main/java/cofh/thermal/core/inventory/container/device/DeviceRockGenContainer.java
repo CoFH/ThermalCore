@@ -1,6 +1,6 @@
 package cofh.thermal.core.inventory.container.device;
 
-import cofh.core.inventory.container.TileContainer;
+import cofh.core.inventory.container.TileCoFHContainer;
 import cofh.lib.inventory.container.slot.SlotRemoveOnly;
 import cofh.lib.inventory.wrapper.InvWrapperCoFH;
 import cofh.thermal.lib.block.entity.AugmentableBlockEntity;
@@ -11,7 +11,7 @@ import net.minecraft.world.level.Level;
 
 import static cofh.thermal.core.init.TCoreContainers.DEVICE_ROCK_GEN_CONTAINER;
 
-public class DeviceRockGenContainer extends TileContainer {
+public class DeviceRockGenContainer extends TileCoFHContainer {
 
     public final AugmentableBlockEntity tile;
 

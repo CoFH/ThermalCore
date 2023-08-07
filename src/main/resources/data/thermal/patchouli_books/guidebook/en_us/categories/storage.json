@@ -1,1 +1,1 @@
-{  "name": "Storage",  "description": "Can technically be spammed as makeshift pipes.",  "icon": "thermal:energy_cell",  "parent": "thermal:storage_and_transport",  "flag": "mod:thermal_expansion",  "sortnum": 1}
+{  "name": "Storage",  "description": "These hold lots of a thing. You can technically use a row of them to move stuff, but ducts are WAY better for that.",  "icon": "thermal:energy_cell",  "parent": "thermal:storage_and_transport",  "flag": "mod:thermal_expansion",  "sortnum": 1}

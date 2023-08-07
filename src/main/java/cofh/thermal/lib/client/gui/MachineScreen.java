@@ -10,7 +10,7 @@ import net.minecraft.world.entity.player.Inventory;
 import static cofh.core.util.helpers.GuiHelper.createDefaultEnergyStorage;
 import static cofh.core.util.helpers.GuiHelper.setClearable;
 
-public class MachineScreen<T extends ContainerCoFH> extends AugmentableScreen<T> {
+public class MachineScreen<T extends ContainerCoFH> extends AugmentableTileScreen<T> {
 
     protected Reconfigurable4WayBlockEntity tile;
 

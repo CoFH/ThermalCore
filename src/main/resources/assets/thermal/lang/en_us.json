@@ -243,7 +243,7 @@
   "subtitles.thermal.entity.basalz.ambient": "Basalz breathes",
   "subtitles.thermal.entity.basalz.death": "Basalz dies",
   "subtitles.thermal.entity.basalz.hurt": "Basalz hurts",
-  "subtitles.thermal.entity.basalz.shoot": "Basalz shoots",
+  "subtitles.thermal.entity.basalz.shoot": "Basalz rocks out",
 
   "subtitles.thermal.entity.blitz.ambient": "Blitz breathes",
   "subtitles.thermal.entity.blitz.death": "Blitz dies",
@@ -1212,7 +1212,7 @@
   "item.thermal.earth_tnt_minecart": "Minecart with Tectonic Explosive",
   "item.thermal.ender_tnt_minecart": "Minecart with Ender Explosive",
   "item.thermal.fire_tnt_minecart": "Minecart with Inferno Explosive",
-  "item.thermal.glowstone_tnt_minecart": "Minecart with Glowstone Explosive",
+  "item.thermal.glowstone_tnt_minecart": "Minecart with Radiant Explosive",
   "item.thermal.ice_tnt_minecart": "Minecart with Glacial Explosive",
   "item.thermal.lightning_tnt_minecart": "Minecart with Fulminating Explosive",
   "item.thermal.nuke_tnt_minecart": "Minecart with Nuclear Explosive",

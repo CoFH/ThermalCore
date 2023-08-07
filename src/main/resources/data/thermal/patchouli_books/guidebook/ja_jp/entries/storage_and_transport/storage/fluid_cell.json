@@ -1,9 +1,10 @@
 {
   "name": "流体セル",
   "icon": "thermal:fluid_cell",
-  "category": "thermal:storage",
   "read_by_default": true,
   "flag": "mod:thermal_expansion",
+  "category": "thermal:storage",
+
   "pages": [
     {
       "type": "patchouli:text",
@@ -28,4 +29,4 @@
       "text": "$(li)$(l:thermal:technology/augments/integral_components)統合コンポーネント$(/l)$(li)$(l:thermal:technology/augments/fluid_tank)拡張タンク機構$(/l)"
     }
   ]
-} 
+}

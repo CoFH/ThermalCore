@@ -62,13 +62,6 @@ public abstract class DynamoBlockEntity extends AugmentableBlockEntity implement
         facing = state.getValue(FACING_ALL);
     }
 
-    // region BASE PARAMETERS
-    protected int getBaseEnergyStorage() {
-
-        return getBaseProcessTick() * 100;
-    }
-    // endregion
-
     @Override
     public void setLevel(Level level) {
 

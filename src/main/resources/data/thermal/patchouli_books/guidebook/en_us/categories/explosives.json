@@ -1,1 +1,1 @@
-{  "name": "Explosives",  "description": "Entertaining to play with, not to consume.",  "icon": "thermal:explosive_grenade",  "parent": "thermal:equipment",  "sortnum": 4}
+{  "name": "Explosives",  "description": "Fun to throw, less fun to catch.",  "icon": "thermal:explosive_grenade",  "parent": "thermal:equipment",  "sortnum": 4}

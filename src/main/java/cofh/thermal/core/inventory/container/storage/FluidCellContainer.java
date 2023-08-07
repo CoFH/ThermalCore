@@ -1,6 +1,6 @@
 package cofh.thermal.core.inventory.container.storage;
 
-import cofh.core.inventory.container.TileContainer;
+import cofh.core.inventory.container.TileCoFHContainer;
 import cofh.lib.inventory.wrapper.InvWrapperCoFH;
 import cofh.thermal.core.block.entity.storage.FluidCellBlockEntity;
 import net.minecraft.core.BlockPos;
@@ -10,7 +10,7 @@ import net.minecraft.world.level.Level;
 
 import static cofh.thermal.core.init.TCoreContainers.FLUID_CELL_CONTAINER;
 
-public class FluidCellContainer extends TileContainer {
+public class FluidCellContainer extends TileCoFHContainer {
 
     public final FluidCellBlockEntity tile;
 

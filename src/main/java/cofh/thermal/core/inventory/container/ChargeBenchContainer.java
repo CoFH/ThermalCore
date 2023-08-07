@@ -1,6 +1,6 @@
 package cofh.thermal.core.inventory.container;
 
-import cofh.core.inventory.container.TileContainer;
+import cofh.core.inventory.container.TileCoFHContainer;
 import cofh.lib.inventory.container.slot.SlotCoFH;
 import cofh.lib.inventory.wrapper.InvWrapperCoFH;
 import cofh.thermal.core.block.entity.ChargeBenchBlockEntity;
@@ -11,7 +11,7 @@ import net.minecraft.world.level.Level;
 
 import static cofh.thermal.core.init.TCoreContainers.CHARGE_BENCH_CONTAINER;
 
-public class ChargeBenchContainer extends TileContainer {
+public class ChargeBenchContainer extends TileCoFHContainer {
 
     public final ChargeBenchBlockEntity tile;
 

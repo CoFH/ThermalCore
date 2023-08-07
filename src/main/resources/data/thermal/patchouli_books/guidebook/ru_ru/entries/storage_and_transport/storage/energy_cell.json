@@ -1,9 +1,10 @@
 {
   "name": "Энергетическая ячейка",
   "icon": "thermal:energy_cell",
-  "category": "thermal:storage",
   "read_by_default": true,
   "flag": "mod:thermal_expansion",
+  "category": "thermal:storage",
+
   "pages": [
     {
       "type": "patchouli:text",
@@ -25,4 +26,4 @@
     }
 
   ]
-} 
+}

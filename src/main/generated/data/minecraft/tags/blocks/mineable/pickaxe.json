@@ -26,6 +26,7 @@
     "thermal:device_water_gen",
     "thermal:device_rock_gen",
     "thermal:device_collector",
+    "thermal:device_xp_condenser",
     "thermal:device_nullifier",
     "thermal:device_potion_diffuser",
     "thermal:charge_bench",

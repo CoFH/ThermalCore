@@ -71,6 +71,11 @@ public class SatchelContainer extends ContainerCoFH implements ISecurable {
         bindPlayerInventory(inventory);
     }
 
+    public ItemStack getSatchel() {
+
+        return containerStack;
+    }
+
     @Override
     protected void bindPlayerInventory(Inventory inventory) {
 

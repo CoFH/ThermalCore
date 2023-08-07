@@ -21,4 +21,4 @@
       "text": "$(li)$(l:thermal:technology/augments/integral_components)Интегральные компоненты$(/l)$(li)$(l:thermal:technology/augments/item_filter)Предметный фильтр$(/l)$(li)$(l:thermal:technology/augments/xp_storage)Концентратор знаний$(/l)$(li)$(l:thermal:technology/augments/area_radius)Радиальное улучшение$(/l)"
     }
   ]
-} 
+}

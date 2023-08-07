@@ -28,7 +28,9 @@ import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import static cofh.lib.util.constants.ModIds.ID_THERMAL;
 import static cofh.lib.util.constants.NBTTags.TAG_TYPE;
@@ -124,56 +126,131 @@ public class TCoreClientEvents {
                 .endVertex();
     }
 
-    private static void box(VertexConsumer builder, Matrix4f positionMatrix, BlockPos pos, AABB area, int color) {
+    private static void solidBox(VertexConsumer builder, Matrix4f positionMatrix, AABB area, int color) {
 
-        float lenX = (float) (area.maxX - area.minX);
-        float lenY = (float) (area.maxY - area.minY);
-        float lenZ = (float) (area.maxZ - area.minZ);
+        int a = 64; // (color >> 24 & 255);
+        int r = (color >> 16 & 255);
+        int g = (color >> 8 & 255);
+        int b = (color & 255);
+
+        float offset = 0.001953125F; // 1 / 512
+        float minX = (float) (area.minX - offset);
+        float minY = (float) (area.minY - offset);
+        float minZ = (float) (area.minZ - offset);
+        float maxX = (float) (area.maxX + offset);
+        float maxY = (float) (area.maxY + offset);
+        float maxZ = (float) (area.maxZ + offset);
+
+        builder.vertex(positionMatrix, minX, maxY, minZ).color(r, g, b, a).endVertex();
+        builder.vertex(positionMatrix, maxX, maxY, minZ).color(r, g, b, a).endVertex();
+        builder.vertex(positionMatrix, maxX, minY, minZ).color(r, g, b, a).endVertex();
+        builder.vertex(positionMatrix, minX, minY, minZ).color(r, g, b, a).endVertex();
+
+        builder.vertex(positionMatrix, minX, minY, maxZ).color(r, g, b, a).endVertex();
+        builder.vertex(positionMatrix, maxX, minY, maxZ).color(r, g, b, a).endVertex();
+        builder.vertex(positionMatrix, maxX, maxY, maxZ).color(r, g, b, a).endVertex();
+        builder.vertex(positionMatrix, minX, maxY, maxZ).color(r, g, b, a).endVertex();
+
+        builder.vertex(positionMatrix, minX, minY, minZ).color(r, g, b, a).endVertex();
+        builder.vertex(positionMatrix, maxX, minY, minZ).color(r, g, b, a).endVertex();
+        builder.vertex(positionMatrix, maxX, minY, maxZ).color(r, g, b, a).endVertex();
+        builder.vertex(positionMatrix, minX, minY, maxZ).color(r, g, b, a).endVertex();
+
+        builder.vertex(positionMatrix, minX, maxY, maxZ).color(r, g, b, a).endVertex();
+        builder.vertex(positionMatrix, maxX, maxY, maxZ).color(r, g, b, a).endVertex();
+        builder.vertex(positionMatrix, maxX, maxY, minZ).color(r, g, b, a).endVertex();
+        builder.vertex(positionMatrix, minX, maxY, minZ).color(r, g, b, a).endVertex();
+
+        builder.vertex(positionMatrix, minX, minY, maxZ).color(r, g, b, a).endVertex();
+        builder.vertex(positionMatrix, minX, maxY, maxZ).color(r, g, b, a).endVertex();
+        builder.vertex(positionMatrix, minX, maxY, minZ).color(r, g, b, a).endVertex();
+        builder.vertex(positionMatrix, minX, minY, minZ).color(r, g, b, a).endVertex();
+
+        builder.vertex(positionMatrix, maxX, minY, minZ).color(r, g, b, a).endVertex();
+        builder.vertex(positionMatrix, maxX, maxY, minZ).color(r, g, b, a).endVertex();
+        builder.vertex(positionMatrix, maxX, maxY, maxZ).color(r, g, b, a).endVertex();
+        builder.vertex(positionMatrix, maxX, minY, maxZ).color(r, g, b, a).endVertex();
+    }
+
+    private static void wireBox(VertexConsumer builder, Matrix4f positionMatrix, BlockPos pos, AABB area, int color) {
+
+        float offset = -0.0009765625F; // 1 / 1024
+        float lenX = (float) (area.maxX - area.minX) - offset;
+        float lenY = (float) (area.maxY - area.minY) - offset;
+        float lenZ = (float) (area.maxZ - area.minZ) - offset;
 
         int a = 192; // (color >> 24 & 255);
         int r = (color >> 16 & 255);
         int g = (color >> 8 & 255);
         int b = (color & 255);
 
-        line(builder, positionMatrix, pos, 0, 0, 0, lenX, 0, 0, r, g, b, a);
-        line(builder, positionMatrix, pos, 0, lenY, 0, lenX, lenY, 0, r, g, b, a);
-        line(builder, positionMatrix, pos, 0, 0, lenZ, lenX, 0, lenZ, r, g, b, a);
-        line(builder, positionMatrix, pos, 0, lenY, lenZ, lenX, lenY, lenZ, r, g, b, a);
+        line(builder, positionMatrix, pos, offset, offset, offset, lenX, offset, offset, r, g, b, a);
+        line(builder, positionMatrix, pos, offset, lenY, offset, lenX, lenY, offset, r, g, b, a);
+        line(builder, positionMatrix, pos, offset, offset, lenZ, lenX, offset, lenZ, r, g, b, a);
+        line(builder, positionMatrix, pos, offset, lenY, lenZ, lenX, lenY, lenZ, r, g, b, a);
 
-        line(builder, positionMatrix, pos, 0, 0, 0, 0, 0, lenZ, r, g, b, a);
-        line(builder, positionMatrix, pos, lenX, 0, 0, lenX, 0, lenZ, r, g, b, a);
-        line(builder, positionMatrix, pos, 0, lenY, 0, 0, lenY, lenZ, r, g, b, a);
-        line(builder, positionMatrix, pos, lenX, lenY, 0, lenX, lenY, lenZ, r, g, b, a);
+        line(builder, positionMatrix, pos, offset, offset, offset, offset, offset, lenZ, r, g, b, a);
+        line(builder, positionMatrix, pos, lenX, offset, offset, lenX, offset, lenZ, r, g, b, a);
+        line(builder, positionMatrix, pos, offset, lenY, offset, offset, lenY, lenZ, r, g, b, a);
+        line(builder, positionMatrix, pos, lenX, lenY, offset, lenX, lenY, lenZ, r, g, b, a);
 
-        line(builder, positionMatrix, pos, 0, 0, 0, 0, lenY, 0, r, g, b, a);
-        line(builder, positionMatrix, pos, lenX, 0, 0, lenX, lenY, 0, r, g, b, a);
-        line(builder, positionMatrix, pos, 0, 0, lenZ, 0, lenY, lenZ, r, g, b, a);
-        line(builder, positionMatrix, pos, lenX, 0, lenZ, lenX, lenY, lenZ, r, g, b, a);
+        line(builder, positionMatrix, pos, offset, offset, offset, offset, lenY, offset, r, g, b, a);
+        line(builder, positionMatrix, pos, lenX, offset, offset, lenX, lenY, offset, r, g, b, a);
+        line(builder, positionMatrix, pos, offset, offset, lenZ, offset, lenY, lenZ, r, g, b, a);
+        line(builder, positionMatrix, pos, lenX, offset, lenZ, lenX, lenY, lenZ, r, g, b, a);
     }
 
     private static void renderOperationalAreas(LocalPlayer player, PoseStack matrixStack) {
 
-        MultiBufferSource.BufferSource buffer = Minecraft.getInstance().renderBuffers().bufferSource();
-        VertexConsumer builder = buffer.getBuffer(RenderTypes.OVERLAY_LINES);
-        matrixStack.pushPose();
-
         Vec3 projectedView = Minecraft.getInstance().gameRenderer.getMainCamera().getPosition();
+
+        MultiBufferSource.BufferSource buffer = Minecraft.getInstance().renderBuffers().bufferSource();
+        matrixStack.pushPose();
         matrixStack.translate(-projectedView.x, -projectedView.y, -projectedView.z);
 
         Matrix4f positionMatrix = matrixStack.last().pose();
         BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
 
+        VertexConsumer builder = buffer.getBuffer(RenderTypes.OVERLAY_BOX);
+        for (IAreaEffectTile tile : ProxyClient.getAreaEffectTiles()) {
+            if (!tile.canPlayerAccess(player) || !playerWithinDistance(tile.pos(), player, 32 * 32)) {
+                continue;
+            }
+            AABB area = tile.getArea();
+            solidBox(builder, positionMatrix, area, tile.getColor());
+        }
+        buffer.endBatch(RenderTypes.OVERLAY_BOX);
+
+        builder = buffer.getBuffer(RenderTypes.OVERLAY_LINES);
         for (IAreaEffectTile tile : ProxyClient.getAreaEffectTiles()) {
             if (!tile.canPlayerAccess(player) || !playerWithinDistance(tile.pos(), player, 32 * 32)) {
                 continue;
             }
             AABB area = tile.getArea();
             pos.set(area.minX, area.minY, area.minZ);
-            box(builder, positionMatrix, pos, area, tile.getColor());
+            if (area.contains(projectedView)) {
+                INSIDE_OPERATIONAL_AREA_TILES.add(tile);
+            } else {
+                wireBox(builder, positionMatrix, pos, area, tile.getColor());
+            }
         }
-        matrixStack.popPose();
-        RenderSystem.disableDepthTest();
         buffer.endBatch(RenderTypes.OVERLAY_LINES);
+
+        RenderSystem.disableDepthTest();
+
+        builder = buffer.getBuffer(RenderTypes.OVERLAY_LINES);
+        for (IAreaEffectTile tile : INSIDE_OPERATIONAL_AREA_TILES) {
+            AABB area = tile.getArea();
+            pos.set(area.minX, area.minY, area.minZ);
+            wireBox(builder, positionMatrix, pos, area, tile.getColor());
+        }
+        buffer.endBatch(RenderTypes.OVERLAY_LINES);
+        matrixStack.popPose();
+
+        INSIDE_OPERATIONAL_AREA_TILES.clear();
     }
     // endregion
+
+    private static final Set<IAreaEffectTile> INSIDE_OPERATIONAL_AREA_TILES = new HashSet<>();
+
 }

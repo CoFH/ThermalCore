@@ -256,7 +256,7 @@ public class Blizz extends Monster {
                         attackTime = 7;
                         RandomSource rand = blizz.getRandom();
                         Level world = blizz.level;
-                        //TODO: less annoying sound
+                        // TODO: less annoying sound
                         //world.playSound(null, pos.x + 0.5D, pos.y + 0.5D, pos.z + 0.5D, SOUND_BASALZ_SHOOT, SoundCategory.HOSTILE, 1.0F, (rand.nextFloat() - 0.5F) * 0.2F + 1.0F);
                         BlizzProjectile projectile;
                         if (horzDistSqr < 9) {

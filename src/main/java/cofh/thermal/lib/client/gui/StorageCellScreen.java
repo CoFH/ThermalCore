@@ -7,7 +7,7 @@ import cofh.thermal.lib.block.entity.StorageCellBlockEntity;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;
 
-public class StorageCellScreen<T extends ContainerCoFH> extends AugmentableScreen<T> {
+public class StorageCellScreen<T extends ContainerCoFH> extends AugmentableTileScreen<T> {
 
     protected StorageCellBlockEntity tile;
 

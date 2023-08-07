@@ -159,6 +159,9 @@ public class TCoreTagsProvider {
                     BLOCKS.get(ID_BLACK_ROCKWOOL)
             );
 
+            tag(BlockTags.OCCLUDES_VIBRATION_SIGNALS).addTag(ThermalTags.Blocks.ROCKWOOL);
+            tag(BlockTags.DAMPENS_VIBRATIONS).addTag(ThermalTags.Blocks.ROCKWOOL);
+
             tag(BlockTags.MINEABLE_WITH_PICKAXE).add(BLOCKS.get(ID_POLISHED_SLAG));
             tag(BlockTags.MINEABLE_WITH_PICKAXE).add(BLOCKS.get(ID_CHISELED_SLAG));
             tag(BlockTags.MINEABLE_WITH_PICKAXE).add(BLOCKS.get(ID_SLAG_BRICKS));
@@ -179,6 +182,7 @@ public class TCoreTagsProvider {
             tag(BlockTags.MINEABLE_WITH_PICKAXE).add(BLOCKS.get(ID_DEVICE_WATER_GEN));
             tag(BlockTags.MINEABLE_WITH_PICKAXE).add(BLOCKS.get(ID_DEVICE_ROCK_GEN));
             tag(BlockTags.MINEABLE_WITH_PICKAXE).add(BLOCKS.get(ID_DEVICE_COLLECTOR));
+            tag(BlockTags.MINEABLE_WITH_PICKAXE).add(BLOCKS.get(ID_DEVICE_XP_CONDENSER));
             tag(BlockTags.MINEABLE_WITH_PICKAXE).add(BLOCKS.get(ID_DEVICE_NULLIFIER));
             tag(BlockTags.MINEABLE_WITH_PICKAXE).add(BLOCKS.get(ID_DEVICE_POTION_DIFFUSER));
 

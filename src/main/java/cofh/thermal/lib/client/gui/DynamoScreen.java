@@ -12,7 +12,7 @@ import java.util.List;
 import static cofh.lib.util.Constants.PATH_ELEMENTS;
 import static cofh.lib.util.helpers.StringHelper.DF0;
 
-public class DynamoScreen<T extends ContainerCoFH> extends AugmentableScreen<T> {
+public class DynamoScreen<T extends ContainerCoFH> extends AugmentableTileScreen<T> {
 
     protected DynamoBlockEntity tile;
 
