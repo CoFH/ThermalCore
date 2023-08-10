@@ -3,6 +3,7 @@ package cofh.thermal.core;
 import cofh.core.capability.CapabilityRedstoneFlux;
 import cofh.core.client.renderer.entity.TNTMinecartRendererCoFH;
 import cofh.core.config.ConfigManager;
+import cofh.core.config.world.OreConfig;
 import cofh.core.entity.AbstractGrenade;
 import cofh.core.entity.AbstractTNTMinecart;
 import cofh.core.event.CoreClientEvents;
@@ -23,6 +24,7 @@ import cofh.thermal.core.client.renderer.entity.model.ElementalProjectileModel;
 import cofh.thermal.core.config.ThermalClientConfig;
 import cofh.thermal.core.config.ThermalCoreConfig;
 import cofh.thermal.core.config.ThermalDeviceConfig;
+import cofh.thermal.core.config.ThermalOreConfig;
 import cofh.thermal.core.entity.explosive.DetonateUtils;
 import cofh.thermal.core.entity.monster.Basalz;
 import cofh.thermal.core.entity.monster.Blitz;
@@ -37,6 +39,7 @@ import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
+import net.minecraft.core.Registry;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.inventory.MenuType;
@@ -45,6 +48,7 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.levelgen.placement.PlacementModifierType;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
@@ -88,6 +92,7 @@ public class ThermalCore {
     public static final DeferredRegisterCoFH<RecipeSerializer<?>> RECIPE_SERIALIZERS = DeferredRegisterCoFH.create(ForgeRegistries.RECIPE_SERIALIZERS, ID_THERMAL);
     public static final DeferredRegisterCoFH<SoundEvent> SOUND_EVENTS = DeferredRegisterCoFH.create(ForgeRegistries.SOUND_EVENTS, ID_THERMAL);
     public static final DeferredRegisterCoFH<BlockEntityType<?>> TILE_ENTITIES = DeferredRegisterCoFH.create(ForgeRegistries.BLOCK_ENTITY_TYPES, ID_THERMAL);
+    public static final DeferredRegisterCoFH<PlacementModifierType<?>> PLACEMENT_MODIFIERS = DeferredRegisterCoFH.create(Registry.PLACEMENT_MODIFIER_REGISTRY, ID_THERMAL);
 
     public static final DeferredRegisterCoFH<FluidType> FLUID_TYPES = DeferredRegisterCoFH.create(ForgeRegistries.Keys.FLUID_TYPES, ID_THERMAL);
 
@@ -104,18 +109,21 @@ public class ThermalCore {
         TCoreTileEntities.register();
 
         TCoreRecipeManagers.register();
+        TCorePlacementModifiers.register();
     }
 
     public ThermalCore() {
 
         setFeatureFlags();
+        addOreConfigs();
 
         final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         CONFIG_MANAGER.register(modEventBus)
                 .addClientConfig(new ThermalClientConfig())
                 .addServerConfig(new ThermalCoreConfig())
-                .addServerConfig(new ThermalDeviceConfig());
+                .addServerConfig(new ThermalDeviceConfig())
+                .addCommonConfig(new ThermalOreConfig());
 
         modEventBus.addListener(this::entityAttributeSetup);
         modEventBus.addListener(this::entityLayerSetup);
@@ -137,6 +145,7 @@ public class ThermalCore {
         RECIPE_TYPES.register(modEventBus);
         SOUND_EVENTS.register(modEventBus);
         TILE_ENTITIES.register(modEventBus);
+        PLACEMENT_MODIFIERS.register(modEventBus);
 
         FLUID_TYPES.register(modEventBus);
     }
@@ -152,6 +161,22 @@ public class ThermalCore {
         setFlag(ID_TINKER_BENCH, true);
 
         // setFlag(ID_CHUNK_LOADER, true);
+    }
+
+    private void addOreConfigs() {
+
+        ThermalOreConfig.addOreConfig("niter_ore", new OreConfig("Niter", getFlag(FLAG_RESOURCE_NITER)));
+        ThermalOreConfig.addOreConfig("sulfur_ore", new OreConfig("Sulfur", getFlag(FLAG_RESOURCE_SULFUR)));
+
+        ThermalOreConfig.addOreConfig("tin_ore", new OreConfig("Tin", getFlag(FLAG_RESOURCE_TIN)));
+        ThermalOreConfig.addOreConfig("lead_ore", new OreConfig("Lead", getFlag(FLAG_RESOURCE_LEAD)));
+        ThermalOreConfig.addOreConfig("silver_ore", new OreConfig("Silver", getFlag(FLAG_RESOURCE_SILVER)));
+        ThermalOreConfig.addOreConfig("nickel_ore", new OreConfig("Nickel", getFlag(FLAG_RESOURCE_NICKEL)));
+
+        ThermalOreConfig.addOreConfig("apatite_ore", new OreConfig("Apatite", getFlag(FLAG_RESOURCE_APATITE)));
+
+        ThermalOreConfig.addOreConfig("cinnabar_ore", new OreConfig("Cinnabar", getFlag(FLAG_RESOURCE_CINNABAR)));
+        ThermalOreConfig.addOreConfig("oil_sand", new OreConfig("Oil Sand", getFlag(FLAG_RESOURCE_OIL)));
     }
 
     // region INITIALIZATION
@@ -223,6 +248,7 @@ public class ThermalCore {
 
         CONFIG_MANAGER.setupClient();
         CONFIG_MANAGER.setupServer();
+        CONFIG_MANAGER.setupCommon();
     }
     // endregion
 

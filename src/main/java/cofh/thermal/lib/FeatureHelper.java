@@ -1,5 +1,6 @@
 package cofh.thermal.lib;
 
+import cofh.thermal.core.world.ConfigPlacementFilter;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.Registry;
@@ -40,12 +41,13 @@ public final class FeatureHelper {
 
     public static void createOreFeature(Map<ResourceLocation, PlacedFeature> featureMap, List<OreConfiguration.TargetBlockState> oreReplacements, String name, int count, int minY, int maxY, int size) {
 
-        featureMap.put(new ResourceLocation(ID_THERMAL, name), createOreFeature(oreReplacements, count, minY, maxY, size));
+        featureMap.put(new ResourceLocation(ID_THERMAL, name), createOreFeature(oreReplacements, name, count, minY, maxY, size));
     }
 
-    public static PlacedFeature createOreFeature(List<OreConfiguration.TargetBlockState> oreReplacements, int count, int minY, int maxY, int size) {
+    public static PlacedFeature createOreFeature(List<OreConfiguration.TargetBlockState> oreReplacements, String name, int count, int minY, int maxY, int size) {
 
         return new PlacedFeature(Holder.direct(new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(oreReplacements, size))), List.of(
+                new ConfigPlacementFilter(name),
                 CountPlacement.of(count),
                 InSquarePlacement.spread(),
                 BiomeFilter.biome(),
