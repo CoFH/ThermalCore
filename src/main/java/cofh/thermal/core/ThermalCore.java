@@ -3,7 +3,7 @@ package cofh.thermal.core;
 import cofh.core.capability.CapabilityRedstoneFlux;
 import cofh.core.client.renderer.entity.TNTMinecartRendererCoFH;
 import cofh.core.config.ConfigManager;
-import cofh.core.config.world.OreConfig;
+import cofh.core.config.world.FeatureConfig;
 import cofh.core.entity.AbstractGrenade;
 import cofh.core.entity.AbstractTNTMinecart;
 import cofh.core.event.CoreClientEvents;
@@ -24,7 +24,7 @@ import cofh.thermal.core.client.renderer.entity.model.ElementalProjectileModel;
 import cofh.thermal.core.config.ThermalClientConfig;
 import cofh.thermal.core.config.ThermalCoreConfig;
 import cofh.thermal.core.config.ThermalDeviceConfig;
-import cofh.thermal.core.config.ThermalOreConfig;
+import cofh.thermal.core.config.ThermalWorldConfig;
 import cofh.thermal.core.entity.explosive.DetonateUtils;
 import cofh.thermal.core.entity.monster.Basalz;
 import cofh.thermal.core.entity.monster.Blitz;
@@ -123,7 +123,7 @@ public class ThermalCore {
                 .addClientConfig(new ThermalClientConfig())
                 .addServerConfig(new ThermalCoreConfig())
                 .addServerConfig(new ThermalDeviceConfig())
-                .addCommonConfig(new ThermalOreConfig());
+                .addCommonConfig(new ThermalWorldConfig());
 
         modEventBus.addListener(this::entityAttributeSetup);
         modEventBus.addListener(this::entityLayerSetup);
@@ -165,18 +165,18 @@ public class ThermalCore {
 
     private void addOreConfigs() {
 
-        ThermalOreConfig.addOreConfig("niter_ore", new OreConfig("Niter", getFlag(FLAG_RESOURCE_NITER)));
-        ThermalOreConfig.addOreConfig("sulfur_ore", new OreConfig("Sulfur", getFlag(FLAG_RESOURCE_SULFUR)));
+        ThermalWorldConfig.addOreConfig("niter_ore", new FeatureConfig("Niter", getFlag(FLAG_RESOURCE_NITER)));
+        ThermalWorldConfig.addOreConfig("sulfur_ore", new FeatureConfig("Sulfur", getFlag(FLAG_RESOURCE_SULFUR)));
 
-        ThermalOreConfig.addOreConfig("tin_ore", new OreConfig("Tin", getFlag(FLAG_RESOURCE_TIN)));
-        ThermalOreConfig.addOreConfig("lead_ore", new OreConfig("Lead", getFlag(FLAG_RESOURCE_LEAD)));
-        ThermalOreConfig.addOreConfig("silver_ore", new OreConfig("Silver", getFlag(FLAG_RESOURCE_SILVER)));
-        ThermalOreConfig.addOreConfig("nickel_ore", new OreConfig("Nickel", getFlag(FLAG_RESOURCE_NICKEL)));
+        ThermalWorldConfig.addOreConfig("tin_ore", new FeatureConfig("Tin", getFlag(FLAG_RESOURCE_TIN)));
+        ThermalWorldConfig.addOreConfig("lead_ore", new FeatureConfig("Lead", getFlag(FLAG_RESOURCE_LEAD)));
+        ThermalWorldConfig.addOreConfig("silver_ore", new FeatureConfig("Silver", getFlag(FLAG_RESOURCE_SILVER)));
+        ThermalWorldConfig.addOreConfig("nickel_ore", new FeatureConfig("Nickel", getFlag(FLAG_RESOURCE_NICKEL)));
 
-        ThermalOreConfig.addOreConfig("apatite_ore", new OreConfig("Apatite", getFlag(FLAG_RESOURCE_APATITE)));
+        ThermalWorldConfig.addOreConfig("apatite_ore", new FeatureConfig("Apatite", getFlag(FLAG_RESOURCE_APATITE)));
 
-        ThermalOreConfig.addOreConfig("cinnabar_ore", new OreConfig("Cinnabar", getFlag(FLAG_RESOURCE_CINNABAR)));
-        ThermalOreConfig.addOreConfig("oil_sand", new OreConfig("Oil Sand", getFlag(FLAG_RESOURCE_OIL)));
+        ThermalWorldConfig.addOreConfig("cinnabar_ore", new FeatureConfig("Cinnabar", getFlag(FLAG_RESOURCE_CINNABAR)));
+        ThermalWorldConfig.addOreConfig("oil_sand", new FeatureConfig("Oil Sand", getFlag(FLAG_RESOURCE_OIL)));
     }
 
     // region INITIALIZATION

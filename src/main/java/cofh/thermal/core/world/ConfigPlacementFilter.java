@@ -1,6 +1,6 @@
 package cofh.thermal.core.world;
 
-import cofh.thermal.core.config.ThermalOreConfig;
+import cofh.thermal.core.config.ThermalWorldConfig;
 import cofh.thermal.core.init.TCorePlacementModifiers;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -24,7 +24,7 @@ public class ConfigPlacementFilter extends PlacementFilter {
     @Override
     protected boolean shouldPlace(PlacementContext context, RandomSource random, BlockPos pos) {
 
-        return ThermalOreConfig.getOreConfig(name).shouldGenerate();
+        return ThermalWorldConfig.getOreConfig(name).shouldGenerate();
     }
 
     @Override
