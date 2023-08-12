@@ -5,6 +5,7 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.features.OreFeatures;
+import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
@@ -15,7 +16,9 @@ import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.placement.*;
 import net.minecraftforge.common.world.ForgeBiomeModifiers;
 
@@ -27,6 +30,7 @@ import static cofh.lib.util.constants.ModIds.ID_THERMAL;
 import static cofh.thermal.core.ThermalCore.BLOCKS;
 import static cofh.thermal.core.util.RegistrationHelper.deepslate;
 import static cofh.thermal.core.util.RegistrationHelper.netherrack;
+import static net.minecraft.world.level.levelgen.Heightmap.Types.MOTION_BLOCKING_NO_LEAVES;
 
 public final class FeatureHelper {
 
@@ -77,6 +81,23 @@ public final class FeatureHelper {
         return oreReplacements;
     }
 
+    public static void createTreeFeature(Map<ResourceLocation, PlacedFeature> featureMap, Registry<ConfiguredFeature<?, ?>> configuredRegistry, String name, Block sapling, int rarity) {
+
+        featureMap.put(new ResourceLocation(ID_THERMAL, name), createTreeFeature(Holder.Reference.createStandAlone(configuredRegistry, ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, new ResourceLocation(ID_THERMAL, name))), name, sapling, rarity));
+    }
+
+    public static PlacedFeature createTreeFeature(Holder<ConfiguredFeature<?, ?>> tree, String name, Block sapling, int rarity) {
+
+        return new PlacedFeature(tree, List.of(
+                //new ConfigPlacementFilter(name), //TODO
+                RarityFilter.onAverageOnceEvery(rarity),
+                InSquarePlacement.spread(),
+                HeightmapPlacement.onHeightmap(MOTION_BLOCKING_NO_LEAVES),
+                BiomeFilter.biome(),
+                PlacementUtils.filteredByBlockSurvival(sapling)
+        ));
+    }
+
     public static ForgeBiomeModifiers.AddSpawnsBiomeModifier addMobToBiomes(HolderSet<Biome> biomes, EntityType<?> type, int weight, int minCount, int maxCount) {
 
         return new ForgeBiomeModifiers.AddSpawnsBiomeModifier(biomes, List.of(new MobSpawnSettings.SpawnerData(type, weight, minCount, maxCount)));
@@ -85,6 +106,11 @@ public final class FeatureHelper {
     public static ForgeBiomeModifiers.AddFeaturesBiomeModifier addFeatureToBiomes(String name, HolderSet<Biome> biomes, Registry<PlacedFeature> placedFeatureRegistry, GenerationStep.Decoration decStep) {
 
         return new ForgeBiomeModifiers.AddFeaturesBiomeModifier(biomes, HolderSet.direct(Holder.Reference.createStandAlone(placedFeatureRegistry, ResourceKey.create(Registry.PLACED_FEATURE_REGISTRY, new ResourceLocation(ID_THERMAL, name)))), decStep);
+    }
+
+    public static ForgeBiomeModifiers.AddFeaturesBiomeModifier addFeaturesToBiomes(List<String> names, HolderSet<Biome> biomes, Registry<PlacedFeature> placedFeatureRegistry, GenerationStep.Decoration decStep) {
+
+        return new ForgeBiomeModifiers.AddFeaturesBiomeModifier(biomes, HolderSet.direct(name -> Holder.Reference.createStandAlone(placedFeatureRegistry, ResourceKey.create(Registry.PLACED_FEATURE_REGISTRY, new ResourceLocation(ID_THERMAL, name))), names), decStep);
     }
 
 }
