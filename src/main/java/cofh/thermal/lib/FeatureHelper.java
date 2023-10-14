@@ -87,7 +87,7 @@ public final class FeatureHelper {
     public static PlacedFeature createTreeFeature(Holder<ConfiguredFeature<?, ?>> tree, String name, Block sapling, int rarity) {
 
         return new PlacedFeature(tree, List.of(
-                //new ConfigPlacementFilter(name), //TODO
+                //new ConfigPlacementFilter(name), // TODO
                 RarityFilter.onAverageOnceEvery(rarity),
                 InSquarePlacement.spread(),
                 HeightmapPlacement.onHeightmap(MOTION_BLOCKING_NO_LEAVES),
