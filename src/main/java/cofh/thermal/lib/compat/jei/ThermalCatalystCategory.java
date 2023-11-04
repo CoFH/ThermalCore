@@ -1,7 +1,6 @@
 package cofh.thermal.lib.compat.jei;
 
 import cofh.thermal.lib.util.recipes.ThermalCatalyst;
-import com.mojang.blaze3d.vertex.PoseStack;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.drawable.IDrawable;
@@ -13,6 +12,7 @@ import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 
@@ -66,23 +66,23 @@ public abstract class ThermalCatalystCategory<T extends ThermalCatalyst> impleme
     }
 
     @Override
-    public void draw(T recipe, IRecipeSlotsView recipeSlotsView, PoseStack matrixStack, double mouseX, double mouseY) {
+    public void draw(T recipe, IRecipeSlotsView recipeSlotsView, GuiGraphics guiGraphics, double mouseX, double mouseY) {
 
-        slot.draw(matrixStack, 16, 22);
+        slot.draw(guiGraphics, 16, 22);
 
         Minecraft minecraft = Minecraft.getInstance();
 
         String primaryMod = localize("info.thermal.primary_mod") + ": " + recipe.getPrimaryMod() + "x";
-        minecraft.font.draw(matrixStack, primaryMod, 44, 8, 0xFF606060);
+        guiGraphics.drawString(minecraft.font, primaryMod, 44, 8, 0xFF606060, false);
 
         String secondaryMod = localize("info.thermal.secondary_mod") + ": " + recipe.getSecondaryMod() + "x";
-        minecraft.font.draw(matrixStack, secondaryMod, 44, 20, 0xFF606060);
+        guiGraphics.drawString(minecraft.font, secondaryMod, 44, 20, 0xFF606060, false);
 
         String energyMod = localize("info.thermal.energy_mod") + ": " + recipe.getEnergyMod() + "x";
-        minecraft.font.draw(matrixStack, energyMod, 44, 32, 0xFF606060);
+        guiGraphics.drawString(minecraft.font, energyMod, 44, 32, 0xFF606060, false);
 
         String useChance = localize("info.thermal.use_chance") + ": " + DF0.format(recipe.getUseChance() * 100) + "%";
-        minecraft.font.draw(matrixStack, useChance, 44, 44, 0xFF606060);
+        guiGraphics.drawString(minecraft.font, useChance, 44, 44, 0xFF606060, false);
     }
     // endregion
 }

@@ -32,7 +32,7 @@ import java.util.function.Supplier;
 import static cofh.lib.api.StorageGroup.*;
 import static cofh.lib.util.constants.NBTTags.*;
 import static cofh.thermal.core.ThermalCore.ITEMS;
-import static cofh.thermal.core.init.TCoreTileEntities.DEVICE_COMPOSTER_TILE;
+import static cofh.thermal.core.init.TCoreBlockEntities.DEVICE_COMPOSTER_TILE;
 import static cofh.thermal.lib.common.ThermalAugmentRules.createAllowValidator;
 import static net.minecraft.world.level.block.ComposterBlock.COMPOSTABLES;
 

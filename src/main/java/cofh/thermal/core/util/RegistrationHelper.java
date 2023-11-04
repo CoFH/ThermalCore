@@ -9,7 +9,6 @@ import cofh.lib.block.CropBlockPerennial;
 import cofh.lib.block.CropBlockTall;
 import cofh.lib.block.TntBlockCoFH;
 import cofh.lib.entity.PrimedTntCoFH;
-import cofh.lib.util.constants.ModIds;
 import cofh.thermal.core.entity.explosive.DetonateUtils;
 import cofh.thermal.core.entity.explosive.Grenade;
 import cofh.thermal.core.entity.explosive.ThermalTNTEntity;
@@ -18,16 +17,16 @@ import cofh.thermal.lib.item.BlockItemAugmentable;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobCategory;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.Material;
-import net.minecraft.world.level.material.MaterialColor;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.List;
@@ -35,11 +34,10 @@ import java.util.function.BiPredicate;
 import java.util.function.IntSupplier;
 import java.util.function.Supplier;
 
-import static cofh.lib.util.Constants.TRUE;
 import static cofh.lib.util.constants.ModIds.*;
 import static cofh.thermal.core.ThermalCore.*;
-import static cofh.thermal.lib.common.ThermalFlags.*;
-import static cofh.thermal.lib.common.ThermalItemGroups.*;
+import static cofh.thermal.lib.common.ThermalCreativeTabs.foodsTab;
+import static cofh.thermal.lib.common.ThermalCreativeTabs.itemsTab;
 import static net.minecraft.world.level.block.state.BlockBehaviour.Properties.of;
 
 public final class RegistrationHelper {
@@ -49,80 +47,24 @@ public final class RegistrationHelper {
     }
 
     // region BLOCKS
-    public static void registerBlock(String name, Supplier<Block> sup) {
+    public static RegistryObject<Item> registerBlock(String name, Supplier<Block> sup) {
 
-        registerBlock(name, sup, ID_THERMAL);
+        return registerBlock(name, sup, ID_THERMAL);
     }
 
-    public static void registerBlock(String name, Supplier<Block> sup, Supplier<Boolean> showInGroups) {
+    public static RegistryObject<Item> registerBlock(String name, Supplier<Block> sup, Rarity rarity) {
 
-        registerBlock(name, sup, showInGroups, ID_THERMAL);
+        return registerBlock(name, sup, rarity, ID_THERMAL);
     }
 
-    public static void registerBlock(String name, Supplier<Block> sup, CreativeModeTab group) {
+    public static RegistryObject<Item> registerBlock(String name, Supplier<Block> sup, String modId) {
 
-        registerBlock(name, sup, group, TRUE, ModIds.ID_THERMAL);
+        return registerBlock(name, sup, Rarity.COMMON, modId);
     }
 
-    public static void registerBlock(String name, Supplier<Block> sup, CreativeModeTab group, Supplier<Boolean> showInGroups) {
+    public static RegistryObject<Item> registerBlock(String name, Supplier<Block> sup, Rarity rarity, String modId) {
 
-        registerBlock(name, sup, group, showInGroups, ID_THERMAL);
-    }
-
-    public static void registerBlock(String name, Supplier<Block> sup, Rarity rarity) {
-
-        registerBlock(name, sup, rarity, ID_THERMAL);
-    }
-
-    public static void registerBlock(String name, Supplier<Block> sup, Rarity rarity, Supplier<Boolean> showInGroups) {
-
-        registerBlock(name, sup, rarity, showInGroups, ID_THERMAL);
-    }
-
-    public static void registerBlock(String name, Supplier<Block> sup, CreativeModeTab group, Rarity rarity, Supplier<Boolean> showInGroups) {
-
-        registerBlock(name, sup, group, rarity, showInGroups, ID_THERMAL);
-    }
-
-    // MOD ID
-    public static void registerBlock(String name, Supplier<Block> sup, String modId) {
-
-        registerBlock(name, sup, THERMAL_BLOCKS, Rarity.COMMON, TRUE, modId);
-    }
-
-    public static void registerBlock(String name, Supplier<Block> sup, CreativeModeTab group, String modId) {
-
-        registerBlock(name, sup, group, Rarity.COMMON, TRUE, modId);
-    }
-
-    public static void registerBlock(String name, Supplier<Block> sup, Supplier<Boolean> showInGroups, String modId) {
-
-        registerBlock(name, sup, THERMAL_BLOCKS, Rarity.COMMON, showInGroups, modId);
-    }
-
-    public static void registerBlock(String name, Supplier<Block> sup, CreativeModeTab group, Supplier<Boolean> showInGroups, String modId) {
-
-        registerBlock(name, sup, group, Rarity.COMMON, showInGroups, modId);
-    }
-
-    public static void registerBlock(String name, Supplier<Block> sup, Rarity rarity, String modId) {
-
-        registerBlock(name, sup, THERMAL_BLOCKS, rarity, TRUE, modId);
-    }
-
-    public static void registerBlock(String name, Supplier<Block> sup, CreativeModeTab group, Rarity rarity, String modId) {
-
-        registerBlock(name, sup, group, rarity, TRUE, modId);
-    }
-
-    public static void registerBlock(String name, Supplier<Block> sup, Rarity rarity, Supplier<Boolean> showInGroups, String modId) {
-
-        registerBlock(name, sup, THERMAL_BLOCKS, rarity, showInGroups, modId);
-    }
-
-    public static void registerBlock(String name, Supplier<Block> sup, CreativeModeTab group, Rarity rarity, Supplier<Boolean> showInGroups, String modId) {
-
-        registerBlockAndItem(name, sup, () -> new BlockItemCoFH(BLOCKS.get(name), new Item.Properties().tab(group).rarity(rarity)).setShowInGroups(showInGroups).setModId(modId));
+        return registerBlock(name, sup, () -> new BlockItemCoFH(BLOCKS.get(name), new Item.Properties().rarity(rarity)).setModId(modId));
     }
 
     public static void registerBlockOnly(String name, Supplier<Block> sup) {
@@ -130,65 +72,43 @@ public final class RegistrationHelper {
         BLOCKS.register(name, sup);
     }
 
-    public static void registerBlockAndItem(String name, Supplier<Block> blockSup, Supplier<Item> itemSup) {
+    public static RegistryObject<Item> registerBlock(String name, Supplier<Block> blockSup, Supplier<Item> itemSup) {
 
         BLOCKS.register(name, blockSup);
-        ITEMS.register(name, itemSup);
-    }
-
-    // SHORTCUTS
-    public static Block storageBlock() {
-
-        return new Block(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.METAL)
-                .strength(5.0F, 6.0F)
-                .sound(SoundType.METAL)
-                .requiresCorrectToolForDrops());
-    }
-
-    public static Block storageBlock(MaterialColor color) {
-
-        return new Block(BlockBehaviour.Properties.of(Material.METAL, color)
-                .strength(5.0F, 6.0F)
-                .sound(SoundType.METAL)
-                .requiresCorrectToolForDrops());
+        return registerItem(name, itemSup);
     }
     // endregion
 
     // region AUGMENTABLE BLOCKS
-    public static void registerAugmentableBlock(String name, Supplier<Block> sup, IntSupplier numSlots, BiPredicate<ItemStack, List<ItemStack>> validAugment, Supplier<Boolean> showInGroups) {
+    public static RegistryObject<Item> registerAugmentableBlock(String name, Supplier<Block> sup, IntSupplier numSlots, BiPredicate<ItemStack, List<ItemStack>> validAugment) {
 
-        registerAugmentableBlock(name, sup, numSlots, validAugment, showInGroups, ID_THERMAL);
+        return registerAugmentableBlock(name, sup, numSlots, validAugment, ID_THERMAL);
     }
 
-    public static void registerAugmentableBlock(String name, Supplier<Block> sup, IntSupplier numSlots, BiPredicate<ItemStack, List<ItemStack>> validAugment, String modId) {
+    public static RegistryObject<Item> registerAugmentableBlock(String name, Supplier<Block> sup, IntSupplier numSlots, BiPredicate<ItemStack, List<ItemStack>> validAugment, String modId) {
 
-        registerAugmentableBlock(name, sup, numSlots, validAugment, THERMAL_DEVICES, Rarity.COMMON, TRUE, modId);
+        return registerAugmentableBlock(name, sup, numSlots, validAugment, Rarity.COMMON, modId);
     }
 
-    public static void registerAugmentableBlock(String name, Supplier<Block> sup, IntSupplier numSlots, BiPredicate<ItemStack, List<ItemStack>> validAugment, Supplier<Boolean> showInGroups, String modId) {
-
-        registerAugmentableBlock(name, sup, numSlots, validAugment, THERMAL_DEVICES, Rarity.COMMON, showInGroups, modId);
-    }
-
-    public static void registerAugmentableBlock(String name, Supplier<Block> sup, IntSupplier numSlots, BiPredicate<ItemStack, List<ItemStack>> validAugment, CreativeModeTab group, Rarity rarity, Supplier<Boolean> showInGroups, String modId) {
+    public static RegistryObject<Item> registerAugmentableBlock(String name, Supplier<Block> sup, IntSupplier numSlots, BiPredicate<ItemStack, List<ItemStack>> validAugment, Rarity rarity, String modId) {
 
         BLOCKS.register(name, sup);
-        ITEMS.register(name, (Supplier<Item>) () -> new BlockItemAugmentable(BLOCKS.get(name), new Item.Properties().tab(group).rarity(rarity)).setNumSlots(numSlots).setAugValidator(validAugment).setShowInGroups(showInGroups).setModId(modId));
+        return registerItem(name, () -> new BlockItemAugmentable(BLOCKS.get(name), new Item.Properties().rarity(rarity)).setNumSlots(numSlots).setAugValidator(validAugment).setModId(modId));
     }
     // endregion
 
     // region BLOCK SETS
-    public static void registerWoodBlockSet(String woodName, Material material, MaterialColor color, float hardness, float resistance, SoundType soundType, String modId) {
+    public static void registerWoodBlockSet(String woodName, MapColor color, float hardness, float resistance, SoundType soundType, String modId) {
 
-        registerBlock(woodName + "_planks", () -> new Block(of(material, color).strength(hardness, resistance).sound(soundType)), modId);
-        registerBlock(woodName + "_slab", () -> new SlabBlock(of(material, color).strength(hardness, resistance).sound(soundType)), modId);
-        registerBlock(woodName + "_stairs", () -> new StairBlock(() -> BLOCKS.get(woodName + "_planks").defaultBlockState(), of(material, color).strength(hardness, resistance).sound(soundType)), modId);
-        registerBlock(woodName + "_door", () -> new DoorBlock(of(material, color).strength(resistance).sound(soundType).noOcclusion()), modId);
-        registerBlock(woodName + "_trapdoor", () -> new TrapDoorBlock(of(material, color).strength(resistance).sound(soundType).noOcclusion().isValidSpawn((state, reader, pos, entityType) -> false)), modId);
-        registerBlock(woodName + "_button", () -> new WoodButtonBlock(of(Material.DECORATION).noCollission().strength(0.5F).sound(soundType)), modId);
-        registerBlock(woodName + "_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, of(material, color).noCollission().strength(0.5F).sound(soundType)), modId);
-        registerBlock(woodName + "_fence", () -> new FenceBlock(of(material, color).strength(hardness, resistance).sound(soundType)), modId);
-        registerBlock(woodName + "_fence_gate", () -> new FenceGateBlock(of(material, color).strength(hardness, resistance).sound(soundType)), modId);
+        //        registerBlock(woodName + "_planks", () -> new Block(of().mapColor(color).strength(hardness, resistance).sound(soundType)), modId);
+        //        registerBlock(woodName + "_slab", () -> new SlabBlock(of().mapColor(color).strength(hardness, resistance).sound(soundType)), modId);
+        //        registerBlock(woodName + "_stairs", () -> new StairBlock(() -> BLOCKS.get(woodName + "_planks").defaultBlockState(), of().mapColor(color).strength(hardness, resistance).sound(soundType)), modId);
+        //        registerBlock(woodName + "_door", () -> new DoorBlock(of().mapColor(color).strength(resistance).sound(soundType).noOcclusion()), modId);
+        //        registerBlock(woodName + "_trapdoor", () -> new TrapDoorBlock(of().mapColor(color).strength(resistance).sound(soundType).noOcclusion().isValidSpawn((state, reader, pos, entityType) -> false)), modId);
+        //        registerBlock(woodName + "_button", () -> new ButtonBlock(of().noCollission().strength(0.5F).sound(soundType)), modId);
+        //        registerBlock(woodName + "_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, of().mapColor(color).noCollission().strength(0.5F).sound(soundType)), modId);
+        //        registerBlock(woodName + "_fence", () -> new FenceBlock(of().mapColor(color).strength(hardness, resistance).sound(soundType)), modId);
+        //        registerBlock(woodName + "_fence_gate", () -> new FenceGateBlock(of().mapColor(color).strength(hardness, resistance).sound(soundType)), modId);
     }
     // endregion
 
@@ -198,121 +118,116 @@ public final class RegistrationHelper {
         return ITEMS.register(name, sup);
     }
 
-    public static RegistryObject<Item> registerItem(String name, CreativeModeTab group) {
+    public static RegistryObject<Item> registerItem(String name) {
 
-        return registerItem(name, group, Rarity.COMMON);
+        return registerItem(name, Rarity.COMMON);
     }
 
-    public static RegistryObject<Item> registerItem(String name, CreativeModeTab group, Rarity rarity) {
+    public static RegistryObject<Item> registerItem(String name, Rarity rarity) {
 
-        return registerItem(name, () -> new ItemCoFH(new Item.Properties().tab(group).rarity(rarity)));
+        return registerItem(name, () -> new ItemCoFH(new Item.Properties().rarity(rarity)));
     }
     // endregion
 
     // region METAL SETS
-    public static void registerMetalSet(String prefix, CreativeModeTab group, Rarity rarity) {
+    public static void registerMetalSet(String prefix, Rarity rarity) {
 
-        registerMetalSet(prefix, group, rarity, TRUE, false, false, ID_THERMAL);
+        registerMetalSet(prefix, rarity, false, false, ID_THERMAL);
     }
 
-    public static void registerMetalSet(String prefix, CreativeModeTab group, Rarity rarity, Supplier<Boolean> showInGroups) {
+    public static void registerMetalSet(String prefix) {
 
-        registerMetalSet(prefix, group, rarity, showInGroups, false, false, ID_THERMAL);
+        registerMetalSet(prefix, Rarity.COMMON, false, false, ID_THERMAL);
     }
 
-    public static void registerMetalSet(String prefix, CreativeModeTab group, Supplier<Boolean> showInGroups) {
+    public static void registerMetalSet(String prefix, String modId) {
 
-        registerMetalSet(prefix, group, Rarity.COMMON, showInGroups, false, false, ID_THERMAL);
+        registerMetalSet(prefix, Rarity.COMMON, false, false, modId);
     }
 
-    public static void registerMetalSet(String prefix, CreativeModeTab group, Supplier<Boolean> showInGroups, String modId) {
+    public static void registerAlloySet(String prefix, Rarity rarity) {
 
-        registerMetalSet(prefix, group, Rarity.COMMON, showInGroups, false, false, modId);
+        registerMetalSet(prefix, rarity, false, true, ID_THERMAL);
     }
 
-    public static void registerAlloySet(String prefix, CreativeModeTab group, Rarity rarity) {
+    public static void registerAlloySet(String prefix) {
 
-        registerMetalSet(prefix, group, rarity, TRUE, false, true, ID_THERMAL);
+        registerMetalSet(prefix, Rarity.COMMON, false, true, ID_THERMAL);
     }
 
-    public static void registerAlloySet(String prefix, CreativeModeTab group, Supplier<Boolean> showInGroups) {
+    public static void registerAlloySet(String prefix, String modId) {
 
-        registerMetalSet(prefix, group, Rarity.COMMON, showInGroups, false, true, ID_THERMAL);
+        registerMetalSet(prefix, Rarity.COMMON, false, true, modId);
     }
 
-    public static void registerAlloySet(String prefix, CreativeModeTab group, Supplier<Boolean> showInGroups, String modId) {
+    public static void registerVanillaMetalSet(String prefix) {
 
-        registerMetalSet(prefix, group, Rarity.COMMON, showInGroups, false, true, modId);
+        registerMetalSet(prefix, Rarity.COMMON, true, false, ID_THERMAL);
     }
 
-    public static void registerVanillaMetalSet(String prefix, CreativeModeTab group) {
-
-        registerMetalSet(prefix, group, Rarity.COMMON, TRUE, true, false, ID_THERMAL);
-    }
-
-    public static void registerMetalSet(String prefix, CreativeModeTab group, Rarity rarity, Supplier<Boolean> showInGroups, boolean vanilla, boolean alloy, String modId) {
+    public static void registerMetalSet(String prefix, Rarity rarity, boolean vanilla, boolean alloy, String modId) {
 
         // Hacky but whatever.
         if (prefix.equals("copper") || prefix.equals("netherite")) {
-            ITEMS.register(prefix + "_nugget", () -> new ItemCoFH(new Item.Properties().tab(group).rarity(rarity)).setShowInGroups(showInGroups).setModId(modId));
+            itemsTab(registerItem(prefix + "_nugget", () -> new ItemCoFH(new Item.Properties().rarity(rarity)).setModId(modId)));
         }
         if (!vanilla) {
             if (!alloy) {
-                ITEMS.register("raw_" + prefix, () -> new ItemCoFH(new Item.Properties().tab(group).rarity(rarity)).setShowInGroups(showInGroups).setModId(modId));
+                itemsTab(registerItem("raw_" + prefix, () -> new ItemCoFH(new Item.Properties().rarity(rarity)).setModId(modId)));
             }
-            ITEMS.register(prefix + "_ingot", () -> new ItemCoFH(new Item.Properties().tab(group).rarity(rarity)).setShowInGroups(showInGroups).setModId(modId));
-            ITEMS.register(prefix + "_nugget", () -> new ItemCoFH(new Item.Properties().tab(group).rarity(rarity)).setShowInGroups(showInGroups).setModId(modId));
+            itemsTab(registerItem(prefix + "_ingot", () -> new ItemCoFH(new Item.Properties().rarity(rarity)).setModId(modId)));
+            itemsTab(registerItem(prefix + "_nugget", () -> new ItemCoFH(new Item.Properties().rarity(rarity)).setModId(modId)));
         }
-        ITEMS.register(prefix + "_dust", () -> new ItemCoFH(new Item.Properties().tab(group).rarity(rarity)).setShowInGroups(showInGroups).setModId(modId));
-        ITEMS.register(prefix + "_gear", () -> new ItemCoFH(new Item.Properties().tab(group).rarity(rarity)).setShowInGroups(showInGroups).setModId(modId));
-        ITEMS.register(prefix + "_plate", () -> new CountedItem(new Item.Properties().tab(group).rarity(rarity)).setShowInGroups(() -> getFlag(FLAG_PLATES).get() && showInGroups.get()).setModId(modId));
-        ITEMS.register(prefix + "_coin", () -> new CoinItem(new Item.Properties().tab(group).rarity(rarity)).setShowInGroups(() -> getFlag(FLAG_COINS).get() && showInGroups.get()).setModId(modId));
+        itemsTab(registerItem(prefix + "_dust", () -> new ItemCoFH(new Item.Properties().rarity(rarity)).setModId(modId)));
+        itemsTab(registerItem(prefix + "_gear", () -> new ItemCoFH(new Item.Properties().rarity(rarity)).setModId(modId)));
+        itemsTab(registerItem(prefix + "_plate", () -> new CountedItem(new Item.Properties().rarity(rarity)).setModId(modId)));
+        itemsTab(registerItem(prefix + "_coin", () -> new CoinItem(new Item.Properties().rarity(rarity)).setModId(modId)));
     }
     // endregion
 
     // region GEM SETS
-    public static void registerGemSet(String prefix, CreativeModeTab group, Rarity rarity, Supplier<Boolean> showInGroups) {
+    public static void registerGemSet(String prefix, Rarity rarity) {
 
-        registerGemSet(prefix, group, rarity, showInGroups, false, ID_THERMAL);
+        registerGemSet(prefix, rarity, false, ID_THERMAL);
     }
 
-    public static void registerGemSet(String prefix, CreativeModeTab group, Supplier<Boolean> showInGroups) {
+    public static void registerGemSet(String prefix) {
 
-        registerGemSet(prefix, group, Rarity.COMMON, showInGroups, false, ID_THERMAL);
+        registerGemSet(prefix, Rarity.COMMON, false, ID_THERMAL);
     }
 
-    public static void registerGemSet(String prefix, CreativeModeTab group, Supplier<Boolean> showInGroups, String modId) {
+    public static void registerGemSet(String prefix, String modId) {
 
-        registerGemSet(prefix, group, Rarity.COMMON, showInGroups, false, modId);
+        registerGemSet(prefix, Rarity.COMMON, false, modId);
     }
 
-    public static void registerVanillaGemSet(String prefix, CreativeModeTab group) {
+    public static void registerVanillaGemSet(String prefix) {
 
-        registerGemSet(prefix, group, Rarity.COMMON, TRUE, true, ID_THERMAL);
+        registerGemSet(prefix, Rarity.COMMON, true, ID_THERMAL);
     }
 
-    public static void registerGemSet(String prefix, CreativeModeTab group, Rarity rarity, Supplier<Boolean> showInGroups, boolean vanilla, String modId) {
+    public static void registerGemSet(String prefix, Rarity rarity, boolean vanilla, String modId) {
 
         if (!vanilla) {
-            ITEMS.register(prefix, () -> new ItemCoFH(new Item.Properties().tab(group).rarity(rarity)).setShowInGroups(showInGroups).setModId(modId));
+            itemsTab(registerItem(prefix, () -> new ItemCoFH(new Item.Properties().rarity(rarity)).setModId(modId)));
         }
-        // ITEMS.register(prefix + "_nugget", () -> new ItemCoFH(new Item.Properties().group(group).rarity(rarity)).setShowInGroups(showInGroups).setModId(modId));
-        ITEMS.register(prefix + "_dust", () -> new ItemCoFH(new Item.Properties().tab(group).rarity(rarity)).setShowInGroups(showInGroups).setModId(modId));
-        ITEMS.register(prefix + "_gear", () -> new ItemCoFH(new Item.Properties().tab(group).rarity(rarity)).setShowInGroups(showInGroups).setModId(modId));
-        // ITEMS.register(prefix + "_plate", () -> new CountedItem(new Item.Properties().group(group).rarity(rarity)).setShowInGroups(showInGroups).setModId(modId));
-        // ITEMS.register(prefix + "_coin", () -> new CoinItem(new Item.Properties().group(group).rarity(rarity)).setShowInGroups(showInGroups).setModId(modId));
+        // itemsTab(registerItem(prefix + "_nugget", () -> new ItemCoFH(new Item.Properties().group(group).rarity(rarity)).setModId(modId)));
+        itemsTab(registerItem(prefix + "_dust", () -> new ItemCoFH(new Item.Properties().rarity(rarity)).setModId(modId)));
+        itemsTab(registerItem(prefix + "_gear", () -> new ItemCoFH(new Item.Properties().rarity(rarity)).setModId(modId)));
+        // itemsTab(registerItem(prefix + "_plate", () -> new CountedItem(new Item.Properties().group(group).rarity(rarity)).setModId(modId)));
+        // itemsTab(registerItem(prefix + "_coin", () -> new CoinItem(new Item.Properties().group(group).rarity(rarity)).setModId(modId)));
     }
     // endregion
 
     // region CROPS
     public static void registerAnnual(String id) {
 
-        BLOCKS.register(id, () -> new CropBlockCoFH(of(Material.PLANT).noCollission().randomTicks().strength(0.0F, 0.0F).sound(SoundType.CROP)).crop(ITEMS.getSup(id)).seed(ITEMS.getSup(seeds(id))));
+        BLOCKS.register(id, () -> new CropBlockCoFH(of().mapColor(MapColor.PLANT).noCollission().randomTicks().strength(0.0F, 0.0F).sound(SoundType.CROP)).crop(ITEMS.getSup(id)).seed(ITEMS.getSup(seeds(id))));
     }
 
     public static void registerTallAnnual(String id) {
 
-        BLOCKS.register(id, () -> new CropBlockTall(of(Material.PLANT).noCollission().randomTicks().strength(0.0F, 0.0F).sound(SoundType.CROP)).crop(ITEMS.getSup(id)).seed(ITEMS.getSup(seeds(id))));
+        BLOCKS.register(id, () -> new CropBlockTall(of().mapColor(MapColor.PLANT).noCollission().randomTicks().strength(0.0F, 0.0F).sound(SoundType.CROP)).crop(ITEMS.getSup(id)).seed(ITEMS.getSup(seeds(id))));
     }
 
     public static void registerPerennial(String id) {
@@ -322,44 +237,83 @@ public final class RegistrationHelper {
 
     public static void registerPerennial(String id, int postHarvestAge) {
 
-        BLOCKS.register(id, () -> new CropBlockPerennial(of(Material.PLANT).noCollission().randomTicks().strength(0.0F, 0.0F).sound(SoundType.CROP)).postHarvestAge(postHarvestAge).crop(ITEMS.getSup(id)).seed(ITEMS.getSup(seeds(id))));
+        BLOCKS.register(id, () -> new CropBlockPerennial(of().mapColor(MapColor.PLANT).noCollission().randomTicks().strength(0.0F, 0.0F).sound(SoundType.CROP)).postHarvestAge(postHarvestAge).crop(ITEMS.getSup(id)).seed(ITEMS.getSup(seeds(id))));
     }
 
     public static void registerCropAndSeed(String id) {
 
-        registerCropAndSeed(id, THERMAL_FOODS);
+        registerCropAndSeed(id, null);
     }
 
     public static void registerCropAndSeed(String id, FoodProperties food) {
 
-        registerCropAndSeed(id, THERMAL_FOODS, food);
-    }
-
-    public static void registerCropAndSeed(String id, CreativeModeTab group) {
-
-        registerCropAndSeed(id, group, null);
-    }
-
-    public static void registerCropAndSeed(String id, CreativeModeTab group, FoodProperties food) {
-
         if (food != null) {
-            ITEMS.register(id, () -> new ItemCoFH(new Item.Properties().tab(group).food(food)).setModId(ID_THERMAL_CULTIVATION));
+            foodsTab(registerItem(id, () -> new ItemCoFH(new Item.Properties().food(food)).setModId(ID_THERMAL_CULTIVATION)));
         } else {
-            ITEMS.register(id, () -> new ItemCoFH(new Item.Properties().tab(group)).setModId(ID_THERMAL_CULTIVATION));
+            foodsTab(registerItem(id, () -> new ItemCoFH(new Item.Properties()).setModId(ID_THERMAL_CULTIVATION)));
         }
-        ITEMS.register(seeds(id), () -> new BlockNamedItemCoFH(BLOCKS.get(id), new Item.Properties().tab(group)).setModId(ID_THERMAL_CULTIVATION));
+        foodsTab(registerItem(seeds(id), () -> new BlockNamedItemCoFH(BLOCKS.get(id), new Item.Properties()).setModId(ID_THERMAL_CULTIVATION)));
+    }
+
+    public static void registerBowlFoodItem(String id, FoodProperties food, Rarity rarity) {
+
+        foodsTab(registerItem(id, () -> new ItemCoFH(new Item.Properties().stacksTo(1).food(food).rarity(rarity)) {
+
+            @Override
+            public ItemStack finishUsingItem(ItemStack stack, Level worldIn, LivingEntity entityLiving) {
+
+                ItemStack itemstack = super.finishUsingItem(stack, worldIn, entityLiving);
+                return entityLiving instanceof Player player && player.abilities.instabuild ? itemstack : new ItemStack(Items.BOWL);
+            }
+        }.setModId(ID_THERMAL_CULTIVATION)));
     }
 
     public static void registerSpores(String id) {
 
-        registerSpores(id, THERMAL_FOODS);
+        foodsTab(registerItem(spores(id), () -> new BlockNamedItemCoFH(BLOCKS.get(id), new Item.Properties()).setModId(ID_THERMAL_CULTIVATION)));
+    }
+    // endregion
+
+    // region EXPLOSIVES
+    public static RegistryObject<Item> registerGrenade(String id, IDetonatable.IDetonateAction action, Supplier<Boolean> flag) {
+
+        RegistryObject<EntityType<? extends AbstractGrenade>> entity = ENTITIES.register(id, () -> EntityType.Builder.<Grenade>of((type, world) -> new Grenade(type, world, action), MobCategory.MISC).sized(0.25F, 0.25F).build(id));
+        DetonateUtils.GRENADES.add(entity);
+        return registerItem(id, () -> new GrenadeItem(new GrenadeItem.IGrenadeFactory<>() {
+
+            @Override
+            public AbstractGrenade createGrenade(Level level, LivingEntity living) {
+
+                return new Grenade(entity.get(), level, action, living);
+            }
+
+            @Override
+            public AbstractGrenade createGrenade(Level level, double posX, double posY, double posZ) {
+
+                return new Grenade(entity.get(), level, action, posX, posY, posZ);
+            }
+
+        }, new Item.Properties().stacksTo(16)));
     }
 
-    public static void registerSpores(String id, CreativeModeTab group) {
+    public static RegistryObject<Item> registerTNT(String id, IDetonatable.IDetonateAction action, Supplier<Boolean> flag) {
 
-        ITEMS.register(spores(id), () -> new BlockNamedItemCoFH(BLOCKS.get(id), new Item.Properties().tab(group)).setModId(ID_THERMAL_CULTIVATION));
+        RegistryObject<EntityType<? extends PrimedTntCoFH>> tntEntity = ENTITIES.register(id, () -> EntityType.Builder.<ThermalTNTEntity>of((type, world) -> new ThermalTNTEntity(type, world, action), MobCategory.MISC).fireImmune().sized(0.98F, 0.98F).build(id));
+        registerBlockOnly(id, () -> new TntBlockCoFH((world, x, y, z, igniter) -> new ThermalTNTEntity(tntEntity.get(), world, action, x, y, z, igniter), of().mapColor(MapColor.COLOR_YELLOW).strength(0.0F).sound(SoundType.GRASS)));
+        DetonateUtils.TNT.add(tntEntity);
+        return registerItem(id, () -> new BlockItemCoFH(BLOCKS.get(id), new Item.Properties()));
+
     }
 
+    public static RegistryObject<Item> registerTNTMinecart(String id, String tntId, IDetonatable.IDetonateAction action, Supplier<Boolean> flag) {
+
+        RegistryObject<EntityType<? extends AbstractTNTMinecart>> entity = ENTITIES.register(id, () -> EntityType.Builder.<ThermalTNTMinecart>of((type, world) -> new ThermalTNTMinecart(type, world, action, BLOCKS.get(tntId)), MobCategory.MISC).sized(0.98F, 0.7F).build(id));
+        DetonateUtils.CARTS.add(entity);
+        return registerItem(id, () -> new MinecartItemCoFH((world, x, y, z) -> new ThermalTNTMinecart(entity.get(), world, action, BLOCKS.get(tntId), x, y, z), new Item.Properties()).setModId(ID_THERMAL_LOCOMOTION));
+    }
+    // endregion
+
+    // region ID AFFIXES
     public static String deepslate(String id) {
 
         return "deepslate_" + id;
@@ -388,43 +342,6 @@ public final class RegistrationHelper {
     public static String spores(String id) {
 
         return id + "_spores";
-    }
-    // endregion
-
-    // region EXPLOSIVES
-    public static void registerGrenade(String id, IDetonatable.IDetonateAction action, Supplier<Boolean> flag) {
-
-        RegistryObject<EntityType<? extends AbstractGrenade>> entity = ENTITIES.register(id, () -> EntityType.Builder.<Grenade>of((type, world) -> new Grenade(type, world, action), MobCategory.MISC).sized(0.25F, 0.25F).build(id));
-        registerItem(id, () -> new GrenadeItem(new GrenadeItem.IGrenadeFactory<>() {
-
-            @Override
-            public AbstractGrenade createGrenade(Level level, LivingEntity living) {
-
-                return new Grenade(entity.get(), level, action, living);
-            }
-
-            @Override
-            public AbstractGrenade createGrenade(Level level, double posX, double posY, double posZ) {
-
-                return new Grenade(entity.get(), level, action, posX, posY, posZ);
-            }
-
-        }, new Item.Properties().tab(THERMAL_TOOLS).stacksTo(16)).setShowInGroups(flag));
-        DetonateUtils.GRENADES.add(entity);
-    }
-
-    public static void registerTNT(String id, IDetonatable.IDetonateAction action, Supplier<Boolean> flag) {
-
-        RegistryObject<EntityType<? extends PrimedTntCoFH>> tntEntity = ENTITIES.register(id, () -> EntityType.Builder.<ThermalTNTEntity>of((type, world) -> new ThermalTNTEntity(type, world, action), MobCategory.MISC).fireImmune().sized(0.98F, 0.98F).build(id));
-        registerBlock(id, () -> new TntBlockCoFH((world, x, y, z, igniter) -> new ThermalTNTEntity(tntEntity.get(), world, action, x, y, z, igniter), of(Material.EXPLOSIVE, MaterialColor.COLOR_YELLOW).strength(0.0F).sound(SoundType.GRASS)), THERMAL_TOOLS, flag);
-        DetonateUtils.TNT.add(tntEntity);
-    }
-
-    public static void registerTNTMinecart(String id, String tntId, IDetonatable.IDetonateAction action, Supplier<Boolean> flag) {
-
-        RegistryObject<EntityType<? extends AbstractTNTMinecart>> entity = ENTITIES.register(id, () -> EntityType.Builder.<ThermalTNTMinecart>of((type, world) -> new ThermalTNTMinecart(type, world, action, BLOCKS.get(tntId)), MobCategory.MISC).sized(0.98F, 0.7F).build(id));
-        ITEMS.register(id, () -> new MinecartItemCoFH((world, x, y, z) -> new ThermalTNTMinecart(entity.get(), world, action, BLOCKS.get(tntId), x, y, z), new Item.Properties().tab(THERMAL_TOOLS)).setShowInGroups(flag).setModId(ID_THERMAL_LOCOMOTION));
-        DetonateUtils.CARTS.add(entity);
     }
     // endregion
 }

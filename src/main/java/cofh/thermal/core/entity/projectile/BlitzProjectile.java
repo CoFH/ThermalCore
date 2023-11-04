@@ -8,8 +8,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.damagesource.EntityDamageSource;
-import net.minecraft.world.damagesource.IndirectEntityDamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -21,7 +19,6 @@ import net.minecraft.world.phys.HitResult;
 
 import static cofh.core.init.CoreMobEffects.SHOCKED;
 import static cofh.thermal.core.init.TCoreEntities.BLITZ_PROJECTILE;
-import static cofh.thermal.lib.common.ThermalIDs.ID_BLITZ;
 
 public class BlitzProjectile extends ElementalProjectile {
 
@@ -57,13 +54,12 @@ public class BlitzProjectile extends ElementalProjectile {
         level.addFreshEntity((new ElectricArc(level, result.getLocation())).setCosmetic(true).setOwner(owner instanceof LivingEntity ? (LivingEntity) owner : null));
         if (result.getType() == HitResult.Type.ENTITY) {
             Entity entity = ((EntityHitResult) result).getEntity();
-            if (entity.hurt(BlitzDamageSource.causeDamage(this, owner), getDamage(entity)) && !entity.isInvulnerable() && entity instanceof LivingEntity) {
-                LivingEntity living = (LivingEntity) entity;
+            if (entity.hurt(this.damageSource(), getDamage(entity)) && entity instanceof LivingEntity living) {
                 living.addEffect(new MobEffectInstance(SHOCKED.get(), getEffectDuration(entity), getEffectAmplifier(entity), false, false));
             }
         }
         if (ThermalCoreConfig.mobBlitzLightning.get() && Utils.isServerWorld(level)) {
-            BlockPos pos = new BlockPos(result.getLocation());
+            BlockPos pos = new BlockPos((int) result.location.x, (int) result.location.y, (int) result.location.z);
             if (level.canSeeSky(pos) && random.nextFloat() < (level.isRainingAt(pos) ? (level.isThundering() ? 0.2F : 0.1F) : 0.04F)) {
                 Utils.spawnLightningBolt(level, pos);
             }
@@ -76,6 +72,11 @@ public class BlitzProjectile extends ElementalProjectile {
     protected float getInertia() {
 
         return 1.0F;
+    }
+
+    protected DamageSource damageSource() {
+
+        return this.level.damageSources().mobProjectile(this, this.getOwner() instanceof LivingEntity ? (LivingEntity) this.getOwner() : null);
     }
 
     // region HELPERS
@@ -95,22 +96,6 @@ public class BlitzProjectile extends ElementalProjectile {
     public int getEffectDuration(Entity target) {
 
         return effectDuration;
-    }
-    // endregion
-
-    // region DAMAGE SOURCE
-    protected static class BlitzDamageSource extends EntityDamageSource {
-
-        public BlitzDamageSource(Entity source) {
-
-            super(ID_BLITZ, source);
-        }
-
-        public static DamageSource causeDamage(BlitzProjectile entityProj, Entity entitySource) {
-
-            return (new IndirectEntityDamageSource(ID_BLITZ, entityProj, entitySource == null ? entityProj : entitySource)).setProjectile();
-        }
-
     }
     // endregion
 }

@@ -24,7 +24,7 @@ import static cofh.lib.api.StorageGroup.INPUT;
 import static cofh.lib.api.StorageGroup.INTERNAL;
 import static cofh.lib.util.Constants.BUCKET_VOLUME;
 import static cofh.lib.util.constants.NBTTags.TAG_AUGMENT_TYPE_FILTER;
-import static cofh.thermal.core.init.TCoreTileEntities.DEVICE_NULLIFIER_TILE;
+import static cofh.thermal.core.init.TCoreBlockEntities.DEVICE_NULLIFIER_TILE;
 import static cofh.thermal.lib.common.ThermalAugmentRules.createAllowValidator;
 
 public class DeviceNullifierTile extends DeviceBlockEntity {

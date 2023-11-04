@@ -15,7 +15,7 @@
           "weight": 36,
           "conditions": [
             {
-              "condition": "minecraft:alternative",
+              "condition": "minecraft:any_of",
               "terms": [
                 {
                   "condition": "minecraft:location_check",
@@ -75,7 +75,7 @@
           "weight": 36,
           "conditions": [
             {
-              "condition": "minecraft:alternative",
+              "condition": "minecraft:any_of",
               "terms": [
                 {
                   "condition": "minecraft:location_check",
@@ -111,7 +111,7 @@
           "weight": 36,
           "conditions": [
             {
-              "condition": "minecraft:alternative",
+              "condition": "minecraft:any_of",
               "terms": [
                 {
                   "condition": "minecraft:location_check",
@@ -147,7 +147,7 @@
           "weight": 8,
           "conditions": [
             {
-              "condition": "minecraft:alternative",
+              "condition": "minecraft:any_of",
               "terms": [
                 {
                   "condition": "minecraft:location_check",
@@ -202,7 +202,7 @@
           "weight": 8,
           "conditions": [
             {
-              "condition": "minecraft:alternative",
+              "condition": "minecraft:any_of",
               "terms": [
                 {
                   "condition": "minecraft:location_check",
@@ -244,7 +244,7 @@
           "weight": 4,
           "conditions": [
             {
-              "condition": "minecraft:alternative",
+              "condition": "minecraft:any_of",
               "terms": [
                 {
                   "condition": "minecraft:location_check",
@@ -311,7 +311,7 @@
           "weight": 4,
           "conditions": [
             {
-              "condition": "minecraft:alternative",
+              "condition": "minecraft:any_of",
               "terms": [
                 {
                   "condition": "minecraft:location_check",
@@ -353,7 +353,7 @@
           "weight": 4,
           "conditions": [
             {
-              "condition": "minecraft:alternative",
+              "condition": "minecraft:any_of",
               "terms": [
                 {
                   "condition": "minecraft:location_check",
@@ -395,7 +395,7 @@
           "weight": 2,
           "conditions": [
             {
-              "condition": "minecraft:alternative",
+              "condition": "minecraft:any_of",
               "terms": [
                 {
                   "condition": "minecraft:location_check",
@@ -437,7 +437,7 @@
           "weight": 1,
           "conditions": [
             {
-              "condition": "minecraft:alternative",
+              "condition": "minecraft:any_of",
               "terms": [
                 {
                   "condition": "minecraft:location_check",
@@ -479,7 +479,7 @@
           "weight": 1,
           "conditions": [
             {
-              "condition": "minecraft:alternative",
+              "condition": "minecraft:any_of",
               "terms": [
                 {
                   "condition": "minecraft:location_check",

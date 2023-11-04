@@ -27,7 +27,7 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
-import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
@@ -46,7 +46,7 @@ import static cofh.core.util.helpers.AugmentableHelper.getAttributeMod;
 import static cofh.lib.api.StorageGroup.*;
 import static cofh.lib.util.constants.BlockStatePropertiesCoFH.FACING_HORIZONTAL;
 import static cofh.lib.util.constants.NBTTags.*;
-import static cofh.thermal.core.init.TCoreTileEntities.DEVICE_FISHER_TILE;
+import static cofh.thermal.core.init.TCoreBlockEntities.DEVICE_FISHER_TILE;
 import static cofh.thermal.lib.common.ThermalAugmentRules.createAllowValidator;
 
 public class DeviceFisherTile extends DeviceBlockEntity implements ITickableTile.IServerTickable, IAreaEffectTile {
@@ -163,9 +163,10 @@ public class DeviceFisherTile extends DeviceBlockEntity implements ITickableTile
             return;
         }
         if (valid) {
-            LootTable table = level.getServer().getLootTables().get(FisherManager.instance().getBoostLootTable(inputSlot.getItemStack()));
-            LootContext.Builder contextBuilder = new LootContext.Builder((ServerLevel) level)
-                    .withParameter(LootContextParams.ORIGIN, Vec3.atLowerCornerOf(getBlockPos())).withRandom(level.random);
+            LootTable table = level.getServer().getLootData().getLootTable(FisherManager.instance().getBoostLootTable(inputSlot.getItemStack()));
+            LootParams lootparams = (new LootParams.Builder((ServerLevel) level))
+                    .withParameter(LootContextParams.ORIGIN, Vec3.atLowerCornerOf(getBlockPos()))
+                    .create(LootContextParamSets.EMPTY);
 
             float lootBase = baseMod * FisherManager.instance().getBoostOutputMod(inputSlot.getItemStack());
             float lootExtra = lootBase - (int) lootBase;
@@ -174,7 +175,7 @@ public class DeviceFisherTile extends DeviceBlockEntity implements ITickableTile
             int caught = 0;
 
             for (int i = 0; i < lootCount; ++i) {
-                for (ItemStack stack : table.getRandomItems(contextBuilder.create(LootContextParamSets.EMPTY))) {
+                for (ItemStack stack : table.getRandomItems(lootparams)) {
                     if (InventoryHelper.insertStackIntoInventory(internalHandler, stack, false).isEmpty()) {
                         ++caught;
                     }

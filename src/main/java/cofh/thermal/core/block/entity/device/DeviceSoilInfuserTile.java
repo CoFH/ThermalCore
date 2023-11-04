@@ -31,7 +31,7 @@ import static cofh.core.util.helpers.AugmentableHelper.getAttributeMod;
 import static cofh.core.util.helpers.AugmentableHelper.getAttributeModWithDefault;
 import static cofh.lib.api.StorageGroup.INTERNAL;
 import static cofh.lib.util.constants.NBTTags.*;
-import static cofh.thermal.core.init.TCoreTileEntities.DEVICE_SOIL_INFUSER_TILE;
+import static cofh.thermal.core.init.TCoreBlockEntities.DEVICE_SOIL_INFUSER_TILE;
 import static cofh.thermal.lib.common.ThermalAugmentRules.createAllowValidator;
 
 public class DeviceSoilInfuserTile extends AugmentableBlockEntity implements ITickableTile.IServerTickable, IAreaEffectTile {

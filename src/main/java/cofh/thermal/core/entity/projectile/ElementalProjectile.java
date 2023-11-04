@@ -2,6 +2,7 @@ package cofh.thermal.core.entity.projectile;
 
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -45,7 +46,7 @@ public abstract class ElementalProjectile extends AbstractHurtingProjectile {
             if (shouldBurn()) {
                 setSecondsOnFire(1);
             }
-            HitResult entityResult = ProjectileUtil.getHitResult(this, this::canHitEntity);
+            HitResult entityResult = ProjectileUtil.getHitResultOnMoveVector(this, this::canHitEntity);
             if (entityResult.getType() != HitResult.Type.MISS && !net.minecraftforge.event.ForgeEventFactory.onProjectileImpact(this, entityResult)) {
                 onHit(entityResult);
             }
@@ -86,7 +87,7 @@ public abstract class ElementalProjectile extends AbstractHurtingProjectile {
     }
 
     @Override
-    public Packet<?> getAddEntityPacket() {
+    public Packet<ClientGamePacketListener> getAddEntityPacket() {
 
         return NetworkHooks.getEntitySpawningPacket(this);
     }

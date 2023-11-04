@@ -6,6 +6,7 @@ import cofh.thermal.core.util.managers.machine.PulverizerRecipeManager;
 import cofh.thermal.core.util.managers.machine.SmelterRecipeManager;
 import cofh.thermal.lib.util.managers.CatalyzedRecipeManager;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 import vazkii.patchouli.api.IComponentProcessor;
 import vazkii.patchouli.api.IVariable;
 import vazkii.patchouli.api.IVariableProvider;
@@ -20,7 +21,7 @@ public class CatalystProcessor implements IComponentProcessor {
     private final ArrayList<CatalyzedRecipeManager> managers = new ArrayList<>();
 
     @Override
-    public void setup(IVariableProvider variables) {
+    public void setup(Level level, IVariableProvider variables) {
 
         managers.add(SmelterRecipeManager.instance());
         managers.add(PulverizerRecipeManager.instance());
@@ -28,7 +29,7 @@ public class CatalystProcessor implements IComponentProcessor {
     }
 
     @Override
-    public IVariable process(String key) {
+    public IVariable process(Level level, String key) {
 
         if (managers.size() == 0)
             return null;

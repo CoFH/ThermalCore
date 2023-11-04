@@ -12,9 +12,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ArmorMaterial;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 
@@ -33,9 +31,9 @@ public class DivingArmorItem extends ArmorItemCoFH {
 
     private Multimap<Attribute, AttributeModifier> armorAttributes;
 
-    public DivingArmorItem(ArmorMaterial materialIn, EquipmentSlot slot, Properties builder) {
+    public DivingArmorItem(ArmorMaterial pMaterial, ArmorItem.Type pType, Item.Properties pProperties) {
 
-        super(materialIn, slot, builder);
+        super(pMaterial, pType, pProperties);
 
         ImmutableMultimap.Builder<Attribute, AttributeModifier> multimap = ImmutableMultimap.builder();
         armorAttributes = multimap.build();
@@ -44,15 +42,15 @@ public class DivingArmorItem extends ArmorItemCoFH {
     public void setup() {
 
         ImmutableMultimap.Builder<Attribute, AttributeModifier> multimap = ImmutableMultimap.builder();
-        multimap.putAll(super.getDefaultAttributeModifiers(slot));
-        multimap.put(SWIM_SPEED.get(), new AttributeModifier(UUID_SWIM_SPEED[slot.getIndex()], "Swim Speed", SWIM_SPEED_BONUS[slot.getIndex()], AttributeModifier.Operation.ADDITION));
+        multimap.putAll(super.getDefaultAttributeModifiers(getType().getSlot()));
+        multimap.put(SWIM_SPEED.get(), new AttributeModifier(UUID_SWIM_SPEED[getType().getSlot().getIndex()], "Swim Speed", SWIM_SPEED_BONUS[getType().getSlot().getIndex()], AttributeModifier.Operation.ADDITION));
         armorAttributes = multimap.build();
     }
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level worldIn, List<Component> tooltip, TooltipFlag flagIn) {
 
-        if (this.slot == EquipmentSlot.HEAD) {
+        if (getType().getSlot() == EquipmentSlot.HEAD) {
             tooltip.add(getTextComponent("info.thermal.diving_helmet").withStyle(ChatFormatting.GOLD));
         }
     }
@@ -60,13 +58,13 @@ public class DivingArmorItem extends ArmorItemCoFH {
     @Override
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot slot, ItemStack stack) {
 
-        return slot == this.slot ? armorAttributes : ImmutableMultimap.of();
+        return slot == getType().getSlot() ? armorAttributes : ImmutableMultimap.of();
     }
 
     @Override
     public void onArmorTick(ItemStack stack, Level world, Player player) {
 
-        if (this.slot == EquipmentSlot.HEAD) {
+        if (getType().getSlot() == EquipmentSlot.HEAD) {
             if (player.getAirSupply() < player.getMaxAirSupply() && world.random.nextInt(5) > 0) {
                 player.setAirSupply(player.getAirSupply() + 1);
             }

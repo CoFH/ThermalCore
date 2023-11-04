@@ -28,7 +28,7 @@ import java.util.function.Predicate;
 
 import static cofh.core.client.renderer.model.ModelUtils.*;
 import static cofh.thermal.core.config.ThermalCoreConfig.storageAugments;
-import static cofh.thermal.core.init.TCoreTileEntities.ENERGY_CELL_TILE;
+import static cofh.thermal.core.init.TCoreBlockEntities.ENERGY_CELL_TILE;
 import static cofh.thermal.lib.common.ThermalAugmentRules.ENERGY_STORAGE_VALIDATOR;
 
 public class EnergyCellBlockEntity extends StorageCellBlockEntity implements ITickableTile.IServerTickable {

@@ -20,9 +20,9 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.client.model.data.ModelData;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.fluids.FluidStack;
-import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
 import net.minecraftforge.fluids.capability.IFluidHandler;
 
 import javax.annotation.Nonnull;
@@ -37,7 +37,7 @@ import static cofh.lib.util.Constants.BUCKET_VOLUME;
 import static cofh.lib.util.Constants.TANK_MEDIUM;
 import static cofh.lib.util.constants.NBTTags.*;
 import static cofh.thermal.core.config.ThermalCoreConfig.storageAugments;
-import static cofh.thermal.core.init.TCoreTileEntities.FLUID_CELL_TILE;
+import static cofh.thermal.core.init.TCoreBlockEntities.FLUID_CELL_TILE;
 import static cofh.thermal.lib.common.ThermalAugmentRules.createAllowValidator;
 import static net.minecraftforge.fluids.capability.IFluidHandler.FluidAction.EXECUTE;
 
@@ -147,7 +147,7 @@ public class FluidCellBlockEntity extends StorageCellBlockEntity implements ITic
         if (adjTile != null) {
             Direction opposite = side.getOpposite();
             int maxTransfer = Math.min(amountOutput, fluidStorage.getAmount());
-            adjTile.getCapability(CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY, opposite)
+            adjTile.getCapability(ForgeCapabilities.FLUID_HANDLER, opposite)
                     .ifPresent(e -> fluidStorage.modify(-e.fill(new FluidStack(fluidStorage.getFluidStack(), maxTransfer), EXECUTE)));
         }
     }

@@ -15,11 +15,11 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.DispenserBlock;
-import net.minecraft.world.level.block.SnowyDirtBlock;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.material.Material;
 
 import static cofh.lib.util.Utils.destroyBlock;
+import static net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE;
+import static net.minecraft.tags.BlockTags.MINEABLE_WITH_SHOVEL;
 
 public class EarthChargeItem extends ItemCoFH {
 
@@ -41,8 +41,7 @@ public class EarthChargeItem extends ItemCoFH {
         //        if (player != null && (!world.isBlockModifiable(player, pos) || !player.canPlayerEdit(pos, context.getClickedFace(), context.getItemInHand()))) {
         //            return ActionResultType.FAIL;
         //        }
-        Material material = state.getMaterial();
-        if (material == Material.STONE || material == Material.DIRT || state.getBlock() instanceof SnowyDirtBlock) {
+        if (state.is(MINEABLE_WITH_SHOVEL) || state.is(MINEABLE_WITH_PICKAXE)) {
             destroyBlock(world, pos, true, player);
             playUseSound(world, pos);
             context.getItemInHand().shrink(1);

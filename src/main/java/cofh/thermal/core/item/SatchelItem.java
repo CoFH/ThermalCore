@@ -141,7 +141,7 @@ public class SatchelItem extends InventoryContainerItemAugmentable implements IC
                 CompoundTag slotTag = list.getCompound(i);
                 int slot = slotTag.getByte(TAG_SLOT);
                 if (slot >= numSlots) {
-                    Utils.dropItemStackIntoWorldWithRandomness(ItemStorageCoFH.loadItemStack(slotTag), player.getLevel(), player.position());
+                    Utils.dropItemStackIntoWorldWithRandomness(ItemStorageCoFH.loadItemStack(slotTag), player.level(), player.position());
                 } else {
                     return; // This optimization breaks out of the loop early, since slots are always tagged in ascending order.
                 }

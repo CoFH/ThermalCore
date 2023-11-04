@@ -35,7 +35,7 @@ import static cofh.core.client.renderer.model.ModelUtils.UNDERLAY;
 import static cofh.core.util.helpers.AugmentableHelper.getAttributeMod;
 import static cofh.lib.api.StorageGroup.ACCESSIBLE;
 import static cofh.lib.util.constants.NBTTags.*;
-import static cofh.thermal.core.init.TCoreTileEntities.DEVICE_COLLECTOR_TILE;
+import static cofh.thermal.core.init.TCoreBlockEntities.DEVICE_COLLECTOR_TILE;
 import static cofh.thermal.lib.common.ThermalAugmentRules.createAllowValidator;
 
 public class DeviceCollectorTile extends DeviceBlockEntity implements ITickableTile.IServerTickable, IAreaEffectTile {

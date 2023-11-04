@@ -5,6 +5,7 @@ import cofh.lib.util.crafting.ComparableItemStack;
 import cofh.thermal.lib.util.recipes.IMachineInventory;
 import cofh.thermal.lib.util.recipes.internal.BaseMachineRecipe;
 import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
+import net.minecraft.core.RegistryAccess;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
@@ -32,7 +33,7 @@ public class CrafterRecipe extends BaseMachineRecipe {
     public static final List<Float> CHANCE = Collections.singletonList(1.0F);
     public static final Pair<List<Integer>, List<Integer>> EMPTY_PAIR = Pair.of(Collections.emptyList(), Collections.emptyList());
 
-    public CrafterRecipe(int energy, Recipe<?> recipe) {
+    public CrafterRecipe(int energy, Recipe<?> recipe, RegistryAccess registryAccess) {
 
         super(energy, 0);
 
@@ -48,7 +49,7 @@ public class CrafterRecipe extends BaseMachineRecipe {
                 });
             }
         }
-        outputItems.add(recipe.getResultItem());
+        outputItems.add(recipe.getResultItem(registryAccess));
         outputItemChances.add(BASE_CHANCE_LOCKED);
     }
 

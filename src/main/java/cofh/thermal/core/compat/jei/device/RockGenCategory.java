@@ -4,7 +4,6 @@ import cofh.core.util.helpers.RenderHelper;
 import cofh.thermal.core.client.gui.device.DeviceRockGenScreen;
 import cofh.thermal.core.util.recipes.device.RockGenMapping;
 import cofh.thermal.lib.compat.jei.Drawables;
-import com.mojang.blaze3d.vertex.PoseStack;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.forge.ForgeTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
@@ -17,6 +16,7 @@ import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
@@ -118,14 +118,14 @@ public class RockGenCategory implements IRecipeCategory<RockGenMapping> {
     }
 
     @Override
-    public void draw(RockGenMapping recipe, IRecipeSlotsView recipeSlotsView, PoseStack matrixStack, double mouseX, double mouseY) {
+    public void draw(RockGenMapping recipe, IRecipeSlotsView recipeSlotsView, GuiGraphics guiGraphics, double mouseX, double mouseY) {
 
         if (recipe.getBelow() != Blocks.AIR) {
-            slot.draw(matrixStack, 33, 33);
+            slot.draw(guiGraphics, 33, 33);
         }
-        RenderHelper.drawFluid(matrixStack, 74, 24, LAVA_FLUID, 24, 16);
-        progressFluidBackground.draw(matrixStack, 74, 24);
-        progressFluid.draw(matrixStack, 74, 24);
+        RenderHelper.drawFluid(guiGraphics, 74, 24, LAVA_FLUID, 24, 16);
+        progressFluidBackground.draw(guiGraphics, 74, 24);
+        progressFluid.draw(guiGraphics, 74, 24);
     }
 
 }

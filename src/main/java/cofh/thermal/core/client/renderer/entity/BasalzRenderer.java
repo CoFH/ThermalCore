@@ -7,14 +7,14 @@ import cofh.thermal.core.entity.monster.Basalz;
 import cofh.thermal.core.entity.projectile.BasalzProjectile;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import com.mojang.math.Quaternion;
-import com.mojang.math.Vector3f;
+import com.mojang.math.Axis;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
+import org.joml.Quaternionf;
 
 import static cofh.lib.util.constants.ModIds.ID_THERMAL;
 
@@ -47,14 +47,14 @@ public class BasalzRenderer extends MobRenderer<Basalz, BasalzModel<Basalz>> {
                 poseStackIn.scale(scale, scale, scale);
                 int orbit = entity.getOrbit();
                 float inv = 1.0F / orbit;
-                Quaternion rot = Vector3f.YP.rotationDegrees(360.0F * inv);
-                poseStackIn.mulPose(Vector3f.YP.rotationDegrees(time * Math.max(36 * inv, 12)));
+                Quaternionf rot = Axis.YP.rotationDegrees(360.0F * inv);
+                poseStackIn.mulPose(Axis.YP.rotationDegrees(time * Math.max(36 * inv, 12)));
                 for (int i = 0; i < orbit; ++i) {
                     poseStackIn.pushPose();
                     float t = time + i;
                     poseStackIn.translate(3, 0.5F * MathHelper.sin(time * 0.15708F - i * inv * 6.2832F), 0);
-                    poseStackIn.mulPose(Vector3f.YP.rotationDegrees(MathHelper.sin(t * 0.1F) * 180.0F));
-                    poseStackIn.mulPose(Vector3f.XP.rotationDegrees(MathHelper.cos(t * 0.1F) * 180.0F));
+                    poseStackIn.mulPose(Axis.YP.rotationDegrees(MathHelper.sin(t * 0.1F) * 180.0F));
+                    poseStackIn.mulPose(Axis.XP.rotationDegrees(MathHelper.cos(t * 0.1F) * 180.0F));
                     float invScale = 0.5F / scale;
                     poseStackIn.scale(invScale, invScale, invScale);
                     VertexConsumer builder = bufferIn.getBuffer(projectileModel.renderType(BasalzProjectileRenderer.TEXTURE));

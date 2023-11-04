@@ -11,10 +11,9 @@ import cofh.thermal.core.item.*;
 import cofh.thermal.lib.item.AugmentItem;
 import cofh.thermal.lib.util.ThermalEnergyHelper;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.item.PrimedTnt;
 import net.minecraft.world.food.Foods;
-import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.HoneyBottleItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
@@ -23,16 +22,15 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.energy.IEnergyStorage;
 
-import static cofh.lib.util.Constants.FALSE;
 import static cofh.lib.util.constants.NBTTags.*;
 import static cofh.thermal.core.ThermalCore.BLOCKS;
 import static cofh.thermal.core.ThermalCore.ITEMS;
 import static cofh.thermal.core.init.TCoreEntities.*;
 import static cofh.thermal.core.util.RegistrationHelper.*;
 import static cofh.thermal.lib.common.ThermalAugmentRules.flagUniqueAugment;
+import static cofh.thermal.lib.common.ThermalCreativeTabs.*;
 import static cofh.thermal.lib.common.ThermalFlags.*;
 import static cofh.thermal.lib.common.ThermalIDs.*;
-import static cofh.thermal.lib.common.ThermalItemGroups.*;
 import static net.minecraft.world.item.Items.GLASS_BOTTLE;
 
 public class TCoreItems {
@@ -105,133 +103,122 @@ public class TCoreItems {
     // region HELPERS
     private static void registerResources() {
 
-        CreativeModeTab group = THERMAL_ITEMS;
+        itemsTab(registerItem("apatite"));
+        itemsTab(registerItem("apatite_dust"));
+        itemsTab(registerItem("cinnabar"));
+        itemsTab(registerItem("cinnabar_dust"));
+        itemsTab(registerItem("niter"));
+        itemsTab(registerItem("niter_dust"));
+        itemsTab(registerItem("sulfur", () -> new ItemCoFH(new Item.Properties()).setBurnTime(1200)));
+        itemsTab(registerItem("sulfur_dust", () -> new ItemCoFH(new Item.Properties()).setBurnTime(1200)));
 
-        registerItem("apatite", group);
-        registerItem("apatite_dust", group);
-        registerItem("cinnabar", group);
-        registerItem("cinnabar_dust", group);
-        registerItem("niter", group);
-        registerItem("niter_dust", group);
-        registerItem("sulfur", () -> new ItemCoFH(new Item.Properties().tab(group)).setBurnTime(1200));
-        registerItem("sulfur_dust", () -> new ItemCoFH(new Item.Properties().tab(group)).setBurnTime(1200));
+        itemsTab(registerItem("sawdust"));
+        itemsTab(registerItem("coal_coke", () -> new ItemCoFH(new Item.Properties()).setBurnTime(3200)));
+        itemsTab(registerItem("bitumen", () -> new ItemCoFH(new Item.Properties()).setBurnTime(1600)));
+        itemsTab(registerItem("tar", () -> new ItemCoFH(new Item.Properties()).setBurnTime(800)));
+        itemsTab(registerItem("rosin", () -> new ItemCoFH(new Item.Properties()).setBurnTime(800)));
+        itemsTab(registerItem("rubber"));
+        itemsTab(registerItem("cured_rubber"));
+        itemsTab(registerItem("slag"));
+        itemsTab(registerItem("rich_slag"));
 
-        registerItem("sawdust", group);
-        registerItem("coal_coke", () -> new ItemCoFH(new Item.Properties().tab(group)).setBurnTime(3200));
-        registerItem("bitumen", () -> new ItemCoFH(new Item.Properties().tab(group)).setBurnTime(1600));
-        registerItem("tar", () -> new ItemCoFH(new Item.Properties().tab(group)).setBurnTime(800));
-        registerItem("rosin", () -> new ItemCoFH(new Item.Properties().tab(group)).setBurnTime(800));
-        registerItem("rubber", group);
-        registerItem("cured_rubber", group);
-        registerItem("slag", group);
-        registerItem("rich_slag", group);
+        foodsTab(registerItem("syrup_bottle", () -> new HoneyBottleItem(new Item.Properties().craftRemainder(GLASS_BOTTLE).food(Foods.HONEY_BOTTLE).stacksTo(16))));
 
-        registerItem("syrup_bottle", () -> new HoneyBottleItem(new Item.Properties().tab(THERMAL_FOODS).craftRemainder(GLASS_BOTTLE).food(Foods.HONEY_BOTTLE).stacksTo(16)));
+        //        registerItem("biomass");
+        //        registerItem("rich_biomass");
 
-        //        registerItem("biomass", group);
-        //        registerItem("rich_biomass", group);
+        itemsTab(registerItem("basalz_rod"));
+        itemsTab(registerItem("basalz_powder"));
+        itemsTab(registerItem("blitz_rod"));
+        itemsTab(registerItem("blitz_powder"));
+        itemsTab(registerItem("blizz_rod"));
+        itemsTab(registerItem("blizz_powder"));
 
-        registerItem("basalz_rod", group);
-        registerItem("basalz_powder", group);
-        registerItem("blitz_rod", group);
-        registerItem("blitz_powder", group);
-        registerItem("blizz_rod", group);
-        registerItem("blizz_powder", group);
-
-        registerItem("beekeeper_fabric", () -> new ItemCoFH(new Item.Properties().tab(group)).setShowInGroups(getFlag(FLAG_BEEKEEPER_ARMOR)));
-        registerItem("diving_fabric", () -> new ItemCoFH(new Item.Properties().tab(group)).setShowInGroups(getFlag(FLAG_DIVING_ARMOR)));
-        registerItem("hazmat_fabric", () -> new ItemCoFH(new Item.Properties().tab(group)).setShowInGroups(getFlag(FLAG_HAZMAT_ARMOR)));
+        itemsTab(registerItem("beekeeper_fabric"));
+        itemsTab(registerItem("diving_fabric"));
+        itemsTab(registerItem("hazmat_fabric"));
     }
 
     private static void registerParts() {
 
-        CreativeModeTab group = THERMAL_ITEMS;
+        registerItem("redstone_servo");
+        registerItem("rf_coil");
 
-        registerItem("redstone_servo", group);
-        registerItem("rf_coil", group);
-
-        registerItem("drill_head", () -> new ItemCoFH(new Item.Properties().tab(group)).setShowInGroups(getFlag(FLAG_TOOL_COMPONENTS)));
-        registerItem("saw_blade", () -> new ItemCoFH(new Item.Properties().tab(group)).setShowInGroups(getFlag(FLAG_TOOL_COMPONENTS)));
-        registerItem("laser_diode", () -> new ItemCoFH(new Item.Properties().tab(group)).setShowInGroups(FALSE));//.setShowInGroups(getFeature(FLAG_TOOL_COMPONENTS))); // TODO: Implement
+        registerItem("drill_head", () -> new ItemCoFH(new Item.Properties()));
+        registerItem("saw_blade", () -> new ItemCoFH(new Item.Properties()));
+        registerItem("laser_diode", () -> new ItemCoFH(new Item.Properties()));//.setShowInGroups(getFeature(FLAG_TOOL_COMPONENTS))); // TODO: Implement
     }
 
     private static void registerMaterials() {
 
-        CreativeModeTab group = THERMAL_ITEMS;
+        registerItem("ender_pearl_dust");
 
-        registerItem("ender_pearl_dust", group);
+        registerVanillaMetalSet("iron");
+        registerVanillaMetalSet("gold");
+        registerVanillaMetalSet("copper");
+        registerVanillaMetalSet("netherite");
 
-        registerVanillaMetalSet("iron", group);
-        registerVanillaMetalSet("gold", group);
-        registerVanillaMetalSet("copper", group);
-        registerVanillaMetalSet("netherite", group);
-
-        registerVanillaGemSet("lapis", group);
-        registerVanillaGemSet("diamond", group);
-        registerVanillaGemSet("emerald", group);
-        registerVanillaGemSet("quartz", group);
+        registerVanillaGemSet("lapis");
+        registerVanillaGemSet("diamond");
+        registerVanillaGemSet("emerald");
+        registerVanillaGemSet("quartz");
 
         Rarity rarity = Rarity.UNCOMMON;
 
-        registerAlloySet("signalum", group, rarity);
-        registerAlloySet("lumium", group, rarity);
-        registerAlloySet("enderium", group, rarity);
+        registerAlloySet("signalum", rarity);
+        registerAlloySet("lumium", rarity);
+        registerAlloySet("enderium", rarity);
     }
 
     private static void registerTools() {
 
-        CreativeModeTab group = THERMAL_TOOLS;
-
-        // TODO Wrench tool type.
-        registerItem(ID_WRENCH, () -> new WrenchItem(new Item.Properties().stacksTo(1).tab(group)));
-        registerItem(ID_REDPRINT, () -> new RedprintItem(new Item.Properties().stacksTo(1).tab(group)));
-        registerItem(ID_RF_POTATO, () -> new EnergyContainerItem(new Item.Properties().stacksTo(1).tab(group), 100000, 40) {
+        toolsTab(registerItem(ID_WRENCH, () -> new WrenchItem(new Item.Properties().stacksTo(1))));
+        toolsTab(registerItem(ID_REDPRINT, () -> new RedprintItem(new Item.Properties().stacksTo(1))));
+        toolsTab(registerItem(ID_RF_POTATO, () -> new EnergyContainerItem(new Item.Properties().stacksTo(1), 100000, 40) {
 
             @Override
             public Capability<? extends IEnergyStorage> getEnergyCapability() {
 
                 return ThermalEnergyHelper.getBaseEnergySystem();
             }
-        });
-        registerItem(ID_XP_CRYSTAL, () -> new XpCrystalItem(new Item.Properties().stacksTo(1).tab(group), 10000));
-        registerItem(ID_LOCK, () -> new LockItem(new Item.Properties().tab(group)));
-        registerItem(ID_SATCHEL, () -> new SatchelItem(new Item.Properties().stacksTo(1).tab(group), 9));
+        }));
+        toolsTab(registerItem(ID_XP_CRYSTAL, () -> new XpCrystalItem(new Item.Properties().stacksTo(1), 10000)));
+        toolsTab(registerItem(ID_LOCK, () -> new LockItem(new Item.Properties())));
+        toolsTab(registerItem(ID_SATCHEL, () -> new SatchelItem(new Item.Properties().stacksTo(1), 9)));
 
-        registerItem("compost", () -> new FertilizerItem(new Item.Properties().tab(group), 2));
-        registerItem("phytogro", () -> new FertilizerItem(new Item.Properties().tab(group)));
-        // registerItem("fluxed_phytogro", () -> new FertilizerItem(new Item.Properties().group(group), 5));
+        toolsTab(registerItem("compost", () -> new FertilizerItem(new Item.Properties(), 2)));
+        toolsTab(registerItem("phytogro", () -> new FertilizerItem(new Item.Properties())));
+        // toolsTab(registerItem("fluxed_phytogro", () -> new FertilizerItem(new Item.Properties(), 5)));
 
-        registerItem("junk_net", () -> new ItemCoFH(new Item.Properties().tab(group)).setShowInGroups(getFlag(ID_DEVICE_FISHER)));
-        registerItem("aquachow", () -> new ItemCoFH(new Item.Properties().tab(group)).setShowInGroups(getFlag(ID_DEVICE_FISHER)));
-        registerItem("deep_aquachow", () -> new ItemCoFH(new Item.Properties().tab(group)).setShowInGroups(getFlag(ID_DEVICE_FISHER)));
-        //        registerItem("rich_aquachow", group);
-        //        registerItem("fluxed_aquachow", group);
+        toolsTab(registerItem("junk_net"));
+        toolsTab(registerItem("aquachow"));
+        toolsTab(registerItem("deep_aquachow"));
+        //        registerItem("rich_aquachow");
+        //        registerItem("fluxed_aquachow");
 
-        registerItem("earth_charge", () -> new EarthChargeItem(new Item.Properties().tab(group)));
-        registerItem("ice_charge", () -> new IceChargeItem(new Item.Properties().tab(group)));
-        registerItem("lightning_charge", () -> new LightningChargeItem(new Item.Properties().tab(group)));
+        toolsTab(registerItem("earth_charge", () -> new EarthChargeItem(new Item.Properties())));
+        toolsTab(registerItem("ice_charge", () -> new IceChargeItem(new Item.Properties())));
+        toolsTab(registerItem("lightning_charge", () -> new LightningChargeItem(new Item.Properties())));
 
-        registerItem(ID_DETONATOR, () -> new DetonatorItem(new Item.Properties().stacksTo(1).tab(group)));
+        toolsTab(registerItem(ID_DETONATOR, () -> new DetonatorItem(new Item.Properties().stacksTo(1))));
     }
 
     private static void registerArmor() {
 
-        CreativeModeTab group = THERMAL_TOOLS;
+        toolsTab(registerItem(ID_BEEKEEPER_HELMET, () -> new BeekeeperArmorItem(BEEKEEPER, ArmorItem.Type.HELMET, new Item.Properties())));
+        toolsTab(registerItem(ID_BEEKEEPER_CHESTPLATE, () -> new BeekeeperArmorItem(BEEKEEPER, ArmorItem.Type.CHESTPLATE, new Item.Properties())));
+        toolsTab(registerItem(ID_BEEKEEPER_LEGGINGS, () -> new BeekeeperArmorItem(BEEKEEPER, ArmorItem.Type.LEGGINGS, new Item.Properties())));
+        toolsTab(registerItem(ID_BEEKEEPER_BOOTS, () -> new BeekeeperArmorItem(BEEKEEPER, ArmorItem.Type.BOOTS, new Item.Properties())));
 
-        ITEMS.register(ID_BEEKEEPER_HELMET, () -> new BeekeeperArmorItem(BEEKEEPER, EquipmentSlot.HEAD, new Item.Properties().tab(group)).setShowInGroups(getFlag(FLAG_BEEKEEPER_ARMOR)));
-        ITEMS.register(ID_BEEKEEPER_CHESTPLATE, () -> new BeekeeperArmorItem(BEEKEEPER, EquipmentSlot.CHEST, new Item.Properties().tab(group)).setShowInGroups(getFlag(FLAG_BEEKEEPER_ARMOR)));
-        ITEMS.register(ID_BEEKEEPER_LEGGINGS, () -> new BeekeeperArmorItem(BEEKEEPER, EquipmentSlot.LEGS, new Item.Properties().tab(group)).setShowInGroups(getFlag(FLAG_BEEKEEPER_ARMOR)));
-        ITEMS.register(ID_BEEKEEPER_BOOTS, () -> new BeekeeperArmorItem(BEEKEEPER, EquipmentSlot.FEET, new Item.Properties().tab(group)).setShowInGroups(getFlag(FLAG_BEEKEEPER_ARMOR)));
+        toolsTab(registerItem(ID_DIVING_HELMET, () -> new DivingArmorItem(DIVING, ArmorItem.Type.HELMET, new Item.Properties())));
+        toolsTab(registerItem(ID_DIVING_CHESTPLATE, () -> new DivingArmorItem(DIVING, ArmorItem.Type.CHESTPLATE, new Item.Properties())));
+        toolsTab(registerItem(ID_DIVING_LEGGINGS, () -> new DivingArmorItem(DIVING, ArmorItem.Type.LEGGINGS, new Item.Properties())));
+        toolsTab(registerItem(ID_DIVING_BOOTS, () -> new DivingArmorItem(DIVING, ArmorItem.Type.BOOTS, new Item.Properties())));
 
-        ITEMS.register(ID_DIVING_HELMET, () -> new DivingArmorItem(DIVING, EquipmentSlot.HEAD, new Item.Properties().tab(group)).setShowInGroups(getFlag(FLAG_DIVING_ARMOR)));
-        ITEMS.register(ID_DIVING_CHESTPLATE, () -> new DivingArmorItem(DIVING, EquipmentSlot.CHEST, new Item.Properties().tab(group)).setShowInGroups(getFlag(FLAG_DIVING_ARMOR)));
-        ITEMS.register(ID_DIVING_LEGGINGS, () -> new DivingArmorItem(DIVING, EquipmentSlot.LEGS, new Item.Properties().tab(group)).setShowInGroups(getFlag(FLAG_DIVING_ARMOR)));
-        ITEMS.register(ID_DIVING_BOOTS, () -> new DivingArmorItem(DIVING, EquipmentSlot.FEET, new Item.Properties().tab(group)).setShowInGroups(getFlag(FLAG_DIVING_ARMOR)));
-
-        ITEMS.register(ID_HAZMAT_HELMET, () -> new HazmatArmorItem(HAZMAT, EquipmentSlot.HEAD, new Item.Properties().tab(group)).setShowInGroups(getFlag(FLAG_HAZMAT_ARMOR)));
-        ITEMS.register(ID_HAZMAT_CHESTPLATE, () -> new HazmatArmorItem(HAZMAT, EquipmentSlot.CHEST, new Item.Properties().tab(group)).setShowInGroups(getFlag(FLAG_HAZMAT_ARMOR)));
-        ITEMS.register(ID_HAZMAT_LEGGINGS, () -> new HazmatArmorItem(HAZMAT, EquipmentSlot.LEGS, new Item.Properties().tab(group)).setShowInGroups(getFlag(FLAG_HAZMAT_ARMOR)));
-        ITEMS.register(ID_HAZMAT_BOOTS, () -> new HazmatArmorItem(HAZMAT, EquipmentSlot.FEET, new Item.Properties().tab(group)).setShowInGroups(getFlag(FLAG_HAZMAT_ARMOR)));
+        toolsTab(registerItem(ID_HAZMAT_HELMET, () -> new HazmatArmorItem(HAZMAT, ArmorItem.Type.HELMET, new Item.Properties())));
+        toolsTab(registerItem(ID_HAZMAT_CHESTPLATE, () -> new HazmatArmorItem(HAZMAT, ArmorItem.Type.CHESTPLATE, new Item.Properties())));
+        toolsTab(registerItem(ID_HAZMAT_LEGGINGS, () -> new HazmatArmorItem(HAZMAT, ArmorItem.Type.LEGGINGS, new Item.Properties())));
+        toolsTab(registerItem(ID_HAZMAT_BOOTS, () -> new HazmatArmorItem(HAZMAT, ArmorItem.Type.BOOTS, new Item.Properties())));
     }
 
     // region AUGMENTS
@@ -249,102 +236,95 @@ public class TCoreItems {
 
     private static void registerUpgradeAugments() {
 
-        CreativeModeTab group = THERMAL_ITEMS;
         final float[] upgradeMods = new float[]{1.0F, 2.0F, 3.0F, 4.0F, 6.0F, 8.5F};
         // final float[] upgradeMods = new float[]{1.0F, 1.5F, 2.0F, 2.5F, 3.0F, 3.5F};
 
         for (int i = 1; i <= 3; ++i) {
             int tier = i;
-            registerItem("upgrade_augment_" + i, () -> new AugmentItem(new Item.Properties().tab(group),
+            itemsTab(registerItem("upgrade_augment_" + i, () -> new AugmentItem(new Item.Properties(),
                     AugmentDataHelper.builder()
                             .type(TAG_AUGMENT_TYPE_UPGRADE)
                             .mod(TAG_AUGMENT_BASE_MOD, upgradeMods[tier])
-                            .build()).setShowInGroups(getFlag(FLAG_UPGRADE_AUGMENTS)));
+                            .build())));
         }
     }
 
     private static void registerFeatureAugments() {
 
-        CreativeModeTab group = THERMAL_ITEMS;
-
-        registerItem("rs_control_augment", () -> new AugmentItem(new Item.Properties().tab(group),
+        itemsTab(registerItem("rs_control_augment", () -> new AugmentItem(new Item.Properties(),
                 AugmentDataHelper.builder()
                         .mod(TAG_AUGMENT_FEATURE_RS_CONTROL, 1.0F)
-                        .build()).setShowInGroups(getFlag(FLAG_RS_CONTROL_AUGMENT)));
+                        .build())));
 
-        registerItem("side_config_augment", () -> new AugmentItem(new Item.Properties().tab(group),
+        itemsTab(registerItem("side_config_augment", () -> new AugmentItem(new Item.Properties(),
                 AugmentDataHelper.builder()
                         .mod(TAG_AUGMENT_FEATURE_SIDE_CONFIG, 1.0F)
-                        .build()).setShowInGroups(getFlag(FLAG_SIDE_CONFIG_AUGMENT)));
+                        .build())));
 
-        registerItem("xp_storage_augment", () -> new AugmentItem(new Item.Properties().tab(group),
+        itemsTab(registerItem("xp_storage_augment", () -> new AugmentItem(new Item.Properties(),
                 AugmentDataHelper.builder()
                         .mod(TAG_AUGMENT_FEATURE_XP_STORAGE, 1.0F)
-                        .build()).setShowInGroups(getFlag(FLAG_XP_STORAGE_AUGMENT)));
+                        .build())));
     }
 
     private static void registerStorageAugments() {
 
-        CreativeModeTab group = THERMAL_ITEMS;
-
-        registerItem("rf_coil_augment", () -> new AugmentItem(new Item.Properties().tab(group),
+        itemsTab(registerItem("rf_coil_augment", () -> new AugmentItem(new Item.Properties(),
                 AugmentDataHelper.builder()
                         .type(TAG_AUGMENT_TYPE_RF)
                         .mod(TAG_AUGMENT_RF_STORAGE, 4.0F)
                         .mod(TAG_AUGMENT_RF_XFER, 4.0F)
-                        .build()).setShowInGroups(getFlag(FLAG_STORAGE_AUGMENTS)));
+                        .build())));
 
-        registerItem("rf_coil_storage_augment", () -> new AugmentItem(new Item.Properties().tab(group),
+        itemsTab(registerItem("rf_coil_storage_augment", () -> new AugmentItem(new Item.Properties(),
                 AugmentDataHelper.builder()
                         .type(TAG_AUGMENT_TYPE_RF)
                         .mod(TAG_AUGMENT_RF_STORAGE, 6.0F)
                         .mod(TAG_AUGMENT_RF_XFER, 2.0F)
-                        .build()).setShowInGroups(getFlag(FLAG_STORAGE_AUGMENTS)));
+                        .build())));
 
-        registerItem("rf_coil_xfer_augment", () -> new AugmentItem(new Item.Properties().tab(group),
+        itemsTab(registerItem("rf_coil_xfer_augment", () -> new AugmentItem(new Item.Properties(),
                 AugmentDataHelper.builder()
                         .type(TAG_AUGMENT_TYPE_RF)
                         .mod(TAG_AUGMENT_RF_STORAGE, 2.0F)
                         .mod(TAG_AUGMENT_RF_XFER, 6.0F)
-                        .build()).setShowInGroups(getFlag(FLAG_STORAGE_AUGMENTS)));
+                        .build())));
 
-        registerItem("rf_coil_creative_augment", () -> new AugmentItem(new Item.Properties().tab(group).rarity(Rarity.EPIC),
+        itemsTab(registerItem("rf_coil_creative_augment", () -> new AugmentItem(new Item.Properties().rarity(Rarity.EPIC),
                 AugmentDataHelper.builder()
                         .type(TAG_AUGMENT_TYPE_RF)
                         .mod(TAG_AUGMENT_RF_STORAGE, 16.0F)
                         .mod(TAG_AUGMENT_RF_XFER, 16.0F)
                         .mod(TAG_AUGMENT_RF_CREATIVE, 1.0F)
-                        .build()).setShowInGroups(getFlag(FLAG_CREATIVE_STORAGE_AUGMENTS)));
+                        .build())));
 
-        registerItem("fluid_tank_augment", () -> new AugmentItem(new Item.Properties().tab(group),
+        itemsTab(registerItem("fluid_tank_augment", () -> new AugmentItem(new Item.Properties(),
                 AugmentDataHelper.builder()
                         .type(TAG_AUGMENT_TYPE_FLUID)
                         .mod(TAG_AUGMENT_FLUID_STORAGE, 4.0F)
-                        .build()).setShowInGroups(getFlag(FLAG_STORAGE_AUGMENTS)));
+                        .build())));
 
-        registerItem("fluid_tank_creative_augment", () -> new AugmentItem(new Item.Properties().tab(group).rarity(Rarity.EPIC),
+        itemsTab(registerItem("fluid_tank_creative_augment", () -> new AugmentItem(new Item.Properties().rarity(Rarity.EPIC),
                 AugmentDataHelper.builder()
                         .type(TAG_AUGMENT_TYPE_FLUID)
                         .mod(TAG_AUGMENT_FLUID_STORAGE, 16.0F)
                         .mod(TAG_AUGMENT_FLUID_CREATIVE, 1.0F)
-                        .build()).setShowInGroups(getFlag(FLAG_CREATIVE_STORAGE_AUGMENTS)));
+                        .build())));
     }
 
     private static void registerFilterAugments() {
 
-        CreativeModeTab group = THERMAL_ITEMS;
-
-        registerItem("item_filter_augment", () -> new AugmentItem(new Item.Properties().tab(group),
+        itemsTab(registerItem("item_filter_augment", () -> new AugmentItem(new Item.Properties(),
                 AugmentDataHelper.builder()
                         .type(TAG_AUGMENT_TYPE_FILTER)
                         .feature(TAG_FILTER_TYPE, FilterRegistry.ITEM_FILTER_TYPE)
-                        .build()).setShowInGroups(getFlag(FLAG_FILTER_AUGMENTS)));
+                        .build())));
 
-        registerItem("fluid_filter_augment", () -> new AugmentItem(new Item.Properties().tab(group),
+        itemsTab(registerItem("fluid_filter_augment", () -> new AugmentItem(new Item.Properties(),
                 AugmentDataHelper.builder()
                         .type(TAG_AUGMENT_TYPE_FILTER)
                         .feature(TAG_FILTER_TYPE, FilterRegistry.FLUID_FILTER_TYPE)
-                        .build()).setShowInGroups(getFlag(FLAG_FILTER_AUGMENTS)));
+                        .build())));
         //
         //        registerItem("dual_filter_augment", () -> new AugmentItem(new Item.Properties().group(group),
         //                AugmentDataHelper.builder()
@@ -355,122 +335,112 @@ public class TCoreItems {
 
     private static void registerMachineAugments() {
 
-        CreativeModeTab group = THERMAL_ITEMS;
-
-        registerItem("machine_speed_augment", () -> new AugmentItem(new Item.Properties().tab(group),
+        itemsTab(registerItem("machine_speed_augment", () -> new AugmentItem(new Item.Properties(),
                 AugmentDataHelper.builder()
                         .type(TAG_AUGMENT_TYPE_MACHINE)
                         .mod(TAG_AUGMENT_MACHINE_POWER, 1.0F)
                         .mod(TAG_AUGMENT_MACHINE_ENERGY, 1.1F)
-                        .build()).setShowInGroups(getFlag(FLAG_MACHINE_AUGMENTS)));
+                        .build())));
 
-        registerItem("machine_efficiency_augment", () -> new AugmentItem(new Item.Properties().tab(group),
+        itemsTab(registerItem("machine_efficiency_augment", () -> new AugmentItem(new Item.Properties(),
                 AugmentDataHelper.builder()
                         .type(TAG_AUGMENT_TYPE_MACHINE)
                         .mod(TAG_AUGMENT_MACHINE_SPEED, -0.1F)
                         .mod(TAG_AUGMENT_MACHINE_ENERGY, 0.9F)
-                        .build()).setShowInGroups(getFlag(FLAG_MACHINE_AUGMENTS)));
+                        .build())));
 
-        registerItem("machine_efficiency_creative_augment", () -> new AugmentItem(new Item.Properties().tab(group).rarity(Rarity.EPIC),
+        itemsTab(registerItem("machine_efficiency_creative_augment", () -> new AugmentItem(new Item.Properties().rarity(Rarity.EPIC),
                 AugmentDataHelper.builder()
                         .type(TAG_AUGMENT_TYPE_MACHINE)
                         .mod(TAG_AUGMENT_MACHINE_ENERGY, 0.0F)
-                        .build()).setShowInGroups(getFlag(FLAG_CREATIVE_MACHINE_AUGMENTS)));
+                        .build())));
 
-        registerItem("machine_output_augment", () -> new AugmentItem(new Item.Properties().tab(group),
+        itemsTab(registerItem("machine_output_augment", () -> new AugmentItem(new Item.Properties(),
                 AugmentDataHelper.builder()
                         .type(TAG_AUGMENT_TYPE_MACHINE)
                         .mod(TAG_AUGMENT_MACHINE_SECONDARY, 0.15F)
                         .mod(TAG_AUGMENT_MACHINE_ENERGY, 1.25F)
-                        .build()).setShowInGroups(getFlag(FLAG_MACHINE_AUGMENTS)));
+                        .build())));
 
-        registerItem("machine_catalyst_augment", () -> new AugmentItem(new Item.Properties().tab(group),
+        itemsTab(registerItem("machine_catalyst_augment", () -> new AugmentItem(new Item.Properties(),
                 AugmentDataHelper.builder()
                         .type(TAG_AUGMENT_TYPE_MACHINE)
                         .mod(TAG_AUGMENT_MACHINE_CATALYST, 0.8F)
                         .mod(TAG_AUGMENT_MACHINE_ENERGY, 1.25F)
-                        .build()).setShowInGroups(getFlag(FLAG_MACHINE_AUGMENTS)));
+                        .build())));
 
-        registerItem("machine_catalyst_creative_augment", () -> new AugmentItem(new Item.Properties().tab(group).rarity(Rarity.EPIC),
+        itemsTab(registerItem("machine_catalyst_creative_augment", () -> new AugmentItem(new Item.Properties().rarity(Rarity.EPIC),
                 AugmentDataHelper.builder()
                         .type(TAG_AUGMENT_TYPE_MACHINE)
                         .mod(TAG_AUGMENT_MACHINE_CATALYST, 0.0F)
-                        .build()).setShowInGroups(getFlag(FLAG_CREATIVE_MACHINE_AUGMENTS)));
+                        .build())));
 
-        registerItem("machine_cycle_augment", () -> new AugmentItem(new Item.Properties().tab(group),
+        itemsTab(registerItem("machine_cycle_augment", () -> new AugmentItem(new Item.Properties(),
                 AugmentDataHelper.builder()
                         .type(TAG_AUGMENT_TYPE_MACHINE)
                         .mod(TAG_AUGMENT_FEATURE_CYCLE_PROCESS, 1.0F)
-                        .build()).setShowInGroups(getFlag(FLAG_MACHINE_AUGMENTS)));
+                        .build())));
 
-        registerItem("machine_null_augment", () -> new AugmentItem(new Item.Properties().tab(group),
+        itemsTab(registerItem("machine_null_augment", () -> new AugmentItem(new Item.Properties(),
                 AugmentDataHelper.builder()
                         .type(TAG_AUGMENT_TYPE_MACHINE)
                         .mod(TAG_AUGMENT_FEATURE_SECONDARY_NULL, 1.0F)
-                        .build()).setShowInGroups(getFlag(FLAG_MACHINE_AUGMENTS)));
+                        .build())));
     }
 
     private static void registerDynamoAugments() {
 
-        CreativeModeTab group = THERMAL_ITEMS;
-
-        registerItem("dynamo_output_augment", () -> new AugmentItem(new Item.Properties().tab(group),
+        itemsTab(registerItem("dynamo_output_augment", () -> new AugmentItem(new Item.Properties(),
                 AugmentDataHelper.builder()
                         .type(TAG_AUGMENT_TYPE_DYNAMO)
                         .mod(TAG_AUGMENT_DYNAMO_POWER, 1.0F)
                         .mod(TAG_AUGMENT_DYNAMO_ENERGY, 0.9F)
-                        .build()).setShowInGroups(getFlag(FLAG_DYNAMO_AUGMENTS)));
+                        .build())));
 
-        registerItem("dynamo_fuel_augment", () -> new AugmentItem(new Item.Properties().tab(group),
+        itemsTab(registerItem("dynamo_fuel_augment", () -> new AugmentItem(new Item.Properties(),
                 AugmentDataHelper.builder()
                         .type(TAG_AUGMENT_TYPE_DYNAMO)
                         .mod(TAG_AUGMENT_DYNAMO_ENERGY, 1.1F)
-                        .build()).setShowInGroups(getFlag(FLAG_DYNAMO_AUGMENTS)));
+                        .build())));
 
-        registerItem("dynamo_throttle_augment", () -> new AugmentItem(new Item.Properties().tab(group),
+        itemsTab(registerItem("dynamo_throttle_augment", () -> new AugmentItem(new Item.Properties(),
                 AugmentDataHelper.builder()
                         .type(TAG_AUGMENT_TYPE_DYNAMO)
                         .mod(TAG_AUGMENT_DYNAMO_THROTTLE, 1.0F)
-                        .build()).setShowInGroups(getFlag(FLAG_DYNAMO_AUGMENTS)));
+                        .build())));
     }
 
     private static void registerAreaAugments() {
 
-        CreativeModeTab group = THERMAL_ITEMS;
-
-        registerItem("area_radius_augment", () -> new AugmentItem(new Item.Properties().tab(group),
+        itemsTab(registerItem("area_radius_augment", () -> new AugmentItem(new Item.Properties(),
                 AugmentDataHelper.builder()
                         .type(TAG_AUGMENT_TYPE_AREA_EFFECT)
                         .mod(TAG_AUGMENT_RADIUS, 1.0F)
-                        .build()).setShowInGroups(getFlag(FLAG_AREA_AUGMENTS)));
+                        .build())));
     }
 
     private static void registerPotionAugments() {
 
-        CreativeModeTab group = THERMAL_ITEMS;
-
-        registerItem("potion_amplifier_augment", () -> new AugmentItem(new Item.Properties().tab(group),
+        itemsTab(registerItem("potion_amplifier_augment", () -> new AugmentItem(new Item.Properties(),
                 AugmentDataHelper.builder()
                         .type(TAG_AUGMENT_TYPE_POTION)
                         .mod(TAG_AUGMENT_POTION_AMPLIFIER, 1.0F)
                         .mod(TAG_AUGMENT_POTION_DURATION, -0.25F)
-                        .build()).setShowInGroups(getFlag(FLAG_POTION_AUGMENTS)));
+                        .build())));
 
-        registerItem("potion_duration_augment", () -> new AugmentItem(new Item.Properties().tab(group),
+        itemsTab(registerItem("potion_duration_augment", () -> new AugmentItem(new Item.Properties(),
                 AugmentDataHelper.builder()
                         .type(TAG_AUGMENT_TYPE_POTION)
                         .mod(TAG_AUGMENT_POTION_DURATION, 1.0F)
-                        .build()).setShowInGroups(getFlag(FLAG_POTION_AUGMENTS)));
+                        .build())));
     }
     // endregion
 
     private static void registerSpawnEggs() {
 
-        CreativeModeTab group = THERMAL_ITEMS;
-
-        registerItem("basalz_spawn_egg", () -> new SpawnEggItemCoFH(BASALZ::get, 0x363840, 0x080407, new Item.Properties().tab(group)).setShowInGroups(getFlag(FLAG_MOB_BASALZ)));
-        registerItem("blizz_spawn_egg", () -> new SpawnEggItemCoFH(BLIZZ::get, 0xD8DBE5, 0x91D9FC, new Item.Properties().tab(group)).setShowInGroups(getFlag(FLAG_MOB_BLIZZ)));
-        registerItem("blitz_spawn_egg", () -> new SpawnEggItemCoFH(BLITZ::get, 0xC9EEFF, 0xFFD97E, new Item.Properties().tab(group)).setShowInGroups(getFlag(FLAG_MOB_BLITZ)));
+        itemsTab(registerItem("basalz_spawn_egg", () -> new SpawnEggItemCoFH(BASALZ::get, 0x363840, 0x080407, new Item.Properties()).setShowInGroups(getFlag(FLAG_MOB_BASALZ))));
+        itemsTab(registerItem("blizz_spawn_egg", () -> new SpawnEggItemCoFH(BLIZZ::get, 0xD8DBE5, 0x91D9FC, new Item.Properties()).setShowInGroups(getFlag(FLAG_MOB_BLIZZ))));
+        itemsTab(registerItem("blitz_spawn_egg", () -> new SpawnEggItemCoFH(BLITZ::get, 0xC9EEFF, 0xFFD97E, new Item.Properties()).setShowInGroups(getFlag(FLAG_MOB_BLITZ))));
     }
     // endregion
 

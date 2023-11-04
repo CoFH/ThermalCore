@@ -4,7 +4,6 @@ import cofh.core.util.helpers.RenderHelper;
 import cofh.thermal.core.client.gui.device.DeviceTreeExtractorScreen;
 import cofh.thermal.core.util.recipes.device.TreeExtractorMapping;
 import cofh.thermal.lib.compat.jei.Drawables;
-import com.mojang.blaze3d.vertex.PoseStack;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.forge.ForgeTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
@@ -17,6 +16,7 @@ import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 
@@ -102,13 +102,13 @@ public class TreeExtractorCategory implements IRecipeCategory<TreeExtractorMappi
     }
 
     @Override
-    public void draw(TreeExtractorMapping recipe, IRecipeSlotsView recipeSlotsView, PoseStack matrixStack, double mouseX, double mouseY) {
+    public void draw(TreeExtractorMapping recipe, IRecipeSlotsView recipeSlotsView, GuiGraphics guiGraphics, double mouseX, double mouseY) {
 
-        tankBackground.draw(matrixStack, 115, 10);
+        tankBackground.draw(guiGraphics, 115, 10);
 
-        RenderHelper.drawFluid(matrixStack, 78, 24, recipe.getFluid(), 24, 16);
-        progressFluidBackground.draw(matrixStack, 78, 24);
-        progressFluid.draw(matrixStack, 78, 24);
+        RenderHelper.drawFluid(guiGraphics, 78, 24, recipe.getFluid(), 24, 16);
+        progressFluidBackground.draw(guiGraphics, 78, 24);
+        progressFluid.draw(guiGraphics, 78, 24);
     }
 
 }

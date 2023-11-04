@@ -1,10 +1,8 @@
 package cofh.thermal.core.fluid;
 
 import cofh.lib.fluid.FluidCoFH;
-import cofh.thermal.lib.common.ThermalItemGroups;
 import com.mojang.blaze3d.shaders.FogShape;
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.math.Vector3f;
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
@@ -16,8 +14,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.material.FlowingFluid;
-import net.minecraft.world.level.material.Material;
-import net.minecraft.world.level.material.MaterialColor;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.client.extensions.common.IClientFluidTypeExtensions;
 import net.minecraftforge.common.SoundActions;
 import net.minecraftforge.fluids.FluidType;
@@ -25,6 +23,7 @@ import net.minecraftforge.fluids.ForgeFlowingFluid;
 import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.joml.Vector3f;
 
 import java.util.function.Consumer;
 import java.util.function.Supplier;
@@ -34,8 +33,6 @@ import static cofh.thermal.lib.common.ThermalIDs.ID_FLUID_CRUDE_OIL;
 import static net.minecraft.world.level.block.state.BlockBehaviour.Properties.of;
 
 public class CrudeOilFluid extends FluidCoFH {
-
-    private static final Material OIL_FLUID = (new Material.Builder(MaterialColor.COLOR_BLACK)).noCollider().notSolidBlocking().nonSolid().flammable().destroyOnPush().replaceable().liquid().build();
 
     private static CrudeOilFluid INSTANCE;
 
@@ -53,8 +50,8 @@ public class CrudeOilFluid extends FluidCoFH {
 
         particleColor = new Vector3f(0.05F, 0.05F, 0.05F);
 
-        block = BLOCKS.register(fluid(ID_FLUID_CRUDE_OIL), () -> new FluidBlock(stillFluid, of(OIL_FLUID).noCollission().strength(100.0F).noLootTable()));
-        bucket = ITEMS.register(bucket(ID_FLUID_CRUDE_OIL), () -> new BucketItem(stillFluid, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1).tab(ThermalItemGroups.THERMAL_ITEMS)));
+        block = BLOCKS.register(fluid(ID_FLUID_CRUDE_OIL), () -> new FluidBlock(stillFluid, of().mapColor(MapColor.COLOR_BLACK).replaceable().noCollission().strength(100.0F).pushReaction(PushReaction.DESTROY).noLootTable()));
+        bucket = ITEMS.register(bucket(ID_FLUID_CRUDE_OIL), () -> new BucketItem(stillFluid, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
     }
 
     @Override

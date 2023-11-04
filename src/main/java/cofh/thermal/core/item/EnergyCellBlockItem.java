@@ -13,7 +13,7 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.energy.CapabilityEnergy;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.energy.IEnergyStorage;
 
 import javax.annotation.Nullable;
@@ -68,7 +68,7 @@ public class EnergyCellBlockItem extends BlockItemAugmentable implements IEnergy
     @Override
     public Capability<? extends IEnergyStorage> getEnergyCapability() {
 
-        return CapabilityEnergy.ENERGY;
+        return ForgeCapabilities.ENERGY;
     }
 
     @Override

@@ -13,7 +13,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeManager;
-import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.ArrayList;
@@ -44,7 +44,7 @@ public class GourmandFuelManager extends SingleItemFuelManager {
     @Override
     public boolean validFuel(ItemStack input) {
 
-        if (input.getCapability(CapabilityFluidHandler.FLUID_HANDLER_ITEM_CAPABILITY).isPresent()) {
+        if (input.getCapability(ForgeCapabilities.FLUID_HANDLER_ITEM).isPresent()) {
             return false;
         }
         return getEnergy(input) > 0;

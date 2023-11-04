@@ -45,7 +45,7 @@ import static cofh.core.util.helpers.AugmentableHelper.getAttributeMod;
 import static cofh.lib.api.StorageGroup.ACCESSIBLE;
 import static cofh.lib.util.Constants.*;
 import static cofh.lib.util.constants.NBTTags.*;
-import static cofh.thermal.core.init.TCoreTileEntities.DEVICE_POTION_DIFFUSER_TILE;
+import static cofh.thermal.core.init.TCoreBlockEntities.DEVICE_POTION_DIFFUSER_TILE;
 import static cofh.thermal.lib.common.ThermalAugmentRules.createAllowValidator;
 
 public class DevicePotionDiffuserTile extends DeviceBlockEntity implements ITickableTile, IAreaEffectTile {

@@ -2,7 +2,6 @@ package cofh.thermal.lib.compat.jei;
 
 import cofh.lib.util.helpers.StringHelper;
 import cofh.thermal.lib.util.recipes.ThermalRecipe;
-import com.mojang.blaze3d.vertex.PoseStack;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.drawable.IDrawable;
 import mezz.jei.api.gui.drawable.IDrawableAnimated;
@@ -11,6 +10,7 @@ import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 
@@ -72,11 +72,11 @@ public abstract class ThermalRecipeCategory<T extends ThermalRecipe> implements 
     }
 
     @Override
-    public void draw(T recipe, IRecipeSlotsView recipeSlotsView, PoseStack matrixStack, double mouseX, double mouseY) {
+    public void draw(T recipe, IRecipeSlotsView recipeSlotsView, GuiGraphics guiGraphics, double mouseX, double mouseY) {
 
         if (recipe.getEnergy() > 0) {
-            energyBackground.draw(matrixStack, ENERGY_X, ENERGY_Y);
-            energy.draw(matrixStack, ENERGY_X, ENERGY_Y);
+            energyBackground.draw(guiGraphics, ENERGY_X, ENERGY_Y);
+            energy.draw(guiGraphics, ENERGY_X, ENERGY_Y);
         }
     }
 

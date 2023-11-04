@@ -1,10 +1,10 @@
 package cofh.thermal.core.compat.patchouli;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.CraftingRecipe;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.ShapedRecipe;
+import net.minecraft.world.level.Level;
 import org.apache.logging.log4j.LogManager;
 import vazkii.patchouli.api.IComponentProcessor;
 import vazkii.patchouli.api.IVariable;
@@ -19,12 +19,12 @@ public class CraftingProcessor implements IComponentProcessor {
     private CraftingRecipe recipe;
 
     @Override
-    public void setup(IVariableProvider variables) {
+    public void setup(Level level, IVariableProvider variables) {
 
         if (!variables.has("recipe"))
             return;
         ResourceLocation recipeId = new ResourceLocation(variables.get("recipe").asString());
-        Optional<? extends Recipe<?>> recipe = Minecraft.getInstance().level.getRecipeManager().byKey(recipeId);
+        Optional<? extends Recipe<?>> recipe = level.getRecipeManager().byKey(recipeId);
         if (recipe.isPresent() && recipe.get() instanceof CraftingRecipe) {
             this.recipe = (CraftingRecipe) recipe.get();
         } else {
@@ -33,13 +33,13 @@ public class CraftingProcessor implements IComponentProcessor {
     }
 
     @Override
-    public IVariable process(String key) {
+    public IVariable process(Level level, String key) {
 
         if (recipe == null) {
             return null;
         }
         if (key.equals("out")) {
-            return IVariable.from(recipe.getResultItem());
+            return IVariable.from(recipe.getResultItem(level.registryAccess()));
         } else if (key.startsWith("in")) {
             int index = Integer.parseInt(key.substring(key.length() - 1));
             if (recipe instanceof ShapedRecipe) {
@@ -56,7 +56,7 @@ public class CraftingProcessor implements IComponentProcessor {
             }
             return IVariable.wrapList(Arrays.stream(recipe.getIngredients().get(index).getItems()).map(IVariable::from).collect(Collectors.toList()));
         } else if (key.equals("title")) {
-            return IVariable.from(recipe.getResultItem().getHoverName());
+            return IVariable.from(recipe.getResultItem(level.registryAccess()).getHoverName());
         } else if (key.equals("show")) {
             return IVariable.wrap(true);
         }

@@ -23,8 +23,8 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.fluids.FluidStack;
-import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -36,7 +36,7 @@ import static cofh.lib.api.StorageGroup.INTERNAL;
 import static cofh.lib.util.Constants.*;
 import static cofh.lib.util.constants.NBTTags.*;
 import static cofh.thermal.core.config.ThermalCoreConfig.storageAugments;
-import static cofh.thermal.core.init.TCoreTileEntities.TINKER_BENCH_TILE;
+import static cofh.thermal.core.init.TCoreBlockEntities.TINKER_BENCH_TILE;
 import static cofh.thermal.lib.common.ThermalAugmentRules.createAllowValidator;
 import static net.minecraftforge.fluids.capability.IFluidHandler.FluidAction.EXECUTE;
 import static net.minecraftforge.fluids.capability.IFluidHandler.FluidAction.SIMULATE;
@@ -144,7 +144,7 @@ public class TinkerBenchBlockEntity extends AugmentableBlockEntity implements IT
                     tankSlot.setItemStack(new ItemStack(Items.GLASS_BOTTLE));
                 }
             } else {
-                tankStack.getCapability(CapabilityFluidHandler.FLUID_HANDLER_ITEM_CAPABILITY, null).ifPresent(c -> {
+                tankStack.getCapability(ForgeCapabilities.FLUID_HANDLER_ITEM, null).ifPresent(c -> {
                     int toFill = tank.fill(new FluidStack(c.getFluidInTank(0), BUCKET_VOLUME), SIMULATE);
                     if (toFill > 0) {
                         tank.fill(c.drain(toFill, EXECUTE), EXECUTE);
@@ -154,7 +154,7 @@ public class TinkerBenchBlockEntity extends AugmentableBlockEntity implements IT
             }
         }
         if (!tinkerSlot.isEmpty() && mode == REPLENISH && !pause) {
-            tinkerSlot.getItemStack().getCapability(CapabilityFluidHandler.FLUID_HANDLER_ITEM_CAPABILITY, null).ifPresent(c -> {
+            tinkerSlot.getItemStack().getCapability(ForgeCapabilities.FLUID_HANDLER_ITEM, null).ifPresent(c -> {
                 tank.drain(c.fill(new FluidStack(tank.getFluidStack(), Math.min(tank.getAmount(), BUCKET_VOLUME)), EXECUTE), EXECUTE);
                 tinkerSlot.setItemStack(c.getContainer());
             });

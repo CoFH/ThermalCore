@@ -1,6 +1,5 @@
 package cofh.thermal.core.client.gui;
 
-import cofh.core.client.gui.CoreTextures;
 import cofh.core.client.gui.IGuiAccess;
 import cofh.core.client.gui.element.ElementConditionalLayered;
 import cofh.core.client.gui.element.ElementScaled;
@@ -12,7 +11,9 @@ import cofh.lib.util.helpers.BlockHelper;
 import cofh.thermal.lib.block.entity.AugmentableBlockEntity;
 import cofh.thermal.lib.block.entity.Reconfigurable4WayBlockEntity;
 import cofh.thermal.lib.block.entity.StorageCellBlockEntity;
+import net.minecraft.resources.ResourceLocation;
 
+import static cofh.core.util.helpers.GuiHelper.ICON_ENERGY;
 import static cofh.core.util.helpers.RenderHelper.getFluidTexture;
 import static cofh.core.util.helpers.RenderHelper.textureExists;
 import static cofh.lib.api.control.IReconfigurable.SideConfig.*;
@@ -225,22 +226,22 @@ public class ThermalGuiHelper {
     // endregion
 
     // region COMMON UX
-    public static ElementScaled createDefaultProgress(IGuiAccess gui, int posX, int posY, String texture, AugmentableBlockEntity tile) {
+    public static ElementScaled createDefaultProgress(IGuiAccess gui, int posX, int posY, ResourceLocation texture, AugmentableBlockEntity tile) {
 
         return GuiHelper.createDefaultProgress(gui, posX, posY, texture, tile::getScaledProgress, () -> tile.getRenderFluid().isEmpty());
     }
 
-    public static ElementScaledFluid createDefaultFluidProgress(IGuiAccess gui, int posX, int posY, String texture, AugmentableBlockEntity tile) {
+    public static ElementScaledFluid createDefaultFluidProgress(IGuiAccess gui, int posX, int posY, ResourceLocation texture, AugmentableBlockEntity tile) {
 
         return GuiHelper.createDefaultFluidProgress(gui, posX, posY, texture, tile::getScaledProgress, tile::getRenderFluid, () -> !tile.getRenderFluid().isEmpty());
     }
 
-    public static ElementScaled createDefaultSpeed(IGuiAccess gui, int posX, int posY, String texture, AugmentableBlockEntity tile) {
+    public static ElementScaled createDefaultSpeed(IGuiAccess gui, int posX, int posY, ResourceLocation texture, AugmentableBlockEntity tile) {
 
         return GuiHelper.createDefaultSpeed(gui, posX, posY, texture, tile::getScaledSpeed);
     }
 
-    public static ElementScaled createDefaultDuration(IGuiAccess gui, int posX, int posY, String texture, AugmentableBlockEntity tile) {
+    public static ElementScaled createDefaultDuration(IGuiAccess gui, int posX, int posY, ResourceLocation texture, AugmentableBlockEntity tile) {
 
         return GuiHelper.createDefaultDuration(gui, posX, posY, texture, tile::getScaledDuration);
     }
@@ -248,7 +249,7 @@ public class ThermalGuiHelper {
     public static ResourcePanel createDefaultEnergyUserPanel(IGuiAccess gui, AugmentableBlockEntity tile) {
 
         return new ResourcePanel(gui)
-                .setResource(CoreTextures.ICON_ENERGY, "info.cofh.energy", false)
+                .setResource(ICON_ENERGY, "info.cofh.energy", false)
                 .setCurrent(tile::getCurSpeed, "info.cofh.energy_use", "info.cofh.unit_rf_t")
                 .setMax(tile::getMaxSpeed, "info.cofh.energy_max_use", "info.cofh.unit_rf_t")
                 .setEfficiency(tile::getEfficiency);
@@ -257,7 +258,7 @@ public class ThermalGuiHelper {
     public static ResourcePanel createDefaultEnergyProducerPanel(IGuiAccess gui, AugmentableBlockEntity tile) {
 
         return new ResourcePanel(gui)
-                .setResource(CoreTextures.ICON_ENERGY, "info.cofh.energy", true)
+                .setResource(ICON_ENERGY, "info.cofh.energy", true)
                 .setCurrent(tile::getCurSpeed, "info.cofh.energy_prod", "info.cofh.unit_rf_t")
                 .setMax(tile::getMaxSpeed, "info.cofh.energy_max_prod", "info.cofh.unit_rf_t")
                 .setEfficiency(tile::getEfficiency);

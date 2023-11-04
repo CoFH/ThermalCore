@@ -104,7 +104,7 @@ public class FurnaceRecipeManager extends SingleItemRecipeManager {
 
     protected boolean createConvertedRecipe(AbstractCookingRecipe recipe) {
 
-        if (recipe.isSpecial() || recipe.getResultItem().isEmpty()) {
+        if (recipe.isSpecial() || recipe.result.isEmpty()) {
             return false;
         }
         convertedRecipes.add(convert(recipe));
@@ -113,7 +113,7 @@ public class FurnaceRecipeManager extends SingleItemRecipeManager {
 
     protected FurnaceRecipe convert(AbstractCookingRecipe recipe) {
 
-        ItemStack recipeOutput = recipe.getResultItem();
+        ItemStack recipeOutput = recipe.result;
         float experience = recipe.getExperience();
         int energy = defaultFoodRecipes && recipeOutput.getItem().isEdible() ? defaultEnergy / 2 : defaultEnergy;
         return new FurnaceRecipe(new ResourceLocation(ID_THERMAL, "furnace_" + recipe.getIngredients().get(0).hashCode()), energy, experience, recipe);

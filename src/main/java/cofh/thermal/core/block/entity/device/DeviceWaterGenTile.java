@@ -19,8 +19,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraftforge.client.model.data.ModelData;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.fluids.FluidStack;
-import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -35,8 +35,8 @@ import static cofh.lib.api.StorageGroup.OUTPUT;
 import static cofh.lib.util.Constants.BUCKET_VOLUME;
 import static cofh.lib.util.Constants.TANK_SMALL;
 import static cofh.lib.util.constants.NBTTags.*;
+import static cofh.thermal.core.init.TCoreBlockEntities.DEVICE_WATER_GEN_TILE;
 import static cofh.thermal.core.init.TCoreSounds.SOUND_DEVICE_WATER_GEN;
-import static cofh.thermal.core.init.TCoreTileEntities.DEVICE_WATER_GEN_TILE;
 import static cofh.thermal.lib.common.ThermalAugmentRules.createAllowValidator;
 import static net.minecraftforge.fluids.capability.IFluidHandler.FluidAction.EXECUTE;
 
@@ -115,7 +115,7 @@ public class DeviceWaterGenTile extends DeviceBlockEntity implements ITickableTi
 
         if (!fillSlot.isEmpty()) {
             fillSlot.getItemStack()
-                    .getCapability(CapabilityFluidHandler.FLUID_HANDLER_ITEM_CAPABILITY, null)
+                    .getCapability(ForgeCapabilities.FLUID_HANDLER_ITEM, null)
                     .ifPresent(c -> {
                         tank.drain(c.fill(new FluidStack(tank.getFluidStack(), (int) (BUCKET_VOLUME * baseMod)), EXECUTE), EXECUTE);
                         fillSlot.setItemStack(c.getContainer());

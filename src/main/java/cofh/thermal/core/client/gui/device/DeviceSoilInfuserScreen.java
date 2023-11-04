@@ -5,7 +5,7 @@ import cofh.core.util.helpers.GuiHelper;
 import cofh.thermal.core.client.gui.ThermalGuiHelper;
 import cofh.thermal.core.inventory.container.device.DeviceSoilInfuserContainer;
 import cofh.thermal.lib.client.gui.AugmentableTileScreen;
-import com.mojang.blaze3d.vertex.PoseStack;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
@@ -43,13 +43,12 @@ public class DeviceSoilInfuserScreen extends AugmentableTileScreen<DeviceSoilInf
     }
 
     @Override
-    protected void renderLabels(PoseStack matrixStack, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics pGuiGraphics, int mouseX, int mouseY) {
 
         String radius = format(1 + 2L * menu.tile.getRadius());
+        pGuiGraphics.drawString(font, localize("info.cofh.area") + ": " + radius + " x " + radius, 70, 39, 0x404040, false);
 
-        fontRenderer().draw(matrixStack, localize("info.cofh.area") + ": " + radius + " x " + radius, 70, 39, 0x404040);
-
-        super.renderLabels(matrixStack, mouseX, mouseY);
+        super.renderLabels(pGuiGraphics, mouseX, mouseY);
     }
 
 }

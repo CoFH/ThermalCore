@@ -21,36 +21,6 @@ public class ThermalTextures {
     private static final String BLOCK_ATLAS = "minecraft:textures/atlas/blocks.png";
 
     @SubscribeEvent
-    public static void preStitch(TextureStitchEvent.Pre event) {
-
-        if (!event.getAtlas().location().toString().equals(BLOCK_ATLAS)) {
-            return;
-        }
-        event.addSprite(DEVICE_COLLECTOR_UNDERLAY_LOC);
-
-        event.addSprite(MACHINE_CONFIG_NONE_LOC);
-        event.addSprite(MACHINE_CONFIG_INPUT_LOC);
-        event.addSprite(MACHINE_CONFIG_OUTPUT_LOC);
-        event.addSprite(MACHINE_CONFIG_BOTH_LOC);
-        event.addSprite(MACHINE_CONFIG_ACCESSIBLE_LOC);
-
-        event.addSprite(CELL_CONFIG_NONE_LOC);
-        event.addSprite(CELL_CONFIG_INPUT_LOC);
-        event.addSprite(CELL_CONFIG_OUTPUT_LOC);
-        event.addSprite(CELL_CONFIG_BOTH_LOC);
-
-        for (int i = 0; i < 9; ++i) {
-            event.addSprite(new ResourceLocation(ID_THERMAL + ":block/cells/energy_cell_level_" + i));
-            event.addSprite(new ResourceLocation(ID_THERMAL + ":block/cells/fluid_cell_level_" + i));
-            event.addSprite(new ResourceLocation(ID_THERMAL + ":block/cells/item_cell_level_" + i));
-        }
-        event.addSprite(new ResourceLocation(ID_THERMAL + ":block/cells/energy_cell_level_8c"));
-        event.addSprite(new ResourceLocation(ID_THERMAL + ":block/cells/fluid_cell_level_0c"));
-        event.addSprite(new ResourceLocation(ID_THERMAL + ":block/cells/fluid_cell_level_8c"));
-        event.addSprite(new ResourceLocation(ID_THERMAL + ":block/cells/item_cell_level_8c"));
-    }
-
-    @SubscribeEvent
     public static void postStitch(TextureStitchEvent.Post event) {
 
         if (!event.getAtlas().location().toString().equals(BLOCK_ATLAS)) {
@@ -90,21 +60,23 @@ public class ThermalTextures {
         ITEM_CELL_LEVEL_8_C = map.getSprite(new ResourceLocation(ID_THERMAL + ":block/cells/item_cell_level_8c"));
     }
 
-    public static ResourceLocation DEVICE_COLLECTOR_UNDERLAY_LOC = new ResourceLocation(ID_THERMAL + ":block/devices/device_collector_underlay");
+    public static final ResourceLocation BLANK_TEXTURE = new ResourceLocation("thermal:block/blank");
+
+    public static final ResourceLocation DEVICE_COLLECTOR_UNDERLAY_LOC = new ResourceLocation(ID_THERMAL + ":block/devices/device_collector_underlay");
 
     // region CONFIG
     private static final String CONFIG_ = ID_THERMAL + ":block/config/";
 
-    public static ResourceLocation MACHINE_CONFIG_NONE_LOC = new ResourceLocation(CONFIG_ + "machine_config_none");
-    public static ResourceLocation MACHINE_CONFIG_INPUT_LOC = new ResourceLocation(CONFIG_ + "machine_config_input");
-    public static ResourceLocation MACHINE_CONFIG_OUTPUT_LOC = new ResourceLocation(CONFIG_ + "machine_config_output");
-    public static ResourceLocation MACHINE_CONFIG_BOTH_LOC = new ResourceLocation(CONFIG_ + "machine_config_both");
-    public static ResourceLocation MACHINE_CONFIG_ACCESSIBLE_LOC = new ResourceLocation(CONFIG_ + "machine_config_accessible");
+    public static final ResourceLocation MACHINE_CONFIG_NONE_LOC = new ResourceLocation(CONFIG_ + "machine_config_none");
+    public static final ResourceLocation MACHINE_CONFIG_INPUT_LOC = new ResourceLocation(CONFIG_ + "machine_config_input");
+    public static final ResourceLocation MACHINE_CONFIG_OUTPUT_LOC = new ResourceLocation(CONFIG_ + "machine_config_output");
+    public static final ResourceLocation MACHINE_CONFIG_BOTH_LOC = new ResourceLocation(CONFIG_ + "machine_config_both");
+    public static final ResourceLocation MACHINE_CONFIG_ACCESSIBLE_LOC = new ResourceLocation(CONFIG_ + "machine_config_accessible");
 
-    public static ResourceLocation CELL_CONFIG_NONE_LOC = new ResourceLocation(CONFIG_ + "cell_config_none");
-    public static ResourceLocation CELL_CONFIG_INPUT_LOC = new ResourceLocation(CONFIG_ + "cell_config_input");
-    public static ResourceLocation CELL_CONFIG_OUTPUT_LOC = new ResourceLocation(CONFIG_ + "cell_config_output");
-    public static ResourceLocation CELL_CONFIG_BOTH_LOC = new ResourceLocation(CONFIG_ + "cell_config_both");
+    public static final ResourceLocation CELL_CONFIG_NONE_LOC = new ResourceLocation(CONFIG_ + "cell_config_none");
+    public static final ResourceLocation CELL_CONFIG_INPUT_LOC = new ResourceLocation(CONFIG_ + "cell_config_input");
+    public static final ResourceLocation CELL_CONFIG_OUTPUT_LOC = new ResourceLocation(CONFIG_ + "cell_config_output");
+    public static final ResourceLocation CELL_CONFIG_BOTH_LOC = new ResourceLocation(CONFIG_ + "cell_config_both");
 
     public static TextureAtlasSprite MACHINE_CONFIG_NONE;
     public static TextureAtlasSprite MACHINE_CONFIG_INPUT;

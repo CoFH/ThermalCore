@@ -67,8 +67,8 @@
 //        String input = format(tile.amountInput);
 //        String output = format(tile.amountOutput);
 //
-//        getFontRenderer().draw(matrixStack, input, getCenteredOffset(input, 34), 42, 0x404040);
-//        getFontRenderer().draw(matrixStack, output, getCenteredOffset(output, 142), 42, 0x404040);
+//        getFontRenderer().draw(guiGraphics, input, getCenteredOffset(input, 34), 42, 0x404040);
+//        getFontRenderer().draw(guiGraphics, output, getCenteredOffset(output, 142), 42, 0x404040);
 //
 //        super.renderLabels(matrixStack, mouseX, mouseY);
 //    }

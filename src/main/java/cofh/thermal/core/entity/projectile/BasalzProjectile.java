@@ -5,8 +5,6 @@ import cofh.thermal.core.entity.monster.Blitz;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.damagesource.EntityDamageSource;
-import net.minecraft.world.damagesource.IndirectEntityDamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -19,7 +17,6 @@ import net.minecraft.world.phys.Vec3;
 
 import static cofh.core.init.CoreMobEffects.SUNDERED;
 import static cofh.thermal.core.init.TCoreEntities.BASALZ_PROJECTILE;
-import static cofh.thermal.lib.common.ThermalIDs.ID_BASALZ;
 
 public class BasalzProjectile extends ElementalProjectile {
 
@@ -54,7 +51,7 @@ public class BasalzProjectile extends ElementalProjectile {
 
         if (result.getType() == HitResult.Type.ENTITY) {
             Entity entity = ((EntityHitResult) result).getEntity();
-            if (entity.hurt(BasalzDamageSource.causeDamage(this, getOwner()), getDamage(entity)) && !entity.isInvulnerable() && entity instanceof LivingEntity living) {
+            if (entity.hurt(this.damageSource(), getDamage(entity)) && entity instanceof LivingEntity living) {
                 living.addEffect(new MobEffectInstance(SUNDERED.get(), getEffectDuration(entity), getEffectAmplifier(entity), false, false));
                 Vec3 velocity = this.getDeltaMovement();
                 if (velocity.lengthSqr() > 0.01) {
@@ -66,6 +63,11 @@ public class BasalzProjectile extends ElementalProjectile {
             this.level.broadcastEntityEvent(this, (byte) 3);
             this.discard();
         }
+    }
+
+    protected DamageSource damageSource() {
+
+        return this.level.damageSources().mobProjectile(this, this.getOwner() instanceof LivingEntity ? (LivingEntity) this.getOwner() : null);
     }
 
     // region HELPERS
@@ -85,22 +87,6 @@ public class BasalzProjectile extends ElementalProjectile {
     public int getEffectDuration(Entity target) {
 
         return effectDuration;
-    }
-    // endregion
-
-    // region DAMAGE SOURCE
-    protected static class BasalzDamageSource extends EntityDamageSource {
-
-        public BasalzDamageSource(Entity source) {
-
-            super(ID_BASALZ, source);
-        }
-
-        public static DamageSource causeDamage(BasalzProjectile entityProj, Entity entitySource) {
-
-            return (new IndirectEntityDamageSource(ID_BASALZ, entityProj, entitySource == null ? entityProj : entitySource)).setProjectile();
-        }
-
     }
     // endregion
 }

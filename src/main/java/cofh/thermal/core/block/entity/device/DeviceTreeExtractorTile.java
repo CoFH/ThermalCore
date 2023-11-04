@@ -23,7 +23,6 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluid;
-import net.minecraft.world.level.material.Material;
 import net.minecraftforge.client.model.data.ModelData;
 import net.minecraftforge.fluids.FluidStack;
 
@@ -40,7 +39,7 @@ import static cofh.lib.api.StorageGroup.INPUT;
 import static cofh.lib.api.StorageGroup.OUTPUT;
 import static cofh.lib.util.Constants.TANK_MEDIUM;
 import static cofh.lib.util.constants.NBTTags.*;
-import static cofh.thermal.core.init.TCoreTileEntities.DEVICE_TREE_EXTRACTOR_TILE;
+import static cofh.thermal.core.init.TCoreBlockEntities.DEVICE_TREE_EXTRACTOR_TILE;
 import static cofh.thermal.lib.common.ThermalAugmentRules.createAllowValidator;
 import static net.minecraftforge.fluids.capability.IFluidHandler.FluidAction.EXECUTE;
 
@@ -106,8 +105,7 @@ public class DeviceTreeExtractorTile extends DeviceBlockEntity implements ITicka
                 if (leafCount >= NUM_LEAVES) {
                     Iterable<BlockPos> area = BlockPos.betweenClosed(trunkPos, trunkPos.offset(0, leafPos[0].getY() - trunkPos.getY(), 0));
                     for (BlockPos scan : area) {
-                        Material material = level.getBlockState(scan).getMaterial();
-                        if (material == Material.GRASS || material == Material.DIRT || material == Material.STONE) {
+                        if (isGround(level.getBlockState(scan))) {
                             valid = false;
                             cached = true;
                             return;
@@ -157,8 +155,7 @@ public class DeviceTreeExtractorTile extends DeviceBlockEntity implements ITicka
         if (leafCount >= NUM_LEAVES) {
             area = BlockPos.betweenClosed(trunkPos, trunkPos.offset(0, leafPos[0].getY() - trunkPos.getY(), 0));
             for (BlockPos scan : area) {
-                Material material = level.getBlockState(scan).getMaterial();
-                if (material == Material.GRASS || material == Material.DIRT || material == Material.STONE) {
+                if (isGround(level.getBlockState(scan))) {
                     valid = false;
                     cached = true;
                     return;
@@ -375,8 +372,7 @@ public class DeviceTreeExtractorTile extends DeviceBlockEntity implements ITicka
     protected boolean isTrunkBase(BlockPos checkPos) {
 
         BlockState state = level.getBlockState(checkPos.below());
-        Material material = state.getMaterial();
-        if (material != Material.GRASS && material != Material.DIRT && material != Material.STONE) {
+        if (!isGround(state)) {
             return false;
         }
         return TreeExtractorManager.instance().validTrunk(level.getBlockState(checkPos))
@@ -387,6 +383,12 @@ public class DeviceTreeExtractorTile extends DeviceBlockEntity implements ITicka
     protected boolean isTreeExtractor(BlockState state) {
 
         return state.getBlock() == this.getBlockState().getBlock();
+    }
+
+    protected boolean isGround(BlockState state) {
+
+        // TODO 1.20 Fix
+        return true;
     }
     // endregion
 

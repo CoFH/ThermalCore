@@ -2,7 +2,6 @@ package cofh.thermal.lib.compat.jei;
 
 import cofh.lib.util.helpers.StringHelper;
 import cofh.thermal.lib.util.recipes.ThermalFuel;
-import com.mojang.blaze3d.vertex.PoseStack;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.drawable.IDrawable;
 import mezz.jei.api.gui.drawable.IDrawableAnimated;
@@ -11,6 +10,7 @@ import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 
@@ -75,20 +75,20 @@ public abstract class ThermalFuelCategory<T extends ThermalFuel> implements IRec
     }
 
     @Override
-    public void draw(T recipe, IRecipeSlotsView recipeSlotsView, PoseStack matrixStack, double mouseX, double mouseY) {
+    public void draw(T recipe, IRecipeSlotsView recipeSlotsView, GuiGraphics guiGraphics, double mouseX, double mouseY) {
 
         if (energyBackground != null) {
-            energyBackground.draw(matrixStack, ENERGY_X, ENERGY_Y);
+            energyBackground.draw(guiGraphics, ENERGY_X, ENERGY_Y);
         }
         if (energy != null) {
-            energy.draw(matrixStack, ENERGY_X, ENERGY_Y);
+            energy.draw(guiGraphics, ENERGY_X, ENERGY_Y);
         }
 
         if (durationBackground != null) {
-            durationBackground.draw(matrixStack, DURATION_X, DURATION_Y);
+            durationBackground.draw(guiGraphics, DURATION_X, DURATION_Y);
         }
         if (duration != null) {
-            duration.draw(matrixStack, DURATION_X, DURATION_Y);
+            duration.draw(guiGraphics, DURATION_X, DURATION_Y);
         }
     }
 

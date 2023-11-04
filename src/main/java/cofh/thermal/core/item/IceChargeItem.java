@@ -21,7 +21,6 @@ import net.minecraft.world.level.block.DispenserBlock;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.shapes.CollisionContext;
 
 import static cofh.core.init.CoreBlocks.GLOSSED_MAGMA;
@@ -69,7 +68,7 @@ public class IceChargeItem extends ItemCoFH {
         }
         // WATER
         boolean isFull = state.getBlock() == WATER && state.getValue(LiquidBlock.LEVEL) == 0;
-        if (state.getMaterial() == Material.WATER && isFull && state.canSurvive(world, pos) && world.isUnobstructed(state, pos, CollisionContext.empty())) {
+        if (isFull && state.canSurvive(world, pos) && world.isUnobstructed(state, pos, CollisionContext.empty())) {
             world.setBlockAndUpdate(pos, permanentWater.get() ? ICE.defaultBlockState() : FROSTED_ICE.defaultBlockState());
             used = true;
             if (!permanentWater.get()) {
@@ -78,7 +77,7 @@ public class IceChargeItem extends ItemCoFH {
         }
         // LAVA
         isFull = state.getBlock() == LAVA && state.getValue(LiquidBlock.LEVEL) == 0;
-        if (state.getMaterial() == Material.LAVA && isFull && state.canSurvive(world, pos) && world.isUnobstructed(state, pos, CollisionContext.empty())) {
+        if (isFull && state.canSurvive(world, pos) && world.isUnobstructed(state, pos, CollisionContext.empty())) {
             world.setBlockAndUpdate(pos, permanentLava.get() ? OBSIDIAN.defaultBlockState() : GLOSSED_MAGMA.get().defaultBlockState());
             used = true;
             if (!permanentLava.get()) {

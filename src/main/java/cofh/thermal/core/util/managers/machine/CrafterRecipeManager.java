@@ -4,6 +4,7 @@ import cofh.thermal.core.util.recipes.machine.CrafterRecipe;
 import cofh.thermal.lib.util.managers.AbstractManager;
 import cofh.thermal.lib.util.managers.IManager;
 import cofh.thermal.lib.util.recipes.internal.IMachineRecipe;
+import net.minecraft.core.RegistryAccess;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeManager;
@@ -38,13 +39,13 @@ public class CrafterRecipeManager extends AbstractManager implements IManager {
         return recipe instanceof CrafterRecipe crafterRecipe && crafterRecipe.validFluid(fluid);
     }
 
-    public CrafterRecipe getRecipe(Recipe<?> recipe) {
+    public CrafterRecipe getRecipe(Recipe<?> recipe, RegistryAccess registryAccess) {
 
-        if (recipe == null || recipe.isSpecial() || recipe.getResultItem().isEmpty()) {
+        if (recipe == null || recipe.isSpecial() || recipe.getResultItem(registryAccess).isEmpty()) {
             return null;
         }
         if (!recipeMap.containsKey(recipe)) {
-            recipeMap.put(recipe, new CrafterRecipe(DEFAULT_ENERGY, recipe));
+            recipeMap.put(recipe, new CrafterRecipe(DEFAULT_ENERGY, recipe, registryAccess));
         }
         return recipeMap.get(recipe);
     }

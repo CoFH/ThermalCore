@@ -51,11 +51,10 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.fluids.FluidStack;
-import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
 import net.minecraftforge.fluids.capability.IFluidHandler;
-import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.network.NetworkHooks;
 
@@ -274,7 +273,7 @@ public abstract class AugmentableBlockEntity extends TileCoFH implements ISecura
                 }
                 player.level.playSound(null, player.blockPosition(), SOUND_TINKER.get(), SoundSource.PLAYERS, 0.1F, (MathHelper.RANDOM.nextFloat() - MathHelper.RANDOM.nextFloat()) * 0.35F + 0.9F);
             } else {
-                player.level.playSound(null, player.blockPosition(), SoundEvents.UI_BUTTON_CLICK, SoundSource.PLAYERS, 0.1F, 0.25F);
+                player.level.playSound(null, player.blockPosition(), SoundEvents.UI_BUTTON_CLICK.get(), SoundSource.PLAYERS, 0.1F, 0.25F);
             }
             return true;
         }
@@ -757,10 +756,10 @@ public abstract class AugmentableBlockEntity extends TileCoFH implements ISecura
         if (cap == ThermalEnergyHelper.getBaseEnergySystem() && energyStorage.getMaxEnergyStored() > 0) {
             return getEnergyCapability(side);
         }
-        if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && inventory.hasAccessibleSlots()) {
+        if (cap == ForgeCapabilities.ITEM_HANDLER && inventory.hasAccessibleSlots()) {
             return getItemHandlerCapability(side);
         }
-        if (cap == CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY && tankInv.hasAccessibleTanks()) {
+        if (cap == ForgeCapabilities.FLUID_HANDLER && tankInv.hasAccessibleTanks()) {
             return getFluidHandlerCapability(side);
         }
         return super.getCapability(cap, side);

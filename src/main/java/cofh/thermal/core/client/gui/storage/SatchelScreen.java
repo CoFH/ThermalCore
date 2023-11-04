@@ -11,6 +11,7 @@ import cofh.lib.util.helpers.SecurityHelper;
 import cofh.thermal.core.inventory.container.storage.SatchelContainer;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.vertex.PoseStack;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.MenuProvider;
@@ -76,35 +77,37 @@ public class SatchelScreen extends ContainerScreenCoFH<SatchelContainer> {
     }
 
     @Override
-    protected void renderBg(PoseStack poseStack, float partialTicks, int mouseX, int mouseY) {
+    protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int mouseX, int mouseY) {
 
         RenderHelper.resetShaderColor();
         RenderHelper.setPosTexShader();
         RenderHelper.setShaderTexture0(texture);
 
-        drawTexturedModalRect(poseStack, leftPos, topPos, 0, 0, imageWidth, imageHeight);
+        PoseStack poseStack = guiGraphics.pose();
+
+        drawTexturedModalRect(guiGraphics, leftPos, topPos, 0, 0, imageWidth, imageHeight);
         if (renderExtension > 0) {
             RenderHelper.setShaderTexture0(TEXTURE_EXT);
-            drawTexturedModalRect(poseStack, leftPos, topPos + renderExtension, 0, 0, imageWidth, imageHeight);
+            drawTexturedModalRect(guiGraphics, leftPos, topPos + renderExtension, 0, 0, imageWidth, imageHeight);
         }
         poseStack.pushPose();
         poseStack.translate(leftPos, topPos, 0.0F);
 
-        drawPanels(poseStack, false);
-        drawElements(poseStack, false);
+        drawPanels(guiGraphics, false);
+        drawElements(guiGraphics, false);
 
         poseStack.popPose();
     }
 
     @Override
-    protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
 
-        super.renderLabels(poseStack, mouseX, mouseY);
+        super.renderLabels(guiGraphics, mouseX, mouseY);
 
         GlStateManager._enableBlend();
         RenderHelper.setPosTexShader();
         RenderHelper.setShaderTexture0(SLOT_OVERLAY);
-        drawTexturedModalRect(poseStack, menu.lockedSlot.x, menu.lockedSlot.y, 0, 0, 16, 16, 16, 16);
+        drawTexturedModalRect(guiGraphics, menu.lockedSlot.x, menu.lockedSlot.y, 0, 0, 16, 16, 16, 16);
         GlStateManager._disableBlend();
     }
 

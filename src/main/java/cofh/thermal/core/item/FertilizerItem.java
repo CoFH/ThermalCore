@@ -5,9 +5,10 @@ import cofh.lib.util.Utils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
-import net.minecraft.core.Registry;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionResult;
@@ -17,8 +18,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
-import net.minecraft.world.level.biome.Biomes;
-import net.minecraft.world.level.block.BambooBlock;
+import net.minecraft.world.level.block.BambooStalkBlock;
 import net.minecraft.world.level.block.BaseCoralWallFanBlock;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.BonemealableBlock;
@@ -96,7 +96,7 @@ public class FertilizerItem extends ItemCoFH {
                             growable.performBonemeal((ServerLevel) worldIn, worldIn.random, pos, state);
                         } catch (Exception e) {
                             // Vanilla issue causes bamboo to crash if grown close to world height
-                            if (!(growable instanceof BambooBlock)) {
+                            if (!(growable instanceof BambooStalkBlock)) {
                                 throw e;
                             }
                         }
@@ -109,45 +109,60 @@ public class FertilizerItem extends ItemCoFH {
         return false;
     }
 
-    public static boolean growWaterPlant(Level worldIn, BlockPos pos, @Nullable Direction side) {
+    public static boolean growWaterPlant(Level pLevel, BlockPos pPos, @Nullable Direction pClickedSide) {
 
-        if (worldIn.getBlockState(pos).is(Blocks.WATER) && worldIn.getFluidState(pos).getAmount() == 8) {
-            if (!(worldIn instanceof ServerLevel)) {
+        if (pLevel.getBlockState(pPos).is(Blocks.WATER) && pLevel.getFluidState(pPos).getAmount() == 8) {
+            if (!(pLevel instanceof ServerLevel)) {
                 return true;
             } else {
-                RandomSource random = worldIn.getRandom();
+                RandomSource randomsource = pLevel.getRandom();
+
                 label78:
                 for (int i = 0; i < 128; ++i) {
-                    BlockPos blockpos = pos;
+                    BlockPos blockpos = pPos;
                     BlockState blockstate = Blocks.SEAGRASS.defaultBlockState();
+
                     for (int j = 0; j < i / 16; ++j) {
-                        blockpos = blockpos.offset(random.nextInt(3) - 1, (random.nextInt(3) - 1) * random.nextInt(3) / 2, random.nextInt(3) - 1);
-                        if (worldIn.getBlockState(blockpos).isCollisionShapeFullBlock(worldIn, blockpos)) {
+                        blockpos = blockpos.offset(randomsource.nextInt(3) - 1, (randomsource.nextInt(3) - 1) * randomsource.nextInt(3) / 2, randomsource.nextInt(3) - 1);
+                        if (pLevel.getBlockState(blockpos).isCollisionShapeFullBlock(pLevel, blockpos)) {
                             continue label78;
                         }
                     }
-                    Holder<Biome> holder = worldIn.getBiome(blockpos);
-                    if (holder.is(Biomes.WARM_OCEAN)) {
-                        if (i == 0 && side != null && side.getAxis().isHorizontal()) {
-                            blockstate = Registry.BLOCK.getTag(BlockTags.WALL_CORALS).flatMap((p_204098_) -> p_204098_.getRandomElement(worldIn.random)).map((p_204100_) -> p_204100_.value().defaultBlockState()).orElse(blockstate);
+
+                    Holder<Biome> holder = pLevel.getBiome(blockpos);
+                    if (holder.is(BiomeTags.PRODUCES_CORALS_FROM_BONEMEAL)) {
+                        if (i == 0 && pClickedSide != null && pClickedSide.getAxis().isHorizontal()) {
+                            blockstate = BuiltInRegistries.BLOCK.getTag(BlockTags.WALL_CORALS).flatMap((p_204098_) -> {
+                                return p_204098_.getRandomElement(pLevel.random);
+                            }).map((p_204100_) -> {
+                                return p_204100_.value().defaultBlockState();
+                            }).orElse(blockstate);
                             if (blockstate.hasProperty(BaseCoralWallFanBlock.FACING)) {
-                                blockstate = blockstate.setValue(BaseCoralWallFanBlock.FACING, side);
+                                blockstate = blockstate.setValue(BaseCoralWallFanBlock.FACING, pClickedSide);
                             }
-                        } else if (random.nextInt(4) == 0) {
-                            blockstate = Registry.BLOCK.getTag(BlockTags.UNDERWATER_BONEMEALS).flatMap((p_204091_) -> p_204091_.getRandomElement(worldIn.random)).map((p_204095_) -> p_204095_.value().defaultBlockState()).orElse(blockstate);
+                        } else if (randomsource.nextInt(4) == 0) {
+                            blockstate = BuiltInRegistries.BLOCK.getTag(BlockTags.UNDERWATER_BONEMEALS).flatMap((p_204091_) -> {
+                                return p_204091_.getRandomElement(pLevel.random);
+                            }).map((p_204095_) -> {
+                                return p_204095_.value().defaultBlockState();
+                            }).orElse(blockstate);
                         }
                     }
-                    if (blockstate.is(BlockTags.WALL_CORALS, (p_204093_) -> p_204093_.hasProperty(BaseCoralWallFanBlock.FACING))) {
-                        for (int k = 0; !blockstate.canSurvive(worldIn, blockpos) && k < 4; ++k) {
-                            blockstate = blockstate.setValue(BaseCoralWallFanBlock.FACING, Direction.Plane.HORIZONTAL.getRandomDirection(random));
+
+                    if (blockstate.is(BlockTags.WALL_CORALS, (p_204093_) -> {
+                        return p_204093_.hasProperty(BaseCoralWallFanBlock.FACING);
+                    })) {
+                        for (int k = 0; !blockstate.canSurvive(pLevel, blockpos) && k < 4; ++k) {
+                            blockstate = blockstate.setValue(BaseCoralWallFanBlock.FACING, Direction.Plane.HORIZONTAL.getRandomDirection(randomsource));
                         }
                     }
-                    if (blockstate.canSurvive(worldIn, blockpos)) {
-                        BlockState blockstate1 = worldIn.getBlockState(blockpos);
-                        if (blockstate1.is(Blocks.WATER) && worldIn.getFluidState(blockpos).getAmount() == 8) {
-                            worldIn.setBlock(blockpos, blockstate, 3);
-                        } else if (blockstate1.is(Blocks.SEAGRASS) && random.nextInt(10) == 0) {
-                            ((BonemealableBlock) Blocks.SEAGRASS).performBonemeal((ServerLevel) worldIn, random, blockpos, blockstate1);
+
+                    if (blockstate.canSurvive(pLevel, blockpos)) {
+                        BlockState blockstate1 = pLevel.getBlockState(blockpos);
+                        if (blockstate1.is(Blocks.WATER) && pLevel.getFluidState(blockpos).getAmount() == 8) {
+                            pLevel.setBlock(blockpos, blockstate, 3);
+                        } else if (blockstate1.is(Blocks.SEAGRASS) && randomsource.nextInt(10) == 0) {
+                            ((BonemealableBlock) Blocks.SEAGRASS).performBonemeal((ServerLevel) pLevel, randomsource, blockpos, blockstate1);
                         }
                     }
                 }

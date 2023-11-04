@@ -33,7 +33,7 @@ import static cofh.lib.api.StorageGroup.OUTPUT;
 import static cofh.lib.util.Constants.MB_PER_XP;
 import static cofh.lib.util.Constants.TANK_MEDIUM;
 import static cofh.lib.util.constants.NBTTags.*;
-import static cofh.thermal.core.init.TCoreTileEntities.DEVICE_XP_CONDENSER_TILE;
+import static cofh.thermal.core.init.TCoreBlockEntities.DEVICE_XP_CONDENSER_TILE;
 import static cofh.thermal.lib.common.ThermalAugmentRules.createAllowValidator;
 
 public class DeviceXpCondenserTile extends DeviceBlockEntity implements ITickableTile.IServerTickable, IAreaEffectTile {

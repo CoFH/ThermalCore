@@ -1,7 +1,6 @@
 package cofh.thermal.core.fluid;
 
 import cofh.lib.fluid.FluidCoFH;
-import cofh.thermal.lib.common.ThermalItemGroups;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.BucketItem;
@@ -36,7 +35,7 @@ public class GlowstoneFluid extends FluidCoFH {
 
         super(FLUIDS, ID_FLUID_GLOWSTONE);
 
-        bucket = ITEMS.register(bucket(ID_FLUID_GLOWSTONE), () -> new BucketItem(stillFluid, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1).tab(ThermalItemGroups.THERMAL_ITEMS)));
+        bucket = ITEMS.register(bucket(ID_FLUID_GLOWSTONE), () -> new BucketItem(stillFluid, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
     }
 
     @Override

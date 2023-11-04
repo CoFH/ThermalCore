@@ -8,9 +8,7 @@ import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.ArmorMaterial;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 
@@ -23,11 +21,11 @@ import static cofh.lib.util.helpers.StringHelper.getTextComponent;
 
 public class BeekeeperArmorItem extends ArmorItemCoFH {
 
-    public BeekeeperArmorItem(ArmorMaterial materialIn, EquipmentSlot slot, Properties builder) {
+    public BeekeeperArmorItem(ArmorMaterial pMaterial, ArmorItem.Type pType, Item.Properties pProperties) {
 
-        super(materialIn, slot, builder);
+        super(pMaterial, pType, pProperties);
 
-        ArmorEvents.registerStingResistArmor(this, RESISTANCE_RATIO[slot.getIndex()]);
+        ArmorEvents.registerStingResistArmor(this, RESISTANCE_RATIO[getType().getSlot().getIndex()]);
     }
 
     @Override

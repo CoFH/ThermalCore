@@ -30,11 +30,11 @@ public class DeviceXpCondenserScreen extends AugmentableTileScreen<DeviceXpConde
     }
 
     //    @Override
-    //    protected void renderLabels(PoseStack matrixStack, int mouseX, int mouseY) {
+    //    protected void renderLabels(GuiGraphics pGuiGraphics, int mouseX, int mouseY) {
     //
     //        String radius = format(1 + 2L * menu.tile.getRadius());
     //
-    //        fontRenderer().draw(matrixStack, localize("info.cofh.area") + ": " + radius + " x " + radius, 70, 39, 0x404040);
+    //        fontRenderer().draw(guiGraphics, localize("info.cofh.area") + ": " + radius + " x " + radius, 70, 39, 0x404040);
     //
     //        super.renderLabels(matrixStack, mouseX, mouseY);
     //    }

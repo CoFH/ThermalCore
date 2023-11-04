@@ -1,9 +1,9 @@
 package cofh.thermal.core.compat.patchouli;
 
 import cofh.thermal.core.util.recipes.machine.SmelterRecipe;
-import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.level.Level;
 import org.apache.logging.log4j.LogManager;
 import vazkii.patchouli.api.IComponentProcessor;
 import vazkii.patchouli.api.IVariable;
@@ -17,14 +17,13 @@ public class SmelterProcessor implements IComponentProcessor {
 
     private SmelterRecipe recipe;
 
-    // aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
     @Override
-    public void setup(IVariableProvider variables) {
+    public void setup(Level level, IVariableProvider variables) {
 
         if (!variables.has("recipe"))
             return;
         ResourceLocation recipeId = new ResourceLocation(variables.get("recipe").asString());
-        Optional<? extends Recipe<?>> recipe = Minecraft.getInstance().level.getRecipeManager().byKey(recipeId);
+        Optional<? extends Recipe<?>> recipe = level.getRecipeManager().byKey(recipeId);
         if (recipe.isPresent() && recipe.get() instanceof SmelterRecipe) {
             this.recipe = (SmelterRecipe) recipe.get();
         } else {
@@ -32,9 +31,8 @@ public class SmelterProcessor implements IComponentProcessor {
         }
     }
 
-    // Did you ever hear the tragedy of Darth Lemming the wise?
     @Override
-    public IVariable process(String key) {
+    public IVariable process(Level level, String key) {
 
         if (recipe == null)
             return null;

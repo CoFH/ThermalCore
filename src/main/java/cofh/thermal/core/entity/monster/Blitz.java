@@ -114,7 +114,7 @@ public class Blitz extends Monster {
     @Override
     public void aiStep() {
 
-        if (!this.onGround && this.getDeltaMovement().y < 0.0D) {
+        if (!this.onGround() && this.getDeltaMovement().y < 0.0D) {
             this.setDeltaMovement(this.getDeltaMovement().multiply(1.0D, 0.6D, 1.0D));
         }
         if (this.level.isClientSide) {
@@ -149,7 +149,7 @@ public class Blitz extends Monster {
     @Override
     public boolean isInvulnerableTo(DamageSource source) {
 
-        return source == DamageSource.LIGHTNING_BOLT || source.msgId.equals(ID_BLITZ) || super.isInvulnerableTo(source);
+        return source == this.damageSources().lightningBolt() || source.getMsgId().equals(ID_BLITZ) || super.isInvulnerableTo(source);
     }
 
     // region ANGER MANAGEMENT

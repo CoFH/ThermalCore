@@ -9,9 +9,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ArmorMaterial;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 
@@ -24,12 +22,12 @@ import static cofh.lib.util.helpers.StringHelper.getTextComponent;
 
 public class HazmatArmorItem extends ArmorItemCoFH {
 
-    public HazmatArmorItem(ArmorMaterial materialIn, EquipmentSlot slot, Properties builder) {
+    public HazmatArmorItem(ArmorMaterial pMaterial, ArmorItem.Type pType, Item.Properties pProperties) {
 
-        super(materialIn, slot, builder);
+        super(pMaterial, pType, pProperties);
 
-        ArmorEvents.registerHazardResistArmor(this, RESISTANCE_RATIO[slot.getIndex()]);
-        if (slot == EquipmentSlot.FEET) {
+        ArmorEvents.registerHazardResistArmor(this, RESISTANCE_RATIO[getType().getSlot().getIndex()]);
+        if (getType().getSlot() == EquipmentSlot.FEET) {
             ArmorEvents.registerFallResistArmor(this, 6.0D);
         }
     }
@@ -39,10 +37,10 @@ public class HazmatArmorItem extends ArmorItemCoFH {
 
         tooltip.add(getTextComponent("info.thermal.hazmat_armor").withStyle(ChatFormatting.GOLD));
 
-        if (this.slot == EquipmentSlot.HEAD) {
+        if (getType().getSlot() == EquipmentSlot.HEAD) {
             tooltip.add(getTextComponent("info.thermal.hazmat_helmet").withStyle(ChatFormatting.GOLD));
         }
-        if (this.slot == EquipmentSlot.FEET) {
+        if (getType().getSlot() == EquipmentSlot.FEET) {
             tooltip.add(getTextComponent("info.thermal.hazmat_boots").withStyle(ChatFormatting.GOLD));
         }
     }
@@ -50,7 +48,7 @@ public class HazmatArmorItem extends ArmorItemCoFH {
     @Override
     public void onArmorTick(ItemStack stack, Level world, Player player) {
 
-        if (this.slot == EquipmentSlot.HEAD) {
+        if (getType().getSlot() == EquipmentSlot.HEAD) {
             if (player.getAirSupply() < player.getMaxAirSupply() && world.random.nextInt(3) > 0) {
                 player.setAirSupply(player.getAirSupply() + 1);
             }

@@ -120,7 +120,7 @@ public class Basalz extends Monster {
     @Override
     public void aiStep() {
 
-        if (!this.onGround && this.getDeltaMovement().y < 0.0D) {
+        if (!this.onGround() && this.getDeltaMovement().y < 0.0D) {
             this.setDeltaMovement(this.getDeltaMovement().multiply(1.0D, 0.6D, 1.0D));
         }
         if (this.level.isClientSide) {
@@ -159,7 +159,7 @@ public class Basalz extends Monster {
     @Override
     public boolean hurt(DamageSource source, float amount) {
 
-        return super.hurt(source, source == DamageSource.LIGHTNING_BOLT ? amount + 3 : amount);
+        return super.hurt(source, source == this.damageSources().lightningBolt() ? amount + 3 : amount);
     }
 
     @Override
@@ -189,7 +189,7 @@ public class Basalz extends Monster {
     @Override
     public boolean isInvulnerableTo(DamageSource source) {
 
-        return source.msgId.equals(ID_BASALZ) || super.isInvulnerableTo(source);
+        return source.getMsgId().equals(ID_BASALZ) || super.isInvulnerableTo(source);
     }
 
     // region ANGER/ORBIT MANAGEMENT

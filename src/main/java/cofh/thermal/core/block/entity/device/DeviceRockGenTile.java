@@ -38,7 +38,7 @@ import static cofh.core.util.helpers.ItemHelper.itemsEqualWithTags;
 import static cofh.lib.api.StorageGroup.OUTPUT;
 import static cofh.lib.util.Constants.BUCKET_VOLUME;
 import static cofh.lib.util.constants.NBTTags.*;
-import static cofh.thermal.core.init.TCoreTileEntities.DEVICE_ROCK_GEN_TILE;
+import static cofh.thermal.core.init.TCoreBlockEntities.DEVICE_ROCK_GEN_TILE;
 import static cofh.thermal.lib.common.ThermalAugmentRules.createAllowValidator;
 
 public class DeviceRockGenTile extends DeviceBlockEntity implements ITickableTile.IServerTickable {

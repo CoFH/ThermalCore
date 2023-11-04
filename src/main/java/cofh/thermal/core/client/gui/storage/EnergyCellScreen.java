@@ -7,7 +7,7 @@ import cofh.core.network.packet.server.TileConfigPacket;
 import cofh.core.util.helpers.GuiHelper;
 import cofh.thermal.core.inventory.container.storage.EnergyCellContainer;
 import cofh.thermal.lib.client.gui.StorageCellScreen;
-import com.mojang.blaze3d.vertex.PoseStack;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
@@ -52,15 +52,15 @@ public class EnergyCellScreen extends StorageCellScreen<EnergyCellContainer> {
     }
 
     @Override
-    protected void renderLabels(PoseStack matrixStack, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics pGuiGraphics, int mouseX, int mouseY) {
 
         String input = format(tile.amountInput);
         String output = format(tile.amountOutput);
 
-        fontRenderer().draw(matrixStack, input, getCenteredOffset(input, 34), 42, 0x404040);
-        fontRenderer().draw(matrixStack, output, getCenteredOffset(output, 142), 42, 0x404040);
+        pGuiGraphics.drawString(font, input, getCenteredOffset(input, 34), 42, 0x404040, false);
+        pGuiGraphics.drawString(font, output, getCenteredOffset(output, 142), 42, 0x404040, false);
 
-        super.renderLabels(matrixStack, mouseX, mouseY);
+        super.renderLabels(pGuiGraphics, mouseX, mouseY);
     }
 
     // region ELEMENTS

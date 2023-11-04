@@ -8,7 +8,6 @@ import cofh.thermal.core.item.WrenchItem;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import com.mojang.math.Matrix4f;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
@@ -23,10 +22,11 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.event.RenderLevelLastEvent;
+import net.minecraftforge.client.event.RenderLevelStageEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import org.joml.Matrix4f;
 
 import java.util.HashSet;
 import java.util.List;
@@ -98,8 +98,11 @@ public class TCoreClientEvents {
     }
 
     @SubscribeEvent
-    public static void handleRenderWorldLast(RenderLevelLastEvent event) {
+    public static void handleRenderLevelStageEvent(RenderLevelStageEvent event) {
 
+        if (event.getStage() != RenderLevelStageEvent.Stage.AFTER_LEVEL) {
+            return;
+        }
         LocalPlayer player = Minecraft.getInstance().player;
 
         if (player != null) {

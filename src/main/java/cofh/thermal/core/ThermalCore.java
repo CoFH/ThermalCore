@@ -39,16 +39,16 @@ import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
-import net.minecraft.core.Registry;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.inventory.MenuType;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.minecraft.world.level.levelgen.placement.PlacementModifierType;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
@@ -84,6 +84,7 @@ public class ThermalCore {
     public static final DeferredRegisterCoFH<Block> BLOCKS = DeferredRegisterCoFH.create(ForgeRegistries.BLOCKS, ID_THERMAL);
     public static final DeferredRegisterCoFH<Item> ITEMS = DeferredRegisterCoFH.create(ForgeRegistries.ITEMS, ID_THERMAL);
     public static final DeferredRegisterCoFH<Fluid> FLUIDS = DeferredRegisterCoFH.create(ForgeRegistries.FLUIDS, ID_THERMAL);
+    public static final DeferredRegisterCoFH<CreativeModeTab> CREATIVE_TABS = DeferredRegisterCoFH.create(Registries.CREATIVE_MODE_TAB, ID_THERMAL);
 
     public static final DeferredRegisterCoFH<MenuType<?>> CONTAINERS = DeferredRegisterCoFH.create(ForgeRegistries.MENU_TYPES, ID_THERMAL);
     public static final DeferredRegisterCoFH<EntityType<?>> ENTITIES = DeferredRegisterCoFH.create(ForgeRegistries.ENTITY_TYPES, ID_THERMAL);
@@ -92,25 +93,9 @@ public class ThermalCore {
     public static final DeferredRegisterCoFH<RecipeSerializer<?>> RECIPE_SERIALIZERS = DeferredRegisterCoFH.create(ForgeRegistries.RECIPE_SERIALIZERS, ID_THERMAL);
     public static final DeferredRegisterCoFH<SoundEvent> SOUND_EVENTS = DeferredRegisterCoFH.create(ForgeRegistries.SOUND_EVENTS, ID_THERMAL);
     public static final DeferredRegisterCoFH<BlockEntityType<?>> TILE_ENTITIES = DeferredRegisterCoFH.create(ForgeRegistries.BLOCK_ENTITY_TYPES, ID_THERMAL);
-    public static final DeferredRegisterCoFH<PlacementModifierType<?>> PLACEMENT_MODIFIERS = DeferredRegisterCoFH.create(Registry.PLACEMENT_MODIFIER_REGISTRY, ID_THERMAL);
+    // public static final DeferredRegisterCoFH<PlacementModifierType<?>> PLACEMENT_MODIFIERS = DeferredRegisterCoFH.create(Registry.PLACEMENT_MODIFIER_REGISTRY, ID_THERMAL);
 
     public static final DeferredRegisterCoFH<FluidType> FLUID_TYPES = DeferredRegisterCoFH.create(ForgeRegistries.Keys.FLUID_TYPES, ID_THERMAL);
-
-    static {
-        TCoreBlocks.register();
-        TCoreItems.register();
-        TCoreFluids.register();
-
-        TCoreContainers.register();
-        TCoreEntities.register();
-        TCoreRecipeSerializers.register();
-        TCoreRecipeTypes.register();
-        TCoreSounds.register();
-        TCoreTileEntities.register();
-
-        TCoreRecipeManagers.register();
-        TCorePlacementModifiers.register();
-    }
 
     public ThermalCore() {
 
@@ -137,6 +122,7 @@ public class ThermalCore {
         BLOCKS.register(modEventBus);
         ITEMS.register(modEventBus);
         FLUIDS.register(modEventBus);
+        CREATIVE_TABS.register(modEventBus);
 
         CONTAINERS.register(modEventBus);
         ENTITIES.register(modEventBus);
@@ -145,9 +131,23 @@ public class ThermalCore {
         RECIPE_TYPES.register(modEventBus);
         SOUND_EVENTS.register(modEventBus);
         TILE_ENTITIES.register(modEventBus);
-        PLACEMENT_MODIFIERS.register(modEventBus);
+        // PLACEMENT_MODIFIERS.register(modEventBus);
 
         FLUID_TYPES.register(modEventBus);
+
+        TCoreBlocks.register();
+        TCoreItems.register();
+        TCoreFluids.register();
+
+        TCoreContainers.register();
+        TCoreEntities.register();
+        TCoreRecipeSerializers.register();
+        TCoreRecipeTypes.register();
+        TCoreSounds.register();
+        TCoreBlockEntities.register();
+
+        TCoreRecipeManagers.register();
+        // TCorePlacementModifiers.register();
     }
 
     private void setFeatureFlags() {

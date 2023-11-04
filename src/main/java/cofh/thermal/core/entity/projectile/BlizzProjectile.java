@@ -4,10 +4,7 @@ import cofh.core.util.AreaUtils;
 import cofh.lib.util.Utils;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.damagesource.EntityDamageSource;
-import net.minecraft.world.damagesource.IndirectEntityDamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.projectile.AbstractHurtingProjectile;
@@ -21,7 +18,6 @@ import java.util.List;
 import static cofh.core.init.CoreMobEffects.CHILLED;
 import static cofh.core.init.CoreParticles.FROST;
 import static cofh.thermal.core.init.TCoreEntities.BLIZZ_PROJECTILE;
-import static cofh.thermal.lib.common.ThermalIDs.ID_BLIZZ;
 
 public class BlizzProjectile extends ElementalProjectile {
 
@@ -60,7 +56,7 @@ public class BlizzProjectile extends ElementalProjectile {
             if (entity.isOnFire()) {
                 entity.clearFire();
             }
-            if (entity.hurt(BlizzDamageSource.causeDamage(this, getOwner()), getDamage(entity)) && !entity.isInvulnerable() && entity instanceof LivingEntity living) {
+            if (entity.hurt(this.damageSource(), getDamage(entity)) && entity instanceof LivingEntity living) {
                 living.addEffect(new MobEffectInstance(CHILLED.get(), getEffectDuration(entity), getEffectAmplifier(entity), false, false));
             }
         } else if (result.getType() == HitResult.Type.BLOCK) {
@@ -88,12 +84,17 @@ public class BlizzProjectile extends ElementalProjectile {
 
         AreaEffectCloud cloud = new AreaEffectCloud(level, getX(), getY(), getZ());
         cloud.setRadius(1);
-        cloud.setParticle((SimpleParticleType) FROST.get());
+        cloud.setParticle(FROST.get());
         cloud.setDuration(CLOUD_DURATION);
         cloud.setWaitTime(0);
         cloud.setRadiusPerTick((effectRadius - cloud.getRadius()) / (float) cloud.getDuration());
 
         level.addFreshEntity(cloud);
+    }
+
+    protected DamageSource damageSource() {
+
+        return this.level.damageSources().mobProjectile(this, this.getOwner() instanceof LivingEntity ? (LivingEntity) this.getOwner() : null);
     }
 
     // region HELPERS
@@ -113,22 +114,6 @@ public class BlizzProjectile extends ElementalProjectile {
     public int getEffectDuration(Entity target) {
 
         return effectDuration;
-    }
-    // endregion
-
-    // region DAMAGE SOURCE
-    protected static class BlizzDamageSource extends EntityDamageSource {
-
-        public BlizzDamageSource(Entity source) {
-
-            super(ID_BLIZZ, source);
-        }
-
-        public static DamageSource causeDamage(BlizzProjectile entityProj, Entity entitySource) {
-
-            return (new IndirectEntityDamageSource(ID_BLIZZ, entityProj, entitySource == null ? entityProj : entitySource)).setProjectile();
-        }
-
     }
     // endregion
 }
