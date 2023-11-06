@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "key": {
     "i": {
       "tag": "forge:nuggets/iron"
@@ -15,5 +16,6 @@
   ],
   "result": {
     "item": "thermal:rs_control_augment"
-  }
+  },
+  "show_notification": true
 }

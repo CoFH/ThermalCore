@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "key": {
     "#": {
       "tag": "forge:ingots/iron"
@@ -15,5 +16,6 @@
   ],
   "result": {
     "item": "thermal:iron_gear"
-  }
+  },
+  "show_notification": true
 }

@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "equipment",
   "key": {
     "S": {
       "tag": "forge:ingots/signalum"
@@ -15,5 +16,6 @@
   ],
   "result": {
     "item": "thermal:lock"
-  }
+  },
+  "show_notification": true
 }

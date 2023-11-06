@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "key": {
     "#": {
       "item": "minecraft:potato"
@@ -12,5 +13,6 @@
   ],
   "result": {
     "item": "thermal:potato_block"
-  }
+  },
+  "show_notification": true
 }

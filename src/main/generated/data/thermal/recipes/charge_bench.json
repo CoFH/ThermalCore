@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "conditions": [
     {
       "type": "thermal:flag",
@@ -27,5 +28,6 @@
   ],
   "result": {
     "item": "thermal:charge_bench"
-  }
+  },
+  "show_notification": true
 }

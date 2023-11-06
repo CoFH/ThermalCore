@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "key": {
     "#": {
       "item": "thermal:coal_coke"
@@ -12,5 +13,6 @@
   ],
   "result": {
     "item": "thermal:coal_coke_block"
-  }
+  },
+  "show_notification": true
 }

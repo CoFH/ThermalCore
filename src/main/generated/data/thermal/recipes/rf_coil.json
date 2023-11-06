@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "key": {
     "I": {
       "tag": "forge:ingots/gold"
@@ -15,5 +16,6 @@
   ],
   "result": {
     "item": "thermal:rf_coil"
-  }
+  },
+  "show_notification": true
 }

@@ -9,16 +9,16 @@ import java.util.Map;
 
 public class ThermalWorldConfig implements IBaseConfig {
 
-    protected static final Map<String, FeatureConfig> ORE_CONFIGS = new Object2ObjectOpenHashMap<>();
+    protected static final Map<String, FeatureConfig> FEATURE_CONFIGS = new Object2ObjectOpenHashMap<>();
 
-    public static void addOreConfig(String name, FeatureConfig config) {
+    public static void addFeatureConfig(String name, FeatureConfig config) {
 
-        ORE_CONFIGS.put(name, config);
+        FEATURE_CONFIGS.put(name, config);
     }
 
-    public static FeatureConfig getOreConfig(String name) {
+    public static FeatureConfig getFeatureConfig(String name) {
 
-        return ORE_CONFIGS.getOrDefault(name, FeatureConfig.EMPTY_CONFIG);
+        return FEATURE_CONFIGS.getOrDefault(name, FeatureConfig.EMPTY_CONFIG);
     }
 
     @Override
@@ -26,8 +26,8 @@ public class ThermalWorldConfig implements IBaseConfig {
 
         builder.push("World");
 
-        builder.push("Ores");
-        for (IBaseConfig config : ORE_CONFIGS.values()) {
+        builder.push("Features");
+        for (IBaseConfig config : FEATURE_CONFIGS.values()) {
             config.apply(builder);
         }
         builder.pop();
@@ -38,7 +38,7 @@ public class ThermalWorldConfig implements IBaseConfig {
     @Override
     public void refresh() {
 
-        for (IBaseConfig config : ORE_CONFIGS.values()) {
+        for (IBaseConfig config : FEATURE_CONFIGS.values()) {
             config.refresh();
         }
     }

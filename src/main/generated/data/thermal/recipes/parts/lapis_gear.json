@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "key": {
     "#": {
       "tag": "forge:gems/lapis"
@@ -15,5 +16,6 @@
   ],
   "result": {
     "item": "thermal:lapis_gear"
-  }
+  },
+  "show_notification": true
 }

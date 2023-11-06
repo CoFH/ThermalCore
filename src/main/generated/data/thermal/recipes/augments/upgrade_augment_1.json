@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "conditions": [
     {
       "type": "thermal:flag",
@@ -27,5 +28,6 @@
   ],
   "result": {
     "item": "thermal:upgrade_augment_1"
-  }
+  },
+  "show_notification": true
 }

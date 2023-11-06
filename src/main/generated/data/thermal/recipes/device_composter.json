@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "conditions": [
     {
       "type": "thermal:flag",
@@ -30,5 +31,6 @@
   ],
   "result": {
     "item": "thermal:device_composter"
-  }
+  },
+  "show_notification": true
 }

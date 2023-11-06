@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "equipment",
   "conditions": [
     {
       "type": "thermal:flag",
@@ -20,5 +21,6 @@
   ],
   "result": {
     "item": "thermal:beekeeper_boots"
-  }
+  },
+  "show_notification": true
 }

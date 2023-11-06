@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "equipment",
   "conditions": [
     {
       "type": "thermal:flag",
@@ -25,5 +26,6 @@
   "result": {
     "count": 4,
     "item": "thermal:ender_grenade"
-  }
+  },
+  "show_notification": true
 }

@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "key": {
     "#": {
       "tag": "forge:ingots/signalum"
@@ -15,5 +16,6 @@
   ],
   "result": {
     "item": "thermal:signalum_gear"
-  }
+  },
+  "show_notification": true
 }

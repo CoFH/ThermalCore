@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "equipment",
   "key": {
     "G": {
       "tag": "forge:gunpowder"
@@ -19,5 +20,6 @@
   "result": {
     "count": 4,
     "item": "thermal:explosive_grenade"
-  }
+  },
+  "show_notification": true
 }

@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "equipment",
   "key": {
     "G": {
       "tag": "forge:gears/iron"
@@ -15,5 +16,6 @@
   ],
   "result": {
     "item": "thermal:wrench"
-  }
+  },
+  "show_notification": true
 }

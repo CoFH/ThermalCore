@@ -29,7 +29,6 @@ import static cofh.thermal.core.init.TCoreEntities.*;
 import static cofh.thermal.core.util.RegistrationHelper.*;
 import static cofh.thermal.lib.common.ThermalAugmentRules.flagUniqueAugment;
 import static cofh.thermal.lib.common.ThermalCreativeTabs.*;
-import static cofh.thermal.lib.common.ThermalFlags.*;
 import static cofh.thermal.lib.common.ThermalIDs.*;
 import static net.minecraft.world.item.Items.GLASS_BOTTLE;
 
@@ -438,9 +437,9 @@ public class TCoreItems {
 
     private static void registerSpawnEggs() {
 
-        itemsTab(registerItem("basalz_spawn_egg", () -> new SpawnEggItemCoFH(BASALZ::get, 0x363840, 0x080407, new Item.Properties()).setShowInGroups(getFlag(FLAG_MOB_BASALZ))));
-        itemsTab(registerItem("blizz_spawn_egg", () -> new SpawnEggItemCoFH(BLIZZ::get, 0xD8DBE5, 0x91D9FC, new Item.Properties()).setShowInGroups(getFlag(FLAG_MOB_BLIZZ))));
-        itemsTab(registerItem("blitz_spawn_egg", () -> new SpawnEggItemCoFH(BLITZ::get, 0xC9EEFF, 0xFFD97E, new Item.Properties()).setShowInGroups(getFlag(FLAG_MOB_BLITZ))));
+        itemsTab(registerItem("basalz_spawn_egg", () -> new SpawnEggItemCoFH(BASALZ::get, 0x363840, 0x080407, new Item.Properties())));
+        itemsTab(registerItem("blizz_spawn_egg", () -> new SpawnEggItemCoFH(BLIZZ::get, 0xD8DBE5, 0x91D9FC, new Item.Properties())));
+        itemsTab(registerItem("blitz_spawn_egg", () -> new SpawnEggItemCoFH(BLITZ::get, 0xC9EEFF, 0xFFD97E, new Item.Properties())));
     }
     // endregion
 

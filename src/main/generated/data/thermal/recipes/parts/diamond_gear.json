@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "key": {
     "#": {
       "tag": "forge:gems/diamond"
@@ -15,5 +16,6 @@
   ],
   "result": {
     "item": "thermal:diamond_gear"
-  }
+  },
+  "show_notification": true
 }

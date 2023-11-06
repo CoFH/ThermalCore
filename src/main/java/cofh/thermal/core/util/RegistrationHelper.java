@@ -24,9 +24,11 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
+import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.List;
@@ -36,8 +38,7 @@ import java.util.function.Supplier;
 
 import static cofh.lib.util.constants.ModIds.*;
 import static cofh.thermal.core.ThermalCore.*;
-import static cofh.thermal.lib.common.ThermalCreativeTabs.foodsTab;
-import static cofh.thermal.lib.common.ThermalCreativeTabs.itemsTab;
+import static cofh.thermal.lib.common.ThermalCreativeTabs.*;
 import static net.minecraft.world.level.block.state.BlockBehaviour.Properties.of;
 
 public final class RegistrationHelper {
@@ -98,17 +99,17 @@ public final class RegistrationHelper {
     // endregion
 
     // region BLOCK SETS
-    public static void registerWoodBlockSet(String woodName, MapColor color, float hardness, float resistance, SoundType soundType, String modId) {
+    public static void registerWoodBlockSet(String woodName, MapColor color, float hardness, float resistance, SoundType soundType, WoodType type, String modId) {
 
-        //        registerBlock(woodName + "_planks", () -> new Block(of().mapColor(color).strength(hardness, resistance).sound(soundType)), modId);
-        //        registerBlock(woodName + "_slab", () -> new SlabBlock(of().mapColor(color).strength(hardness, resistance).sound(soundType)), modId);
-        //        registerBlock(woodName + "_stairs", () -> new StairBlock(() -> BLOCKS.get(woodName + "_planks").defaultBlockState(), of().mapColor(color).strength(hardness, resistance).sound(soundType)), modId);
-        //        registerBlock(woodName + "_door", () -> new DoorBlock(of().mapColor(color).strength(resistance).sound(soundType).noOcclusion()), modId);
-        //        registerBlock(woodName + "_trapdoor", () -> new TrapDoorBlock(of().mapColor(color).strength(resistance).sound(soundType).noOcclusion().isValidSpawn((state, reader, pos, entityType) -> false)), modId);
-        //        registerBlock(woodName + "_button", () -> new ButtonBlock(of().noCollission().strength(0.5F).sound(soundType)), modId);
-        //        registerBlock(woodName + "_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, of().mapColor(color).noCollission().strength(0.5F).sound(soundType)), modId);
-        //        registerBlock(woodName + "_fence", () -> new FenceBlock(of().mapColor(color).strength(hardness, resistance).sound(soundType)), modId);
-        //        registerBlock(woodName + "_fence_gate", () -> new FenceGateBlock(of().mapColor(color).strength(hardness, resistance).sound(soundType)), modId);
+        blocksTab(registerBlock(woodName + "_planks", () -> new Block(of().mapColor(color).instrument(NoteBlockInstrument.BASS).strength(hardness, resistance).sound(soundType)), modId));
+        blocksTab(registerBlock(woodName + "_slab", () -> new SlabBlock(of().mapColor(color).instrument(NoteBlockInstrument.BASS).strength(hardness, resistance).sound(soundType)), modId));
+        blocksTab(registerBlock(woodName + "_stairs", () -> new StairBlock(() -> BLOCKS.get(woodName + "_planks").defaultBlockState(), of().mapColor(color).instrument(NoteBlockInstrument.BASS).strength(hardness, resistance).sound(soundType)), modId));
+        blocksTab(registerBlock(woodName + "_door", () -> new DoorBlock(of().mapColor(color).instrument(NoteBlockInstrument.BASS).strength(resistance).sound(soundType).noOcclusion(), type.setType()), modId));
+        blocksTab(registerBlock(woodName + "_trapdoor", () -> new TrapDoorBlock(of().mapColor(color).instrument(NoteBlockInstrument.BASS).strength(resistance).sound(soundType).noOcclusion().isValidSpawn((state, reader, pos, entityType) -> false), type.setType()), modId));
+        blocksTab(registerBlock(woodName + "_button", () -> Blocks.woodenButton(type.setType()), modId));
+        blocksTab(registerBlock(woodName + "_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, of().mapColor(color).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(0.5F).ignitedByLava().pushReaction(PushReaction.DESTROY), type.setType()), modId));
+        blocksTab(registerBlock(woodName + "_fence", () -> new FenceBlock(of().mapColor(color).instrument(NoteBlockInstrument.BASS).strength(hardness, resistance).sound(soundType)), modId));
+        blocksTab(registerBlock(woodName + "_fence_gate", () -> new FenceGateBlock(of().mapColor(color).forceSolidOn().instrument(NoteBlockInstrument.BASS).strength(hardness, resistance).ignitedByLava(), type), modId));
     }
     // endregion
 
@@ -167,21 +168,23 @@ public final class RegistrationHelper {
 
     public static void registerMetalSet(String prefix, Rarity rarity, boolean vanilla, boolean alloy, String modId) {
 
+        int order = vanilla ? 999 : alloy ? 1001 : 1000;
+
         // Hacky but whatever.
         if (prefix.equals("copper") || prefix.equals("netherite")) {
-            itemsTab(registerItem(prefix + "_nugget", () -> new ItemCoFH(new Item.Properties().rarity(rarity)).setModId(modId)));
+            itemsTab(order, registerItem(prefix + "_nugget", () -> new ItemCoFH(new Item.Properties().rarity(rarity)).setModId(modId)));
         }
         if (!vanilla) {
             if (!alloy) {
-                itemsTab(registerItem("raw_" + prefix, () -> new ItemCoFH(new Item.Properties().rarity(rarity)).setModId(modId)));
+                itemsTab(order, registerItem("raw_" + prefix, () -> new ItemCoFH(new Item.Properties().rarity(rarity)).setModId(modId)));
             }
-            itemsTab(registerItem(prefix + "_ingot", () -> new ItemCoFH(new Item.Properties().rarity(rarity)).setModId(modId)));
-            itemsTab(registerItem(prefix + "_nugget", () -> new ItemCoFH(new Item.Properties().rarity(rarity)).setModId(modId)));
+            itemsTab(order, registerItem(prefix + "_ingot", () -> new ItemCoFH(new Item.Properties().rarity(rarity)).setModId(modId)));
+            itemsTab(order, registerItem(prefix + "_nugget", () -> new ItemCoFH(new Item.Properties().rarity(rarity)).setModId(modId)));
         }
-        itemsTab(registerItem(prefix + "_dust", () -> new ItemCoFH(new Item.Properties().rarity(rarity)).setModId(modId)));
-        itemsTab(registerItem(prefix + "_gear", () -> new ItemCoFH(new Item.Properties().rarity(rarity)).setModId(modId)));
-        itemsTab(registerItem(prefix + "_plate", () -> new CountedItem(new Item.Properties().rarity(rarity)).setModId(modId)));
-        itemsTab(registerItem(prefix + "_coin", () -> new CoinItem(new Item.Properties().rarity(rarity)).setModId(modId)));
+        itemsTab(order, registerItem(prefix + "_dust", () -> new ItemCoFH(new Item.Properties().rarity(rarity)).setModId(modId)));
+        itemsTab(order, registerItem(prefix + "_gear", () -> new ItemCoFH(new Item.Properties().rarity(rarity)).setModId(modId)));
+        itemsTab(order, registerItem(prefix + "_plate", () -> new CountedItem(new Item.Properties().rarity(rarity)).setModId(modId)));
+        itemsTab(order, registerItem(prefix + "_coin", () -> new CoinItem(new Item.Properties().rarity(rarity)).setModId(modId)));
     }
     // endregion
 

@@ -31,6 +31,7 @@ import cofh.thermal.core.entity.monster.Blitz;
 import cofh.thermal.core.entity.monster.Blizz;
 import cofh.thermal.core.fluid.RedstoneFluid;
 import cofh.thermal.core.init.*;
+import cofh.thermal.lib.common.ThermalCreativeTabs;
 import cofh.thermal.lib.common.ThermalFlags;
 import cofh.thermal.lib.common.ThermalProxy;
 import cofh.thermal.lib.common.ThermalProxyClient;
@@ -49,6 +50,8 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.placement.PlacementModifierType;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
@@ -86,14 +89,16 @@ public class ThermalCore {
     public static final DeferredRegisterCoFH<Fluid> FLUIDS = DeferredRegisterCoFH.create(ForgeRegistries.FLUIDS, ID_THERMAL);
     public static final DeferredRegisterCoFH<CreativeModeTab> CREATIVE_TABS = DeferredRegisterCoFH.create(Registries.CREATIVE_MODE_TAB, ID_THERMAL);
 
+    public static final DeferredRegisterCoFH<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegisterCoFH.create(ForgeRegistries.BLOCK_ENTITY_TYPES, ID_THERMAL);
     public static final DeferredRegisterCoFH<MenuType<?>> CONTAINERS = DeferredRegisterCoFH.create(ForgeRegistries.MENU_TYPES, ID_THERMAL);
     public static final DeferredRegisterCoFH<EntityType<?>> ENTITIES = DeferredRegisterCoFH.create(ForgeRegistries.ENTITY_TYPES, ID_THERMAL);
     public static final DeferredRegisterCoFH<Codec<? extends IGlobalLootModifier>> LOOT_SERIALIZERS = DeferredRegisterCoFH.create(ForgeRegistries.Keys.GLOBAL_LOOT_MODIFIER_SERIALIZERS, ID_THERMAL);
     public static final DeferredRegisterCoFH<RecipeType<?>> RECIPE_TYPES = DeferredRegisterCoFH.create(ForgeRegistries.RECIPE_TYPES, ID_THERMAL);
     public static final DeferredRegisterCoFH<RecipeSerializer<?>> RECIPE_SERIALIZERS = DeferredRegisterCoFH.create(ForgeRegistries.RECIPE_SERIALIZERS, ID_THERMAL);
     public static final DeferredRegisterCoFH<SoundEvent> SOUND_EVENTS = DeferredRegisterCoFH.create(ForgeRegistries.SOUND_EVENTS, ID_THERMAL);
-    public static final DeferredRegisterCoFH<BlockEntityType<?>> TILE_ENTITIES = DeferredRegisterCoFH.create(ForgeRegistries.BLOCK_ENTITY_TYPES, ID_THERMAL);
-    // public static final DeferredRegisterCoFH<PlacementModifierType<?>> PLACEMENT_MODIFIERS = DeferredRegisterCoFH.create(Registry.PLACEMENT_MODIFIER_REGISTRY, ID_THERMAL);
+
+    public static final DeferredRegisterCoFH<Feature<?>> FEATURES = DeferredRegisterCoFH.create(Registries.FEATURE, ID_THERMAL);
+    public static final DeferredRegisterCoFH<PlacementModifierType<?>> PLACEMENT_MODIFIERS = DeferredRegisterCoFH.create(Registries.PLACEMENT_MODIFIER_TYPE, ID_THERMAL);
 
     public static final DeferredRegisterCoFH<FluidType> FLUID_TYPES = DeferredRegisterCoFH.create(ForgeRegistries.Keys.FLUID_TYPES, ID_THERMAL);
 
@@ -124,30 +129,31 @@ public class ThermalCore {
         FLUIDS.register(modEventBus);
         CREATIVE_TABS.register(modEventBus);
 
+        BLOCK_ENTITIES.register(modEventBus);
         CONTAINERS.register(modEventBus);
         ENTITIES.register(modEventBus);
         LOOT_SERIALIZERS.register(modEventBus);
         RECIPE_SERIALIZERS.register(modEventBus);
         RECIPE_TYPES.register(modEventBus);
         SOUND_EVENTS.register(modEventBus);
-        TILE_ENTITIES.register(modEventBus);
-        // PLACEMENT_MODIFIERS.register(modEventBus);
+        PLACEMENT_MODIFIERS.register(modEventBus);
 
         FLUID_TYPES.register(modEventBus);
 
         TCoreBlocks.register();
         TCoreItems.register();
         TCoreFluids.register();
+        ThermalCreativeTabs.register();
 
+        TCoreBlockEntities.register();
         TCoreContainers.register();
         TCoreEntities.register();
         TCoreRecipeSerializers.register();
         TCoreRecipeTypes.register();
         TCoreSounds.register();
-        TCoreBlockEntities.register();
 
         TCoreRecipeManagers.register();
-        // TCorePlacementModifiers.register();
+        TCorePlacementModifiers.register();
     }
 
     private void setFeatureFlags() {
@@ -165,18 +171,18 @@ public class ThermalCore {
 
     private void addOreConfigs() {
 
-        ThermalWorldConfig.addOreConfig("niter_ore", new FeatureConfig("Niter", getFlag(FLAG_RESOURCE_NITER)));
-        ThermalWorldConfig.addOreConfig("sulfur_ore", new FeatureConfig("Sulfur", getFlag(FLAG_RESOURCE_SULFUR)));
+        ThermalWorldConfig.addFeatureConfig("niter_ore", new FeatureConfig("Niter", getFlag(FLAG_RESOURCE_NITER)));
+        ThermalWorldConfig.addFeatureConfig("sulfur_ore", new FeatureConfig("Sulfur", getFlag(FLAG_RESOURCE_SULFUR)));
 
-        ThermalWorldConfig.addOreConfig("tin_ore", new FeatureConfig("Tin", getFlag(FLAG_RESOURCE_TIN)));
-        ThermalWorldConfig.addOreConfig("lead_ore", new FeatureConfig("Lead", getFlag(FLAG_RESOURCE_LEAD)));
-        ThermalWorldConfig.addOreConfig("silver_ore", new FeatureConfig("Silver", getFlag(FLAG_RESOURCE_SILVER)));
-        ThermalWorldConfig.addOreConfig("nickel_ore", new FeatureConfig("Nickel", getFlag(FLAG_RESOURCE_NICKEL)));
+        ThermalWorldConfig.addFeatureConfig("tin_ore", new FeatureConfig("Tin", getFlag(FLAG_RESOURCE_TIN)));
+        ThermalWorldConfig.addFeatureConfig("lead_ore", new FeatureConfig("Lead", getFlag(FLAG_RESOURCE_LEAD)));
+        ThermalWorldConfig.addFeatureConfig("silver_ore", new FeatureConfig("Silver", getFlag(FLAG_RESOURCE_SILVER)));
+        ThermalWorldConfig.addFeatureConfig("nickel_ore", new FeatureConfig("Nickel", getFlag(FLAG_RESOURCE_NICKEL)));
 
-        ThermalWorldConfig.addOreConfig("apatite_ore", new FeatureConfig("Apatite", getFlag(FLAG_RESOURCE_APATITE)));
+        ThermalWorldConfig.addFeatureConfig("apatite_ore", new FeatureConfig("Apatite", getFlag(FLAG_RESOURCE_APATITE)));
 
-        ThermalWorldConfig.addOreConfig("cinnabar_ore", new FeatureConfig("Cinnabar", getFlag(FLAG_RESOURCE_CINNABAR)));
-        ThermalWorldConfig.addOreConfig("oil_sand", new FeatureConfig("Oil Sand", getFlag(FLAG_RESOURCE_OIL)));
+        ThermalWorldConfig.addFeatureConfig("cinnabar_ore", new FeatureConfig("Cinnabar", getFlag(FLAG_RESOURCE_CINNABAR)));
+        ThermalWorldConfig.addFeatureConfig("oil_sand", new FeatureConfig("Oil Sand", getFlag(FLAG_RESOURCE_OIL)));
     }
 
     // region INITIALIZATION
