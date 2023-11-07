@@ -41,7 +41,7 @@ import static cofh.lib.util.constants.NBTTags.*;
 import static cofh.thermal.core.init.registries.TCoreBlockEntities.DEVICE_ROCK_GEN_TILE;
 import static cofh.thermal.lib.util.ThermalAugmentRules.createAllowValidator;
 
-public class DeviceRockGenTile extends DeviceBlockEntity implements ITickableTile.IServerTickable {
+public class DeviceRockGenBlockEntity extends DeviceBlockEntity implements ITickableTile.IServerTickable {
 
     public static final BiPredicate<ItemStack, List<ItemStack>> AUG_VALIDATOR = createAllowValidator(TAG_AUGMENT_TYPE_UPGRADE);
 
@@ -59,7 +59,7 @@ public class DeviceRockGenTile extends DeviceBlockEntity implements ITickableTil
     protected int processMax = RockGenManager.instance().getDefaultEnergy();
     protected int genAmount = 1;
 
-    public DeviceRockGenTile(BlockPos pos, BlockState state) {
+    public DeviceRockGenBlockEntity(BlockPos pos, BlockState state) {
 
         super(DEVICE_ROCK_GEN_TILE.get(), pos, state);
 

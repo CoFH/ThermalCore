@@ -2,7 +2,7 @@ package cofh.thermal.core.client.gui.device;
 
 import cofh.core.client.gui.element.ElementBlock;
 import cofh.thermal.core.client.gui.ThermalGuiHelper;
-import cofh.thermal.core.common.block.entity.device.DeviceRockGenTile;
+import cofh.thermal.core.common.block.entity.device.DeviceRockGenBlockEntity;
 import cofh.thermal.core.common.inventory.device.DeviceRockGenContainer;
 import cofh.thermal.lib.client.gui.AugmentableTileScreen;
 import net.minecraft.network.chat.Component;
@@ -23,14 +23,14 @@ public class DeviceRockGenScreen extends AugmentableTileScreen<DeviceRockGenCont
 
     public static final FluidStack LAVA = new FluidStack(Fluids.LAVA, BUCKET_VOLUME);
 
-    protected DeviceRockGenTile myTile;
+    protected DeviceRockGenBlockEntity myTile;
 
     public DeviceRockGenScreen(DeviceRockGenContainer container, Inventory inv, Component titleIn) {
 
         super(container, inv, container.tile, titleIn);
         texture = TEXTURE;
         info = generatePanelInfo("info.thermal.device_rock_gen");
-        myTile = (DeviceRockGenTile) container.tile;
+        myTile = (DeviceRockGenBlockEntity) container.tile;
     }
 
     @Override

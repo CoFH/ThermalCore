@@ -1,6 +1,6 @@
 package cofh.thermal.lib.common.block;
 
-import cofh.core.common.block.TileBlock4Way;
+import cofh.core.common.block.EntityBlock4Way;
 import cofh.lib.api.block.entity.ITileCallback;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
@@ -9,7 +9,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 import java.util.function.Supplier;
 
-public class StorageCellBlock extends TileBlock4Way {
+public class StorageCellBlock extends EntityBlock4Way {
 
     public StorageCellBlock(Properties builder, Class<?> tileClass, Supplier<BlockEntityType<?>> blockEntityType) {
 

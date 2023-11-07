@@ -48,7 +48,7 @@ import static cofh.lib.util.constants.NBTTags.*;
 import static cofh.thermal.core.init.registries.TCoreBlockEntities.DEVICE_POTION_DIFFUSER_TILE;
 import static cofh.thermal.lib.util.ThermalAugmentRules.createAllowValidator;
 
-public class DevicePotionDiffuserTile extends DeviceBlockEntity implements ITickableTile, IAreaEffectTile {
+public class DevicePotionDiffuserBlockEntity extends DeviceBlockEntity implements ITickableTile, IAreaEffectTile {
 
     public static final BiPredicate<ItemStack, List<ItemStack>> AUG_VALIDATOR = createAllowValidator(TAG_AUGMENT_TYPE_UPGRADE, TAG_AUGMENT_TYPE_FLUID, TAG_AUGMENT_TYPE_AREA_EFFECT, TAG_AUGMENT_TYPE_FILTER, TAG_AUGMENT_TYPE_POTION);
 
@@ -73,7 +73,7 @@ public class DevicePotionDiffuserTile extends DeviceBlockEntity implements ITick
     protected int boostAmplifier;
     protected float boostDuration;
 
-    public DevicePotionDiffuserTile(BlockPos pos, BlockState state) {
+    public DevicePotionDiffuserBlockEntity(BlockPos pos, BlockState state) {
 
         super(DEVICE_POTION_DIFFUSER_TILE.get(), pos, state);
 

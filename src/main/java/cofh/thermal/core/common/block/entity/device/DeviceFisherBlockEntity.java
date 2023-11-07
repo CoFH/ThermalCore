@@ -49,7 +49,7 @@ import static cofh.lib.util.constants.NBTTags.*;
 import static cofh.thermal.core.init.registries.TCoreBlockEntities.DEVICE_FISHER_TILE;
 import static cofh.thermal.lib.util.ThermalAugmentRules.createAllowValidator;
 
-public class DeviceFisherTile extends DeviceBlockEntity implements ITickableTile.IServerTickable, IAreaEffectTile {
+public class DeviceFisherBlockEntity extends DeviceBlockEntity implements ITickableTile.IServerTickable, IAreaEffectTile {
 
     public static final BiPredicate<ItemStack, List<ItemStack>> AUG_VALIDATOR = createAllowValidator(TAG_AUGMENT_TYPE_UPGRADE, TAG_AUGMENT_TYPE_AREA_EFFECT, TAG_AUGMENT_TYPE_FILTER);
 
@@ -86,7 +86,7 @@ public class DeviceFisherTile extends DeviceBlockEntity implements ITickableTile
         particles = configConstant;
     }
 
-    public DeviceFisherTile(BlockPos pos, BlockState state) {
+    public DeviceFisherBlockEntity(BlockPos pos, BlockState state) {
 
         super(DEVICE_FISHER_TILE.get(), pos, state);
 

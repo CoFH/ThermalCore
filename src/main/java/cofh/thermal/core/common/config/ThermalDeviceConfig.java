@@ -1,9 +1,9 @@
 package cofh.thermal.core.common.config;
 
 import cofh.core.common.config.IBaseConfig;
-import cofh.thermal.core.common.block.entity.device.DeviceComposterTile;
-import cofh.thermal.core.common.block.entity.device.DeviceFisherTile;
-import cofh.thermal.core.common.block.entity.device.DeviceTreeExtractorTile;
+import cofh.thermal.core.common.block.entity.device.DeviceComposterBlockEntity;
+import cofh.thermal.core.common.block.entity.device.DeviceFisherBlockEntity;
+import cofh.thermal.core.common.block.entity.device.DeviceTreeExtractorBlockEntity;
 import net.minecraftforge.common.ForgeConfigSpec;
 
 import java.util.function.Supplier;
@@ -61,16 +61,16 @@ public class ThermalDeviceConfig implements IBaseConfig {
     public void refresh() {
 
         if (deviceTreeExtractorTimeConstant != null) {
-            DeviceTreeExtractorTile.setTimeConstant(deviceTreeExtractorTimeConstant.get());
+            DeviceTreeExtractorBlockEntity.setTimeConstant(deviceTreeExtractorTimeConstant.get());
         }
         if (deviceComposterTimeConstant != null) {
-            DeviceComposterTile.setTimeConstant(deviceComposterTimeConstant.get());
-            DeviceComposterTile.setParticles(deviceComposterParticles.get());
+            DeviceComposterBlockEntity.setTimeConstant(deviceComposterTimeConstant.get());
+            DeviceComposterBlockEntity.setParticles(deviceComposterParticles.get());
         }
         if (deviceFisherTimeConstant != null) {
-            DeviceFisherTile.setTimeConstant(deviceFisherTimeConstant.get());
-            DeviceFisherTile.setTimeReductionWater(deviceFisherTimeReductionWater.get());
-            DeviceFisherTile.setParticles(deviceFisherParticles.get());
+            DeviceFisherBlockEntity.setTimeConstant(deviceFisherTimeConstant.get());
+            DeviceFisherBlockEntity.setTimeReductionWater(deviceFisherTimeReductionWater.get());
+            DeviceFisherBlockEntity.setParticles(deviceFisherParticles.get());
         }
     }
 

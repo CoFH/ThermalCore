@@ -1,6 +1,6 @@
 package cofh.thermal.lib.common.block;
 
-import cofh.core.common.block.TileBlockActive6Way;
+import cofh.core.common.block.EntityBlockActive6Way;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -25,7 +25,7 @@ import java.util.function.Supplier;
 import static cofh.lib.util.constants.BlockStatePropertiesCoFH.ACTIVE;
 import static cofh.lib.util.constants.BlockStatePropertiesCoFH.FACING_ALL;
 
-public class DynamoBlock extends TileBlockActive6Way implements SimpleWaterloggedBlock {
+public class DynamoBlock extends EntityBlockActive6Way implements SimpleWaterloggedBlock {
 
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 

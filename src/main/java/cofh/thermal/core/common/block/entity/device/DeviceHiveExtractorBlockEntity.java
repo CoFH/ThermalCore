@@ -30,14 +30,14 @@ import static cofh.thermal.core.init.registries.TCoreBlockEntities.DEVICE_HIVE_E
 import static cofh.thermal.lib.util.ThermalAugmentRules.createAllowValidator;
 import static net.minecraftforge.fluids.capability.IFluidHandler.FluidAction.EXECUTE;
 
-public class DeviceHiveExtractorTile extends DeviceBlockEntity {
+public class DeviceHiveExtractorBlockEntity extends DeviceBlockEntity {
 
     public static final BiPredicate<ItemStack, List<ItemStack>> AUG_VALIDATOR = createAllowValidator(TAG_AUGMENT_TYPE_UPGRADE, TAG_AUGMENT_TYPE_FLUID);
 
     protected ItemStorageCoFH outputSlot = new ItemStorageCoFH();
     protected FluidStorageCoFH outputTank = new FluidStorageCoFH(TANK_MEDIUM);
 
-    public DeviceHiveExtractorTile(BlockPos pos, BlockState state) {
+    public DeviceHiveExtractorBlockEntity(BlockPos pos, BlockState state) {
 
         super(DEVICE_HIVE_EXTRACTOR_TILE.get(), pos, state);
 

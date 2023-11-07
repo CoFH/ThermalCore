@@ -27,7 +27,7 @@ import static cofh.lib.util.constants.NBTTags.TAG_AUGMENT_TYPE_FILTER;
 import static cofh.thermal.core.init.registries.TCoreBlockEntities.DEVICE_NULLIFIER_TILE;
 import static cofh.thermal.lib.util.ThermalAugmentRules.createAllowValidator;
 
-public class DeviceNullifierTile extends DeviceBlockEntity {
+public class DeviceNullifierBlockEntity extends DeviceBlockEntity {
 
     public static final BiPredicate<ItemStack, List<ItemStack>> AUG_VALIDATOR = createAllowValidator(TAG_AUGMENT_TYPE_FILTER);
 
@@ -37,7 +37,7 @@ public class DeviceNullifierTile extends DeviceBlockEntity {
 
     protected FluidStorageCoFH nullTank = new NullFluidStorage(BUCKET_VOLUME * 64, fluid -> filter.valid(fluid)).setEnabled(() -> isActive);
 
-    public DeviceNullifierTile(BlockPos pos, BlockState state) {
+    public DeviceNullifierBlockEntity(BlockPos pos, BlockState state) {
 
         super(DEVICE_NULLIFIER_TILE.get(), pos, state);
 

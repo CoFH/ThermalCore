@@ -1,6 +1,6 @@
 package cofh.thermal.core.common.block.device;
 
-import cofh.core.common.block.TileBlockActive;
+import cofh.core.common.block.EntityBlockActive;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
@@ -12,11 +12,11 @@ import java.util.function.Supplier;
 
 import static cofh.lib.util.constants.BlockStatePropertiesCoFH.ACTIVE;
 
-public class TileBlockComposter extends TileBlockActive {
+public class EntityBlockComposter extends EntityBlockActive {
 
     public static final IntegerProperty LEVEL = BlockStateProperties.LEVEL_COMPOSTER;
 
-    public TileBlockComposter(Properties builder, Class<?> tileClass, Supplier<BlockEntityType<?>> blockEntityType) {
+    public EntityBlockComposter(Properties builder, Class<?> tileClass, Supplier<BlockEntityType<?>> blockEntityType) {
 
         super(builder, tileClass, blockEntityType);
         this.registerDefaultState(this.stateDefinition.any().setValue(ACTIVE, false).setValue(LEVEL, 0));

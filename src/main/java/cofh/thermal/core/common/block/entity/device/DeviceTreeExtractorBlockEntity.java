@@ -43,7 +43,7 @@ import static cofh.thermal.core.init.registries.TCoreBlockEntities.DEVICE_TREE_E
 import static cofh.thermal.lib.util.ThermalAugmentRules.createAllowValidator;
 import static net.minecraftforge.fluids.capability.IFluidHandler.FluidAction.EXECUTE;
 
-public class DeviceTreeExtractorTile extends DeviceBlockEntity implements ITickableTile.IServerTickable {
+public class DeviceTreeExtractorBlockEntity extends DeviceBlockEntity implements ITickableTile.IServerTickable {
 
     public static final BiPredicate<ItemStack, List<ItemStack>> AUG_VALIDATOR = createAllowValidator(TAG_AUGMENT_TYPE_UPGRADE, TAG_AUGMENT_TYPE_FLUID, TAG_AUGMENT_TYPE_FILTER);
 
@@ -70,7 +70,7 @@ public class DeviceTreeExtractorTile extends DeviceBlockEntity implements ITicka
         timeConstant = configConstant;
     }
 
-    public DeviceTreeExtractorTile(BlockPos pos, BlockState state) {
+    public DeviceTreeExtractorBlockEntity(BlockPos pos, BlockState state) {
 
         super(DEVICE_TREE_EXTRACTOR_TILE.get(), pos, state);
 

@@ -1,6 +1,6 @@
 package cofh.thermal.lib.common.block.entity;
 
-import cofh.core.common.block.entity.TileCoFH;
+import cofh.core.common.block.entity.BlockEntityCoFH;
 import cofh.core.common.item.IAugmentableItem;
 import cofh.core.common.network.packet.client.TileControlPacket;
 import cofh.core.common.network.packet.client.TileRedstonePacket;
@@ -79,7 +79,7 @@ import static cofh.lib.util.constants.NBTTags.*;
 import static cofh.thermal.core.init.registries.TCoreSounds.SOUND_TINKER;
 import static net.minecraft.nbt.Tag.TAG_COMPOUND;
 
-public abstract class AugmentableBlockEntity extends TileCoFH implements ISecurableTile, IRedstoneControllableTile, MenuProvider, IFilterable {
+public abstract class AugmentableBlockEntity extends BlockEntityCoFH implements ISecurableTile, IRedstoneControllableTile, MenuProvider, IFilterable {
 
     protected static final int BASE_ENERGY = 50000;
     protected static final int BASE_PROCESS_TICK = 20;

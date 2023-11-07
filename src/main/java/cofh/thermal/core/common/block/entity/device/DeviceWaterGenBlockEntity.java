@@ -40,7 +40,7 @@ import static cofh.thermal.core.init.registries.TCoreSounds.SOUND_DEVICE_WATER_G
 import static cofh.thermal.lib.util.ThermalAugmentRules.createAllowValidator;
 import static net.minecraftforge.fluids.capability.IFluidHandler.FluidAction.EXECUTE;
 
-public class DeviceWaterGenTile extends DeviceBlockEntity implements ITickableTile.IServerTickable {
+public class DeviceWaterGenBlockEntity extends DeviceBlockEntity implements ITickableTile.IServerTickable {
 
     public static final BiPredicate<ItemStack, List<ItemStack>> AUG_VALIDATOR = createAllowValidator(TAG_AUGMENT_TYPE_UPGRADE, TAG_AUGMENT_TYPE_FLUID, TAG_AUGMENT_TYPE_FILTER);
 
@@ -53,7 +53,7 @@ public class DeviceWaterGenTile extends DeviceBlockEntity implements ITickableTi
     protected boolean cached;
     protected boolean valid;
 
-    public DeviceWaterGenTile(BlockPos pos, BlockState state) {
+    public DeviceWaterGenBlockEntity(BlockPos pos, BlockState state) {
 
         super(DEVICE_WATER_GEN_TILE.get(), pos, state);
 

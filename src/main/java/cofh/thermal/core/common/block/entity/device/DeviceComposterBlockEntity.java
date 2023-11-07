@@ -5,7 +5,7 @@ import cofh.lib.api.block.entity.ITickableTile;
 import cofh.lib.common.inventory.ItemStorageCoFH;
 import cofh.lib.common.xp.XpStorage;
 import cofh.lib.util.Utils;
-import cofh.thermal.core.common.block.device.TileBlockComposter;
+import cofh.thermal.core.common.block.device.EntityBlockComposter;
 import cofh.thermal.core.common.config.ThermalCoreConfig;
 import cofh.thermal.core.common.inventory.device.DeviceComposterContainer;
 import cofh.thermal.lib.common.block.entity.DeviceBlockEntity;
@@ -36,7 +36,7 @@ import static cofh.thermal.core.init.registries.TCoreBlockEntities.DEVICE_COMPOS
 import static cofh.thermal.lib.util.ThermalAugmentRules.createAllowValidator;
 import static net.minecraft.world.level.block.ComposterBlock.COMPOSTABLES;
 
-public class DeviceComposterTile extends DeviceBlockEntity implements ITickableTile.IServerTickable {
+public class DeviceComposterBlockEntity extends DeviceBlockEntity implements ITickableTile.IServerTickable {
 
     public static final BiPredicate<ItemStack, List<ItemStack>> AUG_VALIDATOR = createAllowValidator(TAG_AUGMENT_TYPE_UPGRADE, TAG_AUGMENT_TYPE_FILTER);
 
@@ -63,7 +63,7 @@ public class DeviceComposterTile extends DeviceBlockEntity implements ITickableT
         particles = configConstant;
     }
 
-    public DeviceComposterTile(BlockPos pos, BlockState state) {
+    public DeviceComposterBlockEntity(BlockPos pos, BlockState state) {
 
         super(DEVICE_COMPOSTER_TILE.get(), pos, state);
 
@@ -123,8 +123,8 @@ public class DeviceComposterTile extends DeviceBlockEntity implements ITickableT
     protected void updateTrackers() {
 
         int scaledOutput = 8 * outputSlot.getCount() / outputSlot.getCapacity();
-        if (level != null && scaledOutput != this.getBlockState().getValue(TileBlockComposter.LEVEL)) {
-            level.setBlockAndUpdate(worldPosition, getBlockState().setValue(TileBlockComposter.LEVEL, scaledOutput));
+        if (level != null && scaledOutput != this.getBlockState().getValue(EntityBlockComposter.LEVEL)) {
+            level.setBlockAndUpdate(worldPosition, getBlockState().setValue(EntityBlockComposter.LEVEL, scaledOutput));
         }
     }
 

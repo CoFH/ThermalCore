@@ -38,7 +38,7 @@ import static cofh.lib.util.constants.NBTTags.*;
 import static cofh.thermal.core.init.registries.TCoreBlockEntities.DEVICE_COLLECTOR_TILE;
 import static cofh.thermal.lib.util.ThermalAugmentRules.createAllowValidator;
 
-public class DeviceCollectorTile extends DeviceBlockEntity implements ITickableTile.IServerTickable, IAreaEffectTile {
+public class DeviceCollectorBlockEntity extends DeviceBlockEntity implements ITickableTile.IServerTickable, IAreaEffectTile {
 
     public static final BiPredicate<ItemStack, List<ItemStack>> AUG_VALIDATOR = createAllowValidator(TAG_AUGMENT_TYPE_UPGRADE, TAG_AUGMENT_TYPE_AREA_EFFECT, TAG_AUGMENT_TYPE_FILTER);
 
@@ -62,7 +62,7 @@ public class DeviceCollectorTile extends DeviceBlockEntity implements ITickableT
 
     protected int process = 1;
 
-    public DeviceCollectorTile(BlockPos pos, BlockState state) {
+    public DeviceCollectorBlockEntity(BlockPos pos, BlockState state) {
 
         super(DEVICE_COLLECTOR_TILE.get(), pos, state);
 

@@ -36,7 +36,7 @@ import static cofh.lib.util.constants.NBTTags.*;
 import static cofh.thermal.core.init.registries.TCoreBlockEntities.DEVICE_XP_CONDENSER_TILE;
 import static cofh.thermal.lib.util.ThermalAugmentRules.createAllowValidator;
 
-public class DeviceXpCondenserTile extends DeviceBlockEntity implements ITickableTile.IServerTickable, IAreaEffectTile {
+public class DeviceXpCondenserBlockEntity extends DeviceBlockEntity implements ITickableTile.IServerTickable, IAreaEffectTile {
 
     public static final BiPredicate<ItemStack, List<ItemStack>> AUG_VALIDATOR = createAllowValidator(TAG_AUGMENT_TYPE_UPGRADE, TAG_AUGMENT_TYPE_FLUID, TAG_AUGMENT_TYPE_AREA_EFFECT);
 
@@ -51,7 +51,7 @@ public class DeviceXpCondenserTile extends DeviceBlockEntity implements ITickabl
 
     protected int process = 1;
 
-    public DeviceXpCondenserTile(BlockPos pos, BlockState state) {
+    public DeviceXpCondenserBlockEntity(BlockPos pos, BlockState state) {
 
         super(DEVICE_XP_CONDENSER_TILE.get(), pos, state);
 

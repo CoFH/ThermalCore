@@ -34,7 +34,7 @@ import static cofh.lib.util.constants.NBTTags.*;
 import static cofh.thermal.core.init.registries.TCoreBlockEntities.DEVICE_SOIL_INFUSER_TILE;
 import static cofh.thermal.lib.util.ThermalAugmentRules.createAllowValidator;
 
-public class DeviceSoilInfuserTile extends AugmentableBlockEntity implements ITickableTile.IServerTickable, IAreaEffectTile {
+public class DeviceSoilInfuserBlockEntity extends AugmentableBlockEntity implements ITickableTile.IServerTickable, IAreaEffectTile {
 
     public static final BiPredicate<ItemStack, List<ItemStack>> AUG_VALIDATOR = createAllowValidator(TAG_AUGMENT_TYPE_UPGRADE, TAG_AUGMENT_TYPE_RF, TAG_AUGMENT_TYPE_AREA_EFFECT);
 
@@ -50,7 +50,7 @@ public class DeviceSoilInfuserTile extends AugmentableBlockEntity implements ITi
     protected int processMax = BASE_PROCESS_MAX * radius * radius;
     protected int processTick = getBaseProcessTick() / 4 * radius;
 
-    public DeviceSoilInfuserTile(BlockPos pos, BlockState state) {
+    public DeviceSoilInfuserBlockEntity(BlockPos pos, BlockState state) {
 
         super(DEVICE_SOIL_INFUSER_TILE.get(), pos, state);
         energyStorage = new EnergyStorageCoFH(BASE_ENERGY, getBaseProcessTick() * 10);

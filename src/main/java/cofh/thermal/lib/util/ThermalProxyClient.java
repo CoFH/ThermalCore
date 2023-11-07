@@ -2,7 +2,7 @@ package cofh.thermal.lib.util;
 
 import cofh.core.util.helpers.FluidHelper;
 import cofh.lib.util.helpers.MathHelper;
-import cofh.thermal.core.common.block.entity.device.DevicePotionDiffuserTile;
+import cofh.thermal.core.common.block.entity.device.DevicePotionDiffuserBlockEntity;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.core.particles.ParticleOptions;
@@ -13,7 +13,7 @@ import net.minecraft.world.phys.Vec3;
 public class ThermalProxyClient extends ThermalProxy {
 
     @Override
-    public void spawnDiffuserParticles(DevicePotionDiffuserTile tile) {
+    public void spawnDiffuserParticles(DevicePotionDiffuserBlockEntity tile) {
 
         int color = FluidHelper.color(tile.getRenderFluid());
         int radius = tile.getRadius();
