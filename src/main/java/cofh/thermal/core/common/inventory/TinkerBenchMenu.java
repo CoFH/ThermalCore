@@ -1,6 +1,6 @@
 package cofh.thermal.core.common.inventory;
 
-import cofh.core.common.inventory.TileCoFHContainer;
+import cofh.core.common.inventory.BlockEntityCoFHMenu;
 import cofh.core.common.network.packet.server.ContainerConfigPacket;
 import cofh.core.util.helpers.AugmentableHelper;
 import cofh.lib.common.inventory.SlotCoFH;
@@ -22,7 +22,7 @@ import java.util.List;
 import static cofh.lib.util.Constants.MAX_AUGMENTS;
 import static cofh.thermal.core.init.registries.TCoreContainers.TINKER_BENCH_CONTAINER;
 
-public class TinkerBenchContainer extends TileCoFHContainer {
+public class TinkerBenchMenu extends BlockEntityCoFHMenu {
 
     public final TinkerBenchBlockEntity tile;
 
@@ -37,7 +37,7 @@ public class TinkerBenchContainer extends TileCoFHContainer {
         }
     };
 
-    public TinkerBenchContainer(int windowId, Level world, BlockPos pos, Inventory inventory, Player player) {
+    public TinkerBenchMenu(int windowId, Level world, BlockPos pos, Inventory inventory, Player player) {
 
         super(TINKER_BENCH_CONTAINER.get(), windowId, world, pos, inventory, player);
         this.tile = (TinkerBenchBlockEntity) world.getBlockEntity(pos);

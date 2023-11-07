@@ -8,7 +8,7 @@ import cofh.lib.common.inventory.ItemStorageCoFH;
 import cofh.lib.util.Utils;
 import cofh.lib.util.helpers.MathHelper;
 import cofh.thermal.core.common.config.ThermalCoreConfig;
-import cofh.thermal.core.common.inventory.device.DeviceTreeExtractorContainer;
+import cofh.thermal.core.common.inventory.device.DeviceTreeExtractorMenu;
 import cofh.thermal.core.util.managers.device.TreeExtractorManager;
 import cofh.thermal.lib.common.block.entity.DeviceBlockEntity;
 import net.minecraft.core.BlockPos;
@@ -239,7 +239,7 @@ public class DeviceTreeExtractorBlockEntity extends DeviceBlockEntity implements
     @Override
     public AbstractContainerMenu createMenu(int i, Inventory inventory, Player player) {
 
-        return new DeviceTreeExtractorContainer(i, level, worldPosition, inventory, player);
+        return new DeviceTreeExtractorMenu(i, level, worldPosition, inventory, player);
     }
 
     // region GUI

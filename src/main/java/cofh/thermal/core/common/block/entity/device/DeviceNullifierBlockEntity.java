@@ -6,7 +6,7 @@ import cofh.lib.common.fluid.NullFluidStorage;
 import cofh.lib.common.inventory.ItemStorageCoFH;
 import cofh.lib.common.inventory.NullItemStorage;
 import cofh.thermal.core.common.config.ThermalCoreConfig;
-import cofh.thermal.core.common.inventory.device.DeviceNullifierContainer;
+import cofh.thermal.core.common.inventory.device.DeviceNullifierMenu;
 import cofh.thermal.lib.common.block.entity.DeviceBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.player.Inventory;
@@ -75,7 +75,7 @@ public class DeviceNullifierBlockEntity extends DeviceBlockEntity {
     @Override
     public AbstractContainerMenu createMenu(int i, Inventory inventory, Player player) {
 
-        return new DeviceNullifierContainer(i, level, worldPosition, inventory, player);
+        return new DeviceNullifierMenu(i, level, worldPosition, inventory, player);
     }
 
     // region AUGMENTS

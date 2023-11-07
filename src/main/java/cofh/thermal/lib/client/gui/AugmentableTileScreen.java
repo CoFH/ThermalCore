@@ -6,7 +6,7 @@ import cofh.core.client.gui.element.ElementXpStorage;
 import cofh.core.client.gui.element.panel.AugmentPanel;
 import cofh.core.client.gui.element.panel.RSControlPanel;
 import cofh.core.client.gui.element.panel.SecurityPanel;
-import cofh.core.common.inventory.ContainerCoFH;
+import cofh.core.common.inventory.ContainerMenuCoFH;
 import cofh.core.common.network.packet.server.FilterableGuiTogglePacket;
 import cofh.core.util.helpers.FilterHelper;
 import cofh.lib.util.helpers.SecurityHelper;
@@ -20,7 +20,7 @@ import java.util.Collections;
 
 import static cofh.core.util.helpers.GuiHelper.*;
 
-public class AugmentableTileScreen<T extends ContainerCoFH> extends ContainerScreenCoFH<T> {
+public class AugmentableTileScreen<T extends ContainerMenuCoFH> extends ContainerScreenCoFH<T> {
 
     protected AugmentableBlockEntity tile;
 

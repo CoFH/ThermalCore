@@ -4,7 +4,7 @@ import cofh.core.util.helpers.AugmentDataHelper;
 import cofh.lib.api.block.entity.ITickableTile;
 import cofh.lib.common.energy.EnergyStorageCoFH;
 import cofh.lib.common.inventory.ItemStorageCoFH;
-import cofh.thermal.core.common.inventory.ChargeBenchContainer;
+import cofh.thermal.core.common.inventory.ChargeBenchMenu;
 import cofh.thermal.lib.common.block.entity.AugmentableBlockEntity;
 import cofh.thermal.lib.util.ThermalEnergyHelper;
 import net.minecraft.core.BlockPos;
@@ -94,7 +94,7 @@ public class ChargeBenchBlockEntity extends AugmentableBlockEntity implements IT
     @Override
     public AbstractContainerMenu createMenu(int i, Inventory inventory, Player player) {
 
-        return new ChargeBenchContainer(i, level, worldPosition, inventory, player);
+        return new ChargeBenchMenu(i, level, worldPosition, inventory, player);
     }
 
     // region AUGMENTS

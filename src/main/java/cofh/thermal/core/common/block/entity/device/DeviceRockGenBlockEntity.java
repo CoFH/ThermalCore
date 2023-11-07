@@ -5,7 +5,7 @@ import cofh.core.util.helpers.AugmentDataHelper;
 import cofh.lib.api.block.entity.ITickableTile;
 import cofh.lib.common.inventory.ItemStorageCoFH;
 import cofh.thermal.core.common.config.ThermalCoreConfig;
-import cofh.thermal.core.common.inventory.device.DeviceRockGenContainer;
+import cofh.thermal.core.common.inventory.device.DeviceRockGenMenu;
 import cofh.thermal.core.util.managers.device.RockGenManager;
 import cofh.thermal.lib.common.block.entity.DeviceBlockEntity;
 import net.minecraft.core.BlockPos;
@@ -185,7 +185,7 @@ public class DeviceRockGenBlockEntity extends DeviceBlockEntity implements ITick
     @Override
     public AbstractContainerMenu createMenu(int i, Inventory inventory, Player player) {
 
-        return new DeviceRockGenContainer(i, level, worldPosition, inventory, player);
+        return new DeviceRockGenMenu(i, level, worldPosition, inventory, player);
     }
 
     // region GUI

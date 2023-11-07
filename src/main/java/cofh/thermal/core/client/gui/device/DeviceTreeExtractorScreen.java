@@ -1,7 +1,7 @@
 package cofh.thermal.core.client.gui.device;
 
 import cofh.thermal.core.client.gui.ThermalGuiHelper;
-import cofh.thermal.core.common.inventory.device.DeviceTreeExtractorContainer;
+import cofh.thermal.core.common.inventory.device.DeviceTreeExtractorMenu;
 import cofh.thermal.lib.client.gui.AugmentableTileScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -10,12 +10,12 @@ import net.minecraft.world.entity.player.Inventory;
 import static cofh.core.util.helpers.GuiHelper.*;
 import static cofh.lib.util.constants.ModIds.ID_THERMAL;
 
-public class DeviceTreeExtractorScreen extends AugmentableTileScreen<DeviceTreeExtractorContainer> {
+public class DeviceTreeExtractorScreen extends AugmentableTileScreen<DeviceTreeExtractorMenu> {
 
     public static final String TEX_PATH = ID_THERMAL + ":textures/gui/container/tree_extractor.png";
     public static final ResourceLocation TEXTURE = new ResourceLocation(TEX_PATH);
 
-    public DeviceTreeExtractorScreen(DeviceTreeExtractorContainer container, Inventory inv, Component titleIn) {
+    public DeviceTreeExtractorScreen(DeviceTreeExtractorMenu container, Inventory inv, Component titleIn) {
 
         super(container, inv, container.tile, titleIn);
         texture = TEXTURE;

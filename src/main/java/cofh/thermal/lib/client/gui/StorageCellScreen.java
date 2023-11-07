@@ -1,13 +1,13 @@
 package cofh.thermal.lib.client.gui;
 
 import cofh.core.client.gui.element.panel.ConfigPanel;
-import cofh.core.common.inventory.ContainerCoFH;
+import cofh.core.common.inventory.ContainerMenuCoFH;
 import cofh.thermal.core.client.gui.ThermalGuiHelper;
 import cofh.thermal.lib.common.block.entity.StorageCellBlockEntity;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;
 
-public class StorageCellScreen<T extends ContainerCoFH> extends AugmentableTileScreen<T> {
+public class StorageCellScreen<T extends ContainerMenuCoFH> extends AugmentableTileScreen<T> {
 
     protected StorageCellBlockEntity tile;
 

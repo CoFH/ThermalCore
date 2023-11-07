@@ -1,6 +1,6 @@
 package cofh.thermal.core.common.inventory.storage;
 
-import cofh.core.common.inventory.ContainerCoFH;
+import cofh.core.common.inventory.ContainerMenuCoFH;
 import cofh.core.common.network.packet.server.SecurityPacket;
 import cofh.lib.api.control.ISecurable;
 import cofh.lib.api.item.IInventoryContainerItem;
@@ -20,7 +20,7 @@ import net.minecraft.world.item.ItemStack;
 
 import static cofh.thermal.core.init.registries.TCoreContainers.SATCHEL_CONTAINER;
 
-public class SatchelContainer extends ContainerCoFH implements ISecurable {
+public class SatchelMenu extends ContainerMenuCoFH implements ISecurable {
 
     public static final int MAX_SLOTS = 54;
     public static final int MAX_ROWS = MAX_SLOTS / 9;
@@ -40,7 +40,7 @@ public class SatchelContainer extends ContainerCoFH implements ISecurable {
         return stack.getItem() instanceof SatchelItem;
     }
 
-    public SatchelContainer(int windowId, Inventory inventory, Player player) {
+    public SatchelMenu(int windowId, Inventory inventory, Player player) {
 
         super(SATCHEL_CONTAINER.get(), windowId, inventory, player);
 

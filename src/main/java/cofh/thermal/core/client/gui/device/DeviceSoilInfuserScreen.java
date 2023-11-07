@@ -3,7 +3,7 @@ package cofh.thermal.core.client.gui.device;
 import cofh.core.client.gui.element.ElementScaled;
 import cofh.core.util.helpers.GuiHelper;
 import cofh.thermal.core.client.gui.ThermalGuiHelper;
-import cofh.thermal.core.common.inventory.device.DeviceSoilInfuserContainer;
+import cofh.thermal.core.common.inventory.device.DeviceSoilInfuserMenu;
 import cofh.thermal.lib.client.gui.AugmentableTileScreen;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
@@ -15,12 +15,12 @@ import static cofh.lib.util.constants.ModIds.ID_THERMAL;
 import static cofh.lib.util.helpers.StringHelper.format;
 import static cofh.lib.util.helpers.StringHelper.localize;
 
-public class DeviceSoilInfuserScreen extends AugmentableTileScreen<DeviceSoilInfuserContainer> {
+public class DeviceSoilInfuserScreen extends AugmentableTileScreen<DeviceSoilInfuserMenu> {
 
     public static final String TEX_PATH = ID_THERMAL + ":textures/gui/container/soil_infuser.png";
     public static final ResourceLocation TEXTURE = new ResourceLocation(TEX_PATH);
 
-    public DeviceSoilInfuserScreen(DeviceSoilInfuserContainer container, Inventory inv, Component titleIn) {
+    public DeviceSoilInfuserScreen(DeviceSoilInfuserMenu container, Inventory inv, Component titleIn) {
 
         super(container, inv, container.tile, titleIn);
         texture = TEXTURE;

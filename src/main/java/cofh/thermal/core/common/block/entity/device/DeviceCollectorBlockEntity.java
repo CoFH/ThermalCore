@@ -7,7 +7,7 @@ import cofh.lib.api.block.entity.ITickableTile;
 import cofh.lib.common.xp.XpStorage;
 import cofh.thermal.core.client.ThermalTextures;
 import cofh.thermal.core.common.config.ThermalCoreConfig;
-import cofh.thermal.core.common.inventory.device.DeviceCollectorContainer;
+import cofh.thermal.core.common.inventory.device.DeviceCollectorMenu;
 import cofh.thermal.lib.common.block.entity.DeviceBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
@@ -110,7 +110,7 @@ public class DeviceCollectorBlockEntity extends DeviceBlockEntity implements ITi
     @Override
     public AbstractContainerMenu createMenu(int i, Inventory inventory, Player player) {
 
-        return new DeviceCollectorContainer(i, level, worldPosition, inventory, player);
+        return new DeviceCollectorMenu(i, level, worldPosition, inventory, player);
     }
 
     // region HELPERS

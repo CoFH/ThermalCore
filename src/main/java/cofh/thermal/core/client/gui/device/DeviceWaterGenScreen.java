@@ -1,6 +1,6 @@
 package cofh.thermal.core.client.gui.device;
 
-import cofh.thermal.core.common.inventory.device.DeviceWaterGenContainer;
+import cofh.thermal.core.common.inventory.device.DeviceWaterGenMenu;
 import cofh.thermal.lib.client.gui.AugmentableTileScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -10,12 +10,12 @@ import static cofh.core.util.helpers.GuiHelper.createMediumFluidStorage;
 import static cofh.core.util.helpers.GuiHelper.generatePanelInfo;
 import static cofh.lib.util.constants.ModIds.ID_THERMAL;
 
-public class DeviceWaterGenScreen extends AugmentableTileScreen<DeviceWaterGenContainer> {
+public class DeviceWaterGenScreen extends AugmentableTileScreen<DeviceWaterGenMenu> {
 
     public static final String TEX_PATH = ID_THERMAL + ":textures/gui/container/water_gen.png";
     public static final ResourceLocation TEXTURE = new ResourceLocation(TEX_PATH);
 
-    public DeviceWaterGenScreen(DeviceWaterGenContainer container, Inventory inv, Component titleIn) {
+    public DeviceWaterGenScreen(DeviceWaterGenMenu container, Inventory inv, Component titleIn) {
 
         super(container, inv, container.tile, titleIn);
         texture = TEXTURE;

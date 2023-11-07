@@ -16,7 +16,7 @@ import cofh.lib.util.Utils;
 import cofh.lib.util.helpers.MathHelper;
 import cofh.lib.util.helpers.SecurityHelper;
 import cofh.thermal.core.common.config.ThermalCoreConfig;
-import cofh.thermal.core.common.inventory.storage.SatchelContainer;
+import cofh.thermal.core.common.inventory.storage.SatchelMenu;
 import cofh.thermal.lib.common.item.InventoryContainerItemAugmentable;
 import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
 import net.minecraft.ChatFormatting;
@@ -219,7 +219,7 @@ public class SatchelItem extends InventoryContainerItemAugmentable implements IC
     @Override
     public AbstractContainerMenu createMenu(int i, Inventory inventory, Player player) {
 
-        return new SatchelContainer(i, inventory, player);
+        return new SatchelMenu(i, inventory, player);
     }
     // endregion
 

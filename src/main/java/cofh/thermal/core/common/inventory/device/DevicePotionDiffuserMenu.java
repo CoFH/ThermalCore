@@ -1,6 +1,6 @@
 package cofh.thermal.core.common.inventory.device;
 
-import cofh.core.common.inventory.TileCoFHContainer;
+import cofh.core.common.inventory.BlockEntityCoFHMenu;
 import cofh.lib.common.inventory.SlotCoFH;
 import cofh.lib.common.inventory.wrapper.InvWrapperCoFH;
 import cofh.thermal.lib.common.block.entity.AugmentableBlockEntity;
@@ -9,15 +9,15 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 
-import static cofh.thermal.core.init.registries.TCoreContainers.DEVICE_TREE_EXTRACTOR_CONTAINER;
+import static cofh.thermal.core.init.registries.TCoreContainers.DEVICE_POTION_DIFFUSER_CONTAINER;
 
-public class DeviceTreeExtractorContainer extends TileCoFHContainer {
+public class DevicePotionDiffuserMenu extends BlockEntityCoFHMenu {
 
     public final AugmentableBlockEntity tile;
 
-    public DeviceTreeExtractorContainer(int windowId, Level world, BlockPos pos, Inventory inventory, Player player) {
+    public DevicePotionDiffuserMenu(int windowId, Level world, BlockPos pos, Inventory inventory, Player player) {
 
-        super(DEVICE_TREE_EXTRACTOR_CONTAINER.get(), windowId, world, pos, inventory, player);
+        super(DEVICE_POTION_DIFFUSER_CONTAINER.get(), windowId, world, pos, inventory, player);
         this.tile = (AugmentableBlockEntity) world.getBlockEntity(pos);
         InvWrapperCoFH tileInv = new InvWrapperCoFH(this.tile.getItemInv());
 

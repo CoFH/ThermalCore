@@ -10,7 +10,7 @@ import cofh.lib.api.block.entity.ITickableTile;
 import cofh.lib.common.energy.EnergyStorageCoFH;
 import cofh.lib.common.fluid.FluidStorageCoFH;
 import cofh.lib.common.inventory.ItemStorageCoFH;
-import cofh.thermal.core.common.inventory.TinkerBenchContainer;
+import cofh.thermal.core.common.inventory.TinkerBenchMenu;
 import cofh.thermal.lib.common.block.entity.AugmentableBlockEntity;
 import cofh.thermal.lib.util.ThermalEnergyHelper;
 import net.minecraft.core.BlockPos;
@@ -165,7 +165,7 @@ public class TinkerBenchBlockEntity extends AugmentableBlockEntity implements IT
     @Override
     public AbstractContainerMenu createMenu(int i, Inventory inventory, Player player) {
 
-        return new TinkerBenchContainer(i, level, worldPosition, inventory, player);
+        return new TinkerBenchMenu(i, level, worldPosition, inventory, player);
     }
 
     // region GUI

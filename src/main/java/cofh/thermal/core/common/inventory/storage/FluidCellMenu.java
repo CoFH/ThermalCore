@@ -1,6 +1,6 @@
 package cofh.thermal.core.common.inventory.storage;
 
-import cofh.core.common.inventory.TileCoFHContainer;
+import cofh.core.common.inventory.BlockEntityCoFHMenu;
 import cofh.lib.common.inventory.wrapper.InvWrapperCoFH;
 import cofh.thermal.core.common.block.entity.storage.FluidCellBlockEntity;
 import net.minecraft.core.BlockPos;
@@ -10,11 +10,11 @@ import net.minecraft.world.level.Level;
 
 import static cofh.thermal.core.init.registries.TCoreContainers.FLUID_CELL_CONTAINER;
 
-public class FluidCellContainer extends TileCoFHContainer {
+public class FluidCellMenu extends BlockEntityCoFHMenu {
 
     public final FluidCellBlockEntity tile;
 
-    public FluidCellContainer(int windowId, Level world, BlockPos pos, Inventory inventory, Player player) {
+    public FluidCellMenu(int windowId, Level world, BlockPos pos, Inventory inventory, Player player) {
 
         super(FLUID_CELL_CONTAINER.get(), windowId, world, pos, inventory, player);
         this.tile = (FluidCellBlockEntity) world.getBlockEntity(pos);

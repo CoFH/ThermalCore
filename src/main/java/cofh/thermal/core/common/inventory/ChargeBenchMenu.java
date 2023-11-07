@@ -1,6 +1,6 @@
 package cofh.thermal.core.common.inventory;
 
-import cofh.core.common.inventory.TileCoFHContainer;
+import cofh.core.common.inventory.BlockEntityCoFHMenu;
 import cofh.lib.common.inventory.SlotCoFH;
 import cofh.lib.common.inventory.wrapper.InvWrapperCoFH;
 import cofh.thermal.core.common.block.entity.ChargeBenchBlockEntity;
@@ -11,11 +11,11 @@ import net.minecraft.world.level.Level;
 
 import static cofh.thermal.core.init.registries.TCoreContainers.CHARGE_BENCH_CONTAINER;
 
-public class ChargeBenchContainer extends TileCoFHContainer {
+public class ChargeBenchMenu extends BlockEntityCoFHMenu {
 
     public final ChargeBenchBlockEntity tile;
 
-    public ChargeBenchContainer(int windowId, Level world, BlockPos pos, Inventory inventory, Player player) {
+    public ChargeBenchMenu(int windowId, Level world, BlockPos pos, Inventory inventory, Player player) {
 
         super(CHARGE_BENCH_CONTAINER.get(), windowId, world, pos, inventory, player);
         this.tile = (ChargeBenchBlockEntity) world.getBlockEntity(pos);

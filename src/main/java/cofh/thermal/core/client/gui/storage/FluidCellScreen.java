@@ -5,7 +5,7 @@ import cofh.core.client.gui.element.ElementButton;
 import cofh.core.client.gui.element.ElementTexture;
 import cofh.core.common.network.packet.server.TileConfigPacket;
 import cofh.core.util.helpers.GuiHelper;
-import cofh.thermal.core.common.inventory.storage.FluidCellContainer;
+import cofh.thermal.core.common.inventory.storage.FluidCellMenu;
 import cofh.thermal.lib.client.gui.StorageCellScreen;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
@@ -18,7 +18,7 @@ import static cofh.lib.util.constants.ModIds.ID_THERMAL;
 import static cofh.lib.util.helpers.SoundHelper.playClickSound;
 import static cofh.lib.util.helpers.StringHelper.format;
 
-public class FluidCellScreen extends StorageCellScreen<FluidCellContainer> {
+public class FluidCellScreen extends StorageCellScreen<FluidCellMenu> {
 
     public static final String TEX_PATH = ID_THERMAL + ":textures/gui/container/fluid_cell.png";
     public static final ResourceLocation TEXTURE = new ResourceLocation(TEX_PATH);
@@ -26,7 +26,7 @@ public class FluidCellScreen extends StorageCellScreen<FluidCellContainer> {
     public static final String TEX_INCREMENT = ID_COFH_CORE + ":textures/gui/elements/button_increment.png";
     public static final String TEX_DECREMENT = ID_COFH_CORE + ":textures/gui/elements/button_decrement.png";
 
-    public FluidCellScreen(FluidCellContainer container, Inventory inv, Component titleIn) {
+    public FluidCellScreen(FluidCellMenu container, Inventory inv, Component titleIn) {
 
         super(container, inv, container.tile, titleIn);
         texture = TEXTURE;

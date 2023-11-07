@@ -3,7 +3,7 @@ package cofh.thermal.core.client.gui;
 import cofh.core.client.gui.element.ElementAugmentSlots;
 import cofh.core.client.gui.element.ElementButton;
 import cofh.core.client.gui.element.SimpleTooltip;
-import cofh.thermal.core.common.inventory.TinkerBenchContainer;
+import cofh.thermal.core.common.inventory.TinkerBenchMenu;
 import cofh.thermal.lib.client.gui.AugmentableTileScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -13,7 +13,7 @@ import static cofh.core.util.helpers.GuiHelper.*;
 import static cofh.lib.util.Constants.PATH_ELEMENTS;
 import static cofh.lib.util.constants.ModIds.ID_THERMAL;
 
-public class TinkerBenchScreen extends AugmentableTileScreen<TinkerBenchContainer> {
+public class TinkerBenchScreen extends AugmentableTileScreen<TinkerBenchMenu> {
 
     public static final String TEX_PATH = ID_THERMAL + ":textures/gui/container/tinker_bench.png";
     public static final ResourceLocation TEXTURE = new ResourceLocation(TEX_PATH);
@@ -21,7 +21,7 @@ public class TinkerBenchScreen extends AugmentableTileScreen<TinkerBenchContaine
     public static final String TEX_AUGMENT = ID_THERMAL + ":textures/gui/container/tinker_bench_mode_augment.png";
     public static final String TEX_REPLENISH = ID_THERMAL + ":textures/gui/container/tinker_bench_mode_replenish.png";
 
-    public TinkerBenchScreen(TinkerBenchContainer container, Inventory inv, Component titleIn) {
+    public TinkerBenchScreen(TinkerBenchMenu container, Inventory inv, Component titleIn) {
 
         super(container, inv, container.tile, titleIn);
         texture = TEXTURE;

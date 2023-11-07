@@ -7,7 +7,7 @@ import cofh.lib.common.energy.EnergyStorageCoFH;
 import cofh.lib.common.inventory.ItemStorageCoFH;
 import cofh.thermal.core.common.block.ChargedSoilBlock;
 import cofh.thermal.core.common.config.ThermalCoreConfig;
-import cofh.thermal.core.common.inventory.device.DeviceSoilInfuserContainer;
+import cofh.thermal.core.common.inventory.device.DeviceSoilInfuserMenu;
 import cofh.thermal.lib.common.block.entity.AugmentableBlockEntity;
 import cofh.thermal.lib.util.ThermalEnergyHelper;
 import net.minecraft.core.BlockPos;
@@ -88,7 +88,7 @@ public class DeviceSoilInfuserBlockEntity extends AugmentableBlockEntity impleme
     @Override
     public AbstractContainerMenu createMenu(int i, Inventory inventory, Player player) {
 
-        return new DeviceSoilInfuserContainer(i, level, worldPosition, inventory, player);
+        return new DeviceSoilInfuserMenu(i, level, worldPosition, inventory, player);
     }
 
     // region GUI

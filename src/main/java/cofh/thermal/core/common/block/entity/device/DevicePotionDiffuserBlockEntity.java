@@ -10,7 +10,7 @@ import cofh.lib.common.inventory.ItemStorageCoFH;
 import cofh.lib.util.Utils;
 import cofh.thermal.core.ThermalCore;
 import cofh.thermal.core.common.config.ThermalCoreConfig;
-import cofh.thermal.core.common.inventory.device.DevicePotionDiffuserContainer;
+import cofh.thermal.core.common.inventory.device.DevicePotionDiffuserMenu;
 import cofh.thermal.core.util.managers.device.PotionDiffuserManager;
 import cofh.thermal.lib.common.block.entity.DeviceBlockEntity;
 import net.minecraft.core.BlockPos;
@@ -145,7 +145,7 @@ public class DevicePotionDiffuserBlockEntity extends DeviceBlockEntity implement
     @Override
     public AbstractContainerMenu createMenu(int i, Inventory inventory, Player player) {
 
-        return new DevicePotionDiffuserContainer(i, level, worldPosition, inventory, player);
+        return new DevicePotionDiffuserMenu(i, level, worldPosition, inventory, player);
     }
 
     // region GUI

@@ -1,6 +1,6 @@
 package cofh.thermal.core.common.inventory.device;
 
-import cofh.core.common.inventory.TileCoFHContainer;
+import cofh.core.common.inventory.BlockEntityCoFHMenu;
 import cofh.lib.common.inventory.SlotCoFH;
 import cofh.lib.common.inventory.wrapper.InvWrapperCoFH;
 import cofh.thermal.core.common.block.entity.device.DeviceSoilInfuserBlockEntity;
@@ -11,11 +11,11 @@ import net.minecraft.world.level.Level;
 
 import static cofh.thermal.core.init.registries.TCoreContainers.DEVICE_SOIL_INFUSER_CONTAINER;
 
-public class DeviceSoilInfuserContainer extends TileCoFHContainer {
+public class DeviceSoilInfuserMenu extends BlockEntityCoFHMenu {
 
     public final DeviceSoilInfuserBlockEntity tile;
 
-    public DeviceSoilInfuserContainer(int windowId, Level world, BlockPos pos, Inventory inventory, Player player) {
+    public DeviceSoilInfuserMenu(int windowId, Level world, BlockPos pos, Inventory inventory, Player player) {
 
         super(DEVICE_SOIL_INFUSER_CONTAINER.get(), windowId, world, pos, inventory, player);
         this.tile = (DeviceSoilInfuserBlockEntity) world.getBlockEntity(pos);

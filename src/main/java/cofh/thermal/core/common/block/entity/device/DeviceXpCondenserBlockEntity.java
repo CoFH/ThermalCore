@@ -6,7 +6,7 @@ import cofh.lib.api.block.entity.IAreaEffectTile;
 import cofh.lib.api.block.entity.ITickableTile;
 import cofh.lib.common.fluid.FluidStorageCoFH;
 import cofh.thermal.core.common.config.ThermalCoreConfig;
-import cofh.thermal.core.common.inventory.device.DeviceXpCondenserContainer;
+import cofh.thermal.core.common.inventory.device.DeviceXpCondenserMenu;
 import cofh.thermal.lib.common.block.entity.DeviceBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
@@ -94,7 +94,7 @@ public class DeviceXpCondenserBlockEntity extends DeviceBlockEntity implements I
     @Override
     public AbstractContainerMenu createMenu(int i, Inventory inventory, Player player) {
 
-        return new DeviceXpCondenserContainer(i, level, worldPosition, inventory, player);
+        return new DeviceXpCondenserMenu(i, level, worldPosition, inventory, player);
     }
 
     // region HELPERS

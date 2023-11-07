@@ -1,7 +1,7 @@
 package cofh.thermal.lib.client.gui;
 
 import cofh.core.client.gui.element.panel.ConfigPanel;
-import cofh.core.common.inventory.ContainerCoFH;
+import cofh.core.common.inventory.ContainerMenuCoFH;
 import cofh.thermal.core.client.gui.ThermalGuiHelper;
 import cofh.thermal.lib.common.block.entity.Reconfigurable4WayBlockEntity;
 import net.minecraft.network.chat.Component;
@@ -10,7 +10,7 @@ import net.minecraft.world.entity.player.Inventory;
 import static cofh.core.util.helpers.GuiHelper.createDefaultEnergyStorage;
 import static cofh.core.util.helpers.GuiHelper.setClearable;
 
-public class MachineScreen<T extends ContainerCoFH> extends AugmentableTileScreen<T> {
+public class MachineScreen<T extends ContainerMenuCoFH> extends AugmentableTileScreen<T> {
 
     protected Reconfigurable4WayBlockEntity tile;
 

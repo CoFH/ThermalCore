@@ -9,7 +9,7 @@ import cofh.lib.common.fluid.FluidStorageCoFH;
 import cofh.lib.common.fluid.FluidStorageRestrictable;
 import cofh.lib.util.Utils;
 import cofh.lib.util.helpers.BlockHelper;
-import cofh.thermal.core.common.inventory.storage.FluidCellContainer;
+import cofh.thermal.core.common.inventory.storage.FluidCellMenu;
 import cofh.thermal.lib.common.block.entity.StorageCellBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -174,7 +174,7 @@ public class FluidCellBlockEntity extends StorageCellBlockEntity implements ITic
     @Override
     public AbstractContainerMenu createMenu(int i, Inventory inventory, Player player) {
 
-        return new FluidCellContainer(i, level, worldPosition, inventory, player);
+        return new FluidCellMenu(i, level, worldPosition, inventory, player);
     }
 
     // TODO: Does this need to exist?

@@ -7,7 +7,7 @@ import cofh.lib.common.xp.XpStorage;
 import cofh.lib.util.Utils;
 import cofh.thermal.core.common.block.device.EntityBlockComposter;
 import cofh.thermal.core.common.config.ThermalCoreConfig;
-import cofh.thermal.core.common.inventory.device.DeviceComposterContainer;
+import cofh.thermal.core.common.inventory.device.DeviceComposterMenu;
 import cofh.thermal.lib.common.block.entity.DeviceBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -132,7 +132,7 @@ public class DeviceComposterBlockEntity extends DeviceBlockEntity implements ITi
     @Override
     public AbstractContainerMenu createMenu(int i, Inventory inventory, Player player) {
 
-        return new DeviceComposterContainer(i, level, worldPosition, inventory, player);
+        return new DeviceComposterMenu(i, level, worldPosition, inventory, player);
     }
 
     // region GUI

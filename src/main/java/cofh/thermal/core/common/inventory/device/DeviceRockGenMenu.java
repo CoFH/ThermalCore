@@ -1,6 +1,6 @@
 package cofh.thermal.core.common.inventory.device;
 
-import cofh.core.common.inventory.TileCoFHContainer;
+import cofh.core.common.inventory.BlockEntityCoFHMenu;
 import cofh.lib.common.inventory.SlotRemoveOnly;
 import cofh.lib.common.inventory.wrapper.InvWrapperCoFH;
 import cofh.thermal.lib.common.block.entity.AugmentableBlockEntity;
@@ -9,19 +9,19 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 
-import static cofh.thermal.core.init.registries.TCoreContainers.DEVICE_HIVE_EXTRACTOR_CONTAINER;
+import static cofh.thermal.core.init.registries.TCoreContainers.DEVICE_ROCK_GEN_CONTAINER;
 
-public class DeviceHiveExtractorContainer extends TileCoFHContainer {
+public class DeviceRockGenMenu extends BlockEntityCoFHMenu {
 
     public final AugmentableBlockEntity tile;
 
-    public DeviceHiveExtractorContainer(int windowId, Level world, BlockPos pos, Inventory inventory, Player player) {
+    public DeviceRockGenMenu(int windowId, Level world, BlockPos pos, Inventory inventory, Player player) {
 
-        super(DEVICE_HIVE_EXTRACTOR_CONTAINER.get(), windowId, world, pos, inventory, player);
+        super(DEVICE_ROCK_GEN_CONTAINER.get(), windowId, world, pos, inventory, player);
         this.tile = (AugmentableBlockEntity) world.getBlockEntity(pos);
         InvWrapperCoFH tileInv = new InvWrapperCoFH(this.tile.getItemInv());
 
-        addSlot(new SlotRemoveOnly(tileInv, 0, 44, 35));
+        addSlot(new SlotRemoveOnly(tileInv, 0, 125, 35));
 
         bindAugmentSlots(tileInv, 1, this.tile.augSize());
         bindPlayerInventory(inventory);

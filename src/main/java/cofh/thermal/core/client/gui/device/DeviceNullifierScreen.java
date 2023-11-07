@@ -2,7 +2,7 @@ package cofh.thermal.core.client.gui.device;
 
 import cofh.core.client.gui.element.ElementButton;
 import cofh.core.client.gui.element.SimpleTooltip;
-import cofh.thermal.core.common.inventory.device.DeviceNullifierContainer;
+import cofh.thermal.core.common.inventory.device.DeviceNullifierMenu;
 import cofh.thermal.lib.client.gui.AugmentableTileScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -12,14 +12,14 @@ import static cofh.core.util.helpers.GuiHelper.generatePanelInfo;
 import static cofh.lib.util.constants.ModIds.ID_THERMAL;
 import static cofh.lib.util.helpers.SoundHelper.playClickSound;
 
-public class DeviceNullifierScreen extends AugmentableTileScreen<DeviceNullifierContainer> {
+public class DeviceNullifierScreen extends AugmentableTileScreen<DeviceNullifierMenu> {
 
     public static final String TEX_PATH = ID_THERMAL + ":textures/gui/container/nullifier.png";
     public static final ResourceLocation TEXTURE = new ResourceLocation(TEX_PATH);
 
     public static final String TEX_TRASH = ID_THERMAL + ":textures/gui/container/nullifier_empty_bin.png";
 
-    public DeviceNullifierScreen(DeviceNullifierContainer container, Inventory inv, Component titleIn) {
+    public DeviceNullifierScreen(DeviceNullifierMenu container, Inventory inv, Component titleIn) {
 
         super(container, inv, container.tile, titleIn);
         texture = TEXTURE;

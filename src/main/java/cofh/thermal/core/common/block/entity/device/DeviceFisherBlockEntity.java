@@ -10,7 +10,7 @@ import cofh.lib.common.xp.XpStorage;
 import cofh.lib.util.Utils;
 import cofh.lib.util.helpers.MathHelper;
 import cofh.thermal.core.common.config.ThermalCoreConfig;
-import cofh.thermal.core.common.inventory.device.DeviceFisherContainer;
+import cofh.thermal.core.common.inventory.device.DeviceFisherMenu;
 import cofh.thermal.core.util.managers.device.FisherManager;
 import cofh.thermal.lib.common.block.entity.DeviceBlockEntity;
 import net.minecraft.core.BlockPos;
@@ -200,7 +200,7 @@ public class DeviceFisherBlockEntity extends DeviceBlockEntity implements ITicka
     @Override
     public AbstractContainerMenu createMenu(int i, Inventory inventory, Player player) {
 
-        return new DeviceFisherContainer(i, level, worldPosition, inventory, player);
+        return new DeviceFisherMenu(i, level, worldPosition, inventory, player);
     }
 
     // region NBT

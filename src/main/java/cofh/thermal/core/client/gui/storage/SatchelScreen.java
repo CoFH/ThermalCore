@@ -8,7 +8,7 @@ import cofh.core.util.filter.IFilterableItem;
 import cofh.core.util.helpers.FilterHelper;
 import cofh.core.util.helpers.RenderHelper;
 import cofh.lib.util.helpers.SecurityHelper;
-import cofh.thermal.core.common.inventory.storage.SatchelContainer;
+import cofh.thermal.core.common.inventory.storage.SatchelMenu;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.gui.GuiGraphics;
@@ -24,7 +24,7 @@ import static cofh.core.util.helpers.GuiHelper.*;
 import static cofh.lib.util.Constants.PATH_ELEMENTS;
 import static cofh.lib.util.Constants.PATH_GUI;
 
-public class SatchelScreen extends ContainerScreenCoFH<SatchelContainer> {
+public class SatchelScreen extends ContainerScreenCoFH<SatchelMenu> {
 
     public static final ResourceLocation TEXTURE = new ResourceLocation(PATH_GUI + "generic.png");
     public static final ResourceLocation TEXTURE_EXT = new ResourceLocation(PATH_GUI + "generic_extension.png");
@@ -32,7 +32,7 @@ public class SatchelScreen extends ContainerScreenCoFH<SatchelContainer> {
 
     protected int renderExtension;
 
-    public SatchelScreen(SatchelContainer container, Inventory inv, Component titleIn) {
+    public SatchelScreen(SatchelMenu container, Inventory inv, Component titleIn) {
 
         super(container, inv, titleIn);
 

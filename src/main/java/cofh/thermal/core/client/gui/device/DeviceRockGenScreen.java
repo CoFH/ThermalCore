@@ -3,7 +3,7 @@ package cofh.thermal.core.client.gui.device;
 import cofh.core.client.gui.element.ElementBlock;
 import cofh.thermal.core.client.gui.ThermalGuiHelper;
 import cofh.thermal.core.common.block.entity.device.DeviceRockGenBlockEntity;
-import cofh.thermal.core.common.inventory.device.DeviceRockGenContainer;
+import cofh.thermal.core.common.inventory.device.DeviceRockGenMenu;
 import cofh.thermal.lib.client.gui.AugmentableTileScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -16,7 +16,7 @@ import static cofh.core.util.helpers.GuiHelper.*;
 import static cofh.lib.util.Constants.BUCKET_VOLUME;
 import static cofh.lib.util.constants.ModIds.ID_THERMAL;
 
-public class DeviceRockGenScreen extends AugmentableTileScreen<DeviceRockGenContainer> {
+public class DeviceRockGenScreen extends AugmentableTileScreen<DeviceRockGenMenu> {
 
     public static final String TEX_PATH = ID_THERMAL + ":textures/gui/container/rock_gen.png";
     public static final ResourceLocation TEXTURE = new ResourceLocation(TEX_PATH);
@@ -25,7 +25,7 @@ public class DeviceRockGenScreen extends AugmentableTileScreen<DeviceRockGenCont
 
     protected DeviceRockGenBlockEntity myTile;
 
-    public DeviceRockGenScreen(DeviceRockGenContainer container, Inventory inv, Component titleIn) {
+    public DeviceRockGenScreen(DeviceRockGenMenu container, Inventory inv, Component titleIn) {
 
         super(container, inv, container.tile, titleIn);
         texture = TEXTURE;

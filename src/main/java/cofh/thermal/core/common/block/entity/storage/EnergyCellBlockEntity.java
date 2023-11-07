@@ -7,7 +7,7 @@ import cofh.lib.common.energy.EnergyHandlerRestrictionWrapper;
 import cofh.lib.common.energy.EnergyStorageRestrictable;
 import cofh.lib.util.Utils;
 import cofh.lib.util.helpers.BlockHelper;
-import cofh.thermal.core.common.inventory.storage.EnergyCellContainer;
+import cofh.thermal.core.common.inventory.storage.EnergyCellMenu;
 import cofh.thermal.lib.common.block.entity.StorageCellBlockEntity;
 import cofh.thermal.lib.util.ThermalEnergyHelper;
 import net.minecraft.core.BlockPos;
@@ -170,7 +170,7 @@ public class EnergyCellBlockEntity extends StorageCellBlockEntity implements ITi
     @Override
     public AbstractContainerMenu createMenu(int i, Inventory inventory, Player player) {
 
-        return new EnergyCellContainer(i, level, worldPosition, inventory, player);
+        return new EnergyCellMenu(i, level, worldPosition, inventory, player);
     }
 
     // TODO: Does this need to exist?

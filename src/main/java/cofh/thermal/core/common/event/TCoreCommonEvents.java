@@ -2,7 +2,7 @@ package cofh.thermal.core.common.event;
 
 import cofh.core.compat.curios.CuriosProxy;
 import cofh.core.util.filter.IFilterOptions;
-import cofh.thermal.core.common.inventory.storage.SatchelContainer;
+import cofh.thermal.core.common.inventory.storage.SatchelMenu;
 import cofh.thermal.core.common.item.DivingArmorItem;
 import cofh.thermal.core.common.item.SatchelItem;
 import net.minecraft.tags.FluidTags;
@@ -57,7 +57,7 @@ public class TCoreCommonEvents {
             return;
         }
         Player player = event.getEntity();
-        if (player.containerMenu instanceof SatchelContainer || player.containerMenu instanceof IFilterOptions) {
+        if (player.containerMenu instanceof SatchelMenu || player.containerMenu instanceof IFilterOptions) {
             return;
         }
         Inventory inventory = player.getInventory();

@@ -7,7 +7,7 @@ import cofh.lib.client.sounds.ConditionalSoundInstance;
 import cofh.lib.common.fluid.FluidStorageCoFH;
 import cofh.lib.common.inventory.ItemStorageCoFH;
 import cofh.thermal.core.common.config.ThermalCoreConfig;
-import cofh.thermal.core.common.inventory.device.DeviceWaterGenContainer;
+import cofh.thermal.core.common.inventory.device.DeviceWaterGenMenu;
 import cofh.thermal.lib.common.block.entity.DeviceBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundSource;
@@ -147,7 +147,7 @@ public class DeviceWaterGenBlockEntity extends DeviceBlockEntity implements ITic
     @Override
     public AbstractContainerMenu createMenu(int i, Inventory inventory, Player player) {
 
-        return new DeviceWaterGenContainer(i, level, worldPosition, inventory, player);
+        return new DeviceWaterGenMenu(i, level, worldPosition, inventory, player);
     }
 
     @Override

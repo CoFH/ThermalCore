@@ -4,7 +4,7 @@ import cofh.core.util.helpers.AugmentDataHelper;
 import cofh.lib.common.fluid.FluidStorageCoFH;
 import cofh.lib.common.inventory.ItemStorageCoFH;
 import cofh.thermal.core.common.config.ThermalCoreConfig;
-import cofh.thermal.core.common.inventory.device.DeviceHiveExtractorContainer;
+import cofh.thermal.core.common.inventory.device.DeviceHiveExtractorMenu;
 import cofh.thermal.core.util.managers.device.HiveExtractorManager;
 import cofh.thermal.lib.common.block.entity.DeviceBlockEntity;
 import net.minecraft.core.BlockPos;
@@ -86,7 +86,7 @@ public class DeviceHiveExtractorBlockEntity extends DeviceBlockEntity {
     @Override
     public AbstractContainerMenu createMenu(int i, Inventory inventory, Player player) {
 
-        return new DeviceHiveExtractorContainer(i, level, worldPosition, inventory, player);
+        return new DeviceHiveExtractorMenu(i, level, worldPosition, inventory, player);
     }
 
     // region AUGMENTS

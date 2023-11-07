@@ -1,6 +1,6 @@
 package cofh.thermal.core.common.inventory.device;
 
-import cofh.core.common.inventory.TileCoFHContainer;
+import cofh.core.common.inventory.BlockEntityCoFHMenu;
 import cofh.core.common.network.packet.server.ContainerConfigPacket;
 import cofh.lib.common.inventory.SlotCoFH;
 import cofh.lib.common.inventory.wrapper.InvWrapperCoFH;
@@ -13,11 +13,11 @@ import net.minecraft.world.level.Level;
 
 import static cofh.thermal.core.init.registries.TCoreContainers.DEVICE_NULLIFIER_CONTAINER;
 
-public class DeviceNullifierContainer extends TileCoFHContainer {
+public class DeviceNullifierMenu extends BlockEntityCoFHMenu {
 
     public final DeviceNullifierBlockEntity tile;
 
-    public DeviceNullifierContainer(int windowId, Level world, BlockPos pos, Inventory inventory, Player player) {
+    public DeviceNullifierMenu(int windowId, Level world, BlockPos pos, Inventory inventory, Player player) {
 
         super(DEVICE_NULLIFIER_CONTAINER.get(), windowId, world, pos, inventory, player);
         this.tile = (DeviceNullifierBlockEntity) world.getBlockEntity(pos);
