@@ -1,6 +1,6 @@
 package cofh.thermal.core.util.recipes.dynamo;
 
-import cofh.lib.fluid.FluidIngredient;
+import cofh.lib.common.fluid.FluidIngredient;
 import cofh.lib.util.helpers.MathHelper;
 import cofh.thermal.core.ThermalCore;
 import cofh.thermal.core.util.managers.dynamo.CompressionFuelManager;
@@ -14,8 +14,8 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.List;
 
-import static cofh.thermal.core.init.TCoreRecipeSerializers.COMPRESSION_FUEL_SERIALIZER;
-import static cofh.thermal.core.init.TCoreRecipeTypes.COMPRESSION_FUEL;
+import static cofh.thermal.core.init.registries.TCoreRecipeSerializers.COMPRESSION_FUEL_SERIALIZER;
+import static cofh.thermal.core.init.registries.TCoreRecipeTypes.COMPRESSION_FUEL;
 
 public class CompressionFuel extends ThermalFuel {
 

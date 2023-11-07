@@ -1,9 +1,9 @@
 package cofh.thermal.lib.client.gui;
 
 import cofh.core.client.gui.element.ElementEnergyStorage;
-import cofh.core.inventory.container.ContainerCoFH;
+import cofh.core.common.inventory.ContainerCoFH;
 import cofh.thermal.core.client.gui.ThermalGuiHelper;
-import cofh.thermal.lib.block.entity.DynamoBlockEntity;
+import cofh.thermal.lib.common.block.entity.DynamoBlockEntity;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;
 

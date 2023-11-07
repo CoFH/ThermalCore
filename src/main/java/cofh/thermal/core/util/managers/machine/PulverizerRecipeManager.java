@@ -9,7 +9,7 @@ import net.minecraftforge.fluids.FluidStack;
 import javax.annotation.Nullable;
 import java.util.List;
 
-import static cofh.thermal.core.init.TCoreRecipeTypes.*;
+import static cofh.thermal.core.init.registries.TCoreRecipeTypes.*;
 
 public class PulverizerRecipeManager extends SingleItemRecipeManager.Catalyzed {
 

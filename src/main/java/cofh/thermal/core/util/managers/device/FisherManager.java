@@ -12,7 +12,7 @@ import org.apache.commons.lang3.tuple.Triple;
 
 import java.util.Map;
 
-import static cofh.thermal.core.init.TCoreRecipeTypes.FISHER_BOOST;
+import static cofh.thermal.core.init.registries.TCoreRecipeTypes.FISHER_BOOST;
 
 public class FisherManager extends AbstractManager {
 

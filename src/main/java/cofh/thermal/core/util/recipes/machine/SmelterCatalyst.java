@@ -8,8 +8,8 @@ import net.minecraft.world.item.crafting.RecipeType;
 
 import javax.annotation.Nonnull;
 
-import static cofh.thermal.core.init.TCoreRecipeSerializers.SMELTER_CATALYST_SERIALIZER;
-import static cofh.thermal.core.init.TCoreRecipeTypes.SMELTER_CATALYST;
+import static cofh.thermal.core.init.registries.TCoreRecipeSerializers.SMELTER_CATALYST_SERIALIZER;
+import static cofh.thermal.core.init.registries.TCoreRecipeTypes.SMELTER_CATALYST;
 
 public class SmelterCatalyst extends ThermalCatalyst {
 

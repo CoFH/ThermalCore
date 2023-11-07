@@ -8,8 +8,8 @@ import net.minecraft.world.item.crafting.RecipeType;
 
 import javax.annotation.Nonnull;
 
-import static cofh.thermal.core.init.TCoreRecipeSerializers.PULVERIZER_CATALYST_SERIALIZER;
-import static cofh.thermal.core.init.TCoreRecipeTypes.PULVERIZER_CATALYST;
+import static cofh.thermal.core.init.registries.TCoreRecipeSerializers.PULVERIZER_CATALYST_SERIALIZER;
+import static cofh.thermal.core.init.registries.TCoreRecipeTypes.PULVERIZER_CATALYST;
 
 public class PulverizerCatalyst extends ThermalCatalyst {
 

@@ -30,8 +30,8 @@ import java.util.List;
 import static cofh.lib.util.Constants.BUCKET_VOLUME;
 import static cofh.lib.util.helpers.StringHelper.getTextComponent;
 import static cofh.thermal.core.ThermalCore.BLOCKS;
-import static cofh.thermal.lib.common.ThermalIDs.ID_DEVICE_ROCK_GEN;
 import static cofh.thermal.lib.compat.jei.Drawables.SLOT;
+import static cofh.thermal.lib.init.ThermalIDs.ID_DEVICE_ROCK_GEN;
 
 public class RockGenCategory implements IRecipeCategory<RockGenMapping> {
 

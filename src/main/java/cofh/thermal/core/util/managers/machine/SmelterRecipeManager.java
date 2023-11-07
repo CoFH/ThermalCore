@@ -19,7 +19,7 @@ import net.minecraftforge.fluids.FluidStack;
 import javax.annotation.Nullable;
 import java.util.*;
 
-import static cofh.thermal.core.init.TCoreRecipeTypes.*;
+import static cofh.thermal.core.init.registries.TCoreRecipeTypes.*;
 import static java.util.Arrays.asList;
 
 public class SmelterRecipeManager extends AbstractManager implements IRecipeManager, CatalyzedRecipeManager {

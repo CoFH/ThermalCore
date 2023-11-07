@@ -22,7 +22,7 @@ import java.util.Map;
 import static cofh.lib.util.Utils.getName;
 import static cofh.lib.util.Utils.getRegistryName;
 import static cofh.lib.util.constants.ModIds.ID_THERMAL;
-import static cofh.thermal.core.init.TCoreRecipeTypes.DISENCHANTMENT_FUEL;
+import static cofh.thermal.core.init.registries.TCoreRecipeTypes.DISENCHANTMENT_FUEL;
 import static java.util.Collections.emptyList;
 import static java.util.Collections.singletonList;
 

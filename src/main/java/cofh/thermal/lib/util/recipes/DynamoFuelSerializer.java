@@ -1,6 +1,6 @@
 package cofh.thermal.lib.util.recipes;
 
-import cofh.lib.fluid.FluidIngredient;
+import cofh.lib.common.fluid.FluidIngredient;
 import cofh.lib.util.helpers.MathHelper;
 import cofh.thermal.core.ThermalCore;
 import com.google.gson.JsonObject;

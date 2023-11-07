@@ -12,8 +12,8 @@ import net.minecraft.world.item.crafting.RecipeType;
 import javax.annotation.Nullable;
 
 import static cofh.lib.util.recipes.RecipeJsonUtils.*;
-import static cofh.thermal.core.init.TCoreRecipeSerializers.POTION_DIFFUSER_BOOST_SERIALIZER;
-import static cofh.thermal.core.init.TCoreRecipeTypes.POTION_DIFFUSER_BOOST;
+import static cofh.thermal.core.init.registries.TCoreRecipeSerializers.POTION_DIFFUSER_BOOST_SERIALIZER;
+import static cofh.thermal.core.init.registries.TCoreRecipeTypes.POTION_DIFFUSER_BOOST;
 
 public class PotionDiffuserBoost extends SerializableRecipe {
 

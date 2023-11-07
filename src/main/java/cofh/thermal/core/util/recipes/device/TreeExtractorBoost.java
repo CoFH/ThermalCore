@@ -12,8 +12,8 @@ import net.minecraft.world.item.crafting.RecipeType;
 import javax.annotation.Nullable;
 
 import static cofh.lib.util.recipes.RecipeJsonUtils.*;
-import static cofh.thermal.core.init.TCoreRecipeSerializers.TREE_EXTRACTOR_BOOST_SERIALIZER;
-import static cofh.thermal.core.init.TCoreRecipeTypes.TREE_EXTRACTOR_BOOST;
+import static cofh.thermal.core.init.registries.TCoreRecipeSerializers.TREE_EXTRACTOR_BOOST_SERIALIZER;
+import static cofh.thermal.core.init.registries.TCoreRecipeTypes.TREE_EXTRACTOR_BOOST;
 
 public class TreeExtractorBoost extends SerializableRecipe {
 

@@ -32,11 +32,11 @@ import static cofh.lib.util.Constants.BUCKET_VOLUME;
 import static cofh.lib.util.constants.ModIds.ID_THERMAL;
 import static cofh.lib.util.helpers.StringHelper.getTextComponent;
 import static cofh.thermal.core.ThermalCore.BLOCKS;
-import static cofh.thermal.core.config.ThermalClientConfig.jeiBucketTanks;
-import static cofh.thermal.core.init.TCoreRecipeTypes.ROCK_GEN_MAPPING;
-import static cofh.thermal.core.init.TCoreRecipeTypes.TREE_EXTRACTOR_MAPPING;
-import static cofh.thermal.lib.common.ThermalFlags.getFlag;
-import static cofh.thermal.lib.common.ThermalIDs.*;
+import static cofh.thermal.core.common.config.ThermalClientConfig.jeiBucketTanks;
+import static cofh.thermal.core.init.registries.TCoreRecipeTypes.ROCK_GEN_MAPPING;
+import static cofh.thermal.core.init.registries.TCoreRecipeTypes.TREE_EXTRACTOR_MAPPING;
+import static cofh.thermal.lib.init.ThermalFlags.getFlag;
+import static cofh.thermal.lib.init.ThermalIDs.*;
 
 @JeiPlugin
 public class TCoreJeiPlugin implements IModPlugin {

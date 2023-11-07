@@ -11,7 +11,7 @@ import net.minecraft.world.level.block.Blocks;
 import java.util.IdentityHashMap;
 import java.util.Map;
 
-import static cofh.thermal.core.init.TCoreRecipeTypes.ROCK_GEN_MAPPING;
+import static cofh.thermal.core.init.registries.TCoreRecipeTypes.ROCK_GEN_MAPPING;
 
 public class RockGenManager extends AbstractManager {
 

@@ -1,6 +1,6 @@
 package cofh.thermal.core.util.recipes.machine;
 
-import cofh.lib.fluid.FluidIngredient;
+import cofh.lib.common.fluid.FluidIngredient;
 import cofh.thermal.core.ThermalCore;
 import cofh.thermal.core.util.managers.machine.FurnaceRecipeManager;
 import cofh.thermal.lib.util.recipes.ThermalRecipe;
@@ -18,8 +18,8 @@ import java.util.Collections;
 import java.util.List;
 
 import static cofh.lib.util.Constants.BASE_CHANCE_LOCKED;
-import static cofh.thermal.core.init.TCoreRecipeSerializers.FURNACE_RECIPE_SERIALIZER;
-import static cofh.thermal.core.init.TCoreRecipeTypes.FURNACE_RECIPE;
+import static cofh.thermal.core.init.registries.TCoreRecipeSerializers.FURNACE_RECIPE_SERIALIZER;
+import static cofh.thermal.core.init.registries.TCoreRecipeTypes.FURNACE_RECIPE;
 
 public class FurnaceRecipe extends ThermalRecipe {
 

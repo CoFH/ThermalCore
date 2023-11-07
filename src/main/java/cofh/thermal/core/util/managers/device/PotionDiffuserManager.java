@@ -10,7 +10,7 @@ import org.apache.commons.lang3.tuple.Triple;
 
 import java.util.Map;
 
-import static cofh.thermal.core.init.TCoreRecipeTypes.POTION_DIFFUSER_BOOST;
+import static cofh.thermal.core.init.registries.TCoreRecipeTypes.POTION_DIFFUSER_BOOST;
 
 public class PotionDiffuserManager extends AbstractManager {
 

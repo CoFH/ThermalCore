@@ -20,7 +20,7 @@ import static cofh.lib.util.Constants.RF_PER_FURNACE_UNIT;
 import static cofh.lib.util.Utils.getName;
 import static cofh.lib.util.Utils.getRegistryName;
 import static cofh.lib.util.constants.ModIds.ID_THERMAL;
-import static cofh.thermal.core.init.TCoreRecipeTypes.STIRLING_FUEL;
+import static cofh.thermal.core.init.registries.TCoreRecipeTypes.STIRLING_FUEL;
 import static java.util.Collections.emptyList;
 import static java.util.Collections.singletonList;
 

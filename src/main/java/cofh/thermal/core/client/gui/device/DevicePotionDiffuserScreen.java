@@ -1,7 +1,7 @@
 package cofh.thermal.core.client.gui.device;
 
 import cofh.thermal.core.client.gui.ThermalGuiHelper;
-import cofh.thermal.core.inventory.container.device.DevicePotionDiffuserContainer;
+import cofh.thermal.core.common.inventory.device.DevicePotionDiffuserContainer;
 import cofh.thermal.lib.client.gui.AugmentableTileScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;

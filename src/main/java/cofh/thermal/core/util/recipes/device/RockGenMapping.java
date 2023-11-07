@@ -16,8 +16,8 @@ import javax.annotation.Nullable;
 
 import static cofh.lib.util.Utils.getRegistryName;
 import static cofh.lib.util.recipes.RecipeJsonUtils.*;
-import static cofh.thermal.core.init.TCoreRecipeSerializers.ROCK_GEN_SERIALIZER;
-import static cofh.thermal.core.init.TCoreRecipeTypes.ROCK_GEN_MAPPING;
+import static cofh.thermal.core.init.registries.TCoreRecipeSerializers.ROCK_GEN_SERIALIZER;
+import static cofh.thermal.core.init.registries.TCoreRecipeTypes.ROCK_GEN_MAPPING;
 
 public class RockGenMapping extends SerializableRecipe {
 

@@ -1,6 +1,6 @@
 package cofh.thermal.core.client.gui;
 
-import cofh.thermal.core.inventory.container.ChargeBenchContainer;
+import cofh.thermal.core.common.inventory.ChargeBenchContainer;
 import cofh.thermal.lib.client.gui.AugmentableTileScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;

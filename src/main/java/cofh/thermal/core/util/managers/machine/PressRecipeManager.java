@@ -3,7 +3,7 @@ package cofh.thermal.core.util.managers.machine;
 import cofh.lib.api.fluid.IFluidStackHolder;
 import cofh.lib.api.inventory.IItemStackHolder;
 import cofh.lib.util.crafting.ComparableItemStack;
-import cofh.thermal.core.item.SlotSealItem;
+import cofh.thermal.core.common.item.SlotSealItem;
 import cofh.thermal.lib.util.managers.AbstractManager;
 import cofh.thermal.lib.util.managers.IRecipeManager;
 import cofh.thermal.lib.util.recipes.IThermalInventory;
@@ -18,7 +18,7 @@ import net.minecraftforge.fluids.FluidStack;
 
 import java.util.*;
 
-import static cofh.thermal.core.init.TCoreRecipeTypes.PRESS_RECIPE;
+import static cofh.thermal.core.init.registries.TCoreRecipeTypes.PRESS_RECIPE;
 import static java.util.Arrays.asList;
 
 public class PressRecipeManager extends AbstractManager implements IRecipeManager {

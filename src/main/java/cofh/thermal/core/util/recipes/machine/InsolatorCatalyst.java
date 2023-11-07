@@ -8,8 +8,8 @@ import net.minecraft.world.item.crafting.RecipeType;
 
 import javax.annotation.Nonnull;
 
-import static cofh.thermal.core.init.TCoreRecipeSerializers.INSOLATOR_CATALYST_SERIALIZER;
-import static cofh.thermal.core.init.TCoreRecipeTypes.INSOLATOR_CATALYST;
+import static cofh.thermal.core.init.registries.TCoreRecipeSerializers.INSOLATOR_CATALYST_SERIALIZER;
+import static cofh.thermal.core.init.registries.TCoreRecipeTypes.INSOLATOR_CATALYST;
 
 public class InsolatorCatalyst extends ThermalCatalyst {
 

@@ -3,7 +3,7 @@ package cofh.thermal.core.util.managers.machine;
 import cofh.core.util.helpers.FluidHelper;
 import cofh.lib.api.fluid.IFluidStackHolder;
 import cofh.lib.api.inventory.IItemStackHolder;
-import cofh.lib.fluid.FluidStackHolder;
+import cofh.lib.common.fluid.FluidStackHolder;
 import cofh.thermal.lib.util.managers.AbstractManager;
 import cofh.thermal.lib.util.managers.IRecipeManager;
 import cofh.thermal.lib.util.recipes.IThermalInventory;
@@ -20,7 +20,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-import static cofh.thermal.core.init.TCoreRecipeTypes.REFINERY_RECIPE;
+import static cofh.thermal.core.init.registries.TCoreRecipeTypes.REFINERY_RECIPE;
 
 public class RefineryRecipeManager extends AbstractManager implements IRecipeManager {
 

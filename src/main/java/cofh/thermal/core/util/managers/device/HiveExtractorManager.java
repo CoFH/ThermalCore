@@ -15,7 +15,7 @@ import java.util.IdentityHashMap;
 
 import static cofh.core.init.CoreFluids.HONEY_FLUID;
 import static cofh.core.util.helpers.ItemHelper.cloneStack;
-import static cofh.thermal.core.init.TCoreRecipeTypes.HIVE_EXTRACTOR_MAPPING;
+import static cofh.thermal.core.init.registries.TCoreRecipeTypes.HIVE_EXTRACTOR_MAPPING;
 
 public class HiveExtractorManager extends AbstractManager {
 

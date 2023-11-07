@@ -1,6 +1,6 @@
 package cofh.thermal.core.util.recipes.machine;
 
-import cofh.lib.fluid.FluidIngredient;
+import cofh.lib.common.fluid.FluidIngredient;
 import cofh.thermal.core.ThermalCore;
 import cofh.thermal.core.util.managers.machine.ChillerRecipeManager;
 import cofh.thermal.lib.util.recipes.ThermalRecipe;
@@ -14,8 +14,8 @@ import net.minecraftforge.fluids.FluidStack;
 import javax.annotation.Nonnull;
 import java.util.List;
 
-import static cofh.thermal.core.init.TCoreRecipeSerializers.CHILLER_RECIPE_SERIALIZER;
-import static cofh.thermal.core.init.TCoreRecipeTypes.CHILLER_RECIPE;
+import static cofh.thermal.core.init.registries.TCoreRecipeSerializers.CHILLER_RECIPE_SERIALIZER;
+import static cofh.thermal.core.init.registries.TCoreRecipeTypes.CHILLER_RECIPE;
 
 public class ChillerRecipe extends ThermalRecipe {
 

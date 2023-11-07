@@ -1,6 +1,6 @@
 package cofh.thermal.core.client.renderer.entity;
 
-import cofh.thermal.core.entity.projectile.BasalzProjectile;
+import cofh.thermal.core.common.entity.projectile.BasalzProjectile;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
 

@@ -3,7 +3,7 @@ package cofh.thermal.core.client.gui.device;
 import cofh.core.client.gui.element.ElementScaled;
 import cofh.core.util.helpers.GuiHelper;
 import cofh.thermal.core.client.gui.ThermalGuiHelper;
-import cofh.thermal.core.inventory.container.device.DeviceSoilInfuserContainer;
+import cofh.thermal.core.common.inventory.device.DeviceSoilInfuserContainer;
 import cofh.thermal.lib.client.gui.AugmentableTileScreen;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;

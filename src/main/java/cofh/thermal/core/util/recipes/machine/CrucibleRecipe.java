@@ -1,6 +1,6 @@
 package cofh.thermal.core.util.recipes.machine;
 
-import cofh.lib.fluid.FluidIngredient;
+import cofh.lib.common.fluid.FluidIngredient;
 import cofh.thermal.core.ThermalCore;
 import cofh.thermal.core.util.managers.machine.CrucibleRecipeManager;
 import cofh.thermal.lib.util.recipes.ThermalRecipe;
@@ -14,8 +14,8 @@ import net.minecraftforge.fluids.FluidStack;
 import javax.annotation.Nonnull;
 import java.util.List;
 
-import static cofh.thermal.core.init.TCoreRecipeSerializers.CRUCIBLE_RECIPE_SERIALIZER;
-import static cofh.thermal.core.init.TCoreRecipeTypes.CRUCIBLE_RECIPE;
+import static cofh.thermal.core.init.registries.TCoreRecipeSerializers.CRUCIBLE_RECIPE_SERIALIZER;
+import static cofh.thermal.core.init.registries.TCoreRecipeTypes.CRUCIBLE_RECIPE;
 
 public class CrucibleRecipe extends ThermalRecipe {
 

@@ -1,6 +1,6 @@
 package cofh.thermal.core.util.recipes.machine;
 
-import cofh.lib.fluid.FluidIngredient;
+import cofh.lib.common.fluid.FluidIngredient;
 import cofh.thermal.core.ThermalCore;
 import cofh.thermal.core.util.managers.machine.InsolatorRecipeManager;
 import cofh.thermal.lib.util.recipes.MachineRecipeSerializer;
@@ -20,8 +20,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static cofh.lib.util.recipes.RecipeJsonUtils.*;
-import static cofh.thermal.core.init.TCoreRecipeSerializers.INSOLATOR_RECIPE_SERIALIZER;
-import static cofh.thermal.core.init.TCoreRecipeTypes.INSOLATOR_RECIPE;
+import static cofh.thermal.core.init.registries.TCoreRecipeSerializers.INSOLATOR_RECIPE_SERIALIZER;
+import static cofh.thermal.core.init.registries.TCoreRecipeTypes.INSOLATOR_RECIPE;
 
 public class InsolatorRecipe extends ThermalRecipe {
 

@@ -5,7 +5,7 @@ import cofh.thermal.lib.util.recipes.internal.IDynamoFuel;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeManager;
 
-import static cofh.thermal.core.init.TCoreRecipeTypes.LAPIDARY_FUEL;
+import static cofh.thermal.core.init.registries.TCoreRecipeTypes.LAPIDARY_FUEL;
 
 public class LapidaryFuelManager extends SingleItemFuelManager {
 

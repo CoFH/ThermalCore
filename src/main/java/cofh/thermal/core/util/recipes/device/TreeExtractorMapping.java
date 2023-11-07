@@ -15,8 +15,8 @@ import javax.annotation.Nullable;
 
 import static cofh.lib.util.Utils.getRegistryName;
 import static cofh.lib.util.recipes.RecipeJsonUtils.*;
-import static cofh.thermal.core.init.TCoreRecipeSerializers.TREE_EXTRACTOR_SERIALIZER;
-import static cofh.thermal.core.init.TCoreRecipeTypes.TREE_EXTRACTOR_MAPPING;
+import static cofh.thermal.core.init.registries.TCoreRecipeSerializers.TREE_EXTRACTOR_SERIALIZER;
+import static cofh.thermal.core.init.registries.TCoreRecipeTypes.TREE_EXTRACTOR_MAPPING;
 
 public class TreeExtractorMapping extends SerializableRecipe {
 

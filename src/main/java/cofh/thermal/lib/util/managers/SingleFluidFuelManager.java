@@ -3,7 +3,7 @@ package cofh.thermal.lib.util.managers;
 import cofh.core.util.helpers.FluidHelper;
 import cofh.lib.api.fluid.IFluidStackHolder;
 import cofh.lib.api.inventory.IItemStackHolder;
-import cofh.lib.fluid.FluidStackHolder;
+import cofh.lib.common.fluid.FluidStackHolder;
 import cofh.thermal.lib.util.recipes.IThermalInventory;
 import cofh.thermal.lib.util.recipes.ThermalFuel;
 import cofh.thermal.lib.util.recipes.internal.BaseDynamoFuel;
@@ -80,7 +80,7 @@ public abstract class SingleFluidFuelManager extends AbstractManager implements 
         int amount = input.getAmount();
         if (amount != FLUID_FUEL_AMOUNT) {
             if (amount != BUCKET_VOLUME) {
-                long normEnergy = energy * BUCKET_VOLUME / amount;
+                long normEnergy = (long) energy * BUCKET_VOLUME / amount;
                 input.setAmount(FLUID_FUEL_AMOUNT);
                 energy = (int) normEnergy;
             }

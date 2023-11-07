@@ -8,9 +8,9 @@ import cofh.core.client.gui.element.panel.ResourcePanel;
 import cofh.core.util.helpers.FluidHelper;
 import cofh.core.util.helpers.GuiHelper;
 import cofh.lib.util.helpers.BlockHelper;
-import cofh.thermal.lib.block.entity.AugmentableBlockEntity;
-import cofh.thermal.lib.block.entity.Reconfigurable4WayBlockEntity;
-import cofh.thermal.lib.block.entity.StorageCellBlockEntity;
+import cofh.thermal.lib.common.block.entity.AugmentableBlockEntity;
+import cofh.thermal.lib.common.block.entity.Reconfigurable4WayBlockEntity;
+import cofh.thermal.lib.common.block.entity.StorageCellBlockEntity;
 import net.minecraft.resources.ResourceLocation;
 
 import static cofh.core.util.helpers.GuiHelper.ICON_ENERGY;

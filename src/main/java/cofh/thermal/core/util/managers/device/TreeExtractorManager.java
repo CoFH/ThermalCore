@@ -21,8 +21,8 @@ import java.util.IdentityHashMap;
 import java.util.Map;
 import java.util.Set;
 
-import static cofh.thermal.core.init.TCoreRecipeTypes.TREE_EXTRACTOR_BOOST;
-import static cofh.thermal.core.init.TCoreRecipeTypes.TREE_EXTRACTOR_MAPPING;
+import static cofh.thermal.core.init.registries.TCoreRecipeTypes.TREE_EXTRACTOR_BOOST;
+import static cofh.thermal.core.init.registries.TCoreRecipeTypes.TREE_EXTRACTOR_MAPPING;
 
 public class TreeExtractorManager extends AbstractManager {
 

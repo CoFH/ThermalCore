@@ -3,7 +3,7 @@ package cofh.thermal.core.util.managers.machine;
 import cofh.thermal.lib.util.managers.SingleItemRecipeManager;
 import net.minecraft.world.item.crafting.RecipeManager;
 
-import static cofh.thermal.core.init.TCoreRecipeTypes.PYROLYZER_RECIPE;
+import static cofh.thermal.core.init.registries.TCoreRecipeTypes.PYROLYZER_RECIPE;
 
 public class PyrolyzerRecipeManager extends SingleItemRecipeManager {
 

@@ -19,7 +19,7 @@ import net.minecraftforge.fluids.FluidStack;
 
 import java.util.*;
 
-import static cofh.thermal.core.init.TCoreRecipeTypes.CRYSTALLIZER_RECIPE;
+import static cofh.thermal.core.init.registries.TCoreRecipeTypes.CRYSTALLIZER_RECIPE;
 import static java.util.Arrays.asList;
 import static java.util.Collections.singletonList;
 

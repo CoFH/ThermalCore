@@ -16,8 +16,8 @@ import javax.annotation.Nullable;
 
 import static cofh.lib.util.Utils.getRegistryName;
 import static cofh.lib.util.recipes.RecipeJsonUtils.*;
-import static cofh.thermal.core.init.TCoreRecipeSerializers.HIVE_EXTRACTOR_SERIALIZER;
-import static cofh.thermal.core.init.TCoreRecipeTypes.HIVE_EXTRACTOR_MAPPING;
+import static cofh.thermal.core.init.registries.TCoreRecipeSerializers.HIVE_EXTRACTOR_SERIALIZER;
+import static cofh.thermal.core.init.registries.TCoreRecipeTypes.HIVE_EXTRACTOR_MAPPING;
 
 public class HiveExtractorMapping extends SerializableRecipe {
 

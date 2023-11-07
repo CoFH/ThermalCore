@@ -3,7 +3,7 @@ package cofh.thermal.core.util.managers.machine;
 import cofh.thermal.lib.util.managers.SingleItemRecipeManager;
 import net.minecraft.world.item.crafting.RecipeManager;
 
-import static cofh.thermal.core.init.TCoreRecipeTypes.CENTRIFUGE_RECIPE;
+import static cofh.thermal.core.init.registries.TCoreRecipeTypes.CENTRIFUGE_RECIPE;
 
 public class CentrifugeRecipeManager extends SingleItemRecipeManager {
 

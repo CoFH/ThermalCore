@@ -1,7 +1,7 @@
 package cofh.thermal.core.client.renderer.entity;
 
 import cofh.thermal.core.client.renderer.entity.model.BlitzModel;
-import cofh.thermal.core.entity.monster.Blitz;
+import cofh.thermal.core.common.entity.monster.Blitz;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.core.BlockPos;

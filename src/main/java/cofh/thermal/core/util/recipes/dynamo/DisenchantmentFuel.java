@@ -1,6 +1,6 @@
 package cofh.thermal.core.util.recipes.dynamo;
 
-import cofh.lib.fluid.FluidIngredient;
+import cofh.lib.common.fluid.FluidIngredient;
 import cofh.lib.util.helpers.MathHelper;
 import cofh.thermal.core.ThermalCore;
 import cofh.thermal.core.util.managers.dynamo.DisenchantmentFuelManager;
@@ -14,8 +14,8 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.List;
 
-import static cofh.thermal.core.init.TCoreRecipeSerializers.DISENCHANTMENT_FUEL_SERIALIZER;
-import static cofh.thermal.core.init.TCoreRecipeTypes.DISENCHANTMENT_FUEL;
+import static cofh.thermal.core.init.registries.TCoreRecipeSerializers.DISENCHANTMENT_FUEL_SERIALIZER;
+import static cofh.thermal.core.init.registries.TCoreRecipeTypes.DISENCHANTMENT_FUEL;
 
 public class DisenchantmentFuel extends ThermalFuel {
 

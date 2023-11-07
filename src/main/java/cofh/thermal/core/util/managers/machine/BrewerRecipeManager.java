@@ -1,10 +1,10 @@
 package cofh.thermal.core.util.managers.machine;
 
-import cofh.core.fluid.PotionFluid;
+import cofh.core.common.fluid.PotionFluid;
 import cofh.core.util.helpers.FluidHelper;
 import cofh.lib.api.fluid.IFluidStackHolder;
 import cofh.lib.api.inventory.IItemStackHolder;
-import cofh.lib.fluid.FluidIngredient;
+import cofh.lib.common.fluid.FluidIngredient;
 import cofh.lib.util.crafting.ComparableItemStack;
 import cofh.thermal.core.ThermalCore;
 import cofh.thermal.core.util.recipes.machine.BrewerRecipe;
@@ -29,7 +29,7 @@ import java.util.*;
 
 import static cofh.lib.util.Constants.BUCKET_VOLUME;
 import static cofh.lib.util.constants.ModIds.ID_THERMAL;
-import static cofh.thermal.core.init.TCoreRecipeTypes.BREWER_RECIPE;
+import static cofh.thermal.core.init.registries.TCoreRecipeTypes.BREWER_RECIPE;
 import static java.util.Arrays.asList;
 
 public class BrewerRecipeManager extends AbstractManager implements IRecipeManager {

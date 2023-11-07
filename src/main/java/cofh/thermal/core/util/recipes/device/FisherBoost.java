@@ -12,8 +12,8 @@ import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import javax.annotation.Nullable;
 
 import static cofh.lib.util.recipes.RecipeJsonUtils.*;
-import static cofh.thermal.core.init.TCoreRecipeSerializers.FISHER_BOOST_SERIALIZER;
-import static cofh.thermal.core.init.TCoreRecipeTypes.FISHER_BOOST;
+import static cofh.thermal.core.init.registries.TCoreRecipeSerializers.FISHER_BOOST_SERIALIZER;
+import static cofh.thermal.core.init.registries.TCoreRecipeTypes.FISHER_BOOST;
 
 public class FisherBoost extends SerializableRecipe {
 

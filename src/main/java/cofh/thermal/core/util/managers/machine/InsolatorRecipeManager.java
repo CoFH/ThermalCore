@@ -13,8 +13,8 @@ import java.util.Collections;
 import java.util.List;
 
 import static cofh.lib.util.Constants.BUCKET_VOLUME;
-import static cofh.thermal.core.init.TCoreRecipeTypes.INSOLATOR_CATALYST;
-import static cofh.thermal.core.init.TCoreRecipeTypes.INSOLATOR_RECIPE;
+import static cofh.thermal.core.init.registries.TCoreRecipeTypes.INSOLATOR_CATALYST;
+import static cofh.thermal.core.init.registries.TCoreRecipeTypes.INSOLATOR_RECIPE;
 
 public class InsolatorRecipeManager extends SingleItemRecipeManager.Catalyzed {
 

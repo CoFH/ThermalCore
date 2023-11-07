@@ -1,6 +1,6 @@
 package cofh.thermal.core.util.recipes.machine;
 
-import cofh.lib.fluid.FluidIngredient;
+import cofh.lib.common.fluid.FluidIngredient;
 import cofh.thermal.core.ThermalCore;
 import cofh.thermal.core.util.managers.machine.SmelterRecipeManager;
 import cofh.thermal.lib.util.recipes.ThermalRecipe;
@@ -14,8 +14,8 @@ import net.minecraftforge.fluids.FluidStack;
 import javax.annotation.Nonnull;
 import java.util.List;
 
-import static cofh.thermal.core.init.TCoreRecipeSerializers.SMELTER_RECIPE_SERIALIZER;
-import static cofh.thermal.core.init.TCoreRecipeTypes.SMELTER_RECIPE;
+import static cofh.thermal.core.init.registries.TCoreRecipeSerializers.SMELTER_RECIPE_SERIALIZER;
+import static cofh.thermal.core.init.registries.TCoreRecipeTypes.SMELTER_RECIPE;
 
 public class SmelterRecipe extends ThermalRecipe {
 

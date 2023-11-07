@@ -1,19 +1,19 @@
 package cofh.thermal.core.util;
 
-import cofh.core.entity.AbstractGrenade;
-import cofh.core.entity.AbstractTNTMinecart;
-import cofh.core.item.*;
+import cofh.core.common.entity.AbstractGrenade;
+import cofh.core.common.entity.AbstractTNTMinecart;
+import cofh.core.common.item.*;
 import cofh.lib.api.IDetonatable;
-import cofh.lib.block.CropBlockCoFH;
-import cofh.lib.block.CropBlockPerennial;
-import cofh.lib.block.CropBlockTall;
-import cofh.lib.block.TntBlockCoFH;
-import cofh.lib.entity.PrimedTntCoFH;
-import cofh.thermal.core.entity.explosive.DetonateUtils;
-import cofh.thermal.core.entity.explosive.Grenade;
-import cofh.thermal.core.entity.explosive.ThermalTNTEntity;
-import cofh.thermal.core.entity.explosive.ThermalTNTMinecart;
-import cofh.thermal.lib.item.BlockItemAugmentable;
+import cofh.lib.common.block.CropBlockCoFH;
+import cofh.lib.common.block.CropBlockPerennial;
+import cofh.lib.common.block.CropBlockTall;
+import cofh.lib.common.block.TntBlockCoFH;
+import cofh.lib.common.entity.PrimedTntCoFH;
+import cofh.thermal.core.common.entity.explosive.DetonateUtils;
+import cofh.thermal.core.common.entity.explosive.Grenade;
+import cofh.thermal.core.common.entity.explosive.ThermalTNTEntity;
+import cofh.thermal.core.common.entity.explosive.ThermalTNTMinecart;
+import cofh.thermal.lib.common.item.BlockItemAugmentable;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobCategory;
@@ -38,7 +38,7 @@ import java.util.function.Supplier;
 
 import static cofh.lib.util.constants.ModIds.*;
 import static cofh.thermal.core.ThermalCore.*;
-import static cofh.thermal.lib.common.ThermalCreativeTabs.*;
+import static cofh.thermal.lib.init.ThermalCreativeTabs.*;
 import static net.minecraft.world.level.block.state.BlockBehaviour.Properties.of;
 
 public final class RegistrationHelper {
