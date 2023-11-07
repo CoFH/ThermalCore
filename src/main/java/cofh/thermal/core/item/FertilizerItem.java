@@ -2,10 +2,9 @@ package cofh.thermal.core.item;
 
 import cofh.core.item.ItemCoFH;
 import cofh.lib.util.Utils;
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
-import net.minecraft.core.Holder;
-import net.minecraft.core.Registry;
+import net.minecraft.core.*;
+import net.minecraft.core.dispenser.DispenseItemBehavior;
+import net.minecraft.core.dispenser.OptionalDispenseItemBehavior;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.BlockTags;
@@ -18,10 +17,7 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
-import net.minecraft.world.level.block.BambooBlock;
-import net.minecraft.world.level.block.BaseCoralWallFanBlock;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.BonemealableBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.event.ForgeEventFactory;
@@ -32,17 +28,18 @@ public class FertilizerItem extends ItemCoFH {
 
     protected static final int CLOUD_DURATION = 20;
 
-    protected int strength = 4;
+    protected int strength;
 
     public FertilizerItem(Properties builder) {
 
-        super(builder);
+        this(builder, 4);
     }
 
     public FertilizerItem(Properties builder, int strength) {
 
         super(builder);
         this.strength = strength;
+        DispenserBlock.registerBehavior(this, DISPENSER_BEHAVIOR);
     }
 
     @Override
@@ -171,4 +168,26 @@ public class FertilizerItem extends ItemCoFH {
         world.addFreshEntity(cloud);
     }
 
+    // region DISPENSER BEHAVIOR
+    private static final DispenseItemBehavior DISPENSER_BEHAVIOR = new OptionalDispenseItemBehavior() {
+
+        @Override
+        public ItemStack execute(BlockSource source, ItemStack stack) {
+
+            FertilizerItem fertilizerItem = ((FertilizerItem) stack.getItem());
+            Level level = source.getLevel();
+            BlockPos pos = source.getPos().relative(source.getBlockState().getValue(DispenserBlock.FACING));
+            BlockState state = level.getBlockState(pos);
+            boolean used = growPlant(level, pos, state, fertilizerItem.strength) || growWaterPlant(level, pos, null);
+            this.setSuccess(used);
+            if (used) {
+                stack.shrink(1);
+                if (!level.isClientSide) {
+                    level.levelEvent(1505, pos, 0);
+                }
+            }
+            return stack;
+        }
+    };
+    // endregion
 }
