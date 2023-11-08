@@ -2,7 +2,7 @@ package cofh.thermal.core.common.entity.monster;
 
 import cofh.thermal.core.common.config.ThermalClientConfig;
 import cofh.thermal.core.common.entity.projectile.BlizzProjectile;
-import cofh.thermal.lib.init.ThermalFlags;
+import cofh.thermal.lib.util.ThermalFlags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -39,8 +39,8 @@ import static cofh.core.init.CoreMobEffects.CHILLED;
 import static cofh.core.init.CoreParticles.FROST;
 import static cofh.thermal.core.ThermalCore.ITEMS;
 import static cofh.thermal.core.init.registries.TCoreSounds.*;
-import static cofh.thermal.lib.init.ThermalFlags.FLAG_MOB_BLIZZ;
-import static cofh.thermal.lib.init.ThermalIDs.ID_BLIZZ;
+import static cofh.thermal.lib.util.ThermalFlags.FLAG_MOB_BLIZZ;
+import static cofh.thermal.lib.util.ThermalIDs.ID_BLIZZ;
 
 public class Blizz extends Monster {
 

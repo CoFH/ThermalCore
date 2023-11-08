@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static cofh.lib.util.Constants.MAX_AUGMENTS;
-import static cofh.thermal.core.init.registries.TCoreContainers.TINKER_BENCH_CONTAINER;
+import static cofh.thermal.core.init.registries.TCoreMenus.TINKER_BENCH_CONTAINER;
 
 public class TinkerBenchMenu extends BlockEntityCoFHMenu {
 

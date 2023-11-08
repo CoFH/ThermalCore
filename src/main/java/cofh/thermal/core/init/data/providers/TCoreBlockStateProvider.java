@@ -8,7 +8,7 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 
 import static cofh.lib.util.constants.ModIds.ID_THERMAL;
 import static cofh.thermal.core.ThermalCore.BLOCKS;
-import static cofh.thermal.lib.init.ThermalIDs.*;
+import static cofh.thermal.lib.util.ThermalIDs.*;
 
 public class TCoreBlockStateProvider extends BlockStateProviderCoFH {
 

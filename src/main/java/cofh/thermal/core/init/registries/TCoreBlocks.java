@@ -34,11 +34,11 @@ import static cofh.lib.util.constants.BlockStatePropertiesCoFH.ACTIVE;
 import static cofh.lib.util.helpers.BlockHelper.lightValue;
 import static cofh.thermal.core.ThermalCore.BLOCKS;
 import static cofh.thermal.core.init.registries.TCoreBlockEntities.*;
+import static cofh.thermal.core.init.registries.ThermalCreativeTabs.*;
 import static cofh.thermal.core.util.RegistrationHelper.registerAugmentableBlock;
 import static cofh.thermal.core.util.RegistrationHelper.registerBlock;
-import static cofh.thermal.lib.init.ThermalCreativeTabs.*;
-import static cofh.thermal.lib.init.ThermalIDs.*;
 import static cofh.thermal.lib.util.ThermalAugmentRules.ENERGY_STORAGE_VALIDATOR;
+import static cofh.thermal.lib.util.ThermalIDs.*;
 import static net.minecraft.world.level.block.state.BlockBehaviour.Properties.of;
 import static net.minecraft.world.level.material.MapColor.*;
 

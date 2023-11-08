@@ -38,7 +38,7 @@ import java.util.function.Supplier;
 
 import static cofh.lib.util.constants.ModIds.*;
 import static cofh.thermal.core.ThermalCore.*;
-import static cofh.thermal.lib.init.ThermalCreativeTabs.*;
+import static cofh.thermal.core.init.registries.ThermalCreativeTabs.*;
 import static net.minecraft.world.level.block.state.BlockBehaviour.Properties.of;
 
 public final class RegistrationHelper {

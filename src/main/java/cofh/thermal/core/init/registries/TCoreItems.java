@@ -26,10 +26,10 @@ import static cofh.lib.util.constants.NBTTags.*;
 import static cofh.thermal.core.ThermalCore.BLOCKS;
 import static cofh.thermal.core.ThermalCore.ITEMS;
 import static cofh.thermal.core.init.registries.TCoreEntities.*;
+import static cofh.thermal.core.init.registries.ThermalCreativeTabs.*;
 import static cofh.thermal.core.util.RegistrationHelper.*;
-import static cofh.thermal.lib.init.ThermalCreativeTabs.*;
-import static cofh.thermal.lib.init.ThermalIDs.*;
 import static cofh.thermal.lib.util.ThermalAugmentRules.flagUniqueAugment;
+import static cofh.thermal.lib.util.ThermalIDs.*;
 import static net.minecraft.world.item.Items.GLASS_BOTTLE;
 
 public class TCoreItems {

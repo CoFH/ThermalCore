@@ -16,7 +16,7 @@ import java.util.function.Consumer;
 import java.util.function.Supplier;
 
 import static cofh.thermal.core.ThermalCore.*;
-import static cofh.thermal.lib.init.ThermalIDs.ID_FLUID_LATEX;
+import static cofh.thermal.lib.util.ThermalIDs.ID_FLUID_LATEX;
 
 public class LatexFluid extends FluidCoFH {
 

@@ -35,7 +35,7 @@ import java.util.function.Supplier;
 
 import static cofh.lib.util.helpers.BlockHelper.lightValue;
 import static cofh.thermal.core.ThermalCore.*;
-import static cofh.thermal.lib.init.ThermalIDs.ID_FLUID_REDSTONE;
+import static cofh.thermal.lib.util.ThermalIDs.ID_FLUID_REDSTONE;
 import static net.minecraft.world.level.block.state.BlockBehaviour.Properties.of;
 
 public class RedstoneFluid extends FluidCoFH {

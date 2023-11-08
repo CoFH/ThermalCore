@@ -35,8 +35,8 @@ import static cofh.thermal.core.ThermalCore.BLOCKS;
 import static cofh.thermal.core.common.config.ThermalClientConfig.jeiBucketTanks;
 import static cofh.thermal.core.init.registries.TCoreRecipeTypes.ROCK_GEN_MAPPING;
 import static cofh.thermal.core.init.registries.TCoreRecipeTypes.TREE_EXTRACTOR_MAPPING;
-import static cofh.thermal.lib.init.ThermalFlags.getFlag;
-import static cofh.thermal.lib.init.ThermalIDs.*;
+import static cofh.thermal.lib.util.ThermalFlags.getFlag;
+import static cofh.thermal.lib.util.ThermalIDs.*;
 
 @JeiPlugin
 public class TCoreJeiPlugin implements IModPlugin {

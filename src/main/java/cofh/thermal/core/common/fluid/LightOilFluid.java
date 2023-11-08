@@ -16,7 +16,7 @@ import java.util.function.Consumer;
 import java.util.function.Supplier;
 
 import static cofh.thermal.core.ThermalCore.*;
-import static cofh.thermal.lib.init.ThermalIDs.ID_FLUID_LIGHT_OIL;
+import static cofh.thermal.lib.util.ThermalIDs.ID_FLUID_LIGHT_OIL;
 
 public class LightOilFluid extends FluidCoFH {
 

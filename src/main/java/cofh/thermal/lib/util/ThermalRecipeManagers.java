@@ -1,4 +1,4 @@
-package cofh.thermal.lib.init;
+package cofh.thermal.lib.util;
 
 import cofh.thermal.lib.util.managers.IManager;
 import net.minecraft.world.item.crafting.RecipeManager;

@@ -1,4 +1,4 @@
-package cofh.thermal.lib.init;
+package cofh.thermal.lib.util;
 
 import cofh.lib.util.flags.FlagManager;
 

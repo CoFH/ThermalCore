@@ -2,7 +2,7 @@ package cofh.thermal.core.common.entity.monster;
 
 import cofh.thermal.core.common.config.ThermalClientConfig;
 import cofh.thermal.core.common.entity.projectile.BlitzProjectile;
-import cofh.thermal.lib.init.ThermalFlags;
+import cofh.thermal.lib.util.ThermalFlags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.particles.SimpleParticleType;
@@ -39,8 +39,8 @@ import static cofh.core.init.CoreMobEffects.SHOCKED;
 import static cofh.core.init.CoreParticles.SPARK;
 import static cofh.thermal.core.ThermalCore.ITEMS;
 import static cofh.thermal.core.init.registries.TCoreSounds.*;
-import static cofh.thermal.lib.init.ThermalFlags.FLAG_MOB_BLITZ;
-import static cofh.thermal.lib.init.ThermalIDs.ID_BLITZ;
+import static cofh.thermal.lib.util.ThermalFlags.FLAG_MOB_BLITZ;
+import static cofh.thermal.lib.util.ThermalIDs.ID_BLITZ;
 
 public class Blitz extends Monster {
 

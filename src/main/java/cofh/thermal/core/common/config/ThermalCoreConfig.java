@@ -17,8 +17,8 @@ import static cofh.lib.util.Constants.FALSE;
 import static cofh.lib.util.Constants.TRUE;
 import static cofh.lib.util.Utils.getRegistryName;
 import static cofh.lib.util.constants.ModIds.ID_THERMAL;
-import static cofh.thermal.lib.init.ThermalFlags.*;
-import static cofh.thermal.lib.init.ThermalIDs.ID_SATCHEL;
+import static cofh.thermal.lib.util.ThermalFlags.*;
+import static cofh.thermal.lib.util.ThermalIDs.ID_SATCHEL;
 
 public class ThermalCoreConfig implements IBaseConfig {
 

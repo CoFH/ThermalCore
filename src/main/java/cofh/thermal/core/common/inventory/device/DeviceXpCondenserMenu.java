@@ -8,7 +8,7 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 
-import static cofh.thermal.core.init.registries.TCoreContainers.DEVICE_XP_CONDENSER_CONTAINER;
+import static cofh.thermal.core.init.registries.TCoreMenus.DEVICE_XP_CONDENSER_CONTAINER;
 
 public class DeviceXpCondenserMenu extends BlockEntityCoFHMenu {
 

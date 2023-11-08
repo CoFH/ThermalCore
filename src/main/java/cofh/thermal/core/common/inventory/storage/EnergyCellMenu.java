@@ -8,7 +8,7 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 
-import static cofh.thermal.core.init.registries.TCoreContainers.ENERGY_CELL_CONTAINER;
+import static cofh.thermal.core.init.registries.TCoreMenus.ENERGY_CELL_CONTAINER;
 
 public class EnergyCellMenu extends BlockEntityCoFHMenu {
 

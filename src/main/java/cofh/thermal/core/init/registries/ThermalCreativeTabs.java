@@ -1,4 +1,4 @@
-package cofh.thermal.lib.init;
+package cofh.thermal.core.init.registries;
 
 import com.google.common.collect.Sets;
 import com.mojang.datafixers.util.Pair;
@@ -15,7 +15,7 @@ import java.util.Set;
 import static cofh.lib.util.constants.ModIds.ID_THERMAL;
 import static cofh.thermal.core.ThermalCore.CREATIVE_TABS;
 import static cofh.thermal.core.ThermalCore.ITEMS;
-import static cofh.thermal.lib.init.ThermalIDs.*;
+import static cofh.thermal.lib.util.ThermalIDs.*;
 
 public class ThermalCreativeTabs {
 

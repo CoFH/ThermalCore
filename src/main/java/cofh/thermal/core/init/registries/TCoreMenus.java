@@ -13,11 +13,11 @@ import net.minecraftforge.registries.RegistryObject;
 import static cofh.core.util.ProxyUtils.getClientPlayer;
 import static cofh.core.util.ProxyUtils.getClientWorld;
 import static cofh.thermal.core.ThermalCore.CONTAINERS;
-import static cofh.thermal.lib.init.ThermalIDs.*;
+import static cofh.thermal.lib.util.ThermalIDs.*;
 
-public class TCoreContainers {
+public class TCoreMenus {
 
-    private TCoreContainers() {
+    private TCoreMenus() {
 
     }
 

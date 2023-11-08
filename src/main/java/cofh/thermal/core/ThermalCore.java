@@ -31,8 +31,7 @@ import cofh.thermal.core.common.entity.monster.Blitz;
 import cofh.thermal.core.common.entity.monster.Blizz;
 import cofh.thermal.core.common.fluid.RedstoneFluid;
 import cofh.thermal.core.init.registries.*;
-import cofh.thermal.lib.init.ThermalCreativeTabs;
-import cofh.thermal.lib.init.ThermalFlags;
+import cofh.thermal.lib.util.ThermalFlags;
 import cofh.thermal.lib.util.ThermalProxy;
 import cofh.thermal.lib.util.ThermalProxyClient;
 import com.mojang.serialization.Codec;
@@ -72,10 +71,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import static cofh.lib.util.constants.ModIds.ID_THERMAL;
-import static cofh.thermal.core.init.registries.TCoreContainers.*;
 import static cofh.thermal.core.init.registries.TCoreEntities.*;
-import static cofh.thermal.lib.init.ThermalFlags.*;
-import static cofh.thermal.lib.init.ThermalIDs.ID_TINKER_BENCH;
+import static cofh.thermal.core.init.registries.TCoreMenus.*;
+import static cofh.thermal.lib.util.ThermalFlags.*;
+import static cofh.thermal.lib.util.ThermalIDs.ID_TINKER_BENCH;
 
 @Mod (ID_THERMAL)
 public class ThermalCore {
@@ -146,7 +145,7 @@ public class ThermalCore {
         ThermalCreativeTabs.register();
 
         TCoreBlockEntities.register();
-        TCoreContainers.register();
+        TCoreMenus.register();
         TCoreEntities.register();
         TCoreRecipeSerializers.register();
         TCoreRecipeTypes.register();

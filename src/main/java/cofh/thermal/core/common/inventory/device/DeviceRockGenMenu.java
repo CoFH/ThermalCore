@@ -9,7 +9,7 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 
-import static cofh.thermal.core.init.registries.TCoreContainers.DEVICE_ROCK_GEN_CONTAINER;
+import static cofh.thermal.core.init.registries.TCoreMenus.DEVICE_ROCK_GEN_CONTAINER;
 
 public class DeviceRockGenMenu extends BlockEntityCoFHMenu {
 

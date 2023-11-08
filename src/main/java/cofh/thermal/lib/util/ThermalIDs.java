@@ -1,4 +1,4 @@
-package cofh.thermal.lib.init;
+package cofh.thermal.lib.util;
 
 public class ThermalIDs {
 

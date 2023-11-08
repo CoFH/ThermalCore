@@ -17,8 +17,8 @@ import net.minecraftforge.registries.RegistryObject;
 import static cofh.thermal.core.ThermalCore.ENTITIES;
 import static cofh.thermal.core.util.RegistrationHelper.registerGrenade;
 import static cofh.thermal.core.util.RegistrationHelper.registerTNT;
-import static cofh.thermal.lib.init.ThermalFlags.*;
-import static cofh.thermal.lib.init.ThermalIDs.*;
+import static cofh.thermal.lib.util.ThermalFlags.*;
+import static cofh.thermal.lib.util.ThermalIDs.*;
 
 public class TCoreEntities {
 

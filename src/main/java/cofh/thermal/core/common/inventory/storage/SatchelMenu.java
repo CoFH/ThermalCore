@@ -18,7 +18,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 
-import static cofh.thermal.core.init.registries.TCoreContainers.SATCHEL_CONTAINER;
+import static cofh.thermal.core.init.registries.TCoreMenus.SATCHEL_CONTAINER;
 
 public class SatchelMenu extends ContainerMenuCoFH implements ISecurable {
 

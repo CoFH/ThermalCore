@@ -1,6 +1,6 @@
 package cofh.thermal.core.common.event;
 
-import cofh.thermal.lib.init.ThermalRecipeManagers;
+import cofh.thermal.lib.util.ThermalRecipeManagers;
 import net.minecraft.server.packs.resources.ResourceManagerReloadListener;
 import net.minecraftforge.client.event.RecipesUpdatedEvent;
 import net.minecraftforge.event.AddReloadListenerEvent;

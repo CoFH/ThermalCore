@@ -9,7 +9,7 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 
-import static cofh.thermal.core.init.registries.TCoreContainers.DEVICE_SOIL_INFUSER_CONTAINER;
+import static cofh.thermal.core.init.registries.TCoreMenus.DEVICE_SOIL_INFUSER_CONTAINER;
 
 public class DeviceSoilInfuserMenu extends BlockEntityCoFHMenu {
 

@@ -4,7 +4,7 @@ import cofh.thermal.core.util.managers.device.*;
 import cofh.thermal.core.util.managers.dynamo.*;
 import cofh.thermal.core.util.managers.machine.*;
 
-import static cofh.thermal.lib.init.ThermalRecipeManagers.registerManager;
+import static cofh.thermal.lib.util.ThermalRecipeManagers.registerManager;
 
 public class TCoreRecipeManagers {
 
