@@ -29,13 +29,10 @@ public class TCoreDataGen {
         // gen.addProvider(event.includeServer(), new TCoreAdvancementProvider(gen));
         gen.addProvider(event.includeServer(), new TCoreLootTableProvider(output));
         gen.addProvider(event.includeServer(), new TCoreRecipeProvider(output));
+        gen.addProvider(event.includeServer(), new TCoreDatapackRegistryProvider(output, event.getLookupProvider()));
 
         gen.addProvider(event.includeClient(), new TCoreBlockStateProvider(output, exFileHelper));
         gen.addProvider(event.includeClient(), new TCoreItemModelProvider(output, exFileHelper));
-
-        // RegistryOps<JsonElement> regOps = RegistryOps.create(JsonOps.INSTANCE, RegistryAccess.builtinCopy());
-
-        // gen.addProvider(event.includeServer(), TCoreBiomeModifiers.dataGenBiomeModifiers(gen, exFileHelper, regOps));
     }
 
 }
