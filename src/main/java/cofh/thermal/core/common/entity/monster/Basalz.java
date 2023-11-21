@@ -10,6 +10,7 @@ import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -159,7 +160,7 @@ public class Basalz extends Monster {
     @Override
     public boolean hurt(DamageSource source, float amount) {
 
-        return super.hurt(source, source == this.damageSources().lightningBolt() ? amount + 3 : amount);
+        return super.hurt(source, source.is(DamageTypeTags.IS_LIGHTNING) ? amount + 3 : amount);
     }
 
     @Override

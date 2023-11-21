@@ -2,6 +2,7 @@ package cofh.thermal.core.common.entity.projectile;
 
 import cofh.core.util.AreaUtils;
 import cofh.lib.util.Utils;
+import cofh.thermal.core.init.data.damage.TCoreDamageTypes;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.damagesource.DamageSource;
@@ -94,7 +95,8 @@ public class BlizzProjectile extends ElementalProjectile {
 
     protected DamageSource damageSource() {
 
-        return this.level.damageSources().mobProjectile(this, this.getOwner() instanceof LivingEntity ? (LivingEntity) this.getOwner() : null);
+        Entity owner = getOwner();
+        return this.level.damageSources().source(TCoreDamageTypes.BLIZZ_PROJECTILE, this, owner == null ? this : owner);
     }
 
     // region HELPERS

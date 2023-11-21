@@ -2,6 +2,7 @@ package cofh.thermal.core.common.entity.projectile;
 
 import cofh.lib.util.Utils;
 import cofh.thermal.core.common.entity.monster.Blitz;
+import cofh.thermal.core.init.data.damage.TCoreDamageTypes;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.damagesource.DamageSource;
@@ -67,14 +68,15 @@ public class BasalzProjectile extends ElementalProjectile {
 
     protected DamageSource damageSource() {
 
-        return this.level.damageSources().mobProjectile(this, this.getOwner() instanceof LivingEntity ? (LivingEntity) this.getOwner() : null);
+        Entity owner = getOwner();
+        return this.level.damageSources().source(TCoreDamageTypes.BASALZ_PROJECTILE, this, owner == null ? this : owner);
     }
 
     // region HELPERS
     @Override
     public float getDamage(Entity target) {
 
-        return target instanceof Blitz ? defaultDamage + 3.0F : defaultDamage;
+        return defaultDamage;
     }
 
     @Override

@@ -1,15 +1,15 @@
 package cofh.thermal.core.init.data.providers;
 
 import cofh.lib.init.tags.BlockTagsCoFH;
+import cofh.lib.init.tags.DamageTypeTagsCoFH;
 import cofh.lib.init.tags.ItemTagsCoFH;
+import cofh.thermal.core.init.data.damage.TCoreDamageTypes;
 import cofh.thermal.lib.util.references.ThermalTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.tags.EntityTypeTagsProvider;
-import net.minecraft.data.tags.FluidTagsProvider;
-import net.minecraft.data.tags.ItemTagsProvider;
-import net.minecraft.data.tags.TagsProvider;
+import net.minecraft.data.tags.*;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.tags.EntityTypeTags;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.BlockTagsProvider;
@@ -458,6 +458,35 @@ public class TCoreTagsProvider {
             );
             tag(EntityTypeTags.FREEZE_IMMUNE_ENTITY_TYPES).add(
                     ENTITIES.get(ID_BLIZZ)
+            );
+        }
+
+    }
+
+    public static class DamageType extends DamageTypeTagsProvider {
+
+        public DamageType(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
+
+            super(output, lookupProvider, ID_THERMAL, existingFileHelper);
+        }
+
+        @SuppressWarnings ("unchecked")
+        @Override
+        protected void addTags(HolderLookup.Provider pProvider) {
+
+            tag(DamageTypeTags.IS_PROJECTILE).add(
+                    TCoreDamageTypes.BLITZ_PROJECTILE,
+                    TCoreDamageTypes.BLIZZ_PROJECTILE,
+                    TCoreDamageTypes.BASALZ_PROJECTILE
+            );
+            tag(DamageTypeTags.IS_LIGHTNING).add(
+                    TCoreDamageTypes.BLITZ_PROJECTILE
+            );
+            tag(DamageTypeTags.IS_FREEZING).add(
+                    TCoreDamageTypes.BLIZZ_PROJECTILE
+            );
+            tag(DamageTypeTagsCoFH.IS_EARTH).add(
+                    TCoreDamageTypes.BASALZ_PROJECTILE
             );
         }
 

@@ -1,5 +1,6 @@
 package cofh.thermal.core.common.entity.monster;
 
+import cofh.lib.init.tags.DamageTypeTagsCoFH;
 import cofh.thermal.core.common.config.ThermalClientConfig;
 import cofh.thermal.core.common.entity.projectile.BlitzProjectile;
 import cofh.thermal.lib.util.ThermalFlags;
@@ -11,6 +12,7 @@ import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -126,6 +128,12 @@ public class Blitz extends Monster {
             }
         }
         super.aiStep();
+    }
+
+    @Override
+    public boolean hurt(DamageSource source, float amount) {
+
+        return super.hurt(source, source.is(DamageTypeTagsCoFH.IS_EARTH) ? amount + 3 : amount);
     }
 
     @Override

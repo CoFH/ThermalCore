@@ -4,6 +4,7 @@ import cofh.core.common.entity.ElectricArc;
 import cofh.lib.util.Utils;
 import cofh.thermal.core.common.config.ThermalCoreConfig;
 import cofh.thermal.core.common.entity.monster.Basalz;
+import cofh.thermal.core.init.data.damage.TCoreDamageTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
@@ -51,7 +52,7 @@ public class BlitzProjectile extends ElementalProjectile {
     protected void onHit(HitResult result) {
 
         Entity owner = getOwner();
-        level.addFreshEntity((new ElectricArc(level, result.getLocation())).setCosmetic(true).setOwner(owner instanceof LivingEntity ? (LivingEntity) owner : null));
+        level.addFreshEntity(new ElectricArc(level, result.getLocation(), owner).setCosmetic(true));
         if (result.getType() == HitResult.Type.ENTITY) {
             Entity entity = ((EntityHitResult) result).getEntity();
             if (entity.hurt(this.damageSource(), getDamage(entity)) && entity instanceof LivingEntity living) {
@@ -76,14 +77,15 @@ public class BlitzProjectile extends ElementalProjectile {
 
     protected DamageSource damageSource() {
 
-        return this.level.damageSources().mobProjectile(this, this.getOwner() instanceof LivingEntity ? (LivingEntity) this.getOwner() : null);
+        Entity owner = getOwner();
+        return this.level.damageSources().source(TCoreDamageTypes.BLITZ_PROJECTILE, this, owner == null ? this : owner);
     }
 
     // region HELPERS
     @Override
     public float getDamage(Entity target) {
 
-        return target.isInWaterOrRain() || target instanceof Basalz ? defaultDamage + 3.0F : defaultDamage;
+        return target.isInWaterOrRain() ? defaultDamage + 3.0F : defaultDamage;
     }
 
     @Override
