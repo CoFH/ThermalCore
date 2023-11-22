@@ -36,6 +36,7 @@ import java.util.function.BiPredicate;
 import java.util.function.IntSupplier;
 import java.util.function.Supplier;
 
+import static cofh.lib.util.Utils.itemProperties;
 import static cofh.lib.util.constants.ModIds.*;
 import static cofh.thermal.core.ThermalCore.*;
 import static cofh.thermal.core.init.registries.ThermalCreativeTabs.*;
@@ -65,7 +66,7 @@ public final class RegistrationHelper {
 
     public static RegistryObject<Item> registerBlock(String name, Supplier<Block> sup, Rarity rarity, String modId) {
 
-        return registerBlock(name, sup, () -> new BlockItemCoFH(BLOCKS.get(name), new Item.Properties().rarity(rarity)).setModId(modId));
+        return registerBlock(name, sup, () -> new BlockItemCoFH(BLOCKS.get(name), itemProperties().rarity(rarity)).setModId(modId));
     }
 
     public static void registerBlockOnly(String name, Supplier<Block> sup) {
@@ -94,7 +95,7 @@ public final class RegistrationHelper {
     public static RegistryObject<Item> registerAugmentableBlock(String name, Supplier<Block> sup, IntSupplier numSlots, BiPredicate<ItemStack, List<ItemStack>> validAugment, Rarity rarity, String modId) {
 
         BLOCKS.register(name, sup);
-        return registerItem(name, () -> new BlockItemAugmentable(BLOCKS.get(name), new Item.Properties().rarity(rarity)).setNumSlots(numSlots).setAugValidator(validAugment).setModId(modId));
+        return registerItem(name, () -> new BlockItemAugmentable(BLOCKS.get(name), itemProperties().rarity(rarity)).setNumSlots(numSlots).setAugValidator(validAugment).setModId(modId));
     }
     // endregion
 
@@ -126,7 +127,7 @@ public final class RegistrationHelper {
 
     public static RegistryObject<Item> registerItem(String name, Rarity rarity) {
 
-        return registerItem(name, () -> new ItemCoFH(new Item.Properties().rarity(rarity)));
+        return registerItem(name, () -> new ItemCoFH(itemProperties().rarity(rarity)));
     }
     // endregion
 
@@ -172,19 +173,19 @@ public final class RegistrationHelper {
 
         // Hacky but whatever.
         if (prefix.equals("copper") || prefix.equals("netherite")) {
-            itemsTab(order, registerItem(prefix + "_nugget", () -> new ItemCoFH(new Item.Properties().rarity(rarity)).setModId(modId)));
+            itemsTab(order, registerItem(prefix + "_nugget", () -> new ItemCoFH(itemProperties().rarity(rarity)).setModId(modId)));
         }
         if (!vanilla) {
             if (!alloy) {
-                itemsTab(order, registerItem("raw_" + prefix, () -> new ItemCoFH(new Item.Properties().rarity(rarity)).setModId(modId)));
+                itemsTab(order, registerItem("raw_" + prefix, () -> new ItemCoFH(itemProperties().rarity(rarity)).setModId(modId)));
             }
-            itemsTab(order, registerItem(prefix + "_ingot", () -> new ItemCoFH(new Item.Properties().rarity(rarity)).setModId(modId)));
-            itemsTab(order, registerItem(prefix + "_nugget", () -> new ItemCoFH(new Item.Properties().rarity(rarity)).setModId(modId)));
+            itemsTab(order, registerItem(prefix + "_ingot", () -> new ItemCoFH(itemProperties().rarity(rarity)).setModId(modId)));
+            itemsTab(order, registerItem(prefix + "_nugget", () -> new ItemCoFH(itemProperties().rarity(rarity)).setModId(modId)));
         }
-        itemsTab(order, registerItem(prefix + "_dust", () -> new ItemCoFH(new Item.Properties().rarity(rarity)).setModId(modId)));
-        itemsTab(order, registerItem(prefix + "_gear", () -> new ItemCoFH(new Item.Properties().rarity(rarity)).setModId(modId)));
-        itemsTab(order, registerItem(prefix + "_plate", () -> new CountedItem(new Item.Properties().rarity(rarity)).setModId(modId)));
-        itemsTab(order, registerItem(prefix + "_coin", () -> new CoinItem(new Item.Properties().rarity(rarity)).setModId(modId)));
+        itemsTab(order, registerItem(prefix + "_dust", () -> new ItemCoFH(itemProperties().rarity(rarity)).setModId(modId)));
+        itemsTab(order, registerItem(prefix + "_gear", () -> new ItemCoFH(itemProperties().rarity(rarity)).setModId(modId)));
+        itemsTab(order, registerItem(prefix + "_plate", () -> new CountedItem(itemProperties().rarity(rarity)).setModId(modId)));
+        itemsTab(order, registerItem(prefix + "_coin", () -> new CoinItem(itemProperties().rarity(rarity)).setModId(modId)));
     }
     // endregion
 
@@ -212,13 +213,13 @@ public final class RegistrationHelper {
     public static void registerGemSet(String prefix, Rarity rarity, boolean vanilla, String modId) {
 
         if (!vanilla) {
-            itemsTab(registerItem(prefix, () -> new ItemCoFH(new Item.Properties().rarity(rarity)).setModId(modId)));
+            itemsTab(registerItem(prefix, () -> new ItemCoFH(itemProperties().rarity(rarity)).setModId(modId)));
         }
-        // itemsTab(registerItem(prefix + "_nugget", () -> new ItemCoFH(new Item.Properties().group(group).rarity(rarity)).setModId(modId)));
-        itemsTab(registerItem(prefix + "_dust", () -> new ItemCoFH(new Item.Properties().rarity(rarity)).setModId(modId)));
-        itemsTab(registerItem(prefix + "_gear", () -> new ItemCoFH(new Item.Properties().rarity(rarity)).setModId(modId)));
-        // itemsTab(registerItem(prefix + "_plate", () -> new CountedItem(new Item.Properties().group(group).rarity(rarity)).setModId(modId)));
-        // itemsTab(registerItem(prefix + "_coin", () -> new CoinItem(new Item.Properties().group(group).rarity(rarity)).setModId(modId)));
+        // itemsTab(registerItem(prefix + "_nugget", () -> new ItemCoFH(itemProperties().group(group).rarity(rarity)).setModId(modId)));
+        itemsTab(registerItem(prefix + "_dust", () -> new ItemCoFH(itemProperties().rarity(rarity)).setModId(modId)));
+        itemsTab(registerItem(prefix + "_gear", () -> new ItemCoFH(itemProperties().rarity(rarity)).setModId(modId)));
+        // itemsTab(registerItem(prefix + "_plate", () -> new CountedItem(itemProperties().group(group).rarity(rarity)).setModId(modId)));
+        // itemsTab(registerItem(prefix + "_coin", () -> new CoinItem(itemProperties().group(group).rarity(rarity)).setModId(modId)));
     }
     // endregion
 
@@ -251,16 +252,16 @@ public final class RegistrationHelper {
     public static void registerCropAndSeed(String id, FoodProperties food) {
 
         if (food != null) {
-            foodsTab(registerItem(id, () -> new ItemCoFH(new Item.Properties().food(food)).setModId(ID_THERMAL_CULTIVATION)));
+            foodsTab(registerItem(id, () -> new ItemCoFH(itemProperties().food(food)).setModId(ID_THERMAL_CULTIVATION)));
         } else {
-            foodsTab(registerItem(id, () -> new ItemCoFH(new Item.Properties()).setModId(ID_THERMAL_CULTIVATION)));
+            foodsTab(registerItem(id, () -> new ItemCoFH(itemProperties()).setModId(ID_THERMAL_CULTIVATION)));
         }
-        foodsTab(registerItem(seeds(id), () -> new BlockNamedItemCoFH(BLOCKS.get(id), new Item.Properties()).setModId(ID_THERMAL_CULTIVATION)));
+        foodsTab(registerItem(seeds(id), () -> new BlockNamedItemCoFH(BLOCKS.get(id), itemProperties()).setModId(ID_THERMAL_CULTIVATION)));
     }
 
     public static void registerBowlFoodItem(String id, FoodProperties food, Rarity rarity) {
 
-        foodsTab(registerItem(id, () -> new ItemCoFH(new Item.Properties().stacksTo(1).food(food).rarity(rarity)) {
+        foodsTab(registerItem(id, () -> new ItemCoFH(itemProperties().stacksTo(1).food(food).rarity(rarity)) {
 
             @Override
             public ItemStack finishUsingItem(ItemStack stack, Level worldIn, LivingEntity entityLiving) {
@@ -273,7 +274,7 @@ public final class RegistrationHelper {
 
     public static void registerSpores(String id) {
 
-        foodsTab(registerItem(spores(id), () -> new BlockNamedItemCoFH(BLOCKS.get(id), new Item.Properties()).setModId(ID_THERMAL_CULTIVATION)));
+        foodsTab(registerItem(spores(id), () -> new BlockNamedItemCoFH(BLOCKS.get(id), itemProperties()).setModId(ID_THERMAL_CULTIVATION)));
     }
     // endregion
 
@@ -296,7 +297,7 @@ public final class RegistrationHelper {
                 return new Grenade(entity.get(), level, action, posX, posY, posZ);
             }
 
-        }, new Item.Properties().stacksTo(16)));
+        }, itemProperties().stacksTo(16)));
     }
 
     public static RegistryObject<Item> registerTNT(String id, IDetonatable.IDetonateAction action, Supplier<Boolean> flag) {
@@ -304,7 +305,7 @@ public final class RegistrationHelper {
         RegistryObject<EntityType<? extends PrimedTntCoFH>> tntEntity = ENTITIES.register(id, () -> EntityType.Builder.<ThermalTNTEntity>of((type, world) -> new ThermalTNTEntity(type, world, action), MobCategory.MISC).fireImmune().sized(0.98F, 0.98F).build(id));
         registerBlockOnly(id, () -> new TntBlockCoFH((world, x, y, z, igniter) -> new ThermalTNTEntity(tntEntity.get(), world, action, x, y, z, igniter), of().mapColor(MapColor.COLOR_YELLOW).strength(0.0F).sound(SoundType.GRASS)));
         DetonateUtils.TNT.add(tntEntity);
-        return registerItem(id, () -> new BlockItemCoFH(BLOCKS.get(id), new Item.Properties()));
+        return registerItem(id, () -> new BlockItemCoFH(BLOCKS.get(id), itemProperties()));
 
     }
 
@@ -312,7 +313,7 @@ public final class RegistrationHelper {
 
         RegistryObject<EntityType<? extends AbstractTNTMinecart>> entity = ENTITIES.register(id, () -> EntityType.Builder.<ThermalTNTMinecart>of((type, world) -> new ThermalTNTMinecart(type, world, action, BLOCKS.get(tntId)), MobCategory.MISC).sized(0.98F, 0.7F).build(id));
         DetonateUtils.CARTS.add(entity);
-        return registerItem(id, () -> new MinecartItemCoFH((world, x, y, z) -> new ThermalTNTMinecart(entity.get(), world, action, BLOCKS.get(tntId), x, y, z), new Item.Properties()).setModId(ID_THERMAL_LOCOMOTION));
+        return registerItem(id, () -> new MinecartItemCoFH((world, x, y, z) -> new ThermalTNTMinecart(entity.get(), world, action, BLOCKS.get(tntId), x, y, z), itemProperties()).setModId(ID_THERMAL_LOCOMOTION));
     }
     // endregion
 

@@ -37,6 +37,10 @@ public abstract class EnergyContainerItemAugmentable extends EnergyContainerItem
         return this;
     }
 
+    public void setEnergyPerUse(int energyPerUse) {
+        // Do nothing by default.
+    }
+
     @Override
     public int getEnchantmentValue(ItemStack stack) {
 

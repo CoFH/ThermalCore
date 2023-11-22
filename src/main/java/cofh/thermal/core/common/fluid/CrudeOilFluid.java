@@ -10,7 +10,6 @@ import net.minecraft.client.renderer.FogRenderer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.BucketItem;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.material.FlowingFluid;
@@ -28,6 +27,7 @@ import org.joml.Vector3f;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
+import static cofh.lib.util.Utils.itemProperties;
 import static cofh.thermal.core.ThermalCore.*;
 import static cofh.thermal.lib.util.ThermalIDs.ID_FLUID_CRUDE_OIL;
 import static net.minecraft.world.level.block.state.BlockBehaviour.Properties.of;
@@ -51,7 +51,7 @@ public class CrudeOilFluid extends FluidCoFH {
         particleColor = new Vector3f(0.05F, 0.05F, 0.05F);
 
         block = BLOCKS.register(fluid(ID_FLUID_CRUDE_OIL), () -> new FluidBlock(stillFluid, of().mapColor(MapColor.COLOR_BLACK).replaceable().noCollission().strength(100.0F).pushReaction(PushReaction.DESTROY).noLootTable()));
-        bucket = ITEMS.register(bucket(ID_FLUID_CRUDE_OIL), () -> new BucketItem(stillFluid, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+        bucket = ITEMS.register(bucket(ID_FLUID_CRUDE_OIL), () -> new BucketItem(stillFluid, itemProperties().craftRemainder(Items.BUCKET).stacksTo(1)));
     }
 
     @Override

@@ -16,7 +16,6 @@ import net.minecraft.world.entity.ExperienceOrb;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.BucketItem;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.Level;
@@ -37,6 +36,7 @@ import org.joml.Vector3f;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
+import static cofh.lib.util.Utils.itemProperties;
 import static cofh.lib.util.helpers.BlockHelper.lightValue;
 import static cofh.thermal.core.ThermalCore.*;
 import static cofh.thermal.lib.util.ThermalIDs.ID_FLUID_ENDER;
@@ -61,7 +61,7 @@ public class EnderFluid extends FluidCoFH {
         particleColor = new Vector3f(0.035F, 0.215F, 0.333F);
 
         block = BLOCKS.register(fluid(ID_FLUID_ENDER), () -> new FluidBlock(stillFluid, of().mapColor(MapColor.COLOR_CYAN).lightLevel(lightValue(3)).replaceable().noCollission().strength(1200.0F).pushReaction(PushReaction.DESTROY).noLootTable()));
-        bucket = ITEMS.register(bucket(ID_FLUID_ENDER), () -> new BucketItem(stillFluid, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+        bucket = ITEMS.register(bucket(ID_FLUID_ENDER), () -> new BucketItem(stillFluid, itemProperties().craftRemainder(Items.BUCKET).stacksTo(1)));
     }
 
     @Override

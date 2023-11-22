@@ -30,6 +30,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 import java.util.function.IntSupplier;
 
+import static cofh.lib.util.Utils.itemProperties;
 import static cofh.lib.util.constants.BlockStatePropertiesCoFH.ACTIVE;
 import static cofh.lib.util.helpers.BlockHelper.lightValue;
 import static cofh.thermal.core.ThermalCore.BLOCKS;
@@ -66,7 +67,7 @@ public class TCoreBlocks {
     private static void registerVanilla() {
 
         blocksTab(registerBlock(ID_CHARCOAL_BLOCK, () -> new Block(of().mapColor(COLOR_BLACK).strength(5.0F, 6.0F).sound(SoundType.STONE).requiresCorrectToolForDrops()),
-                () -> new BlockItemCoFH(BLOCKS.get(ID_CHARCOAL_BLOCK), new Item.Properties()).setBurnTime(16000)));
+                () -> new BlockItemCoFH(BLOCKS.get(ID_CHARCOAL_BLOCK), itemProperties()).setBurnTime(16000)));
         blocksTab(registerBlock(ID_GUNPOWDER_BLOCK, () -> new GunpowderBlock(of().mapColor(COLOR_GRAY).strength(0.5F).sound(SoundType.SAND))));
         foodsTab(registerBlock(ID_SUGAR_CANE_BLOCK, () -> new RotatedPillarBlock(of().mapColor(PLANT).strength(1.0F).sound(SoundType.CROP)) {
 
@@ -91,7 +92,7 @@ public class TCoreBlocks {
         foodsTab(registerBlock(ID_BEETROOT_BLOCK, () -> new Block(of().mapColor(TERRACOTTA_RED).strength(1.5F).sound(SoundType.SCAFFOLDING))));
 
         //        registerBlockOnly("quicksand", () -> new QuicksandBlock(of(Material.SAND, MaterialColor.SAND).strength(100.0F).noLootTable().sound(SoundType.SAND).dynamicShape()).bucket(() -> ITEMS.get("quicksand_bucket")));
-        //        registerItem("quicksand_bucket", () -> new SolidBucketItemCoFH(BLOCKS.get("quicksand"), SoundEvents.SAND_HIT, new Item.Properties().stacksTo(1)));
+        //        registerItem("quicksand_bucket", () -> new SolidBucketItemCoFH(BLOCKS.get("quicksand"), SoundEvents.SAND_HIT, itemProperties().stacksTo(1)));
     }
 
     private static void registerResources() {
@@ -106,7 +107,7 @@ public class TCoreBlocks {
 
                 return side == Direction.UP;
             }
-        }, () -> new BlockItemCoFH(BLOCKS.get(ID_SULFUR_BLOCK), new Item.Properties()).setBurnTime(12000)));
+        }, () -> new BlockItemCoFH(BLOCKS.get(ID_SULFUR_BLOCK), itemProperties()).setBurnTime(12000)));
 
         blocksTab(registerBlock(ID_SAWDUST_BLOCK, () -> new FallingBlock(of().strength(1.0F, 1.0F).sound(SoundType.SAND)) {
 
@@ -115,13 +116,13 @@ public class TCoreBlocks {
 
                 return 11507581;
             }
-        }, () -> new BlockItemCoFH(BLOCKS.get(ID_SAWDUST_BLOCK), new Item.Properties()).setBurnTime(2400)));
+        }, () -> new BlockItemCoFH(BLOCKS.get(ID_SAWDUST_BLOCK), itemProperties()).setBurnTime(2400)));
 
         blocksTab(registerBlock(ID_COAL_COKE_BLOCK, () -> new Block(of().mapColor(COLOR_BLACK).strength(5.0F, 6.0F).requiresCorrectToolForDrops()),
-                () -> new BlockItemCoFH(BLOCKS.get(ID_COAL_COKE_BLOCK), new Item.Properties()).setBurnTime(32000)));
+                () -> new BlockItemCoFH(BLOCKS.get(ID_COAL_COKE_BLOCK), itemProperties()).setBurnTime(32000)));
 
         blocksTab(registerBlock(ID_BITUMEN_BLOCK, () -> new Block(of().mapColor(COLOR_BLACK).strength(5.0F, 10.0F).sound(SoundType.NETHERRACK).requiresCorrectToolForDrops()),
-                () -> new BlockItemCoFH(BLOCKS.get(ID_BITUMEN_BLOCK), new Item.Properties()).setBurnTime(16000)));
+                () -> new BlockItemCoFH(BLOCKS.get(ID_BITUMEN_BLOCK), itemProperties()).setBurnTime(16000)));
 
         blocksTab(registerBlock(ID_TAR_BLOCK, () -> new Block(of().mapColor(COLOR_BLACK).strength(2.0F, 4.0F).speedFactor(0.8F).jumpFactor(0.8F).sound(SoundType.NETHERRACK)) {
 
@@ -130,7 +131,7 @@ public class TCoreBlocks {
 
                 entityIn.causeFallDamage(fallDistance, 0.8F, entityIn.damageSources().fall());
             }
-        }, () -> new BlockItemCoFH(BLOCKS.get(ID_TAR_BLOCK), new Item.Properties()).setBurnTime(8000)));
+        }, () -> new BlockItemCoFH(BLOCKS.get(ID_TAR_BLOCK), itemProperties()).setBurnTime(8000)));
 
         blocksTab(registerBlock(ID_ROSIN_BLOCK, () -> new Block(of().mapColor(COLOR_ORANGE).strength(2.0F, 4.0F).speedFactor(0.8F).jumpFactor(0.8F).sound(SoundType.HONEY_BLOCK)) {
 
@@ -139,7 +140,7 @@ public class TCoreBlocks {
 
                 entityIn.causeFallDamage(fallDistance, 0.8F, entityIn.damageSources().fall());
             }
-        }, () -> new BlockItemCoFH(BLOCKS.get(ID_ROSIN_BLOCK), new Item.Properties()).setBurnTime(8000)));
+        }, () -> new BlockItemCoFH(BLOCKS.get(ID_ROSIN_BLOCK), itemProperties()).setBurnTime(8000)));
 
         blocksTab(registerBlock(ID_RUBBER_BLOCK, () -> new RubberBlock(of().mapColor(TERRACOTTA_WHITE).strength(3.0F, 3.0F).jumpFactor(1.25F).sound(SoundType.FUNGUS))));
         blocksTab(registerBlock(ID_CURED_RUBBER_BLOCK, () -> new RubberBlock(of().mapColor(TERRACOTTA_BLACK).strength(3.0F, 3.0F).jumpFactor(1.25F).sound(SoundType.FUNGUS))));
@@ -213,8 +214,8 @@ public class TCoreBlocks {
         devicesTab(registerAugmentableBlock(ID_TINKER_BENCH, () -> new EntityBlockCoFH(of().sound(SoundType.SCAFFOLDING).strength(2.5F), TinkerBenchBlockEntity.class, TINKER_BENCH_TILE), storageAugs, TinkerBenchBlockEntity.AUG_VALIDATOR));
         devicesTab(registerAugmentableBlock(ID_CHARGE_BENCH, () -> new EntityBlockActive(of().sound(SoundType.LANTERN).strength(2.0F).lightLevel(lightValue(ACTIVE, 7)), ChargeBenchBlockEntity.class, CHARGE_BENCH_TILE), storageAugs, ChargeBenchBlockEntity.AUG_VALIDATOR));
 
-        devicesTab(registerBlock(ID_ENERGY_CELL, () -> new StorageCellBlock(of().sound(SoundType.LANTERN).strength(2.0F).noOcclusion(), EnergyCellBlockEntity.class, ENERGY_CELL_TILE), () -> new EnergyCellBlockItem(BLOCKS.get(ID_ENERGY_CELL), new Item.Properties()).setNumSlots(storageAugs).setAugValidator(ENERGY_STORAGE_VALIDATOR)));
-        devicesTab(registerBlock(ID_FLUID_CELL, () -> new StorageCellBlock(of().sound(SoundType.LANTERN).strength(2.0F).noOcclusion(), FluidCellBlockEntity.class, FLUID_CELL_TILE), () -> new FluidCellBlockItem(BLOCKS.get(ID_FLUID_CELL), new Item.Properties()).setNumSlots(storageAugs).setAugValidator(FluidCellBlockEntity.AUG_VALIDATOR)));
+        devicesTab(registerBlock(ID_ENERGY_CELL, () -> new StorageCellBlock(of().sound(SoundType.LANTERN).strength(2.0F).noOcclusion(), EnergyCellBlockEntity.class, ENERGY_CELL_TILE), () -> new EnergyCellBlockItem(BLOCKS.get(ID_ENERGY_CELL), itemProperties()).setNumSlots(storageAugs).setAugValidator(ENERGY_STORAGE_VALIDATOR)));
+        devicesTab(registerBlock(ID_FLUID_CELL, () -> new StorageCellBlock(of().sound(SoundType.LANTERN).strength(2.0F).noOcclusion(), FluidCellBlockEntity.class, FLUID_CELL_TILE), () -> new FluidCellBlockItem(BLOCKS.get(ID_FLUID_CELL), itemProperties()).setNumSlots(storageAugs).setAugValidator(FluidCellBlockEntity.AUG_VALIDATOR)));
     }
 
     private static void setupVanilla() {

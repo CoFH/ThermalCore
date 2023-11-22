@@ -12,7 +12,6 @@ import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.BucketItem;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.BlockGetter;
@@ -33,6 +32,7 @@ import org.joml.Vector3f;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
+import static cofh.lib.util.Utils.itemProperties;
 import static cofh.lib.util.helpers.BlockHelper.lightValue;
 import static cofh.thermal.core.ThermalCore.*;
 import static cofh.thermal.lib.util.ThermalIDs.ID_FLUID_REDSTONE;
@@ -57,7 +57,7 @@ public class RedstoneFluid extends FluidCoFH {
         particleColor = new Vector3f(0.4F, 0.0F, 0.0F);
 
         block = BLOCKS.register(fluid(ID_FLUID_REDSTONE), () -> new FluidBlock(stillFluid, of().mapColor(MapColor.COLOR_RED).lightLevel(lightValue(7)).replaceable().noCollission().strength(100.0F).pushReaction(PushReaction.DESTROY).noLootTable()));
-        bucket = ITEMS.register(bucket(ID_FLUID_REDSTONE), () -> new BucketItem(stillFluid, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+        bucket = ITEMS.register(bucket(ID_FLUID_REDSTONE), () -> new BucketItem(stillFluid, itemProperties().craftRemainder(Items.BUCKET).stacksTo(1)));
     }
 
     @Override

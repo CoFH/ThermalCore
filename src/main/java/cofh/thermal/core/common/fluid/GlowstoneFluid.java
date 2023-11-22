@@ -4,7 +4,6 @@ import cofh.lib.common.fluid.FluidCoFH;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.BucketItem;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Rarity;
 import net.minecraftforge.client.extensions.common.IClientFluidTypeExtensions;
@@ -16,6 +15,7 @@ import net.minecraftforge.registries.RegistryObject;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
+import static cofh.lib.util.Utils.itemProperties;
 import static cofh.thermal.core.ThermalCore.*;
 import static cofh.thermal.lib.util.ThermalIDs.ID_FLUID_GLOWSTONE;
 
@@ -35,7 +35,7 @@ public class GlowstoneFluid extends FluidCoFH {
 
         super(FLUIDS, ID_FLUID_GLOWSTONE);
 
-        bucket = ITEMS.register(bucket(ID_FLUID_GLOWSTONE), () -> new BucketItem(stillFluid, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+        bucket = ITEMS.register(bucket(ID_FLUID_GLOWSTONE), () -> new BucketItem(stillFluid, itemProperties().craftRemainder(Items.BUCKET).stacksTo(1)));
     }
 
     @Override
