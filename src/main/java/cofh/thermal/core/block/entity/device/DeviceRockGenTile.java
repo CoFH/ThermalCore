@@ -93,6 +93,7 @@ public class DeviceRockGenTile extends DeviceBlockEntity implements ITickableTil
             return;
         }
         adjLava = 0;
+        boolean wasValid = valid;
         valid = false;
 
         Block[] adjBlocks = new Block[4];
@@ -134,7 +135,9 @@ public class DeviceRockGenTile extends DeviceBlockEntity implements ITickableTil
                 if (level.getBiome(worldPosition).is(BiomeTags.IS_NETHER)) {
                     processMax = Math.max(1, processMax / 2);
                 }
-                process = processMax;
+                if (!wasValid) {
+                    process = processMax;
+                }
                 valid = true;
             }
         }
