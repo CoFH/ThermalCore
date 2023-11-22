@@ -98,7 +98,7 @@ public class DetonateUtils {
             Utils.spawnLightningBolt(level, blockPos, owner);
         }
         AreaUtils.SHOCK_ENTITIES.applyEffectNearby(level, pos, radius, duration, amplifier);
-        level.addFreshEntity(new ElectricField(level, owner, pos, 1.0F, 100, radius));
+        level.addFreshEntity(new ElectricField(level, pos, owner, 1.0F, 100, radius));
     }
 
     public static void ender(Level level, Entity explosive, @Nullable Entity owner, Vec3 pos, int radius, int duration, int amplifier) {
