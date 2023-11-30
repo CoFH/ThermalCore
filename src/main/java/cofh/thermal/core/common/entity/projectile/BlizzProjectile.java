@@ -103,7 +103,7 @@ public class BlizzProjectile extends ElementalProjectile {
     @Override
     public float getDamage(Entity target) {
 
-        return target.fireImmune() ? defaultDamage + 3.0F : defaultDamage;
+        return defaultDamage;
     }
 
     @Override
