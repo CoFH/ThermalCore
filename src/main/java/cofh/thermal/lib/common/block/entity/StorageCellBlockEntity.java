@@ -268,8 +268,18 @@ public abstract class StorageCellBlockEntity extends AugmentableBlockEntity impl
     @Override
     protected void finalizeAttributes(Map<Enchantment, Integer> enchantmentMap) {
 
+        // If at max, do some convenience.
+        boolean maxIn = amountInput == getMaxInput();
+        boolean maxOut = amountOutput == getMaxOutput();
+
         super.finalizeAttributes(enchantmentMap);
 
+        if (maxIn) {
+            amountInput = getMaxInput();
+        }
+        if (maxOut) {
+            amountOutput = getMaxOutput();
+        }
         amountInput = MathHelper.clamp(amountInput, 0, getMaxInput());
         amountOutput = MathHelper.clamp(amountOutput, 0, getMaxOutput());
     }

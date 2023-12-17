@@ -21,7 +21,7 @@ Contains all of the common components for the Thermal Series, such as materials 
 [[dependencies.thermal]]
 modId = "minecraft"
 mandatory = true
-versionRange = "[${mc_version},)"
+versionRange = "1.20.1"
 ordering = "AFTER"
 side = "BOTH"
 

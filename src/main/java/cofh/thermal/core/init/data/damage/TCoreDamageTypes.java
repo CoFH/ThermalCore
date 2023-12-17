@@ -11,7 +11,7 @@ import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.damagesource.DeathMessageType;
 
 import static cofh.lib.util.constants.ModIds.ID_THERMAL;
-import static net.minecraft.world.damagesource.DamageEffects.*;
+import static net.minecraft.world.damagesource.DamageEffects.FREEZING;
 
 public class TCoreDamageTypes {
 
@@ -50,4 +50,5 @@ public class TCoreDamageTypes {
 
         return ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation(ID_THERMAL, id));
     }
+
 }

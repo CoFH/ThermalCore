@@ -40,7 +40,6 @@ import static cofh.core.init.CoreParticles.FROST;
 import static cofh.thermal.core.ThermalCore.ITEMS;
 import static cofh.thermal.core.init.registries.TCoreSounds.*;
 import static cofh.thermal.lib.util.ThermalFlags.FLAG_MOB_BLIZZ;
-import static cofh.thermal.lib.util.ThermalIDs.ID_BLIZZ;
 
 public class Blizz extends Monster {
 

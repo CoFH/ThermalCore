@@ -42,7 +42,6 @@ import static cofh.core.init.CoreParticles.SPARK;
 import static cofh.thermal.core.ThermalCore.ITEMS;
 import static cofh.thermal.core.init.registries.TCoreSounds.*;
 import static cofh.thermal.lib.util.ThermalFlags.FLAG_MOB_BLITZ;
-import static cofh.thermal.lib.util.ThermalIDs.ID_BLITZ;
 
 public class Blitz extends Monster {
 

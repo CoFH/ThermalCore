@@ -41,7 +41,6 @@ import static cofh.core.init.CoreMobEffects.SUNDERED;
 import static cofh.thermal.core.ThermalCore.ITEMS;
 import static cofh.thermal.core.init.registries.TCoreSounds.*;
 import static cofh.thermal.lib.util.ThermalFlags.FLAG_MOB_BASALZ;
-import static cofh.thermal.lib.util.ThermalIDs.ID_BASALZ;
 
 public class Basalz extends Monster {
 
