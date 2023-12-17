@@ -1,5 +1,6 @@
 package cofh.thermal.core.common.entity.monster;
 
+import cofh.lib.init.tags.DamageTypeTagsCoFH;
 import cofh.thermal.core.common.config.ThermalClientConfig;
 import cofh.thermal.core.common.entity.projectile.BasalzProjectile;
 import cofh.thermal.lib.util.ThermalFlags;
@@ -190,7 +191,7 @@ public class Basalz extends Monster {
     @Override
     public boolean isInvulnerableTo(DamageSource source) {
 
-        return source.getMsgId().equals(ID_BASALZ) || super.isInvulnerableTo(source);
+        return source.is(DamageTypeTagsCoFH.IS_EARTH) || super.isInvulnerableTo(source);
     }
 
     // region ANGER/ORBIT MANAGEMENT

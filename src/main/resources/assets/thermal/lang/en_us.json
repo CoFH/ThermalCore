@@ -61,9 +61,9 @@
   "block.thermal.slag_block": "Block of Slag",
   "block.thermal.tar_block": "Block of Tar",
 
-  "death.attack.basalz": "%1$s had their world rocked!",
-  "death.attack.blitz": "%1$s was tragically enlightened!",
-  "death.attack.blizz": "%1$s met a frigid fate!",
+  "death.attack.basalz_projectile": "%1$s had their world rocked!",
+  "death.attack.blitz_projectile": "%1$s was tragically enlightened!",
+  "death.attack.blizz_projectile": "%1$s met a frigid fate!",
 
   "entity.thermal.basalz": "Basalz",
   "entity.thermal.blitz": "Blitz",

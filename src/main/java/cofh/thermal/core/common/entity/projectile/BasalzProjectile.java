@@ -1,11 +1,10 @@
 package cofh.thermal.core.common.entity.projectile;
 
-import cofh.lib.util.Utils;
-import cofh.thermal.core.common.entity.monster.Blitz;
 import cofh.thermal.core.init.data.damage.TCoreDamageTypes;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -21,9 +20,6 @@ import static cofh.thermal.core.init.registries.TCoreEntities.BASALZ_PROJECTILE;
 
 public class BasalzProjectile extends ElementalProjectile {
 
-    public static float defaultDamage = 6.0F;
-    public static int effectAmplifier = 0;
-    public static int effectDuration = 100;
     public static float knockbackStrength = 1.2F;
 
     public BasalzProjectile(EntityType<? extends AbstractHurtingProjectile> type, Level world) {
@@ -50,45 +46,34 @@ public class BasalzProjectile extends ElementalProjectile {
     @Override
     public void onHit(HitResult result) {
 
-        if (result.getType() == HitResult.Type.ENTITY) {
-            Entity entity = ((EntityHitResult) result).getEntity();
-            if (entity.hurt(this.damageSource(), getDamage(entity)) && entity instanceof LivingEntity living) {
-                living.addEffect(new MobEffectInstance(SUNDERED.get(), getEffectDuration(entity), getEffectAmplifier(entity), false, false));
-                Vec3 velocity = this.getDeltaMovement();
-                if (velocity.lengthSqr() > 0.01) {
-                    living.knockback(knockbackStrength, -velocity.x, -velocity.z);
-                }
-            }
-        }
-        if (Utils.isServerWorld(level)) {
-            this.level.broadcastEntityEvent(this, (byte) 3);
-            this.discard();
-        }
+        super.onHit(result);
+        this.discard();
     }
 
-    protected DamageSource damageSource() {
+    @Override
+    protected void onHitEntity(EntityHitResult result) {
 
-        Entity owner = getOwner();
-        return this.level.damageSources().source(TCoreDamageTypes.BASALZ_PROJECTILE, this, owner == null ? this : owner);
+        Entity entity = result.getEntity();
+        if (entity.hurt(this.damageSource(), getDamage(entity)) && entity instanceof LivingEntity living) {
+            living.addEffect(new MobEffectInstance(SUNDERED.get(), getEffectDuration(entity), getEffectAmplifier(entity), false, false));
+            Vec3 velocity = this.getDeltaMovement();
+            if (velocity.lengthSqr() > 0.01) {
+                living.knockback(knockbackStrength, -velocity.x, -velocity.z);
+            }
+        }
     }
 
     // region HELPERS
     @Override
-    public float getDamage(Entity target) {
+    protected ResourceKey<DamageType> getDamageType() {
 
-        return defaultDamage;
+        return TCoreDamageTypes.BASALZ_PROJECTILE;
     }
 
     @Override
-    public int getEffectAmplifier(Entity target) {
+    protected float getDamage(Entity target) {
 
-        return effectAmplifier;
-    }
-
-    @Override
-    public int getEffectDuration(Entity target) {
-
-        return effectDuration;
+        return 6.0F;
     }
     // endregion
 }

@@ -3,7 +3,9 @@ package cofh.thermal.core.common.entity.projectile;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -111,10 +113,24 @@ public abstract class ElementalProjectile extends AbstractHurtingProjectile {
     }
 
     // region HELPERS
-    public abstract float getDamage(Entity target);
+    protected DamageSource damageSource() {
 
-    public abstract int getEffectAmplifier(Entity target);
+        Entity owner = getOwner();
+        return this.level.damageSources().source(getDamageType(), this, owner == null ? this : owner);
+    }
 
-    public abstract int getEffectDuration(Entity target);
+    protected abstract ResourceKey<DamageType> getDamageType();
+
+    protected abstract float getDamage(Entity target);
+
+    protected int getEffectAmplifier(Entity target) {
+
+        return 0;
+    }
+
+    protected int getEffectDuration(Entity target) {
+
+        return 100;
+    }
     // endregion
 }

@@ -157,7 +157,7 @@ public class Blitz extends Monster {
     @Override
     public boolean isInvulnerableTo(DamageSource source) {
 
-        return source == this.damageSources().lightningBolt() || source.getMsgId().equals(ID_BLITZ) || super.isInvulnerableTo(source);
+        return source.is(DamageTypeTags.IS_LIGHTNING) || super.isInvulnerableTo(source);
     }
 
     // region ANGER MANAGEMENT

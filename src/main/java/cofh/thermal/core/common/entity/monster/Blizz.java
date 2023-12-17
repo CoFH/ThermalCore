@@ -166,7 +166,7 @@ public class Blizz extends Monster {
     @Override
     public boolean isInvulnerableTo(DamageSource source) {
 
-        return source.getMsgId().equals(ID_BLIZZ) || super.isInvulnerableTo(source);
+        return source.is(DamageTypeTags.IS_FREEZING) || super.isInvulnerableTo(source);
     }
 
     // region ANGER MANAGEMENT
