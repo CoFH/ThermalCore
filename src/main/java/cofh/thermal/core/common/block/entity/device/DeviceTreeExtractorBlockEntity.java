@@ -11,6 +11,7 @@ import cofh.thermal.core.common.config.ThermalCoreConfig;
 import cofh.thermal.core.common.inventory.device.DeviceTreeExtractorMenu;
 import cofh.thermal.core.util.managers.device.TreeExtractorManager;
 import cofh.thermal.lib.common.block.entity.DeviceBlockEntity;
+import cofh.thermal.lib.util.references.ThermalTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.NbtUtils;
@@ -387,8 +388,7 @@ public class DeviceTreeExtractorBlockEntity extends DeviceBlockEntity implements
 
     protected boolean isGround(BlockState state) {
 
-        // TODO 1.20 Fix
-        return true;
+        return state.is(ThermalTags.Blocks.TREE_EXTRACTOR_GROUND);
     }
     // endregion
 

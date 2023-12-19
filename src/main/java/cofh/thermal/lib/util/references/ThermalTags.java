@@ -24,6 +24,8 @@ public class ThermalTags {
         public static final TagKey<Block> HARDENED_GLASS = thermalTag("glass/hardened");
         public static final TagKey<Block> ROCKWOOL = thermalTag("rockwool");
 
+        public static final TagKey<Block> TREE_EXTRACTOR_GROUND = thermalTag("devices/tree_extractor_ground");
+
         // region HELPERS
         private static TagKey<Block> thermalTag(String name) {
 

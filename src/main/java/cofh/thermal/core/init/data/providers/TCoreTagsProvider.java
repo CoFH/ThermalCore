@@ -11,6 +11,7 @@ import net.minecraft.data.tags.*;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.tags.EntityTypeTags;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -156,6 +157,11 @@ public class TCoreTagsProvider {
                     BLOCKS.get(ID_GREEN_ROCKWOOL),
                     BLOCKS.get(ID_RED_ROCKWOOL),
                     BLOCKS.get(ID_BLACK_ROCKWOOL)
+            );
+
+            tag(ThermalTags.Blocks.TREE_EXTRACTOR_GROUND).addTag(BlockTags.DIRT).add(
+                    Blocks.FARMLAND,
+                    Blocks.MYCELIUM
             );
 
             tag(BlockTags.OCCLUDES_VIBRATION_SIGNALS).addTag(ThermalTags.Blocks.ROCKWOOL);

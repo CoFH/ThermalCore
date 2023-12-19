@@ -3,12 +3,15 @@
   "category": "misc",
   "key": {
     "#": {
+      "tag": "forge:gems/cinnabar"
+    },
+    "I": {
       "item": "thermal:cinnabar"
     }
   },
   "pattern": [
     "###",
-    "###",
+    "#I#",
     "###"
   ],
   "result": {

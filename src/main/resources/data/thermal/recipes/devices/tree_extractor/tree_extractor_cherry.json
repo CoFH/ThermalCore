@@ -1,0 +1,9 @@
+{
+  "type": "thermal:tree_extractor",
+  "trunk": "minecraft:cherry_log",
+  "leaves": "minecraft:cherry_leaves",
+  "result": {
+    "fluid": "thermal:resin",
+    "amount": 25
+  }
+}

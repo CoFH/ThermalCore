@@ -3,12 +3,15 @@
   "category": "misc",
   "key": {
     "#": {
+      "tag": "forge:tar"
+    },
+    "I": {
       "item": "thermal:tar"
     }
   },
   "pattern": [
     "###",
-    "###",
+    "#I#",
     "###"
   ],
   "result": {

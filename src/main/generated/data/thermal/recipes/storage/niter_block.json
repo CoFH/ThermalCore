@@ -3,12 +3,15 @@
   "category": "misc",
   "key": {
     "#": {
+      "tag": "forge:gems/niter"
+    },
+    "I": {
       "item": "thermal:niter"
     }
   },
   "pattern": [
     "###",
-    "###",
+    "#I#",
     "###"
   ],
   "result": {

@@ -3,12 +3,15 @@
   "category": "misc",
   "key": {
     "#": {
+      "tag": "forge:gems/sulfur"
+    },
+    "I": {
       "item": "thermal:sulfur"
     }
   },
   "pattern": [
     "###",
-    "###",
+    "#I#",
     "###"
   ],
   "result": {

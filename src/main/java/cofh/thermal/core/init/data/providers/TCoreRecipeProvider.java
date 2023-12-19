@@ -46,10 +46,10 @@ public class TCoreRecipeProvider extends RecipeProviderCoFH {
         generateStorageRecipes(consumer, reg.get(ID_CARROT_BLOCK), Items.CARROT);
         generateStorageRecipes(consumer, reg.get(ID_POTATO_BLOCK), Items.POTATO);
 
-        generateStorageRecipes(consumer, reg.get(ID_APATITE_BLOCK), reg.get("apatite"));
-        generateStorageRecipes(consumer, reg.get(ID_CINNABAR_BLOCK), reg.get("cinnabar"));
-        generateStorageRecipes(consumer, reg.get(ID_NITER_BLOCK), reg.get("niter"));
-        generateStorageRecipes(consumer, reg.get(ID_SULFUR_BLOCK), reg.get("sulfur"));
+        generateStorageRecipes(consumer, reg.get(ID_APATITE_BLOCK), reg.get("apatite"), forgeTag("gems/apatite"));
+        generateStorageRecipes(consumer, reg.get(ID_CINNABAR_BLOCK), reg.get("cinnabar"), forgeTag("gems/cinnabar"));
+        generateStorageRecipes(consumer, reg.get(ID_NITER_BLOCK), reg.get("niter"), forgeTag("gems/niter"));
+        generateStorageRecipes(consumer, reg.get(ID_SULFUR_BLOCK), reg.get("sulfur"), forgeTag("gems/sulfur"));
 
         generateGearRecipe(consumer, reg.get("copper_gear"), Items.COPPER_INGOT, forgeTag("ingots/copper"));
         generateGearRecipe(consumer, reg.get("iron_gear"), Items.IRON_INGOT, forgeTag("ingots/iron"));
@@ -61,10 +61,10 @@ public class TCoreRecipeProvider extends RecipeProviderCoFH {
         generateGearRecipe(consumer, reg.get("quartz_gear"), Items.IRON_INGOT, forgeTag("gems/quartz"));
         generateGearRecipe(consumer, reg.get("lapis_gear"), Items.IRON_INGOT, forgeTag("gems/lapis"));
 
-        generateStorageRecipes(consumer, reg.get(ID_SAWDUST_BLOCK), reg.get("sawdust"));
-        generateStorageRecipes(consumer, reg.get(ID_COAL_COKE_BLOCK), reg.get("coal_coke"));
-        generateStorageRecipes(consumer, reg.get(ID_BITUMEN_BLOCK), reg.get("bitumen"));
-        generateStorageRecipes(consumer, reg.get(ID_TAR_BLOCK), reg.get("tar"));
+        generateStorageRecipes(consumer, reg.get(ID_SAWDUST_BLOCK), reg.get("sawdust"), ThermalTags.Items.SAWDUST);
+        generateStorageRecipes(consumer, reg.get(ID_COAL_COKE_BLOCK), reg.get("coal_coke"), ThermalTags.Items.COAL_COKE);
+        generateStorageRecipes(consumer, reg.get(ID_BITUMEN_BLOCK), reg.get("bitumen"), ThermalTags.Items.BITUMEN);
+        generateStorageRecipes(consumer, reg.get(ID_TAR_BLOCK), reg.get("tar"), ThermalTags.Items.TAR);
         generateStorageRecipes(consumer, reg.get(ID_ROSIN_BLOCK), reg.get("rosin"));
 
         generateSmallStorageRecipes(consumer, reg.get(ID_RUBBER_BLOCK), reg.get("rubber"));

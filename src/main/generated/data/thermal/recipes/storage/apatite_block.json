@@ -3,12 +3,15 @@
   "category": "misc",
   "key": {
     "#": {
+      "tag": "forge:gems/apatite"
+    },
+    "I": {
       "item": "thermal:apatite"
     }
   },
   "pattern": [
     "###",
-    "###",
+    "#I#",
     "###"
   ],
   "result": {
