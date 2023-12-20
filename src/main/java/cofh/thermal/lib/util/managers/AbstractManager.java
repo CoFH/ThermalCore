@@ -8,7 +8,7 @@ import net.minecraft.world.item.ItemStack;
 public abstract class AbstractManager implements IManager {
 
     private static final int MIN_POWER = 1;
-    private static final int MAX_POWER = 200;
+    private static final int MAX_POWER = 32000;
 
     protected int defaultEnergy;
     protected float defaultScale = 1.0F;
