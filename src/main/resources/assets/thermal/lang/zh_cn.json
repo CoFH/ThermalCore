@@ -8,52 +8,10 @@
   "advancements.thermal.wrench.title": "看起来像个扳手",
   "advancements.thermal.wrench.description": "制作一把新月锤。",
 
-  "block.thermal.apatite_ore": "磷灰石矿石",
-  "block.thermal.cinnabar_ore": "朱砂矿石",
-  "block.thermal.niter_ore": "硝石矿石",
-  "block.thermal.sulfur_ore": "硫矿石",
-
-  "block.thermal.lead_ore": "铅矿石",
-  "block.thermal.nickel_ore": "镍矿石",
-  "block.thermal.silver_ore": "银矿石",
-  "block.thermal.tin_ore": "锡矿石",
-
-  "block.thermal.ruby_ore": "红宝石矿石",
-  "block.thermal.sapphire_ore": "蓝宝石矿石",
-
-  "block.thermal.deepslate_apatite_ore": "深层磷灰石矿石",
-  "block.thermal.deepslate_cinnabar_ore": "深层朱砂矿石",
-  "block.thermal.deepslate_niter_ore": "深层硝石矿石",
-  "block.thermal.deepslate_sulfur_ore": "深层硫矿石",
-
-  "block.thermal.deepslate_lead_ore": "深层铅矿石",
-  "block.thermal.deepslate_nickel_ore": "深层镍矿石",
-  "block.thermal.deepslate_silver_ore": "深层银矿石",
-  "block.thermal.deepslate_tin_ore": "深层锡矿石",
-
-  "block.thermal.deepslate_ruby_ore": "深层红宝石矿石",
-  "block.thermal.deepslate_sapphire_ore": "深层蓝宝石矿石",
-
-  "block.thermal.oil_sand": "沥青沙",
-  "block.thermal.oil_red_sand": "沥青红沙",
-
   "block.thermal.apatite_block": "磷灰石块",
   "block.thermal.cinnabar_block": "朱砂块",
   "block.thermal.niter_block": "硝石块",
   "block.thermal.sulfur_block": "硫块",
-
-  "block.thermal.lead_block": "铅块",
-  "block.thermal.nickel_block": "镍块",
-  "block.thermal.silver_block": "银块",
-  "block.thermal.tin_block": "锡块",
-
-  "block.thermal.ruby_block": "红宝石块",
-  "block.thermal.sapphire_block": "蓝宝石块",
-
-  "block.thermal.bronze_block": "青铜块",
-  "block.thermal.constantan_block": "康铜块",
-  "block.thermal.electrum_block": "琥珀金块",
-  "block.thermal.invar_block": "殷钢块",
 
   "block.thermal.enderium_block": "末影块",
   "block.thermal.lumium_block": "流明块",
@@ -150,6 +108,8 @@
 
   "info.thermal.redprint.contents": "复制内容：",
   "info.thermal.redprint.unknown": "未知数据",
+  "info.thermal.redprint.data.Filter": "过滤器参数",
+  "info.thermal.redprint.data.FilterAttachmentMode": "过滤器模式",
   "info.thermal.redprint.data.RSControl": "红石控制",
   "info.thermal.redprint.data.Sides": "侧面配置",
   "info.thermal.redprint.data.Xfer": "传输控制",
@@ -246,7 +206,7 @@
   "item.thermal.satchel": "背包",
   "item.thermal.satchel.desc": "存储物品，可以安装物品过滤规则",
   "item.thermal.wrench": "新月锤",
-  "item.thermal.wrench.desc": "配置、旋转或拆除特定方块。对，其实就是个扳手。",
+  "item.thermal.wrench.desc": "就是个扳手。可以旋转或拆除很多玩意。",
   "item.thermal.xp_crystal": "洞见水晶",
   "item.thermal.xp_crystal.desc": "存储经验。",
 
@@ -256,79 +216,6 @@
   "item.thermal.deep_aquachow.desc": "使§e§o水产捕捞器§r§6能够收获海底的产物。在海洋生物群系中效果拔群。",
   "item.thermal.junk_net": "垃圾打捞网",
   "item.thermal.junk_net.desc": "用以在§e§o水产捕捞器§r§6中打捞垃圾。不会在使用中被消耗。",
-
-  "item.thermal.raw_lead": "粗铅",
-  "item.thermal.raw_nickel": "粗镍",
-  "item.thermal.raw_silver": "粗银",
-  "item.thermal.raw_tin": "粗锡",
-
-  "item.thermal.lead_coin": "铅币",
-  "item.thermal.lead_dust": "铅粉",
-  "item.thermal.lead_gear": "铅齿轮",
-  "item.thermal.lead_ingot": "铅锭",
-  "item.thermal.lead_nugget": "铅粒",
-  "item.thermal.lead_plate": "铅板",
-
-  "item.thermal.nickel_coin": "镍币",
-  "item.thermal.nickel_dust": "镍粉",
-  "item.thermal.nickel_gear": "镍齿轮",
-  "item.thermal.nickel_ingot": "镍锭",
-  "item.thermal.nickel_nugget": "镍粒",
-  "item.thermal.nickel_plate": "镍板",
-
-  "item.thermal.silver_coin": "银币",
-  "item.thermal.silver_dust": "银粉",
-  "item.thermal.silver_gear": "银齿轮",
-  "item.thermal.silver_ingot": "银锭",
-  "item.thermal.silver_nugget": "银粒",
-  "item.thermal.silver_plate": "银板",
-
-  "item.thermal.tin_coin": "锡币",
-  "item.thermal.tin_dust": "锡粉",
-  "item.thermal.tin_gear": "锡齿轮",
-  "item.thermal.tin_ingot": "锡锭",
-  "item.thermal.tin_nugget": "锡粒",
-  "item.thermal.tin_plate": "锡板",
-
-  "item.thermal.ruby": "红宝石",
-  "item.thermal.ruby_dust": "红宝石粉",
-  "item.thermal.ruby_gear": "红宝石齿轮",
-  "item.thermal.ruby_nugget": "红宝石粒",
-  "item.thermal.ruby_plate": "红宝石板",
-
-  "item.thermal.sapphire": "蓝宝石",
-  "item.thermal.sapphire_dust": "蓝宝石粉",
-  "item.thermal.sapphire_gear": "蓝宝石齿轮",
-  "item.thermal.sapphire_nugget": "蓝宝石粒",
-  "item.thermal.sapphire_plate": "蓝宝石板",
-
-  "item.thermal.bronze_coin": "青铜币",
-  "item.thermal.bronze_dust": "青铜粉",
-  "item.thermal.bronze_gear": "青铜齿轮",
-  "item.thermal.bronze_ingot": "青铜锭",
-  "item.thermal.bronze_nugget": "青铜粒",
-  "item.thermal.bronze_plate": "青铜板",
-
-  "item.thermal.constantan_coin": "康铜币",
-  "item.thermal.constantan_dust": "康铜粉",
-  "item.thermal.constantan_gear": "康铜齿轮",
-  "item.thermal.constantan_ingot": "康铜锭",
-  "item.thermal.constantan_nugget": "康铜粒",
-  "item.thermal.constantan_plate": "康铜板",
-
-  "item.thermal.electrum_coin": "琥珀金币",
-  "item.thermal.electrum_dust": "琥珀金粉",
-  "item.thermal.electrum_gear": "琥珀金齿轮",
-  "item.thermal.electrum_ingot": "琥珀金锭",
-  "item.thermal.electrum_nugget": "琥珀金粒",
-  "item.thermal.electrum_plate": "琥珀金板",
-
-  "item.thermal.invar_coin": "殷钢币",
-  "item.thermal.invar_dust": "殷钢粉",
-  "item.thermal.invar_gear": "殷钢齿轮",
-  "item.thermal.invar_ingot": "殷钢锭",
-  "item.thermal.invar_nugget": "殷钢粒",
-  "item.thermal.invar_plate": "殷钢板",
 
   "item.thermal.enderium_coin": "末影币",
   "item.thermal.enderium_dust": "末影粉",
@@ -499,13 +386,13 @@
   "block.thermal.device_composter": "批量堆肥器",
   "block.thermal.device_fisher": "水产捕捞器",
   "block.thermal.device_hive_extractor": "蜂箱漏斗",
-  "block.thermal.device_magnet_blocker": "磁力抑制器",
   "block.thermal.device_nullifier": "销毁器",
   "block.thermal.device_potion_diffuser": "药水雾化器",
   "block.thermal.device_rock_gen": "造石机",
   "block.thermal.device_soil_infuser": "植育土注能机",
   "block.thermal.device_tree_extractor": "树汁提取器",
   "block.thermal.device_water_gen": "蓄水器",
+  "block.thermal.device_xp_condenser": "知识聚集器",
 
   "block.thermal.energy_cell": "红石通量单元",
   "block.thermal.energy_cell_frame": "红石通量单元框架",
@@ -584,6 +471,10 @@
   "info.thermal.device_water_gen.0": "提供大量的水资源。",
   "info.thermal.device_water_gen.1": "需要相邻的水源以使其正常工作。",
   "info.thermal.device_water_gen.2": "可别淹死了。",
+
+  "info.thermal.device_xp_condenser.0": "从附近方块中收集经验。",
+  "info.thermal.device_xp_condenser.1": "存储的经验可以流体形式提取。",
+  "info.thermal.device_xp_condenser.2": "这算不算一种机器学习？",
 
   "info.thermal.energy_cell.0": "存储与传输红石通量。",
   "info.thermal.energy_cell.1": "按住§e§oShift§r键和/或§e§oCtrl§r键来精确调整数值。",
@@ -823,7 +714,11 @@
   "item.thermal.junk_net.keyword": "鱼饵",
 
   "item.thermal.detonator.keyword": "tnt",
+  "item.thermal.lock.keyword": "锁 安全 安保",
   "item.thermal.rf_potato.keyword": "电池",
+  "item.thermal.redprint.keyword": "复制 设置 配置",
+  "item.thermal.satchel.keyword": "背包 袋子 存储",
+  "item.thermal.xp_crystal.keyword": "经验 存储 xp",
 
   "_comment": "========================================================================================================",
   "_comment": "Thermal Cultivation",
@@ -997,16 +892,16 @@
   "info.thermal.filter_attachment.mode.1": "输出（自管道）过滤",
   "info.thermal.filter_attachment.mode.2": "输入（对管道）过滤",
 
-  "info.thermal.fluid_filter_attachment.0": "将存有流体的物品放入栏位，以此把对应的流体添加到过滤器列表中。",
+  "info.thermal.fluid_filter_attachment.0": "将存有流体的物品放入过滤槽，以此把对应的流体添加到过滤器列表中。",
   "info.thermal.fluid_filter_attachment.1": "可使用额外选项来微调过滤。",
   "info.thermal.fluid_filter_attachment.2": "红石控制可用于暂时关闭过滤……",
 
-  "info.thermal.fluid_servo_attachment.0": "将存有流体的物品放入栏位，以此把对应的流体添加到过滤器列表中。",
+  "info.thermal.fluid_servo_attachment.0": "将存有流体的物品放入过滤槽，以此把对应的流体添加到过滤器列表中。",
   "info.thermal.fluid_servo_attachment.1": "可使用额外选项来微调过滤。",
   "info.thermal.fluid_servo_attachment.2": "红石控制可用于开启输出。",
 
   "info.thermal.fluid_turbo_servo_attachment.0": "更快的伺服器，但过滤功能受限。",
-  "info.thermal.fluid_turbo_servo_attachment.1": "将存有流体的物品放入过滤栏。",
+  "info.thermal.fluid_turbo_servo_attachment.1": "将存有流体的物品放入过滤槽。",
   "info.thermal.fluid_turbo_servo_attachment.2": "可使用额外选项来微调过滤和输出数量。",
   "info.thermal.fluid_turbo_servo_attachment.3": "红石控制可用于开启输出。",
 
@@ -1303,9 +1198,16 @@
   "entity.thermal.redstone_tnt_minecart": "红石发信炸药矿车",
   "entity.thermal.slime_tnt_minecart": "弹力黏着炸药矿车",
 
-  "entity.thermal.energy_minecart": "通量存储矿车",
+  "entity.thermal.energy_minecart": "红石通量矿车",
   "entity.thermal.fluid_minecart": "流体储罐矿车",
   "entity.thermal.underwater_minecart": "水下矿车",
+
+  "info.thermal.energy_minecart.0": "存储红石通量。",
+  "info.thermal.energy_minecart.1": "通过左右槽位来为矿车充能，或从矿车中提取能量。",
+
+  "info.thermal.fluid_minecart.0": "存储流体。",
+  "info.thermal.fluid_minecart.1": "通过左右槽位来为矿车装填流体，或将矿车中的流体装填到物品中。",
+  "info.thermal.fluid_minecart.2": "或者，直接使用桶或者类似物品与矿车交互。",
 
   "item.thermal.earth_tnt_minecart": "地岩碎裂炸药矿车",
   "item.thermal.ender_tnt_minecart": "末影侵扰炸药矿车",
@@ -1318,7 +1220,7 @@
   "item.thermal.redstone_tnt_minecart": "红石发信炸药矿车",
   "item.thermal.slime_tnt_minecart": "弹力黏着炸药矿车",
 
-  "item.thermal.energy_minecart": "通量存储矿车",
+  "item.thermal.energy_minecart": "红石通量矿车",
   "item.thermal.fluid_minecart": "流体储罐矿车",
   "item.thermal.underwater_minecart": "水下矿车",
 
@@ -1349,5 +1251,5 @@
 
   "thermal.book.name": "热力百科",
   "thermal.book.landing_text": "欢迎使用热力系列指导手册！全体制作人员祝你玩得愉快。",
-  "thermal.book.subtitle": "MC 1.18.2"
+  "thermal.book.subtitle": "MC 1.19.2"
 }
