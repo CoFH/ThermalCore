@@ -140,8 +140,9 @@ public abstract class MachineBlockEntity extends Reconfigurable4WayBlockEntity i
 
     protected void processStart() {
 
-        processTick = baseProcessTick;
-        int energy = curRecipe.getEnergy(this);
+        int recipeEnergy = curRecipe.getEnergy(this);
+        processTick = Math.min(baseProcessTick, recipeEnergy);
+        int energy = recipeEnergy;
         energy += process;                  // Apply extra energy to next process
         process = processMax = energy;
         if (cacheRenderFluid()) {

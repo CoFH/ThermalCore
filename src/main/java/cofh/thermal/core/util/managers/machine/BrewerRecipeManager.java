@@ -37,7 +37,7 @@ public class BrewerRecipeManager extends AbstractManager implements IRecipeManag
     private static final BrewerRecipeManager INSTANCE = new BrewerRecipeManager();
     protected static final int DEFAULT_ENERGY = 4000;
 
-    protected static boolean defaultPotionRecipes = true;
+    protected boolean defaultPotionRecipes = true;
 
     protected int defaultPotion = BUCKET_VOLUME;
 
@@ -58,6 +58,11 @@ public class BrewerRecipeManager extends AbstractManager implements IRecipeManag
         super(DEFAULT_ENERGY);
         this.maxOutputItems = 0;
         this.maxOutputFluids = 1;
+    }
+
+    public void setDefaultPotionRecipes(boolean defaultPotionRecipes) {
+
+        this.defaultPotionRecipes = defaultPotionRecipes;
     }
 
     public void addRecipe(ThermalRecipe recipe) {

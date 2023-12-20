@@ -22,11 +22,11 @@ import static cofh.lib.util.helpers.StringHelper.localize;
 
 public abstract class ThermalFuelCategory<T extends ThermalFuel> implements IRecipeCategory<T> {
 
-    protected final int DURATION_X = 70;
-    protected final int DURATION_Y = 24;
+    protected static final int DURATION_X = 70;
+    protected static final int DURATION_Y = 24;
 
-    protected final int ENERGY_X = 106;
-    protected final int ENERGY_Y = 10;
+    protected static final int ENERGY_X = 106;
+    protected static final int ENERGY_Y = 10;
 
     protected final RecipeType<T> type;
     protected IDrawable background;

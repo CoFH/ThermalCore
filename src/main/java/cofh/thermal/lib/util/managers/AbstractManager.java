@@ -24,15 +24,15 @@ public abstract class AbstractManager implements IManager {
         this.defaultEnergy = defaultEnergy;
     }
 
-    protected AbstractManager setDefaultEnergy(int defaultEnergy) {
+    //    public AbstractManager setDefaultEnergy(int defaultEnergy) {
+    //
+    //        if (defaultEnergy > 0) {
+    //            this.defaultEnergy = defaultEnergy;
+    //        }
+    //        return this;
+    //    }
 
-        if (defaultEnergy > 0) {
-            this.defaultEnergy = defaultEnergy;
-        }
-        return this;
-    }
-
-    protected AbstractManager setDefaultScale(int defaultScale) {
+    public AbstractManager setDefaultScale(float defaultScale) {
 
         if (defaultScale > 0) {
             this.defaultScale = defaultScale;

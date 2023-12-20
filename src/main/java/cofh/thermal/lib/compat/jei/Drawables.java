@@ -68,6 +68,8 @@ public class Drawables {
     private final IDrawableStatic coolantEmpty;
     private final IDrawableStatic coolantFill;
 
+    private final IDrawableStatic xp;
+
     private Drawables(IGuiHelper guiHelper) {
 
         slot[SLOT] = guiHelper.createDrawable(JEI_TEXTURE, 0, 96, 18, 18);
@@ -93,6 +95,8 @@ public class Drawables {
 
         coolantEmpty = guiHelper.createDrawable(JEI_TEXTURE, 32, 144, 14, 42);
         coolantFill = guiHelper.createDrawable(JEI_TEXTURE, 48, 144, 14, 42);
+
+        xp = guiHelper.createDrawable(JEI_TEXTURE, 128, 96, 16, 16);
     }
 
     public IDrawableStatic getSlot(int type) {
@@ -158,6 +162,11 @@ public class Drawables {
     public IDrawableStatic getCoolantFill() {
 
         return coolantFill;
+    }
+
+    public IDrawableStatic getXp() {
+
+        return xp;
     }
 
 }

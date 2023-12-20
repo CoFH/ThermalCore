@@ -45,7 +45,7 @@ public class CrafterRecipeManager extends AbstractManager implements IManager {
             return null;
         }
         if (!recipeMap.containsKey(recipe)) {
-            recipeMap.put(recipe, new CrafterRecipe(DEFAULT_ENERGY, recipe, registryAccess));
+            recipeMap.put(recipe, new CrafterRecipe((int) (getDefaultEnergy() * getDefaultScale()), recipe, registryAccess));
         }
         return recipeMap.get(recipe);
     }

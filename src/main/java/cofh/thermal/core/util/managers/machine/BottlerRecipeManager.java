@@ -45,8 +45,8 @@ public class BottlerRecipeManager extends AbstractManager implements IRecipeMana
     private static final BottlerRecipeManager INSTANCE = new BottlerRecipeManager();
     protected static final int DEFAULT_ENERGY = 400;
 
-    protected static boolean defaultBucketRecipes = true;
-    protected static boolean defaultPotionRecipes = true;
+    protected boolean defaultBucketRecipes = true;
+    protected boolean defaultPotionRecipes = true;
 
     protected Map<List<Integer>, IMachineRecipe> recipeMap = new Object2ObjectOpenHashMap<>();
     protected Set<Fluid> validFluids = new ObjectOpenHashSet<>();
@@ -65,6 +65,16 @@ public class BottlerRecipeManager extends AbstractManager implements IRecipeMana
         super(DEFAULT_ENERGY);
         this.maxOutputItems = 1;
         this.maxOutputFluids = 0;
+    }
+
+    public void setDefaultBucketRecipes(boolean defaultBucketRecipes) {
+
+        this.defaultBucketRecipes = defaultBucketRecipes;
+    }
+
+    public void setDefaultPotionRecipes(boolean defaultPotionRecipes) {
+
+        this.defaultPotionRecipes = defaultPotionRecipes;
     }
 
     public void addRecipe(ThermalRecipe recipe) {
