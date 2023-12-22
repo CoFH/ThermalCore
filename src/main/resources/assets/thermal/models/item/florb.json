@@ -1,0 +1,8 @@
+{
+  "loader": "cofh_core:fluid_container",
+  "parent": "forge:item/default",
+  "textures": {
+    "layer0": "thermal:item/florb",
+    "fluid_mask": "thermal:item/florb_mask"
+  }
+}

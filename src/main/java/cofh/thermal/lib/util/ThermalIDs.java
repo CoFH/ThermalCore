@@ -201,6 +201,8 @@ public class ThermalIDs {
     public static final String ID_BLITZ_PROJECTILE = "blitz_projectile";
     public static final String ID_BLIZZ_PROJECTILE = "blizz_projectile";
 
+    public static final String ID_FLORB = "florb";
+
     public static final String ID_EXPLOSIVE_GRENADE = "explosive_grenade";
 
     public static final String ID_SLIME_GRENADE = "slime_grenade";

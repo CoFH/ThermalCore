@@ -7,6 +7,7 @@ import cofh.thermal.core.common.entity.monster.Blizz;
 import cofh.thermal.core.common.entity.projectile.BasalzProjectile;
 import cofh.thermal.core.common.entity.projectile.BlitzProjectile;
 import cofh.thermal.core.common.entity.projectile.BlizzProjectile;
+import cofh.thermal.core.common.entity.projectile.ThrownFlorb;
 import cofh.thermal.lib.common.entity.AugmentableMinecart;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -74,5 +75,7 @@ public class TCoreEntities {
     public static final RegistryObject<EntityType<BasalzProjectile>> BASALZ_PROJECTILE = ENTITIES.register(ID_BASALZ_PROJECTILE, () -> EntityType.Builder.<BasalzProjectile>of(BasalzProjectile::new, MobCategory.MISC).sized(0.3125F, 0.3125F).build(ID_BASALZ_PROJECTILE));
     public static final RegistryObject<EntityType<BlizzProjectile>> BLIZZ_PROJECTILE = ENTITIES.register(ID_BLIZZ_PROJECTILE, () -> EntityType.Builder.<BlizzProjectile>of(BlizzProjectile::new, MobCategory.MISC).sized(0.3125F, 0.3125F).build(ID_BLIZZ_PROJECTILE));
     public static final RegistryObject<EntityType<BlitzProjectile>> BLITZ_PROJECTILE = ENTITIES.register(ID_BLITZ_PROJECTILE, () -> EntityType.Builder.<BlitzProjectile>of(BlitzProjectile::new, MobCategory.MISC).sized(0.3125F, 0.3125F).build(ID_BLITZ_PROJECTILE));
+
+    public static final RegistryObject<EntityType<ThrownFlorb>> THROWN_FLORB = ENTITIES.register(ID_FLORB, () -> EntityType.Builder.<ThrownFlorb>of(ThrownFlorb::new, MobCategory.MISC).sized(0.25F, 0.25F).build(ID_FLORB));
 
 }

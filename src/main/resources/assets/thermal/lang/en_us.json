@@ -195,6 +195,7 @@
   "item.thermal.detonator": "Remote Detonator",
   "item.thermal.detonator.desc": "Allows for remote priming and detonation of TNT.",
   "item.thermal.earth_charge": "Earth Charge",
+  "item.thermal.florb": "Florb",
   "item.thermal.ice_charge": "Ice Charge",
   "item.thermal.lightning_charge": "Lightning Charge",
   "item.thermal.lock": "Signalum Security Lock",

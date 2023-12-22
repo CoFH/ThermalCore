@@ -102,15 +102,15 @@ public final class RegistrationHelper {
     // region BLOCK SETS
     public static void registerWoodBlockSet(String woodName, MapColor color, float hardness, float resistance, SoundType soundType, WoodType type, String modId) {
 
-        blocksTab(registerBlock(woodName + "_planks", () -> new Block(of().mapColor(color).instrument(NoteBlockInstrument.BASS).strength(hardness, resistance).sound(soundType)), modId));
-        blocksTab(registerBlock(woodName + "_slab", () -> new SlabBlock(of().mapColor(color).instrument(NoteBlockInstrument.BASS).strength(hardness, resistance).sound(soundType)), modId));
-        blocksTab(registerBlock(woodName + "_stairs", () -> new StairBlock(() -> BLOCKS.get(woodName + "_planks").defaultBlockState(), of().mapColor(color).instrument(NoteBlockInstrument.BASS).strength(hardness, resistance).sound(soundType)), modId));
-        blocksTab(registerBlock(woodName + "_door", () -> new DoorBlock(of().mapColor(color).instrument(NoteBlockInstrument.BASS).strength(resistance).sound(soundType).noOcclusion(), type.setType()), modId));
-        blocksTab(registerBlock(woodName + "_trapdoor", () -> new TrapDoorBlock(of().mapColor(color).instrument(NoteBlockInstrument.BASS).strength(resistance).sound(soundType).noOcclusion().isValidSpawn((state, reader, pos, entityType) -> false), type.setType()), modId));
-        blocksTab(registerBlock(woodName + "_button", () -> Blocks.woodenButton(type.setType()), modId));
-        blocksTab(registerBlock(woodName + "_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, of().mapColor(color).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(0.5F).ignitedByLava().pushReaction(PushReaction.DESTROY), type.setType()), modId));
-        blocksTab(registerBlock(woodName + "_fence", () -> new FenceBlock(of().mapColor(color).instrument(NoteBlockInstrument.BASS).strength(hardness, resistance).sound(soundType)), modId));
-        blocksTab(registerBlock(woodName + "_fence_gate", () -> new FenceGateBlock(of().mapColor(color).forceSolidOn().instrument(NoteBlockInstrument.BASS).strength(hardness, resistance).ignitedByLava(), type), modId));
+        blocksTab(150, registerBlock(woodName + "_planks", () -> new Block(of().mapColor(color).instrument(NoteBlockInstrument.BASS).strength(hardness, resistance).sound(soundType)), modId));
+        blocksTab(150, registerBlock(woodName + "_slab", () -> new SlabBlock(of().mapColor(color).instrument(NoteBlockInstrument.BASS).strength(hardness, resistance).sound(soundType)), modId));
+        blocksTab(150, registerBlock(woodName + "_stairs", () -> new StairBlock(() -> BLOCKS.get(woodName + "_planks").defaultBlockState(), of().mapColor(color).instrument(NoteBlockInstrument.BASS).strength(hardness, resistance).sound(soundType)), modId));
+        blocksTab(150, registerBlock(woodName + "_door", () -> new DoorBlock(of().mapColor(color).instrument(NoteBlockInstrument.BASS).strength(resistance).sound(soundType).noOcclusion(), type.setType()), modId));
+        blocksTab(150, registerBlock(woodName + "_trapdoor", () -> new TrapDoorBlock(of().mapColor(color).instrument(NoteBlockInstrument.BASS).strength(resistance).sound(soundType).noOcclusion().isValidSpawn((state, reader, pos, entityType) -> false), type.setType()), modId));
+        blocksTab(150, registerBlock(woodName + "_button", () -> Blocks.woodenButton(type.setType()), modId));
+        blocksTab(150, registerBlock(woodName + "_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, of().mapColor(color).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(0.5F).ignitedByLava().pushReaction(PushReaction.DESTROY), type.setType()), modId));
+        blocksTab(150, registerBlock(woodName + "_fence", () -> new FenceBlock(of().mapColor(color).instrument(NoteBlockInstrument.BASS).strength(hardness, resistance).sound(soundType)), modId));
+        blocksTab(150, registerBlock(woodName + "_fence_gate", () -> new FenceGateBlock(of().mapColor(color).forceSolidOn().instrument(NoteBlockInstrument.BASS).strength(hardness, resistance).ignitedByLava(), type), modId));
     }
     // endregion
 
@@ -212,12 +212,14 @@ public final class RegistrationHelper {
 
     public static void registerGemSet(String prefix, Rarity rarity, boolean vanilla, String modId) {
 
+        int order = vanilla ? 1049 : 1050;
+
         if (!vanilla) {
-            itemsTab(registerItem(prefix, () -> new ItemCoFH(itemProperties().rarity(rarity)).setModId(modId)));
+            itemsTab(order, registerItem(prefix, () -> new ItemCoFH(itemProperties().rarity(rarity)).setModId(modId)));
         }
         // itemsTab(registerItem(prefix + "_nugget", () -> new ItemCoFH(itemProperties().group(group).rarity(rarity)).setModId(modId)));
-        itemsTab(registerItem(prefix + "_dust", () -> new ItemCoFH(itemProperties().rarity(rarity)).setModId(modId)));
-        itemsTab(registerItem(prefix + "_gear", () -> new ItemCoFH(itemProperties().rarity(rarity)).setModId(modId)));
+        itemsTab(order, registerItem(prefix + "_dust", () -> new ItemCoFH(itemProperties().rarity(rarity)).setModId(modId)));
+        itemsTab(order, registerItem(prefix + "_gear", () -> new ItemCoFH(itemProperties().rarity(rarity)).setModId(modId)));
         // itemsTab(registerItem(prefix + "_plate", () -> new CountedItem(itemProperties().group(group).rarity(rarity)).setModId(modId)));
         // itemsTab(registerItem(prefix + "_coin", () -> new CoinItem(itemProperties().group(group).rarity(rarity)).setModId(modId)));
     }

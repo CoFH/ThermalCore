@@ -208,6 +208,8 @@ public class ThermalCore {
 
     private void entityRendererSetup(final EntityRenderersEvent.RegisterRenderers event) {
 
+        event.registerEntityRenderer(THROWN_FLORB.get(), ThrownItemRenderer::new);
+
         for (RegistryObject<EntityType<? extends AbstractGrenade>> grenade : DetonateUtils.GRENADES) {
             event.registerEntityRenderer(grenade.get(), ThrownItemRenderer::new);
         }

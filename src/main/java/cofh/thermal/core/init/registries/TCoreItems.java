@@ -21,6 +21,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.energy.IEnergyStorage;
 
+import static cofh.lib.util.Constants.BUCKET_VOLUME;
 import static cofh.lib.util.Utils.itemProperties;
 import static cofh.lib.util.constants.NBTTags.*;
 import static cofh.thermal.core.ThermalCore.BLOCKS;
@@ -184,40 +185,40 @@ public class TCoreItems {
         toolsTab(registerItem(ID_XP_CRYSTAL, () -> new XpCrystalItem(itemProperties().stacksTo(1), 10000)));
         toolsTab(registerItem(ID_LOCK, () -> new LockItem(itemProperties())));
         toolsTab(registerItem(ID_SATCHEL, () -> new SatchelItem(itemProperties().stacksTo(1), 9)));
+        toolsTab(registerItem(ID_DETONATOR, () -> new DetonatorItem(itemProperties().stacksTo(1))));
 
-        toolsTab(registerItem("compost", () -> new FertilizerItem(itemProperties(), 2)));
-        toolsTab(registerItem("phytogro", () -> new FertilizerItem(itemProperties())));
+        toolsTab(60, registerItem(ID_FLORB, () -> new FlorbItem(itemProperties(), BUCKET_VOLUME, (e) -> true)));
+        toolsTab(60, registerItem("earth_charge", () -> new EarthChargeItem(itemProperties())));
+        toolsTab(60, registerItem("ice_charge", () -> new IceChargeItem(itemProperties())));
+        toolsTab(60, registerItem("lightning_charge", () -> new LightningChargeItem(itemProperties())));
+
+        toolsTab(80, registerItem("compost", () -> new FertilizerItem(itemProperties(), 2)));
+        toolsTab(80, registerItem("phytogro", () -> new FertilizerItem(itemProperties())));
         // toolsTab(registerItem("fluxed_phytogro", () -> new FertilizerItem(properties(), 5)));
 
-        toolsTab(registerItem("junk_net"));
-        toolsTab(registerItem("aquachow"));
-        toolsTab(registerItem("deep_aquachow"));
+        toolsTab(90, registerItem("junk_net"));
+        toolsTab(90, registerItem("aquachow"));
+        toolsTab(90, registerItem("deep_aquachow"));
         //        registerItem("rich_aquachow");
         //        registerItem("fluxed_aquachow");
-
-        toolsTab(registerItem("earth_charge", () -> new EarthChargeItem(itemProperties())));
-        toolsTab(registerItem("ice_charge", () -> new IceChargeItem(itemProperties())));
-        toolsTab(registerItem("lightning_charge", () -> new LightningChargeItem(itemProperties())));
-
-        toolsTab(registerItem(ID_DETONATOR, () -> new DetonatorItem(itemProperties().stacksTo(1))));
     }
 
     private static void registerArmor() {
 
-        toolsTab(registerItem(ID_BEEKEEPER_HELMET, () -> new BeekeeperArmorItem(BEEKEEPER, ArmorItem.Type.HELMET, itemProperties())));
-        toolsTab(registerItem(ID_BEEKEEPER_CHESTPLATE, () -> new BeekeeperArmorItem(BEEKEEPER, ArmorItem.Type.CHESTPLATE, itemProperties())));
-        toolsTab(registerItem(ID_BEEKEEPER_LEGGINGS, () -> new BeekeeperArmorItem(BEEKEEPER, ArmorItem.Type.LEGGINGS, itemProperties())));
-        toolsTab(registerItem(ID_BEEKEEPER_BOOTS, () -> new BeekeeperArmorItem(BEEKEEPER, ArmorItem.Type.BOOTS, itemProperties())));
+        toolsTab(50, registerItem(ID_BEEKEEPER_HELMET, () -> new BeekeeperArmorItem(BEEKEEPER, ArmorItem.Type.HELMET, itemProperties())));
+        toolsTab(50, registerItem(ID_BEEKEEPER_CHESTPLATE, () -> new BeekeeperArmorItem(BEEKEEPER, ArmorItem.Type.CHESTPLATE, itemProperties())));
+        toolsTab(50, registerItem(ID_BEEKEEPER_LEGGINGS, () -> new BeekeeperArmorItem(BEEKEEPER, ArmorItem.Type.LEGGINGS, itemProperties())));
+        toolsTab(50, registerItem(ID_BEEKEEPER_BOOTS, () -> new BeekeeperArmorItem(BEEKEEPER, ArmorItem.Type.BOOTS, itemProperties())));
 
-        toolsTab(registerItem(ID_DIVING_HELMET, () -> new DivingArmorItem(DIVING, ArmorItem.Type.HELMET, itemProperties())));
-        toolsTab(registerItem(ID_DIVING_CHESTPLATE, () -> new DivingArmorItem(DIVING, ArmorItem.Type.CHESTPLATE, itemProperties())));
-        toolsTab(registerItem(ID_DIVING_LEGGINGS, () -> new DivingArmorItem(DIVING, ArmorItem.Type.LEGGINGS, itemProperties())));
-        toolsTab(registerItem(ID_DIVING_BOOTS, () -> new DivingArmorItem(DIVING, ArmorItem.Type.BOOTS, itemProperties())));
+        toolsTab(50, registerItem(ID_DIVING_HELMET, () -> new DivingArmorItem(DIVING, ArmorItem.Type.HELMET, itemProperties())));
+        toolsTab(50, registerItem(ID_DIVING_CHESTPLATE, () -> new DivingArmorItem(DIVING, ArmorItem.Type.CHESTPLATE, itemProperties())));
+        toolsTab(50, registerItem(ID_DIVING_LEGGINGS, () -> new DivingArmorItem(DIVING, ArmorItem.Type.LEGGINGS, itemProperties())));
+        toolsTab(50, registerItem(ID_DIVING_BOOTS, () -> new DivingArmorItem(DIVING, ArmorItem.Type.BOOTS, itemProperties())));
 
-        toolsTab(registerItem(ID_HAZMAT_HELMET, () -> new HazmatArmorItem(HAZMAT, ArmorItem.Type.HELMET, itemProperties())));
-        toolsTab(registerItem(ID_HAZMAT_CHESTPLATE, () -> new HazmatArmorItem(HAZMAT, ArmorItem.Type.CHESTPLATE, itemProperties())));
-        toolsTab(registerItem(ID_HAZMAT_LEGGINGS, () -> new HazmatArmorItem(HAZMAT, ArmorItem.Type.LEGGINGS, itemProperties())));
-        toolsTab(registerItem(ID_HAZMAT_BOOTS, () -> new HazmatArmorItem(HAZMAT, ArmorItem.Type.BOOTS, itemProperties())));
+        toolsTab(50, registerItem(ID_HAZMAT_HELMET, () -> new HazmatArmorItem(HAZMAT, ArmorItem.Type.HELMET, itemProperties())));
+        toolsTab(50, registerItem(ID_HAZMAT_CHESTPLATE, () -> new HazmatArmorItem(HAZMAT, ArmorItem.Type.CHESTPLATE, itemProperties())));
+        toolsTab(50, registerItem(ID_HAZMAT_LEGGINGS, () -> new HazmatArmorItem(HAZMAT, ArmorItem.Type.LEGGINGS, itemProperties())));
+        toolsTab(50, registerItem(ID_HAZMAT_BOOTS, () -> new HazmatArmorItem(HAZMAT, ArmorItem.Type.BOOTS, itemProperties())));
     }
 
     // region AUGMENTS

@@ -35,7 +35,7 @@ public class ThermalCreativeTabs {
 
     public static RegistryObject<Item> blocksTab(RegistryObject<Item> reg) {
 
-        return blocksTab(BLOCKS_TAB.size(), reg);
+        return blocksTab(0, reg);
     }
 
     public static RegistryObject<Item> blocksTab(int order, RegistryObject<Item> reg) {
@@ -46,7 +46,7 @@ public class ThermalCreativeTabs {
 
     public static RegistryObject<Item> devicesTab(RegistryObject<Item> reg) {
 
-        return devicesTab(DEVICES_TAB.size(), reg);
+        return devicesTab(0, reg);
     }
 
     public static RegistryObject<Item> devicesTab(int order, RegistryObject<Item> reg) {
@@ -57,7 +57,7 @@ public class ThermalCreativeTabs {
 
     public static RegistryObject<Item> foodsTab(RegistryObject<Item> reg) {
 
-        return foodsTab(FOODS_TAB.size(), reg);
+        return foodsTab(0, reg);
     }
 
     public static RegistryObject<Item> foodsTab(int order, RegistryObject<Item> reg) {
@@ -68,7 +68,7 @@ public class ThermalCreativeTabs {
 
     public static RegistryObject<Item> itemsTab(RegistryObject<Item> reg) {
 
-        return itemsTab(ITEMS_TAB.size(), reg);
+        return itemsTab(0, reg);
     }
 
     public static RegistryObject<Item> itemsTab(int order, RegistryObject<Item> reg) {
@@ -79,7 +79,7 @@ public class ThermalCreativeTabs {
 
     public static RegistryObject<Item> toolsTab(RegistryObject<Item> reg) {
 
-        return toolsTab(TOOLS_TAB.size(), reg);
+        return toolsTab(0, reg);
     }
 
     public static RegistryObject<Item> toolsTab(int order, RegistryObject<Item> reg) {
