@@ -39,6 +39,7 @@ public class FlorbItem extends FluidContainerItem {
     public FlorbItem(Properties builder, int fluidCapacity, Predicate<FluidStack> validator) {
 
         super(builder, fluidCapacity, validator);
+        setEnchantability(0);
 
         ProxyUtils.registerColorable(this);
 

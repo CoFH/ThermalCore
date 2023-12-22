@@ -407,6 +407,7 @@ public class TCoreTagsProvider {
 
             tag(ThermalTags.Items.BITUMEN).add(ITEMS.get("bitumen"));
             tag(ThermalTags.Items.COAL_COKE).add(ITEMS.get("coal_coke"));
+            tag(ThermalTags.Items.ROSIN).add(ITEMS.get("rosin"));
             tag(ThermalTags.Items.SAWDUST).add(ITEMS.get("sawdust"));
             tag(ThermalTags.Items.SLAG).add(ITEMS.get("slag"));
             tag(ThermalTags.Items.TAR).add(ITEMS.get("tar"));

@@ -187,7 +187,7 @@ public class TCoreItems {
         toolsTab(registerItem(ID_SATCHEL, () -> new SatchelItem(itemProperties().stacksTo(1), 9)));
         toolsTab(registerItem(ID_DETONATOR, () -> new DetonatorItem(itemProperties().stacksTo(1))));
 
-        toolsTab(60, registerItem(ID_FLORB, () -> new FlorbItem(itemProperties(), BUCKET_VOLUME, (e) -> true)));
+        toolsTab(60, registerItem(ID_FLORB, () -> new FlorbItem(itemProperties(), BUCKET_VOLUME, (e) -> !e.getFluid().defaultFluidState().createLegacyBlock().isAir())));
         toolsTab(60, registerItem("earth_charge", () -> new EarthChargeItem(itemProperties())));
         toolsTab(60, registerItem("ice_charge", () -> new IceChargeItem(itemProperties())));
         toolsTab(60, registerItem("lightning_charge", () -> new LightningChargeItem(itemProperties())));

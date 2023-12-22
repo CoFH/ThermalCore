@@ -65,7 +65,7 @@ public class TCoreRecipeProvider extends RecipeProviderCoFH {
         generateStorageRecipes(consumer, reg.get(ID_COAL_COKE_BLOCK), reg.get("coal_coke"), ThermalTags.Items.COAL_COKE);
         generateStorageRecipes(consumer, reg.get(ID_BITUMEN_BLOCK), reg.get("bitumen"), ThermalTags.Items.BITUMEN);
         generateStorageRecipes(consumer, reg.get(ID_TAR_BLOCK), reg.get("tar"), ThermalTags.Items.TAR);
-        generateStorageRecipes(consumer, reg.get(ID_ROSIN_BLOCK), reg.get("rosin"));
+        generateStorageRecipes(consumer, reg.get(ID_ROSIN_BLOCK), reg.get("rosin"), ThermalTags.Items.ROSIN);
 
         generateSmallStorageRecipes(consumer, reg.get(ID_RUBBER_BLOCK), reg.get("rubber"));
         generateSmallStorageRecipes(consumer, reg.get(ID_CURED_RUBBER_BLOCK), reg.get("cured_rubber"));
@@ -737,7 +737,14 @@ public class TCoreRecipeProvider extends RecipeProviderCoFH {
                 .unlockedBy("has_experience_bottle", has(Items.EXPERIENCE_BOTTLE))
                 .save(consumer, this.modid + ":" + folder + "/" + name(result));
 
-        ShapelessRecipeBuilder.shapeless(TOOLS, reg.get("phytogro"), 8)
+        ShapelessRecipeBuilder.shapeless(MISC, reg.get(ID_FLORB), 8)
+                .requires(ThermalTags.Items.SAWDUST)
+                .requires(ThermalTags.Items.SLAG)
+                .requires(fromTags(ThermalTags.Items.ROSIN, Tags.Items.SLIMEBALLS))
+                .unlockedBy("has_slag", has(ThermalTags.Items.SLAG))
+                .save(consumer, ID_THERMAL + ":florb_8");
+
+        ShapelessRecipeBuilder.shapeless(MISC, reg.get("phytogro"), 8)
                 .requires(Tags.Items.SAND)
                 .requires(fromTags(ItemTagsCoFH.GEMS_APATITE, ItemTagsCoFH.DUSTS_APATITE))
                 .requires(fromTags(ItemTagsCoFH.GEMS_APATITE, ItemTagsCoFH.DUSTS_APATITE))
@@ -745,7 +752,7 @@ public class TCoreRecipeProvider extends RecipeProviderCoFH {
                 .unlockedBy("has_apatite", has(ItemTagsCoFH.GEMS_APATITE))
                 .save(consumer, ID_THERMAL + ":phytogro_8");
 
-        ShapelessRecipeBuilder.shapeless(TOOLS, reg.get("phytogro"), 4)
+        ShapelessRecipeBuilder.shapeless(MISC, reg.get("phytogro"), 4)
                 .requires(Tags.Items.SAND)
                 .requires(Items.BONE_MEAL)
                 .requires(fromTags(ItemTagsCoFH.GEMS_APATITE, ItemTagsCoFH.DUSTS_APATITE))
@@ -753,7 +760,7 @@ public class TCoreRecipeProvider extends RecipeProviderCoFH {
                 .unlockedBy("has_apatite", has(ItemTagsCoFH.GEMS_APATITE))
                 .save(consumer, ID_THERMAL + ":phytogro_4");
 
-        ShapelessRecipeBuilder.shapeless(TOOLS, reg.get("phytogro"), 2)
+        ShapelessRecipeBuilder.shapeless(MISC, reg.get("phytogro"), 2)
                 .requires(Tags.Items.SAND)
                 .requires(Items.BONE_MEAL)
                 .requires(reg.get("rich_slag"))
@@ -761,7 +768,7 @@ public class TCoreRecipeProvider extends RecipeProviderCoFH {
                 .unlockedBy("rich_slag", has(reg.get("rich_slag")))
                 .save(consumer, ID_THERMAL + ":phytogro_2");
 
-        ShapedRecipeBuilder.shaped(TOOLS, reg.get("junk_net"), 1)
+        ShapedRecipeBuilder.shaped(MISC, reg.get("junk_net"), 1)
                 .define('#', Tags.Items.STRING)
                 .define('n', Tags.Items.NUGGETS_IRON)
                 .define('S', Items.STICK)
@@ -771,14 +778,14 @@ public class TCoreRecipeProvider extends RecipeProviderCoFH {
                 .unlockedBy("has_string", has(Tags.Items.STRING))
                 .save(withConditions(consumer).flag(ID_DEVICE_FISHER));
 
-        ShapelessRecipeBuilder.shapeless(TOOLS, reg.get("aquachow"), 4)
+        ShapelessRecipeBuilder.shapeless(MISC, reg.get("aquachow"), 4)
                 .requires(Items.WHEAT)
                 .requires(Items.WHEAT)
                 .requires(Items.SLIME_BALL)
                 .unlockedBy("has_wheat", has(Tags.Items.CROPS_WHEAT))
                 .save(withConditions(consumer).flag(ID_DEVICE_FISHER), ID_THERMAL + ":aquachow_4");
 
-        ShapelessRecipeBuilder.shapeless(TOOLS, reg.get("deep_aquachow"), 4)
+        ShapelessRecipeBuilder.shapeless(MISC, reg.get("deep_aquachow"), 4)
                 .requires(Items.WHEAT)
                 .requires(Items.BEETROOT)
                 .requires(Items.SLIME_BALL)

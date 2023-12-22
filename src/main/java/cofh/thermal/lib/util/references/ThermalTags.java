@@ -45,6 +45,7 @@ public class ThermalTags {
 
         public static final TagKey<Item> BITUMEN = forgeTag("bitumen");
         public static final TagKey<Item> COAL_COKE = forgeTag("coal_coke");
+        public static final TagKey<Item> ROSIN = forgeTag("rosin");
         public static final TagKey<Item> SAWDUST = forgeTag("sawdust");
         public static final TagKey<Item> SLAG = forgeTag("slag");
         public static final TagKey<Item> TAR = forgeTag("tar");

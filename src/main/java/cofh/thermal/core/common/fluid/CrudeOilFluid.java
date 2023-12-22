@@ -29,6 +29,7 @@ import java.util.function.Supplier;
 
 import static cofh.lib.util.Utils.itemProperties;
 import static cofh.thermal.core.ThermalCore.*;
+import static cofh.thermal.core.init.registries.ThermalCreativeTabs.toolsTab;
 import static cofh.thermal.lib.util.ThermalIDs.ID_FLUID_CRUDE_OIL;
 import static net.minecraft.world.level.block.state.BlockBehaviour.Properties.of;
 
@@ -51,7 +52,7 @@ public class CrudeOilFluid extends FluidCoFH {
         particleColor = new Vector3f(0.05F, 0.05F, 0.05F);
 
         block = BLOCKS.register(fluid(ID_FLUID_CRUDE_OIL), () -> new FluidBlock(stillFluid, of().mapColor(MapColor.COLOR_BLACK).replaceable().noCollission().strength(100.0F).pushReaction(PushReaction.DESTROY).noLootTable()));
-        bucket = ITEMS.register(bucket(ID_FLUID_CRUDE_OIL), () -> new BucketItem(stillFluid, itemProperties().craftRemainder(Items.BUCKET).stacksTo(1)));
+        bucket = toolsTab(1000, ITEMS.register(bucket(ID_FLUID_CRUDE_OIL), () -> new BucketItem(stillFluid, itemProperties().craftRemainder(Items.BUCKET).stacksTo(1))));
     }
 
     @Override

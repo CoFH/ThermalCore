@@ -180,6 +180,8 @@ public class ThermalCore {
 
         ThermalWorldConfig.addFeatureConfig("cinnabar_ore", new FeatureConfig("Cinnabar", getFlag(FLAG_RESOURCE_CINNABAR)));
         ThermalWorldConfig.addFeatureConfig("oil_sand", new FeatureConfig("Oil Sand", getFlag(FLAG_RESOURCE_OIL)));
+
+        ThermalWorldConfig.addFeatureConfig("rubberwood_trees", new FeatureConfig("Rubberwood Trees", getFlag(FLAG_RESOURCE_RUBBERWOOD)));
     }
 
     // region INITIALIZATION
