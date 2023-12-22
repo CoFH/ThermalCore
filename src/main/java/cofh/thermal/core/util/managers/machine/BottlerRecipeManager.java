@@ -77,6 +77,11 @@ public class BottlerRecipeManager extends AbstractManager implements IRecipeMana
         this.defaultBucketRecipes = defaultBucketRecipes;
     }
 
+    public void setDefaultFlorbRecipes(boolean defaultFlorbRecipes) {
+
+        this.defaultFlorbRecipes = defaultFlorbRecipes;
+    }
+
     public void setDefaultPotionRecipes(boolean defaultPotionRecipes) {
 
         this.defaultPotionRecipes = defaultPotionRecipes;

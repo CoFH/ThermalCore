@@ -123,11 +123,15 @@ public class ThermalRecipeConfig implements IBaseConfig {
             builder.push("Bottler");
 
             bottlerDefaultBucketRecipes = builder
-                    .comment("If TRUE, Bucket handling recipes will be automatically created for the Fluid Encapsulator.")
+                    .comment("If TRUE, Bucket filling recipes will be automatically created for the Fluid Encapsulator.")
                     .define("Default Bucket Recipes", true);
 
+            bottlerDefaultFlorbRecipes = builder
+                    .comment("If TRUE, Florb filling recipes will be automatically created for the Fluid Encapsulator.")
+                    .define("Default Florb Recipes", true);
+
             bottlerDefaultPotionRecipes = builder
-                    .comment("If TRUE, Potion handling recipes will be automatically created for the Fluid Encapsulator.")
+                    .comment("If TRUE, Potion filling recipes will be automatically created for the Fluid Encapsulator.")
                     .define("Default Potion Recipes", true);
 
             bottlerEnergyScale = builder
@@ -175,6 +179,9 @@ public class ThermalRecipeConfig implements IBaseConfig {
 
         if (bottlerDefaultBucketRecipes != null) {
             BottlerRecipeManager.instance().setDefaultBucketRecipes(bottlerDefaultBucketRecipes.get());
+        }
+        if (bottlerDefaultFlorbRecipes != null) {
+            BottlerRecipeManager.instance().setDefaultFlorbRecipes(bottlerDefaultFlorbRecipes.get());
         }
         if (bottlerDefaultPotionRecipes != null) {
             BottlerRecipeManager.instance().setDefaultPotionRecipes(bottlerDefaultPotionRecipes.get());
@@ -232,6 +239,7 @@ public class ThermalRecipeConfig implements IBaseConfig {
 
     // region CONFIG VARIABLES
     private Supplier<Boolean> bottlerDefaultBucketRecipes;
+    private Supplier<Boolean> bottlerDefaultFlorbRecipes;
     private Supplier<Boolean> bottlerDefaultPotionRecipes;
     private Supplier<Boolean> brewerDefaultPotionRecipes;
 
