@@ -14,7 +14,13 @@ import static cofh.lib.util.constants.ModIds.ID_THERMAL;
 
 public class ThermalTags {
 
+    private ThermalTags() {
+
+    }
+
     public static class Blocks {
+
+        public static final TagKey<Block> TREE_EXTRACTOR_GROUND = thermalTag("devices/tree_extractor_ground");
 
         public static final TagKey<Block> LOGS_RUBBERWOOD = forgeTag("rubberwood_logs");
 
@@ -24,7 +30,10 @@ public class ThermalTags {
         public static final TagKey<Block> HARDENED_GLASS = thermalTag("glass/hardened");
         public static final TagKey<Block> ROCKWOOL = thermalTag("rockwool");
 
-        public static final TagKey<Block> TREE_EXTRACTOR_GROUND = thermalTag("devices/tree_extractor_ground");
+        public static final TagKey<Block> STORAGE_BLOCKS_APPLE = forgeTag("storage_blocks/apple");
+        public static final TagKey<Block> STORAGE_BLOCKS_CARROT = forgeTag("storage_blocks/carrot");
+        public static final TagKey<Block> STORAGE_BLOCKS_POTATO = forgeTag("storage_blocks/potato");
+        public static final TagKey<Block> STORAGE_BLOCKS_BEETROOT = forgeTag("storage_blocks/beetroot");
 
         // region HELPERS
         private static TagKey<Block> thermalTag(String name) {
@@ -58,6 +67,11 @@ public class ThermalTags {
         public static final TagKey<Item> MACHINES = thermalTag("machines");
         public static final TagKey<Item> HARDENED_GLASS = thermalTag("glass/hardened");
         public static final TagKey<Item> ROCKWOOL = thermalTag("rockwool");
+
+        public static final TagKey<Item> STORAGE_BLOCKS_APPLE = forgeTag("storage_blocks/apple");
+        public static final TagKey<Item> STORAGE_BLOCKS_CARROT = forgeTag("storage_blocks/carrot");
+        public static final TagKey<Item> STORAGE_BLOCKS_POTATO = forgeTag("storage_blocks/potato");
+        public static final TagKey<Item> STORAGE_BLOCKS_BEETROOT = forgeTag("storage_blocks/beetroot");
 
         // region HELPERS
         private static TagKey<Item> thermalTag(String name) {

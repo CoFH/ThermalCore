@@ -68,7 +68,7 @@ public class TCoreBlocks {
         blocksTab(registerBlock(ID_CHARCOAL_BLOCK, () -> new Block(of().mapColor(COLOR_BLACK).strength(5.0F, 6.0F).sound(SoundType.STONE).requiresCorrectToolForDrops()),
                 () -> new BlockItemCoFH(BLOCKS.get(ID_CHARCOAL_BLOCK), itemProperties()).setBurnTime(16000)));
         blocksTab(registerBlock(ID_GUNPOWDER_BLOCK, () -> new GunpowderBlock(of().mapColor(COLOR_GRAY).strength(0.5F).sound(SoundType.SAND))));
-        foodsTab(registerBlock(ID_SUGAR_CANE_BLOCK, () -> new RotatedPillarBlock(of().mapColor(PLANT).strength(1.0F).sound(SoundType.CROP)) {
+        foodsTab(1000, registerBlock(ID_SUGAR_CANE_BLOCK, () -> new RotatedPillarBlock(of().mapColor(PLANT).strength(1.0F).sound(SoundType.CROP)) {
 
             @Override
             public void fallOn(Level worldIn, BlockState state, BlockPos pos, Entity entityIn, float fallDistance) {
@@ -76,7 +76,7 @@ public class TCoreBlocks {
                 entityIn.causeFallDamage(fallDistance, 0.6F, entityIn.damageSources().fall());
             }
         }));
-        foodsTab(registerBlock(ID_BAMBOO_BLOCK, () -> new RotatedPillarBlock(of().mapColor(PLANT).strength(1.0F).sound(SoundType.BAMBOO)) {
+        foodsTab(1000, registerBlock(ID_BAMBOO_BLOCK, () -> new RotatedPillarBlock(of().mapColor(PLANT).strength(1.0F).sound(SoundType.BAMBOO)) {
 
             @Override
             public void fallOn(Level worldIn, BlockState state, BlockPos pos, Entity entityIn, float fallDistance) {
@@ -85,10 +85,10 @@ public class TCoreBlocks {
             }
         }));
 
-        foodsTab(registerBlock(ID_APPLE_BLOCK, () -> new Block(of().mapColor(COLOR_RED).strength(1.5F).sound(SoundType.SCAFFOLDING))));
-        foodsTab(registerBlock(ID_CARROT_BLOCK, () -> new Block(of().mapColor(TERRACOTTA_ORANGE).strength(1.5F).sound(SoundType.SCAFFOLDING))));
-        foodsTab(registerBlock(ID_POTATO_BLOCK, () -> new Block(of().mapColor(TERRACOTTA_BROWN).strength(1.5F).sound(SoundType.SCAFFOLDING))));
-        foodsTab(registerBlock(ID_BEETROOT_BLOCK, () -> new Block(of().mapColor(TERRACOTTA_RED).strength(1.5F).sound(SoundType.SCAFFOLDING))));
+        foodsTab(1000, registerBlock(ID_APPLE_BLOCK, () -> new Block(of().mapColor(COLOR_RED).strength(1.5F).sound(SoundType.SCAFFOLDING))));
+        foodsTab(1000, registerBlock(ID_CARROT_BLOCK, () -> new Block(of().mapColor(TERRACOTTA_ORANGE).strength(1.5F).sound(SoundType.SCAFFOLDING))));
+        foodsTab(1000, registerBlock(ID_POTATO_BLOCK, () -> new Block(of().mapColor(TERRACOTTA_BROWN).strength(1.5F).sound(SoundType.SCAFFOLDING))));
+        foodsTab(1000, registerBlock(ID_BEETROOT_BLOCK, () -> new Block(of().mapColor(TERRACOTTA_RED).strength(1.5F).sound(SoundType.SCAFFOLDING))));
 
         //        registerBlockOnly("quicksand", () -> new QuicksandBlock(of(Material.SAND, MaterialColor.SAND).strength(100.0F).noLootTable().sound(SoundType.SAND).dynamicShape()).bucket(() -> ITEMS.get("quicksand_bucket")));
         //        registerItem("quicksand_bucket", () -> new SolidBucketItemCoFH(BLOCKS.get("quicksand"), SoundEvents.SAND_HIT, itemProperties().stacksTo(1)));

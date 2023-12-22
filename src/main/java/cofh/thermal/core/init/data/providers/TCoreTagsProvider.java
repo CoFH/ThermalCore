@@ -99,6 +99,11 @@ public class TCoreTagsProvider {
             tag(BlockTagsCoFH.STORAGE_BLOCKS_SLAG).add(BLOCKS.get(ID_SLAG_BLOCK));
             tag(BlockTagsCoFH.STORAGE_BLOCKS_TAR).add(BLOCKS.get(ID_TAR_BLOCK));
 
+            tag(ThermalTags.Blocks.STORAGE_BLOCKS_APPLE).add(BLOCKS.get(ID_APPLE_BLOCK));
+            tag(ThermalTags.Blocks.STORAGE_BLOCKS_CARROT).add(BLOCKS.get(ID_CARROT_BLOCK));
+            tag(ThermalTags.Blocks.STORAGE_BLOCKS_POTATO).add(BLOCKS.get(ID_POTATO_BLOCK));
+            tag(ThermalTags.Blocks.STORAGE_BLOCKS_BEETROOT).add(BLOCKS.get(ID_BEETROOT_BLOCK));
+
             tag(Tags.Blocks.STORAGE_BLOCKS).addTags(
                     BlockTagsCoFH.STORAGE_BLOCKS_ENDERIUM,
                     BlockTagsCoFH.STORAGE_BLOCKS_LUMIUM,
@@ -117,7 +122,12 @@ public class TCoreTagsProvider {
                     BlockTagsCoFH.STORAGE_BLOCKS_BITUMEN,
                     BlockTagsCoFH.STORAGE_BLOCKS_COAL_COKE,
                     BlockTagsCoFH.STORAGE_BLOCKS_SLAG,
-                    BlockTagsCoFH.STORAGE_BLOCKS_TAR
+                    BlockTagsCoFH.STORAGE_BLOCKS_TAR,
+
+                    ThermalTags.Blocks.STORAGE_BLOCKS_APPLE,
+                    ThermalTags.Blocks.STORAGE_BLOCKS_CARROT,
+                    ThermalTags.Blocks.STORAGE_BLOCKS_POTATO,
+                    ThermalTags.Blocks.STORAGE_BLOCKS_BEETROOT
             );
             // endregion
 
@@ -235,6 +245,11 @@ public class TCoreTagsProvider {
             copy(BlockTagsCoFH.STORAGE_BLOCKS_SLAG, ItemTagsCoFH.STORAGE_BLOCKS_SLAG);
             copy(BlockTagsCoFH.STORAGE_BLOCKS_TAR, ItemTagsCoFH.STORAGE_BLOCKS_TAR);
 
+            copy(ThermalTags.Blocks.STORAGE_BLOCKS_APPLE, ThermalTags.Items.STORAGE_BLOCKS_APPLE);
+            copy(ThermalTags.Blocks.STORAGE_BLOCKS_CARROT, ThermalTags.Items.STORAGE_BLOCKS_CARROT);
+            copy(ThermalTags.Blocks.STORAGE_BLOCKS_POTATO, ThermalTags.Items.STORAGE_BLOCKS_POTATO);
+            copy(ThermalTags.Blocks.STORAGE_BLOCKS_BEETROOT, ThermalTags.Items.STORAGE_BLOCKS_BEETROOT);
+
             tag(Tags.Items.STORAGE_BLOCKS).addTags(
                     ItemTagsCoFH.STORAGE_BLOCKS_ENDERIUM,
                     ItemTagsCoFH.STORAGE_BLOCKS_LUMIUM,
@@ -253,7 +268,12 @@ public class TCoreTagsProvider {
                     ItemTagsCoFH.STORAGE_BLOCKS_BITUMEN,
                     ItemTagsCoFH.STORAGE_BLOCKS_COAL_COKE,
                     ItemTagsCoFH.STORAGE_BLOCKS_SLAG,
-                    ItemTagsCoFH.STORAGE_BLOCKS_TAR
+                    ItemTagsCoFH.STORAGE_BLOCKS_TAR,
+
+                    ThermalTags.Items.STORAGE_BLOCKS_APPLE,
+                    ThermalTags.Items.STORAGE_BLOCKS_CARROT,
+                    ThermalTags.Items.STORAGE_BLOCKS_POTATO,
+                    ThermalTags.Items.STORAGE_BLOCKS_BEETROOT
             );
 
             tag(ItemTagsCoFH.COINS_COPPER).add(ITEMS.get("copper_coin"));
