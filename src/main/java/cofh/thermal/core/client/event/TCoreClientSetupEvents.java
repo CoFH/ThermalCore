@@ -1,8 +1,13 @@
 package cofh.thermal.core.client.event;
 
 import cofh.core.client.model.SimpleModel;
+import cofh.thermal.core.client.renderer.entity.layers.FestiveLayer;
 import cofh.thermal.core.client.renderer.model.*;
+import cofh.thermal.core.common.config.ThermalClientConfig;
+import net.minecraft.client.renderer.entity.RenderLayerParent;
+import net.minecraft.world.entity.EntityType;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.ModelEvent.RegisterGeometryLoaders;
 import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -15,6 +20,20 @@ public class TCoreClientSetupEvents {
 
     private TCoreClientSetupEvents() {
 
+    }
+
+    @SuppressWarnings ({"rawtypes", "unchecked"})
+    @SubscribeEvent
+    public static void addRenderLayers(final EntityRenderersEvent.AddLayers event) {
+
+        if (!ThermalClientConfig.festiveVanillaMobs.get()) {
+            return;
+        }
+        var creeper = event.getRenderer(EntityType.CREEPER);
+        creeper.addLayer(new FestiveLayer<>(event.getContext(), (RenderLayerParent) creeper, 0.0F, 0.9F));
+
+        var enderman = event.getRenderer(EntityType.ENDERMAN);
+        enderman.addLayer(new FestiveLayer<>(event.getContext(), (RenderLayerParent) enderman, -1.15F, 0.9F));
     }
 
     @SubscribeEvent

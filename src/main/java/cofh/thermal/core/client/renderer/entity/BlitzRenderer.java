@@ -1,5 +1,6 @@
 package cofh.thermal.core.client.renderer.entity;
 
+import cofh.thermal.core.client.renderer.entity.layers.FestiveLayer;
 import cofh.thermal.core.client.renderer.entity.model.BlitzModel;
 import cofh.thermal.core.common.entity.monster.Blitz;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -17,6 +18,7 @@ public class BlitzRenderer extends MobRenderer<Blitz, BlitzModel<Blitz>> {
     public BlitzRenderer(EntityRendererProvider.Context ctx) {
 
         super(ctx, new BlitzModel<>(ctx.getModelSet().bakeLayer(BlitzModel.BLITZ_LAYER)), 0.5F);
+        this.addLayer(new FestiveLayer<>(ctx, this, -0.3F, 1.2F));
     }
 
     @Override

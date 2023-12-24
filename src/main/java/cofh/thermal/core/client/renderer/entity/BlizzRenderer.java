@@ -1,5 +1,6 @@
 package cofh.thermal.core.client.renderer.entity;
 
+import cofh.thermal.core.client.renderer.entity.layers.FestiveLayer;
 import cofh.thermal.core.client.renderer.entity.model.BlizzModel;
 import cofh.thermal.core.common.entity.monster.Blizz;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -17,6 +18,7 @@ public class BlizzRenderer extends MobRenderer<Blizz, BlizzModel<Blizz>> {
     public BlizzRenderer(EntityRendererProvider.Context ctx) {
 
         super(ctx, new BlizzModel<>(ctx.getModelSet().bakeLayer(BlizzModel.BLIZZ_LAYER)), 0.5F);
+        this.addLayer(new FestiveLayer<>(ctx, this, -0.25F, 1.0F));
     }
 
     @Override

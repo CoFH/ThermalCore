@@ -17,10 +17,7 @@ import cofh.thermal.core.client.gui.storage.EnergyCellScreen;
 import cofh.thermal.core.client.gui.storage.FluidCellScreen;
 import cofh.thermal.core.client.gui.storage.SatchelScreen;
 import cofh.thermal.core.client.renderer.entity.*;
-import cofh.thermal.core.client.renderer.entity.model.BasalzModel;
-import cofh.thermal.core.client.renderer.entity.model.BlitzModel;
-import cofh.thermal.core.client.renderer.entity.model.BlizzModel;
-import cofh.thermal.core.client.renderer.entity.model.ElementalProjectileModel;
+import cofh.thermal.core.client.renderer.entity.model.*;
 import cofh.thermal.core.common.config.*;
 import cofh.thermal.core.common.entity.explosive.DetonateUtils;
 import cofh.thermal.core.common.entity.monster.Basalz;
@@ -204,6 +201,8 @@ public class ThermalCore {
         event.registerLayerDefinition(BasalzModel.BASALZ_LAYER, BasalzModel::createBodyLayer);
         event.registerLayerDefinition(BlitzModel.BLITZ_LAYER, BlitzModel::createBodyLayer);
         event.registerLayerDefinition(BlizzModel.BLIZZ_LAYER, BlizzModel::createBodyLayer);
+
+        event.registerLayerDefinition(SantaHatModel.HAT_LAYER, SantaHatModel::createBodyLayer);
 
         event.registerLayerDefinition(ElementalProjectileModel.PROJECTILE_LAYER, ElementalProjectileModel::createBodyLayer);
     }

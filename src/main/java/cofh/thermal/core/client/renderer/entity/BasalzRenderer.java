@@ -1,6 +1,7 @@
 package cofh.thermal.core.client.renderer.entity;
 
 import cofh.lib.util.helpers.MathHelper;
+import cofh.thermal.core.client.renderer.entity.layers.FestiveLayer;
 import cofh.thermal.core.client.renderer.entity.model.BasalzModel;
 import cofh.thermal.core.client.renderer.entity.model.ElementalProjectileModel;
 import cofh.thermal.core.common.entity.monster.Basalz;
@@ -28,6 +29,7 @@ public class BasalzRenderer extends MobRenderer<Basalz, BasalzModel<Basalz>> {
     public BasalzRenderer(EntityRendererProvider.Context ctx) {
 
         super(ctx, new BasalzModel<>(ctx.getModelSet().bakeLayer(BasalzModel.BASALZ_LAYER)), 0.5F);
+        this.addLayer(new FestiveLayer<>(ctx, this, -0.25F, 1.25F));
         this.projectileModel = new ElementalProjectileModel<>(ctx.getModelSet().bakeLayer(ElementalProjectileModel.PROJECTILE_LAYER));
     }
 
