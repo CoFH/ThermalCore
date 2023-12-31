@@ -838,8 +838,8 @@
   "item.thermal.tomato_sauce": "Банка томатного соуса",
 
   "item.thermal.cooked_corn": "Жареная кукуруза в початках",
-  "item.thermal.cooked_eggplant": "Жареные баклажаны",
-  "item.thermal.cooked_mushroom": "Жареные грибы",
+  "item.thermal.cooked_eggplant": "Жареный баклажан",
+  "item.thermal.cooked_mushroom": "Жареные гриб",
 
   "item.thermal.cheese_wedge": "Сыр",
   "item.thermal.green_bean_pie": "Пирог с зелёной фасолью",
@@ -1209,13 +1209,13 @@
   "block.thermal.lumium_activator_rail": "Люмиевые активирующие рельсы",
   "block.thermal.lumium_crossover_rail": "Люмиевые перекрёстные рельсы",
   "block.thermal.lumium_detector_rail": "Люмиевые рельсы с датчиком",
-  "block.thermal.lumium_powered_rail": "Люмиевые активирующие рельсы",
+  "block.thermal.lumium_powered_rail": "Люмиевые энергорельсы",
   "block.thermal.lumium_rail": "Люмиевые рельсы",
 
   "block.thermal.prismarine_activator_rail": "Призмариновые активирующие рельсы",
   "block.thermal.prismarine_crossover_rail": "Призмариновые перекрёстные рельсы",
   "block.thermal.prismarine_detector_rail": "Призмариновые рельсы с датчиком",
-  "block.thermal.prismarine_powered_rail": "Призмариновые активирующие рельсы",
+  "block.thermal.prismarine_powered_rail": "Призмариновые энергорельсы",
   "block.thermal.prismarine_rail": "Призмариновые рельсы",
 
   "entity.thermal.earth_tnt_minecart": "Вагонетка с тектоническим динамитом",
