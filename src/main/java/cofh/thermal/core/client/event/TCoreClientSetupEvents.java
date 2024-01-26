@@ -4,8 +4,13 @@ import cofh.core.client.model.SimpleModel;
 import cofh.thermal.core.client.renderer.entity.layers.FestiveLayer;
 import cofh.thermal.core.client.renderer.model.*;
 import cofh.thermal.core.common.config.ThermalClientConfig;
+import net.minecraft.client.model.EntityModel;
+import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.monster.Blaze;
+import net.minecraft.world.entity.monster.Creeper;
+import net.minecraft.world.entity.monster.EnderMan;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.ModelEvent.RegisterGeometryLoaders;
@@ -29,11 +34,22 @@ public class TCoreClientSetupEvents {
         if (!ThermalClientConfig.festiveVanillaMobs.get()) {
             return;
         }
+        var blaze = event.getRenderer(EntityType.BLAZE);
+        if (blaze instanceof LivingEntityRenderer<Blaze, ? extends EntityModel<Blaze>>) {
+            blaze.addLayer(new FestiveLayer<>(event.getContext(), (RenderLayerParent) blaze, -0.15F, 0.9F));
+        }
         var creeper = event.getRenderer(EntityType.CREEPER);
-        creeper.addLayer(new FestiveLayer<>(event.getContext(), (RenderLayerParent) creeper, 0.0F, 0.9F));
-
+        if (creeper instanceof LivingEntityRenderer<Creeper, ? extends EntityModel<Creeper>>) {
+            creeper.addLayer(new FestiveLayer<>(event.getContext(), (RenderLayerParent) creeper, 0.0F, 0.9F));
+        }
         var enderman = event.getRenderer(EntityType.ENDERMAN);
-        enderman.addLayer(new FestiveLayer<>(event.getContext(), (RenderLayerParent) enderman, -1.15F, 0.9F));
+        if (enderman instanceof LivingEntityRenderer<EnderMan, ? extends EntityModel<EnderMan>>) {
+            enderman.addLayer(new FestiveLayer<>(event.getContext(), (RenderLayerParent) enderman, -1.15F, 0.9F));
+        }
+        //        var ghast = event.getRenderer(EntityType.GHAST);
+        //        if (ghast instanceof LivingEntityRenderer<Ghast, ? extends EntityModel<Ghast>>) {
+        //            ghast.addLayer(new FestiveLayer<>(event.getContext(), (RenderLayerParent) ghast, 0.75F, 1.5F));
+        //        }
     }
 
     @SubscribeEvent

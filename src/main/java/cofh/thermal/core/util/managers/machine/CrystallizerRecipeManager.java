@@ -8,8 +8,8 @@ import cofh.thermal.lib.util.managers.AbstractManager;
 import cofh.thermal.lib.util.managers.IRecipeManager;
 import cofh.thermal.lib.util.recipes.IThermalInventory;
 import cofh.thermal.lib.util.recipes.ThermalRecipe;
+import cofh.thermal.lib.util.recipes.internal.BaseMachineRecipe;
 import cofh.thermal.lib.util.recipes.internal.IMachineRecipe;
-import cofh.thermal.lib.util.recipes.internal.SimpleMachineRecipe;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
 import net.minecraft.world.item.ItemStack;
@@ -137,7 +137,7 @@ public class CrystallizerRecipeManager extends AbstractManager implements IRecip
         validFluids.add(inputFluid.getFluid());
         energy = (int) (energy * getDefaultScale());
 
-        SimpleMachineRecipe recipe = new SimpleMachineRecipe(energy, experience, inputItems, inputFluids, outputItems, chance, outputFluids);
+        BaseMachineRecipe recipe = new BaseMachineRecipe(energy, experience, inputItems, inputFluids, outputItems, chance, outputFluids);
         recipeMap.put(new CrystallizerMapWrapper(convertedItems, inputFluid), recipe);
         return recipe;
     }

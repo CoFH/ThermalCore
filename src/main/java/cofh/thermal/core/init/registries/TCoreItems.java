@@ -141,17 +141,18 @@ public class TCoreItems {
 
     private static void registerParts() {
 
-        registerItem("redstone_servo");
-        registerItem("rf_coil");
+        itemsTab(registerItem("redstone_servo"));
+        itemsTab(registerItem("rf_coil"));
 
-        registerItem("drill_head", () -> new ItemCoFH(itemProperties()));
-        registerItem("saw_blade", () -> new ItemCoFH(itemProperties()));
+        itemsTab(registerItem("drill_head", () -> new ItemCoFH(itemProperties())));
+        itemsTab(registerItem("saw_blade", () -> new ItemCoFH(itemProperties())));
+
         registerItem("laser_diode", () -> new ItemCoFH(itemProperties()));//.setShowInGroups(getFeature(FLAG_TOOL_COMPONENTS))); // TODO: Implement
     }
 
     private static void registerMaterials() {
 
-        registerItem("ender_pearl_dust");
+        itemsTab(registerItem("ender_pearl_dust"));
 
         registerVanillaMetalSet("iron");
         registerVanillaMetalSet("gold");
