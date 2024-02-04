@@ -28,33 +28,29 @@ public class TCoreEntities {
 
     public static void register() {
 
-        toolsTab(200, registerGrenade(ID_EXPLOSIVE_GRENADE, DetonateUtils::explosive, getFlag(FLAG_BASIC_EXPLOSIVES)));
+        toolsTab(200, registerGrenade(ID_EXPLOSIVE_GRENADE, DetonateUtils::explosive), getFlag(FLAG_BASIC_EXPLOSIVES));
 
-        toolsTab(200, registerGrenade(ID_ENDER_GRENADE, DetonateUtils::ender, getFlag(FLAG_BASIC_EXPLOSIVES)));
-        toolsTab(200, registerGrenade(ID_GLOWSTONE_GRENADE, DetonateUtils::glow, getFlag(FLAG_BASIC_EXPLOSIVES)));
-        toolsTab(200, registerGrenade(ID_REDSTONE_GRENADE, DetonateUtils::redstone, getFlag(FLAG_BASIC_EXPLOSIVES)));
-        toolsTab(200, registerGrenade(ID_SLIME_GRENADE, DetonateUtils::slime, getFlag(FLAG_BASIC_EXPLOSIVES)));
+        toolsTab(200, registerGrenade(ID_ENDER_GRENADE, DetonateUtils::ender), getFlag(FLAG_BASIC_EXPLOSIVES));
+        toolsTab(200, registerGrenade(ID_GLOWSTONE_GRENADE, DetonateUtils::glow), getFlag(FLAG_BASIC_EXPLOSIVES));
+        toolsTab(200, registerGrenade(ID_REDSTONE_GRENADE, DetonateUtils::redstone), getFlag(FLAG_BASIC_EXPLOSIVES));
+        toolsTab(200, registerGrenade(ID_SLIME_GRENADE, DetonateUtils::slime), getFlag(FLAG_BASIC_EXPLOSIVES));
+        toolsTab(200, registerGrenade(ID_FIRE_GRENADE, DetonateUtils::fire), getFlag(FLAG_ELEMENTAL_EXPLOSIVES));
+        toolsTab(200, registerGrenade(ID_ICE_GRENADE, DetonateUtils::ice), getFlag(FLAG_ELEMENTAL_EXPLOSIVES));
+        toolsTab(200, registerGrenade(ID_LIGHTNING_GRENADE, DetonateUtils::lightning), getFlag(FLAG_ELEMENTAL_EXPLOSIVES));
+        toolsTab(200, registerGrenade(ID_EARTH_GRENADE, DetonateUtils::earth), getFlag(FLAG_ELEMENTAL_EXPLOSIVES));
+        toolsTab(200, registerGrenade(ID_PHYTO_GRENADE, DetonateUtils::phyto), getFlag(FLAG_PHYTOGRO_EXPLOSIVES));
+        toolsTab(200, registerGrenade(ID_NUKE_GRENADE, DetonateUtils::nuke), getFlag(FLAG_NUCLEAR_EXPLOSIVES));
 
-        toolsTab(200, registerGrenade(ID_FIRE_GRENADE, DetonateUtils::fire, getFlag(FLAG_ELEMENTAL_EXPLOSIVES)));
-        toolsTab(200, registerGrenade(ID_ICE_GRENADE, DetonateUtils::ice, getFlag(FLAG_ELEMENTAL_EXPLOSIVES)));
-        toolsTab(200, registerGrenade(ID_LIGHTNING_GRENADE, DetonateUtils::lightning, getFlag(FLAG_ELEMENTAL_EXPLOSIVES)));
-        toolsTab(200, registerGrenade(ID_EARTH_GRENADE, DetonateUtils::earth, getFlag(FLAG_ELEMENTAL_EXPLOSIVES)));
-
-        toolsTab(200, registerGrenade(ID_PHYTO_GRENADE, DetonateUtils::phyto, getFlag(FLAG_PHYTOGRO_EXPLOSIVES)));
-        toolsTab(200, registerGrenade(ID_NUKE_GRENADE, DetonateUtils::nuke, getFlag(FLAG_NUCLEAR_EXPLOSIVES)));
-
-        toolsTab(201, registerTNT(ID_ENDER_TNT, DetonateUtils::ender, getFlag(FLAG_BASIC_EXPLOSIVES)));
-        toolsTab(201, registerTNT(ID_GLOWSTONE_TNT, DetonateUtils::glow, getFlag(FLAG_BASIC_EXPLOSIVES)));
-        toolsTab(201, registerTNT(ID_REDSTONE_TNT, DetonateUtils::redstone, getFlag(FLAG_BASIC_EXPLOSIVES)));
-        toolsTab(201, registerTNT(ID_SLIME_TNT, DetonateUtils::slime, getFlag(FLAG_BASIC_EXPLOSIVES)));
-
-        toolsTab(201, registerTNT(ID_FIRE_TNT, DetonateUtils::fire, getFlag(FLAG_ELEMENTAL_EXPLOSIVES)));
-        toolsTab(201, registerTNT(ID_ICE_TNT, DetonateUtils::ice, getFlag(FLAG_ELEMENTAL_EXPLOSIVES)));
-        toolsTab(201, registerTNT(ID_LIGHTNING_TNT, DetonateUtils::lightning, getFlag(FLAG_ELEMENTAL_EXPLOSIVES)));
-        toolsTab(201, registerTNT(ID_EARTH_TNT, DetonateUtils::earth, getFlag(FLAG_ELEMENTAL_EXPLOSIVES)));
-
-        toolsTab(201, registerTNT(ID_PHYTO_TNT, DetonateUtils::phyto, getFlag(FLAG_PHYTOGRO_EXPLOSIVES)));
-        toolsTab(201, registerTNT(ID_NUKE_TNT, DetonateUtils::nuke, getFlag(FLAG_NUCLEAR_EXPLOSIVES)));
+        toolsTab(201, registerTNT(ID_ENDER_TNT, DetonateUtils::ender), getFlag(FLAG_BASIC_EXPLOSIVES));
+        toolsTab(201, registerTNT(ID_GLOWSTONE_TNT, DetonateUtils::glow), getFlag(FLAG_BASIC_EXPLOSIVES));
+        toolsTab(201, registerTNT(ID_REDSTONE_TNT, DetonateUtils::redstone), getFlag(FLAG_BASIC_EXPLOSIVES));
+        toolsTab(201, registerTNT(ID_SLIME_TNT, DetonateUtils::slime), getFlag(FLAG_BASIC_EXPLOSIVES));
+        toolsTab(201, registerTNT(ID_FIRE_TNT, DetonateUtils::fire), getFlag(FLAG_ELEMENTAL_EXPLOSIVES));
+        toolsTab(201, registerTNT(ID_ICE_TNT, DetonateUtils::ice), getFlag(FLAG_ELEMENTAL_EXPLOSIVES));
+        toolsTab(201, registerTNT(ID_LIGHTNING_TNT, DetonateUtils::lightning), getFlag(FLAG_ELEMENTAL_EXPLOSIVES));
+        toolsTab(201, registerTNT(ID_EARTH_TNT, DetonateUtils::earth), getFlag(FLAG_ELEMENTAL_EXPLOSIVES));
+        toolsTab(201, registerTNT(ID_PHYTO_TNT, DetonateUtils::phyto), getFlag(FLAG_PHYTOGRO_EXPLOSIVES));
+        toolsTab(201, registerTNT(ID_NUKE_TNT, DetonateUtils::nuke), getFlag(FLAG_NUCLEAR_EXPLOSIVES));
     }
 
     public static void setup() {

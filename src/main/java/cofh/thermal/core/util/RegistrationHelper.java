@@ -282,7 +282,7 @@ public final class RegistrationHelper {
     // endregion
 
     // region EXPLOSIVES
-    public static RegistryObject<Item> registerGrenade(String id, IDetonatable.IDetonateAction action, Supplier<Boolean> flag) {
+    public static RegistryObject<Item> registerGrenade(String id, IDetonatable.IDetonateAction action) {
 
         RegistryObject<EntityType<? extends AbstractGrenade>> entity = ENTITIES.register(id, () -> EntityType.Builder.<Grenade>of((type, world) -> new Grenade(type, world, action), MobCategory.MISC).sized(0.25F, 0.25F).build(id));
         DetonateUtils.GRENADES.add(entity);
@@ -303,7 +303,7 @@ public final class RegistrationHelper {
         }, itemProperties().stacksTo(16)));
     }
 
-    public static RegistryObject<Item> registerTNT(String id, IDetonatable.IDetonateAction action, Supplier<Boolean> flag) {
+    public static RegistryObject<Item> registerTNT(String id, IDetonatable.IDetonateAction action) {
 
         RegistryObject<EntityType<? extends PrimedTntCoFH>> tntEntity = ENTITIES.register(id, () -> EntityType.Builder.<ThermalTNTEntity>of((type, world) -> new ThermalTNTEntity(type, world, action), MobCategory.MISC).fireImmune().sized(0.98F, 0.98F).build(id));
         registerBlockOnly(id, () -> new TntBlockCoFH((world, x, y, z, igniter) -> new ThermalTNTEntity(tntEntity.get(), world, action, x, y, z, igniter), of().mapColor(MapColor.COLOR_YELLOW).strength(0.0F).sound(SoundType.GRASS)));
@@ -312,7 +312,7 @@ public final class RegistrationHelper {
 
     }
 
-    public static RegistryObject<Item> registerTNTMinecart(String id, String tntId, IDetonatable.IDetonateAction action, Supplier<Boolean> flag) {
+    public static RegistryObject<Item> registerTNTMinecart(String id, String tntId, IDetonatable.IDetonateAction action) {
 
         RegistryObject<EntityType<? extends AbstractTNTMinecart>> entity = ENTITIES.register(id, () -> EntityType.Builder.<ThermalTNTMinecart>of((type, world) -> new ThermalTNTMinecart(type, world, action, BLOCKS.get(tntId)), MobCategory.MISC).sized(0.98F, 0.7F).build(id));
         DetonateUtils.CARTS.add(entity);

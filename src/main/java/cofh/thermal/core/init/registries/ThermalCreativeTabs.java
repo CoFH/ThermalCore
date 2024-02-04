@@ -11,6 +11,7 @@ import net.minecraftforge.registries.RegistryObject;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Set;
+import java.util.function.Supplier;
 
 import static cofh.lib.util.constants.ModIds.ID_THERMAL;
 import static cofh.thermal.core.ThermalCore.CREATIVE_TABS;
@@ -55,6 +56,14 @@ public class ThermalCreativeTabs {
         return reg;
     }
 
+    public static RegistryObject<Item> devicesTab(int order, RegistryObject<Item> reg, Supplier<Boolean> flag) {
+
+        if (flag.get()) {
+            DEVICES_TAB.add(Pair.of(reg, order));
+        }
+        return reg;
+    }
+
     public static RegistryObject<Item> foodsTab(RegistryObject<Item> reg) {
 
         return foodsTab(0, reg);
@@ -77,6 +86,22 @@ public class ThermalCreativeTabs {
         return reg;
     }
 
+    public static RegistryObject<Item> itemsTab(RegistryObject<Item> reg, Supplier<Boolean> flag) {
+
+        if (flag.get()) {
+            ITEMS_TAB.add(Pair.of(reg, 0));
+        }
+        return reg;
+    }
+
+    public static RegistryObject<Item> itemsTab(int order, RegistryObject<Item> reg, Supplier<Boolean> flag) {
+
+        if (flag.get()) {
+            ITEMS_TAB.add(Pair.of(reg, order));
+        }
+        return reg;
+    }
+
     public static RegistryObject<Item> toolsTab(RegistryObject<Item> reg) {
 
         return toolsTab(0, reg);
@@ -85,6 +110,14 @@ public class ThermalCreativeTabs {
     public static RegistryObject<Item> toolsTab(int order, RegistryObject<Item> reg) {
 
         TOOLS_TAB.add(Pair.of(reg, order));
+        return reg;
+    }
+
+    public static RegistryObject<Item> toolsTab(int order, RegistryObject<Item> reg, Supplier<Boolean> flag) {
+
+        if (flag.get()) {
+            TOOLS_TAB.add(Pair.of(reg, order));
+        }
         return reg;
     }
 
