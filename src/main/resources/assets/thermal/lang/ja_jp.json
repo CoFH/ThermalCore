@@ -393,7 +393,7 @@
   "block.thermal.device_soil_infuser": "フィト・ソイル注入機",
   "block.thermal.device_tree_extractor": "木精抽出機",
   "block.thermal.device_water_gen": "水生成器",
-  "block.thermal.device_xp_condenser": "洞察に満ちるコンデンサ",
+  "block.thermal.device_xp_condenser": "洞察に満ちるコンデンサー",
 
   "block.thermal.energy_cell": "レッドストーンフラックスセル",
   "block.thermal.energy_cell_frame": "レッドストーンフラックスセルフレーム",
@@ -871,7 +871,7 @@
   "_comment": "Thermal Dynamics",
   "_comment": "========================================================================================================",
 
-  "attachment.thermal.energy_limiter": "レッドストーンフラックスリミッター",
+  "attachment.thermal.energy_limiter": "RFリミッター",
   "attachment.thermal.filter": "流体ダクトフィルター",
   "attachment.thermal.servo": "流体ダクトサーボ",
   "attachment.thermal.turbo_servo": "流体ダクトターボサーボ",
@@ -1199,7 +1199,7 @@
   "entity.thermal.redstone_tnt_minecart": "レッドストーン爆弾付きトロッコ",
   "entity.thermal.slime_tnt_minecart": "スライム爆弾付きトロッコ",
 
-  "entity.thermal.energy_minecart": "フラックス貯蔵トロッコ",
+  "entity.thermal.energy_minecart": "RFトロッコ",
   "entity.thermal.fluid_minecart": "流体タンクトロッコ",
   "entity.thermal.underwater_minecart": "潜水トロッコ",
 
