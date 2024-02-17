@@ -11,7 +11,7 @@
       "text": "Thermalには様々な合金が用意されています。これらは誘導加熱炉で直接精錬できるほか、上図のようにファイヤーチャージと共にクラフトしても作成できます。"
     },
     {
-      "flag": "mod:thermal_expansion",
+      "flag": "&mod:thermal_expansion,mod:thermal_foundation",
       "type": "thermal:3-3_alloy_page",
 
       "A.title": "青銅",
@@ -23,7 +23,7 @@
       "B.text": "熱膨張率が低い"
     },
     {
-      "flag": "mod:thermal_expansion",
+      "flag": "&mod:thermal_expansion,mod:thermal_foundation",
       "type": "thermal:3-3_alloy_page",
 
       "A.title": "エレクトラム",
@@ -62,13 +62,13 @@
       "text": "Thermalには様々な合金が用意されています。これらは上図のようにファイヤーチャージと共にクラフトして作成できます。"
     },
     {
-      "flag": "!mod:thermal_expansion",
+      "flag": "&!mod:thermal_expansion,mod:thermal_foundation",
       "type": "thermal:double_crafting_page",
       "A.recipe": "thermal:fire_charge/bronze_ingot_4",
       "B.recipe": "thermal:fire_charge/invar_ingot_3"
     },
     {
-      "flag": "!mod:thermal_expansion",
+      "flag": "&!mod:thermal_expansion,mod:thermal_foundation",
       "type": "thermal:double_crafting_page",
       "A.recipe": "thermal:fire_charge/electrum_ingot_2",
       "B.recipe": "thermal:fire_charge/constantan_ingot_2"

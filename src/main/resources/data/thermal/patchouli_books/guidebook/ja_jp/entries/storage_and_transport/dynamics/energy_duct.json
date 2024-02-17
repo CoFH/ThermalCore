@@ -1,0 +1,23 @@
+{
+  "name": "フラックスダクト",
+  "icon": "thermal:energy_duct",
+  "read_by_default": true,
+  "flag": "mod:thermal_dynamics",
+  "category": "thermal:ducts",
+
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "フラックスダクトは周囲にエネルギーを輸送します。$(br)どのくらい?十分量。$(br)接続を飽和させれば、より多くのエネルギーを輸送できます。そのため、安定した消費先を維持するようにするといいでしょう。エネルギー流量の制限のために、RFリミッターをご利用いただけます。"
+    },
+    {
+      "type": "thermal:double_crafting_page",
+      "A.recipe": "thermal:energy_duct"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "対応アタッチメント",
+      "text": "$(li)RFリミッター"
+    }
+  ]
+}

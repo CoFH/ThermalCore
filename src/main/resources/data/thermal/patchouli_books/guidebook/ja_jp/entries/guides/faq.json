@@ -7,7 +7,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Q: Dynamicsやパイプはどこへいったの?$(br)A: $(l:thermal:storage_and_transport/dynamics)ここ$(/l)をお読みください。$(br2)Q: アップグレードキットはどこにありますか?$(br)A: $(l:thermal:technology/augments/integral_components)ここ$(/l)をお読みください。$(br2)Q: 機械の処理速度を加速するには?$(br)A: $(l:thermal:technology/augments/integral_components)ここ$(/l)と$(l:thermal:technology/augments/machine_speed)ここ$(/l)をお読みください。$(br2)Q: このオーグメントはスタックできますか?$(br)A: $(l:thermal:technology/augments/introduction)ここ$(/l)をお読みください。"
+      "text": "Q: アイテムダクトはどこ?$(br)A: $(l:thermal:storage_and_transport/dynamics)ここ$(/l)をお読みください。$(br2)Q: アップグレードキットはどこにありますか?$(br)A: $(l:thermal:technology/augments/integral_components)ここ$(/l)をお読みください。$(br2)Q: 機械の処理速度を加速するには?$(br)A: $(l:thermal:technology/augments/integral_components)ここ$(/l)と$(l:thermal:technology/augments/machine_speed)ここ$(/l)をお読みください。$(br2)Q: このオーグメントはスタックできますか?$(br)A: $(l:thermal:technology/augments/introduction)ここ$(/l)をお読みください。"
     },
     {
       "type": "patchouli:text",
@@ -21,11 +21,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "Q: プラチナや鋼鉄、マナを含んだ金属はどうなった?$(br)A: 諸般の事情により、これらはThermal Foundationが追加する必要は無いと判断されました。もし一部が再登場する場合、別の互換性Modにて対応する予定です。$(br2)Q: なんで流体をおけないの?$(br)A: 現在のForge fluid APIがグダグダだからです。"
+      "text": "Q: プラチナや鋼鉄、マナを含んだ金属はどうなった?$(br)A: 諸般の事情により、これらはThermal Foundationが追加する必要は無いと判断されました。もし一部が再登場する場合、別の互換性Modにて対応する予定です。$(br2)Q: なんでいくつかの流体をおけないの?$(br)A: いくつかの流体はもし配置可能であれば、あまり追加されなかったでしょう。また、Forgeの流体APIの制限により、追加できなかった流体もあります。"
     },
     {
       "type": "patchouli:text",
-      "text": "Q: 鉱石生成の変更はできますか? $(br)A: コンフィグには鉱石生成の有効・無効の設定がありますが、生成高度など細部に関する項目は未実装です。$(br2)Q: コンフィグの変更はどうやりますか?$(br)A: コンフィグファイルはワールド毎に作成されます。保存フォルダ内のserverconfigsフォルダにあります。また、serverconfigsからdefaultconfigsフォルダにファイルをコピーして編集することで、デフォルト設定を変更できます。"
+      "text": "Q: 鉱石生成の変更はできますか? $(br)A: 鉱石の生成や希少さの変更にはデータパックを使用してください。$(br2)Q: コンフィグの変更はどうやりますか?$(br)A: コンフィグファイルはワールド毎に作成されます。保存フォルダ内のserverconfigsフォルダにあります。また、serverconfigsからdefaultconfigsフォルダにファイルをコピーして編集することで、デフォルト設定を変更できます。"
     },
     {
       "type": "patchouli:text",

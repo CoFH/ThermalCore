@@ -1,6 +1,6 @@
 {
   "name": "貯蔵",
-  "description": "技術的に、その場しのぎのパイプとしてスパムできます。",
+  "description": "たくさんの物を収納できる。技術上は並べて物を移動することも出来るが、ダクトを使用するほうがずっと良い。",
   "icon": "thermal:energy_cell",
   "parent": "thermal:storage_and_transport",
   "flag": "mod:thermal_expansion",
