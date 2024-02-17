@@ -1,1 +1,17 @@
-{  "name": "Florbs",  "icon": "thermal:florb",  "category": "thermal:tools",  "read_by_default": true,  "pages": [    {      "type": "patchouli:text",      "text": "Florb. Short for Fluid-Orb, obviously. Holds one bucket of fluid. You can throw them! Note that they will only hold fluids which can be placed in-world."    },    {      "type": "thermal:double_crafting_page",      "A.recipe": "thermal:florb_8",      "title": "Florb"    }  ]}
+{
+  "name": "フローブ",
+  "icon": "thermal:florb",
+  "category": "thermal:tools",
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "フローブ、$(l)Fl$()uid-$(l)Orb$()の略。バケツ1杯分の流体が入ります。投げることもできます。設置可能な流体しか入らないことにご留意ください。"
+    },
+    {
+      "type": "thermal:double_crafting_page",
+      "A.recipe": "thermal:florb_8",
+      "title": "フローブ"
+    }
+  ]
+}
