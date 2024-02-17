@@ -7,7 +7,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "結晶化機は基質と流体から結晶を析出させる機械です、"
+      "text": "結晶化機は基質と流体から結晶を析出させる機械です。"
     },
     {
       "type": "thermal:double_crafting_page",
