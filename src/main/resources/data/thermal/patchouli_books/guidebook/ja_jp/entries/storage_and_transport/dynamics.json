@@ -1,5 +1,5 @@
 {
-  "name": "Dynamicsはどこ?",
+  "name": "アイテムダクトはどこ?",
   "icon": "thermal:iron_gear",
   "read_by_default": true,
   "category": "thermal:storage_and_transport",
@@ -7,7 +7,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "DynamicsはThermalシリーズの他の機能の実現のため開発休止中です。しばらくお待ち下さい。次のページではおすすめのパイプModをご紹介します。"
+      "text": "Dynamicsは現在開発中です。現在はフラックスダクトと流体ダクトがご利用いただけます。エネルギーと流体に移送に大いに役立つでしょう。次のページではアイテムの輸送にオススメのパイプModをご紹介します。"
     },
     {
       "type": "patchouli:link",

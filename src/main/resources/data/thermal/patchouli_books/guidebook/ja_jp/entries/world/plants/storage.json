@@ -29,24 +29,34 @@
       "A.recipe": "thermal:storage/potato_block",
       "B.recipe": "thermal:storage/beetroot_block"
     },
-
     {
       "flag": "mod:thermal_cultivation",
       "type": "thermal:double_crafting_page",
-      "A.recipe": "thermal:storage/barley_block",
-      "B.recipe": "thermal:storage/radish_block"
+      "A.recipe": "thermal:storage/amaranth_block",
+      "B.recipe": "thermal:storage/barley_block"
+    },
+    {
+      "flag": "mod:thermal_cultivation",
+      "type": "thermal:double_crafting_page",
+      "A.recipe": "thermal:storage/corn_block",
+      "B.recipe": "thermal:storage/flax_block"
     },
     {
       "flag": "mod:thermal_cultivation",
       "type": "thermal:double_crafting_page",
       "A.recipe": "thermal:storage/onion_block",
-      "B.recipe": "thermal:storage/rice_block"
+      "B.recipe": "thermal:storage/radish_block"
     },
     {
       "flag": "mod:thermal_cultivation",
       "type": "thermal:double_crafting_page",
       "A.recipe": "thermal:storage/sadiroot_block",
-      "B.recipe": "thermal:storage/spinach_block"
+      "B.recipe": "thermal:storage/rice_block"
+    },
+    {
+      "flag": "mod:thermal_cultivation",
+      "type": "thermal:double_crafting_page",
+      "A.recipe": "thermal:storage/spinach_block"
     },
     {
       "flag": "mod:thermal_cultivation",
@@ -75,19 +85,8 @@
     {
       "flag": "mod:thermal_cultivation",
       "type": "thermal:double_crafting_page",
-      "A.recipe": "thermal:storage/corn_block",
-      "B.recipe": "thermal:storage/hops_block"
-    },
-    {
-      "flag": "mod:thermal_cultivation",
-      "type": "thermal:double_crafting_page",
-      "A.recipe": "thermal:storage/flax_block",
+      "A.recipe": "thermal:storage/hops_block",
       "B.recipe": "thermal:frost_melon"
-    },
-    {
-      "flag": "mod:thermal_cultivation",
-      "type": "thermal:double_crafting_page",
-      "A.recipe": "thermal:storage/amaranth_block"
     }
   ]
 }

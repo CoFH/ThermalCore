@@ -1,0 +1,14 @@
+{
+  "name": "追加サボテン",
+  "icon": "thermal:machine_null_augment",
+  "category": "thermal:augments",
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "thermal:double_crafting_page",
+      "A.recipe": "thermal:augments/machine_null_augment",
+      "title": "追加サボテン",
+      "text": "追加サボテンは余剰な副産物を破棄してくれるオーグメントです。余剰な副産物とは、スロットに収まりきらなかった副産物のことを指します。"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "RFトロッコ",
+  "icon": "thermal:energy_minecart",
+  "read_by_default": true,
+  "flag": "mod:thermal_locomotion",
+  "category": "thermal:locomotion",
+
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "RFトロッコはRFを蓄電します。RFトロッコは未強化で100万RFの容量と1000RF/tickの伝送レートがあります。これらはオーグメントを使用して強化できます。GUIから、RFを持つアイテムに対して充放電が行なえます。"
+    },
+    {
+      "type": "thermal:double_crafting_page",
+      "A.recipe": "thermal:energy_cell_frame",
+      "B.recipe": "thermal:energy_minecart"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "RFの伝送に関わるレールに関しては、続報をお待ち下さい。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "対応オーグメント",
+      "text": "$(li)$(l:thermal:technology/augments/integral_components)統合コンポーネント$(/l)$(li)$(l:thermal:technology/augments/rf_coil)拡張RFコイル$(/l)$(li)$(l:thermal:technology/augments/rf_coil_storage)安定RFコイル$(/l)$(li)$(l:thermal:technology/augments/rf_coil_xfer)高フラックスRFコイル$(/l)"
+    }
+
+  ]
+}

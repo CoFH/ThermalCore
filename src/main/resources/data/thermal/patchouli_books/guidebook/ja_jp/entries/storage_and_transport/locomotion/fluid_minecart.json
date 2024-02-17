@@ -1,0 +1,28 @@
+{
+  "name": "流体タンクトロッコ",
+  "icon": "thermal:fluid_minecart",
+  "read_by_default": true,
+  "flag": "mod:thermal_locomotion",
+  "category": "thermal:locomotion",
+
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "流体タンクトロッコは流体を貯蔵できます。初期容量は32,000mBですが、オーグメントを用いて容量を増加できます。一度に貯蔵できる流体は一種類だけです。バケツや同じ機能を持つアイテムを使用することで、手動でトロッコへの流体の搬入出が行なえます。"
+    },
+    {
+      "type": "thermal:double_crafting_page",
+      "A.recipe": "thermal:fluid_cell_frame",
+      "B.recipe": "thermal:fluid_minecart"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "また、流体タンクトロッコはバケツを直接使用することでGUIを開くことなく直接流体をやり取りできます。$(br)$(l)$(#800000)注意: $()Forgeでは現在、バケツに入れられない流体をバケツに注ごうとするとバケツが消滅するバグあります。$(br)流体の輸送に関わるレールについては、続報をお待ち下さい。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "対応オーグメント",
+      "text": "$(li)$(l:thermal:technology/augments/integral_components)統合コンポーネント$(/l)$(li)$(l:thermal:technology/augments/fluid_tank)拡張タンク機構$(/l)"
+    }
+  ]
+}

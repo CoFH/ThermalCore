@@ -22,7 +22,7 @@
 
       "title": "ラテックス",
       "item": "thermal:latex_bucket",
-      "text": "ジャングルの樹木から$(l:thermal:technology/devices/tree_extractor)得られる$(/l)、ポリマーの分散する濃厚な乳液です。主にゴムを作るのに使用されます。"
+      "text": "ジャングルや$(l:thermal:world/plants/trees)ゴムノキ$(/l)の樹木から$(l:thermal:technology/devices/tree_extractor)得られる$(/l)、ポリマーの分散する濃厚な乳液です。主にゴムを作るのに使用されます。"
     },
 
     {
