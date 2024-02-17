@@ -394,8 +394,8 @@
   "block.thermal.device_water_gen": "水生成器",
   "block.thermal.device_xp_condenser": "洞察に満ちるコンデンサー",
 
-  "block.thermal.energy_cell": "レッドストーンフラックスセル",
-  "block.thermal.energy_cell_frame": "レッドストーンフラックスセルフレーム",
+  "block.thermal.energy_cell": "RFセル",
+  "block.thermal.energy_cell_frame": "RFセルフレーム",
   "block.thermal.fluid_cell": "流体セル",
   "block.thermal.fluid_cell_frame": "流体セルフレーム",
   "block.thermal.item_cell": "アイテムセル",
