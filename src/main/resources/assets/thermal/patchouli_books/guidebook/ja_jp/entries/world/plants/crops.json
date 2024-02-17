@@ -20,7 +20,7 @@
       "B.title": "大麦",
       "B.item1": "thermal:barley",
       "B.item2": "thermal:barley_seeds",
-      "B.text": "穀物の一つです。粉に挽いたり、麦芽にしてビールやウィスキーの原料になります。",
+      "B.text": "穀物の一つです。粉に挽いたり、麦芽にしてビールやウィスキーの原料になります。"
     },
     {
       "type": "2-2_item_page",
@@ -33,7 +33,7 @@
       "B.title": "亜麻",
       "B.item1": "thermal:flax",
       "B.item2": "thermal:flax_seeds",
-      "B.text": "繊維に富む植物で、糸に加工しやすいです。",
+      "B.text": "繊維に富む植物で、糸に加工しやすいです。"
     },
     {
       "type": "2-2_item_page",
@@ -46,7 +46,7 @@
       "B.title": "ラディッシュ",
       "B.item1": "thermal:radish",
       "B.item2": "thermal:radish_seeds",
-      "B.text": "根菜の一種で、生食、蒸し焼きで食べることが多いです。",
+      "B.text": "根菜の一種で、生食、蒸し焼きで食べることが多いです。"
     },
     {
       "type": "2-2_item_page",
@@ -59,7 +59,7 @@
       "B.title": "サディルート",
       "B.item1": "thermal:sadiroot",
       "B.item2": "thermal:sadiroot_seeds",
-      "B.text": "浄化作用のある薬用スパイスとして知られています。独特の香りを有しています。",
+      "B.text": "浄化作用のある薬用スパイスとして知られています。独特の香りを有しています。"
     },
     {
       "type": "2-2_item_page",
@@ -72,7 +72,7 @@
       "B.title": "パプリカ",
       "B.item1": "thermal:bell_pepper",
       "B.item2": "thermal:bell_pepper_seeds",
-      "B.text": "辛くないトウガラシの栽培品種の一つです。一般的には刻んで料理に使われます。",
+      "B.text": "辛くないトウガラシの栽培品種の一つです。一般的には刻んで料理に使われます。"
     },
     {
       "type": "2-2_item_page",
@@ -85,7 +85,7 @@
       "B.title": "サヤインゲン",
       "B.item1": "thermal:green_bean",
       "B.item2": "thermal:green_bean_seeds",
-      "B.text": "マメ科植物の未熟果の鞘です。それだけで食したり、様々な料理に使われます。",
+      "B.text": "マメ科植物の未熟果の鞘です。それだけで食したり、様々な料理に使われます。"
     },
     {
       "type": "2-2_item_page",
@@ -98,7 +98,7 @@
       "B.title": "イチゴ",
       "B.item1": "thermal:strawberry",
       "B.item2": "thermal:strawberry_seeds",
-      "B.text": "甘く赤い果実です。様々な調味料やデザートに使われます。",
+      "B.text": "甘く赤い果実です。様々な調味料やデザートに使われます。"
     },
     {
       "type": "2-2_item_page",
@@ -111,7 +111,7 @@
       "B.title": "コーヒー",
       "B.item1": "thermal:coffee",
       "B.item2": "thermal:coffee_seeds",
-      "B.text": "コーヒーの木の実で、コーヒーチェリーとの名があります。ピット(豆のこと)を焙煎して挽き、淹れると美味しい飲み物となります。",
+      "B.text": "コーヒーの木の実で、コーヒーチェリーとの名があります。ピット(豆のこと)を焙煎して挽き、淹れると美味しい飲み物となります。"
     },
     {
       "type": "2-2_item_page",
@@ -124,7 +124,7 @@
       "B.title": "ホップ",
       "B.item1": "thermal:hops",
       "B.item2": "thermal:hops_seeds",
-      "B.text": "ホップの実です。ビールの香り付けに使われます。",
+      "B.text": "ホップの実です。ビールの香り付けに使われます。"
     },
     {
       "type": "2-2_item_page",
@@ -137,7 +137,7 @@
       "B.title": "フラックスハリタケ",
       "B.item1": "minecraft:redstone",
       "B.item2": "thermal:redstone_mushroom_spores",
-      "B.text": "成熟するとレッドストーン質の粘つく乳液を滲み出すキノコです。",
+      "B.text": "成熟するとレッドストーン質の粘つく乳液を滲み出すキノコです。"
     },
     {
       "type": "2-2_item_page",
@@ -150,7 +150,7 @@
       "B.title": "ブームッシュルーム",
       "B.item1": "minecraft:gunpowder",
       "B.item2": "thermal:gunpowder_mushroom_spores",
-      "B.text": "裏側に火薬の網を生成する、荒々しい性質のキノコです。",
+      "B.text": "裏側に火薬の網を生成する、荒々しい性質のキノコです。"
     },
     {
       "type": "2_item_page",
