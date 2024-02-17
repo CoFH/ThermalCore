@@ -1,0 +1,24 @@
+{
+  "name": "洞察に満ちるコンデンサー",
+  "icon": "thermal:device_xp_condenser",
+  "category": "thermal:devices",
+  "read_by_default": true,
+  "flag": "mod:thermal_expansion",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "洞察に満ちるコンデンサーは、内部の$(l:thermal:technology/augments/xp_storage)知識濃縮装置$(/l)を使って蓄積した経験値を、周囲のブロックから集める装置です。そして、収集した経験値は液体に変換されます。基本の収集範囲は洞察に満ちるコンデンサーを中心に5x5x5の範囲ですが、$(l:thermal:technology/augments/area_radius)範囲拡張$(/l)を用いて収集範囲を拡張できます。"
+    },
+    {
+      "type": "thermal:double_crafting_page",
+      "A.recipe": "thermal:device_xp_condenser",
+      "title": "洞察に満ちるコンデンサー",
+      "text": "レッドストーン制御方法には、レッドストーン信号がONになった瞬間にアイテムを収拾する設定があります。レッドストーン信号のパルスを送って確実に起動するようできます。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "対応オーグメント",
+      "text": "$(li)$(l:thermal:technology/augments/integral_components)統合コンポーネント$(/l)$(li)$(l:thermal:technology/augments/fluid_tank)拡張タンク機構$(/l)$(li)$(l:thermal:technology/augments/area_radius)範囲拡張$(/l)"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "name": "機械",
-  "description": "それぞれの機械の機能詳細を解説します。機械の動作にはRFが必要になります。",
+  "description": "それぞれの機械の機能詳細を解説します。機械は一般に材料を別の物に加工するものです。動作にはRFが必要になります。",
   "icon": "thermal:machine_furnace",
   "parent": "thermal:technology",
   "flag": "mod:thermal_expansion",
