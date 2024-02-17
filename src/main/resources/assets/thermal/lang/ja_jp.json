@@ -914,7 +914,7 @@
   "info.thermal.item_buffer.mode.0": "I/O: 通常",
   "info.thermal.item_buffer.mode.1": "I/O: ラッチ",
 
-  "item.thermal.energy_limiter_attachment": "アタッチメント: レッドストーンフラックスリミッター",
+  "item.thermal.energy_limiter_attachment": "アタッチメント: RFリミッター",
   "item.thermal.filter_attachment": "アタッチメント: フィルター",
   "item.thermal.servo_attachment": "アタッチメント: サーボ",
   "item.thermal.turbo_servo_attachment": "アタッチメント: ターボサーボ",
@@ -1221,7 +1221,7 @@
   "item.thermal.redstone_tnt_minecart": "レッドストーン爆弾付きトロッコ",
   "item.thermal.slime_tnt_minecart": "スライム爆弾付きトロッコ",
 
-  "item.thermal.energy_minecart": "フラックス貯蔵トロッコ",
+  "item.thermal.energy_minecart": "RFトロッコ",
   "item.thermal.fluid_minecart": "流体タンクトロッコ",
   "item.thermal.underwater_minecart": "潜水トロッコ",
 
