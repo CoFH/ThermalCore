@@ -195,6 +195,7 @@
   "item.thermal.detonator": "遥控起爆器",
   "item.thermal.detonator.desc": "可以远程引爆TNT。",
   "item.thermal.earth_charge": "裂岩弹",
+  "item.thermal.florb": "流体球",
   "item.thermal.ice_charge": "瀑冰弹",
   "item.thermal.lightning_charge": "鸣雷弹",
   "item.thermal.lock": "信素安全锁",
@@ -882,7 +883,7 @@
   "block.thermal.energy_distributor": "RF分发接口",
   "block.thermal.fluid_distributor": "流体分发接口",
 
-  "block.thermal.item_buffer": "逻辑物品缓存器",
+  "block.thermal.item_buffer": "物流缓存器",
 
   "info.thermal.energy_limiter_attachment.0": "限制流经它的能量传输速率。",
   "info.thermal.energy_limiter_attachment.1": "可为每个方向配置不同上限。",
