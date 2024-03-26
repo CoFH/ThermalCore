@@ -77,14 +77,14 @@ public class TCoreBlocks {
                 entityIn.causeFallDamage(fallDistance, 0.6F, entityIn.damageSources().fall());
             }
         }));
-        foodsTab(1000, registerBlock(ID_BAMBOO_BLOCK, () -> new RotatedPillarBlock(of().mapColor(PLANT).strength(1.0F).sound(SoundType.BAMBOO)) {
-
-            @Override
-            public void fallOn(Level worldIn, BlockState state, BlockPos pos, Entity entityIn, float fallDistance) {
-
-                entityIn.causeFallDamage(fallDistance, 0.8F, entityIn.damageSources().fall());
-            }
-        }));
+        //        foodsTab(1000, registerBlock(ID_BAMBOO_BLOCK, () -> new RotatedPillarBlock(of().mapColor(PLANT).strength(1.0F).sound(SoundType.BAMBOO)) {
+        //
+        //            @Override
+        //            public void fallOn(Level worldIn, BlockState state, BlockPos pos, Entity entityIn, float fallDistance) {
+        //
+        //                entityIn.causeFallDamage(fallDistance, 0.8F, entityIn.damageSources().fall());
+        //            }
+        //        }));
 
         foodsTab(1000, registerBlock(ID_APPLE_BLOCK, () -> new Block(of().mapColor(COLOR_RED).strength(1.5F).sound(SoundType.SCAFFOLDING))));
         foodsTab(1000, registerBlock(ID_CARROT_BLOCK, () -> new Block(of().mapColor(TERRACOTTA_ORANGE).strength(1.5F).sound(SoundType.SCAFFOLDING))));
@@ -225,7 +225,7 @@ public class TCoreBlocks {
         fire.setFlammable(BLOCKS.get(ID_CHARCOAL_BLOCK), 5, 5);
         fire.setFlammable(BLOCKS.get(ID_GUNPOWDER_BLOCK), 15, 100);
         fire.setFlammable(BLOCKS.get(ID_SUGAR_CANE_BLOCK), 60, 20);
-        fire.setFlammable(BLOCKS.get(ID_BAMBOO_BLOCK), 60, 20);
+        // fire.setFlammable(BLOCKS.get(ID_BAMBOO_BLOCK), 60, 20);
     }
 
     private static void setupResources() {

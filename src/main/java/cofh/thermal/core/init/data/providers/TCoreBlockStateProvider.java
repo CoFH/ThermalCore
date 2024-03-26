@@ -32,7 +32,7 @@ public class TCoreBlockStateProvider extends BlockStateProviderCoFH {
 
         simpleBlock(reg.getSup(ID_CHARCOAL_BLOCK));
         simpleBlock(reg.getSup(ID_GUNPOWDER_BLOCK));
-        axisBlock(reg.getSup(ID_BAMBOO_BLOCK), "bamboo_block");
+        // axisBlock(reg.getSup(ID_BAMBOO_BLOCK), "bamboo_block");
         axisBlock(reg.getSup(ID_SUGAR_CANE_BLOCK), "sugar_cane_block");
 
         // TODO: Missing - Food Crates

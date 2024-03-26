@@ -38,7 +38,7 @@ public class TCoreTagsProvider {
         protected void addTags(HolderLookup.Provider pProvider) {
 
             // region VANILLA BLOCKS
-            tag(BlockTags.MINEABLE_WITH_AXE).add(BLOCKS.get(ID_BAMBOO_BLOCK));
+            // tag(BlockTags.MINEABLE_WITH_AXE).add(BLOCKS.get(ID_BAMBOO_BLOCK));
             tag(BlockTags.MINEABLE_WITH_PICKAXE).add(BLOCKS.get(ID_CHARCOAL_BLOCK));
             tag(BlockTags.MINEABLE_WITH_SHOVEL).add(BLOCKS.get(ID_GUNPOWDER_BLOCK));
             tag(BlockTags.MINEABLE_WITH_HOE).add(BLOCKS.get(ID_SUGAR_CANE_BLOCK));
@@ -84,7 +84,7 @@ public class TCoreTagsProvider {
             tag(BlockTagsCoFH.STORAGE_BLOCKS_LUMIUM).add(BLOCKS.get(ID_LUMIUM_BLOCK));
             tag(BlockTagsCoFH.STORAGE_BLOCKS_SIGNALUM).add(BLOCKS.get(ID_SIGNALUM_BLOCK));
 
-            tag(BlockTagsCoFH.STORAGE_BLOCKS_BAMBOO).add(BLOCKS.get(ID_BAMBOO_BLOCK));
+            // tag(BlockTagsCoFH.STORAGE_BLOCKS_BAMBOO).add(BLOCKS.get(ID_BAMBOO_BLOCK));
             tag(BlockTagsCoFH.STORAGE_BLOCKS_CHARCOAL).add(BLOCKS.get(ID_CHARCOAL_BLOCK));
             tag(BlockTagsCoFH.STORAGE_BLOCKS_GUNPOWDER).add(BLOCKS.get(ID_GUNPOWDER_BLOCK));
             tag(BlockTagsCoFH.STORAGE_BLOCKS_SUGAR_CANE).add(BLOCKS.get(ID_SUGAR_CANE_BLOCK));
@@ -109,7 +109,7 @@ public class TCoreTagsProvider {
                     BlockTagsCoFH.STORAGE_BLOCKS_LUMIUM,
                     BlockTagsCoFH.STORAGE_BLOCKS_SIGNALUM,
 
-                    BlockTagsCoFH.STORAGE_BLOCKS_BAMBOO,
+                    // BlockTagsCoFH.STORAGE_BLOCKS_BAMBOO,
                     BlockTagsCoFH.STORAGE_BLOCKS_CHARCOAL,
                     BlockTagsCoFH.STORAGE_BLOCKS_GUNPOWDER,
                     BlockTagsCoFH.STORAGE_BLOCKS_SUGAR_CANE,
@@ -230,7 +230,7 @@ public class TCoreTagsProvider {
             copy(BlockTagsCoFH.STORAGE_BLOCKS_LUMIUM, ItemTagsCoFH.STORAGE_BLOCKS_LUMIUM);
             copy(BlockTagsCoFH.STORAGE_BLOCKS_SIGNALUM, ItemTagsCoFH.STORAGE_BLOCKS_SIGNALUM);
 
-            copy(BlockTagsCoFH.STORAGE_BLOCKS_BAMBOO, ItemTagsCoFH.STORAGE_BLOCKS_BAMBOO);
+            // copy(BlockTagsCoFH.STORAGE_BLOCKS_BAMBOO, ItemTagsCoFH.STORAGE_BLOCKS_BAMBOO);
             copy(BlockTagsCoFH.STORAGE_BLOCKS_CHARCOAL, ItemTagsCoFH.STORAGE_BLOCKS_CHARCOAL);
             copy(BlockTagsCoFH.STORAGE_BLOCKS_GUNPOWDER, ItemTagsCoFH.STORAGE_BLOCKS_GUNPOWDER);
             copy(BlockTagsCoFH.STORAGE_BLOCKS_SUGAR_CANE, ItemTagsCoFH.STORAGE_BLOCKS_SUGAR_CANE);
@@ -255,7 +255,7 @@ public class TCoreTagsProvider {
                     ItemTagsCoFH.STORAGE_BLOCKS_LUMIUM,
                     ItemTagsCoFH.STORAGE_BLOCKS_SIGNALUM,
 
-                    ItemTagsCoFH.STORAGE_BLOCKS_BAMBOO,
+                    // ItemTagsCoFH.STORAGE_BLOCKS_BAMBOO,
                     ItemTagsCoFH.STORAGE_BLOCKS_CHARCOAL,
                     ItemTagsCoFH.STORAGE_BLOCKS_GUNPOWDER,
                     ItemTagsCoFH.STORAGE_BLOCKS_SUGAR_CANE,

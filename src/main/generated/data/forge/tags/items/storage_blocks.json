@@ -3,7 +3,6 @@
     "#forge:storage_blocks/enderium",
     "#forge:storage_blocks/lumium",
     "#forge:storage_blocks/signalum",
-    "#forge:storage_blocks/bamboo",
     "#forge:storage_blocks/charcoal",
     "#forge:storage_blocks/gunpowder",
     "#forge:storage_blocks/sugar_cane",
@@ -14,6 +13,10 @@
     "#forge:storage_blocks/bitumen",
     "#forge:storage_blocks/coal_coke",
     "#forge:storage_blocks/slag",
-    "#forge:storage_blocks/tar"
+    "#forge:storage_blocks/tar",
+    "#forge:storage_blocks/apple",
+    "#forge:storage_blocks/carrot",
+    "#forge:storage_blocks/potato",
+    "#forge:storage_blocks/beetroot"
   ]
 }

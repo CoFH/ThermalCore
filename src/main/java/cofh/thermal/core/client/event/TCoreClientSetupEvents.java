@@ -9,7 +9,6 @@ import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.monster.Blaze;
-import net.minecraft.world.entity.monster.Creeper;
 import net.minecraft.world.entity.monster.EnderMan;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -38,10 +37,10 @@ public class TCoreClientSetupEvents {
         if (blaze instanceof LivingEntityRenderer<Blaze, ? extends EntityModel<Blaze>>) {
             blaze.addLayer(new FestiveLayer<>(event.getContext(), (RenderLayerParent) blaze, -0.15F, 0.9F));
         }
-        var creeper = event.getRenderer(EntityType.CREEPER);
-        if (creeper instanceof LivingEntityRenderer<Creeper, ? extends EntityModel<Creeper>>) {
-            creeper.addLayer(new FestiveLayer<>(event.getContext(), (RenderLayerParent) creeper, 0.0F, 0.9F));
-        }
+        //        var creeper = event.getRenderer(EntityType.CREEPER);
+        //        if (creeper instanceof LivingEntityRenderer<Creeper, ? extends EntityModel<Creeper>>) {
+        //            creeper.addLayer(new FestiveLayer<>(event.getContext(), (RenderLayerParent) creeper, 0.0F, 0.9F));
+        //        }
         var enderman = event.getRenderer(EntityType.ENDERMAN);
         if (enderman instanceof LivingEntityRenderer<EnderMan, ? extends EntityModel<EnderMan>>) {
             enderman.addLayer(new FestiveLayer<>(event.getContext(), (RenderLayerParent) enderman, -1.15F, 0.9F));

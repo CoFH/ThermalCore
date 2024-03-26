@@ -37,7 +37,7 @@ public class TCoreRecipeProvider extends RecipeProviderCoFH {
         var reg = ITEMS;
 
         generateStorageRecipes(consumer, reg.get(ID_CHARCOAL_BLOCK), Items.CHARCOAL);
-        generateStorageRecipes(consumer, reg.get(ID_BAMBOO_BLOCK), Items.BAMBOO);
+        // generateStorageRecipes(consumer, reg.get(ID_BAMBOO_BLOCK), Items.BAMBOO);
         generateStorageRecipes(consumer, reg.get(ID_SUGAR_CANE_BLOCK), Items.SUGAR_CANE);
         generateStorageRecipes(consumer, reg.get(ID_GUNPOWDER_BLOCK), Items.GUNPOWDER);
 

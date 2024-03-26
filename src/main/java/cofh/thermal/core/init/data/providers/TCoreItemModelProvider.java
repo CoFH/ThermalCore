@@ -216,7 +216,7 @@ public class TCoreItemModelProvider extends ItemModelProviderCoFH {
     private void registerVanillaBlocks(DeferredRegisterCoFH<Block> reg) {
 
         blockItem(reg.getSup(ID_CHARCOAL_BLOCK));
-        blockItem(reg.getSup(ID_BAMBOO_BLOCK));
+        // blockItem(reg.getSup(ID_BAMBOO_BLOCK));
         blockItem(reg.getSup(ID_SUGAR_CANE_BLOCK));
         blockItem(reg.getSup(ID_GUNPOWDER_BLOCK));
 

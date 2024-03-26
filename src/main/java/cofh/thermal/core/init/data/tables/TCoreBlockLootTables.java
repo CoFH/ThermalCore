@@ -14,7 +14,7 @@ public class TCoreBlockLootTables extends BlockLootSubProviderCoFH {
         var regBlocks = BLOCKS;
         var regItems = ITEMS;
 
-        createSimpleDropTable(regBlocks.get(ID_BAMBOO_BLOCK));
+        // createSimpleDropTable(regBlocks.get(ID_BAMBOO_BLOCK));
         createSimpleDropTable(regBlocks.get(ID_CHARCOAL_BLOCK));
         createSimpleDropTable(regBlocks.get(ID_GUNPOWDER_BLOCK));
         createSimpleDropTable(regBlocks.get(ID_SUGAR_CANE_BLOCK));
