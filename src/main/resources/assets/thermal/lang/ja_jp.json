@@ -61,9 +61,9 @@
   "block.thermal.slag_block": "鉱滓ブロック",
   "block.thermal.tar_block": "タールブロック",
 
-  "death.attack.basalz": "%1$sは己の世界を揺さぶられた!",
-  "death.attack.blitz": "%1$sは敢え無く成仏してしまった!",
-  "death.attack.blizz": "%1$sは凍え死ぬ運命だった!",
+  "death.attack.basalz_projectile": "%1$sは己の世界を揺さぶられた!",
+  "death.attack.blitz_projectile": "%1$sは敢え無く成仏してしまった!",
+  "death.attack.blizz_projectile": "%1$sは凍え死ぬ運命だった!",
 
   "entity.thermal.basalz": "バザルツ",
   "entity.thermal.blitz": "ブリッツ",
@@ -108,6 +108,8 @@
 
   "info.thermal.redprint.contents": "内容:",
   "info.thermal.redprint.unknown": "不明なデータ",
+  "info.thermal.redprint.data.Filter": "フィルタパラメータ",
+  "info.thermal.redprint.data.FilterAttachmentMode": "フィルタ貼り付けモード",
   "info.thermal.redprint.data.RSControl": "レッドストーン制御",
   "info.thermal.redprint.data.Sides": "側面設定",
   "info.thermal.redprint.data.Xfer": "輸送設定",
@@ -193,6 +195,7 @@
   "item.thermal.detonator": "遠隔起爆装置",
   "item.thermal.detonator.desc": "TNTの遠隔呼び出し・起爆が出来ます。",
   "item.thermal.earth_charge": "アースチャージ",
+  "item.thermal.florb": "フローブ",
   "item.thermal.ice_charge": "アイスチャージ",
   "item.thermal.lightning_charge": "ライトニングチャージ",
   "item.thermal.lock": "シグナルム安全錠",
@@ -384,16 +387,16 @@
   "block.thermal.device_composter": "回分式コンポスター",
   "block.thermal.device_fisher": "水資源投網機",
   "block.thermal.device_hive_extractor": "巣箱ホッパー",
-  "block.thermal.device_magnet_blocker": "磁気妨害装置",
   "block.thermal.device_nullifier": "消滅機",
   "block.thermal.device_potion_diffuser": "浸出散布機",
   "block.thermal.device_rock_gen": "火成岩生成機",
   "block.thermal.device_soil_infuser": "フィト・ソイル注入機",
   "block.thermal.device_tree_extractor": "木精抽出機",
   "block.thermal.device_water_gen": "水生成器",
+  "block.thermal.device_xp_condenser": "洞察に満ちるコンデンサー",
 
-  "block.thermal.energy_cell": "レッドストーンフラックスセル",
-  "block.thermal.energy_cell_frame": "レッドストーンフラックスセルフレーム",
+  "block.thermal.energy_cell": "RFセル",
+  "block.thermal.energy_cell_frame": "RFセルフレーム",
   "block.thermal.fluid_cell": "流体セル",
   "block.thermal.fluid_cell_frame": "流体セルフレーム",
   "block.thermal.item_cell": "アイテムセル",
@@ -469,6 +472,10 @@
   "info.thermal.device_water_gen.0": "大量の水を供給します。",
   "info.thermal.device_water_gen.1": "稼働には水源を隣接させる必要があります。",
   "info.thermal.device_water_gen.2": "溺れないでね",
+
+  "info.thermal.device_xp_condenser.0": "付近のブロックから入手できる経験値を集めます。",
+  "info.thermal.device_xp_condenser.1": "収集した経験値は、液体として搬出できます。",
+  "info.thermal.device_xp_condenser.2": "機械学習はいかが?",
 
   "info.thermal.energy_cell.0": "レッドストーンフラックスを溜め、移送します。",
   "info.thermal.energy_cell.1": "§e§oShift§rと§e§oCtrl§rでより精密に量を調節できます。",
@@ -708,7 +715,11 @@
   "item.thermal.junk_net.keyword": "bait",
 
   "item.thermal.detonator.keyword": "tnt",
+  "item.thermal.lock.keyword": "lock secure security",
   "item.thermal.rf_potato.keyword": "battery",
+  "item.thermal.redprint.keyword": "copy settings",
+  "item.thermal.satchel.keyword": "backpack pouch storage",
+  "item.thermal.xp_crystal.keyword": "experience storage xp",
 
   "_comment": "========================================================================================================",
   "_comment": "Thermal Cultivation",
@@ -860,7 +871,7 @@
   "_comment": "Thermal Dynamics",
   "_comment": "========================================================================================================",
 
-  "attachment.thermal.energy_limiter": "レッドストーンフラックスリミッター",
+  "attachment.thermal.energy_limiter": "RFリミッター",
   "attachment.thermal.filter": "流体ダクトフィルター",
   "attachment.thermal.servo": "流体ダクトサーボ",
   "attachment.thermal.turbo_servo": "流体ダクトターボサーボ",
@@ -903,7 +914,7 @@
   "info.thermal.item_buffer.mode.0": "I/O: 通常",
   "info.thermal.item_buffer.mode.1": "I/O: ラッチ",
 
-  "item.thermal.energy_limiter_attachment": "アタッチメント: レッドストーンフラックスリミッター",
+  "item.thermal.energy_limiter_attachment": "アタッチメント: RFリミッター",
   "item.thermal.filter_attachment": "アタッチメント: フィルター",
   "item.thermal.servo_attachment": "アタッチメント: サーボ",
   "item.thermal.turbo_servo_attachment": "アタッチメント: ターボサーボ",
@@ -1188,9 +1199,16 @@
   "entity.thermal.redstone_tnt_minecart": "レッドストーン爆弾付きトロッコ",
   "entity.thermal.slime_tnt_minecart": "スライム爆弾付きトロッコ",
 
-  "entity.thermal.energy_minecart": "フラックス貯蔵トロッコ",
+  "entity.thermal.energy_minecart": "RFトロッコ",
   "entity.thermal.fluid_minecart": "流体タンクトロッコ",
   "entity.thermal.underwater_minecart": "潜水トロッコ",
+
+  "info.thermal.energy_minecart.0": "RFを蓄電します。",
+  "info.thermal.energy_minecart.1": "スロットでアイテムからトロッコへ充電と放電が行なえます。",
+
+  "info.thermal.fluid_minecart.0": "流体を貯蔵します。",
+  "info.thermal.fluid_minecart.1": "スロットでアイテムからトロッコへ流体の搬入出が行なえます。",
+  "info.thermal.fluid_minecart.2": "また、バケツやその機能を持ったアイテムをトロッコに使用することで直接流体の受け渡しが行なえます。",
 
   "item.thermal.earth_tnt_minecart": "地動爆弾付きトロッコ",
   "item.thermal.ender_tnt_minecart": "混乱爆弾付きトロッコ",
@@ -1203,7 +1221,7 @@
   "item.thermal.redstone_tnt_minecart": "レッドストーン爆弾付きトロッコ",
   "item.thermal.slime_tnt_minecart": "スライム爆弾付きトロッコ",
 
-  "item.thermal.energy_minecart": "フラックス貯蔵トロッコ",
+  "item.thermal.energy_minecart": "RFトロッコ",
   "item.thermal.fluid_minecart": "流体タンクトロッコ",
   "item.thermal.underwater_minecart": "潜水トロッコ",
 

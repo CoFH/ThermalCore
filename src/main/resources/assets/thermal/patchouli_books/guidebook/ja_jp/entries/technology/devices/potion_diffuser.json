@@ -3,7 +3,7 @@
   "icon": "thermal:device_potion_diffuser",
   "category": "thermal:devices",
   "read_by_default": true,
-  "flag": "mod:thermal_innovation",
+  "flag": "|mod:thermal_expansion,mod:thermal_innovation",
   "pages": [
     {
       "type": "patchouli:text",

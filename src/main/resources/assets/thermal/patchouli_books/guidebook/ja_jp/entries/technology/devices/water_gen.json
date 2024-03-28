@@ -3,7 +3,7 @@
   "icon": "thermal:device_water_gen",
   "category": "thermal:devices",
   "read_by_default": true,
-  "flag": "mod:thermal_expansion",
+  "flag": "mod:thermal_expansion,mod:thermal_cultivation",
   "pages": [
     {
       "type": "patchouli:text",

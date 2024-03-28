@@ -1,0 +1,24 @@
+{
+  "name": "流体ダクト",
+  "icon": "thermal:fluid_duct",
+  "read_by_default": true,
+  "flag": "mod:thermal_dynamics",
+  "category": "thermal:ducts",
+
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "流体ダクトは流体を輸送できます。一つの配管網は一種類の流体しか保持・輸送できません。窓のある流体ダクトでは内部の流体を見ることができます。$(l:thermal:technology/devices/introduction)装置$(/l)などの流体を自動搬出できないブロックから液体を搬出するには、サーボアタッチメントが必要になります。"
+    },
+    {
+      "type": "thermal:double_crafting_page",
+      "A.recipe": "thermal:fluid_duct_4",
+      "B.recipe": "thermal:fluid_duct_windowed_4"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "対応アタッチメント",
+      "text": "$(li)フィルター$(li)サーボ$(li)ターボサーボ"
+    }
+  ]
+}

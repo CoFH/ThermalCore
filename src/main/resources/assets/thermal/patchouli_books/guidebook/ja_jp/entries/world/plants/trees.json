@@ -1,0 +1,26 @@
+{
+  "name": "樹木",
+  "icon": "thermal:rubberwood_sapling",
+  "read_by_default": true,
+  "flag": "mod:thermal_foundation",
+  "category": "thermal:plants",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Thermal Foundationはゴムノキという新しい樹木(とそれに関連する木製品)を追加します。開発に乞うご期待ください。"
+    },
+    {
+      "type": "thermal:2-2_item_page",
+
+      "A.title": "ゴムの木",
+      "A.item1": "thermal:rubberwood_sapling",
+      "A.item2": "thermal:rubberwood_leaves",
+      "A.text": "苗木は行商人から購入できます。",
+
+      "B.title": "ゴムノキ",
+      "B.item1": "thermal:rubberwood_log",
+      "B.item2": "thermal:stripped_rubberwood_log",
+      "B.text": "ラテックスを潤沢に含み、耐火性のある木材です。"
+    }
+  ]
+}
