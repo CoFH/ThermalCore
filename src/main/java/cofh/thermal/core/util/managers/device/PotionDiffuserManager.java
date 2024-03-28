@@ -36,29 +36,29 @@ public class PotionDiffuserManager extends AbstractManager {
     // region BOOSTS
     public boolean validBoost(ItemStack item) {
 
-        return boostMap.containsKey(makeComparable(item));
+        return boostMap.containsKey(makeNBTComparable(item));
     }
 
     public void addBoost(PotionDiffuserBoost boost) {
 
         for (ItemStack ingredient : boost.getIngredient().getItems()) {
-            boostMap.put(makeComparable(ingredient), Triple.of(boost.getCycles(), boost.getAmplifier(), boost.getDurationMod()));
+            boostMap.put(makeNBTComparable(ingredient), Triple.of(boost.getCycles(), boost.getAmplifier(), boost.getDurationMod()));
         }
     }
 
     public int getBoostCycles(ItemStack item) {
 
-        return validBoost(item) ? boostMap.get(makeComparable(item)).getLeft() : 0;
+        return validBoost(item) ? boostMap.get(makeNBTComparable(item)).getLeft() : 0;
     }
 
     public int getBoostAmplifier(ItemStack item) {
 
-        return validBoost(item) ? boostMap.get(makeComparable(item)).getMiddle() : 0;
+        return validBoost(item) ? boostMap.get(makeNBTComparable(item)).getMiddle() : 0;
     }
 
     public float getBoostDurationMod(ItemStack item) {
 
-        return validBoost(item) ? boostMap.get(makeComparable(item)).getRight() : 0.0F;
+        return validBoost(item) ? boostMap.get(makeNBTComparable(item)).getRight() : 0.0F;
     }
     // endregion
 

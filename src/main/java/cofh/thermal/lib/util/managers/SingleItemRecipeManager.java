@@ -167,13 +167,13 @@ public abstract class SingleItemRecipeManager extends AbstractManager implements
         @Override
         public IRecipeCatalyst getCatalyst(IItemStackHolder input) {
 
-            return catalystMap.get(makeComparable(input.getItemStack()));
+            return catalystMap.get(makeNBTComparable(input.getItemStack()));
         }
 
         @Override
         public IRecipeCatalyst getCatalyst(ItemStack input) {
 
-            return catalystMap.get(makeComparable(input));
+            return catalystMap.get(makeNBTComparable(input));
         }
 
         public void addCatalyst(ThermalCatalyst catalyst) {
@@ -189,7 +189,7 @@ public abstract class SingleItemRecipeManager extends AbstractManager implements
                 return null;
             }
             BaseMachineCatalyst catalyst = new BaseMachineCatalyst(primaryMod, secondaryMod, energyMod, minChance, useChance);
-            catalystMap.put(makeComparable(input), catalyst);
+            catalystMap.put(makeNBTComparable(input), catalyst);
             return catalyst;
         }
 
@@ -200,7 +200,7 @@ public abstract class SingleItemRecipeManager extends AbstractManager implements
 
         public IRecipeCatalyst removeCatalyst(ItemStack input) {
 
-            return catalystMap.remove(makeComparable(input));
+            return catalystMap.remove(makeNBTComparable(input));
         }
         // endregion
     }

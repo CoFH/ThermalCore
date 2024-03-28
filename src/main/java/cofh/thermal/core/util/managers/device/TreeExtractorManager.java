@@ -96,24 +96,24 @@ public class TreeExtractorManager extends AbstractManager {
     // region BOOSTS
     public boolean validBoost(ItemStack item) {
 
-        return boostMap.containsKey(makeComparable(item));
+        return boostMap.containsKey(makeNBTComparable(item));
     }
 
     public void addBoost(TreeExtractorBoost boost) {
 
         for (ItemStack ingredient : boost.getIngredient().getItems()) {
-            boostMap.put(makeComparable(ingredient), Pair.of(boost.getCycles(), boost.getOutputMod()));
+            boostMap.put(makeNBTComparable(ingredient), Pair.of(boost.getCycles(), boost.getOutputMod()));
         }
     }
 
     public int getBoostCycles(ItemStack item) {
 
-        return validBoost(item) ? boostMap.get(makeComparable(item)).getLeft() : 0;
+        return validBoost(item) ? boostMap.get(makeNBTComparable(item)).getLeft() : 0;
     }
 
     public float getBoostOutputMod(ItemStack item) {
 
-        return validBoost(item) ? boostMap.get(makeComparable(item)).getRight() : 1.0F;
+        return validBoost(item) ? boostMap.get(makeNBTComparable(item)).getRight() : 1.0F;
     }
     // endregion
 

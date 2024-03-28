@@ -68,7 +68,7 @@ public class ChillerRecipeManager extends AbstractManager implements IRecipeMana
 
     public boolean validItem(ItemStack item) {
 
-        return validItems.contains(makeComparable(item));
+        return validItems.contains(makeNBTComparable(item));
     }
 
     public boolean validFluid(FluidStack fluid) {
@@ -91,7 +91,7 @@ public class ChillerRecipeManager extends AbstractManager implements IRecipeMana
         }
         if (inputTanks.isEmpty() || inputTanks.get(0).isEmpty()) {
             ItemStack inputItem = inputSlots.get(0).getItemStack();
-            return recipeMap.get(Collections.singletonList(makeComparable(inputItem).hashCode()));
+            return recipeMap.get(Collections.singletonList(makeNBTComparable(inputItem).hashCode()));
         }
         if (inputSlots.isEmpty() || inputSlots.get(0).isEmpty() || inputSlots.get(0).getItemStack().getItem() instanceof SlotSealItem) {
             FluidStack inputFluid = inputTanks.get(0).getFluidStack();
@@ -99,7 +99,7 @@ public class ChillerRecipeManager extends AbstractManager implements IRecipeMana
         }
         ItemStack inputItem = inputSlots.get(0).getItemStack();
         FluidStack inputFluid = inputTanks.get(0).getFluidStack();
-        return recipeMap.get(asList(makeComparable(inputItem).hashCode(), FluidHelper.fluidHashcode(inputFluid)));
+        return recipeMap.get(asList(makeNBTComparable(inputItem).hashCode(), FluidHelper.fluidHashcode(inputFluid)));
     }
 
     protected IMachineRecipe addRecipe(int energy, float experience, List<ItemStack> inputItems, List<FluidStack> inputFluids, List<ItemStack> outputItems, List<Float> chance, List<FluidStack> outputFluids) {
@@ -113,8 +113,8 @@ public class ChillerRecipeManager extends AbstractManager implements IRecipeMana
             if (inputItem.isEmpty()) {
                 return null;
             }
-            validItems.add(makeComparable(inputItem));
-            key = Collections.singletonList(makeComparable(inputItem).hashCode());
+            validItems.add(makeNBTComparable(inputItem));
+            key = Collections.singletonList(makeNBTComparable(inputItem).hashCode());
         } else if (inputItems.isEmpty()) {
             FluidStack inputFluid = inputFluids.get(0);
             if (inputFluid.isEmpty()) {
@@ -131,9 +131,9 @@ public class ChillerRecipeManager extends AbstractManager implements IRecipeMana
             if (inputFluid.isEmpty()) {
                 return null;
             }
-            validItems.add(makeComparable(inputItem));
+            validItems.add(makeNBTComparable(inputItem));
             validFluids.add(inputFluid.getFluid());
-            key = asList(makeComparable(inputItem).hashCode(), FluidHelper.fluidHashcode(inputFluid));
+            key = asList(makeNBTComparable(inputItem).hashCode(), FluidHelper.fluidHashcode(inputFluid));
         }
         for (ItemStack stack : outputItems) {
             if (stack.isEmpty()) {

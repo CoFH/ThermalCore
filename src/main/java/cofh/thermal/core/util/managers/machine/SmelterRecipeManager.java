@@ -79,7 +79,7 @@ public class SmelterRecipeManager extends AbstractManager implements IRecipeMana
 
     public boolean validItem(ItemStack item) {
 
-        return validItems.contains(makeComparable(item));
+        return validItems.contains(makeNBTComparable(item)) || validItems.contains(makeComparable(item));
     }
 
     protected void clear() {
@@ -98,14 +98,29 @@ public class SmelterRecipeManager extends AbstractManager implements IRecipeMana
         List<ComparableItemStack> convertedItems = new ArrayList<>(maxInputItems);
         for (int i = 0; i < maxInputItems; ++i) {
             if (!inputSlots.get(i).isEmpty()) {
-                ComparableItemStack compStack = makeComparable(inputSlots.get(i).getItemStack());
+                ComparableItemStack compStack = makeNBTComparable(inputSlots.get(i).getItemStack());
                 convertedItems.add(compStack);
             }
         }
         if (convertedItems.isEmpty()) {
             return null;
         }
-        return recipeMap.get(new SmelterMapWrapper(convertedItems));
+        IMachineRecipe ret = recipeMap.get(new SmelterMapWrapper(convertedItems));
+
+        if (ret == null) {
+            convertedItems.clear();
+            for (int i = 0; i < maxInputItems; ++i) {
+                if (!inputSlots.get(i).isEmpty()) {
+                    ComparableItemStack compStack = makeComparable(inputSlots.get(i).getItemStack());
+                    convertedItems.add(compStack);
+                }
+            }
+            if (convertedItems.isEmpty()) {
+                return null;
+            }
+            ret = recipeMap.get(new SmelterMapWrapper(convertedItems));
+        }
+        return ret;
     }
 
     protected IMachineRecipe addRecipe(int energy, float experience, List<ItemStack> inputItems, List<FluidStack> inputFluids, List<ItemStack> outputItems, List<Float> chance, List<FluidStack> outputFluids, BaseMachineRecipe.RecipeType type) {
@@ -126,7 +141,7 @@ public class SmelterRecipeManager extends AbstractManager implements IRecipeMana
         List<ComparableItemStack> convertedItems = new ArrayList<>(inputItems.size());
         for (ItemStack stack : inputItems) {
             if (!inputItems.isEmpty()) {
-                ComparableItemStack compStack = makeComparable(stack);
+                ComparableItemStack compStack = type == BaseMachineRecipe.RecipeType.DISENCHANT ? makeComparable(stack) : makeNBTComparable(stack);
                 validItems.add(compStack);
                 convertedItems.add(compStack);
             }
@@ -156,13 +171,13 @@ public class SmelterRecipeManager extends AbstractManager implements IRecipeMana
     @Override
     public IRecipeCatalyst getCatalyst(IItemStackHolder input) {
 
-        return catalystMap.get(makeComparable(input.getItemStack()));
+        return catalystMap.get(makeNBTComparable(input.getItemStack()));
     }
 
     @Override
     public IRecipeCatalyst getCatalyst(ItemStack input) {
 
-        return catalystMap.get(makeComparable(input));
+        return catalystMap.get(makeNBTComparable(input));
     }
 
     public void addCatalyst(ThermalCatalyst catalyst) {
@@ -178,7 +193,7 @@ public class SmelterRecipeManager extends AbstractManager implements IRecipeMana
             return null;
         }
         BaseMachineCatalyst catalyst = new BaseMachineCatalyst(primaryMod, secondaryMod, energyMod, minChance, useChance);
-        catalystMap.put(makeComparable(input), catalyst);
+        catalystMap.put(makeNBTComparable(input), catalyst);
         return catalyst;
     }
 
@@ -189,7 +204,7 @@ public class SmelterRecipeManager extends AbstractManager implements IRecipeMana
 
     public IRecipeCatalyst removeCatalyst(ItemStack input) {
 
-        return catalystMap.remove(makeComparable(input));
+        return catalystMap.remove(makeNBTComparable(input));
     }
     // endregion
 
