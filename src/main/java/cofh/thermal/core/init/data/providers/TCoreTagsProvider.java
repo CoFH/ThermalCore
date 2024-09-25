@@ -2,6 +2,7 @@ package cofh.thermal.core.init.data.providers;
 
 import cofh.lib.init.tags.BlockTagsCoFH;
 import cofh.lib.init.tags.DamageTypeTagsCoFH;
+import cofh.lib.init.tags.FluidTagsCoFH;
 import cofh.lib.init.tags.ItemTagsCoFH;
 import cofh.thermal.core.init.data.damage.TCoreDamageTypes;
 import cofh.thermal.lib.util.references.ThermalTags;
@@ -84,7 +85,6 @@ public class TCoreTagsProvider {
             tag(BlockTagsCoFH.STORAGE_BLOCKS_LUMIUM).add(BLOCKS.get(ID_LUMIUM_BLOCK));
             tag(BlockTagsCoFH.STORAGE_BLOCKS_SIGNALUM).add(BLOCKS.get(ID_SIGNALUM_BLOCK));
 
-            // tag(BlockTagsCoFH.STORAGE_BLOCKS_BAMBOO).add(BLOCKS.get(ID_BAMBOO_BLOCK));
             tag(BlockTagsCoFH.STORAGE_BLOCKS_CHARCOAL).add(BLOCKS.get(ID_CHARCOAL_BLOCK));
             tag(BlockTagsCoFH.STORAGE_BLOCKS_GUNPOWDER).add(BLOCKS.get(ID_GUNPOWDER_BLOCK));
             tag(BlockTagsCoFH.STORAGE_BLOCKS_SUGAR_CANE).add(BLOCKS.get(ID_SUGAR_CANE_BLOCK));
@@ -99,17 +99,16 @@ public class TCoreTagsProvider {
             tag(BlockTagsCoFH.STORAGE_BLOCKS_SLAG).add(BLOCKS.get(ID_SLAG_BLOCK));
             tag(BlockTagsCoFH.STORAGE_BLOCKS_TAR).add(BLOCKS.get(ID_TAR_BLOCK));
 
-            tag(ThermalTags.Blocks.STORAGE_BLOCKS_APPLE).add(BLOCKS.get(ID_APPLE_BLOCK));
-            tag(ThermalTags.Blocks.STORAGE_BLOCKS_CARROT).add(BLOCKS.get(ID_CARROT_BLOCK));
-            tag(ThermalTags.Blocks.STORAGE_BLOCKS_POTATO).add(BLOCKS.get(ID_POTATO_BLOCK));
-            tag(ThermalTags.Blocks.STORAGE_BLOCKS_BEETROOT).add(BLOCKS.get(ID_BEETROOT_BLOCK));
+            tag(BlockTagsCoFH.STORAGE_BLOCKS_APPLE).add(BLOCKS.get(ID_APPLE_BLOCK));
+            tag(BlockTagsCoFH.STORAGE_BLOCKS_CARROT).add(BLOCKS.get(ID_CARROT_BLOCK));
+            tag(BlockTagsCoFH.STORAGE_BLOCKS_POTATO).add(BLOCKS.get(ID_POTATO_BLOCK));
+            tag(BlockTagsCoFH.STORAGE_BLOCKS_BEETROOT).add(BLOCKS.get(ID_BEETROOT_BLOCK));
 
             tag(Tags.Blocks.STORAGE_BLOCKS).addTags(
                     BlockTagsCoFH.STORAGE_BLOCKS_ENDERIUM,
                     BlockTagsCoFH.STORAGE_BLOCKS_LUMIUM,
                     BlockTagsCoFH.STORAGE_BLOCKS_SIGNALUM,
 
-                    // BlockTagsCoFH.STORAGE_BLOCKS_BAMBOO,
                     BlockTagsCoFH.STORAGE_BLOCKS_CHARCOAL,
                     BlockTagsCoFH.STORAGE_BLOCKS_GUNPOWDER,
                     BlockTagsCoFH.STORAGE_BLOCKS_SUGAR_CANE,
@@ -124,10 +123,10 @@ public class TCoreTagsProvider {
                     BlockTagsCoFH.STORAGE_BLOCKS_SLAG,
                     BlockTagsCoFH.STORAGE_BLOCKS_TAR,
 
-                    ThermalTags.Blocks.STORAGE_BLOCKS_APPLE,
-                    ThermalTags.Blocks.STORAGE_BLOCKS_CARROT,
-                    ThermalTags.Blocks.STORAGE_BLOCKS_POTATO,
-                    ThermalTags.Blocks.STORAGE_BLOCKS_BEETROOT
+                    BlockTagsCoFH.STORAGE_BLOCKS_APPLE,
+                    BlockTagsCoFH.STORAGE_BLOCKS_CARROT,
+                    BlockTagsCoFH.STORAGE_BLOCKS_POTATO,
+                    BlockTagsCoFH.STORAGE_BLOCKS_BEETROOT
             );
             // endregion
 
@@ -230,7 +229,6 @@ public class TCoreTagsProvider {
             copy(BlockTagsCoFH.STORAGE_BLOCKS_LUMIUM, ItemTagsCoFH.STORAGE_BLOCKS_LUMIUM);
             copy(BlockTagsCoFH.STORAGE_BLOCKS_SIGNALUM, ItemTagsCoFH.STORAGE_BLOCKS_SIGNALUM);
 
-            // copy(BlockTagsCoFH.STORAGE_BLOCKS_BAMBOO, ItemTagsCoFH.STORAGE_BLOCKS_BAMBOO);
             copy(BlockTagsCoFH.STORAGE_BLOCKS_CHARCOAL, ItemTagsCoFH.STORAGE_BLOCKS_CHARCOAL);
             copy(BlockTagsCoFH.STORAGE_BLOCKS_GUNPOWDER, ItemTagsCoFH.STORAGE_BLOCKS_GUNPOWDER);
             copy(BlockTagsCoFH.STORAGE_BLOCKS_SUGAR_CANE, ItemTagsCoFH.STORAGE_BLOCKS_SUGAR_CANE);
@@ -245,17 +243,16 @@ public class TCoreTagsProvider {
             copy(BlockTagsCoFH.STORAGE_BLOCKS_SLAG, ItemTagsCoFH.STORAGE_BLOCKS_SLAG);
             copy(BlockTagsCoFH.STORAGE_BLOCKS_TAR, ItemTagsCoFH.STORAGE_BLOCKS_TAR);
 
-            copy(ThermalTags.Blocks.STORAGE_BLOCKS_APPLE, ThermalTags.Items.STORAGE_BLOCKS_APPLE);
-            copy(ThermalTags.Blocks.STORAGE_BLOCKS_CARROT, ThermalTags.Items.STORAGE_BLOCKS_CARROT);
-            copy(ThermalTags.Blocks.STORAGE_BLOCKS_POTATO, ThermalTags.Items.STORAGE_BLOCKS_POTATO);
-            copy(ThermalTags.Blocks.STORAGE_BLOCKS_BEETROOT, ThermalTags.Items.STORAGE_BLOCKS_BEETROOT);
+            copy(BlockTagsCoFH.STORAGE_BLOCKS_APPLE, ItemTagsCoFH.STORAGE_BLOCKS_APPLE);
+            copy(BlockTagsCoFH.STORAGE_BLOCKS_CARROT, ItemTagsCoFH.STORAGE_BLOCKS_CARROT);
+            copy(BlockTagsCoFH.STORAGE_BLOCKS_POTATO, ItemTagsCoFH.STORAGE_BLOCKS_POTATO);
+            copy(BlockTagsCoFH.STORAGE_BLOCKS_BEETROOT, ItemTagsCoFH.STORAGE_BLOCKS_BEETROOT);
 
             tag(Tags.Items.STORAGE_BLOCKS).addTags(
                     ItemTagsCoFH.STORAGE_BLOCKS_ENDERIUM,
                     ItemTagsCoFH.STORAGE_BLOCKS_LUMIUM,
                     ItemTagsCoFH.STORAGE_BLOCKS_SIGNALUM,
 
-                    // ItemTagsCoFH.STORAGE_BLOCKS_BAMBOO,
                     ItemTagsCoFH.STORAGE_BLOCKS_CHARCOAL,
                     ItemTagsCoFH.STORAGE_BLOCKS_GUNPOWDER,
                     ItemTagsCoFH.STORAGE_BLOCKS_SUGAR_CANE,
@@ -270,10 +267,10 @@ public class TCoreTagsProvider {
                     ItemTagsCoFH.STORAGE_BLOCKS_SLAG,
                     ItemTagsCoFH.STORAGE_BLOCKS_TAR,
 
-                    ThermalTags.Items.STORAGE_BLOCKS_APPLE,
-                    ThermalTags.Items.STORAGE_BLOCKS_CARROT,
-                    ThermalTags.Items.STORAGE_BLOCKS_POTATO,
-                    ThermalTags.Items.STORAGE_BLOCKS_BEETROOT
+                    ItemTagsCoFH.STORAGE_BLOCKS_APPLE,
+                    ItemTagsCoFH.STORAGE_BLOCKS_CARROT,
+                    ItemTagsCoFH.STORAGE_BLOCKS_POTATO,
+                    ItemTagsCoFH.STORAGE_BLOCKS_BEETROOT
             );
 
             tag(ItemTagsCoFH.COINS_COPPER).add(ITEMS.get("copper_coin"));
@@ -452,14 +449,14 @@ public class TCoreTagsProvider {
         @Override
         protected void addTags(HolderLookup.Provider pProvider) {
 
-            tag(ThermalTags.Fluids.REDSTONE).add(FLUIDS.get(ID_FLUID_REDSTONE));
-            tag(ThermalTags.Fluids.GLOWSTONE).add(FLUIDS.get(ID_FLUID_GLOWSTONE));
-            tag(ThermalTags.Fluids.ENDER).add(FLUIDS.get(ID_FLUID_ENDER));
+            tag(FluidTagsCoFH.REDSTONE).add(FLUIDS.get(ID_FLUID_REDSTONE));
+            tag(FluidTagsCoFH.GLOWSTONE).add(FLUIDS.get(ID_FLUID_GLOWSTONE));
+            tag(FluidTagsCoFH.ENDER).add(FLUIDS.get(ID_FLUID_ENDER));
 
-            tag(ThermalTags.Fluids.LATEX).add(FLUIDS.get(ID_FLUID_LATEX));
+            tag(FluidTagsCoFH.LATEX).add(FLUIDS.get(ID_FLUID_LATEX));
 
-            tag(ThermalTags.Fluids.CREOSOTE).add(FLUIDS.get(ID_FLUID_CREOSOTE));
-            tag(ThermalTags.Fluids.CRUDE_OIL).add(FLUIDS.get(ID_FLUID_CRUDE_OIL));
+            tag(FluidTagsCoFH.CREOSOTE).add(FLUIDS.get(ID_FLUID_CREOSOTE));
+            tag(FluidTagsCoFH.CRUDE_OIL).add(FLUIDS.get(ID_FLUID_CRUDE_OIL));
         }
 
     }

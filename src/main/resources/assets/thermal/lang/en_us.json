@@ -568,11 +568,6 @@
   "block.thermal.carrot_block": "Crate of Carrots",
   "block.thermal.potato_block": "Crate of Potatoes",
 
-  "block.thermal.raw_lead_block": "Block of Raw Lead",
-  "block.thermal.raw_nickel_block": "Block of Raw Nickel",
-  "block.thermal.raw_silver_block": "Block of Raw Silver",
-  "block.thermal.raw_tin_block": "Block of Raw Tin",
-
   "item.thermal.copper_coin": "Copper Coin",
   "item.thermal.copper_dust": "Copper Dust",
   "item.thermal.copper_gear": "Copper Gear",
