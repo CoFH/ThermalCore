@@ -4,9 +4,6 @@ import cofh.core.common.entity.AbstractGrenade;
 import cofh.core.common.entity.AbstractTNTMinecart;
 import cofh.core.common.item.*;
 import cofh.lib.api.IDetonatable;
-import cofh.lib.common.block.CropBlockCoFH;
-import cofh.lib.common.block.CropBlockPerennial;
-import cofh.lib.common.block.CropBlockTall;
 import cofh.lib.common.block.TntBlockCoFH;
 import cofh.lib.common.entity.PrimedTntCoFH;
 import cofh.thermal.core.common.entity.explosive.DetonateUtils;
@@ -17,11 +14,8 @@ import cofh.thermal.lib.common.item.BlockItemAugmentable;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobCategory;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
@@ -37,9 +31,11 @@ import java.util.function.IntSupplier;
 import java.util.function.Supplier;
 
 import static cofh.lib.util.Utils.itemProperties;
-import static cofh.lib.util.constants.ModIds.*;
+import static cofh.lib.util.constants.ModIds.ID_THERMAL;
+import static cofh.lib.util.constants.ModIds.ID_THERMAL_LOCOMOTION;
 import static cofh.thermal.core.ThermalCore.*;
-import static cofh.thermal.core.init.registries.ThermalCreativeTabs.*;
+import static cofh.thermal.core.init.registries.ThermalCreativeTabs.blocksTab;
+import static cofh.thermal.core.init.registries.ThermalCreativeTabs.itemsTab;
 import static net.minecraft.world.level.block.state.BlockBehaviour.Properties.of;
 
 public final class RegistrationHelper {

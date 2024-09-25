@@ -73,6 +73,9 @@
   "entity.thermal.blitz_projectile": "Ball Lightning",
   "entity.thermal.blizz_projectile": "Glacial Bolt",
 
+  "entity.thermal.nuke_grenade": "Nuclear Grenade",
+  "entity.thermal.nuke_tnt": "Nuclear Explosive",
+
   "fluid_type.thermal.biocrude": "Bio-crude Oil",
   "fluid_type.thermal.creosote": "Creosote Oil",
   "fluid_type.thermal.crude_oil": "Crude Oil",
