@@ -7,6 +7,7 @@ import cofh.lib.common.energy.EnergyHandlerRestrictionWrapper;
 import cofh.lib.common.energy.EnergyStorageRestrictable;
 import cofh.lib.util.Utils;
 import cofh.lib.util.helpers.BlockHelper;
+import cofh.thermal.core.common.config.ThermalCoreConfig;
 import cofh.thermal.core.common.inventory.storage.EnergyCellMenu;
 import cofh.thermal.lib.common.block.entity.StorageCellBlockEntity;
 import cofh.thermal.lib.util.ThermalEnergyHelper;
@@ -27,7 +28,6 @@ import javax.annotation.Nullable;
 import java.util.function.Predicate;
 
 import static cofh.core.client.renderer.model.ModelUtils.*;
-import static cofh.thermal.core.common.config.ThermalCoreConfig.storageAugments;
 import static cofh.thermal.core.init.registries.TCoreBlockEntities.ENERGY_CELL_TILE;
 import static cofh.thermal.lib.util.ThermalAugmentRules.ENERGY_STORAGE_VALIDATOR;
 
@@ -48,7 +48,7 @@ public class EnergyCellBlockEntity extends StorageCellBlockEntity implements ITi
 
         transferControl.initControl(false, true);
 
-        addAugmentSlots(storageAugments);
+        addAugmentSlots(ThermalCoreConfig.storageAugmentsNoFilter);
         initHandlers();
     }
 
@@ -222,6 +222,12 @@ public class EnergyCellBlockEntity extends StorageCellBlockEntity implements ITi
     protected Predicate<ItemStack> augValidator() {
 
         return item -> AugmentDataHelper.hasAugmentData(item) && ENERGY_STORAGE_VALIDATOR.test(item, getAugmentsAsList());
+    }
+
+    @Override
+    public boolean hasFilterSlot() {
+
+        return false;
     }
     // endregion
 

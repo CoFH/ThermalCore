@@ -1,6 +1,7 @@
 package cofh.thermal.core.common.inventory;
 
 import cofh.core.common.inventory.BlockEntityCoFHMenu;
+import cofh.core.common.item.IAugmentableItem;
 import cofh.core.common.network.packet.server.ContainerConfigPacket;
 import cofh.core.util.helpers.AugmentableHelper;
 import cofh.lib.common.inventory.SlotCoFH;
@@ -33,7 +34,7 @@ public class TinkerBenchMenu extends BlockEntityCoFHMenu {
         @Override
         public boolean canPlaceItem(int index, ItemStack stack) {
 
-            return tile.allowAugmentation() && tinkerSlot.hasItem() && index < AugmentableHelper.getAugmentSlots(tinkerSlot.getItem()) && AugmentableHelper.validAugment(tinkerSlot.getItem(), stack, itemInventory.getStacks());
+            return tile.allowAugmentation() && tinkerSlot.hasItem() && index < AugmentableHelper.getAugmentSlots(tinkerSlot.getItem()) && AugmentableHelper.validAugment(index, tinkerSlot.getItem(), stack, itemInventory.getStacks());
         }
     };
 
@@ -45,7 +46,7 @@ public class TinkerBenchMenu extends BlockEntityCoFHMenu {
 
         allowSwap = false;
 
-        tinkerSlot = new SlotCoFH(tileInv, 0, 44, 26) {
+        tinkerSlot = new SlotCoFH(tileInv, 0, 35, 26) {
 
             @Override
             public void onTake(Player thePlayer, ItemStack stack) {
@@ -139,6 +140,22 @@ public class TinkerBenchMenu extends BlockEntityCoFHMenu {
     public List<SlotCoFH> getTinkerAugmentSlots() {
 
         return tinkerAugmentSlots;
+    }
+
+    public boolean hasUpgradeSlot() {
+
+        if (tinkerSlot.getItem().getItem() instanceof IAugmentableItem augmentable) {
+            return augmentable.hasUpgradeSlot();
+        }
+        return false;
+    }
+
+    public boolean hasFilterSlot() {
+
+        if (tinkerSlot.getItem().getItem() instanceof IAugmentableItem augmentable) {
+            return augmentable.hasFilterSlot();
+        }
+        return false;
     }
 
     @Override

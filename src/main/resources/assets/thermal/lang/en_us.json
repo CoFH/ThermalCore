@@ -77,6 +77,7 @@
   "entity.thermal.nuke_tnt": "Nuclear Explosive",
 
   "fluid_type.thermal.biocrude": "Bio-crude Oil",
+  "fluid_type.thermal.coal": "Liquefacted Coal",
   "fluid_type.thermal.creosote": "Creosote Oil",
   "fluid_type.thermal.crude_oil": "Crude Oil",
   "fluid_type.thermal.ender": "Resonant Ender",

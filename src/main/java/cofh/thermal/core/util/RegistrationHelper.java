@@ -80,18 +80,28 @@ public final class RegistrationHelper {
     // region AUGMENTABLE BLOCKS
     public static RegistryObject<Item> registerAugmentableBlock(String name, Supplier<Block> sup, IntSupplier numSlots, BiPredicate<ItemStack, List<ItemStack>> validAugment) {
 
-        return registerAugmentableBlock(name, sup, numSlots, validAugment, ID_THERMAL);
+        return registerAugmentableBlock(name, sup, numSlots, true, true, validAugment, ID_THERMAL);
+    }
+
+    public static RegistryObject<Item> registerAugmentableBlock(String name, Supplier<Block> sup, IntSupplier numSlots, boolean hasUpgradeSlot, boolean hasFilterSlot, BiPredicate<ItemStack, List<ItemStack>> validAugment) {
+
+        return registerAugmentableBlock(name, sup, numSlots, hasUpgradeSlot, hasFilterSlot, validAugment, ID_THERMAL);
     }
 
     public static RegistryObject<Item> registerAugmentableBlock(String name, Supplier<Block> sup, IntSupplier numSlots, BiPredicate<ItemStack, List<ItemStack>> validAugment, String modId) {
 
-        return registerAugmentableBlock(name, sup, numSlots, validAugment, Rarity.COMMON, modId);
+        return registerAugmentableBlock(name, sup, numSlots, true, true, validAugment, Rarity.COMMON, modId);
     }
 
-    public static RegistryObject<Item> registerAugmentableBlock(String name, Supplier<Block> sup, IntSupplier numSlots, BiPredicate<ItemStack, List<ItemStack>> validAugment, Rarity rarity, String modId) {
+    public static RegistryObject<Item> registerAugmentableBlock(String name, Supplier<Block> sup, IntSupplier numSlots, boolean hasUpgradeSlot, boolean hasFilterSlot, BiPredicate<ItemStack, List<ItemStack>> validAugment, String modId) {
+
+        return registerAugmentableBlock(name, sup, numSlots, hasUpgradeSlot, hasFilterSlot, validAugment, Rarity.COMMON, modId);
+    }
+
+    public static RegistryObject<Item> registerAugmentableBlock(String name, Supplier<Block> sup, IntSupplier numSlots, boolean hasUpgradeSlot, boolean hasFilterSlot, BiPredicate<ItemStack, List<ItemStack>> validAugment, Rarity rarity, String modId) {
 
         BLOCKS.register(name, sup);
-        return registerItem(name, () -> new BlockItemAugmentable(BLOCKS.get(name), itemProperties().rarity(rarity)).setNumSlots(numSlots).setAugValidator(validAugment).setModId(modId));
+        return registerItem(name, () -> new BlockItemAugmentable(BLOCKS.get(name), itemProperties().rarity(rarity)).setNumSlots(numSlots).setSpecialSlots(hasUpgradeSlot, hasFilterSlot).setAugValidator(validAugment).setModId(modId));
     }
     // endregion
 

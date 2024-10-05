@@ -43,7 +43,7 @@ import static net.minecraftforge.fluids.capability.IFluidHandler.FluidAction.SIM
 
 public class TinkerBenchBlockEntity extends AugmentableBlockEntity implements ITickableTile.IServerTickable {
 
-    public static final BiPredicate<ItemStack, List<ItemStack>> AUG_VALIDATOR = createAllowValidator(TAG_AUGMENT_TYPE_UPGRADE, TAG_AUGMENT_TYPE_RF, TAG_AUGMENT_TYPE_FLUID);
+    public static final BiPredicate<ItemStack, List<ItemStack>> AUG_VALIDATOR = createAllowValidator(TAG_AUGMENT_TYPE_RF, TAG_AUGMENT_TYPE_FLUID);
 
     public static final int BASE_CAPACITY = 500000;
     public static final int BASE_XFER = 1000;

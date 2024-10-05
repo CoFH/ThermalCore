@@ -38,7 +38,7 @@ import static net.minecraft.world.level.block.ComposterBlock.COMPOSTABLES;
 
 public class DeviceComposterBlockEntity extends DeviceBlockEntity implements ITickableTile.IServerTickable {
 
-    public static final BiPredicate<ItemStack, List<ItemStack>> AUG_VALIDATOR = createAllowValidator(TAG_AUGMENT_TYPE_UPGRADE, TAG_AUGMENT_TYPE_FILTER);
+    public static final BiPredicate<ItemStack, List<ItemStack>> AUG_VALIDATOR = createAllowValidator();
 
     protected static int timeConstant = 120;
     protected static boolean particles = true;

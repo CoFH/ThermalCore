@@ -40,7 +40,7 @@ import static cofh.thermal.lib.util.ThermalAugmentRules.createAllowValidator;
 
 public class DeviceCollectorBlockEntity extends DeviceBlockEntity implements ITickableTile.IServerTickable, IAreaEffectTile {
 
-    public static final BiPredicate<ItemStack, List<ItemStack>> AUG_VALIDATOR = createAllowValidator(TAG_AUGMENT_TYPE_UPGRADE, TAG_AUGMENT_TYPE_AREA_EFFECT, TAG_AUGMENT_TYPE_FILTER);
+    public static final BiPredicate<ItemStack, List<ItemStack>> AUG_VALIDATOR = createAllowValidator(TAG_AUGMENT_TYPE_AREA_EFFECT, TAG_AUGMENT_TYPE_FILTER);
 
     protected static final int TIME_CONSTANT = 20;
 

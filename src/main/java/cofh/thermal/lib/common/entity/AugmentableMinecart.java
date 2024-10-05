@@ -171,7 +171,7 @@ public abstract class AugmentableMinecart extends AbstractMinecartCoFH implement
      *
      * @param numAugments Number of augment slots to add.
      */
-    protected final void addAugmentSlots(int numAugments) {
+    protected final void addAugmentSlots(int numAugments, boolean upgradeSlot, boolean filterSlot) {
 
         augments = new ArrayList<>(numAugments);
         for (int i = 0; i < numAugments; ++i) {

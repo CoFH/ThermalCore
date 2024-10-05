@@ -40,7 +40,7 @@ public class AugmentableTileScreen<T extends ContainerMenuCoFH> extends Containe
         addPanel(new SecurityPanel(this, tile, SecurityHelper.getID(player)));
 
         if (menu.getAugmentSlots().size() > 0) {
-            addPanel(new AugmentPanel(this, menu::getNumAugmentSlots, menu.getAugmentSlots()));
+            addPanel(new AugmentPanel(this, menu::getNumAugmentSlots, menu.getAugmentSlots(), tile.hasUpgradeSlot(), tile.hasFilterSlot()));
         }
         addPanel(new RSControlPanel(this, tile));
 

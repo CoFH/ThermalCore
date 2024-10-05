@@ -66,17 +66,6 @@ public class FlorbItem extends FluidContainerItem {
         List<Component> additionalTooltips = new ArrayList<>();
         tooltipDelegate(stack, worldIn, additionalTooltips, flagIn);
         tooltip.addAll(additionalTooltips);
-
-        //        if (SecurityHelper.isItemClaimable(stack)) {
-        //            tooltip.add(getTextComponent("info.cofh.claimable").withStyle(GREEN).withStyle(ITALIC));
-        //        }
-        //        if (!additionalTooltips.isEmpty()) {
-        //            if (Screen.hasShiftDown() || CoreClientConfig.alwaysShowDetails.get()) {
-        //                tooltip.addAll(additionalTooltips);
-        //            } else if (CoreClientConfig.holdShiftForDetails.get()) {
-        //                tooltip.add(getTextComponent("info.cofh.hold_shift_for_details").withStyle(GRAY));
-        //            }
-        //        }
     }
 
     @Override

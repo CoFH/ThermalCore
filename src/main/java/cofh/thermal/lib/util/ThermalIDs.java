@@ -181,6 +181,7 @@ public class ThermalIDs {
     public static final String ID_FLUID_BIOCRUDE = "biocrude";
     public static final String ID_FLUID_REFINED_BIOFUEL = "refined_biofuel";
 
+    public static final String ID_FLUID_COAL = "coal";
     public static final String ID_FLUID_CREOSOTE = "creosote";
     public static final String ID_FLUID_CRUDE_OIL = "crude_oil";
     public static final String ID_FLUID_HEAVY_OIL = "heavy_oil";
@@ -202,6 +203,7 @@ public class ThermalIDs {
     public static final String ID_BLIZZ_PROJECTILE = "blizz_projectile";
 
     public static final String ID_FLORB = "florb";
+    public static final String ID_MORB = "morb";
 
     public static final String ID_EXPLOSIVE_GRENADE = "explosive_grenade";
 

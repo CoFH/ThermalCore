@@ -43,7 +43,7 @@ import static net.minecraftforge.fluids.capability.IFluidHandler.FluidAction.EXE
 
 public class FluidCellBlockEntity extends StorageCellBlockEntity implements ITickableTile.IServerTickable {
 
-    public static final BiPredicate<ItemStack, List<ItemStack>> AUG_VALIDATOR = createAllowValidator(TAG_AUGMENT_TYPE_UPGRADE, TAG_AUGMENT_TYPE_FLUID, TAG_AUGMENT_TYPE_FILTER);
+    public static final BiPredicate<ItemStack, List<ItemStack>> AUG_VALIDATOR = createAllowValidator(TAG_AUGMENT_TYPE_FLUID, TAG_AUGMENT_TYPE_FILTER);
 
     public static final int BASE_CAPACITY = TANK_MEDIUM * 4;
 

@@ -32,6 +32,8 @@ public class EnergyCellBlockItem extends BlockItemAugmentable implements IEnergy
         super(blockIn, builder);
 
         setEnchantability(5);
+
+        hasFilterSlot = false;
     }
 
     @Override

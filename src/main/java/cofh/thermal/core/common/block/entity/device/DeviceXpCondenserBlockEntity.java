@@ -38,7 +38,7 @@ import static cofh.thermal.lib.util.ThermalAugmentRules.createAllowValidator;
 
 public class DeviceXpCondenserBlockEntity extends DeviceBlockEntity implements ITickableTile.IServerTickable, IAreaEffectTile {
 
-    public static final BiPredicate<ItemStack, List<ItemStack>> AUG_VALIDATOR = createAllowValidator(TAG_AUGMENT_TYPE_UPGRADE, TAG_AUGMENT_TYPE_FLUID, TAG_AUGMENT_TYPE_AREA_EFFECT);
+    public static final BiPredicate<ItemStack, List<ItemStack>> AUG_VALIDATOR = createAllowValidator(TAG_AUGMENT_TYPE_FLUID, TAG_AUGMENT_TYPE_AREA_EFFECT);
 
     protected static final int TIME_CONSTANT = 400;
     protected static final Supplier<FluidStack> XP = () -> new FluidStack(EXPERIENCE_FLUID.get(), 0);
@@ -57,7 +57,7 @@ public class DeviceXpCondenserBlockEntity extends DeviceBlockEntity implements I
 
         tankInv.addTank(tank, OUTPUT);
 
-        addAugmentSlots(ThermalCoreConfig.deviceAugments);
+        addAugmentSlots(ThermalCoreConfig.deviceAugmentsNoFilter);
         initHandlers();
     }
 
@@ -153,6 +153,12 @@ public class DeviceXpCondenserBlockEntity extends DeviceBlockEntity implements I
         super.finalizeAttributes(enchantmentMap);
 
         area = null;
+    }
+
+    @Override
+    public boolean hasFilterSlot() {
+
+        return false;
     }
     // endregion
 

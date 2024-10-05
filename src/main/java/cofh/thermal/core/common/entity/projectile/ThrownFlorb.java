@@ -71,9 +71,6 @@ public class ThrownFlorb extends ThrowableItemProjectile {
     @Override
     protected void onHit(HitResult result) {
 
-        //        System.out.println(result.location);
-        //        System.out.println(BlockPos.containing(result.location));
-
         if (!level.isClientSide) {
             FluidStack fluid = getFluid(getItem());
             if (!fluid.isEmpty()) {
@@ -102,11 +99,6 @@ public class ThrownFlorb extends ThrowableItemProjectile {
         } else {
             super.handleEntityEvent(event);
         }
-    }
-
-    protected boolean tryPlaceFluid(Level level, BlockPos pos) {
-
-        return false;
     }
 
     @Override

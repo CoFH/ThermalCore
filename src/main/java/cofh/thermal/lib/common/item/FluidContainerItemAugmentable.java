@@ -19,6 +19,8 @@ import static cofh.lib.api.ContainerType.FLUID;
 import static cofh.lib.util.Constants.MAX_POTION_AMPLIFIER;
 import static cofh.lib.util.Constants.MAX_POTION_DURATION;
 import static cofh.lib.util.constants.NBTTags.*;
+import static cofh.thermal.lib.util.ThermalAugmentRules.FILTER_VALIDATOR;
+import static cofh.thermal.lib.util.ThermalAugmentRules.UPGRADE_VALIDATOR;
 import static net.minecraftforge.fluids.capability.IFluidHandler.FluidAction.EXECUTE;
 
 public class FluidContainerItemAugmentable extends FluidContainerItem implements IAugmentableItem {
@@ -112,8 +114,31 @@ public class FluidContainerItemAugmentable extends FluidContainerItem implements
     }
 
     @Override
-    public boolean validAugment(ItemStack augmentable, ItemStack augment, List<ItemStack> augments) {
+    public boolean hasUpgradeSlot() {
 
+        return true;
+    }
+
+    @Override
+    public boolean hasFilterSlot() {
+
+        return true;
+    }
+
+    @Override
+    public boolean validAugment(int index, ItemStack augmentable, ItemStack augment, List<ItemStack> augments) {
+
+        if (index == 0) {
+            if (hasUpgradeSlot()) {
+                return UPGRADE_VALIDATOR.test(augment, augments);
+            } else if (hasFilterSlot()) {
+                return FILTER_VALIDATOR.test(augment, augments);
+            }
+        } else if (index == 1) {
+            if (hasUpgradeSlot() && hasFilterSlot()) {
+                return FILTER_VALIDATOR.test(augment, augments);
+            }
+        }
         return augValidator.test(augment, augments);
     }
 

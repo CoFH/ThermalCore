@@ -36,7 +36,7 @@ import static cofh.thermal.lib.util.ThermalAugmentRules.createAllowValidator;
 
 public class DeviceSoilInfuserBlockEntity extends AugmentableBlockEntity implements ITickableTile.IServerTickable, IAreaEffectTile {
 
-    public static final BiPredicate<ItemStack, List<ItemStack>> AUG_VALIDATOR = createAllowValidator(TAG_AUGMENT_TYPE_UPGRADE, TAG_AUGMENT_TYPE_RF, TAG_AUGMENT_TYPE_AREA_EFFECT);
+    public static final BiPredicate<ItemStack, List<ItemStack>> AUG_VALIDATOR = createAllowValidator(TAG_AUGMENT_TYPE_RF, TAG_AUGMENT_TYPE_AREA_EFFECT);
 
     protected static final int BASE_PROCESS_MAX = 4000;
 
@@ -57,7 +57,7 @@ public class DeviceSoilInfuserBlockEntity extends AugmentableBlockEntity impleme
 
         inventory.addSlot(chargeSlot, INTERNAL);
 
-        addAugmentSlots(ThermalCoreConfig.deviceAugments);
+        addAugmentSlots(ThermalCoreConfig.deviceAugmentsNoFilter);
         initHandlers();
     }
 
@@ -210,6 +210,12 @@ public class DeviceSoilInfuserBlockEntity extends AugmentableBlockEntity impleme
         processMax = BASE_PROCESS_MAX * (1 + radius);
         processTick = Math.round(getBaseProcessTick() * baseMod);
         area = null;
+    }
+
+    @Override
+    public boolean hasFilterSlot() {
+
+        return false;
     }
     // endregion
 

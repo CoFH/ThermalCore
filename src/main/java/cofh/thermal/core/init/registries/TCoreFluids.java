@@ -31,7 +31,10 @@ public class TCoreFluids {
         RESIN_FLUID = ResinFluid.instance().still();
         TREE_OIL_FLUID = TreeOilFluid.instance().still();
         LATEX_FLUID = LatexFluid.instance().still();
+        BIOCRUDE = BiocrudeFluid.instance().still();
+        REFINED_BIOFUEL = RefinedBiofuelFluid.instance().still();
 
+        COAL_FLUID = CoalFluid.instance().still();
         CREOSOTE_FLUID = CreosoteFluid.instance().still();
         CRUDE_OIL_FLUID = CrudeOilFluid.instance().still();
         HEAVY_OIL_FLUID = HeavyOilFluid.instance().still();
@@ -58,7 +61,10 @@ public class TCoreFluids {
     public static Supplier<ForgeFlowingFluid> RESIN_FLUID;
     public static Supplier<ForgeFlowingFluid> TREE_OIL_FLUID;
     public static Supplier<ForgeFlowingFluid> LATEX_FLUID;
+    public static Supplier<ForgeFlowingFluid> BIOCRUDE;
+    public static Supplier<ForgeFlowingFluid> REFINED_BIOFUEL;
 
+    public static Supplier<ForgeFlowingFluid> COAL_FLUID;
     public static Supplier<ForgeFlowingFluid> CREOSOTE_FLUID;
     public static Supplier<ForgeFlowingFluid> CRUDE_OIL_FLUID;
     public static Supplier<ForgeFlowingFluid> HEAVY_OIL_FLUID;

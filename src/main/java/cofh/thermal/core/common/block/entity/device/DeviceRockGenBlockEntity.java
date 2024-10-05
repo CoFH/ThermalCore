@@ -43,7 +43,7 @@ import static cofh.thermal.lib.util.ThermalAugmentRules.createAllowValidator;
 
 public class DeviceRockGenBlockEntity extends DeviceBlockEntity implements ITickableTile.IServerTickable {
 
-    public static final BiPredicate<ItemStack, List<ItemStack>> AUG_VALIDATOR = createAllowValidator(TAG_AUGMENT_TYPE_UPGRADE);
+    public static final BiPredicate<ItemStack, List<ItemStack>> AUG_VALIDATOR = createAllowValidator();
 
     protected static final Supplier<ItemStack> COBBLESTONE = () -> new ItemStack(Blocks.COBBLESTONE, 0);
     protected ItemStorageCoFH outputSlot = new ItemStorageCoFH(e -> false).setEmptyItem(COBBLESTONE).setEnabled(() -> isActive);
@@ -65,7 +65,7 @@ public class DeviceRockGenBlockEntity extends DeviceBlockEntity implements ITick
 
         inventory.addSlot(outputSlot, OUTPUT);
 
-        addAugmentSlots(ThermalCoreConfig.deviceAugments);
+        addAugmentSlots(ThermalCoreConfig.deviceAugmentsNoFilter);
         initHandlers();
 
         renderFluid = new FluidStack(Fluids.LAVA, BUCKET_VOLUME);
@@ -284,6 +284,12 @@ public class DeviceRockGenBlockEntity extends DeviceBlockEntity implements ITick
     protected Predicate<ItemStack> augValidator() {
 
         return item -> AugmentDataHelper.hasAugmentData(item) && AUG_VALIDATOR.test(item, getAugmentsAsList());
+    }
+
+    @Override
+    public boolean hasFilterSlot() {
+
+        return false;
     }
     // endregion
 }

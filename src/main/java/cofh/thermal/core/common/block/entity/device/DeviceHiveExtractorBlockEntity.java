@@ -32,7 +32,7 @@ import static net.minecraftforge.fluids.capability.IFluidHandler.FluidAction.EXE
 
 public class DeviceHiveExtractorBlockEntity extends DeviceBlockEntity {
 
-    public static final BiPredicate<ItemStack, List<ItemStack>> AUG_VALIDATOR = createAllowValidator(TAG_AUGMENT_TYPE_UPGRADE, TAG_AUGMENT_TYPE_FLUID);
+    public static final BiPredicate<ItemStack, List<ItemStack>> AUG_VALIDATOR = createAllowValidator(TAG_AUGMENT_TYPE_FLUID);
 
     protected ItemStorageCoFH outputSlot = new ItemStorageCoFH();
     protected FluidStorageCoFH outputTank = new FluidStorageCoFH(TANK_MEDIUM);
@@ -45,7 +45,7 @@ public class DeviceHiveExtractorBlockEntity extends DeviceBlockEntity {
 
         tankInv.addTank(outputTank, OUTPUT);
 
-        addAugmentSlots(ThermalCoreConfig.deviceAugments);
+        addAugmentSlots(ThermalCoreConfig.deviceAugmentsNoFilter);
         initHandlers();
     }
 
@@ -94,6 +94,12 @@ public class DeviceHiveExtractorBlockEntity extends DeviceBlockEntity {
     protected Predicate<ItemStack> augValidator() {
 
         return item -> AugmentDataHelper.hasAugmentData(item) && AUG_VALIDATOR.test(item, getAugmentsAsList());
+    }
+
+    @Override
+    public boolean hasFilterSlot() {
+
+        return false;
     }
     // endregion
 }

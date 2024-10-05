@@ -77,6 +77,8 @@ import static cofh.lib.api.StorageGroup.INTERNAL;
 import static cofh.lib.util.constants.BlockStatePropertiesCoFH.ACTIVE;
 import static cofh.lib.util.constants.NBTTags.*;
 import static cofh.thermal.core.init.registries.TCoreSounds.SOUND_TINKER;
+import static cofh.thermal.lib.util.ThermalAugmentRules.FILTER_VALIDATOR;
+import static cofh.thermal.lib.util.ThermalAugmentRules.UPGRADE_VALIDATOR;
 import static net.minecraft.nbt.Tag.TAG_COMPOUND;
 
 public abstract class AugmentableBlockEntity extends BlockEntityCoFH implements ISecurableTile, IRedstoneControllableTile, MenuProvider, IFilterable {
@@ -598,7 +600,17 @@ public abstract class AugmentableBlockEntity extends BlockEntityCoFH implements 
 
         augments = new ArrayList<>(numAugments);
         for (int i = 0; i < numAugments; ++i) {
-            ItemStorageCoFH slot = new ItemStorageCoFH(1, augValidator());
+            Predicate<ItemStack> validator = augValidator();
+            if (i == 0) {
+                if (hasUpgradeSlot()) {
+                    validator = upgradeValidator();
+                } else if (hasFilterSlot()) {
+                    validator = filterValidator();
+                }
+            } else if (i == 1 && hasUpgradeSlot() && hasFilterSlot()) {
+                validator = filterValidator();
+            }
+            ItemStorageCoFH slot = new ItemStorageCoFH(1, validator);
             augments.add(slot);
             inventory.addSlot(slot, INTERNAL);
         }
@@ -623,6 +635,16 @@ public abstract class AugmentableBlockEntity extends BlockEntityCoFH implements 
     protected final List<ItemStack> getAugmentsAsList() {
 
         return augments.stream().map(ItemStorageCoFH::getItemStack).collect(Collectors.toList());
+    }
+
+    protected Predicate<ItemStack> upgradeValidator() {
+
+        return item -> AugmentDataHelper.hasAugmentData(item) && UPGRADE_VALIDATOR.test(item, getAugmentsAsList());
+    }
+
+    protected Predicate<ItemStack> filterValidator() {
+
+        return item -> AugmentDataHelper.hasAugmentData(item) && FILTER_VALIDATOR.test(item, getAugmentsAsList());
     }
 
     protected Predicate<ItemStack> augValidator() {
@@ -711,6 +733,16 @@ public abstract class AugmentableBlockEntity extends BlockEntityCoFH implements 
 
         int holding = enchantmentMap.getOrDefault(HOLDING.get(), 0);
         return 1 + holding / 2F;
+    }
+
+    public boolean hasUpgradeSlot() {
+
+        return true;
+    }
+
+    public boolean hasFilterSlot() {
+
+        return true;
     }
     // endregion
 

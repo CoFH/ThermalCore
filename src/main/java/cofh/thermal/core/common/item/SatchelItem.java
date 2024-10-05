@@ -80,7 +80,7 @@ public class SatchelItem extends InventoryContainerItemAugmentable implements IC
         ProxyUtils.registerColorable(this);
 
         numSlots = () -> ThermalCoreConfig.storageAugments;
-        augValidator = createAllowValidator(TAG_AUGMENT_TYPE_UPGRADE, TAG_AUGMENT_TYPE_FILTER);
+        augValidator = createAllowValidator(TAG_AUGMENT_TYPE_FILTER);
     }
 
     @Override

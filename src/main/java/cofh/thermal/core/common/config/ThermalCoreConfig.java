@@ -152,11 +152,13 @@ public class ThermalCoreConfig implements IBaseConfig {
     }
 
     // region VARIABLES
-    public static int deviceAugments = 3;
-    public static int dynamoAugments = 4;
-    public static int machineAugments = 4;
-    public static int storageAugments = 3;
-    public static int toolAugments = 4;
+    public static final int deviceAugments = 4;
+    public static final int deviceAugmentsNoFilter = deviceAugments - 1;
+    public static final int dynamoAugments = 6;
+    public static final int machineAugments = 6;
+    public static final int storageAugments = 4;
+    public static final int storageAugmentsNoFilter = storageAugments - 1;
+    public static final int toolAugments = 4;
     // endregion
 
     // region CONFIG VARIABLES

@@ -79,8 +79,8 @@ public class TCoreItemModelProvider extends ItemModelProviderCoFH {
         generated(reg.getSup("junk_net"));
         generated(reg.getSup("aquachow"));
         generated(reg.getSup("deep_aquachow"));
-        //        generated(reg.getSup("rich_aquachow"));
-        //        generated(reg.getSup("fluxed_aquachow"));
+        // generated(reg.getSup("rich_aquachow"));
+        // generated(reg.getSup("fluxed_aquachow"));
 
         generated(reg.getSup("beekeeper_fabric"));
         generated(reg.getSup("diving_fabric"));
@@ -97,13 +97,16 @@ public class TCoreItemModelProvider extends ItemModelProviderCoFH {
         generated(reg.getSup("glowstone_bucket"));
         generated(reg.getSup("ender_bucket"));
 
+        // generated(reg.getSup("coal_bucket"));
         generated(reg.getSup("creosote_bucket"));
         generated(reg.getSup("crude_oil_bucket"));
         generated(reg.getSup("heavy_oil_bucket"));
         generated(reg.getSup("light_oil_bucket"));
         generated(reg.getSup("refined_fuel_bucket"));
 
+        generated(reg.getSup("biocrude_bucket"));
         generated(reg.getSup("latex_bucket"));
+        generated(reg.getSup("refined_biofuel_bucket"));
         generated(reg.getSup("resin_bucket"));
         generated(reg.getSup("sap_bucket"));
         generated(reg.getSup("syrup_bucket"));

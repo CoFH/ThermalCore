@@ -30,7 +30,7 @@ import static cofh.thermal.lib.util.ThermalAugmentRules.createAllowValidator;
 
 public class ChargeBenchBlockEntity extends AugmentableBlockEntity implements ITickableTile.IServerTickable {
 
-    public static final BiPredicate<ItemStack, List<ItemStack>> AUG_VALIDATOR = createAllowValidator(TAG_AUGMENT_TYPE_UPGRADE, TAG_AUGMENT_TYPE_RF, TAG_AUGMENT_TYPE_FILTER);
+    public static final BiPredicate<ItemStack, List<ItemStack>> AUG_VALIDATOR = createAllowValidator(TAG_AUGMENT_TYPE_RF, TAG_AUGMENT_TYPE_FILTER);
 
     public static final int BASE_CAPACITY = 500000;
     public static final int BASE_XFER = 4000;

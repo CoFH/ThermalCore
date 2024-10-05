@@ -194,27 +194,29 @@ public class TCoreBlocks {
     private static void registerTileBlocks() {
 
         IntSupplier deviceAugs = () -> ThermalCoreConfig.deviceAugments;
+        IntSupplier deviceAugsNoFilter = () -> ThermalCoreConfig.deviceAugmentsNoFilter;
 
-        devicesTab(100, registerAugmentableBlock(ID_DEVICE_HIVE_EXTRACTOR, () -> new EntityBlockActive4Way(of().sound(SoundType.SCAFFOLDING).strength(2.5F), DeviceHiveExtractorBlockEntity.class, DEVICE_HIVE_EXTRACTOR_TILE), deviceAugs, DeviceHiveExtractorBlockEntity.AUG_VALIDATOR), getFlag(ID_DEVICE_HIVE_EXTRACTOR));
+        devicesTab(100, registerAugmentableBlock(ID_DEVICE_HIVE_EXTRACTOR, () -> new EntityBlockActive4Way(of().sound(SoundType.SCAFFOLDING).strength(2.5F), DeviceHiveExtractorBlockEntity.class, DEVICE_HIVE_EXTRACTOR_TILE), deviceAugsNoFilter, true, false, DeviceHiveExtractorBlockEntity.AUG_VALIDATOR), getFlag(ID_DEVICE_HIVE_EXTRACTOR));
         devicesTab(100, registerAugmentableBlock(ID_DEVICE_TREE_EXTRACTOR, () -> new EntityBlockActive4Way(of().sound(SoundType.SCAFFOLDING).strength(2.5F), DeviceTreeExtractorBlockEntity.class, DEVICE_TREE_EXTRACTOR_TILE), deviceAugs, DeviceTreeExtractorBlockEntity.AUG_VALIDATOR), getFlag(ID_DEVICE_TREE_EXTRACTOR));
         devicesTab(100, registerAugmentableBlock(ID_DEVICE_FISHER, () -> new EntityBlockActive4Way(of().sound(SoundType.SCAFFOLDING).strength(2.5F), DeviceFisherBlockEntity.class, DEVICE_FISHER_TILE), deviceAugs, DeviceFisherBlockEntity.AUG_VALIDATOR), getFlag(ID_DEVICE_FISHER));
         devicesTab(100, registerAugmentableBlock(ID_DEVICE_COMPOSTER, () -> new EntityBlockComposter(of().sound(SoundType.SCAFFOLDING).strength(2.5F), DeviceComposterBlockEntity.class, DEVICE_COMPOSTER_TILE), deviceAugs, DeviceComposterBlockEntity.AUG_VALIDATOR), getFlag(ID_DEVICE_COMPOSTER));
-        devicesTab(100, registerAugmentableBlock(ID_DEVICE_SOIL_INFUSER, () -> new EntityBlockActive4Way(of().sound(SoundType.SCAFFOLDING).strength(2.5F).lightLevel(lightValue(ACTIVE, 10)), DeviceSoilInfuserBlockEntity.class, DEVICE_SOIL_INFUSER_TILE), deviceAugs, DeviceSoilInfuserBlockEntity.AUG_VALIDATOR), getFlag(ID_DEVICE_SOIL_INFUSER));
-        devicesTab(100, registerAugmentableBlock(ID_DEVICE_WATER_GEN, () -> new EntityBlockActive4Way(of().sound(SoundType.LANTERN).strength(2.0F), DeviceWaterGenBlockEntity.class, DEVICE_WATER_GEN_TILE), deviceAugs, DeviceWaterGenBlockEntity.AUG_VALIDATOR), getFlag(ID_DEVICE_WATER_GEN));
-        devicesTab(100, registerAugmentableBlock(ID_DEVICE_ROCK_GEN, () -> new EntityBlockActive4Way(of().sound(SoundType.LANTERN).strength(2.0F).lightLevel(lightValue(ACTIVE, 14)), DeviceRockGenBlockEntity.class, DEVICE_ROCK_GEN_TILE), deviceAugs, DeviceRockGenBlockEntity.AUG_VALIDATOR), getFlag(ID_DEVICE_ROCK_GEN));
+        devicesTab(100, registerAugmentableBlock(ID_DEVICE_SOIL_INFUSER, () -> new EntityBlockActive4Way(of().sound(SoundType.SCAFFOLDING).strength(2.5F).lightLevel(lightValue(ACTIVE, 10)), DeviceSoilInfuserBlockEntity.class, DEVICE_SOIL_INFUSER_TILE), deviceAugsNoFilter, true, false, DeviceSoilInfuserBlockEntity.AUG_VALIDATOR), getFlag(ID_DEVICE_SOIL_INFUSER));
+        devicesTab(100, registerAugmentableBlock(ID_DEVICE_WATER_GEN, () -> new EntityBlockActive4Way(of().sound(SoundType.LANTERN).strength(2.0F), DeviceWaterGenBlockEntity.class, DEVICE_WATER_GEN_TILE), deviceAugsNoFilter, true, false, DeviceWaterGenBlockEntity.AUG_VALIDATOR), getFlag(ID_DEVICE_WATER_GEN));
+        devicesTab(100, registerAugmentableBlock(ID_DEVICE_ROCK_GEN, () -> new EntityBlockActive4Way(of().sound(SoundType.LANTERN).strength(2.0F).lightLevel(lightValue(ACTIVE, 14)), DeviceRockGenBlockEntity.class, DEVICE_ROCK_GEN_TILE), deviceAugsNoFilter, true, false, DeviceRockGenBlockEntity.AUG_VALIDATOR), getFlag(ID_DEVICE_ROCK_GEN));
         devicesTab(100, registerAugmentableBlock(ID_DEVICE_COLLECTOR, () -> new EntityBlockActive4Way(of().sound(SoundType.LANTERN).strength(2.0F), DeviceCollectorBlockEntity.class, DEVICE_COLLECTOR_TILE), deviceAugs, DeviceCollectorBlockEntity.AUG_VALIDATOR), getFlag(ID_DEVICE_COLLECTOR));
-        devicesTab(100, registerAugmentableBlock(ID_DEVICE_XP_CONDENSER, () -> new EntityBlockActive4Way(of().sound(SoundType.LANTERN).strength(2.0F).lightLevel(lightValue(ACTIVE, 12)), DeviceXpCondenserBlockEntity.class, DEVICE_XP_CONDENSER_TILE), deviceAugs, DeviceXpCondenserBlockEntity.AUG_VALIDATOR), getFlag(ID_DEVICE_XP_CONDENSER));
+        devicesTab(100, registerAugmentableBlock(ID_DEVICE_XP_CONDENSER, () -> new EntityBlockActive4Way(of().sound(SoundType.LANTERN).strength(2.0F).lightLevel(lightValue(ACTIVE, 12)), DeviceXpCondenserBlockEntity.class, DEVICE_XP_CONDENSER_TILE), deviceAugsNoFilter, true, false, DeviceXpCondenserBlockEntity.AUG_VALIDATOR), getFlag(ID_DEVICE_XP_CONDENSER));
         devicesTab(100, registerAugmentableBlock(ID_DEVICE_NULLIFIER, () -> new EntityBlockActive4Way(of().sound(SoundType.LANTERN).strength(2.0F).lightLevel(lightValue(ACTIVE, 7)), DeviceNullifierBlockEntity.class, DEVICE_NULLIFIER_TILE), deviceAugs, DeviceNullifierBlockEntity.AUG_VALIDATOR), getFlag(ID_DEVICE_NULLIFIER));
         devicesTab(100, registerAugmentableBlock(ID_DEVICE_POTION_DIFFUSER, () -> new EntityBlockActive4Way(of().sound(SoundType.LANTERN).strength(2.0F), DevicePotionDiffuserBlockEntity.class, DEVICE_POTION_DIFFUSER_TILE), deviceAugs, DevicePotionDiffuserBlockEntity.AUG_VALIDATOR), getFlag(ID_DEVICE_POTION_DIFFUSER));
 
         // registerBlock(ID_CHUNK_LOADER, () -> new TileBlockActive(of().sound(SoundType.NETHERITE_BLOCK).strength(10.0F).harvestTool(ToolType.PICKAXE), DeviceChunkLoaderTile::new), getFlag(ID_CHUNK_LOADER));
 
         IntSupplier storageAugs = () -> ThermalCoreConfig.storageAugments;
+        IntSupplier storageAugsNoFilter = () -> ThermalCoreConfig.storageAugmentsNoFilter;
 
         devicesTab(registerAugmentableBlock(ID_TINKER_BENCH, () -> new EntityBlockCoFH(of().sound(SoundType.SCAFFOLDING).strength(2.5F), TinkerBenchBlockEntity.class, TINKER_BENCH_TILE), storageAugs, TinkerBenchBlockEntity.AUG_VALIDATOR));
         devicesTab(registerAugmentableBlock(ID_CHARGE_BENCH, () -> new EntityBlockActive(of().sound(SoundType.LANTERN).strength(2.0F).lightLevel(lightValue(ACTIVE, 7)), ChargeBenchBlockEntity.class, CHARGE_BENCH_TILE), storageAugs, ChargeBenchBlockEntity.AUG_VALIDATOR));
 
-        devicesTab(40, registerBlock(ID_ENERGY_CELL, () -> new StorageCellBlock(of().sound(SoundType.LANTERN).strength(2.0F).noOcclusion(), EnergyCellBlockEntity.class, ENERGY_CELL_TILE), () -> new EnergyCellBlockItem(BLOCKS.get(ID_ENERGY_CELL), itemProperties()).setNumSlots(storageAugs).setAugValidator(ENERGY_STORAGE_VALIDATOR)));
+        devicesTab(40, registerBlock(ID_ENERGY_CELL, () -> new StorageCellBlock(of().sound(SoundType.LANTERN).strength(2.0F).noOcclusion(), EnergyCellBlockEntity.class, ENERGY_CELL_TILE), () -> new EnergyCellBlockItem(BLOCKS.get(ID_ENERGY_CELL), itemProperties()).setNumSlots(storageAugsNoFilter).setSpecialSlots(true, false).setAugValidator(ENERGY_STORAGE_VALIDATOR)));
         devicesTab(40, registerBlock(ID_FLUID_CELL, () -> new StorageCellBlock(of().sound(SoundType.LANTERN).strength(2.0F).noOcclusion(), FluidCellBlockEntity.class, FLUID_CELL_TILE), () -> new FluidCellBlockItem(BLOCKS.get(ID_FLUID_CELL), itemProperties()).setNumSlots(storageAugs).setAugValidator(FluidCellBlockEntity.AUG_VALIDATOR)));
     }
 
@@ -225,7 +227,6 @@ public class TCoreBlocks {
         fire.setFlammable(BLOCKS.get(ID_CHARCOAL_BLOCK), 5, 5);
         fire.setFlammable(BLOCKS.get(ID_GUNPOWDER_BLOCK), 15, 100);
         fire.setFlammable(BLOCKS.get(ID_SUGAR_CANE_BLOCK), 60, 20);
-        // fire.setFlammable(BLOCKS.get(ID_BAMBOO_BLOCK), 60, 20);
     }
 
     private static void setupResources() {

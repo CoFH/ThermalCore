@@ -4,10 +4,7 @@ import cofh.thermal.core.common.entity.explosive.DetonateUtils;
 import cofh.thermal.core.common.entity.monster.Basalz;
 import cofh.thermal.core.common.entity.monster.Blitz;
 import cofh.thermal.core.common.entity.monster.Blizz;
-import cofh.thermal.core.common.entity.projectile.BasalzProjectile;
-import cofh.thermal.core.common.entity.projectile.BlitzProjectile;
-import cofh.thermal.core.common.entity.projectile.BlizzProjectile;
-import cofh.thermal.core.common.entity.projectile.ThrownFlorb;
+import cofh.thermal.core.common.entity.projectile.*;
 import cofh.thermal.lib.common.entity.AugmentableMinecart;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -55,11 +52,6 @@ public class TCoreEntities {
 
     public static void setup() {
 
-        // TODO: 11.1 Remove after confirming event working
-        //        SpawnPlacements.register(BASALZ.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Basalz::canSpawn);
-        //        SpawnPlacements.register(BLITZ.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Blitz::canSpawn);
-        //        SpawnPlacements.register(BLIZZ.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Blizz::canSpawn);
-
         AugmentableMinecart.setup();
     }
 
@@ -72,5 +64,6 @@ public class TCoreEntities {
     public static final RegistryObject<EntityType<BlitzProjectile>> BLITZ_PROJECTILE = ENTITIES.register(ID_BLITZ_PROJECTILE, () -> EntityType.Builder.<BlitzProjectile>of(BlitzProjectile::new, MobCategory.MISC).sized(0.3125F, 0.3125F).build(ID_BLITZ_PROJECTILE));
 
     public static final RegistryObject<EntityType<ThrownFlorb>> THROWN_FLORB = ENTITIES.register(ID_FLORB, () -> EntityType.Builder.<ThrownFlorb>of(ThrownFlorb::new, MobCategory.MISC).sized(0.25F, 0.25F).build(ID_FLORB));
+    // public static final RegistryObject<EntityType<ThrownMorb>> THROWN_MORB = ENTITIES.register(ID_MORB, () -> EntityType.Builder.<ThrownMorb>of(ThrownMorb::new, MobCategory.MISC).sized(0.25F, 0.25F).build(ID_MORB));
 
 }

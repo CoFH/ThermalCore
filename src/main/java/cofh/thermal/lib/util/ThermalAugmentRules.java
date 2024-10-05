@@ -136,6 +136,20 @@ public class ThermalAugmentRules {
         ITEM_UNIQUE.add(augment);
     }
 
+    public static BiPredicate<ItemStack, List<ItemStack>> createExactValidator(String... allowAugTypes) {
+
+        return createExactValidator(new ObjectOpenHashSet<>(allowAugTypes));
+    }
+
+    public static BiPredicate<ItemStack, List<ItemStack>> createExactValidator(final Set<String> allowAugTypes) {
+
+        return (newAugment, augments) -> {
+
+            String newType = AugmentDataHelper.getAugmentType(newAugment);
+            return allowAugTypes.contains(newType);
+        };
+    }
+
     public static BiPredicate<ItemStack, List<ItemStack>> createAllowValidator(String... allowAugTypes) {
 
         return createAllowValidator(new ObjectOpenHashSet<>(allowAugTypes));
@@ -199,15 +213,18 @@ public class ThermalAugmentRules {
     }
 
     // region VALIDATORS
-    public static final BiPredicate<ItemStack, List<ItemStack>> ENERGY_STORAGE_VALIDATOR = createAllowValidator(TAG_AUGMENT_TYPE_UPGRADE, TAG_AUGMENT_TYPE_RF);
+    public static final BiPredicate<ItemStack, List<ItemStack>> UPGRADE_VALIDATOR = createExactValidator(TAG_AUGMENT_TYPE_UPGRADE);
+    public static final BiPredicate<ItemStack, List<ItemStack>> FILTER_VALIDATOR = createExactValidator(TAG_AUGMENT_TYPE_FILTER);
 
-    public static final BiPredicate<ItemStack, List<ItemStack>> DEVICE_VALIDATOR = createDenyValidator(TAG_AUGMENT_TYPE_MACHINE, TAG_AUGMENT_TYPE_DYNAMO);
-    public static final BiPredicate<ItemStack, List<ItemStack>> DEVICE_NO_FLUID_VALIDATOR = createDenyValidator(TAG_AUGMENT_TYPE_MACHINE, TAG_AUGMENT_TYPE_DYNAMO, TAG_AUGMENT_TYPE_FLUID, TAG_AUGMENT_TYPE_POTION);
+    public static final BiPredicate<ItemStack, List<ItemStack>> ENERGY_STORAGE_VALIDATOR = createAllowValidator(TAG_AUGMENT_TYPE_RF);
 
-    public static final BiPredicate<ItemStack, List<ItemStack>> DYNAMO_VALIDATOR = createDenyValidator(TAG_AUGMENT_TYPE_MACHINE, TAG_AUGMENT_TYPE_RF, TAG_AUGMENT_TYPE_AREA_EFFECT, TAG_AUGMENT_TYPE_POTION);
-    public static final BiPredicate<ItemStack, List<ItemStack>> DYNAMO_NO_FLUID_VALIDATOR = createDenyValidator(TAG_AUGMENT_TYPE_MACHINE, TAG_AUGMENT_TYPE_RF, TAG_AUGMENT_TYPE_FLUID, TAG_AUGMENT_TYPE_AREA_EFFECT, TAG_AUGMENT_TYPE_POTION);
+    public static final BiPredicate<ItemStack, List<ItemStack>> DEVICE_VALIDATOR = createDenyValidator(TAG_AUGMENT_TYPE_UPGRADE, TAG_AUGMENT_TYPE_FILTER, TAG_AUGMENT_TYPE_MACHINE, TAG_AUGMENT_TYPE_DYNAMO);
+    public static final BiPredicate<ItemStack, List<ItemStack>> DEVICE_NO_FLUID_VALIDATOR = createDenyValidator(TAG_AUGMENT_TYPE_UPGRADE, TAG_AUGMENT_TYPE_FILTER, TAG_AUGMENT_TYPE_MACHINE, TAG_AUGMENT_TYPE_DYNAMO, TAG_AUGMENT_TYPE_FLUID, TAG_AUGMENT_TYPE_POTION);
 
-    public static final BiPredicate<ItemStack, List<ItemStack>> MACHINE_VALIDATOR = createDenyValidator(TAG_AUGMENT_TYPE_DYNAMO, TAG_AUGMENT_TYPE_AREA_EFFECT, TAG_AUGMENT_TYPE_POTION);
-    public static final BiPredicate<ItemStack, List<ItemStack>> MACHINE_NO_FLUID_VALIDATOR = createDenyValidator(TAG_AUGMENT_TYPE_DYNAMO, TAG_AUGMENT_TYPE_FLUID, TAG_AUGMENT_TYPE_AREA_EFFECT, TAG_AUGMENT_TYPE_POTION);
+    public static final BiPredicate<ItemStack, List<ItemStack>> DYNAMO_VALIDATOR = createDenyValidator(TAG_AUGMENT_TYPE_UPGRADE, TAG_AUGMENT_TYPE_FILTER, TAG_AUGMENT_TYPE_MACHINE, TAG_AUGMENT_TYPE_RF, TAG_AUGMENT_TYPE_AREA_EFFECT, TAG_AUGMENT_TYPE_POTION);
+    public static final BiPredicate<ItemStack, List<ItemStack>> DYNAMO_NO_FLUID_VALIDATOR = createDenyValidator(TAG_AUGMENT_TYPE_UPGRADE, TAG_AUGMENT_TYPE_FILTER, TAG_AUGMENT_TYPE_MACHINE, TAG_AUGMENT_TYPE_RF, TAG_AUGMENT_TYPE_FLUID, TAG_AUGMENT_TYPE_AREA_EFFECT, TAG_AUGMENT_TYPE_POTION);
+
+    public static final BiPredicate<ItemStack, List<ItemStack>> MACHINE_VALIDATOR = createDenyValidator(TAG_AUGMENT_TYPE_UPGRADE, TAG_AUGMENT_TYPE_FILTER, TAG_AUGMENT_TYPE_DYNAMO, TAG_AUGMENT_TYPE_AREA_EFFECT, TAG_AUGMENT_TYPE_POTION);
+    public static final BiPredicate<ItemStack, List<ItemStack>> MACHINE_NO_FLUID_VALIDATOR = createDenyValidator(TAG_AUGMENT_TYPE_UPGRADE, TAG_AUGMENT_TYPE_FILTER, TAG_AUGMENT_TYPE_DYNAMO, TAG_AUGMENT_TYPE_FLUID, TAG_AUGMENT_TYPE_AREA_EFFECT, TAG_AUGMENT_TYPE_POTION);
     // endregion
 }

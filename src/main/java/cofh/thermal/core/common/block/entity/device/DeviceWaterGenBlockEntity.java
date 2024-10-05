@@ -42,7 +42,7 @@ import static net.minecraftforge.fluids.capability.IFluidHandler.FluidAction.EXE
 
 public class DeviceWaterGenBlockEntity extends DeviceBlockEntity implements ITickableTile.IServerTickable {
 
-    public static final BiPredicate<ItemStack, List<ItemStack>> AUG_VALIDATOR = createAllowValidator(TAG_AUGMENT_TYPE_UPGRADE, TAG_AUGMENT_TYPE_FLUID, TAG_AUGMENT_TYPE_FILTER);
+    public static final BiPredicate<ItemStack, List<ItemStack>> AUG_VALIDATOR = createAllowValidator(TAG_AUGMENT_TYPE_FLUID);
 
     protected static final int GENERATION_RATE = 250;
     protected static final Supplier<FluidStack> WATER = () -> new FluidStack(Fluids.WATER, 0);
@@ -61,7 +61,7 @@ public class DeviceWaterGenBlockEntity extends DeviceBlockEntity implements ITic
 
         tankInv.addTank(tank, OUTPUT);
 
-        addAugmentSlots(ThermalCoreConfig.deviceAugments);
+        addAugmentSlots(ThermalCoreConfig.deviceAugmentsNoFilter);
         initHandlers();
 
         renderFluid = new FluidStack(Fluids.WATER, BUCKET_VOLUME);
@@ -161,6 +161,12 @@ public class DeviceWaterGenBlockEntity extends DeviceBlockEntity implements ITic
     protected Predicate<ItemStack> augValidator() {
 
         return item -> AugmentDataHelper.hasAugmentData(item) && AUG_VALIDATOR.test(item, getAugmentsAsList());
+    }
+
+    @Override
+    public boolean hasFilterSlot() {
+
+        return false;
     }
     // endregion
 }

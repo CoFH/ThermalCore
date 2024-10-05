@@ -36,10 +36,10 @@ public class TinkerBenchScreen extends AugmentableTileScreen<TinkerBenchMenu> {
 
         addElement(setClearable(createDefaultEnergyStorage(this, 8, 8, tile.getEnergyStorage()), tile, 0));
         addElement(setClearable(createMediumFluidStorage(this, 151, 8, tile.getTank(0)), tile, 0));
-        addElement(new ElementAugmentSlots(this, 80, 17, menu::getNumTinkerAugmentSlots, menu.getTinkerAugmentSlots(),
-                PATH_ELEMENTS + "disable_underlay_slot.png", () -> !menu.tile.allowAugmentation()));
+        addElement(new ElementAugmentSlots(this, 89, 17, menu::getNumTinkerAugmentSlots, menu.getTinkerAugmentSlots(),
+                menu::hasUpgradeSlot, menu::hasFilterSlot, PATH_ELEMENTS + "disable_underlay_slot.png", () -> !menu.tile.allowAugmentation()));
 
-        addElement(new ElementButton(this, 42, 51) {
+        addElement(new ElementButton(this, 33, 51) {
 
             @Override
             public boolean mouseClicked(double mouseX, double mouseY, int mouseButton) {
@@ -54,7 +54,7 @@ public class TinkerBenchScreen extends AugmentableTileScreen<TinkerBenchMenu> {
                 .setTooltipFactory(new SimpleTooltip(Component.translatable("info.thermal.tinker_bench_mode_augment")))
                 .setVisible(menu.tile::allowAugmentation));
 
-        addElement(new ElementButton(this, 42, 51) {
+        addElement(new ElementButton(this, 33, 51) {
 
             @Override
             public boolean mouseClicked(double mouseX, double mouseY, int mouseButton) {
