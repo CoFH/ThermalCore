@@ -386,7 +386,6 @@
   "item.thermal.xp_storage_augment": "Concentratore di conoscenza",
   "item.thermal.xp_storage_augment.desc": "Permette di immagazzinare e recuperare XP.",
 
-
   "_comment": "========================================================================================================",
   "_comment": "Thermal Core - External",
   "_comment": "These 'live' in Thermal Core but are non-default and registered from multiple possible modules.",

@@ -401,6 +401,8 @@ public class DevicePotionDiffuserBlockEntity extends DeviceBlockEntity implement
 
         super.finalizeAttributes(enchantmentMap);
 
+        radius += baseMod;
+
         area = null;
     }
     // endregion

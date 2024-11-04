@@ -33,6 +33,7 @@ import java.util.function.Predicate;
 
 import static cofh.core.client.renderer.model.ModelUtils.UNDERLAY;
 import static cofh.core.util.helpers.AugmentableHelper.getAttributeMod;
+import static cofh.core.util.helpers.AugmentableHelper.getAttributeModWithDefault;
 import static cofh.lib.api.StorageGroup.ACCESSIBLE;
 import static cofh.lib.util.constants.NBTTags.*;
 import static cofh.thermal.core.init.registries.TCoreBlockEntities.DEVICE_COLLECTOR_TILE;
@@ -193,6 +194,8 @@ public class DeviceCollectorBlockEntity extends DeviceBlockEntity implements ITi
     protected void finalizeAttributes(Map<Enchantment, Integer> enchantmentMap) {
 
         super.finalizeAttributes(enchantmentMap);
+
+        radius += baseMod;
 
         area = null;
     }

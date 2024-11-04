@@ -37,7 +37,8 @@ import static cofh.core.client.renderer.model.ModelUtils.FLUID;
 import static cofh.core.util.helpers.ItemHelper.itemsEqualWithTags;
 import static cofh.lib.api.StorageGroup.OUTPUT;
 import static cofh.lib.util.Constants.BUCKET_VOLUME;
-import static cofh.lib.util.constants.NBTTags.*;
+import static cofh.lib.util.constants.NBTTags.TAG_PROCESS;
+import static cofh.lib.util.constants.NBTTags.TAG_PROCESS_MAX;
 import static cofh.thermal.core.init.registries.TCoreBlockEntities.DEVICE_ROCK_GEN_TILE;
 import static cofh.thermal.lib.util.ThermalAugmentRules.createAllowValidator;
 

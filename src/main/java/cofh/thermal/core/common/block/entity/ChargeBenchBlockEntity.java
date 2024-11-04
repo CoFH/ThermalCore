@@ -23,7 +23,8 @@ import java.util.function.Predicate;
 
 import static cofh.lib.api.StorageGroup.ACCESSIBLE;
 import static cofh.lib.api.StorageGroup.INTERNAL;
-import static cofh.lib.util.constants.NBTTags.*;
+import static cofh.lib.util.constants.NBTTags.TAG_AUGMENT_TYPE_FILTER;
+import static cofh.lib.util.constants.NBTTags.TAG_AUGMENT_TYPE_RF;
 import static cofh.thermal.core.common.config.ThermalCoreConfig.storageAugments;
 import static cofh.thermal.core.init.registries.TCoreBlockEntities.CHARGE_BENCH_TILE;
 import static cofh.thermal.lib.util.ThermalAugmentRules.createAllowValidator;

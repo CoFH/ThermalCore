@@ -34,7 +34,7 @@ import static cofh.lib.api.StorageGroup.INTERNAL;
 import static cofh.lib.api.StorageGroup.OUTPUT;
 import static cofh.lib.util.Constants.BUCKET_VOLUME;
 import static cofh.lib.util.Constants.TANK_SMALL;
-import static cofh.lib.util.constants.NBTTags.*;
+import static cofh.lib.util.constants.NBTTags.TAG_AUGMENT_TYPE_FLUID;
 import static cofh.thermal.core.init.registries.TCoreBlockEntities.DEVICE_WATER_GEN_TILE;
 import static cofh.thermal.core.init.registries.TCoreSounds.SOUND_DEVICE_WATER_GEN;
 import static cofh.thermal.lib.util.ThermalAugmentRules.createAllowValidator;

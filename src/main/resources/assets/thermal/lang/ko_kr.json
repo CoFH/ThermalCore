@@ -664,7 +664,6 @@
   "item.thermal.copper_nugget": "구리 조각",
   "item.thermal.copper_plate": "구리 판",
 
-
   "item.thermal.diamond_coin": "다이아몬드 동전",
   "item.thermal.diamond_dust": "다이아몬드 가루",
   "item.thermal.diamond_gear": "다이아몬드 기어",
@@ -706,7 +705,6 @@
   "item.thermal.quartz_gear": "석영 기어",
   "item.thermal.quartz_nugget": "석영 조각",
   "item.thermal.quartz_plate": "석영 판",
-
 
   "_comment": "========================================================================================================",
   "_comment": "Keywords - These terms help things show up in JEI or other tooltip searches! :)",
@@ -945,7 +943,6 @@
   "item.thermal.slime_mushroom_spores.keyword": "slime",
 
   "item.thermal.watering_can.keyword": "crops farm fertilizer",
-
 
   "_comment": "========================================================================================================",
   "_comment": "Thermal Dynamics",

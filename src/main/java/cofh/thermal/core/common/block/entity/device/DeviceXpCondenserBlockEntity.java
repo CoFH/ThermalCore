@@ -152,6 +152,8 @@ public class DeviceXpCondenserBlockEntity extends DeviceBlockEntity implements I
 
         super.finalizeAttributes(enchantmentMap);
 
+        radius += baseMod;
+
         area = null;
     }
 

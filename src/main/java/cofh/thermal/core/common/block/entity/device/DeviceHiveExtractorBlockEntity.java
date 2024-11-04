@@ -25,7 +25,6 @@ import java.util.function.Predicate;
 import static cofh.lib.api.StorageGroup.OUTPUT;
 import static cofh.lib.util.Constants.TANK_MEDIUM;
 import static cofh.lib.util.constants.NBTTags.TAG_AUGMENT_TYPE_FLUID;
-import static cofh.lib.util.constants.NBTTags.TAG_AUGMENT_TYPE_UPGRADE;
 import static cofh.thermal.core.init.registries.TCoreBlockEntities.DEVICE_HIVE_EXTRACTOR_TILE;
 import static cofh.thermal.lib.util.ThermalAugmentRules.createAllowValidator;
 import static net.minecraftforge.fluids.capability.IFluidHandler.FluidAction.EXECUTE;

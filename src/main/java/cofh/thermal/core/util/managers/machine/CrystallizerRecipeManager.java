@@ -196,7 +196,7 @@ public class CrystallizerRecipeManager extends AbstractManager implements IRecip
                 }
             }
             if (!fluidStack.isEmpty()) {
-                int fluidHash = FluidHelper.fluidHashcodeNoTag(fluidStack);
+                int fluidHash = FluidHelper.fluidHashcode(fluidStack);
                 hashes.add(fluidHash);
                 hashCode += fluidHash;
             }

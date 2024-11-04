@@ -132,11 +132,13 @@ public class BottlerRecipeManager extends AbstractManager implements IRecipeMana
         }
         if (inputSlots.isEmpty() || inputSlots.get(0).isEmpty()) {
             FluidStack inputFluid = inputTanks.get(0).getFluidStack();
-            return recipeMap.get(singletonList(FluidHelper.fluidHashcodeNoTag(inputFluid)));
+            var ret = recipeMap.get(singletonList(FluidHelper.fluidHashcode(inputFluid)));
+            return ret == null ? recipeMap.get(singletonList(FluidHelper.fluidHashcodeNoTag(inputFluid))) : ret;
         }
         ItemStack inputItem = inputSlots.get(0).getItemStack();
         FluidStack inputFluid = inputTanks.get(0).getFluidStack();
-        return recipeMap.get(asList(makeComparable(inputItem).hashCode(), FluidHelper.fluidHashcodeNoTag(inputFluid)));
+        var ret = recipeMap.get(asList(makeComparable(inputItem).hashCode(), FluidHelper.fluidHashcode(inputFluid)));
+        return ret == null ? recipeMap.get(asList(makeComparable(inputItem).hashCode(), FluidHelper.fluidHashcodeNoTag(inputFluid))) : ret;
     }
 
     protected IMachineRecipe addRecipe(int energy, float experience, List<ItemStack> inputItems, List<FluidStack> inputFluids, List<ItemStack> outputItems, List<Float> chance, List<FluidStack> outputFluids) {
@@ -162,7 +164,7 @@ public class BottlerRecipeManager extends AbstractManager implements IRecipeMana
         energy = (int) (energy * getDefaultScale());
 
         SimpleMachineRecipe recipe = new SimpleMachineRecipe(energy, experience, inputItems, inputFluids, outputItems, chance, outputFluids);
-        recipeMap.put(asList(makeComparable(inputItem).hashCode(), FluidHelper.fluidHashcodeNoTag(inputFluid)), recipe);
+        recipeMap.put(asList(makeComparable(inputItem).hashCode(), FluidHelper.fluidHashcode(inputFluid)), recipe);
         return recipe;
     }
 
@@ -178,7 +180,7 @@ public class BottlerRecipeManager extends AbstractManager implements IRecipeMana
         }
         validItems.add(makeComparable(inputItem));
         validFluids.add(inputFluid.getFluid());
-        recipeMap.put(asList(makeComparable(inputItem).hashCode(), FluidHelper.fluidHashcodeNoTag(inputFluid)), recipe);
+        recipeMap.put(asList(makeComparable(inputItem).hashCode(), FluidHelper.fluidHashcode(inputFluid)), recipe);
         return recipe;
     }
     // endregion

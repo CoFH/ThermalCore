@@ -30,7 +30,8 @@ import java.util.function.Predicate;
 import java.util.function.Supplier;
 
 import static cofh.lib.api.StorageGroup.*;
-import static cofh.lib.util.constants.NBTTags.*;
+import static cofh.lib.util.constants.NBTTags.TAG_PROCESS;
+import static cofh.lib.util.constants.NBTTags.TAG_PROCESS_MAX;
 import static cofh.thermal.core.ThermalCore.ITEMS;
 import static cofh.thermal.core.init.registries.TCoreBlockEntities.DEVICE_COMPOSTER_TILE;
 import static cofh.thermal.lib.util.ThermalAugmentRules.createAllowValidator;
