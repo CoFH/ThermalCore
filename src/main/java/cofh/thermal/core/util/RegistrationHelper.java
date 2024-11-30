@@ -165,7 +165,10 @@ public final class RegistrationHelper {
 
     public static void registerMetalSet(String prefix, Rarity rarity, boolean vanilla, boolean alloy, String modId) {
 
-        int order = vanilla ? 999 : alloy ? 1001 : 1000;
+        registerMetalSet(prefix, rarity, vanilla, alloy, modId, vanilla ? 950 : alloy ? 1050 : 1000);
+    }
+
+    public static void registerMetalSet(String prefix, Rarity rarity, boolean vanilla, boolean alloy, String modId, int order) {
 
         // Hacky but whatever.
         if (prefix.equals("copper") || prefix.equals("netherite")) {
@@ -208,7 +211,7 @@ public final class RegistrationHelper {
 
     public static void registerGemSet(String prefix, Rarity rarity, boolean vanilla, String modId) {
 
-        int order = vanilla ? 1049 : 1050;
+        int order = vanilla ? 1100 : 1150;
 
         if (!vanilla) {
             itemsTab(order, registerItem(prefix, () -> new ItemCoFH(itemProperties().rarity(rarity)).setModId(modId)));
