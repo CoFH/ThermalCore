@@ -10,6 +10,7 @@ import cofh.thermal.lib.util.recipes.internal.BaseDynamoFuel;
 import cofh.thermal.lib.util.recipes.internal.IDynamoFuel;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.fluids.FluidStack;
 
 import java.util.ArrayList;
@@ -27,7 +28,7 @@ public abstract class SingleFluidFuelManager extends AbstractManager implements 
     public static final int FLUID_FUEL_AMOUNT = 100;
     public static final int ENERGY_FACTOR = BUCKET_VOLUME / FLUID_FUEL_AMOUNT;
 
-    protected Map<Integer, IDynamoFuel> fuelMap = new Object2ObjectOpenHashMap<>();
+    protected Map<FluidFuelWrapper, IDynamoFuel> fuelMap = new Object2ObjectOpenHashMap<>();
 
     protected SingleFluidFuelManager(int defaultEnergy) {
 
@@ -68,7 +69,7 @@ public abstract class SingleFluidFuelManager extends AbstractManager implements 
         if (inputTanks.isEmpty() || inputTanks.get(0).isEmpty()) {
             return null;
         }
-        return fuelMap.get(FluidHelper.fluidHashcode(inputTanks.get(0).getFluidStack()));
+        return fuelMap.get(new FluidFuelWrapper(inputTanks.get(0).getFluidStack()));
     }
 
     public IDynamoFuel addFuel(int energy, List<ItemStack> inputItems, List<FluidStack> inputFluids) {
@@ -95,7 +96,7 @@ public abstract class SingleFluidFuelManager extends AbstractManager implements 
         energy = (int) (energy * getDefaultScale());
 
         BaseDynamoFuel fuel = new BaseDynamoFuel(energy, inputItems, inputFluids);
-        fuelMap.put(FluidHelper.fluidHashcode(input), fuel);
+        fuelMap.put(new FluidFuelWrapper(input), fuel);
         return fuel;
     }
 
@@ -116,6 +117,38 @@ public abstract class SingleFluidFuelManager extends AbstractManager implements 
     public List<IDynamoFuel> getFuelList() {
 
         return new ArrayList<>(fuelMap.values());
+    }
+    // endregion
+
+    // region WRAPPER CLASS
+    protected static class FluidFuelWrapper {
+
+        Fluid fluid;
+        int hashCode;
+
+        FluidFuelWrapper(FluidStack fluidStack) {
+
+            this.fluid = fluidStack.getFluid();
+            this.hashCode = FluidHelper.fluidHashcode(fluidStack);
+        }
+
+        @Override
+        public boolean equals(Object o) {
+
+            return o instanceof FluidFuelWrapper && isFluidEqual((FluidFuelWrapper) o);
+        }
+
+        protected boolean isFluidEqual(FluidFuelWrapper other) {
+
+            return other != null && fluid == other.fluid;
+        }
+
+        @Override
+        public int hashCode() {
+
+            return hashCode;
+        }
+
     }
     // endregion
 }

@@ -5,6 +5,7 @@ import cofh.core.common.item.ItemCoFH;
 import cofh.core.util.ProxyUtils;
 import cofh.lib.api.block.IDismantleable;
 import cofh.lib.api.block.IWrenchable;
+import cofh.lib.init.tags.BlockTagsCoFH;
 import cofh.lib.util.helpers.BlockHelper;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
@@ -82,7 +83,9 @@ public class WrenchItem extends ItemCoFH implements IMultiModeItem {
                 wrenchable.wrenchBlock(world, pos, state, target, player);
                 return true;
             }
-            return BlockHelper.attemptRotateBlock(state, world, pos);
+            if (!state.is(BlockTagsCoFH.ROTATION_NOT_SUPPORTED)) {
+                return BlockHelper.attemptRotateBlock(state, world, pos);
+            }
         }
         return false;
     }
@@ -95,16 +98,6 @@ public class WrenchItem extends ItemCoFH implements IMultiModeItem {
             entity.broadcastBreakEvent(EquipmentSlot.MAINHAND);
         });
         return true;
-    }
-
-    @Override
-    public InteractionResult useOn(UseOnContext context) {
-
-        Player player = context.getPlayer();
-        if (player == null) {
-            return InteractionResult.FAIL;
-        }
-        return player.mayUseItemAt(context.getClickedPos(), context.getClickedFace(), context.getItemInHand()) ? InteractionResult.SUCCESS : InteractionResult.FAIL;
     }
 
     @Override

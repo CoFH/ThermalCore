@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "thermal:biomass"
+    },
+    {
+      "item": "thermal:biomass"
+    },
+    {
+      "item": "thermal:biomass"
+    },
+    {
+      "item": "thermal:sawdust"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "thermal:bioblend"
+  }
+}

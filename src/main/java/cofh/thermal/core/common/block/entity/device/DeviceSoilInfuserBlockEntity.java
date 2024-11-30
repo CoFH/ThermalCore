@@ -53,7 +53,7 @@ public class DeviceSoilInfuserBlockEntity extends AugmentableBlockEntity impleme
     public DeviceSoilInfuserBlockEntity(BlockPos pos, BlockState state) {
 
         super(DEVICE_SOIL_INFUSER_TILE.get(), pos, state);
-        energyStorage = new EnergyStorageCoFH(BASE_ENERGY, getBaseProcessTick() * 10);
+        energyStorage = new EnergyStorageCoFH(BASE_ENERGY, BASE_ENERGY / 50);
 
         inventory.addSlot(chargeSlot, INTERNAL);
 

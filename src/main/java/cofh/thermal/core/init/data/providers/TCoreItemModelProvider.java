@@ -76,6 +76,9 @@ public class TCoreItemModelProvider extends ItemModelProviderCoFH {
 
         generated(reg.getSup("syrup_bottle"));
 
+        generated(reg.getSup("biomass"));
+        generated(reg.getSup("bioblend"));
+
         generated(reg.getSup("junk_net"));
         generated(reg.getSup("aquachow"));
         generated(reg.getSup("deep_aquachow"));

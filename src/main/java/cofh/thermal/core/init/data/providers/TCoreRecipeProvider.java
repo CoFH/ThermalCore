@@ -102,6 +102,21 @@ public class TCoreRecipeProvider extends RecipeProviderCoFH {
                 .unlockedBy("has_gunpowder", has(Tags.Items.GUNPOWDER))
                 .save(consumer, ID_THERMAL + ":gunpowder_4");
 
+        ShapelessRecipeBuilder.shapeless(MISC, reg.get("bioblend"), 3)
+                .requires(reg.get("biomass"))
+                .requires(reg.get("biomass"))
+                .requires(reg.get("compost"))
+                .unlockedBy("has_compost", has(reg.get("compost")))
+                .save(consumer, ID_THERMAL + ":bioblend_compost_3");
+
+        ShapelessRecipeBuilder.shapeless(MISC, reg.get("bioblend"), 4)
+                .requires(reg.get("biomass"))
+                .requires(reg.get("biomass"))
+                .requires(reg.get("biomass"))
+                .requires(reg.get("sawdust"))
+                .unlockedBy("has_sawdust", has(reg.get("sawdust")))
+                .save(consumer, ID_THERMAL + ":bioblend_sawdust_4");
+
         generateAlloyRecipes(consumer);
         generateArmorRecipes(consumer);
         generateAugmentRecipes(consumer);

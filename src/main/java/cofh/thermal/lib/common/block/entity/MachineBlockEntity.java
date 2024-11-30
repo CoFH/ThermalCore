@@ -61,7 +61,7 @@ public abstract class MachineBlockEntity extends Reconfigurable4WayBlockEntity i
     public MachineBlockEntity(BlockEntityType<?> tileEntityTypeIn, BlockPos pos, BlockState state) {
 
         super(tileEntityTypeIn, pos, state);
-        energyStorage = new EnergyStorageCoFH(BASE_ENERGY, getBaseProcessTick() * 10);
+        energyStorage = new EnergyStorageCoFH(BASE_ENERGY, BASE_ENERGY / 50);
         xpStorage = new XpStorage(getBaseXpStorage());
     }
 

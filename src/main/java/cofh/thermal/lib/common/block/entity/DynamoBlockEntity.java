@@ -51,7 +51,7 @@ public abstract class DynamoBlockEntity extends AugmentableBlockEntity implement
     public DynamoBlockEntity(BlockEntityType<?> tileEntityTypeIn, BlockPos pos, BlockState state) {
 
         super(tileEntityTypeIn, pos, state);
-        energyStorage = new EnergyStorageCoFH(BASE_ENERGY, 0, getBaseProcessTick() * 10) {
+        energyStorage = new EnergyStorageCoFH(BASE_ENERGY, 0, BASE_ENERGY / 50) {
 
             @Override
             public boolean canExtract() {

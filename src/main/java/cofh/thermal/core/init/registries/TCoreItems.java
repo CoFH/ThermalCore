@@ -125,8 +125,8 @@ public class TCoreItems {
 
         foodsTab(registerItem("syrup_bottle", () -> new HoneyBottleItem(itemProperties().craftRemainder(GLASS_BOTTLE).food(Foods.HONEY_BOTTLE).stacksTo(16))));
 
-        //        registerItem("biomass");
-        //        registerItem("rich_biomass");
+        itemsTab(registerItem("biomass"));
+        itemsTab(registerItem("bioblend"));
 
         itemsTab(registerItem("basalz_rod"));
         itemsTab(registerItem("basalz_powder"));
