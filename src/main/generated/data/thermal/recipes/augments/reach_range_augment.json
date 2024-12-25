@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "conditions": [
+    {
+      "type": "thermal:flag",
+      "flag": "reach_augments"
+    }
+  ],
+  "key": {
+    "G": {
+      "tag": "forge:gears/lead"
+    },
+    "I": {
+      "tag": "forge:ingots/silver"
+    },
+    "X": {
+      "item": "thermal:redstone_servo"
+    }
+  },
+  "pattern": [
+    " G ",
+    "IXI",
+    " G "
+  ],
+  "result": {
+    "item": "thermal:reach_range_augment"
+  },
+  "show_notification": true
+}

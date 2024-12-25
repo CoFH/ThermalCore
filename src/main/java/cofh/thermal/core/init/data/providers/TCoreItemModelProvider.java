@@ -130,6 +130,7 @@ public class TCoreItemModelProvider extends ItemModelProviderCoFH {
 
         generated(reg.getSup("drill_head"));
         generated(reg.getSup("saw_blade"));
+        generated(reg.getSup("grapple_hook"));
         generated(reg.getSup("laser_diode"));
     }
 
@@ -185,6 +186,8 @@ public class TCoreItemModelProvider extends ItemModelProviderCoFH {
         generated(reg.getSup("rf_coil_creative_augment"), AUGMENTS);
 
         generated(reg.getSup("area_radius_augment"), AUGMENTS);
+
+        generated(reg.getSup("reach_range_augment"), AUGMENTS);
 
         // generated(reg.getSup("dual_filter_augment"), AUGMENTS);
         // generated(reg.getSup("fluid_filter_augment"), AUGMENTS);

@@ -410,6 +410,17 @@ public class TCoreRecipeProvider extends RecipeProviderCoFH {
                 .unlockedBy("has_redstone_servo", has(redstoneServo))
                 .save(withConditions(consumer).flag(FLAG_AREA_AUGMENTS), this.modid + ":" + folder + "/" + name(result));
 
+        result = reg.get("reach_range_augment");
+        ShapedRecipeBuilder.shaped(MISC, result)
+                .define('G', ItemTagsCoFH.GEARS_LAPIS)
+                .define('I', ItemTagsCoFH.INGOTS_LEAD)
+                .define('X', redstoneServo)
+                .pattern(" G ")
+                .pattern("IXI")
+                .pattern(" G ")
+                .unlockedBy("has_redstone_servo", has(redstoneServo))
+                .save(withConditions(consumer).flag(FLAG_REACH_AUGMENTS), this.modid + ":" + folder + "/" + name(result));
+
         result = reg.get("dynamo_output_augment");
         ShapedRecipeBuilder.shaped(MISC, result)
                 .define('G', ItemTagsCoFH.GEARS_SILVER)
@@ -1044,6 +1055,15 @@ public class TCoreRecipeProvider extends RecipeProviderCoFH {
                 .pattern("II ")
                 .pattern("ICI")
                 .pattern(" II")
+                .unlockedBy("has_iron_ingot", has(Tags.Items.INGOTS_IRON))
+                .save(withConditions(consumer).flag(FLAG_TOOL_COMPONENTS));
+
+        ShapedRecipeBuilder.shaped(MISC, reg.get("grapple_hook"))
+                .define('C', Tags.Items.INGOTS_COPPER)
+                .define('I', Tags.Items.INGOTS_IRON)
+                .pattern(" CC")
+                .pattern("CI ")
+                .pattern("C I")
                 .unlockedBy("has_iron_ingot", has(Tags.Items.INGOTS_IRON))
                 .save(withConditions(consumer).flag(FLAG_TOOL_COMPONENTS));
 

@@ -147,6 +147,7 @@ public class TCoreItems {
 
         itemsTab(registerItem("drill_head", () -> new ItemCoFH(itemProperties())), getFlag(FLAG_TOOL_COMPONENTS));
         itemsTab(registerItem("saw_blade", () -> new ItemCoFH(itemProperties())), getFlag(FLAG_TOOL_COMPONENTS));
+        itemsTab(registerItem("grapple_hook", () -> new ItemCoFH(itemProperties())), getFlag(FLAG_TOOL_COMPONENTS));
 
         registerItem("laser_diode", () -> new ItemCoFH(itemProperties()));//.setShowInGroups(getFeature(FLAG_TOOL_COMPONENTS))); // TODO: Implement
     }
@@ -233,6 +234,7 @@ public class TCoreItems {
         registerMachineAugments();
         registerDynamoAugments();
         registerAreaAugments();
+        registerReachAugments();
         registerPotionAugments();
     }
 
@@ -419,6 +421,15 @@ public class TCoreItems {
                         .type(TAG_AUGMENT_TYPE_AREA_EFFECT)
                         .mod(TAG_AUGMENT_RADIUS, 1.0F)
                         .build())), getFlag(FLAG_AREA_AUGMENTS));
+    }
+
+    private static void registerReachAugments() {
+
+        itemsTab(registerItem("reach_range_augment", () -> new AugmentItem(itemProperties(),
+                AugmentDataHelper.builder()
+                        .type(TAG_AUGMENT_TYPE_REACH)
+                        .mod(TAG_AUGMENT_REACH, 0.25F)
+                        .build())), getFlag(FLAG_REACH_AUGMENTS));
     }
 
     private static void registerPotionAugments() {

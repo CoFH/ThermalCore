@@ -300,6 +300,7 @@
   "info.thermal.augment.attr.RFXfer": "RF Transfer",
 
   "info.thermal.augment.type.Area": "Area Effect",
+  "info.thermal.augment.type.Reach": "Reach",
   "info.thermal.augment.type.Dynamo": "Dynamo",
   "info.thermal.augment.type.Fluid": "Fluid",
   "info.thermal.augment.type.Filter": "Filter",
@@ -312,6 +313,8 @@
 
   "item.thermal.area_depth_augment": "Axial Enhancement",
   "item.thermal.area_radius_augment": "Radial Enhancement",
+
+  "item.thermal.reach_range_augment": "Reach Extension",
 
   "item.thermal.dynamo_ender_coil_augment": "Ender Frequency Tuner",
   "item.thermal.dynamo_force_coil_augment": "Beam Projection Array",
@@ -532,6 +535,7 @@
   "item.thermal.drill_head": "Drill Head",
   "item.thermal.laser_diode": "Laser Diode",
   "item.thermal.saw_blade": "Saw Blade",
+  "item.thermal.grapple_hook": "Grapple Hook",
 
   "item.thermal.rf_potato": "Capacitato",
   "item.thermal.rf_potato.desc": "Stores Redstone Flux.",
@@ -658,6 +662,8 @@
 
   "item.thermal.area_depth_augment.keyword": "augment",
   "item.thermal.area_radius_augment.keyword": "augment drill tool",
+
+  "item.thermal.reach_range_augment.keyword": "augment grapplehook tool",
 
   "item.thermal.dynamo_fuel_augment.keyword": "augment dynamo",
   "item.thermal.dynamo_output_augment.keyword": "augment dynamo",
@@ -1174,6 +1180,9 @@
 
   "item.thermal.potion_quiver": "Alchemical Quiver",
   "item.thermal.potion_quiver.desc": "Imbues arrows with potions.",
+
+  "item.thermal.flux_grapple": "Fluxhook",
+  "item.thermal.flux_grapple.desc": "Pulls players using Redstone Flux.",
 
   "_comment": "========================================================================================================",
   "_comment": "Keywords - These terms help things show up in JEI or other tooltip searches! :)",

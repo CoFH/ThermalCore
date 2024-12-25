@@ -40,6 +40,7 @@ public class ThermalFlags {
     public static String FLAG_HAZMAT_ARMOR = "hazmat_armor";
 
     public static String FLAG_AREA_AUGMENTS = "area_augments";
+    public static String FLAG_REACH_AUGMENTS = "reach_augments";
     public static String FLAG_CREATIVE_AUGMENTS = "creative_augments";
     public static String FLAG_DYNAMO_AUGMENTS = "dynamo_augments";
     public static String FLAG_FILTER_AUGMENTS = "filter_augments";
