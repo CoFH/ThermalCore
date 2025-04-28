@@ -66,7 +66,7 @@ public class DeviceSoilInfuserBlockEntity extends AugmentableBlockEntity impleme
 
         boolean curActive = isActive;
         if (isActive) {
-            if (energyStorage.getEnergyStored() >= processTick) {
+            if (redstoneControl.getState() && energyStorage.getEnergyStored() >= processTick) {
                 process += processTick;
                 energyStorage.modify(-processTick);
                 if (process >= processMax) {

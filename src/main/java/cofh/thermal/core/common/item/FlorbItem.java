@@ -109,7 +109,7 @@ public class FlorbItem extends FluidContainerItem {
     @Override
     public int fill(ItemStack container, FluidStack resource, FluidAction action) {
 
-        if (!getFluid(container).isEmpty() || resource.getAmount() < getCapacity(container)) {
+        if (container.getCount() > 1 || !getFluid(container).isEmpty() || resource.getAmount() < getCapacity(container)) {
             return 0;
         }
         return super.fill(container, resource, action);

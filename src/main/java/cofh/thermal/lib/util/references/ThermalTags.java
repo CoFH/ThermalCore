@@ -22,6 +22,7 @@ public class ThermalTags {
 
         public static final TagKey<Block> TREE_EXTRACTOR_GROUND = thermalTag("devices/tree_extractor_ground");
 
+        public static final TagKey<Block> DEVICES = thermalTag("devices");
         public static final TagKey<Block> DUCTS = thermalTag("ducts");
         public static final TagKey<Block> DYNAMOS = thermalTag("dynamos");
         public static final TagKey<Block> MACHINES = thermalTag("machines");

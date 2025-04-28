@@ -206,6 +206,19 @@ public class TCoreTagsProvider {
             tag(BlockTags.MINEABLE_WITH_PICKAXE).add(BLOCKS.get(ID_ENERGY_CELL));
 
             tag(BlockTags.MINEABLE_WITH_PICKAXE).add(BLOCKS.get(ID_FLUID_CELL));
+
+            tag(ThermalTags.Blocks.DEVICES).add(BLOCKS.get(ID_DEVICE_HIVE_EXTRACTOR));
+            tag(ThermalTags.Blocks.DEVICES).add(BLOCKS.get(ID_DEVICE_TREE_EXTRACTOR));
+            tag(ThermalTags.Blocks.DEVICES).add(BLOCKS.get(ID_DEVICE_FISHER));
+            tag(ThermalTags.Blocks.DEVICES).add(BLOCKS.get(ID_DEVICE_COMPOSTER));
+            tag(ThermalTags.Blocks.DEVICES).add(BLOCKS.get(ID_DEVICE_SOIL_INFUSER));
+
+            tag(ThermalTags.Blocks.DEVICES).add(BLOCKS.get(ID_DEVICE_WATER_GEN));
+            tag(ThermalTags.Blocks.DEVICES).add(BLOCKS.get(ID_DEVICE_ROCK_GEN));
+            tag(ThermalTags.Blocks.DEVICES).add(BLOCKS.get(ID_DEVICE_COLLECTOR));
+            tag(ThermalTags.Blocks.DEVICES).add(BLOCKS.get(ID_DEVICE_XP_CONDENSER));
+            tag(ThermalTags.Blocks.DEVICES).add(BLOCKS.get(ID_DEVICE_NULLIFIER));
+            tag(ThermalTags.Blocks.DEVICES).add(BLOCKS.get(ID_DEVICE_POTION_DIFFUSER));
             // endregion
         }
 
