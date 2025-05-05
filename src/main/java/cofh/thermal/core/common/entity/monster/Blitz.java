@@ -84,7 +84,7 @@ public class Blitz extends Monster {
                 .add(Attributes.ATTACK_DAMAGE, 6.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.23F)
                 .add(Attributes.FLYING_SPEED, 0.6F)
-                .add(Attributes.FOLLOW_RANGE, 48.0D);
+                .add(Attributes.FOLLOW_RANGE, 32.0D);
     }
 
     @Override
@@ -240,7 +240,7 @@ public class Blitz extends Monster {
                         attackTime = 20;
                         blitz.doHurtTarget(target);
                     }
-                } else if (distSqr < 576.0) {
+                } else if (distSqr < 400.0) {
                     if (attackTime <= 0) {
                         attackTime = 20;
                         Level world = blitz.level;
@@ -252,22 +252,23 @@ public class Blitz extends Monster {
                         double time = 1.25F * horzDist;
                         Vec3 horzVel = diff.scale(horzSpeed / horzDist);
 
+                        RandomSource rand = blitz.getRandom();
                         BlitzProjectile projectile = new BlitzProjectile(pos.x, pos.y, pos.z, 0, -gravity, 0, world);
-                        projectile.setDeltaMovement(horzVel.x, gravity * time + diff.y / time, horzVel.z);
+                        projectile.setDeltaMovement(horzVel.x + rand.nextGaussian() * 0.03, gravity * time + diff.y / time, horzVel.z + rand.nextGaussian() * 0.03);
                         projectile.setOwner(blitz);
                         world.addFreshEntity(projectile);
                     }
-                    if (distSqr > 400.0) {
+                    if (distSqr > 256.0) {
                         blitz.navigation.stop();
                         navTime = 0;
                     } else if (navTime <= 0) {
                         Vec3 want = (new Vec3(pos.x - targetPos.x, 0, pos.z - targetPos.z)).normalize().scale(30);
-                        blitz.navigation.moveTo(targetPos.x + want.x, targetPos.y, targetPos.z + want.z, 1.0D);
+                        blitz.navigation.moveTo(targetPos.x + want.x, targetPos.y, targetPos.z + want.z, 0.75D);
                         navTime = 15;
 
                     }
                 } else if (navTime <= 0) {
-                    blitz.navigation.moveTo(targetPos.x, targetPos.y, targetPos.z, 1.0D);
+                    blitz.navigation.moveTo(targetPos.x, targetPos.y, targetPos.z, 0.75D);
                     navTime = 15;
                 }
             } else {
