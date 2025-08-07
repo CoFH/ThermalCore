@@ -148,6 +148,7 @@
   "item.thermal.rf_coil": "Redstone Flux Coil",
 
   "item.thermal.biocrude_bucket": "Bio-crude Oil Bucket",
+  "item.thermal.coal_bucket": "Liquefacted Coal Bucket",
   "item.thermal.creosote_bucket": "Creosote Oil Bucket",
   "item.thermal.crude_oil_bucket": "Crude Oil Bucket",
   "item.thermal.ender_bucket": "Resonant Ender Bucket",

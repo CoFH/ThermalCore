@@ -1,6 +1,9 @@
 # exclude all
 /*
 
+# MacOS Compatibility
+**/.DS_Store
+
 # Gradle stuff
 !gradle/
 !gradlew

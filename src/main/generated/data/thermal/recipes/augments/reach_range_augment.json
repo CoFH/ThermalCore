@@ -9,10 +9,10 @@
   ],
   "key": {
     "G": {
-      "tag": "forge:gears/lead"
+      "tag": "forge:gears/lapis"
     },
     "I": {
-      "tag": "forge:ingots/silver"
+      "tag": "forge:ingots/lead"
     },
     "X": {
       "item": "thermal:redstone_servo"

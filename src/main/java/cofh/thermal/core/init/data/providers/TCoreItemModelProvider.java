@@ -100,7 +100,7 @@ public class TCoreItemModelProvider extends ItemModelProviderCoFH {
         generated(reg.getSup("glowstone_bucket"));
         generated(reg.getSup("ender_bucket"));
 
-        // generated(reg.getSup("coal_bucket"));
+        generated(reg.getSup("coal_bucket"));
         generated(reg.getSup("creosote_bucket"));
         generated(reg.getSup("crude_oil_bucket"));
         generated(reg.getSup("heavy_oil_bucket"));
