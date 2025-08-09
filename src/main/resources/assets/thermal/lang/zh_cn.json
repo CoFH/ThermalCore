@@ -42,8 +42,8 @@
   "block.thermal.red_rockwool": "红色石棉",
   "block.thermal.black_rockwool": "黑色石棉",
 
-  "block.thermal.chiseled_rich_slag": "錾制富炉渣块",
-  "block.thermal.chiseled_slag": "錾制炉渣块",
+  "block.thermal.chiseled_rich_slag": "雕纹富炉渣块",
+  "block.thermal.chiseled_slag": "雕纹炉渣块",
   "block.thermal.cracked_rich_slag_bricks": "裂纹富炉渣块",
   "block.thermal.cracked_slag_bricks": "裂纹炉渣块",
   "block.thermal.polished_rich_slag": "烧制富炉渣块",
@@ -245,16 +245,19 @@
   "subtitles.thermal.entity.basalz.death": "岩石人：死亡",
   "subtitles.thermal.entity.basalz.hurt": "岩石人：受伤",
   "subtitles.thermal.entity.basalz.shoot": "岩石人：射击",
+  "subtitles.thermal.entity.basalz.roam": "岩石人：游荡",
 
   "subtitles.thermal.entity.blitz.ambient": "狂风人：呼吸",
   "subtitles.thermal.entity.blitz.death": "狂风人：死亡",
   "subtitles.thermal.entity.blitz.hurt": "狂风人：受伤",
   "subtitles.thermal.entity.blitz.shoot": "狂风人：射击",
+  "subtitles.thermal.entity.blitz.roam": "狂风人：游荡",
 
   "subtitles.thermal.entity.blizz.ambient": "暴雪人：呼吸",
   "subtitles.thermal.entity.blizz.death": "暴雪人：死亡",
   "subtitles.thermal.entity.blizz.hurt": "暴雪人：受伤",
   "subtitles.thermal.entity.blizz.shoot": "暴雪人：射击",
+  "subtitles.thermal.entity.blizz.roam": "暴雪人：游荡",
 
   "subtitles.thermal.item.magnet": "磁铁：吸引",
 
@@ -660,6 +663,7 @@
 
   "item.thermal.dynamo_fuel_augment.keyword": "组件 能源炉",
   "item.thermal.dynamo_output_augment.keyword": "组件 能源炉",
+  "item.thermal.dynamo_throttle_augment.keyword": "组件 能源炉",
 
   "item.thermal.fluid_tank_augment.keyword": "组件 流体 存储 容器 储罐 缸",
   "item.thermal.fluid_tank_creative_augment.keyword": "组件 创造 流体 存储 容器 储罐 缸",
@@ -776,6 +780,20 @@
   "death.attack.sadiroot": "%1$s被萨蒂根茎的刺叶扎死了",
   "death.attack.sadiroot.player": "%1$s在试图逃离%2$s时被萨蒂根茎的刺叶扎死了",
 
+  "effect.thermal.fortune_revealed": "运势揭晓",
+
+  "info.thermal.fortune_cookie_bad_luck.0": "救命！我被困在幸运饼干烘焙坊里了。",
+  "info.thermal.fortune_cookie_bad_luck.1": "情况会好转的。当然不是你。",
+  "info.thermal.fortune_cookie_bad_luck.2": "我相信你，虽然没别人相信。",
+  "info.thermal.fortune_cookie_bad_luck.3": "命运眷顾你。但幸运不然。",
+  "info.thermal.fortune_cookie_bad_luck.4": "希望你脑子活络，要么长得漂亮。因为你*不*幸运。",
+
+  "info.thermal.fortune_cookie_luck.0": "幸运向你微笑。",
+  "info.thermal.fortune_cookie_luck.1": "你的幸运数字是……",
+  "info.thermal.fortune_cookie_luck.2": "实力比不上运气。",
+  "info.thermal.fortune_cookie_luck.3": "要么去做，要么放手，没有尝试一说。",
+  "info.thermal.fortune_cookie_luck.4": "要什么智商颜值？你有运气！",
+
   "item.thermal.amaranth": "苋菜",
   "item.thermal.amaranth_seeds": "苋菜种子",
   "item.thermal.barley": "大麦",
@@ -817,7 +835,6 @@
 
   "item.thermal.dough": "面团",
   "item.thermal.flour": "面粉",
-
   "item.thermal.jar": "玻璃罐",
   "item.thermal.jelly": "罐装果酱",
   "item.thermal.peanut_butter": "罐装花生酱",
@@ -828,6 +845,7 @@
   "item.thermal.cooked_mushroom": "烤蘑菇",
 
   "item.thermal.cheese_wedge": "奶酪",
+  "item.thermal.fortune_cookie": "幸运饼干",
   "item.thermal.green_bean_pie": "四季豆派",
   "item.thermal.hearty_stew": "丰盛炖菜",
   "item.thermal.onion_stew": "洋葱炖菜",
